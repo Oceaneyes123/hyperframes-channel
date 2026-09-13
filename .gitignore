@@ -1,0 +1,11 @@
+# Agent-installed workflow packages
+.agents/
+
+# HyperFrames generated media and Studio caches
+videos/**/.media/
+videos/**/.hyperframes/
+videos/**/.thumbnails/
+videos/**/.waveform-cache/
+videos/**/snapshots/
+videos/**/renders/
+videos/**/node_modules/

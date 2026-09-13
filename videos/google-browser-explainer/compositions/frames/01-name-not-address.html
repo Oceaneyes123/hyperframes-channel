@@ -1,0 +1,61 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; overflow:hidden; container-type:size; color:#111111; }
+    .clip { position:absolute; inset:0; }
+    .f01-ground { background:#E85D26; }
+    .f01-mono { font-family:monospace; font-size:1.05cqw; font-weight:500; letter-spacing:.14em; text-transform:uppercase; }
+    .f01-kicker { position:absolute; left:5.5cqw; top:5.5cqh; color:#3A1A0D; }
+    .f01-url-chrome { position:absolute; right:5.5cqw; top:5.5cqh; padding-bottom:1.2cqh; border-bottom:1px solid rgba(17,17,17,.35); }
+    .f01-word { position:absolute; left:5.5cqw; top:18.5cqh; font-family:sans-serif; font-size:13cqw; font-weight:900; letter-spacing:-.06em; line-height:.82; }
+    .f01-rule { position:absolute; left:5.5cqw; top:65.5cqh; width:5cqw; height:2px; background:#111111; }
+    .f01-lead { position:absolute; left:5.5cqw; top:70cqh; width:46cqw; color:rgba(17,17,17,.75); font-family:sans-serif; font-size:2cqw; line-height:1.28; }
+    .f01-browser { position:absolute; left:5.5cqw; top:43cqh; width:53cqw; height:10.5cqh; border:2px solid #111111; display:flex; align-items:center; padding:0 2cqw; }
+    .f01-lock { width:1.35cqw; height:1.55cqw; margin-right:1.2cqw; border:2px solid #111111; border-top:0; position:relative; flex:0 0 auto; }
+    .f01-lock::before { content:""; position:absolute; left:50%; top:-.9cqw; width:.7cqw; height:.85cqw; border:2px solid #111111; border-bottom:0; transform:translateX(-50%); }
+    .f01-typed-wrap { min-width:27cqw; font-family:monospace; font-size:3.3cqw; font-weight:700; letter-spacing:-.05em; white-space:nowrap; }
+    .f01-caret { display:inline-block; width:.38cqw; margin-left:.3cqw; background:#111111; color:#111111; height:3.2cqw; vertical-align:-.42cqw; }
+    .f01-route { position:absolute; left:58.5cqw; top:48.2cqh; width:23cqw; height:2px; background:#111111; transform-origin:left center; }
+    .f01-route::after { content:""; position:absolute; right:-.25cqw; top:-.35cqw; border-left:1.2cqw solid #111111; border-top:.45cqw solid transparent; border-bottom:.45cqw solid transparent; }
+    .f01-pin { position:absolute; left:81.5cqw; top:44.5cqh; width:7cqw; height:9.5cqh; border:3px solid #111111; border-radius:50% 50% 50% 0; }
+    .f01-pin-inner { position:absolute; left:50%; top:42%; font-family:sans-serif; font-size:3.2cqw; font-weight:900; line-height:1; transform:translate(-50%,-50%) rotate(45deg); }
+    .f01-network-dot { position:absolute; left:76.5cqw; top:62.5cqh; width:1.3cqw; height:1.3cqw; background:#111111; border-radius:50%; }
+    .f01-network-stem { position:absolute; left:77.1cqw; top:54.6cqh; width:2px; height:8cqh; background:#111111; transform-origin:top center; }
+    .f01-node-label { position:absolute; left:73cqw; top:68cqh; color:#3A1A0D; }
+  </style>
+  <div data-hf-id="hf-o1hn" id="root" data-composition-id="01-name-not-address" data-width="1920" data-height="1080" data-duration="6.9">
+    <div data-hf-id="hf-t4gr" class="clip f01-ground" data-start="0" data-duration="6.9" data-track-index="0"></div>
+    <div data-hf-id="hf-d5y0" class="f01-kicker f01-mono">No. 01 / the familiar move</div>
+    <div data-hf-id="hf-r4ps" class="f01-url-chrome f01-mono">google.com ↵</div>
+    <div data-hf-id="hf-h0am" class="f01-word" data-layout-allow-overlap>a name<br data-hf-id="hf-x5px">starts it.</div>
+    <div data-hf-id="hf-r92q" class="f01-rule"></div><div data-hf-id="hf-4mfl" class="f01-lead">One small address triggers a fast chain of internet decisions.</div>
+    <div data-hf-id="hf-rae6" class="f01-browser" id="f01-browser"><div data-hf-id="hf-hl85" class="f01-lock"></div><div data-hf-id="hf-ehdd" class="f01-typed-wrap" data-layout-allow-overlap><span data-hf-id="hf-cc4a" id="f01-typed"></span><span data-hf-id="hf-sah9" class="f01-caret" id="f01-caret"></span></div></div>
+    <div data-hf-id="hf-nrgg" class="f01-route" id="f01-route"></div><div data-hf-id="hf-y75u" class="f01-network-stem" id="f01-network-stem"></div><div data-hf-id="hf-d5p2" class="f01-network-dot" id="f01-network-dot"></div>
+    <div data-hf-id="hf-zjug" class="f01-pin" id="f01-pin"><span data-hf-id="hf-m062" class="f01-pin-inner">?</span></div><div data-hf-id="hf-pzw8" class="f01-node-label f01-mono" id="f01-node-label">destination?</div>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const typed = document.querySelector('#f01-typed');
+      const caret = document.querySelector('#f01-caret');
+      const sequence = [{t:0,text:''},{t:.56,text:'g'},{t:.68,text:'go'},{t:.80,text:'goo'},{t:.92,text:'goog'},{t:1.04,text:'googl'},{t:1.16,text:'google'},{t:1.42,text:'google.'},{t:1.58,text:'google.c'},{t:1.72,text:'google.co'},{t:1.86,text:'google.com'}];
+      const textAt = time => { for (let i = sequence.length - 1; i >= 0; i -= 1) if (time >= sequence[i].t) return sequence[i].text; return ''; };
+      gsap.set(['#f01-browser','.f01-word','.f01-rule','.f01-lead','.f01-kicker','.f01-url-chrome'], {opacity:0});
+      gsap.set(['#f01-route','#f01-network-stem','#f01-network-dot','#f01-pin','#f01-node-label'], {opacity:0});
+      tl.fromTo('.f01-kicker',{opacity:0,y:-18},{opacity:1,y:0,duration:.32,ease:'power3.out'},.08)
+        .fromTo('.f01-url-chrome',{opacity:0,y:-18},{opacity:1,y:0,duration:.32,ease:'power3.out'},.14)
+        .fromTo('.f01-word',{opacity:0,x:-70},{opacity:1,x:0,duration:.52,ease:'power4.out'},.12)
+        .fromTo('#f01-browser',{opacity:0,x:230},{opacity:1,x:0,duration:.52,ease:'power4.out'},.30)
+        .fromTo('.f01-rule',{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:.26,ease:'power3.out'},.70)
+        .fromTo('.f01-lead',{opacity:0,y:22},{opacity:1,y:0,duration:.34,ease:'power3.out'},.88);
+      const driver = {t:0};
+      tl.to(driver,{t:2.1,duration:2.1,ease:'none',onUpdate:()=>{typed.textContent=textAt(driver.t);caret.style.opacity=Math.sin(driver.t*Math.PI*2*1.4)>0?'1':'0';}},0);
+      tl.fromTo('#f01-route',{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:.72,ease:'power3.out'},2.18)
+        .fromTo('#f01-pin',{xPercent:-50,yPercent:-50,x:-330,y:110,scale:.36,opacity:0},{xPercent:-50,yPercent:-50,x:0,y:0,scale:1,opacity:1,duration:1.05,ease:'power3.out'},2.25)
+        .fromTo('#f01-network-stem',{opacity:0,scaleY:0},{opacity:1,scaleY:1,duration:.44,ease:'power3.out'},3.12)
+        .fromTo('#f01-network-dot',{xPercent:-50,yPercent:-50,x:-110,y:-78,scale:.3,opacity:0},{xPercent:-50,yPercent:-50,x:0,y:0,scale:1,opacity:1,duration:.7,ease:'power3.out'},3.20)
+        .fromTo('#f01-node-label',{opacity:0,y:18},{opacity:1,y:0,duration:.38,ease:'power3.out'},3.76);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['01-name-not-address'] = tl;
+    })();
+  </script>
+</template>

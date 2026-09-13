@@ -1,0 +1,56 @@
+<template>
+  <style>
+    @font-face { font-family:'Barlow'; src:local('Barlow'); }
+    #root { position:absolute; inset:0; overflow:hidden; container-type:size; background:#111111; color:#F0ECE5; font-family:Barlow,Arial,sans-serif; }
+    .kicker { position:absolute; left:6cqw; top:5cqh; color:#E85D26; font:500 1cqw 'IBM Plex Mono',monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .title { position:absolute; left:6cqw; top:9cqh; font-size:6cqw; line-height:.95; font-weight:900; letter-spacing:-.045em; }
+    .title em { color:#E85D26; font-style:normal; }
+    .hint { position:absolute; left:6cqw; top:22cqh; color:#888880; font-size:1.45cqw; }
+    .rail { position:absolute; left:8cqw; right:8cqw; top:57cqh; height:1px; background:#282826; }
+    .route { position:absolute; inset:0; width:100%; height:100%; pointer-events:none; }
+    .route path { fill:none; stroke:#E85D26; stroke-width:3; stroke-linecap:square; stroke-dasharray:1 13; opacity:.72; }
+    .station { position:absolute; top:43cqh; width:15cqw; min-height:20cqh; box-sizing:border-box; border:1px solid #282826; background:#111111; padding:2.2cqh 1.7cqw; transform-origin:50% 50%; will-change:transform,opacity; }
+    .station.active { border-color:#E85D26; }
+    .station .num { color:#E85D26; font:500 .85cqw 'IBM Plex Mono',monospace; letter-spacing:.14em; }
+    .station h2 { margin:1.3cqh 0 0; font-size:3.1cqw; line-height:1; letter-spacing:-.04em; font-weight:900; text-transform:lowercase; }
+    .station p { margin:1.4cqh 0 0; max-width:13cqw; color:#888880; font-size:1.25cqw; line-height:1.25; }
+    .browser { left:8cqw; } .resolver { left:26.5cqw; } .root-node { left:45cqw; } .com { left:63.5cqw; } .google { left:82cqw; }
+    .packet { position:absolute; left:0; top:0; width:1.15cqw; height:1.15cqw; background:#E85D26; transform:translate(-50%,-50%); opacity:0; will-change:transform,opacity; }
+    .packet-label { position:absolute; top:64cqh; left:6cqw; color:#E85D26; font:500 .85cqw 'IBM Plex Mono',monospace; letter-spacing:.14em; text-transform:uppercase; opacity:0; }
+    .footer { position:absolute; left:6cqw; right:6cqw; bottom:8cqh; display:flex; justify-content:space-between; border-top:1px solid #282826; padding-top:1.6cqh; color:#888880; font:500 .8cqw 'IBM Plex Mono',monospace; letter-spacing:.12em; text-transform:uppercase; }
+  </style>
+  <div data-hf-id="hf-yxj7" id="root" data-composition-id="03-ask-dns" data-width="1920" data-height="1080" data-duration="11.8">
+    <section data-hf-id="hf-ierp" class="clip" data-start="0" data-duration="11.8" data-track-index="0">
+      <div data-hf-id="hf-n6xu" class="kicker">03 / DNS LOOKUP</div>
+      <div data-hf-id="hf-gh10" class="title">ask the <em data-hf-id="hf-azxc">directory.</em></div>
+      <div data-hf-id="hf-eg13" class="hint">The resolver follows a short chain of signposts.</div>
+      <div data-hf-id="hf-qzq8" class="rail"></div>
+      <svg data-hf-id="hf-bfoz" class="route" viewBox="0 0 1920 1080" aria-hidden="true"><path data-hf-id="hf-vqks" id="route-line" d="M 230 616 H 1820" /></svg>
+      <article data-hf-id="hf-bxx3" class="station browser active" id="browser"><div data-hf-id="hf-rokj" class="num">01</div><h2 data-hf-id="hf-qwbp">browser</h2><p data-hf-id="hf-tnjw">“where is google.com?”</p></article>
+      <article data-hf-id="hf-e9db" class="station resolver active" id="resolver"><div data-hf-id="hf-ra9i" class="num">02</div><h2 data-hf-id="hf-vg29">resolver</h2><p data-hf-id="hf-5svv">checks what it knows first</p></article>
+      <article data-hf-id="hf-jql9" class="station root-node" id="root-node"><div data-hf-id="hf-qvyh" class="num">03</div><h2 data-hf-id="hf-jrz7">root</h2><p data-hf-id="hf-iyap">starts the lookup</p></article>
+      <article data-hf-id="hf-ur3p" class="station com" id="com"><div data-hf-id="hf-qhng" class="num">04</div><h2 data-hf-id="hf-7f00">.com</h2><p data-hf-id="hf-lqib">points to Google’s directory</p></article>
+      <article data-hf-id="hf-56ff" class="station google" id="google"><div data-hf-id="hf-q3cf" class="num">05</div><h2 data-hf-id="hf-zg6o">google</h2><p data-hf-id="hf-d39l">holds the record</p></article>
+      <div data-hf-id="hf-zxub" class="packet" id="packet" aria-hidden="true"></div>
+      <div data-hf-id="hf-qgtt" class="packet-label" id="packet-label">LOOKUP IN FLIGHT →</div>
+      <div data-hf-id="hf-yh7l" class="footer"><span data-hf-id="hf-29b7">browser → resolver → root → .com → google</span><span data-hf-id="hf-crhg">one question, five stops</span></div>
+    </section>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused:true });
+    window.__timelines = window.__timelines || {};
+    window.__timelines["03-ask-dns"] = tl;
+    tl.set(["#browser", "#resolver"], { autoAlpha:0, scale:0.72, y:24 })
+      .set(["#root-node", "#com", "#google"], { autoAlpha:0, scale:0.6, x:-355, y:0 })
+      .set("#route-line", { strokeDashoffset:1600 })
+      .to("#browser", { autoAlpha:1, scale:1, y:0, duration:.62, ease:"power3.out" }, .12)
+      .to("#resolver", { autoAlpha:1, scale:1, y:0, duration:.62, ease:"power3.out" }, .45)
+      .to("#route-line", { strokeDashoffset:0, duration:1.35, ease:"power2.out" }, 1.15)
+      .to("#root-node", { autoAlpha:1, scale:1, x:0, y:0, duration:1.15, ease:"power3.out" }, 3.08)
+      .to("#com", { autoAlpha:1, scale:1, x:0, y:0, duration:1.15, ease:"power3.out" }, 4.55)
+      .to("#google", { autoAlpha:1, scale:1, x:0, y:0, duration:1.15, ease:"power3.out" }, 6.02)
+      .to("#packet-label", { autoAlpha:1, duration:.25 }, 8.8)
+      .set("#packet", { autoAlpha:1, x:230, y:616 }, 8.82)
+      .to("#packet", { x:1820, y:616, duration:2.12, ease:"none" }, 8.9);
+  </script>
+</template>

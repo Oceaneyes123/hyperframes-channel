@@ -1,0 +1,58 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; container-type:size; color:#F0ECE5; font-family:sans-serif; overflow:hidden; perspective:1600px; }
+    .f05-ground { position:absolute; inset:0; background:#111111; }
+    .f05-chrome { position:absolute; left:6cqw; top:5cqh; color:#E85D26; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .f05-title { position:absolute; left:6cqw; top:8cqh; color:#F0ECE5; font-size:6cqw; font-weight:900; letter-spacing:-.04em; line-height:.92; }
+    .f05-stage { position:absolute; inset:0; transform-style:preserve-3d; }
+    .f05-card { position:absolute; top:45cqh; width:21cqw; height:20cqh; border-top:1px solid #E85D26; padding-top:2cqh; box-sizing:border-box; font-size:4cqw; font-weight:900; letter-spacing:-.04em; line-height:.95; transform-style:preserve-3d; will-change:transform; }
+    .f05-browser { left:8cqw; text-align:left; }
+    .f05-server { right:8cqw; text-align:right; }
+    .f05-small { margin-top:1cqh; color:#888880; font-size:1.6cqw; font-weight:400; letter-spacing:0; line-height:1.2; }
+    .f05-route-svg { position:absolute; left:30cqw; top:49cqh; width:40cqw; height:13cqh; overflow:visible; }
+    .f05-route-glow { fill:none; stroke:#E85D26; stroke-width:10; stroke-linecap:round; opacity:.12; }
+    .f05-route { fill:none; stroke:#E85D26; stroke-width:2; stroke-linecap:round; }
+    .f05-route-label { position:absolute; left:0; right:0; top:57cqh; text-align:center; color:#E85D26; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .f05-lock { position:absolute; left:46cqw; top:47cqh; width:8cqw; height:10cqh; box-sizing:border-box; border:2px solid #E85D26; color:#E85D26; background:#111111; text-align:center; font-size:4cqw; line-height:7cqh; transform-origin:50% 100%; }
+    .f05-lock-shackle { position:absolute; left:2.1cqw; top:-3.2cqh; width:3.8cqw; height:4.6cqh; box-sizing:border-box; border:2px solid #E85D26; border-bottom:0; }
+  </style>
+  <div data-hf-id="hf-bvev" id="root" data-composition-id="05-secure-route" data-width="1920" data-height="1080" data-duration="7.9">
+    <div data-hf-id="hf-u74e" class="clip f05-ground" data-start="0" data-duration="7.9" data-track-index="0"></div>
+    <section data-hf-id="hf-i3ne" class="f05-stage">
+      <div data-hf-id="hf-l840" class="f05-chrome" data-layout-allow-overlap>connection / before the page</div>
+      <div data-hf-id="hf-b7nn" class="f05-title">make the route secure.</div>
+      <div data-hf-id="hf-gz4y" class="f05-card f05-browser">browser<div data-hf-id="hf-hb53" class="f05-small">ready to connect</div></div>
+      <div data-hf-id="hf-jgnc" class="f05-card f05-server">server<div data-hf-id="hf-ybs6" class="f05-small">the IP address points here</div></div>
+      <svg data-hf-id="hf-lglh" class="f05-route-svg" viewBox="0 0 768 140" aria-hidden="true">
+        <path data-hf-id="hf-5vj2" class="f05-route-glow" d="M 0 70 L 768 70" />
+        <path data-hf-id="hf-t3xe" class="f05-route" d="M 0 70 L 768 70" />
+      </svg>
+      <div data-hf-id="hf-zv2a" class="f05-route-label">connection</div>
+      <div data-hf-id="hf-sasw" class="f05-lock"><div data-hf-id="hf-hu2z" class="f05-lock-shackle"></div>⌑</div>
+    </section>
+  </div>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const q = (selector) => document.querySelector(selector);
+    const route = q('.f05-route');
+    const glow = q('.f05-route-glow');
+    [route, glow].forEach((path) => {
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
+    });
+    const tl = gsap.timeline({ paused:true });
+    tl.fromTo(q('.f05-browser'), { x:-330, rotateY:24, opacity:0 }, { x:0, rotateY:12, opacity:1, duration:1.05, ease:'power3.out' }, 0)
+      .fromTo(q('.f05-server'), { x:330, rotateY:-24, opacity:0 }, { x:0, rotateY:-12, opacity:1, duration:1.05, ease:'power3.out' }, .18)
+      .fromTo(q('.f05-title'), { y:28, opacity:0 }, { y:0, opacity:1, duration:.55, ease:'power2.out' }, .45)
+      .fromTo(q('.f05-chrome'), { y:12, opacity:0 }, { y:0, opacity:1, duration:.4, ease:'power2.out' }, .6)
+      .to(q('.f05-browser'), { y:-6, duration:1.1, ease:'sine.inOut', yoyo:true, repeat:2 }, 1.18)
+      .to(q('.f05-server'), { y:6, duration:1.1, ease:'sine.inOut', yoyo:true, repeat:2 }, 1.18)
+      .to(route, { strokeDashoffset:0, duration:1.65, ease:'power2.out' }, 2.7)
+      .to(glow, { strokeDashoffset:0, duration:1.65, ease:'power2.out' }, 2.7)
+      .fromTo(q('.f05-route-label'), { y:14, opacity:0 }, { y:0, opacity:1, duration:.5, ease:'power1.out' }, 4.25)
+      .fromTo(q('.f05-lock'), { scale:.55, opacity:0, rotate:-10 }, { scale:1, opacity:1, rotate:0, duration:.55, ease:'back.out(1.7)' }, 5.8)
+      .fromTo(q('.f05-lock-shackle'), { scaleY:.05, opacity:0 }, { scaleY:1, opacity:1, duration:.38, ease:'power3.out' }, 6.18);
+    window.__timelines['05-secure-route'] = tl;
+  </script>
+</template>

@@ -1,0 +1,80 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; overflow:hidden; container-type:size; color:#F0ECE5; font-family:sans-serif; }
+    .clip { position:absolute; inset:0; }
+    .f02-ground { background:#111111; }
+    .f02-kicker { position:absolute; left:6cqw; top:5cqh; color:#E85D26; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .f02-title { position:absolute; left:6cqw; top:8cqh; font-size:6cqw; font-weight:900; letter-spacing:-.04em; line-height:.95; }
+    .f02-panel { position:absolute; top:34cqh; width:37cqw; height:35cqh; box-sizing:border-box; border-top:1px solid #282826; padding-top:2cqh; }
+    .f02-left { left:6cqw; }
+    .f02-right { right:6cqw; color:#E85D26; }
+    .f02-label { color:#E85D26; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .f02-domain { margin-top:1.7cqh; font-size:7cqw; font-weight:900; letter-spacing:-.06em; line-height:.78; }
+    .f02-domain-part { display:inline-block; }
+    .f02-domain-dot { display:block; }
+    .f02-hint { margin-top:2.4cqh; width:27cqw; color:#888880; font-size:1.7cqw; font-weight:400; letter-spacing:0; line-height:1.35; }
+    .f02-slot-wrap { position:relative; margin-top:2.25cqh; width:35cqw; height:10.5cqh; }
+    .f02-slot { position:absolute; inset:0; width:100%; height:100%; overflow:visible; }
+    .f02-slot path { fill:none; stroke:#E85D26; stroke-width:2; stroke-linecap:square; }
+    .f02-ip { position:absolute; left:1.3cqw; top:2.2cqh; font-size:3.55cqw; font-weight:900; letter-spacing:-.04em; line-height:1; white-space:nowrap; }
+    .f02-link { position:absolute; left:43cqw; top:48.2cqh; width:14cqw; height:4.5cqh; overflow:visible; }
+    .f02-link path { fill:none; stroke:#E85D26; stroke-width:2.5; stroke-linecap:square; stroke-linejoin:miter; }
+    .f02-link-dot { fill:#E85D26; }
+    .f02-divider { position:absolute; left:50%; top:34cqh; bottom:31cqh; width:1px; margin-left:-.5px; background:#282826; }
+  </style>
+  <div data-hf-id="hf-79xd" id="root" data-composition-id="02-find-ip" data-width="1920" data-height="1080" data-duration="8">
+    <div data-hf-id="hf-fgce" class="clip f02-ground" data-start="0" data-duration="8" data-track-index="0"></div>
+    <div data-hf-id="hf-ofcf" class="clip" data-start="0" data-duration="8" data-track-index="1">
+      <div data-hf-id="hf-lpxt" class="f02-kicker" data-layout-allow-overlap>the first question</div>
+      <div data-hf-id="hf-5pbd" class="f02-title" data-layout-allow-overlap>where, exactly?</div>
+      <div data-hf-id="hf-eebc" class="f02-panel f02-left" id="f02-left-panel" data-layout-allow-overlap>
+        <div data-hf-id="hf-j5dk" class="f02-label" data-layout-allow-overlap>what you type</div>
+        <div data-hf-id="hf-rxyj" class="f02-domain" aria-label="google dot com" data-layout-allow-overlap><span data-hf-id="hf-csut" class="f02-domain-part" data-layout-allow-overlap>google</span><span data-hf-id="hf-l7fe" class="f02-domain-part f02-domain-dot" data-layout-allow-overlap>.com</span></div>
+        <div data-hf-id="hf-7uju" class="f02-hint" data-layout-allow-overlap>A name people can remember.</div>
+      </div>
+      <div data-hf-id="hf-bife" class="f02-divider" id="f02-divider"></div>
+      <div data-hf-id="hf-42by" class="f02-panel f02-right" id="f02-right-panel">
+        <div data-hf-id="hf-maya" class="f02-label">what networks need</div>
+        <div data-hf-id="hf-gqbq" class="f02-slot-wrap">
+          <svg data-hf-id="hf-zsq2" class="f02-slot" viewBox="0 0 672 113" aria-hidden="true">
+            <path data-hf-id="hf-0q1w" id="f02-slot-top" d="M1 1 H671" />
+            <path data-hf-id="hf-64p2" id="f02-slot-right" d="M671 1 V112" />
+            <path data-hf-id="hf-gvel" id="f02-slot-bottom" d="M671 112 H1" />
+            <path data-hf-id="hf-rzwe" id="f02-slot-left" d="M1 112 V1" />
+          </svg>
+          <div data-hf-id="hf-qnew" class="f02-ip" id="f02-ip">000.000.000.000</div>
+        </div>
+        <div data-hf-id="hf-xju2" class="f02-hint">A numeric destination they can route to.</div>
+      </div>
+      <svg data-hf-id="hf-zg7l" class="f02-link" id="f02-link" viewBox="0 0 269 49" aria-hidden="true">
+        <circle data-hf-id="hf-obqd" class="f02-link-dot" cx="3" cy="24.5" r="3" />
+        <path data-hf-id="hf-hahh" id="f02-link-path" d="M12 24.5 H246 M246 24.5 L229 8 M246 24.5 L229 41" />
+      </svg>
+    </div>
+  </div>
+  <script>
+    const f02 = gsap.timeline({ paused:true });
+    const f02Paths = ["#f02-slot-top", "#f02-slot-right", "#f02-slot-bottom", "#f02-slot-left", "#f02-link-path"];
+    f02Paths.forEach((selector) => {
+      const path = document.querySelector(selector);
+      const length = path.getTotalLength();
+      gsap.set(path, { strokeDasharray:length, strokeDashoffset:length });
+    });
+    gsap.set(["#f02-right-panel", "#f02-divider", "#f02-link", "#f02-ip"], { autoAlpha:0 });
+    f02.fromTo(".f02-kicker", { y:-18, autoAlpha:0 }, { y:0, autoAlpha:1, duration:.45, ease:"power3.out" }, 0)
+       .fromTo(".f02-title", { y:-36, autoAlpha:0 }, { y:0, autoAlpha:1, duration:.6, ease:"power3.out" }, .08)
+       .fromTo("#f02-left-panel", { x:-110, scale:.94, rotateY:8, transformOrigin:"right center", autoAlpha:0 }, { x:0, scale:1, rotateY:0, autoAlpha:1, duration:.75, ease:"power3.out" }, .12)
+       .fromTo(".f02-domain-part", { y:58, autoAlpha:0 }, { y:0, autoAlpha:1, duration:.58, stagger:.22, ease:"power3.out" }, .48)
+       .fromTo("#f02-divider", { scaleY:0, transformOrigin:"center top", autoAlpha:0 }, { scaleY:1, autoAlpha:1, duration:.45, ease:"power2.out" }, 2.4)
+       .fromTo("#f02-right-panel", { x:110, scale:.94, rotateY:-8, transformOrigin:"left center", autoAlpha:0 }, { x:0, scale:1, rotateY:0, autoAlpha:1, duration:.72, ease:"power3.out" }, 2.48);
+    ["#f02-slot-top", "#f02-slot-right", "#f02-slot-bottom", "#f02-slot-left"].forEach((selector, i) => {
+      f02.to(selector, { strokeDashoffset:0, duration:.48, ease:"power2.out" }, 2.92 + i * .34);
+    });
+    f02.fromTo("#f02-ip", { y:14, autoAlpha:0 }, { y:0, autoAlpha:1, duration:.5, ease:"power2.out" }, 4.2)
+       .fromTo("#f02-link", { autoAlpha:0 }, { autoAlpha:1, duration:.01 }, 5.3)
+       .to("#f02-link-path", { strokeDashoffset:0, duration:.78, ease:"power2.out" }, 5.3)
+       .fromTo(".f02-link-dot", { scale:0, transformOrigin:"center" }, { scale:1, duration:.32, ease:"back.out(2)" }, 5.3);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["02-find-ip"] = f02;
+  </script>
+</template>

@@ -1,0 +1,37 @@
+<template>
+  <style>
+    #root{position:absolute;inset:0;width:100%;height:100%;container-type:size;overflow:hidden;color:#111;font-family:sans-serif}
+    .f07-http-request-bg{position:absolute;inset:0;background:#E85D26}
+    .f07-http-request-kicker{position:absolute;left:6cqw;top:7cqh;font:500 1cqw monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.62}
+    .f07-http-request-title{position:absolute;left:6cqw;top:19cqh;margin:0;font-size:12cqw;font-weight:900;letter-spacing:-.065em;line-height:.82;text-transform:lowercase}
+    .f07-http-request-rule{position:absolute;left:6cqw;top:49cqh;width:19cqw;height:2px;background:#111}
+    .f07-http-request-browser,.f07-http-request-server{position:absolute;font:500 .9cqw monospace;letter-spacing:.14em;text-transform:uppercase}
+    .f07-http-request-browser{left:6cqw;top:56cqh}.f07-http-request-server{right:7cqw;top:70cqh}
+    .f07-http-request-route{position:absolute;left:15cqw;top:62cqh;width:69cqw;height:1px;background:rgba(17,17,17,.58);transform:rotate(11deg);transform-origin:left center}
+    .f07-http-request-route:after{content:"";position:absolute;right:-.25cqw;top:-.35cqw;width:.7cqw;height:.7cqw;background:#111}
+    .f07-http-request-lock{position:absolute;left:17cqw;top:58cqh;width:1.5cqw;height:1.5cqh;border:2px solid #111}
+    .f07-http-request-lock:before{content:"";position:absolute;left:.3cqw;bottom:100%;width:.7cqw;height:1cqh;border:2px solid #111;border-bottom:0;border-radius:1cqw 1cqw 0 0}
+    .f07-http-request-card{position:absolute;left:56cqw;top:38cqh;width:30cqw;padding:2.2cqw;border:2px solid #111;background:#E85D26;box-sizing:border-box;filter:url(#f07-http-request-streak)}
+    .f07-http-request-card-label{font:500 .85cqw monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+    .f07-http-request-line{height:2px;width:100%;margin:1.8cqh 0;background:#111}
+    .f07-http-request-get{display:inline-block;min-width:15cqw;font:900 6cqw/1 monospace;letter-spacing:-.08em}
+    .f07-http-request-caret{display:inline-block;width:.45cqw;height:5.3cqw;margin-left:.4cqw;background:#111;vertical-align:-.45cqw}
+    .f07-http-request-meta{margin-top:1.5cqh;font-size:1.3cqw;font-weight:600;text-transform:lowercase}
+    .f07-http-request-server-mark{position:absolute;right:6cqw;top:58cqh;width:10cqw;height:10cqh;border:2px solid #111;box-sizing:border-box}.f07-http-request-server-mark:before,.f07-http-request-server-mark:after{content:"";position:absolute;left:2cqw;right:2cqw;height:2px;background:#111}.f07-http-request-server-mark:before{top:3cqh}.f07-http-request-server-mark:after{bottom:3cqh}
+    .f07-http-request-note{position:absolute;left:6cqw;bottom:9cqh;width:37cqw;font-size:1.5cqw;font-weight:600;line-height:1.18;text-transform:lowercase}
+  </style>
+  <div data-hf-id="hf-zkjj" id="root" data-composition-id="07-http-request" data-width="1920" data-height="1080" data-duration="8.4">
+    <div data-hf-id="hf-evl6" class="clip f07-http-request-bg" data-start="0" data-duration="8.4" data-track-index="0"></div>
+    <section data-hf-id="hf-g62j" class="clip f07-http-request-content" data-start="0" data-duration="8.4" data-track-index="1">
+      <svg data-hf-id="hf-30au" width="0" height="0" aria-hidden="true" style="position:absolute"><filter data-hf-id="hf-9y21" id="f07-http-request-streak" x="-50%" y="-50%" width="200%" height="200%"><fegaussianblur data-hf-id="hf-i6ns" id="f07-http-request-streak-blur" in="SourceGraphic" stdDeviation="0 0" /></filter></svg>
+      <div data-hf-id="hf-tyc1" class="f07-http-request-kicker">HTTP / ASK FOR THE PAGE</div><h1 data-hf-id="hf-n2k9" class="f07-http-request-title" data-layout-allow-overlap>send<br data-hf-id="hf-x5px">the ask.</h1><div data-hf-id="hf-7eer" class="f07-http-request-rule"></div><div data-hf-id="hf-odyt" class="f07-http-request-browser" data-layout-allow-overlap>browser</div><div data-hf-id="hf-ul0w" class="f07-http-request-lock"></div><div data-hf-id="hf-0t0k" class="f07-http-request-route"></div><div data-hf-id="hf-hh0a" class="f07-http-request-server-mark"></div><div data-hf-id="hf-z313" class="f07-http-request-server" data-layout-allow-overlap>server</div>
+      <div data-hf-id="hf-yf7v" class="f07-http-request-card"><div data-hf-id="hf-4r9e" class="f07-http-request-card-label">secure request packet</div><div data-hf-id="hf-8frj" class="f07-http-request-line"></div><span data-hf-id="hf-pph0" class="f07-http-request-get" data-layout-allow-overlap></span><i data-hf-id="hf-mbeu" class="f07-http-request-caret"></i><div data-hf-id="hf-2fc3" class="f07-http-request-meta">page resource</div></div><div data-hf-id="hf-tash" class="f07-http-request-note">a small, structured request travels through the locked route.</div>
+    </section>
+  </div>
+  <script>
+    (()=>{const tl=gsap.timeline({paused:true}),card=document.querySelector('.f07-http-request-card'),text=document.querySelector('.f07-http-request-get'),caret=document.querySelector('.f07-http-request-caret'),blur=document.getElementById('f07-http-request-streak-blur'),blurState={v:0},write=()=>blur.setAttribute('stdDeviation',`${blurState.v} 0`),states=[{t:0,text:''},{t:.7,text:'G'},{t:1.05,text:'GE'},{t:1.38,text:'GET'},{t:1.95,text:'GET '},{t:2.36,text:'GET /'}],at=t=>{for(let i=states.length-1;i>=0;i--)if(t>=states[i].t)return states[i].text;return''},driver={t:0};
+      tl.fromTo(['.f07-http-request-kicker','.f07-http-request-title','.f07-http-request-rule'],{opacity:0,y:28},{opacity:1,y:0,duration:.5,stagger:.09,ease:'power3.out'},0).fromTo(['.f07-http-request-browser','.f07-http-request-lock','.f07-http-request-route','.f07-http-request-server-mark','.f07-http-request-server'],{opacity:0},{opacity:1,duration:.5,stagger:.08,ease:'power2.out'},.35).fromTo(card,{opacity:0,y:35},{opacity:1,y:0,duration:.45,ease:'power3.out'},.45);
+      tl.to(driver,{t:3,duration:3,ease:'none',onUpdate:()=>{text.textContent=at(driver.t);caret.style.opacity=Math.sin(driver.t*Math.PI*2)>0?'1':'0'}},0);
+      tl.to(card,{x:-80,y:15,duration:.28,ease:'power3.in'},3).to(card,{x:420,y:115,duration:.34,ease:'none'},3.28).to(card,{x:530,y:137,duration:2.48,ease:'power4.out'},3.62);tl.to(blurState,{v:18,duration:.28,ease:'power3.in',onUpdate:write},3).to(blurState,{v:0,duration:2.82,ease:'power4.out',onUpdate:write},3.62);tl.fromTo('.f07-http-request-note',{opacity:0,y:16},{opacity:1,y:0,duration:.4,ease:'power3.out'},6.25);window.__timelines['07-http-request']=tl;})();
+  </script>
+</template>

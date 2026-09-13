@@ -1,0 +1,17 @@
+Topic: What happens when you type google.com into a browser?
+
+Audience: Non-technical people who are curious about how the internet works.
+
+Story:
+1. A user types google.com into a browser.
+2. The browser needs to find Google's IP address.
+3. A simplified DNS lookup finds the address.
+4. DNS returns an IP address.
+5. The browser establishes a connection.
+6. The HTTPS/TLS handshake makes that connection private and authenticated.
+7. The browser sends an HTTP request.
+8. Google's server responds with page resources.
+9. The browser renders the webpage.
+10. The process is summarized end-to-end.
+
+Constraints: 1920x1080 landscape at 30 fps. Modern premium technology explainer with a dark background, minimal geometric illustrations, large clean typography, smooth professional motion, diagrams, network nodes, animated packets, browser UI, and server illustrations. No AI avatar, no generic stock footage. Visuals teach the concept.

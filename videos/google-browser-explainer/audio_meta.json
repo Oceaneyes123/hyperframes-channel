@@ -1,0 +1,58 @@
+{
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "narration": ".media/audio/voice/narration.wav",
+  "total_duration_s": 87.39401360544218,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 6.132995128631592
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 7.25545072555542
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 11.049332618713379
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 6.777385711669922
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 7.129964351654053
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 12.734310150146484
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 7.664881706237793
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 10.204838752746582
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 8.48379135131836
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 7.366265773773193
+    }
+  ]
+}

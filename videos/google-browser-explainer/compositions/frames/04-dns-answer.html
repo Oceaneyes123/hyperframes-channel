@@ -1,0 +1,42 @@
+<template>
+  <style>
+    #root { position:absolute; inset:0; overflow:hidden; container-type:size; color:#111111; font-family:sans-serif; }
+    .clip { position:absolute; inset:0; }
+    .f04-ground { background:#E85D26; }
+    .f04-mono { font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .f04-chrome { position:absolute; left:6cqw; right:6cqw; height:1px; background:rgba(17,17,17,.25); }
+    .f04-answer { position:absolute; left:6cqw; top:22cqh; font-size:11cqw; font-weight:900; letter-spacing:-.05em; line-height:.85; }
+    .f04-route-label { position:absolute; left:6cqw; top:63cqh; font-size:1.1cqw; color:rgba(17,17,17,.62); }
+    .f04-browser { position:absolute; left:6cqw; top:71cqh; width:16cqw; border-top:2px solid #111; padding-top:1cqh; font-size:2cqw; font-weight:800; }
+    .f04-slot { position:absolute; right:7cqw; top:68cqh; width:31cqw; height:7cqh; border:2px solid rgba(17,17,17,.42); box-sizing:border-box; padding:1.6cqh 1.5cqw; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; color:rgba(17,17,17,.55); }
+    .f04-packet { position:absolute; right:7cqw; top:33cqh; width:31cqw; box-sizing:border-box; transform-origin:100% 0; border:2px solid #111; padding:3cqw; font-size:2.5cqw; font-weight:700; background:#E85D26; }
+    .f04-packet strong { display:block; font-size:4cqw; letter-spacing:-.03em; margin-top:1cqh; }
+    .f04-note { position:absolute; left:6cqw; top:76cqh; width:43cqw; font-size:2cqw; line-height:1.2; }
+    .f04-route { position:absolute; left:21cqw; top:73cqh; width:48cqw; height:7cqh; overflow:visible; }
+    .f04-route path { fill:none; stroke:#111; stroke-width:4; stroke-linecap:square; }
+    .f04-route-dot { fill:#111; }
+  </style>
+  <div data-hf-id="hf-vbth" id="root" data-composition-id="04-dns-answer" data-width="1920" data-height="1080" data-duration="7.5">
+    <section data-hf-id="hf-kmiv" class="clip f04-ground" data-start="0" data-duration="7.5" data-track-index="0"></section>
+    <section data-hf-id="hf-q2qw" class="clip" data-start="0" data-duration="7.5" data-track-index="1">
+      <div data-hf-id="hf-d44v" class="f04-chrome" style="top:7cqh"></div><div data-hf-id="hf-tm32" class="f04-chrome" style="top:79cqh"></div>
+      <div data-hf-id="hf-amfo" class="f04-mono" id="f04-kicker" style="position:absolute;left:6cqw;top:10cqh">dns reply / destination found</div>
+      <div data-hf-id="hf-oefy" class="f04-answer" id="f04-answer">here's<br data-hf-id="hf-x5px">the route.</div>
+      <div data-hf-id="hf-70yd" class="f04-route-label f04-mono" id="f04-route-label">return path</div><div data-hf-id="hf-efys" class="f04-browser" id="f04-browser">browser</div>
+      <svg data-hf-id="hf-4b7f" class="f04-route" viewBox="0 0 920 140" aria-hidden="true"><path data-hf-id="hf-1u1c" id="f04-return-path" d="M 900 34 L 585 34 L 520 105 L 20 105" /><circle data-hf-id="hf-2ear" class="f04-route-dot" cx="20" cy="105" r="8" /></svg>
+      <div data-hf-id="hf-5izn" class="f04-slot" id="f04-slot">destination / awaiting reply</div>
+      <div data-hf-id="hf-n6u8" class="f04-packet" id="f04-packet"><div data-hf-id="hf-bp2q" class="f04-mono">reply packet</div><strong data-hf-id="hf-13pr">IP address</strong>the numeric location the browser can contact</div>
+      <div data-hf-id="hf-mxl6" class="f04-note" id="f04-note" data-layout-allow-overlap>DNS does not fetch the page. It tells the browser where to ask for it.</div>
+    </section>
+  </div>
+  <script>
+    (() => {
+      const tl = gsap.timeline({ paused: true });
+      const path = document.querySelector('#f04-return-path'); const length = path.getTotalLength(); path.style.strokeDasharray = `${length}`; path.style.strokeDashoffset = `${length}`;
+      const blur = { value:22 }; const packet = document.querySelector('#f04-packet'); const drawBlur = () => { packet.style.filter = `blur(${blur.value}px)`; }; drawBlur();
+      gsap.set(['#f04-kicker','#f04-answer','#f04-route-label','#f04-browser','#f04-slot','#f04-note'], { opacity:0 }); gsap.set('#f04-packet', { opacity:0, x:780 });
+      tl.fromTo('#f04-kicker',{opacity:0,y:-18},{opacity:1,y:0,duration:.32,ease:'power3.out'},.08).fromTo('#f04-answer',{opacity:0,x:-70},{opacity:1,x:0,duration:.54,ease:'power4.out'},.16).fromTo('#f04-browser',{opacity:0,y:18},{opacity:1,y:0,duration:.36,ease:'power3.out'},.42).fromTo('#f04-route-label',{opacity:0,y:12},{opacity:1,y:0,duration:.32,ease:'power2.out'},.66).to(path,{strokeDashoffset:0,duration:1.3,ease:'power2.out'},.78).fromTo('#f04-slot',{opacity:0,scaleX:.82},{opacity:1,scaleX:1,duration:.42,ease:'power3.out'},1.63).fromTo('#f04-packet',{opacity:0,x:780},{opacity:1,x:0,duration:.56,ease:'power4.out'},2.3).to(blur,{value:0,duration:.56,ease:'power4.out',onUpdate:drawBlur},2.3).to('#f04-packet',{y:'35cqh',scale:.3,duration:.48,ease:'power3.out'},4.72).to('#f04-slot',{borderColor:'#111',color:'#111',duration:.32,ease:'power2.out'},5.18).fromTo('#f04-note',{opacity:0,y:16},{opacity:1,y:0,duration:.38,ease:'power2.out'},5.52);
+      window.__timelines = window.__timelines || {}; window.__timelines['04-dns-answer'] = tl;
+    })();
+  </script>
+</template>
