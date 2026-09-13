@@ -1,0 +1,32 @@
+Create a faceless explainer video.
+
+Topic: DNS Explained Visually
+
+Audience: Beginners, junior developers, IT students, homelab users, and non-technical viewers who want to understand how DNS works without deep networking knowledge.
+
+Goal: Help viewers understand what DNS is, why it exists, and what happens behind the scenes when they type a domain name such as `google.com` into a browser.
+
+By the end of the video, viewers should understand why computers need IP addresses instead of domain names; the roles of a DNS resolver, root DNS servers, TLD servers, and authoritative DNS servers; how a name is translated into an IP address; and why DNS caching makes later requests faster.
+
+Length: 90–120 seconds. Format: 1920x1080 landscape, 30 fps.
+
+Style: A modern premium technology explainer with a dark neutral background, high-contrast typography, minimal geometric illustrations, smooth professional transitions, animated network diagrams, clearly labeled servers and devices, animated packets, simple component colors, readable text, and restrained depth and glow. Motion should explain rather than decorate.
+
+Tone: Clear, friendly, educational, technically accurate, and free of needless jargon.
+
+Required story:
+1. Start on a browser window as `google.com` is typed. Ask: “How does your computer know where google.com is?” Establish that computers communicate using IP addresses, not domain names.
+2. Introduce DNS as the translation of `google.com` to an IP address such as `142.x.x.x`; briefly use a contact-list or phone-book analogy.
+3. Show the computer sending a query to a recursive DNS resolver, operated by an ISP or public provider.
+4. The resolver checks its cache. A cache hit returns an IP immediately; a miss continues the lookup.
+5. The resolver asks a root DNS server. The root does not return the final IP; it directs the resolver to the `.com` TLD servers.
+6. The resolver asks the `.com` TLD server, which returns the authoritative nameserver information for `google.com`.
+7. The resolver asks the authoritative DNS server, which returns the record: `google.com → 142.x.x.x`.
+8. Return the answer authoritative server → resolver → computer, then show the browser connecting to the returned IP. DNS locates the server; the website connection happens afterward.
+9. Recap the full chain: User → DNS Resolver → Root Server → TLD Server → Authoritative DNS Server → IP Address → User.
+10. Show the resolver caching `google.com → IP address`; later requests can often skip root, TLD, and authoritative servers until the cached record expires.
+11. End: “DNS turns human-friendly domain names into the IP addresses computers use to communicate.” Optionally tease what happens after DNS finds the server.
+
+Reusable visual components: desktop/laptop client, browser window, DNS query and response packets, recursive resolver, root/TLD/authoritative DNS servers, cache/database, IP labels, animated network lines, and an internet/cloud representation.
+
+Technical accuracy: simplify without implying that the root knows the final IP, the TLD normally returns the website IP, DNS establishes the website connection, every request always reaches every layer, or a server role is one physical server. Mention caching. Avoid avatars, talking heads, stock footage, excessive effects, dense copy, too many record types, DNSSEC, zone-file internals, anycast details, excess jargon, fake terminal commands, and decorative motion.

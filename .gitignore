@@ -1,5 +1,6 @@
 # Agent-installed workflow packages
 .agents/
+node_modules/
 
 # HyperFrames generated media and Studio caches
 videos/**/.media/
