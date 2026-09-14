@@ -1,8 +1,6 @@
 {
   "provider": "supertonic-3",
   "voice": "M1",
-  "narration": ".media/audio/voice/narration.wav",
-  "total_duration_s": 87.39401360544218,
   "voices": [
     {
       "id": "line-1",

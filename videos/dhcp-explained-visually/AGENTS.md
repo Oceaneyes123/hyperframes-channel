@@ -86,18 +86,6 @@ npm run check
 
 Fix all errors before presenting the result. Warnings should be reviewed before rendering.
 
-## Narrated Explainers — Efficient Build Order
-
-For a narrated multi-scene explainer, lock narration and timing before building frames:
-
-1. Approve storyboard and script.
-2. Generate the final per-scene narration WAVs.
-3. Derive one canonical scene timing table from those WAVs; each scene maps to its narration WAV.
-4. Build frames against those locked timings and mount each narration WAV at its scene start.
-5. Run runtime checks and midpoint snapshots early; mark only visually confirmed intentional overlaps with the narrowest `data-layout-allow-*` attribute.
-
-Keep one audio metadata record per scene; do not concatenate narration WAVs into a continuous track. Avoid broad HTML/skill dumps: inspect only the failing selector or relevant section.
-
 ## Key Rules
 
 1. Every timed element needs `data-start` and a duration. `data-start` is what marks it as timed; `data-track-index` is an optional Studio display lane the render never reads

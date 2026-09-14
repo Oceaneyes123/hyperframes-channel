@@ -5,57 +5,52 @@
     {
       "id": "line-1", "frame": 1,
       "path": ".media/audio/voice/line-1.wav",
-      "duration_s": 9.229312896728516
+      "duration_s": 6.709758281707764
     },
     {
       "id": "line-2", "frame": 2,
       "path": ".media/audio/voice/line-2.wav",
-      "duration_s": 15.646997451782227
+      "duration_s": 9.006114959716797
     },
     {
       "id": "line-3", "frame": 3,
       "path": ".media/audio/voice/line-3.wav",
-      "duration_s": 15.275303840637207
+      "duration_s": 10.44946575164795
     },
     {
       "id": "line-4", "frame": 4,
       "path": ".media/audio/voice/line-4.wav",
-      "duration_s": 13.939305305480957
+      "duration_s": 9.225488662719727
     },
     {
       "id": "line-5", "frame": 5,
       "path": ".media/audio/voice/line-5.wav",
-      "duration_s": 14.860575675964355
+      "duration_s": 15.28050422668457
     },
     {
       "id": "line-6", "frame": 6,
       "path": ".media/audio/voice/line-6.wav",
-      "duration_s": 15.570154190063477
+      "duration_s": 9.691638946533203
     },
     {
       "id": "line-7", "frame": 7,
       "path": ".media/audio/voice/line-7.wav",
-      "duration_s": 14.515302658081055
+      "duration_s": 11.520942687988281
     },
     {
       "id": "line-8", "frame": 8,
       "path": ".media/audio/voice/line-8.wav",
-      "duration_s": 14.333373069763184
+      "duration_s": 11.586668014526367
     },
     {
       "id": "line-9", "frame": 9,
       "path": ".media/audio/voice/line-9.wav",
-      "duration_s": 17.646800994873047
+      "duration_s": 11.691149711608887
     },
     {
       "id": "line-10", "frame": 10,
       "path": ".media/audio/voice/line-10.wav",
-      "duration_s": 14.538337707519531
-    },
-    {
-      "id": "line-11", "frame": 11,
-      "path": ".media/audio/voice/line-11.wav",
-      "duration_s": 18.0363826751709
+      "duration_s": 10.47234058380127
     }
   ]
 }

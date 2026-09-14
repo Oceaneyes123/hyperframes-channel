@@ -5,12 +5,12 @@ Use the relevant HyperFrames skill before changing a composition.
 For narrated multi-scene explainers, lock narration and timing before building frames:
 
 1. Approve storyboard and script.
-2. Generate the final continuous narration track.
-3. Derive one canonical scene timing table; each scene maps to its narration beat.
-4. Build frames against those timings and mount narration as one audio track from `0`.
+2. Generate the final per-scene narration WAVs.
+3. Derive one canonical scene timing table; each scene maps to its narration WAV.
+4. Build frames against those timings and mount each narration WAV at its scene start.
 5. Run runtime checks and midpoint snapshots early; mark only visually confirmed intentional overlaps with the narrowest `data-layout-allow-*` attribute.
 
-Do not create per-line audio metadata incompatible with the assembler's expected contract. Inspect only the failing selector or relevant file section; avoid broad HTML or skill dumps.
+Keep one audio metadata record per scene; do not concatenate narration WAVs into a continuous track. Inspect only the failing selector or relevant file section; avoid broad HTML or skill dumps.
 
 ## Token-Efficient Creation Pipeline
 
@@ -29,21 +29,20 @@ Use one source of truth through this flow:
 
 ## User–Agent Conversation Protocol
 
-Use three decision gates for a narrated explainer:
+Use two decision gates for a narrated explainer:
 
-1. Confirm one compact locked brief and fact sheet.
-2. Approve the combined script and timed storyboard; if sketches are requested, review them all in one pass.
-3. Approve the final preview before rendering.
+1. Approve the combined script and timed storyboard; if sketches are requested, review them all in one pass.
+2. Approve the final preview before rendering.
 
 Ask follow-up questions only when a choice materially changes the output. Treat “continue,” “next step,” and “do remaining” as authorization to advance to the next defined gate. Batch feedback into one revision pass.
 
-Progress updates are not approval gates. After storyboard/sketch approval, build every scene, integrate audio, validate, and open the final preview autonomously. Pause only at the brief, storyboard/sketch, and final-preview gates. “Continue offline” and “do remaining” mean keep working until the next real approval gate, not after a small batch of scenes.
+Progress updates are not approval gates. After storyboard/sketch approval, build every scene, integrate audio, validate, and open the final preview autonomously. Pause only at the storyboard/sketch and final-preview gates. “Continue offline” and “do remaining” mean keep working until the next real approval gate, not after a small batch of scenes.
 
 ### Default Production Choices
 
 - TTS: Supertonic 3, not HeyGen.
-- Narration: one continuous track.
-- After assembly, verify the narration is mounted once from 0; do not let per-scene WAV metadata become multiple render audio tracks.
+- Narration: native per-scene tracks.
+- After assembly, verify every narration WAV has a unique audio id and its scene-local start and duration.
 - Use a short time/progression cue (for example, “then,” “next,” or “over time”) when it helps anchor a process, return path, cache, or expiry behavior.
 - Captions: off unless requested.
 - BGM: off unless requested.
@@ -56,7 +55,7 @@ Run repository-wide TTS with:
 py -3 scripts\supertonic_tts.py --project videos\<project>
 ```
 
-Use `--voice`, `--pause`, or `--out` only when the video requires a different default. `--dry-run` verifies script parsing without generating audio.
+Use `--voice` or `--out` only when the video requires a different default. `--dry-run` verifies script parsing without generating audio.
 
 ### Iconography
 

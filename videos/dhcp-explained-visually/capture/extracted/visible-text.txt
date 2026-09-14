@@ -1,0 +1,332 @@
+Create a faceless explainer video.
+
+Topic:
+DHCP Explained Visually — How Your Device Gets an IP Address
+
+Audience:
+Beginners, junior developers, IT students, homelab users, and non-technical viewers who want to understand how devices automatically receive network configuration.
+
+Goal:
+Help viewers understand what DHCP is, why networks use it, and what happens when a device joins a network and receives an IP address.
+
+By the end of the video, viewers should understand:
+
+* Why a device needs an IP address before communicating on a network
+* Why manually configuring every device does not scale
+* What a DHCP server does
+* The DHCP DORA process:
+
+  * Discover
+  * Offer
+  * Request
+  * Acknowledge
+* That DHCP can provide more than just an IP address
+* What a DHCP lease is
+* What happens when the lease needs to be renewed
+
+Length:
+90–120 seconds
+
+Format:
+1920x1080 landscape, 30 fps
+
+Style:
+Modern, premium technology explainer using the repository's established channel design system.
+
+Use:
+
+* Dark neutral background
+* High-contrast typography
+* Clean networking diagrams
+* Minimal geometric illustrations
+* Smooth professional motion
+* Consistent device, server, router, and packet visuals
+* Animated packets showing the direction of network communication
+* Clear labels for Discover, Offer, Request, and Acknowledge
+* Reuse existing networking components where appropriate
+* Motion that explains networking behavior rather than decorative movement
+
+Tone:
+Clear, friendly, educational, and technically accurate.
+
+Keep networking terminology simple and explain jargon when introduced.
+
+Must include:
+
+1. Opening hook
+
+Show a laptop or phone connecting to a Wi-Fi network.
+
+Immediately show a problem:
+
+The device has joined the network but does not yet know what IP address it should use.
+
+Ask:
+
+"How does your device know which IP address to use?"
+
+2. Why DHCP exists
+
+Briefly show what would happen without DHCP.
+
+Visualize multiple devices:
+
+Laptop
+Phone
+Tablet
+Desktop
+Printer
+
+Each would require someone to manually configure:
+
+* IP address
+* subnet mask
+* default gateway
+* DNS server
+
+Then simplify the scene by introducing DHCP.
+
+Explain that DHCP automatically provides network configuration to devices.
+
+3. Device joins the network
+
+Show a new device appearing on the LAN.
+
+It does not yet have a normal assigned IP address.
+
+Introduce the DHCP server somewhere on the same network.
+
+Clearly distinguish:
+
+Client
+
+and
+
+DHCP Server
+
+4. DHCP Discover
+
+Show the device sending a DHCP Discover message.
+
+Visualize it as a broadcast reaching the local network because the client does not yet know where the DHCP server is.
+
+Label the packet prominently:
+
+DHCP DISCOVER
+
+Explain simply:
+
+"I'm new here. Is there a DHCP server that can give me network settings?"
+
+Do not imply that the client already knows the DHCP server's address.
+
+5. DHCP Offer
+
+Show the DHCP server responding.
+
+Label:
+
+DHCP OFFER
+
+Show an offered configuration such as:
+
+IP: 192.168.1.25
+Subnet: 255.255.255.0
+Gateway: 192.168.1.1
+DNS: 192.168.1.1
+Lease: 24 hours
+
+Make clear that this is an offer, not yet the final assignment.
+
+6. DHCP Request
+
+Show the client accepting the offer.
+
+Animate a packet back toward the network.
+
+Label:
+
+DHCP REQUEST
+
+Explain that the client is effectively saying:
+
+"I want to use this offered address."
+
+If useful visually, show that this message also informs other DHCP servers that their offers were not selected.
+
+Keep that secondary detail brief.
+
+7. DHCP Acknowledge
+
+Show the server confirming the lease.
+
+Label:
+
+DHCP ACK
+
+Animate the device changing from an unconfigured state to:
+
+192.168.1.25
+
+Then show:
+
+Laptop
+192.168.1.25
+
+with active network connectivity.
+
+Make this the visual payoff.
+
+8. DORA recap
+
+Show all four steps together:
+
+Discover
+↓
+Offer
+↓
+Request
+↓
+Acknowledge
+
+Highlight the first letters:
+
+D
+O
+R
+A
+
+Then replay the full exchange quickly:
+
+Client
+→ Discover
+→ Server
+
+Server
+→ Offer
+→ Client
+
+Client
+→ Request
+→ Server
+
+Server
+→ ACK
+→ Client
+
+Make DORA easy to remember visually.
+
+9. DHCP provides more than an IP address
+
+Briefly show the DHCP configuration bundle.
+
+For example:
+
+IP Address
+Subnet Mask
+Default Gateway
+DNS Server
+Lease Time
+
+Explain that DHCP often gives the device most of the basic information it needs to communicate on the network.
+
+10. DHCP leases
+
+Show a timer associated with the assigned IP.
+
+Example:
+
+Lease: 24h
+
+Explain that the device does not necessarily own the IP forever.
+
+The DHCP server leases the address for a period of time.
+
+11. Renewal
+
+Show the lease timer progressing.
+
+Before it expires, animate the client contacting the DHCP server to renew the lease.
+
+Keep this section simple.
+
+The important concept is:
+
+The device can usually keep the same IP if the server renews the lease.
+
+12. Ending
+
+Finish with a simple network view containing several devices that have automatically received addresses.
+
+Example:
+
+Laptop — 192.168.1.25
+Phone — 192.168.1.26
+TV — 192.168.1.27
+
+Then summarize:
+
+"DHCP automatically gives devices the network settings they need to communicate."
+
+Optionally tease the next networking topic:
+
+"Now that your device has an IP address, how does it know whether another IP is local or somewhere else?"
+
+This can naturally lead into subnetting, default gateways, or CIDR.
+
+Visual components to reuse or create:
+
+* Laptop/client
+* Phone/client
+* Router
+* DHCP server
+* Network/LAN
+* Packet
+* Broadcast packet
+* IP address badge
+* Subnet mask badge
+* Gateway badge
+* DNS badge
+* Lease timer
+* Configuration panel
+* Connection lines
+
+Reuse shared channel components whenever possible rather than rebuilding equivalent visuals for this video.
+
+Technical accuracy:
+
+Keep the explanation beginner-friendly while remaining technically correct.
+
+Represent DORA as the common IPv4 DHCP flow.
+
+Make clear that DHCP configuration can include more than the IP address.
+
+Do not imply:
+
+* That DHCP is required for all networks
+* That DHCP permanently assigns an IP address
+* That the client initially knows the DHCP server's address
+* That DHCP Discover is sent directly to a known DHCP server in the normal first-contact case
+* That every DHCP deployment uses exactly the same lease duration
+* That the router and DHCP server must always be the same device
+* That DHCP guarantees a device will always receive the same IP address
+
+It is acceptable to simplify packet-level details for beginners, but preserve the actual DORA relationship and direction of communication.
+
+Avoid:
+
+* AI avatars
+* Talking heads
+* Generic stock footage
+* Dense text
+* Excessive packet-header details
+* Deep DHCP option-number explanations
+* DHCP relay details
+* DHCP snooping
+* IPv6 DHCPv6
+* PXE boot
+* Advanced enterprise DHCP architecture
+* Excessive jargon
+* Decorative animations that do not improve understanding
+
+Use the repo HyperFrames workflow. Create the fact sheet, script, timed storyboard, and sketches for review first. After I approve, continue autonomously through final preview; wait for my explicit approval before rendering.
