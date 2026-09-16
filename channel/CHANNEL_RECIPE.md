@@ -1,21 +1,42 @@
-# HyperFrames Channel Recipe v1
+# HyperFrames Channel Recipe v2
 
-Use this for every new narrated technical explainer.
+Use one source of truth: `SCRIPT.md` owns spoken lines and display copy,
+`STORYBOARD.md` maps each line to one visual beat, and `ICON_PLAN.json` names
+the exact local assets. `channel.json` must declare `{ "design":
+"hyperframes-channel", "design_version": "2.0.0" }`.
 
-1. Create `BRIEF.md`, `FACTS.md`, `SCRIPT.md`, and `STORYBOARD.md`; every `## Line N` is one scene.
-2. Add `channel.json` with `{ "design": "hyperframes-channel", "design_version": "1.0.0" }`, run `npm run sync:channel`, and import `channel/styles.css` from every scene.
-3. Write `ICON_PLAN.json` after the timed storyboard: use `fontawesome` for monochrome technical/system objects and `icons8` only for production hero illustrations. Resolve every planned icon locally before sketches.
-4. Build icon-first sketches using those exact local assets. Obtain approval and save `review/storyboard-approval.json` with the icon plan and sketch paths before narration.
-5. Run `npm run tts -- --project videos/<project> --sync-index`. It writes the canonical narration, timing metadata, and `audio_timeline.html`, then updates only the existing audio tags.
-6. Build scene markup normally; its audio element timings are generated, not hand-maintained.
-7. Run `npm run validate -- --project videos/<project>` and `npx hyperframes check` before opening final preview. Save final-preview approval before rendering.
+1. Capture facts in `FACTS.md`; choose one beginner mental model.
+2. Write `SCRIPT.md` as 6–10 `## Line N` scenes targeting 45–60 seconds. Keep
+   display copy separate from indented narration and normalize the latter before
+   TTS.
+3. Write a timed `STORYBOARD.md`: `narration_ref: SCRIPT.md#Line N`, objective, dominant visual,
+   `icon_assets`, visible text, animation, beginning/ending state, transition,
+   and complexity. Flag scenes over one idea, 2–5 objects, or ~16 visible words.
+4. Resolve every icon locally, then build actual-icon sketches. Gate 1 requires
+   inspectable sketches and explicit approval; text-only wireframes do not count.
+5. After gate 1, run `npm run tts -- --project videos/<project> --dry-run`, review
+   normalized speech, then synthesize one WAV per scene. The generator measures
+   saved WAV frames and records canonical `audio_meta.json` plus
+   `audio_timeline.html`; do not hand-estimate timings or concatenate tracks.
+6. Build frames using the portrait safe zone and `channel/styles.css`; use
+   vertical source/process/destination primitives and seekable causal motion.
+7. Run `npm run validate -- --project videos/<project>` and `npx hyperframes check`,
+   inspect midpoint snapshots and preview. Gate 2 is explicit final-preview
+   approval. Render only after that approval.
 
-`ICON_PLAN.json` shape:
+`ICON_PLAN.json` entries use `{id, provider, path, role, meaning, color, style}`;
+`provider` is `fontawesome`, `icons8`, or `custom`. Icons8 entries also include
+`source`; colored local icons are valid in any scene, not only hero scenes.
 
-```json
-{"icons":[{"id":"resolver","provider":"fontawesome","role":"system","path":"public/icons/server.svg"},{"id":"hero-browser","provider":"icons8","role":"hero","path":"public/icons8/browser.svg","source":"https://icons8.com/..."}]}
-```
+Reusable starter templates live in `channel/templates/`: `SCRIPT.md`,
+`STORYBOARD.md`, `ICON_PLAN.json`, `channel.json`, and a minimal frame. Copy
+them for a project and keep only files the project uses.
 
-Use `npm run fontawesome-icon -- --name server --project videos/<project>` for Font Awesome. For an approved Icons8 SVG URL, use `npm run icons8-icon -- --name browser --url <svg-url> --attribution <icons8-page-url> --project videos/<project>`; retain the generated `.source.txt` attribution record.
+Useful commands: `python scripts/sync_channel_assets.py --project videos/<project>`,
+`npm run tts -- --project videos/<project> --dry-run`, and
+`npm run validate -- --project videos/<project> --stage plan`. Use `--stage
+preview` after measured audio exists; `npm run validate:all` is plan-only. The
+render stage is entered only after explicit final-preview approval.
 
-Use the channel CSS variables and the diagram conventions in `DESIGN.md`. Do not add a second visual system in `frame.md`.
+An optional `pronunciation.json` can override terms or lines, for example:
+`{"ipv4_style":"grouped","terms":{"SQL":"sequel"},"lines":{"line-1":"A A, A A"}}`.

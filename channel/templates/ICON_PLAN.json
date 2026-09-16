@@ -1,0 +1,5 @@
+{
+  "icons": [
+    {"id":"client","provider":"fontawesome","role":"system","meaning":"request source","color":"client","style":"outlined","path":"public/icons/laptop.svg","scenes":["line-1"]}
+  ]
+}
