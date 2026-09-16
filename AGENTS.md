@@ -1,5 +1,14 @@
 # HyperFrames Narrated Explainers
 
+New channel compositions follow `DESIGN.md` v2: native 1080×1920 portrait,
+safe rectangle x=72..936/y=180..1600, headline ≤6 words, labels 1–4 words,
+about 16 visible words, and 2–5 important objects per scene. Use the semantic
+client/infrastructure/success/warning/external/storage/security colors and local
+colored SVGs throughout the story. Build vertical source → process →
+destination zones with grid/flex and keep 24px label spacing and 48px group
+spacing. Review the story with sound off: packet travel, decisions, and answer
+return must remain legible.
+
 Use the relevant HyperFrames skill before changing a composition.
 
 For narrated multi-scene explainers, lock narration and timing before building frames:
@@ -16,7 +25,9 @@ Keep one audio metadata record per scene; do not concatenate narration WAVs into
 
 Use one source of truth through this flow:
 
-`facts → script → timed storyboard → icon plan → resolve local icons → icon-first sketches → approval → frames + animation → review → render`
+`facts → script → timed storyboard → icon plan → resolve local icons → icon-first sketches → approval → measured TTS → frames + animation → review → render`
+
+Repository v2 portrait defaults override generic skill landscape examples; legacy videos retain v1 until explicitly redesigned.
 
 - Fact-check once at the start and retain a concise source-backed fact sheet; do not re-research during frame work.
 - Write the script and scene timing table together: one narration beat per scene.
@@ -24,7 +35,7 @@ Use one source of truth through this flow:
 - Derive the storyboard from that table, not from a second prose interpretation.
 - Build icon-first sketches with the exact production assets named in `ICON_PLAN.json`; do not approve from text-only or placeholder-icon scene descriptions.
 - Give frame workers only their scene packet, design tokens, and timings—not whole skill documents or project files.
-- For offline Supertonic runs, normalize `audio_meta.json` so each `voices[]` entry has `id`, `frame`, `path`, and `duration_s` before `sync-durations`; the TTS generator may emit line ids without frame ids.
+- For offline Supertonic runs, `scripts/supertonic_tts.py` writes each `voices[]` entry with `id`, `frame`, `path`, measured WAV `duration_s`, `original_text`, `spoken_text`, and a normalization fingerprint. Treat `audio_meta.json` as the canonical timing source; legacy metadata without provenance must not be presented as normalized.
 - Preflight one real local icon `<img src="public/icons/<name>.svg">` in the first sketch before scaling to the full board; this catches broken mask/path assumptions cheaply.
 - Close completed frame workers before dispatching the next batch; if the worker pool is full, keep edits isolated by frame and continue locally rather than retrying duplicate dispatches.
 - Batch one full check with midpoint snapshots; fix errors and visually confirmed defects only.
@@ -62,11 +73,15 @@ Run repository-wide TTS with:
 py -3 scripts\supertonic_tts.py --project videos\<project>
 ```
 
-Use `--voice` or `--out` only when the video requires a different default. `--dry-run` verifies script parsing without generating audio.
+Use `--voice` or `--out` only when the video requires a different default. `--dry-run` prints every original and normalized line without importing the TTS runtime. Optional `pronunciation.json` supports `terms`, per-line `lines`, and `ipv4_style` (`digits` or `grouped`).
 
 ### Iconography
 
-For technical/system objects (server, router, database, device, network, lock, globe, arrow, clock, terminal, firewall), prefer local Font Awesome SVGs. For a hero concept that benefits from a colored illustration, use an approved local Icons8 SVG with its source/attribution record. Never load either provider remotely at render time.
+For technical/system objects (server, router, database, device, network, lock,
+globe, arrow, clock, terminal, firewall), use local SVGs. Prefer approved
+colored SVGs whenever they clarify an object; use Font Awesome for compact
+support symbols. Record provider, role, meaning, color, path, and attribution
+in `ICON_PLAN.json`. Never load a provider remotely at render time.
 
 When an icon is not already local, resolve it before authoring the frame:
 
@@ -76,7 +91,8 @@ npm run fontawesome-icon -- --name <icon-name> --project videos\<project>
 
 The resolver reuses `public/icons/<icon-name>.svg` when present; otherwise it exports the named Font Awesome Free icon there. If it reports that the icon is unavailable, use a concept-specific local SVG rather than a CDN.
 
-For an Icons8 hero asset, add it to `ICON_PLAN.json` first, then download its approved SVG URL and preserve the page URL:
+For any approved Icons8 or other colored local SVG, add it to `ICON_PLAN.json`
+first, then download or author it locally and preserve the source/attribution URL:
 
 ```powershell
 npm run icons8-icon -- --name <name> --url <svg-url> --attribution <icons8-page-url> --project videos\<project>

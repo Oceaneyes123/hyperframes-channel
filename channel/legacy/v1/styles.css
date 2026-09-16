@@ -1,0 +1,23 @@
+/* The channel baseline. Import this from every scene; project CSS may compose, not replace it. */
+:root {
+  --hf-canvas: #0B0F14;
+  --hf-surface: #101C29;
+  --hf-surface-lift: #193F66;
+  --hf-ink: #F5F7FA;
+  --hf-muted: #AAB7C4;
+  --hf-rule: #2A3A4A;
+  --hf-request: #59A8FF;
+  --hf-response: #71D7B2;
+  --hf-warning: #F6B450;
+  --hf-emphasis: #E85D26;
+  --hf-unit: 24px;
+  --hf-inset: 96px;
+  --hf-display: Barlow, Arial, sans-serif;
+  --hf-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.hf-frame { background: var(--hf-canvas); color: var(--hf-ink); font-family: var(--hf-display); }
+.hf-panel, .hf-packet { background: var(--hf-surface); border: 2px solid var(--hf-rule); border-radius: 0; }
+.hf-packet { font-family: var(--hf-mono); }
+.hf-request { color: var(--hf-request); }
+.hf-response { color: var(--hf-response); }
