@@ -3,7 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "fontawesome-icon": "node scripts/fontawesome_icon.mjs"
+    "fontawesome-icon": "node scripts/fontawesome_icon.mjs",
+    "icons8-icon": "node scripts/icons8_icon.mjs",
+    "tts": "py -3 scripts/supertonic_tts.py",
+    "sync:channel": "py -3 scripts/sync_channel_assets.py --all",
+    "validate": "py -3 scripts/validate_project.py",
+    "validate:all": "py -3 scripts/validate_project.py --all",
+    "test": "py -3 -m unittest scripts.test_supertonic_tts scripts.test_validate_project"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "7.3.1",

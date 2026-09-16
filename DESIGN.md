@@ -1,5 +1,6 @@
 ---
 brand: "HyperFrames Channel"
+version: "1.0.0"
 format: "1920x1080"
 colors:
   canvas: "#0B0F14"
