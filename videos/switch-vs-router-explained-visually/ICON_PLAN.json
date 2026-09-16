@@ -1,0 +1,28 @@
+{
+  "icons": [
+    {"id": "laptop", "provider": "fontawesome", "role": "system", "path": "public/icons/laptop.svg"},
+    {"id": "desktop", "provider": "fontawesome", "role": "system", "path": "public/icons/desktop.svg"},
+    {"id": "switch-network", "provider": "fontawesome", "role": "system", "path": "public/icons/network-wired.svg"},
+    {"id": "router-boundary", "provider": "fontawesome", "role": "system", "path": "public/icons/circle-nodes.svg"},
+    {"id": "server", "provider": "fontawesome", "role": "system", "path": "public/icons/server.svg"},
+    {"id": "internet", "provider": "fontawesome", "role": "system", "path": "public/icons/globe.svg"},
+    {"id": "wifi", "provider": "fontawesome", "role": "system", "path": "public/icons/wifi.svg"},
+    {"id": "arrow-right", "provider": "fontawesome", "role": "system", "path": "public/icons/arrow-right.svg"}
+  ],
+  "scenes": [
+    {"frame": "01-the-question", "uses": ["laptop", "desktop", "switch-network", "router-boundary", "internet"]},
+    {"frame": "02-start-inside-the-lan", "uses": ["laptop", "desktop", "switch-network", "router-boundary"]},
+    {"frame": "03-two-kinds-of-address", "uses": ["laptop", "desktop"]},
+    {"frame": "04-the-ethernet-frame", "uses": ["laptop", "switch-network"]},
+    {"frame": "05-switch-forwards-locally", "uses": ["switch-network", "desktop"]},
+    {"frame": "06-how-the-switch-learns", "uses": ["switch-network"]},
+    {"frame": "07-a-remote-destination", "uses": ["laptop", "switch-network", "internet"]},
+    {"frame": "08-meet-the-router", "uses": ["laptop", "switch-network", "router-boundary", "internet"]},
+    {"frame": "09-the-router-chooses-a-network", "uses": ["router-boundary", "server"]},
+    {"frame": "10-side-by-side", "uses": ["switch-network", "router-boundary"]},
+    {"frame": "11-same-network", "uses": ["laptop", "switch-network", "desktop", "router-boundary"]},
+    {"frame": "12-home-router", "uses": ["laptop", "switch-network", "router-boundary", "server", "wifi"]},
+    {"frame": "13-the-takeaway", "uses": ["switch-network", "router-boundary", "arrow-right"]}
+  ],
+  "note": "Font Awesome local SVGs are used for recognizable network entities and functional symbols; custom HTML/CSS shapes carry frames, packets, address badges, ports, tables, boundaries, and routes. The same icon id represents the same concept throughout."
+}

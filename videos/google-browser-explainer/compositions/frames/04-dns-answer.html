@@ -1,15 +1,16 @@
 <template>
   <style>
+@import url("channel/styles.css");body{color:var(--hf-ink)}
     #root { position:absolute; inset:0; overflow:hidden; container-type:size; color:#111111; font-family:sans-serif; }
     .clip { position:absolute; inset:0; }
-    .f04-ground { background:#E85D26; }
+    .f04-ground { background:var(--hf-emphasis); }
     .f04-mono { font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
     .f04-chrome { position:absolute; left:6cqw; right:6cqw; height:1px; background:rgba(17,17,17,.25); }
     .f04-answer { position:absolute; left:6cqw; top:22cqh; font-size:11cqw; font-weight:900; letter-spacing:-.05em; line-height:.85; }
     .f04-route-label { position:absolute; left:6cqw; top:63cqh; font-size:1.1cqw; color:rgba(17,17,17,.62); }
     .f04-browser { position:absolute; left:6cqw; top:71cqh; width:16cqw; border-top:2px solid #111; padding-top:1cqh; font-size:2cqw; font-weight:800; }
     .f04-slot { position:absolute; right:7cqw; top:68cqh; width:31cqw; height:7cqh; border:2px solid rgba(17,17,17,.42); box-sizing:border-box; padding:1.6cqh 1.5cqw; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; color:rgba(17,17,17,.55); }
-    .f04-packet { position:absolute; right:7cqw; top:33cqh; width:31cqw; box-sizing:border-box; transform-origin:100% 0; border:2px solid #111; padding:3cqw; font-size:2.5cqw; font-weight:700; background:#E85D26; }
+    .f04-packet { position:absolute; right:7cqw; top:33cqh; width:31cqw; box-sizing:border-box; transform-origin:100% 0; border:2px solid #111; padding:3cqw; font-size:2.5cqw; font-weight:700; background:var(--hf-emphasis); }
     .f04-packet strong { display:block; font-size:4cqw; letter-spacing:-.03em; margin-top:1cqh; }
     .f04-note { position:absolute; left:6cqw; top:76cqh; width:43cqw; font-size:2cqw; line-height:1.2; }
     .f04-route { position:absolute; left:21cqw; top:73cqh; width:48cqw; height:7cqh; overflow:visible; }

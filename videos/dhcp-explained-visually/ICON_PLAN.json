@@ -1,0 +1,8 @@
+{
+  "icons": [
+    {"id": "client", "provider": "fontawesome", "role": "system", "path": "public/icons/laptop.svg"},
+    {"id": "server", "provider": "fontawesome", "role": "system", "path": "public/icons/server.svg"},
+    {"id": "network", "provider": "fontawesome", "role": "system", "path": "public/icons/network-wired.svg"},
+    {"id": "lease", "provider": "fontawesome", "role": "system", "path": "public/icons/clock.svg"}
+  ]
+}

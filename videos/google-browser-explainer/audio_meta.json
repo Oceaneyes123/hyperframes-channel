@@ -1,6 +1,8 @@
 {
+  "schema": "hyperframes-channel/narration@1",
   "provider": "supertonic-3",
   "voice": "M1",
+  "timeline_duration_s": 86.96626577377319,
   "voices": [
     {
       "id": "line-1",
@@ -50,6 +52,98 @@
     {
       "id": "line-10",
       "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 7.366265773773193
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "01-name-not-address",
+      "src": "compositions/frames/01-name-not-address.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 6.132995128631592
+    },
+    {
+      "index": 2,
+      "id": "02-find-ip",
+      "src": "compositions/frames/02-find-ip.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 6.4,
+      "duration_s": 7.25545072555542
+    },
+    {
+      "index": 3,
+      "id": "03-ask-dns",
+      "src": "compositions/frames/03-ask-dns.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 13.9,
+      "duration_s": 11.049332618713379
+    },
+    {
+      "index": 4,
+      "id": "04-dns-answer",
+      "src": "compositions/frames/04-dns-answer.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 25.2,
+      "duration_s": 6.777385711669922
+    },
+    {
+      "index": 5,
+      "id": "05-secure-route",
+      "src": "compositions/frames/05-secure-route.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 32.2,
+      "duration_s": 7.129964351654053
+    },
+    {
+      "index": 6,
+      "id": "06-https-handshake",
+      "src": "compositions/frames/06-https-handshake.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 39.6,
+      "duration_s": 12.734310150146484
+    },
+    {
+      "index": 7,
+      "id": "07-http-request",
+      "src": "compositions/frames/07-http-request.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 52.6,
+      "duration_s": 7.664881706237793
+    },
+    {
+      "index": 8,
+      "id": "08-resources-return",
+      "src": "compositions/frames/08-resources-return.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 60.5,
+      "duration_s": 10.204838752746582
+    },
+    {
+      "index": 9,
+      "id": "09-render-page",
+      "src": "compositions/frames/09-render-page.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 70.9,
+      "duration_s": 8.48379135131836
+    },
+    {
+      "index": 10,
+      "id": "10-whole-trip",
+      "src": "compositions/frames/10-whole-trip.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 79.6,
       "duration_s": 7.366265773773193
     }
   ]

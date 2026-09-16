@@ -1,20 +1,21 @@
 <template>
   <style>
+@import url("channel/styles.css");body{color:var(--hf-ink)}
     #root { position:absolute; inset:0; container-type:size; color:#F0ECE5; font-family:sans-serif; overflow:hidden; perspective:1600px; }
     .f05-ground { position:absolute; inset:0; background:#111111; }
-    .f05-chrome { position:absolute; left:6cqw; top:5cqh; color:#E85D26; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .f05-chrome { position:absolute; left:6cqw; top:5cqh; color:var(--hf-emphasis); font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
     .f05-title { position:absolute; left:6cqw; top:8cqh; color:#F0ECE5; font-size:6cqw; font-weight:900; letter-spacing:-.04em; line-height:.92; }
     .f05-stage { position:absolute; inset:0; transform-style:preserve-3d; }
-    .f05-card { position:absolute; top:45cqh; width:21cqw; height:20cqh; border-top:1px solid #E85D26; padding-top:2cqh; box-sizing:border-box; font-size:4cqw; font-weight:900; letter-spacing:-.04em; line-height:.95; transform-style:preserve-3d; will-change:transform; }
+    .f05-card { position:absolute; top:45cqh; width:21cqw; height:20cqh; border-top:1px solid var(--hf-emphasis); padding-top:2cqh; box-sizing:border-box; font-size:4cqw; font-weight:900; letter-spacing:-.04em; line-height:.95; transform-style:preserve-3d; will-change:transform; }
     .f05-browser { left:8cqw; text-align:left; }
     .f05-server { right:8cqw; text-align:right; }
     .f05-small { margin-top:1cqh; color:#888880; font-size:1.6cqw; font-weight:400; letter-spacing:0; line-height:1.2; }
     .f05-route-svg { position:absolute; left:30cqw; top:49cqh; width:40cqw; height:13cqh; overflow:visible; }
-    .f05-route-glow { fill:none; stroke:#E85D26; stroke-width:10; stroke-linecap:round; opacity:.12; }
-    .f05-route { fill:none; stroke:#E85D26; stroke-width:2; stroke-linecap:round; }
-    .f05-route-label { position:absolute; left:0; right:0; top:57cqh; text-align:center; color:#E85D26; font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
-    .f05-lock { position:absolute; left:46cqw; top:47cqh; width:8cqw; height:10cqh; box-sizing:border-box; border:2px solid #E85D26; color:#E85D26; background:#111111; text-align:center; font-size:4cqw; line-height:7cqh; transform-origin:50% 100%; }
-    .f05-lock-shackle { position:absolute; left:2.1cqw; top:-3.2cqh; width:3.8cqw; height:4.6cqh; box-sizing:border-box; border:2px solid #E85D26; border-bottom:0; }
+    .f05-route-glow { fill:none; stroke:var(--hf-emphasis); stroke-width:10; stroke-linecap:round; opacity:.12; }
+    .f05-route { fill:none; stroke:var(--hf-emphasis); stroke-width:2; stroke-linecap:round; }
+    .f05-route-label { position:absolute; left:0; right:0; top:57cqh; text-align:center; color:var(--hf-emphasis); font:500 1cqw monospace; letter-spacing:.14em; text-transform:uppercase; }
+    .f05-lock { position:absolute; left:46cqw; top:47cqh; width:8cqw; height:10cqh; box-sizing:border-box; border:2px solid var(--hf-emphasis); color:var(--hf-emphasis); background:#111111; text-align:center; font-size:4cqw; line-height:7cqh; transform-origin:50% 100%; }
+    .f05-lock-shackle { position:absolute; left:2.1cqw; top:-3.2cqh; width:3.8cqw; height:4.6cqh; box-sizing:border-box; border:2px solid var(--hf-emphasis); border-bottom:0; }
   </style>
   <div data-hf-id="hf-bvev" id="root" data-composition-id="05-secure-route" data-width="1920" data-height="1080" data-duration="7.9">
     <div data-hf-id="hf-u74e" class="clip f05-ground" data-start="0" data-duration="7.9" data-track-index="0"></div>

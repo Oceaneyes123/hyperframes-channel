@@ -1,0 +1,6 @@
+{
+  "id": "hyperframes-channel",
+  "version": "1.0.0",
+  "source": "DESIGN.md",
+  "stylesheet": "channel/styles.css"
+}

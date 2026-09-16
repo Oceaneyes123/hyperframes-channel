@@ -1,0 +1,383 @@
+Create a faceless explainer video.
+
+Topic:
+Switch vs Router Explained Visually — What’s Actually Different?
+
+Audience:
+Beginners, junior developers, IT students, homelab users, and non-technical viewers learning how devices communicate inside and outside a local network.
+
+Goal:
+Help viewers clearly understand the difference between a network switch and a router by visually following traffic between devices.
+
+By the end of the video, viewers should understand:
+
+* What a switch does
+* What a router does
+* Why switches primarily operate within a local network
+* Why routers connect different networks
+* The basic difference between MAC addresses and IP addresses
+* How a switch decides where to forward an Ethernet frame
+* How a router decides where to forward an IP packet
+* Why a home router may also contain a built-in switch
+* What happens when two devices communicate on the same subnet
+* What changes when the destination is on another network
+
+Length:
+90–120 seconds
+
+Format:
+1920x1080 landscape, 30 fps
+
+Style:
+Modern, premium technology explainer using the repository’s established channel design system.
+
+The video should be simple, highly visual, elegant, and icon-led.
+
+Prefer recognizable icons and diagrams over cards and large amounts of explanatory text.
+
+Use actual icon assets during the sketch stage.
+
+Icon preference:
+
+* Use Icons8 colored SVGs for major visual entities such as laptops, desktops, routers, switches, servers, and internet/cloud concepts.
+* Use Font Awesome for smaller functional symbols such as arrows, globe, network, address, ports, and status indicators.
+* Use custom HyperFrames shapes for packets, Ethernet frames, connection lines, MAC/IP labels, and routing-table information.
+* Reuse existing channel icons whenever an appropriate asset already exists.
+
+Use:
+
+* Dark neutral background
+* High-contrast typography
+* Clean networking diagrams
+* Request blue for active outbound traffic
+* Response mint for returned traffic
+* Muted inactive devices and paths
+* Smooth professional movement
+* Clear directional connection lines
+* Minimal text
+* Short labels
+* Consistent MAC and IP address visual treatments
+* Motion that explains packet/frame movement
+
+Tone:
+Clear, friendly, educational, and technically accurate.
+
+Explain concepts using simple language and avoid unnecessary networking jargon.
+
+Must include:
+
+1. Opening hook
+
+Show a small network with:
+
+* Laptop A
+* Laptop B
+* Network switch
+* Router
+* Internet
+
+Ask:
+
+"If both switches and routers move network traffic, what’s the difference?"
+
+Visually emphasize the switch and router as two different devices with different jobs.
+
+2. Start with the local network
+
+Show:
+
+Laptop A
+192.168.1.10
+
+Laptop B
+192.168.1.20
+
+Both connect to the same switch.
+
+Make it clear that both devices are on the same local subnet.
+
+Ask:
+
+"What happens when Laptop A sends data to Laptop B?"
+
+3. Introduce MAC addresses
+
+Show both devices with simplified MAC address labels.
+
+Example:
+
+Laptop A
+IP: 192.168.1.10
+MAC: AA:AA
+
+Laptop B
+IP: 192.168.1.20
+MAC: BB:BB
+
+Keep the MAC addresses deliberately simplified for readability.
+
+Explain that Ethernet communication on the local network uses MAC addresses to deliver frames.
+
+4. Show the switch doing its job
+
+Animate an Ethernet frame leaving Laptop A.
+
+Visualize the frame containing:
+
+SOURCE MAC: AA:AA
+DEST MAC: BB:BB
+
+The frame reaches the switch.
+
+Show the switch checking a simplified MAC address table:
+
+AA:AA → Port 1
+BB:BB → Port 3
+
+Then forward the frame only toward Laptop B.
+
+Make the key idea obvious:
+
+The switch moves traffic inside the local network based primarily on MAC addresses.
+
+5. Show how the switch learns
+
+Briefly explain that a switch learns which MAC addresses are reachable through which ports by observing incoming frames.
+
+Show:
+
+Port 1 ← AA:AA
+Port 3 ← BB:BB
+
+Do not go deeply into Ethernet switching algorithms.
+
+The goal is simply to explain why the switch knows where to send the frame.
+
+6. Change the destination
+
+Now show Laptop A trying to reach:
+
+8.8.8.8
+
+or a simple external web server icon.
+
+Ask:
+
+"Can the switch send this directly?"
+
+Visually show that the destination is outside:
+
+192.168.1.0/24
+
+The switch remains part of the path, but it is no longer the device deciding which external network should receive the traffic.
+
+7. Introduce the router
+
+Highlight the router.
+
+Show:
+
+LAN:
+192.168.1.0/24
+
+Router:
+192.168.1.1
+
+Internet / another network
+
+Explain:
+
+The router connects different IP networks.
+
+The laptop sends traffic for remote networks toward its default gateway.
+
+8. Router decision
+
+Animate the packet reaching the router.
+
+Show a very simple routing table such as:
+
+192.168.1.0/24 → LAN
+0.0.0.0/0 → Internet
+
+Explain that routers make forwarding decisions using destination IP addresses and routing information.
+
+Do not turn this into a full routing-table lesson.
+
+9. Side-by-side comparison
+
+Create a strong visual comparison.
+
+SWITCH
+
+Works mainly inside a LAN
+Uses MAC addresses to forward Ethernet frames
+Connects devices on the same network
+Learns MAC-to-port relationships
+
+ROUTER
+
+Connects different networks
+Uses IP addresses to route packets
+Chooses where remote traffic goes
+Maintains routing information
+
+Keep the text extremely short and let the visual structure carry the comparison.
+
+10. Same-subnet example
+
+Replay:
+
+Laptop A
+↓
+Switch
+↓
+Laptop B
+
+Make the router visually inactive.
+
+Label:
+
+SAME NETWORK
+
+The purpose is to reinforce that ordinary same-LAN traffic does not need to pass through the router just because a router exists on the network.
+
+11. Different-network example
+
+Replay:
+
+Laptop A
+↓
+Switch
+↓
+Router
+↓
+Internet / Remote Server
+
+Label:
+
+DIFFERENT NETWORK
+
+Highlight the router as the boundary between networks.
+
+12. Home router clarification
+
+Show a typical home Wi-Fi router.
+
+Visually split it into conceptual functions:
+
+Router
+Switch
+Wi-Fi Access Point
+
+Explain briefly that the single box people call a "router" often combines multiple networking devices/functions.
+
+Make clear that this is why beginners sometimes confuse switches and routers.
+
+13. Final recap
+
+Show both devices one final time.
+
+Switch:
+"Moves traffic within a network."
+
+Router:
+"Moves traffic between networks."
+
+Then show:
+
+Same network:
+Device → Switch → Device
+
+Different network:
+Device → Switch → Router → Other Network
+
+Finish with a concise takeaway:
+
+"A switch connects devices. A router connects networks."
+
+Optionally tease:
+
+"How does your computer know whether an IP address is local or remote?"
+
+This should naturally lead into subnetting, CIDR, or default gateway concepts.
+
+Visual components to reuse or create:
+
+* Laptop/client
+* Desktop/client
+* Network switch
+* Router
+* Home router
+* Server
+* Internet/cloud
+* Ethernet frame
+* IP packet
+* MAC address badge
+* IP address badge
+* Switch port
+* MAC address table
+* Routing table
+* LAN boundary
+* Connection line
+* Default gateway indicator
+
+Technical accuracy:
+
+Keep the explanation beginner-friendly while remaining technically correct.
+
+Clearly distinguish:
+
+Ethernet frame
+vs
+IP packet
+
+but do not spend excessive time explaining encapsulation.
+
+Explain switches primarily in terms of Layer 2 Ethernet forwarding and routers in terms of Layer 3 IP routing without requiring viewers to memorize OSI layer numbers.
+
+Do not imply:
+
+* That switches never work with IP-related features
+* That routers only connect homes to the public internet
+* That all switches are unmanaged Layer 2 switches
+* That every switch works only at Layer 2
+* That a router replaces a switch
+* That same-subnet traffic normally needs to traverse the default gateway
+* That MAC addresses are used for end-to-end internet routing
+* That routers forward packets based on MAC addresses instead of IP routing decisions
+* That a typical consumer router is only a router
+
+Use simplified examples where necessary, but preserve the distinction between local Ethernet forwarding and routing between IP networks.
+
+Avoid:
+
+* AI avatars
+* Talking heads
+* Generic stock footage
+* Dense text
+* Long OSI model explanations
+* VLANs
+* Spanning Tree
+* Layer 3 switches
+* ARP deep dives
+* NAT explanations
+* BGP or dynamic routing protocols
+* Enterprise switch architecture
+* Full Ethernet frame headers
+* Full IP packet headers
+* Decorative animations that do not help explain traffic flow
+
+Visual planning requirements:
+
+Before sketches, create an icon plan for every scene.
+
+Resolve actual Font Awesome or Icons8 assets before sketching.
+
+Sketches must use the intended production icons rather than generic placeholder rectangles.
+
+A major network entity should not be represented only by a text box when an appropriate icon is available.
+
+The visual flow should still make sense with the narration muted.
+
+Use the repo HyperFrames workflow. Create the fact sheet, script, timed storyboard, icon plan, and icon-first sketches for review first. After I approve, continue autonomously through final preview; wait for my explicit approval before rendering.

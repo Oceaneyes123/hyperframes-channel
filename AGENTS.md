@@ -5,27 +5,34 @@ Use the relevant HyperFrames skill before changing a composition.
 For narrated multi-scene explainers, lock narration and timing before building frames:
 
 1. Approve storyboard and script.
-2. Generate the final per-scene narration WAVs.
+2. Generate the final per-scene narration WAVs immediately after approval.
 3. Derive one canonical scene timing table; each scene maps to its narration WAV.
 4. Build frames against those timings and mount each narration WAV at its scene start.
 5. Run runtime checks and midpoint snapshots early; mark only visually confirmed intentional overlaps with the narrowest `data-layout-allow-*` attribute.
 
-Keep one audio metadata record per scene; do not concatenate narration WAVs into a continuous track. Inspect only the failing selector or relevant file section; avoid broad HTML or skill dumps.
+Keep one audio metadata record per scene; do not concatenate narration WAVs into a continuous track. Inspect only the failing selector or relevant file section; read only command-specific skill references, never dump whole skills into context.
 
 ## Token-Efficient Creation Pipeline
 
 Use one source of truth through this flow:
 
-`facts → script → timing table → storyboard → frames → review → render`
+`facts → script → timed storyboard → icon plan → resolve local icons → icon-first sketches → approval → frames + animation → review → render`
 
 - Fact-check once at the start and retain a concise source-backed fact sheet; do not re-research during frame work.
 - Write the script and scene timing table together: one narration beat per scene.
+- Replace estimated durations with measured TTS timings before any frame work starts.
 - Derive the storyboard from that table, not from a second prose interpretation.
-- For icon-led briefs, include representative icon-first sketches in the storyboard review; do not approve from text-only scene descriptions.
+- Build icon-first sketches with the exact production assets named in `ICON_PLAN.json`; do not approve from text-only or placeholder-icon scene descriptions.
 - Give frame workers only their scene packet, design tokens, and timings—not whole skill documents or project files.
+- For offline Supertonic runs, normalize `audio_meta.json` so each `voices[]` entry has `id`, `frame`, `path`, and `duration_s` before `sync-durations`; the TTS generator may emit line ids without frame ids.
+- Preflight one real local icon `<img src="public/icons/<name>.svg">` in the first sketch before scaling to the full board; this catches broken mask/path assumptions cheaply.
+- Close completed frame workers before dispatching the next batch; if the worker pool is full, keep edits isolated by frame and continue locally rather than retrying duplicate dispatches.
 - Batch one full check with midpoint snapshots; fix errors and visually confirmed defects only.
 - Keep just two review gates: storyboard/sketch approval and final-preview approval.
 - Iterate with snapshots or draft previews, then render once after approval.
+- Use one screenshot per review milestone; routine UI checks use targeted context without screenshots.
+- Poll renders with small output limits and report only progress, errors, and the final summary.
+- Keep source frames stable. Before a mechanical repair, stop Studio and regenerate the assembled index once; never regex-edit assembled HTML as a first fix.
 
 ## User–Agent Conversation Protocol
 
@@ -59,7 +66,7 @@ Use `--voice` or `--out` only when the video requires a different default. `--dr
 
 ### Iconography
 
-For upcoming videos, prefer Font Awesome icons when an icon clarifies the concept (for example browser, server, lock, DNS, request, and resource states). Use a locally installed or vendored Font Awesome asset; never load icons from a remote CDN at render time.
+For technical/system objects (server, router, database, device, network, lock, globe, arrow, clock, terminal, firewall), prefer local Font Awesome SVGs. For a hero concept that benefits from a colored illustration, use an approved local Icons8 SVG with its source/attribution record. Never load either provider remotely at render time.
 
 When an icon is not already local, resolve it before authoring the frame:
 
@@ -68,6 +75,12 @@ npm run fontawesome-icon -- --name <icon-name> --project videos\<project>
 ```
 
 The resolver reuses `public/icons/<icon-name>.svg` when present; otherwise it exports the named Font Awesome Free icon there. If it reports that the icon is unavailable, use a concept-specific local SVG rather than a CDN.
+
+For an Icons8 hero asset, add it to `ICON_PLAN.json` first, then download its approved SVG URL and preserve the page URL:
+
+```powershell
+npm run icons8-icon -- --name <name> --url <svg-url> --attribution <icons8-page-url> --project videos\<project>
+```
 
 For a long icon-led render, avoid CSS `filter` recoloring and repeated identical `<img>` nodes: prefer a pre-colored local SVG or CSS background/mask. This preserves fast capture and avoids duplicate-media lint warnings.
 

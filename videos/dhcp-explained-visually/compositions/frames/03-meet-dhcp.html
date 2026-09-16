@@ -1,22 +1,23 @@
 <template>
 <style>
-#root{position:absolute;inset:0;overflow:hidden;container-type:size;color:#f5f7fa;font-family:sans-serif}
-#frame03-meet-dhcp-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,rgba(89,168,255,.1),transparent 42%),linear-gradient(135deg,#0b0f14,#101923)}
+@import url("channel/styles.css");body{color:var(--hf-ink)}
+#root{position:absolute;inset:0;overflow:hidden;container-type:size;color:var(--hf-ink);font-family:sans-serif}
+#frame03-meet-dhcp-bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 48%,rgba(89,168,255,.1),transparent 42%),linear-gradient(135deg,var(--hf-canvas),#101923)}
 .frame03-meet-dhcp-eyebrow,.frame03-meet-dhcp-title,.frame03-meet-dhcp-sub,.frame03-meet-dhcp-station,.frame03-meet-dhcp-connector,.frame03-meet-dhcp-role,.frame03-meet-dhcp-pill{position:absolute}
-.frame03-meet-dhcp-eyebrow{left:6cqw;top:7cqh;color:#59a8ff;font-size:1.25cqw;font-weight:700;letter-spacing:.14em}
-.frame03-meet-dhcp-title{left:6cqw;top:11cqh;color:#f5f7fa;font-size:4.2cqw;font-weight:700;line-height:1.05;letter-spacing:-.03em}
-.frame03-meet-dhcp-sub{left:6cqw;top:22cqh;color:#aab7c4;font-size:1.55cqw;letter-spacing:.02em}
+.frame03-meet-dhcp-eyebrow{left:6cqw;top:7cqh;color:var(--hf-request);font-size:1.25cqw;font-weight:700;letter-spacing:.14em}
+.frame03-meet-dhcp-title{left:6cqw;top:11cqh;color:var(--hf-ink);font-size:4.2cqw;font-weight:700;line-height:1.05;letter-spacing:-.03em}
+.frame03-meet-dhcp-sub{left:6cqw;top:22cqh;color:var(--hf-muted);font-size:1.55cqw;letter-spacing:.02em}
 .frame03-meet-dhcp-station{top:36cqh;width:14cqw;text-align:center}
 .frame03-meet-dhcp-client{left:13cqw}.frame03-meet-dhcp-server{left:43cqw}.frame03-meet-dhcp-router{left:73cqw}
 .frame03-meet-dhcp-icon{display:block;width:9cqw;height:9cqw;margin:0 auto;object-fit:contain;filter:invert(71%) sepia(63%) saturate(660%) hue-rotate(177deg)}
 .frame03-meet-dhcp-client .frame03-meet-dhcp-icon{width:11cqw;height:11cqw}
-.frame03-meet-dhcp-name{margin-top:2cqh;color:#f5f7fa;font-size:1.7cqw;font-weight:700;letter-spacing:.03em}
-.frame03-meet-dhcp-role{left:35cqw;top:61cqh;width:30cqw;padding:.7cqw 1.35cqw;border:1px solid rgba(89,168,255,.35);border-radius:100px;color:#59a8ff;background:rgba(89,168,255,.08);font-size:1.15cqw;font-weight:700;letter-spacing:.12em;text-align:center;white-space:nowrap}
+.frame03-meet-dhcp-name{margin-top:2cqh;color:var(--hf-ink);font-size:1.7cqw;font-weight:700;letter-spacing:.03em}
+.frame03-meet-dhcp-role{left:35cqw;top:61cqh;width:30cqw;padding:.7cqw 1.35cqw;border:1px solid rgba(89,168,255,.35);border-radius:100px;color:var(--hf-request);background:rgba(89,168,255,.08);font-size:1.15cqw;font-weight:700;letter-spacing:.12em;text-align:center;white-space:nowrap}
 .frame03-meet-dhcp-connector{left:20cqw;top:51cqh;width:60cqw;height:3px;background:rgba(89,168,255,.28);transform-origin:left center}
-.frame03-meet-dhcp-connector:before,.frame03-meet-dhcp-connector:after{content:"";position:absolute;top:50%;width:13px;height:13px;border:2px solid #59a8ff;border-radius:50%;background:#0b0f14;transform:translateY(-50%)}
+.frame03-meet-dhcp-connector:before,.frame03-meet-dhcp-connector:after{content:"";position:absolute;top:50%;width:13px;height:13px;border:2px solid var(--hf-request);border-radius:50%;background:var(--hf-canvas);transform:translateY(-50%)}
 .frame03-meet-dhcp-connector:before{left:0}.frame03-meet-dhcp-connector:after{right:0}
-.frame03-meet-dhcp-node{position:absolute;left:50%;top:50%;width:13px;height:13px;border:2px solid #59a8ff;border-radius:50%;background:#0b0f14;transform:translate(-50%,-50%)}
-.frame03-meet-dhcp-pill{top:75cqh;padding:.75cqw 1.2cqw;border-radius:100px;background:rgba(89,168,255,.08);color:#aab7c4;font-size:1.2cqw;letter-spacing:.08em}
+.frame03-meet-dhcp-node{position:absolute;left:50%;top:50%;width:13px;height:13px;border:2px solid var(--hf-request);border-radius:50%;background:var(--hf-canvas);transform:translate(-50%,-50%)}
+.frame03-meet-dhcp-pill{top:75cqh;padding:.75cqw 1.2cqw;border-radius:100px;background:rgba(89,168,255,.08);color:var(--hf-muted);font-size:1.2cqw;letter-spacing:.08em}
 .frame03-meet-dhcp-pill-left{left:29cqw}.frame03-meet-dhcp-pill-right{left:58cqw}
 </style>
 <div data-hf-id="hf-01jp" id="root" data-composition-id="03-meet-dhcp" data-width="1920" data-height="1080" data-duration="10.44946575164795">

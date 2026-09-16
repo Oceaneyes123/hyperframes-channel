@@ -1,55 +1,159 @@
 {
+  "schema": "hyperframes-channel/narration@1",
   "provider": "supertonic-3",
   "voice": "M1",
+  "timeline_duration_s": 105.63434058380128,
   "voices": [
     {
-      "id": "line-1", "frame": 1,
+      "id": "line-1",
+      "frame": 1,
       "path": ".media/audio/voice/line-1.wav",
       "duration_s": 6.709758281707764
     },
     {
-      "id": "line-2", "frame": 2,
+      "id": "line-2",
+      "frame": 2,
       "path": ".media/audio/voice/line-2.wav",
       "duration_s": 9.006114959716797
     },
     {
-      "id": "line-3", "frame": 3,
+      "id": "line-3",
+      "frame": 3,
       "path": ".media/audio/voice/line-3.wav",
       "duration_s": 10.44946575164795
     },
     {
-      "id": "line-4", "frame": 4,
+      "id": "line-4",
+      "frame": 4,
       "path": ".media/audio/voice/line-4.wav",
       "duration_s": 9.225488662719727
     },
     {
-      "id": "line-5", "frame": 5,
+      "id": "line-5",
+      "frame": 5,
       "path": ".media/audio/voice/line-5.wav",
       "duration_s": 15.28050422668457
     },
     {
-      "id": "line-6", "frame": 6,
+      "id": "line-6",
+      "frame": 6,
       "path": ".media/audio/voice/line-6.wav",
       "duration_s": 9.691638946533203
     },
     {
-      "id": "line-7", "frame": 7,
+      "id": "line-7",
+      "frame": 7,
       "path": ".media/audio/voice/line-7.wav",
       "duration_s": 11.520942687988281
     },
     {
-      "id": "line-8", "frame": 8,
+      "id": "line-8",
+      "frame": 8,
       "path": ".media/audio/voice/line-8.wav",
       "duration_s": 11.586668014526367
     },
     {
-      "id": "line-9", "frame": 9,
+      "id": "line-9",
+      "frame": 9,
       "path": ".media/audio/voice/line-9.wav",
       "duration_s": 11.691149711608887
     },
     {
-      "id": "line-10", "frame": 10,
+      "id": "line-10",
+      "frame": 10,
       "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 10.47234058380127
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "01-the-question",
+      "src": "compositions/frames/01-the-question.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 6.709758281707764
+    },
+    {
+      "index": 2,
+      "id": "02-why-manual-setup-breaks-down",
+      "src": "compositions/frames/02-why-manual-setup-breaks-down.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 6.71,
+      "duration_s": 9.006114959716797
+    },
+    {
+      "index": 3,
+      "id": "03-meet-dhcp",
+      "src": "compositions/frames/03-meet-dhcp.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 15.716000000000001,
+      "duration_s": 10.44946575164795
+    },
+    {
+      "index": 4,
+      "id": "04-discover",
+      "src": "compositions/frames/04-discover.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 26.165,
+      "duration_s": 9.225488662719727
+    },
+    {
+      "index": 5,
+      "id": "05-offer",
+      "src": "compositions/frames/05-offer.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 35.39,
+      "duration_s": 15.28050422668457
+    },
+    {
+      "index": 6,
+      "id": "06-request",
+      "src": "compositions/frames/06-request.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 50.671,
+      "duration_s": 9.691638946533203
+    },
+    {
+      "index": 7,
+      "id": "07-acknowledge",
+      "src": "compositions/frames/07-acknowledge.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 60.363,
+      "duration_s": 11.520942687988281
+    },
+    {
+      "index": 8,
+      "id": "08-dora-and-configuration-bundle",
+      "src": "compositions/frames/08-dora-and-configuration-bundle.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 71.884,
+      "duration_s": 11.586668014526367
+    },
+    {
+      "index": 9,
+      "id": "09-leases-renew",
+      "src": "compositions/frames/09-leases-renew.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 83.471,
+      "duration_s": 11.691149711608887
+    },
+    {
+      "index": 10,
+      "id": "10-the-payoff",
+      "src": "compositions/frames/10-the-payoff.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 95.162,
       "duration_s": 10.47234058380127
     }
   ]

@@ -1,0 +1,5 @@
+{
+  "icons": [
+    {"id": "server", "provider": "fontawesome", "role": "system", "path": "public/icons/server.svg"}
+  ]
+}

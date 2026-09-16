@@ -1,0 +1,205 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 146.36208200454712,
+  "voices": [
+    {
+      "id": "line-1",
+      "frame": 1,
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 7.809942722320557
+    },
+    {
+      "id": "line-2",
+      "frame": 2,
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 8.209789276123047
+    },
+    {
+      "id": "line-3",
+      "frame": 3,
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 16.757526397705078
+    },
+    {
+      "id": "line-4",
+      "frame": 4,
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 11.055224418640137
+    },
+    {
+      "id": "line-5",
+      "frame": 5,
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 10.128047943115234
+    },
+    {
+      "id": "line-6",
+      "frame": 6,
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 11.158363342285156
+    },
+    {
+      "id": "line-7",
+      "frame": 7,
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 13.699894905090332
+    },
+    {
+      "id": "line-8",
+      "frame": 8,
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 12.245575904846191
+    },
+    {
+      "id": "line-9",
+      "frame": 9,
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 15.404553413391113
+    },
+    {
+      "id": "line-10",
+      "frame": 10,
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 10.469654083251953
+    },
+    {
+      "id": "line-11",
+      "frame": 11,
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 7.328106880187988
+    },
+    {
+      "id": "line-12",
+      "frame": 12,
+      "path": ".media/audio/voice/line-12.wav",
+      "duration_s": 9.813301086425781
+    },
+    {
+      "id": "line-13",
+      "frame": 13,
+      "path": ".media/audio/voice/line-13.wav",
+      "duration_s": 12.28210163116455
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "01-the-question",
+      "src": "compositions/frames/01-the-question.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 7.809942722320557
+    },
+    {
+      "index": 2,
+      "id": "02-start-inside-the-lan",
+      "src": "compositions/frames/02-start-inside-the-lan.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 7.809942722320557,
+      "duration_s": 8.209789276123047
+    },
+    {
+      "index": 3,
+      "id": "03-two-kinds-of-address",
+      "src": "compositions/frames/03-two-kinds-of-address.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 16.019731998443604,
+      "duration_s": 16.757526397705078
+    },
+    {
+      "index": 4,
+      "id": "04-the-ethernet-frame",
+      "src": "compositions/frames/04-the-ethernet-frame.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 32.77725839614868,
+      "duration_s": 11.055224418640137
+    },
+    {
+      "index": 5,
+      "id": "05-switch-forwards-locally",
+      "src": "compositions/frames/05-switch-forwards-locally.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 43.83248281478882,
+      "duration_s": 10.128047943115234
+    },
+    {
+      "index": 6,
+      "id": "06-how-the-switch-learns",
+      "src": "compositions/frames/06-how-the-switch-learns.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 53.96053075790405,
+      "duration_s": 11.158363342285156
+    },
+    {
+      "index": 7,
+      "id": "07-a-remote-destination",
+      "src": "compositions/frames/07-a-remote-destination.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 65.11889410018921,
+      "duration_s": 13.699894905090332
+    },
+    {
+      "index": 8,
+      "id": "08-meet-the-router",
+      "src": "compositions/frames/08-meet-the-router.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 78.81878900527954,
+      "duration_s": 12.245575904846191
+    },
+    {
+      "index": 9,
+      "id": "09-the-router-chooses-a-network",
+      "src": "compositions/frames/09-the-router-chooses-a-network.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 91.06436491012573,
+      "duration_s": 15.404553413391113
+    },
+    {
+      "index": 10,
+      "id": "10-side-by-side",
+      "src": "compositions/frames/10-side-by-side.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 106.46891832351685,
+      "duration_s": 10.469654083251953
+    },
+    {
+      "index": 11,
+      "id": "11-same-network",
+      "src": "compositions/frames/11-same-network.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 116.9385724067688,
+      "duration_s": 7.328106880187988
+    },
+    {
+      "index": 12,
+      "id": "12-home-router",
+      "src": "compositions/frames/12-home-router.html",
+      "audio_id": "voice-line-12",
+      "audio_path": ".media/audio/voice/line-12.wav",
+      "start_s": 124.26667928695679,
+      "duration_s": 9.813301086425781
+    },
+    {
+      "index": 13,
+      "id": "13-the-takeaway",
+      "src": "compositions/frames/13-the-takeaway.html",
+      "audio_id": "voice-line-13",
+      "audio_path": ".media/audio/voice/line-13.wav",
+      "start_s": 134.07998037338257,
+      "duration_s": 12.28210163116455
+    }
+  ]
+}

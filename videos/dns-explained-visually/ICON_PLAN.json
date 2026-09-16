@@ -1,0 +1,8 @@
+{
+  "icons": [
+    {"id": "client", "provider": "fontawesome", "role": "system", "path": "public/icons/desktop.svg"},
+    {"id": "resolver", "provider": "fontawesome", "role": "system", "path": "public/icons/server.svg"},
+    {"id": "authority", "provider": "fontawesome", "role": "system", "path": "public/icons/globe.svg"},
+    {"id": "cache", "provider": "fontawesome", "role": "system", "path": "public/icons/database.svg"}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "status": "approved",
+  "artifact": "STORYBOARD.md",
+  "icon_plan": "ICON_PLAN.json",
+  "sketches": [
+    "compositions/frames/01-the-question.html",
+    "compositions/frames/02-start-inside-the-lan.html",
+    "compositions/frames/03-two-kinds-of-address.html",
+    "compositions/frames/04-the-ethernet-frame.html",
+    "compositions/frames/05-switch-forwards-locally.html",
+    "compositions/frames/06-how-the-switch-learns.html",
+    "compositions/frames/07-a-remote-destination.html",
+    "compositions/frames/08-meet-the-router.html",
+    "compositions/frames/09-the-router-chooses-a-network.html",
+    "compositions/frames/10-side-by-side.html",
+    "compositions/frames/11-same-network.html",
+    "compositions/frames/12-home-router.html",
+    "compositions/frames/13-the-takeaway.html"
+  ],
+  "note": "User approved the combined script, timed storyboard, and icon-first sketch board."
+}
