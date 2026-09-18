@@ -1,0 +1,9 @@
+{
+  "duration": 7,
+  "assertions": [
+    {"kind":"appearsBy","selector":"#scene-01-packet","bySec":0.5},
+    {"kind":"appearsBy","selector":"#scene-01-result","bySec":4.7},
+    {"kind":"staysInFrame","selector":"#scene-01-packet"},
+    {"kind":"keepsMoving","withinSelector":"#scene-01 .diagram","maxStaticSec":3}
+  ]
+}

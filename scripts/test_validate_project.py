@@ -7,10 +7,14 @@ from pathlib import Path
 
 from narration_text import prepare_narration
 from supertonic_tts import native_metadata, timeline_html
-from validate_project import DESIGN_VERSION, validate_diagnostics
+from validate_project import DESIGN_VERSION, attr, remote_assets, validate_diagnostics
+from assemble_project import assemble
 
 
 class ValidatorTests(unittest.TestCase):
+    def test_attribute_does_not_match_studio_id_suffix(self):
+        self.assertEqual(attr('<audio data-hf-id="studio" id="voice-line-1">', 'id'), 'voice-line-1')
+
     def fixture(self):
         root = Path(tempfile.mkdtemp())
         (root / "compositions" / "frames").mkdir(parents=True)
@@ -70,11 +74,14 @@ class ValidatorTests(unittest.TestCase):
             "NaN audio attr": lambda p: self.replace(p / "index.html", "data-duration='1'", "data-duration='NaN'"),
             "missing timeline": lambda p: (p / "audio_timeline.html").unlink(),
             "host start mismatch": lambda p: self.replace(p / "index.html", "data-start='0'", "data-start='0.5'"),
+            "missing scene host": lambda p: self.replace(p / "index.html", "data-scene-src", "data-not-a-host"),
+            "unknown scene host": lambda p: self.replace(p / "index.html", "compositions/frames/line-1.html", "compositions/frames/unknown.html"),
             "unknown version": lambda p: self.replace(p / "channel.json", DESIGN_VERSION, "9.9.9"),
             "missing storyboard approval": lambda p: (p / "review/storyboard-approval.json").unlink(),
             "render missing final approval": lambda p: (p / "review/final-preview-approval.json").unlink(),
             "missing styles": lambda p: (p / "channel/styles.css").unlink(),
             "missing planned icon": lambda p: self.replace(p / "compositions/frames/line-1.html", "public/icons/packet.svg", "public/icons/missing.svg"),
+            "remote resource": lambda p: self.replace(p / "index.html", "</div>", "</div><script src='https://cdn.example/gsap.js'></script>"),
         }
         for name, mutate in cases.items():
             with self.subTest(name=name):
@@ -95,6 +102,76 @@ class ValidatorTests(unittest.TestCase):
                     self.assertTrue(validate_diagnostics(root)[0])
                 finally:
                     shutil.rmtree(root)
+
+    def test_remote_resources_but_not_attribution_links(self):
+        for markup in (
+            '<script src="https://cdn.example/gsap.js"></script>',
+            "<img src = '//cdn.example/icon.png'>",
+            '<link href="https://cdn.example/style.css">',
+            '<image xlink:href="https://cdn.example/icon.svg"/>',
+            '<img srcset="local.png 1x, https://cdn.example/icon.png 2x">',
+            '<style>@import "https://cdn.example/font.css";</style>',
+            'background: url(//cdn.example/icon.svg)',
+        ):
+            with self.subTest(markup=markup): self.assertTrue(remote_assets(markup))
+        self.assertFalse(remote_assets('<a href="https://icons8.com">Credit</a><svg xmlns="http://www.w3.org/2000/svg"/><img src="public/icon.svg">'))
+
+    def test_plan_before_production_and_spoken_only_estimate(self):
+        root = self.fixture()
+        try:
+            for name in ("index.html", "audio_meta.json", "audio_timeline.html", "line-1.wav", "compositions/frames/line-1.html"):
+                (root / name).unlink()
+            (root / "SCRIPT.md").write_text("## Line 1\n**Display:** " + "label " * 200 + "\n    Test packet.\n", encoding="utf-8")
+            errors, warnings = validate_diagnostics(root, "plan")
+            self.assertEqual(errors, [])
+            self.assertFalse(any("estimated narration" in warning for warning in warnings))
+            (root / "SCRIPT.md").write_text("## Line 1\n    " + "192.168.1.10 " * 20 + "\n", encoding="utf-8")
+            self.assertTrue(any("estimated narration" in warning for warning in validate_diagnostics(root, "plan")[1]))
+            self.assertTrue(validate_diagnostics(root, "preview")[0])
+            (root / "ICON_PLAN.json").unlink()
+            (root / "sketch.html").write_text('<img src="https://cdn.example/image.png">', encoding="utf-8")
+            self.assertIn("sketch.html: remote asset reference", validate_diagnostics(root, "plan")[0])
+        finally:
+            shutil.rmtree(root)
+
+    def test_actual_composition_host_contract(self):
+        for replacement in ("data-start='0.5'", "data-start='NaN'", "data-start='Infinity'"):
+            root = self.fixture()
+            try:
+                self.replace(root / "index.html", "data-scene-src", "data-composition-src")
+                self.assertEqual(validate_diagnostics(root)[0], [])
+                # Change only the host, leaving narration correct.
+                text = (root / "index.html").read_text(encoding="utf-8")
+                (root / "index.html").write_text(text.replace("data-start='0'", replacement, 1), encoding="utf-8")
+                self.assertTrue(any("scene host" in error for error in validate_diagnostics(root)[0]))
+            finally:
+                shutil.rmtree(root)
+
+    def test_optional_sound_does_not_replace_narration(self):
+        root = self.fixture()
+        try:
+            shutil.copyfile(root / "line-1.wav", root / "receive.wav")
+            with (root / "index.html").open("a", encoding="utf-8") as out:
+                out.write("<audio id='sfx-receive' src='receive.wav' data-start='0' data-duration='1' data-track-index='20'></audio>")
+            self.assertEqual(validate_diagnostics(root)[0], [])
+            self.replace(root / "index.html", "id='voice-line-1'", "id='wrong-voice'")
+            self.assertIn("narration audio id differs from audio metadata", validate_diagnostics(root)[0])
+        finally:
+            shutil.rmtree(root)
+
+    def test_local_assembly_and_invalid_timing_preserve_existing_index(self):
+        root = self.fixture()
+        try:
+            (root / "public/vendor").mkdir()
+            (root / "public/vendor/gsap.min.js").write_text("// local runtime", encoding="utf-8")
+            assemble(root)
+            self.assertEqual(validate_diagnostics(root)[0], [])
+            before = (root / "index.html").read_bytes()
+            self.replace(root / "audio_meta.json", '"start_s": 0.0', '"start_s": 0.5')
+            with self.assertRaises(ValueError): assemble(root)
+            self.assertEqual((root / "index.html").read_bytes(), before)
+        finally:
+            shutil.rmtree(root)
 
     @staticmethod
     def replace(path, old, new):

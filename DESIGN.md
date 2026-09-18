@@ -29,6 +29,10 @@ spacing: {unit: 24, label_gap: 24, group_gap: 48}
 
 # HyperFrames Channel Design System v2
 
+For an approved worked example, see `channel/EXPLAINER_REFERENCE.md` and
+`videos/local-or-router-short/frame.md`. Use the former's review checklist to
+verify these rules in actual frames, not just in planning text.
+
 New channel videos are native 1080×1920 (9:16). Keep important content inside
 the safe rectangle `x=72..936`, `y=180..1600`; the right 144px and bottom 320px
 leave room for platform controls and captions. Never design landscape and crop.
@@ -60,6 +64,26 @@ within 1–2 seconds, then make a meaningful visual change every few seconds.
 Longer lessons become a series. Animation must show causality: a packet travels,
 a decision highlights, an answer retraces the route, or a cache returns quickly.
 All motion is seekable and lives in one paused timeline.
+
+The diagram owns the frame: use most of the safe area for the objects and
+their relationships, not a large title above a small illustration. Start with
+the situation visible in the first second. For a 6–8s scene, plan roughly
+three causal beats: situation → action → consequence. A fade or slide-in is
+an entrance, not the explanation. Flag static holds over 3s for human review;
+a deliberate reading pause is valid, continuous decorative movement is not
+a fix. Use a camera move only when it directs attention to a teaching detail.
+
+Carry object identity, colors, and positions across adjacent scenes. Preserve
+the approved sketch's required object counts and connections; never replace
+a two-device exchange with one icon and a sentence. Review at phone size,
+with sound off, at the opening, main action, and resolved state, then play the
+whole sequence to check continuity and narration cues.
+
+Optional captions occupy a reserved band inside the safe area; reflow the
+diagram rather than covering values or shrinking labels. Keep captions short
+and readable, with no simultaneous duplicate headline. Optional sound cues
+mark a real send, receive, or decision event and remain quieter than speech.
+Captions, sound cues, and BGM stay off unless selected in the brief.
 
 Each lesson answers what it is, why it exists, what happens, and what to remember;
 the sound-off review must still show the causal change. Decorative layers are
