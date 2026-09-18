@@ -1,8 +1,10 @@
 # Draft script
 
 One takeaway:
-Defer to another short:
-Target: 45–60s; 6–10 scenes. Estimate normalized spoken words, not display copy.
+Required information (map every point to storyboard scenes):
+Out of scope (only genuinely optional or explicitly excluded material):
+Duration: no fixed limit; use enough scenes and natural narration to cover all required information.
+Estimate normalized spoken words for planning, not as a cutoff.
 Captions: off (optional captioned preview at final review).
 Sound cues: off (optional delivery/decision cues; BGM remains off).
 

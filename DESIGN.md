@@ -59,9 +59,11 @@ storage, red-orange security. Use local colored SVGs throughout a scene when the
 use local Font Awesome SVGs for compact support symbols. Every non-FA asset has
 an attribution/source record in `ICON_PLAN.json`.
 
-Target 45–60 seconds across 6–10 scenes. Hook the question or familiar behavior
+Use as much runtime and as many scenes as required to cover the agreed information.
+There is no fixed duration or scene-count limit. Hook the question or familiar behavior
 within 1–2 seconds, then make a meaningful visual change every few seconds.
-Longer lessons become a series. Animation must show causality: a packet travels,
+Do not omit required details or split a lesson into a series without user direction.
+Keep each scene focused while extending the sequence. Animation must show causality: a packet travels,
 a decision highlights, an answer retraces the route, or a cache returns quickly.
 All motion is seekable and lives in one paused timeline.
 

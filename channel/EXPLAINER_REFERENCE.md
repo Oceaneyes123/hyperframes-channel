@@ -35,7 +35,8 @@ not a requirement to abandon grid/flex for other layouts.
 
 > Create a visual narrated short about [TOPIC] for [AUDIENCE], using
 > channel/EXPLAINER_REFERENCE.md and the approved local-or-router-short as the
-> quality reference. Teach one takeaway in roughly 45–60 seconds. Use large local
+> quality reference. Cover all required information with no fixed duration or
+> scene-count limit, using focused scenes and natural pacing. Use large local
 > icons, sparse text, persistent objects, and motion that explains the process.
 > Use Supertonic per scene; captions, SFX and music off. First present the script
 > and actual-icon sketches together for approval. After approval, build all
@@ -49,8 +50,11 @@ every scene. Never invent approval records for a new video.
 
 Write a single sentence: “After watching, the viewer can explain ___.”
 For the reference: local destinations use local delivery; remote destinations
-use the configured gateway in this simple setup. Defer binary, ARP and routing
-exceptions. Retain assumptions in `FACTS.md` so simplification stays accurate.
+use the configured gateway in this simple setup. That reference excluded binary,
+ARP and routing exceptions because they were outside its scope, not to satisfy
+a time limit. For a new video, list every required point and map it to scenes;
+include prerequisites and qualifications needed for accuracy. Extend runtime
+as needed. Retain assumptions in `FACTS.md` so simplification stays accurate.
 
 Use the following seven-beat structure when it fits; adapt it to the subject:
 
@@ -64,6 +68,8 @@ Use the following seven-beat structure when it fits; adapt it to the subject:
 | Consequence | Delivered | Continue the route and show success |
 | Recall | Local / Router | Replay the contrast without adding a new concept |
 
+Seven beats and the reference duration are examples, not limits. Add focused
+scenes until all required information is covered; do not force a series.
 This is a teaching pattern, not mandatory networking content. For another topic,
 replace devices/packets with the actual objects and observable state changes.
 Each narration line gets one scene. Use `## Line N` and indent only spoken text
@@ -143,7 +149,8 @@ For future/repeated `fromTo` calls, set `immediateRender:false` when needed to
 avoid later from-values changing an earlier seek. No random motion, timers,
 infinite loops or whole-scene entrance hiding the situation. Test direct seeks,
 not only playback from zero. Every unexplained static interval over 3s needs a
-better causal beat or a shorter script; decorative pulses do not fix it.
+better causal beat or a justified reading pause; never cut required information
+to remove a hold. Decorative pulses do not fix it.
 
 For sequential work, finish scenes in order using `frame.md`. If a skill calls
 for frame workers, give each worker only its scene packet, shared visual contract,

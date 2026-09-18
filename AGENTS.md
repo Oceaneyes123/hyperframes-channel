@@ -11,6 +11,12 @@ return must remain legible.
 
 Use the relevant HyperFrames skill before changing a composition.
 
+Video length and scene count have no fixed limit. Cover all required information
+at a clear, natural pace; map required points to storyboard scenes before approval.
+Extend runtime instead of omitting details, rushing narration, or forcing a series.
+The reference video's duration is an example, not a cap. Flag platform duration
+compatibility separately without silently shortening the requested content.
+
 For a new narrated short, read `channel/EXPLAINER_REFERENCE.md` before planning.
 It maps the approved `videos/local-or-router-short/` output to concrete scene
 examples, commands and acceptance checks. Use it with any model, including
