@@ -1,0 +1,235 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 114.2421768707483,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 5.50312925170068,
+      "original_text": "How can your laptop control a computer somewhere else, without sitting in front of it?",
+      "spoken_text": "How can your laptop control a computer somewhere else, without sitting in front of it?",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 8.777142857142858,
+      "original_text": "SSH, or Secure Shell, is the protocol that connects an SSH client on your computer to an SSH server on the remote computer.",
+      "spoken_text": "S S H, or Secure Shell, is the protocol that connects an S S H client on your computer to an S S H server on the remote computer.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 9.47374149659864,
+      "original_text": "You start by typing a command like ssh user at server. The client opens a TCP connection to the server, commonly on port twenty-two.",
+      "spoken_text": "You start by typing a command like S S H user at server. The client opens a T C P connection to the server, commonly on port twenty-two.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 9.822040816326531,
+      "original_text": "Before login, the two sides perform an initial handshake. They agree on how this session will be protected and establish shared session secrets.",
+      "spoken_text": "Before login, the two sides perform an initial handshake. They agree on how this session will be protected and establish shared session secrets.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 9.961360544217687,
+      "original_text": "The server also presents a host key. Your client checks that key against what it already trusts, so a stranger cannot quietly pretend to be your server.",
+      "spoken_text": "The server also presents a host key. Your client checks that key against what it already trusts, so a stranger cannot quietly pretend to be your server.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 10.379319727891156,
+      "original_text": "Once the handshake succeeds, the connection becomes encrypted and integrity-protected. Messages can cross the network, but their contents are not readable there.",
+      "spoken_text": "Once the handshake succeeds, the connection becomes encrypted and integrity-protected. Messages can cross the network, but their contents are not readable there.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 8.568163265306122,
+      "original_text": "Now the server asks who you are and how you will prove it. SSH can use a password, or it can use a cryptographic key pair.",
+      "spoken_text": "Now the server asks who you are and how you will prove it. S S H can use a password, or it can use a cryptographic key pair.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 10.936598639455783,
+      "original_text": "With a password, you enter a secret inside the already encrypted connection. With keys, the client proves it has the private key without sending that private key away.",
+      "spoken_text": "With a password, you enter a secret inside the already encrypted connection. With keys, the client proves it has the private key without sending that private key away.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 8
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 10.518639455782314,
+      "original_text": "The private key stays on your client. The matching public key is stored with your account on the server. The server checks the proof, not your private key itself.",
+      "spoken_text": "The private key stays on your client. The matching public key is stored with your account on the server. The server checks the proof, not your private key itself.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 9
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 9.195102040816327,
+      "original_text": "After authentication, you can send a command such as ls through the encrypted tunnel. The command travels as protected data to the remote machine.",
+      "spoken_text": "After authentication, you can send a command such as ls through the encrypted tunnel. The command travels as protected data to the remote machine.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 10
+    },
+    {
+      "id": "line-11",
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 9.961360544217687,
+      "original_text": "The server runs that command, then sends the output back through the same protected connection. Your terminal shows the result as if the computer were nearby.",
+      "spoken_text": "The server runs that command, then sends the output back through the same protected connection. Your terminal shows the result as if the computer were nearby.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 11
+    },
+    {
+      "id": "line-12",
+      "path": ".media/audio/voice/line-12.wav",
+      "duration_s": 11.145578231292516,
+      "original_text": "The full mental model is: connect, verify the server, authenticate yourself, protect the channel, send a command, and receive the response. That is SSH.",
+      "spoken_text": "The full mental model is: connect, verify the server, authenticate yourself, protect the channel, send a command, and receive the response. That is S S H.",
+      "normalization_fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93",
+      "frame": 12
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 5.50312925170068
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 5.50312925170068,
+      "duration_s": 8.777142857142858
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 14.280272108843537,
+      "duration_s": 9.47374149659864
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 23.754013605442175,
+      "duration_s": 9.822040816326531
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 33.5760544217687,
+      "duration_s": 9.961360544217687
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 43.537414965986386,
+      "duration_s": 10.379319727891156
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 53.916734693877544,
+      "duration_s": 8.568163265306122
+    },
+    {
+      "index": 8,
+      "id": "line-8",
+      "src": "compositions/frames/line-8.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 62.48489795918367,
+      "duration_s": 10.936598639455783
+    },
+    {
+      "index": 9,
+      "id": "line-9",
+      "src": "compositions/frames/line-9.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 73.42149659863945,
+      "duration_s": 10.518639455782314
+    },
+    {
+      "index": 10,
+      "id": "line-10",
+      "src": "compositions/frames/line-10.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 83.94013605442177,
+      "duration_s": 9.195102040816327
+    },
+    {
+      "index": 11,
+      "id": "line-11",
+      "src": "compositions/frames/line-11.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 93.1352380952381,
+      "duration_s": 9.961360544217687
+    },
+    {
+      "index": 12,
+      "id": "line-12",
+      "src": "compositions/frames/line-12.html",
+      "audio_id": "voice-line-12",
+      "audio_path": ".media/audio/voice/line-12.wav",
+      "start_s": 103.09659863945578,
+      "duration_s": 11.145578231292516
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "404f53e6ff0a24fba1b5fc75562c2e46c14bf53b812e5af93dec11db04e00c93"
+  }
+}

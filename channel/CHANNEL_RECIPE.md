@@ -32,7 +32,10 @@ the exact local assets. `channel.json` must declare `{ "design":
 6. Build frames using the portrait safe zone and `channel/styles.css`; use
    vertical source/process/destination primitives and seekable causal motion.
    Preserve the approved objects and connections, carry persistent objects
-   across cuts, and use the safe area for large diagrams. Retiming the existing
+   across cuts, and maximize diagrams on the portrait stage without an enclosing
+   bordered card. Essential content stays safe; backgrounds may bleed to edges.
+   Use large colored devices, connected routes and destination receipts; wrappers
+   and padding do not count toward icon size. Retiming the existing
    storyboard beats after TTS avoids a second timing document.
    Assemble v2 projects with `npm run assemble -- --project videos/<project>`;
    stage `public/vendor/gsap.min.js` locally first. This reads the canonical
@@ -42,7 +45,8 @@ the exact local assets. `channel.json` must declare `{ "design":
    assembler's remote runtime URL. It creates the base narration-only index;
    add optional captions or sound clips afterward and revalidate them.
 7. Run `npm run validate -- --project videos/<project>` and `npx hyperframes check`,
-   inspect opening/action/result samples and play the preview with sound off
+   inspect opening/action/result samples for every scene and each adjacent cut,
+   record inspected times and pass/fix notes in the storyboard, and play the preview with sound off
    and on. Compare built scenes with their approved sketches, not just their
    narration. Gate 2 is explicit final-preview
    approval. Render only after that approval.

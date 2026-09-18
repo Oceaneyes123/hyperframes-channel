@@ -4,6 +4,11 @@ Use this guide for a new visual narrated short, including with GPT-5.6-luna.
 It reduces decisions; it cannot guarantee identical quality across models.
 Follow the same visual review gates regardless of model capability.
 
+The reference demonstrates causal motion and continuity, not a mandatory box
+layout. New videos must maximize the portrait stage under the current `DESIGN.md`:
+no enclosing bordered card by default, larger colored artwork, and essential
+content within the safe rectangle. Copy the teaching behavior, not the enclosure.
+
 ## Start here
 
 Read `AGENTS.md`, `DESIGN.md`, this guide, then the relevant HyperFrames skill.
@@ -15,7 +20,7 @@ The approved reference is `videos/local-or-router-short/`:
 
 | Read or inspect | What to learn |
 | --- | --- |
-| `local-or-router-short.mp4` | Final approved visual target: 45.93s, 1080x1920, 30fps, narration |
+| `local-or-router-short.mp4` | Approved causality/continuity example: 45.93s, 1080x1920, 30fps, narration; improve screen use under current DESIGN.md |
 | `FACTS.md`, `SCRIPT.md` | One takeaway, concise spoken lines, secondary concepts deferred |
 | `sketches/board.html` | All seven scenes with actual production icons before frame work |
 | `frame.md` | Shared coordinates, typography, colors, object continuity |
@@ -38,6 +43,8 @@ not a requirement to abandon grid/flex for other layouts.
 > quality reference. Cover all required information with no fixed duration or
 > scene-count limit, using focused scenes and natural pacing. Use large local
 > icons, sparse text, persistent objects, and motion that explains the process.
+> Maximize the portrait stage: no enclosing bordered card, large colored devices,
+> connected routes and visible outcomes. Keep essential content in the safe area.
 > Use Supertonic per scene; captions, SFX and music off. First present the script
 > and actual-icon sketches together for approval. After approval, build all
 > scenes, validate and open the final preview. Wait for approval before rendering.
@@ -80,6 +87,14 @@ pronunciation itself teaches the lesson. Do not shorten a long script by racing 
 
 Write a project `frame.md` before authoring scenes. Fix persistent object names,
 asset paths, sizes, positions, label bands and start/end states. The reference uses:
+
+Before adopting those coordinates, allocate the entire safe rectangle to the
+teaching diagram. Use 280–360px visible primary artwork where space permits and
+an optional short title. Backgrounds may reach the canvas edges. Do not wrap
+the scene in a bordered panel or add white tiles around black device glyphs.
+A real network/trust boundary may be drawn when it teaches the grouping, without
+shrinking the diagram. The coordinates below explain the old example; they do
+not require its outer box or prevent a larger layout.
 
 | Element | Reference geometry in 1080x1920 pixels |
 | --- | --- |
@@ -138,6 +153,13 @@ For each scene, answer in writing before coding:
 3. What visible consequence proves the action completed?
 4. What state must the next scene inherit?
 
+Translate each action literally into observable behavior. For an exchange, a
+packet leaves the source, follows a connector that touches both endpoints,
+arrives at the destination and changes its state. Return data follows that same
+route in reverse while devices remain fixed. For verification, show the evidence
+being compared before acceptance. For execution, show command arrival, execution
+and output at the client. Do not replace these beats with a label sliding in.
+
 Start from `channel/templates/frame.html` or the closest reference scene. Replace
 all content-specific IDs, copy, assets and timings. Use one paused GSAP timeline
 registered under the exact composition ID, an explicit 1080x1920 root and measured
@@ -182,7 +204,9 @@ npx hyperframes preview --background
 ```
 
 Replace snapshot times with actual measured opening/action/result times; include
-at least one visible midpoint per scene. Inspect the returned sample times and
+all three states for every scene and inspect each adjacent cut. Batch captures
+and share one contact sheet for review; do not add approval gates. Record actual
+inspected times and pass/fix notes under each existing storyboard frame. Inspect the returned sample times and
 files: `--samples 21` does not mean every check saved 21 images. Motion results
 with zero assertions/samples are not proof of good movement. Use the existing
 motion sidecar format when adding assertions, then inspect playback regardless.
@@ -192,8 +216,10 @@ Reject the preview until these concrete tests pass:
 | Test | Pass evidence | Typical repair |
 | --- | --- | --- |
 | First second | Main objects visible | Remove whole-scene fade-in |
+| Screen use | Large visible artwork uses the safe width/height; no generic enclosing card | Remove enclosure/padding and enlarge/reflow the diagram |
+| Icon treatment | Colored primary devices; legible semantic support glyphs | Replace black glyph tiles/emoji with exact local assets |
 | Sketch fidelity | Same required objects/connections | Restore missing device or route |
-| Causality | Travel/decision followed by result | Replace decorative reveal with the actual action |
+| Causality | Every planned action visible; connected travel reaches endpoint before result | Implement missing causal beats rather than a decorative reveal |
 | Continuity | Persistent objects do not jump or swap identity | Reuse shared coordinates and boundary state |
 | Phone readability | Values legible, labels clear of connectors | Increase size, reduce copy, break line around label |
 | Timing | Every WAV mounted once at its canonical start | Rebuild from metadata; do not estimate |
@@ -206,6 +232,26 @@ playable preview available for user listening. Investigate warnings, rather than
 hiding them with blanket overlap exemptions. In the reference, an audio overlap
 warning remained despite contiguous canonical starts/durations; that is a known
 example to investigate, not permission to ignore future audio warnings.
+
+### Failure patterns to reject
+
+The current `ssh-explained-visually` implementation illustrates failures to
+avoid, not an alternate quality reference:
+
+- Frame 10 promises typing, a locked packet and arrival, but only moves an
+  already-visible command label horizontally. Implement the whole causal chain.
+- Frame 11 swaps client/server vertical positions. Reverse packet direction,
+  not endpoint identity or coordinates.
+- Frame 12 promises route replay, observer ciphertext and a final check, but
+  only animates recap text. Every promised action needs visible implementation.
+- White padded glyph tiles reduce visible device size; disconnected connectors
+  and labels beyond the safe edge weaken readability. Inspect actual pixels.
+- A 10.38s scene with motion ending at 5.7s leaves an unexplained hold over 3s.
+  Retime meaningful beats to measured narration; do not shorten required content.
+
+These examples describe the inspected version, not permanent defects. Apply
+the acceptance table to current output and remove failures before final preview.
+Smaller models follow the same checks; model capability does not waive a beat.
 
 Gate 2: open the actual timeline URL from CLI output, report measured duration
 and checks, then ask for final-preview approval. Never render merely because

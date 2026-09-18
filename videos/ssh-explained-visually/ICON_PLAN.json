@@ -1,0 +1,16 @@
+{
+  "icons": [
+    {"id":"client","provider":"fontawesome","path":"public/icons/laptop.svg","role":"client computer","meaning":"source of SSH connection","color":"client","style":"local SVG","scenes":[]},
+    {"id":"server","provider":"fontawesome","path":"public/icons/server.svg","role":"remote SSH server","meaning":"destination and command executor","color":"infrastructure","style":"local SVG","scenes":[]},
+    {"id":"network","provider":"fontawesome","path":"public/icons/globe.svg","role":"untrusted network","meaning":"path an observer can watch","color":"external","style":"local SVG","scenes":[]},
+    {"id":"terminal","provider":"fontawesome","path":"public/icons/terminal.svg","role":"command surface","meaning":"typed command and returned output","color":"client","style":"local SVG","scenes":[]},
+    {"id":"lock","provider":"fontawesome","path":"public/icons/lock.svg","role":"encrypted tunnel","meaning":"confidentiality and integrity","color":"security","style":"local SVG","scenes":[]},
+    {"id":"shield","provider":"fontawesome","path":"public/icons/shield-halved.svg","role":"protected channel","meaning":"network contents are unreadable","color":"security","style":"local SVG","scenes":[]},
+    {"id":"key","provider":"fontawesome","path":"public/icons/key.svg","role":"host or user key","meaning":"server identity and public-key authentication","color":"storage","style":"local SVG","scenes":[]},
+    {"id":"user","provider":"fontawesome","path":"public/icons/user.svg","role":"human account","meaning":"client-side user being authenticated","color":"client","style":"local SVG","scenes":[]},
+    {"id":"arrow","provider":"fontawesome","path":"public/icons/arrow-right.svg","role":"packet direction","meaning":"request and response travel","color":"external","style":"local SVG","scenes":[]},
+    {"id":"check","provider":"fontawesome","path":"public/icons/check.svg","role":"verified result","meaning":"server or command accepted","color":"success","style":"local SVG","scenes":[]},
+    {"id":"observer","provider":"fontawesome","path":"public/icons/eye.svg","role":"network observer","meaning":"sees metadata and ciphertext, not protected content","color":"warning","style":"local SVG","scenes":[]}
+  ]
+}
+
