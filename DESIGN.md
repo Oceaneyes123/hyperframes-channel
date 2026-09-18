@@ -67,8 +67,23 @@ Keep each scene focused while extending the sequence. Animation must show causal
 a decision highlights, an answer retraces the route, or a cache returns quickly.
 All motion is seekable and lives in one paused timeline.
 
+The full portrait canvas is the stage. Backgrounds and nonessential art may
+bleed to the edges; essential objects, text and causal actions stay in the safe
+rectangle. Maximize the diagram within that rectangle, spreading connected
+objects across its useful width and height rather than leaving empty panel space.
+Do not add an enclosing bordered card or nested padded stage by default. Draw a
+boundary only when it explains a real subnet, trust zone or other grouping, and
+keep the objects large within it. The approved reference's outer box is historical,
+not a required visual treatment.
+
+Primary devices normally use 280–360px colored local artwork where space allows;
+240px remains the minimum, measured on visible artwork rather than a padded tile.
+Use compact semantically colored inline glyphs for supporting symbols. Do not
+substitute black glyphs in white tiles or emoji for primary technical objects.
+
 The diagram owns the frame: use most of the safe area for the objects and
-their relationships, not a large title above a small illustration. Start with
+their relationships, with an optional short title rather than a reserved title
+panel. Start with
 the situation visible in the first second. For a 6–8s scene, plan roughly
 three causal beats: situation → action → consequence. A fade or slide-in is
 an entrance, not the explanation. Flag static holds over 3s for human review;
@@ -90,6 +105,13 @@ Captions, sound cues, and BGM stay off unless selected in the brief.
 Each lesson answers what it is, why it exists, what happens, and what to remember;
 the sound-off review must still show the causal change. Decorative layers are
 optional and never substitute for the dominant visual.
+
+Verify opening, main action and consequence in every scene, plus continuity at
+every adjacent cut. Match each approved storyboard action to observable output:
+paths touch their endpoints, packets reach the destination, results appear there,
+and responses retrace the same route without swapping devices. Reject label-only
+motion when the storyboard promises an exchange, comparison or execution. Record
+inspected times and pass/fix notes in the existing storyboard before final review.
 
 The workflow remains: facts → script/display copy → timed storyboard → icon plan
 → actual-icon sketches (gate 1) → measured per-scene TTS → frames → checks and

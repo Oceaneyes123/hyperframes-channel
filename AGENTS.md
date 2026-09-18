@@ -9,6 +9,30 @@ destination zones with grid/flex and keep 24px label spacing and 48px group
 spacing. Review the story with sound off: packet travel, decisions, and answer
 return must remain legible.
 
+### Visual quality and screen use
+
+- Use the full portrait canvas as the stage. Backgrounds and nonessential art
+  may bleed to the edges; keep essential objects, values and actions inside the
+  safe rectangle. Maximize the diagram within that rectangle before adding a title.
+- No enclosing bordered card by default. A boundary is allowed only when it
+  teaches a real subnet, trust zone or other grouping; it must not become a smaller
+  stage with another layer of padding. The reference video's outer box is not a
+  layout template to copy.
+- Primary devices use large local colored assets, normally 280–360px where the
+  scene allows. Judge the visible artwork, not a padded wrapper. Do not replace
+  colored devices with small black Font Awesome glyphs in white tiles. Inline
+  support glyphs with semantic color; never use emoji for a teaching object.
+- Every storyboard action must exist in the frame: connected route, movement
+  to the actual destination, and visible consequence. A moving label, entrance,
+  checkmark or decorative tunnel alone does not prove the process.
+- Keep persistent device coordinates and identity across cuts. A response retraces
+  the established route; do not swap endpoints to reverse direction.
+- Review opening/action/result states for EVERY scene and each adjacent cut in
+  one batch. Record actual inspected times and pass/fix notes in the existing
+  storyboard. A sparse global sample, passing lint or motion report with zero
+  assertions cannot substitute for this review. Fix missing planned actions before
+  opening the final preview; retain the same two approval gates.
+
 Use the relevant HyperFrames skill before changing a composition.
 
 Video length and scene count have no fixed limit. Cover all required information
@@ -54,7 +78,8 @@ Repository v2 portrait defaults override generic skill landscape examples; legac
 - Plan local-time causal beats in the existing storyboard and retime them after TTS. Flag unexplained static holds over 3s; decorative pulses do not satisfy the motion requirement. Preserve object identity across adjacent scenes.
 - Keep just two review gates: storyboard/sketch approval and final-preview approval.
 - Iterate with snapshots or draft previews, then render once after approval.
-- Use one screenshot per review milestone; routine UI checks use targeted context without screenshots.
+- Share one contact sheet per review milestone; capture enough internal samples
+  to inspect every scene's opening/action/result. Routine UI checks use targeted context.
 - Poll renders with small output limits and report only progress, errors, and the final summary.
 - Keep source frames stable. Before a mechanical repair, stop Studio and regenerate the assembled index once; never regex-edit assembled HTML as a first fix.
 
