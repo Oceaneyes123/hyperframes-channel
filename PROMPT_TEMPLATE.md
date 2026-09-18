@@ -8,16 +8,19 @@ This template works with any model; the review checks still determine quality.
 
 ```text
 Create a polished, highly visual narrated explainer for YouTube Shorts and
-Facebook/Instagram Reels in this HyperFrames repository.
+Facebook/Instagram Reels in this HyperFrames repository. Completeness takes
+priority over a short-form runtime target. Do not truncate, split into a series
+or omit required information to meet a platform duration limit; flag any
+platform compatibility issue separately for my decision.
 
 INPUTS
 - Topic: [TOPIC]
 - Audience: beginners with no prior knowledge
 - Single takeaway: choose the most useful beginner takeaway from the topic
 - Language: English
-- Duration: approximately 45–60 seconds, normally 6–10 scenes
+- Duration: no fixed limit; use as much time and as many scenes as required
 - Source material: research authoritative sources if none are supplied
-- Must include: only what is necessary to explain the takeaway accurately
+- Required information: [LIST REQUIRED POINTS, or derive a complete coverage checklist from the topic and source material]
 - Exclude: tangents, jargon without explanation, promotional intro/outro
 - Captions: off
 - Sound effects: off
@@ -39,7 +42,9 @@ into the new project. Preserve unrelated files. Do not commit, push or publish.
 
 CREATIVE REQUIREMENTS
 1. Teach one clear mental model. Fact-check once and retain concise sources and
-   assumptions in FACTS.md. Defer secondary concepts rather than rushing speech.
+   assumptions in FACTS.md. Cover every required point, including prerequisites and
+   qualifications needed for accuracy. Map each required point to storyboard scenes.
+   Extend the runtime instead of omitting information or rushing speech.
 2. Hook the viewer with a concrete question or visible problem within 1–2 seconds.
    Show the main objects immediately; no logo intro or empty-canvas fade-in.
 3. Make the explanation understandable with sound off. Use real objects, routes,
@@ -116,7 +121,7 @@ Replace the corresponding input lines with:
 ```text
 - Topic: Why a second visit to a website can load faster
 - Single takeaway: a cached copy can avoid repeating the same fetch
-- Must include: first request, saved copy, repeat request, visible faster return
+- Required information: first request, saved copy, repeat request, visible faster return
 - Exclude: cache invalidation details, HTTP header syntax, CDN architecture
 ```
 

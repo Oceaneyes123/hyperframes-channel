@@ -10,11 +10,13 @@ the exact local assets. `channel.json` must declare `{ "design":
 "hyperframes-channel", "design_version": "2.0.0" }`.
 
 1. Capture facts in `FACTS.md`; choose one beginner mental model.
-2. Write `SCRIPT.md` as 6–10 `## Line N` scenes targeting 45–60 seconds. Keep
+2. Write `SCRIPT.md` with as many `## Line N` scenes as the required information
+   needs; there is no fixed runtime or scene-count limit. Map required points to
+   scenes and check complete coverage before approval. Keep
    display copy separate from indented narration and normalize the latter before
    TTS. Start with a concrete problem, not an intro or a spoken list of long
-   addresses. Defer secondary concepts to another short; do not speed up TTS
-   to rescue an overloaded script. A longer brief is an explicit editorial choice.
+   addresses. Extend the video to explain required details clearly; do not speed
+   up TTS, omit required information, or force a series to meet a duration target.
 3. Write a timed `STORYBOARD.md` with `## Frame N` headings and `src`, `duration`,
    `status`, and `voiceover` fields for Studio. Include `narration_ref: SCRIPT.md#Line N`, objective, dominant visual,
    `icon_assets`, visible text, animation, beginning/ending state, transition,

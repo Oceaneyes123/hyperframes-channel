@@ -230,16 +230,9 @@ def validate_diagnostics(project: Path, stage="preview") -> tuple[list[str], lis
             spoken = prepare_narration(project, narration_lines(project / "SCRIPT.md"))["lines"]
         except (OSError, ValueError, json.JSONDecodeError) as exc:
             errors.append(f"cannot estimate narration: {exc}"); spoken = []
-        scene_count = len(spoken) or len(frames)
-        if not 6 <= scene_count <= 10: warnings.append(f"scene count {scene_count} is outside the 6-10 short-form target")
-        estimate = sum(len(re.findall(r"\b[\w'-]+\b", line["spoken_text"])) for line in spoken) / 2.5
-        if estimate > 60: warnings.append(f"estimated narration {estimate:.1f}s exceeds the 60s target")
         total = None
         if (project / "audio_meta.json").exists():
             total = _json(project / "audio_meta.json", errors, "audio_meta.json").get("timeline_duration_s")
-            try:
-                if float(total) > 60: warnings.append(f"measured duration {float(total):.1f}s exceeds the 60s target")
-            except (TypeError, ValueError): pass
         if root and (attr(root.group(0), "data-duration") is not None) and total is not None:
             try:
                 if abs(float(attr(root.group(0), "data-duration")) - float(total)) > .12: errors.append("index root duration differs from audio metadata")

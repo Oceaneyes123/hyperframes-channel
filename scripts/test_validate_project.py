@@ -116,7 +116,7 @@ class ValidatorTests(unittest.TestCase):
             with self.subTest(markup=markup): self.assertTrue(remote_assets(markup))
         self.assertFalse(remote_assets('<a href="https://icons8.com">Credit</a><svg xmlns="http://www.w3.org/2000/svg"/><img src="public/icon.svg">'))
 
-    def test_plan_before_production_and_spoken_only_estimate(self):
+    def test_plan_before_production_without_duration_cap(self):
         root = self.fixture()
         try:
             for name in ("index.html", "audio_meta.json", "audio_timeline.html", "line-1.wav", "compositions/frames/line-1.html"):
@@ -126,7 +126,9 @@ class ValidatorTests(unittest.TestCase):
             self.assertEqual(errors, [])
             self.assertFalse(any("estimated narration" in warning for warning in warnings))
             (root / "SCRIPT.md").write_text("## Line 1\n    " + "192.168.1.10 " * 20 + "\n", encoding="utf-8")
-            self.assertTrue(any("estimated narration" in warning for warning in validate_diagnostics(root, "plan")[1]))
+            errors, warnings = validate_diagnostics(root, "plan")
+            self.assertEqual(errors, [])
+            self.assertFalse(any("60s" in warning or "scene count" in warning for warning in warnings))
             self.assertTrue(validate_diagnostics(root, "preview")[0])
             (root / "ICON_PLAN.json").unlink()
             (root / "sketch.html").write_text('<img src="https://cdn.example/image.png">', encoding="utf-8")
