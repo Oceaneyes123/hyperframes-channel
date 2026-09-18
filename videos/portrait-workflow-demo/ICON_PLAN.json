@@ -1,6 +1,45 @@
-{"schema":"hyperframes-channel/icon-plan@2","icons":[
- {"id":"client-blue","provider":"custom","role":"system","meaning":"client computer","color":"client","path":"public/icons/client-blue.svg","source":"authored locally"},
- {"id":"resolver-indigo","provider":"custom","role":"system","meaning":"DNS resolver","color":"infrastructure","path":"public/icons/resolver-indigo.svg","source":"authored locally"},
- {"id":"globe-cyan","provider":"custom","role":"system","meaning":"external DNS network","color":"external","path":"public/icons/globe-cyan.svg","source":"authored locally"},
- {"id":"cache-violet","provider":"custom","role":"system","meaning":"resolver cache","color":"storage","path":"public/icons/cache-violet.svg","source":"authored locally"}
-]}
+{
+  "schema": "hyperframes-channel/icon-plan@2",
+  "icons": [
+    {
+      "id": "client-blue",
+      "provider": "custom",
+      "role": "system",
+      "meaning": "client computer",
+      "color": "client",
+      "path": "public/icons/client-blue.svg",
+      "source": "authored locally",
+      "style": "flat semantic color"
+    },
+    {
+      "id": "resolver-indigo",
+      "provider": "custom",
+      "role": "system",
+      "meaning": "DNS resolver",
+      "color": "infrastructure",
+      "path": "public/icons/resolver-indigo.svg",
+      "source": "authored locally",
+      "style": "flat semantic color"
+    },
+    {
+      "id": "globe-cyan",
+      "provider": "custom",
+      "role": "system",
+      "meaning": "external DNS network",
+      "color": "external",
+      "path": "public/icons/globe-cyan.svg",
+      "source": "authored locally",
+      "style": "flat semantic color"
+    },
+    {
+      "id": "cache-violet",
+      "provider": "custom",
+      "role": "system",
+      "meaning": "resolver cache",
+      "color": "storage",
+      "path": "public/icons/cache-violet.svg",
+      "source": "authored locally",
+      "style": "flat semantic color"
+    }
+  ]
+}

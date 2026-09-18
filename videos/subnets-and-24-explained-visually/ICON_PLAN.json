@@ -1,0 +1,32 @@
+{
+  "schema": "hyperframes-channel/icon-plan@2",
+  "icons": [
+    {"id": "laptop", "provider": "icons8", "role": "system", "meaning": "client laptop (Laptop A / Laptop B)", "color": "client", "style": "flat colored", "path": "public/icons8/laptop.png", "source": "https://icons8.com/icons/set/laptop"},
+    {"id": "phone", "provider": "icons8", "role": "system", "meaning": "client phone at an example host address", "color": "client", "style": "flat colored", "path": "public/icons8/phone.png", "source": "https://icons8.com/icons/set/smartphone"},
+    {"id": "router", "provider": "icons8", "role": "system", "meaning": "router / default gateway", "color": "infrastructure", "style": "flat colored", "path": "public/icons8/router.png", "source": "https://icons8.com/icons/set/wifi-router"},
+    {"id": "server", "provider": "icons8", "role": "system", "meaning": "server host at an example address", "color": "storage", "style": "flat colored", "path": "public/icons8/server.png", "source": "https://icons8.com/icons/set/server"},
+    {"id": "switch-lan", "provider": "custom", "role": "system", "meaning": "local network switch / LAN fabric", "color": "infrastructure", "style": "flat colored", "path": "public/icons/switch-lan.svg", "source": "authored locally to match the Icons8 flat palette"},
+    {"id": "network", "provider": "fontawesome", "role": "system", "meaning": "network portion marker", "color": "infrastructure", "style": "solid glyph", "path": "public/icons/network-wired.svg"},
+    {"id": "globe", "provider": "fontawesome", "role": "system", "meaning": "remote network / beyond the router", "color": "external", "style": "solid glyph", "path": "public/icons/globe.svg"},
+    {"id": "arrow-right", "provider": "fontawesome", "role": "system", "meaning": "direct local path", "color": "success", "style": "solid glyph", "path": "public/icons/arrow-right.svg"},
+    {"id": "arrow-down", "provider": "fontawesome", "role": "system", "meaning": "path toward the router", "color": "warning", "style": "solid glyph", "path": "public/icons/arrow-down.svg"},
+    {"id": "equals", "provider": "fontawesome", "role": "system", "meaning": "/24 equals 255.255.255.0", "color": "client", "style": "solid glyph", "path": "public/icons/equals.svg"},
+    {"id": "check", "provider": "fontawesome", "role": "system", "meaning": "same network / address is usable", "color": "success", "style": "solid glyph", "path": "public/icons/check.svg"},
+    {"id": "warning", "provider": "fontawesome", "role": "system", "meaning": "boundary address or mismatch", "color": "warning", "style": "solid glyph", "path": "public/icons/triangle-exclamation.svg"},
+    {"id": "calculator", "provider": "fontawesome", "role": "system", "meaning": "the mask is derived from the prefix length", "color": "muted", "style": "solid glyph", "path": "public/icons/calculator.svg"}
+  ],
+  "scenes": [
+    {"frame": "line-1", "uses": ["laptop"]},
+    {"frame": "line-2", "uses": []},
+    {"frame": "line-3", "uses": []},
+    {"frame": "line-4", "uses": ["equals", "calculator"]},
+    {"frame": "line-5", "uses": []},
+    {"frame": "line-6", "uses": ["warning"]},
+    {"frame": "line-7", "uses": ["router", "laptop", "phone", "server"]},
+    {"frame": "line-8", "uses": ["laptop", "switch-lan", "check", "arrow-right"]},
+    {"frame": "line-9", "uses": ["laptop", "warning"]},
+    {"frame": "line-10", "uses": ["laptop", "router", "switch-lan", "globe", "arrow-down"]},
+    {"frame": "line-11", "uses": ["switch-lan", "router", "network", "arrow-right", "arrow-down"]},
+    {"frame": "line-12", "uses": ["laptop", "router", "check", "arrow-right", "warning"]}
+  ]
+}

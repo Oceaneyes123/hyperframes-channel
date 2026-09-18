@@ -1,0 +1,42 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    #root[data-composition-id="line-5"] { position:relative; width:1080px; height:1920px; overflow:hidden; }
+    [data-composition-id="line-5"] .line-5-ground { position:absolute; inset:0; background:#0B1020; }
+    [data-composition-id="line-5"] .line-5-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    [data-composition-id="line-5"] .line-5-title { position:absolute; left:72px; top:180px; margin:0; height:92px; color:#F5F7FF; font:700 76px Arial,sans-serif; }
+    [data-composition-id="line-5"] .line-5-address { fill:#AAB5CC; font:44px monospace; text-anchor:middle; }
+  </style>
+  <div data-hf-id="hf-et90" id="root" data-composition-id="line-5" data-width="1080" data-height="1920" data-duration="5.572789">
+    <div data-hf-id="hf-jlij" id="line-5-ground" class="clip line-5-ground" data-start="0" data-duration="5.572789" data-track-index="0"></div>
+    <h1 data-hf-id="hf-m1xy" class="line-5-title">Default gateway</h1>
+    <svg data-hf-id="hf-9zg3" class="line-5-diagram" viewBox="0 0 1080 1920" aria-label="Remote traffic passes through the local switch to the default gateway router">
+      <rect data-hf-id="hf-tz17" x="72" y="340" width="864" height="620" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" />
+      <rect data-hf-id="hf-5bxw" x="72" y="1170" width="864" height="410" rx="28" fill="#141D35" stroke="#F5B94D" stroke-width="3" />
+      <path data-hf-id="hf-nlh1" d="M504 630V655 M504 720V965 M504 1165V1180 M504 1240V1280" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" />
+      <image data-hf-id="hf-xux6" href="public/icons/laptop.png" x="354" y="360" width="300" height="300" />
+      <image data-hf-id="hf-rxmn" href="public/icons/switch.svg" x="354" y="720" width="300" height="240" opacity="0.65" />
+      <image data-hf-id="hf-6gla" href="public/icons/laptop.png" x="354" y="1255" width="300" height="300" />
+      <text data-hf-id="hf-cw1b" class="line-5-address" x="504" y="705"><tspan data-hf-id="hf-nmo7" fill="#4DA3FF">192.168.1.</tspan><tspan data-hf-id="hf-mgtq">20 /24</tspan></text>
+      <text data-hf-id="hf-in5k" class="line-5-address" x="504" y="1220"><tspan data-hf-id="hf-778k" fill="#F5B94D">192.168.2.</tspan><tspan data-hf-id="hf-dj7x">50 /24</tspan></text>
+      <rect data-hf-id="hf-0jpl" class="line-5-gateway-ring" x="374" y="952" width="260" height="218" rx="38" fill="none" stroke="#7067E8" stroke-width="6" opacity="0" />
+      <image data-hf-id="hf-igkj" href="public/icons/router.png" x="384" y="950" width="240" height="240" />
+      <circle data-hf-id="hf-yhmr" class="line-5-packet" cx="504" cy="648" r="22" fill="#4DA3FF" stroke="#F5F7FF" stroke-width="3" />
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const scene = document.querySelector('[data-composition-id="line-5"]');
+      const packet = scene.querySelector('.line-5-packet');
+      const ring = scene.querySelector('.line-5-gateway-ring');
+      const timeline = gsap.timeline({ paused: true });
+      timeline.fromTo(ring, { opacity: 0 }, { opacity: 0.45, duration: 1.592, ease: 'power1.out' }, 0);
+      timeline.to(packet, { y: 192, duration: 1.592, ease: 'none' }, 1.592);
+      timeline.to(packet, { y: 422, duration: 1.593, ease: 'none' }, 3.184);
+      timeline.to(ring, { opacity: 1, duration: 0.398, ease: 'power1.out' }, 4.777);
+      timeline.to(ring, { opacity: 0.65, duration: 0.397789, ease: 'power1.inOut' }, 5.175);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-5'] = timeline;
+    })();
+  </script>
+</template>

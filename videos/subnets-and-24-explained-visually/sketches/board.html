@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Subnets and /24 — icon-first sketches (gate 1)</title>
+<style>
+@import url("../channel/styles.css");
+html,body{margin:0;background:#06080F;color:#F5F7FF;font-family:Barlow,Arial,sans-serif}
+header{padding:36px 40px 12px}
+header h1{font-size:40px;margin:0 0 8px;letter-spacing:-.03em}
+header p{margin:0;color:#AAB5CC;font:400 20px/1.4 "IBM Plex Mono",monospace}
+.board{display:grid;grid-template-columns:repeat(4,280px);gap:28px 24px;padding:24px 40px 60px}
+.cell{width:280px}
+.cap{font:700 20px/1.2 "IBM Plex Mono",monospace;color:#AAB5CC;text-transform:uppercase;letter-spacing:.04em;margin:0 0 8px;display:flex;justify-content:space-between}
+.cap b{color:#4DA3FF}
+.sk{width:280px;height:498px;overflow:hidden;border:2px solid #33415F;background:#0B1020}
+.frame{width:1080px;height:1920px;transform:scale(.2593);transform-origin:top left;background:var(--hf-canvas);color:var(--hf-ink);position:relative}
+.safe{position:absolute;left:72px;right:144px;top:180px;bottom:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:44px}
+.h1{font-size:88px;font-weight:850;line-height:1.05;letter-spacing:-.045em;text-align:center;margin:0}
+.val{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:500;font-size:62px;line-height:1.25;letter-spacing:-.01em}
+.lbl{font-family:"IBM Plex Mono",ui-monospace,monospace;font-weight:700;font-size:36px;line-height:1.15;letter-spacing:.05em;text-transform:uppercase;color:#AAB5CC}
+.lbl.b{color:#4DA3FF}.lbl.m{color:#63D69A}.lbl.a{color:#F5B94D}.lbl.i{color:#7067E8}.lbl.c{color:#4DD9E8}
+.gi{fill:currentColor;display:block;flex:none}
+.grow{display:flex;align-items:center;gap:24px}
+.octets{display:flex;align-items:center;gap:18px}
+.oct{width:152px;height:190px;border:4px solid #4DA3FF;background:#141D35;display:flex;align-items:center;justify-content:center;font:500 72px/1 "IBM Plex Mono",monospace}
+.dot{font:700 62px/1 "IBM Plex Mono",monospace;color:#33415F}
+.bits{display:flex;gap:16px}
+.grp{display:flex;gap:6px}
+.bit{width:17px;height:68px;background:#33415F}
+.bit.on{background:#4DA3FF}.bit.zero{background:#1B2740}.bit.onz{background:#455A72}
+.divider{width:6px;height:120px;background:#F5B94D}
+.box{border:3px solid #33415F;background:#141D35;padding:24px 30px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.box.i{border-color:#7067E8}.box.m{border-color:#63D69A}.box.a{border-color:#F5B94D}
+.bar{display:flex;align-items:center;width:820px;height:118px;border:3px solid #33415F;background:#141D35}
+.seg{flex:1;height:100%;display:flex;align-items:center;justify-content:center;font:500 44px/1 "IBM Plex Mono",monospace}
+.seg.a{background:#3A2C12;color:#F5B94D}.seg.m{background:#12301F;color:#63D69A}
+.span{width:820px;height:28px;background:linear-gradient(90deg,#33415F 0 6%,#63D69A 6% 94%,#F5B94D 94% 100%)}
+.dev{display:flex;flex-direction:column;align-items:center;gap:16px}
+.dev img{height:196px}
+.dev .val{font-size:46px}
+.chip{display:inline-flex;align-items:center;gap:12px;border:3px solid #4DA3FF;background:#141D35;padding:12px 22px;font:700 40px/1 "IBM Plex Mono",monospace;color:#4DA3FF}
+.chip.m{border-color:#63D69A;color:#63D69A}
+.chip.a{border-color:#F5B94D;color:#F5B94D}
+.rowline{display:flex;align-items:center;gap:20px;font:500 44px/1 "IBM Plex Mono",monospace}
+.pathline{display:flex;align-items:center;gap:26px}
+.pathline img{height:200px}
+.mint{color:#63D69A}.amber{color:#F5B94D}.indigo{color:#7067E8}.cyan{color:#4DD9E8}.muted{color:#AAB5CC}
+.pillrow{display:flex;gap:16px;align-items:center}
+.recap{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.recap .rowline{font-size:40px}
+</style>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true">
+  <symbol id="fa-arrow-right" viewBox="0 0 512 512"><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l370.7 0-105.4 105.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol>
+  <symbol id="fa-arrow-down" viewBox="0 0 384 512"><path d="M169.4 502.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 402.7 224 32c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 370.7-105.4-105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></symbol>
+  <symbol id="fa-network-wired" viewBox="0 0 576 512"><path d="M248 88l80 0 0 48-80 0 0-48zm-8-56c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l16 0 0 32-224 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l96 0 0 32-16 0c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l96 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-16 0 0-32 192 0 0 32-16 0c-26.5 0-48 21.5-48 48l0 64c0 26.5 21.5 48 48 48l96 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-16 0 0-32 96 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-224 0 0-32 16 0c26.5 0 48-21.5 48-48l0-64c0-26.5-21.5-48-48-48l-96 0zM448 376l8 0 0 48-80 0 0-48 72 0zm-256 0l8 0 0 48-80 0 0-48 72 0z"/></symbol>
+  <symbol id="fa-globe" viewBox="0 0 512 512"><path d="M351.9 280l-190.9 0c2.9 64.5 17.2 123.9 37.5 167.4 11.4 24.5 23.7 41.8 35.1 52.4 11.2 10.5 18.9 12.2 22.9 12.2s11.7-1.7 22.9-12.2c11.4-10.6 23.7-28 35.1-52.4 20.3-43.5 34.6-102.9 37.5-167.4zM160.9 232l190.9 0C349 167.5 334.7 108.1 314.4 64.6 303 40.2 290.7 22.8 279.3 12.2 268.1 1.7 260.4 0 256.4 0s-11.7 1.7-22.9 12.2c-11.4 10.6-23.7 28-35.1 52.4-20.3 43.5-34.6 102.9-37.5 167.4zm-48 0C116.4 146.4 138.5 66.9 170.8 14.7 78.7 47.3 10.9 131.2 1.5 232l111.4 0zM1.5 280c9.4 100.8 77.2 184.7 169.3 217.3-32.3-52.2-54.4-131.7-57.9-217.3L1.5 280zm398.4 0c-3.5 85.6-25.6 165.1-57.9 217.3 92.1-32.7 159.9-116.5 169.3-217.3l-111.4 0zm111.4-48C501.9 131.2 434.1 47.3 342 14.7 374.3 66.9 396.4 146.4 399.9 232l111.4 0z"/></symbol>
+  <symbol id="fa-check" viewBox="0 0 448 512"><path d="M434.8 70.1c14.3 10.4 17.5 30.4 7.1 44.7l-256 352c-5.5 7.6-14 12.3-23.4 13.1s-18.5-2.7-25.1-9.3l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l101.5 101.5 234-321.7c10.4-14.3 30.4-17.5 44.7-7.1z"/></symbol>
+  <symbol id="fa-warning" viewBox="0 0 512 512"><path d="M256 0c14.7 0 28.2 8.1 35.2 21l216 400c6.7 12.4 6.4 27.4-.8 39.5S486.1 480 472 480L40 480c-14.1 0-27.2-7.4-34.4-19.5s-7.5-27.1-.8-39.5l216-400c7-12.9 20.5-21 35.2-21zm0 352a32 32 0 1 0 0 64 32 32 0 1 0 0-64zm0-192c-18.2 0-32.7 15.5-31.4 33.7l7.4 104c.9 12.5 11.4 22.3 23.9 22.3 12.6 0 23-9.7 23.9-22.3l7.4-104c1.3-18.2-13.1-33.7-31.4-33.7z"/></symbol>
+  <symbol id="fa-equals" viewBox="0 0 448 512"><path d="M32 128c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 128zm0 192c-17.7 0-32 14.3-32 32s14.3 32 32 32l384 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 320z"/></symbol>
+  <symbol id="fa-calculator" viewBox="0 0 384 512"><path d="M64 0C28.7 0 0 28.7 0 64L0 448c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-384c0-35.3-28.7-64-64-64L64 0zM96 64l192 0c17.7 0 32 14.3 32 32l0 32c0 17.7-14.3 32-32 32L96 160c-17.7 0-32-14.3-32-32l0-32c0-17.7 14.3-32 32-32zm16 168a24 24 0 1 1 -48 0 24 24 0 1 1 48 0zm80 24a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm128-24a24 24 0 1 1 -48 0 24 24 0 1 1 48 0zM88 352a24 24 0 1 1 0-48 24 24 0 1 1 0 48zm128-24a24 24 0 1 1 -48 0 24 24 0 1 1 48 0zm80 24a24 24 0 1 1 0-48 24 24 0 1 1 0 48zM64 424c0-13.3 10.7-24 24-24l112 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L88 448c-13.3 0-24-10.7-24-24zm232-24c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24z"/></symbol>
+</svg>
+<header>
+  <h1>Subnets and /24 — icon-first sketches</h1>
+  <p>Gate 1 · 12 scenes · production assets (Icons8 colored renders + custom SVG + Font Awesome glyphs inlined from public/icons/*.svg) · portrait 1080x1920 · scaled to 26%</p>
+</header>
+<main class="board">
+
+  <!-- 1 -->
+  <section class="cell">
+    <div class="cap"><span>1 · Hook</span><b>/24</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="grow">
+        <div class="dev"><img src="../public/icons8/laptop.png" alt="laptop"><div class="val">192.168.1.20</div></div>
+        <div class="dev"><img src="../public/icons8/laptop.png" alt="laptop"><div class="val muted">192.168.1.50</div></div>
+      </div>
+      <span class="chip">192.168.1.20<span class="lbl b">/24</span></span>
+      <div class="lbl">one boundary</div>
+    </div></div></div>
+  </section>
+
+  <!-- 2 -->
+  <section class="cell">
+    <div class="cap"><span>2 · 32 bits</span><b>octets</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="octets">
+        <div class="oct">192</div><span class="dot">.</span>
+        <div class="oct">168</div><span class="dot">.</span>
+        <div class="oct">1</div><span class="dot">.</span>
+        <div class="oct">20</div>
+      </div>
+      <div class="bits">
+        <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+        <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+        <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+        <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+      </div>
+      <div class="val">8 + 8 + 8 + 8 <span class="lbl i">= 32 bits</span></div>
+    </div></div></div>
+  </section>
+
+  <!-- 3 -->
+  <section class="cell">
+    <div class="cap"><span>3 · /24 boundary</span><b>network | host</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="lbl i">/24 → first 24 bits</div>
+      <div class="grow">
+        <div class="bits">
+          <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+          <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+          <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+        </div>
+        <div class="divider"></div>
+        <div class="grp"><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div></div>
+      </div>
+      <div class="grow">
+        <div class="box i"><div class="lbl i">network</div><div class="val">192.168.1</div></div>
+        <div class="box"><div class="lbl m">host</div><div class="val">20</div></div>
+      </div>
+    </div></div></div>
+  </section>
+
+  <!-- 4 -->
+  <section class="cell">
+    <div class="cap"><span>4 · mask</span><b>/24 = mask</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="grow">
+        <span class="chip">/24</span>
+        <svg class="gi indigo" viewBox="0 0 448 512" style="width:56px;height:64px"><use href="#fa-equals"/></svg>
+        <span class="chip">255.255.255.0</span>
+      </div>
+      <div class="bits">
+        <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+        <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+        <div class="grp"><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div><div class="bit on"></div></div>
+        <div class="grp"><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div><div class="bit zero"></div></div>
+      </div>
+      <div class="rowline" style="font-size:32px">
+        <svg class="gi muted" viewBox="0 0 384 512" style="width:30px;height:40px"><use href="#fa-calculator"/></svg>
+        <span>11111111.11111111.11111111.00000000</span>
+      </div>
+      <div class="lbl">same divide</div>
+    </div></div></div>
+  </section>
+
+  <!-- 5 -->
+  <section class="cell">
+    <div class="cap"><span>5 · network address</span><b>hosts → 0</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="val muted">192.168.1.20</div>
+      <svg class="gi amber" viewBox="0 0 384 512" style="width:48px;height:64px"><use href="#fa-arrow-down"/></svg>
+      <div class="box i"><div class="val">192.168.1.0</div><div class="lbl i">192.168.1.0/24</div></div>
+      <span class="chip">network address</span>
+    </div></div></div>
+  </section>
+
+  <!-- 6 -->
+  <section class="cell">
+    <div class="cap"><span>6 · range</span><b>broadcast</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="lbl">subnet range</div>
+      <div class="bar">
+        <div class="seg a">.0</div><div class="seg">.1</div><div class="seg">.2</div><div class="seg muted">…</div><div class="seg">.254</div><div class="seg a">.255</div>
+      </div>
+      <div class="rowline" style="font-size:48px">
+        <span class="val" style="font-size:48px">192.168.1.0</span>
+        <svg class="gi muted" viewBox="0 0 512 512" style="width:42px;height:42px"><use href="#fa-arrow-right"/></svg>
+        <span class="val" style="font-size:48px">192.168.1.255</span>
+      </div>
+      <div class="pillrow">
+        <span class="lbl i">.0 = network</span>
+        <svg class="gi amber" viewBox="0 0 512 512" style="width:52px;height:52px"><use href="#fa-warning"/></svg>
+        <span class="chip a">broadcast</span>
+      </div>
+    </div></div></div>
+  </section>
+
+  <!-- 7 -->
+  <section class="cell">
+    <div class="cap"><span>7 · usable hosts</span><b>254</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="span"></div>
+      <div class="lbl m" style="font-size:30px">192.168.1.1 – 192.168.1.254 · 254 hosts</div>
+      <div class="grow" style="gap:26px">
+        <div class="dev"><img src="../public/icons8/router.png" alt="router" style="height:168px"><div class="val">.1</div></div>
+        <div class="dev"><img src="../public/icons8/laptop.png" alt="laptop" style="height:168px"><div class="val">.20</div></div>
+        <div class="dev"><img src="../public/icons8/phone.png" alt="phone" style="height:168px"><div class="val">.50</div></div>
+        <div class="dev"><img src="../public/icons8/server.png" alt="server" style="height:168px"><div class="val">.100</div></div>
+      </div>
+    </div></div></div>
+  </section>
+
+  <!-- 8 -->
+  <section class="cell">
+    <div class="cap"><span>8 · same subnet</span><b>local</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="rowline"><span class="lbl b">192.168.1</span><span class="val">.20</span><span class="lbl b">192.168.1</span><span class="val">.50</span></div>
+      <div class="pathline mint">
+        <img src="../public/icons8/laptop.png" alt="laptop">
+        <svg class="gi" viewBox="0 0 512 512" style="width:56px;height:56px"><use href="#fa-arrow-right"/></svg>
+        <img src="../public/icons/switch-lan.svg" alt="switch" style="height:150px">
+        <svg class="gi" viewBox="0 0 512 512" style="width:56px;height:56px"><use href="#fa-arrow-right"/></svg>
+        <img src="../public/icons8/laptop.png" alt="laptop">
+      </div>
+      <div class="pillrow">
+        <svg class="gi mint" viewBox="0 0 448 512" style="width:52px;height:60px"><use href="#fa-check"/></svg>
+        <span class="chip m">same network</span>
+      </div>
+    </div></div></div>
+  </section>
+
+  <!-- 9 -->
+  <section class="cell">
+    <div class="cap"><span>9 · different subnet</span><b>mismatch</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="rowline"><span class="lbl b">192.168.1</span><span class="val">.20</span></div>
+      <div class="rowline"><span class="lbl a">192.168.2</span><span class="val">.50</span></div>
+      <div class="pathline" style="opacity:.6">
+        <img src="../public/icons8/laptop.png" alt="laptop">
+        <svg class="gi amber" viewBox="0 0 512 512" style="width:60px;height:60px"><use href="#fa-warning"/></svg>
+        <img src="../public/icons8/laptop.png" alt="laptop">
+      </div>
+      <div class="lbl a">direct path broken</div>
+      <span class="chip a">different network</span>
+    </div></div></div>
+  </section>
+
+  <!-- 10 -->
+  <section class="cell">
+    <div class="cap"><span>10 · default gateway</span><b>router</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="pathline">
+        <img src="../public/icons8/laptop.png" alt="laptop" style="height:120px">
+        <svg class="gi amber" viewBox="0 0 384 512" style="width:44px;height:56px"><use href="#fa-arrow-down"/></svg>
+        <img src="../public/icons/switch-lan.svg" alt="switch" style="height:130px">
+        <svg class="gi amber" viewBox="0 0 384 512" style="width:44px;height:56px"><use href="#fa-arrow-down"/></svg>
+        <img src="../public/icons8/router.png" alt="router" style="height:140px">
+        <svg class="gi cyan" viewBox="0 0 512 512" style="width:62px;height:62px"><use href="#fa-globe"/></svg>
+      </div>
+      <div class="chip">192.168.1.1</div>
+      <div class="lbl i">default gateway → other subnet</div>
+    </div></div></div>
+  </section>
+
+  <!-- 11 -->
+  <section class="cell">
+    <div class="cap"><span>11 · why subnets</span><b>local?</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="lbl i">local?</div>
+      <div class="grow" style="gap:22px">
+        <div class="box m" style="padding:20px 22px">
+          <div class="lbl m" style="font-size:30px">192.168.1.0/24</div>
+          <svg class="gi mint" viewBox="0 0 512 512" style="width:40px;height:40px"><use href="#fa-arrow-right"/></svg>
+          <div class="val" style="font-size:48px">direct</div>
+        </div>
+        <img src="../public/icons8/router.png" alt="router" style="height:118px">
+        <div class="box a" style="padding:20px 22px">
+          <div class="lbl a" style="font-size:30px">192.168.2.0/24</div>
+          <svg class="gi amber" viewBox="0 0 384 512" style="width:34px;height:44px"><use href="#fa-arrow-down"/></svg>
+          <div class="val" style="font-size:48px">router</div>
+        </div>
+      </div>
+      <div class="pathline muted">
+        <img src="../public/icons/switch-lan.svg" alt="switch" style="height:96px">
+        <svg class="gi" viewBox="0 0 576 512" style="width:58px;height:52px"><use href="#fa-network-wired"/></svg>
+        <span class="lbl">two subnets · one router</span>
+      </div>
+    </div></div></div>
+  </section>
+
+  <!-- 12 -->
+  <section class="cell">
+    <div class="cap"><span>12 · recap</span><b>/24</b></div>
+    <div class="sk"><div class="frame"><div class="safe">
+      <div class="recap">
+        <div class="rowline"><span class="chip">192.168.1.20/24</span></div>
+        <div class="rowline"><span class="lbl i">network</span><span class="val">192.168.1</span></div>
+        <div class="rowline"><span class="lbl m">host</span><span class="val">20</span></div>
+        <div class="rowline"><span class="lbl">mask</span><span class="val">255.255.255.0</span></div>
+        <div class="rowline"><span class="lbl">network addr</span><span class="val">192.168.1.0</span></div>
+        <div class="rowline"><span class="lbl m">hosts</span><span class="val">192.168.1.1 – .254</span></div>
+      </div>
+      <div class="grow" style="gap:20px">
+        <div class="pillrow">
+          <svg class="gi mint" viewBox="0 0 448 512" style="width:40px;height:46px"><use href="#fa-check"/></svg>
+          <img src="../public/icons8/laptop.png" alt="laptop" style="height:84px">
+          <span class="lbl m" style="font-size:28px">same → local</span>
+        </div>
+        <div class="pillrow">
+          <svg class="gi amber" viewBox="0 0 512 512" style="width:42px;height:42px"><use href="#fa-warning"/></svg>
+          <img src="../public/icons8/router.png" alt="router" style="height:84px">
+          <span class="lbl a" style="font-size:28px">diff → router</span>
+        </div>
+      </div>
+    </div></div></div>
+  </section>
+
+</main>
+</body>
+</html>

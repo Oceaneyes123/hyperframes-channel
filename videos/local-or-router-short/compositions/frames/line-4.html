@@ -1,0 +1,51 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    #root { position:relative; width:1080px; height:1920px; overflow:hidden; }
+    #root .line-4-ground { position:absolute; inset:0; background:#0B1020; }
+    #root .line-4-zones { position:absolute; inset:0; display:grid; grid-template-rows:340px 620px 210px 410px 340px; }
+    #root .line-4-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    #root .line-4-title { fill:#F5F7FF; font:700 76px Arial,sans-serif; }
+    #root .line-4-address { fill:#F5F7FF; font:44px monospace; text-anchor:middle; }
+  </style>
+  <div data-hf-id="hf-6bxk" id="root" data-composition-id="line-4" data-width="1080" data-height="1920" data-duration="7.105306">
+    <div data-hf-id="hf-5dbp" id="line-4-ground" class="clip line-4-ground" data-start="0" data-duration="7.105306" data-track-index="0"></div>
+    <div data-hf-id="hf-ijmm" class="line-4-zones" aria-hidden="true"></div>
+    <svg data-hf-id="hf-6e34" class="line-4-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+      <text data-hf-id="hf-xtq8" class="line-4-title" x="72" y="252">Different network</text>
+      <rect data-hf-id="hf-5wkh" class="line-4-local-region" x="72" y="340" width="864" height="1240" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" />
+      <g data-hf-id="hf-81mi" class="line-4-remote-regions" opacity="0">
+        <rect data-hf-id="hf-tz17" x="72" y="340" width="864" height="620" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" />
+        <rect data-hf-id="hf-5bxw" x="72" y="1170" width="864" height="410" rx="28" fill="#141D35" stroke="#F5B94D" stroke-width="3" />
+      </g>
+      <path data-hf-id="hf-qhqh" d="M504 620V654 M504 716V770" fill="none" stroke="#4DA3FF" stroke-width="8" />
+      <path data-hf-id="hf-mjv1" class="line-4-local-path" d="M504 900V1170 M504 1235V1290" fill="none" stroke="#4DA3FF" stroke-width="8" />
+      <image data-hf-id="hf-xux6" href="public/icons/laptop.png" x="354" y="360" width="300" height="300" />
+      <image data-hf-id="hf-25ey" href="public/icons/switch.svg" x="354" y="720" width="300" height="240" />
+      <image data-hf-id="hf-6gla" href="public/icons/laptop.png" x="354" y="1255" width="300" height="300" />
+      <rect data-hf-id="hf-jdr3" class="line-4-sender-highlight" x="280" y="660" width="245" height="56" rx="12" fill="#63D69A" opacity="0.15" />
+      <rect data-hf-id="hf-ixyw" class="line-4-destination-highlight" x="280" y="1175" width="245" height="56" rx="12" fill="#63D69A" opacity="0.15" />
+      <text data-hf-id="hf-rbbq" class="line-4-address" x="504" y="705"><tspan data-hf-id="hf-b3sn" class="line-4-sender-prefix" fill="#63D69A">192.168.1</tspan><tspan data-hf-id="hf-l8wy">.20 /24</tspan></text>
+      <text data-hf-id="hf-szw5" class="line-4-address line-4-old-address" x="504" y="1220"><tspan data-hf-id="hf-hz9g" fill="#63D69A">192.168.1</tspan><tspan data-hf-id="hf-1uuh">.50 /24</tspan></text>
+      <text data-hf-id="hf-8x0q" class="line-4-address line-4-new-address" x="504" y="1220" opacity="0"><tspan data-hf-id="hf-eodx" class="line-4-destination-prefix" fill="#63D69A">192.168.2</tspan><tspan data-hf-id="hf-ihjx">.50 /24</tspan></text>
+    </svg>
+  </div>
+  <script>
+    (function () {
+      const scope = '[data-composition-id="line-4"] ';
+      const tl = gsap.timeline({paused:true});
+      tl.to(scope + '.line-4-old-address', {opacity:0,duration:0.22}, 1.05)
+        .to(scope + '.line-4-new-address', {opacity:1,duration:0.22}, 1.05)
+        .to(scope + '.line-4-destination-prefix', {fill:'#F5B94D',duration:0.45}, 2.03)
+        .to(scope + '.line-4-destination-highlight', {fill:'#F5B94D',opacity:0.28,duration:0.45}, 2.03)
+        .to(scope + '.line-4-sender-prefix', {fill:'#4DA3FF',duration:0.45}, 2.65)
+        .to(scope + '.line-4-sender-highlight', {fill:'#4DA3FF',opacity:0.22,duration:0.45}, 2.65)
+        .to(scope + '.line-4-local-path', {opacity:0.2,duration:0.65}, 3.4)
+        .to(scope + '.line-4-local-region', {opacity:0,duration:0.65}, 4.06)
+        .to(scope + '.line-4-remote-regions', {opacity:1,duration:0.65}, 4.06)
+        .to(scope + '.line-4-destination-highlight', {opacity:0.15,duration:0.5}, 5.59);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-4'] = tl;
+    })();
+  </script>
+</template>

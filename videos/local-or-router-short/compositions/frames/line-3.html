@@ -1,0 +1,51 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    #root { position:relative; width:1080px; height:1920px; overflow:hidden; }
+    [data-composition-id="line-3"] .line-3-ground { position:absolute; inset:0; background:#0B1020; }
+    [data-composition-id="line-3"] .line-3-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    [data-composition-id="line-3"] .line-3-devices { position:absolute; left:354px; top:360px; width:300px; display:grid; grid-template-rows:300px 60px 240px 295px 300px; }
+    [data-composition-id="line-3"] .line-3-sender { grid-row:1; background:url("public/icons/laptop.png") center/contain no-repeat; }
+    [data-composition-id="line-3"] .line-3-switch { grid-row:3; background:url("public/icons/switch.svg") center/contain no-repeat; }
+    [data-composition-id="line-3"] .line-3-receiver { grid-row:5; background:url("public/icons/laptop.png") center/contain no-repeat; }
+    [data-composition-id="line-3"] .line-3-title { font:76px Arial,sans-serif; fill:#F5F7FF; }
+    [data-composition-id="line-3"] .line-3-address { font:44px monospace; fill:#F5F7FF; text-anchor:middle; }
+  </style>
+  <div data-hf-id="hf-gw33" id="root" data-composition-id="line-3" data-width="1080" data-height="1920" data-duration="6.130068">
+    <div data-hf-id="hf-bblm" id="line-3-ground" class="clip line-3-ground" data-start="0" data-duration="6.130068" data-track-index="0"></div>
+    <svg data-hf-id="hf-3y5t" class="line-3-diagram" viewBox="0 0 1080 1920" aria-label="Local packet delivery">
+      <text data-hf-id="hf-uc0f" class="line-3-title" x="72" y="256">Local</text>
+      <rect data-hf-id="hf-vg56" x="72" y="340" width="864" height="1240" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" />
+      <path data-hf-id="hf-4mxo" d="M504 620V650 M504 718V800 M504 900V1160 M504 1235V1340" fill="none" stroke="#33415F" stroke-width="10" stroke-linecap="round" />
+      <text data-hf-id="hf-qkqh" class="line-3-address" x="504" y="705"><tspan data-hf-id="hf-qtsu" fill="#63D69A">192.168.1.</tspan><tspan data-hf-id="hf-mgtq">20 /24</tspan></text>
+      <text data-hf-id="hf-i66i" class="line-3-address" x="504" y="1220"><tspan data-hf-id="hf-c282" fill="#63D69A">192.168.1.</tspan><tspan data-hf-id="hf-dj7x">50 /24</tspan></text>
+    </svg>
+    <div data-hf-id="hf-yjr4" class="line-3-devices">
+      <div data-hf-id="hf-vvf9" class="line-3-sender" role="img" aria-label="Sending laptop"></div>
+      <div data-hf-id="hf-gnpc" class="line-3-switch" role="img" aria-label="Network switch"></div>
+      <div data-hf-id="hf-o3g1" class="line-3-receiver" role="img" aria-label="Receiving laptop"></div>
+    </div>
+    <svg data-hf-id="hf-c4uw" class="line-3-diagram" viewBox="0 0 1080 1920" aria-hidden="true">
+      <circle data-hf-id="hf-4ur7" class="line-3-packet" cx="504" cy="620" r="22" fill="#4DA3FF" stroke="#F5F7FF" stroke-width="3" />
+      <path data-hf-id="hf-fjbx" class="line-3-check" opacity="0" d="M474 1380L497 1403L542 1357" fill="none" stroke="#63D69A" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const root = document.querySelector('[data-composition-id="line-3"]');
+      const packet = root.querySelector('.line-3-packet');
+      const check = root.querySelector('.line-3-check');
+      const tl = gsap.timeline({ paused:true });
+      gsap.set(check, { opacity:0 });
+      tl
+        .set(packet, { y:0, opacity:1 }, 0)
+        .to(packet, { y:180, duration:1.751, ease:'none' }, 0)
+        .to(packet, { y:380, duration:1.752, ease:'none' }, 1.751)
+        .to(packet, { y:760, duration:1.551, ease:'none' }, 3.503)
+        .set(packet, { opacity:0 }, 5.054)
+        .fromTo(check, { opacity:0, scale:0.6, transformOrigin:'50% 50%' }, { opacity:1, scale:1, duration:0.2, ease:'power2.out' }, 5.054);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-3'] = tl;
+    })();
+  </script>
+</template>

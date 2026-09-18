@@ -1,0 +1,51 @@
+<template>
+<style>
+@import url("channel/styles.css");
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;color:#F5F7FF;font-family:Arial,sans-serif}
+#line-7-background{position:absolute;inset:0;background:#0B1020}
+#line-7-diagram,#line-7-overlay{position:absolute;inset:0;width:1080px;height:1920px}
+#line-7-local-title,#line-7-router-title{position:absolute;left:72px;top:180px;height:92px;margin:0;font-size:76px;line-height:92px;font-weight:700}
+#line-7-zones{position:absolute;left:354px;top:360px;width:300px;height:1195px;display:grid;grid-template-rows:300px 60px 240px 295px 300px}
+#line-7-sender{grid-row:1;background:url('public/icons/laptop.png') center/contain no-repeat}
+#line-7-switch{grid-row:3;background:url('public/icons/switch.svg') center/contain no-repeat}
+#line-7-receiver{grid-row:5;background:url('public/icons/laptop.png') center/contain no-repeat}
+#line-7-router{position:absolute;left:384px;top:950px;width:240px;height:240px;background:url('public/icons/router.png') center/contain no-repeat}
+#line-7-addresses{font-family:monospace;font-size:44px;text-anchor:middle;fill:#F5F7FF}
+</style>
+<div data-hf-id="hf-eb8z" id="root" data-composition-id="line-7" data-width="1080" data-height="1920" data-duration="7.105306">
+<div data-hf-id="hf-n5l9" id="line-7-background" class="clip" data-start="0" data-duration="7.105306" data-track-index="0"></div>
+<svg data-hf-id="hf-aflp" id="line-7-diagram" viewBox="0 0 1080 1920" aria-hidden="true">
+<rect data-hf-id="hf-6zib" id="line-7-local-region" x="72" y="340" width="864" height="1240" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" />
+<g data-hf-id="hf-eilg" id="line-7-remote-regions" opacity="0"><rect data-hf-id="hf-tz17" x="72" y="340" width="864" height="620" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" /><rect data-hf-id="hf-5bxw" x="72" y="1170" width="864" height="410" rx="28" fill="#141D35" stroke="#F5B94D" stroke-width="3" /></g>
+<path data-hf-id="hf-xmfx" d="M504 630V653 M504 722V760 M504 917V1170 M504 1240V1300" fill="none" stroke="#33415F" stroke-width="12" stroke-linecap="round" />
+</svg>
+<h1 data-hf-id="hf-lc7t" id="line-7-local-title">Local</h1><h1 data-hf-id="hf-wrgo" id="line-7-router-title" style="opacity:0">Router</h1>
+<div data-hf-id="hf-ff4d" id="line-7-zones"><div data-hf-id="hf-x5m1" id="line-7-sender" role="img" aria-label="Sender laptop"></div><div data-hf-id="hf-ws4z" id="line-7-switch" role="img" aria-label="Network switch"></div><div data-hf-id="hf-tulg" id="line-7-receiver" role="img" aria-label="Destination laptop"></div></div>
+<div data-hf-id="hf-gs9a" id="line-7-router" style="opacity:0" role="img" aria-label="Router"></div>
+<svg data-hf-id="hf-ci7q" id="line-7-overlay" viewBox="0 0 1080 1920" aria-hidden="true">
+<g data-hf-id="hf-2ism" id="line-7-addresses"><text data-hf-id="hf-ploz" x="504" y="705"><tspan data-hf-id="hf-qtsu" fill="#63D69A">192.168.1.</tspan><tspan data-hf-id="hf-mgtq">20 /24</tspan></text><text data-hf-id="hf-oggr" id="line-7-local-address" x="504" y="1220"><tspan data-hf-id="hf-c282" fill="#63D69A">192.168.1.</tspan><tspan data-hf-id="hf-dj7x">50 /24</tspan></text><text data-hf-id="hf-4cna" id="line-7-remote-address" x="504" y="1220" opacity="0"><tspan data-hf-id="hf-778k" fill="#F5B94D">192.168.2.</tspan><tspan data-hf-id="hf-j8ht">50 /24</tspan></text></g>
+<circle data-hf-id="hf-7bnq" id="line-7-packet" cx="504" cy="630" r="22" fill="#4DA3FF" />
+<path data-hf-id="hf-wauo" id="line-7-check" d="M461 1380L490 1409L550 1348" fill="none" stroke="#63D69A" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
+</svg>
+</div>
+<script>
+(function(){
+const tl=gsap.timeline({paused:true});
+tl.fromTo('#line-7-packet',{y:0},{y:210,duration:0.65,ease:'power1.inOut'},0);
+tl.to('#line-7-packet',{y:750,duration:0.95,ease:'power1.inOut'},0.65);
+tl.set('#line-7-packet',{opacity:0},1.6);
+tl.fromTo('#line-7-check',{opacity:0},{opacity:1,duration:0.3,immediateRender:false},1.6);
+tl.set(['#line-7-local-region','#line-7-local-title','#line-7-local-address','#line-7-check'],{opacity:0},2.03);
+tl.set(['#line-7-remote-regions','#line-7-router-title','#line-7-remote-address'],{opacity:1},2.03);
+tl.set('#line-7-packet',{opacity:1,y:0},2.03);
+tl.fromTo('#line-7-router',{opacity:0,scale:0.9},{opacity:1,scale:1,duration:0.6,ease:'power2.out'},2.2);
+tl.to('#line-7-switch',{opacity:0.5,duration:0.4},2.2);
+tl.to('#line-7-packet',{y:210,duration:1.03,ease:'power1.inOut'},3.03);
+tl.to('#line-7-packet',{y:440,duration:0.82,ease:'power1.inOut'},4.06);
+tl.to('#line-7-packet',{y:750,duration:1.21,ease:'power1.inOut'},4.88);
+tl.set('#line-7-packet',{opacity:0},6.09);
+tl.fromTo('#line-7-check',{opacity:0,scale:0.8,transformOrigin:'50% 50%'},{opacity:1,scale:1,immediateRender:false,duration:1.015306,ease:'power2.out'},6.09);
+window.__timelines=window.__timelines||{};window.__timelines['line-7']=tl;
+})();
+</script>
+</template>

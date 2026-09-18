@@ -6,6 +6,7 @@
     "fontawesome-icon": "node scripts/fontawesome_icon.mjs",
     "icons8-icon": "node scripts/icons8_icon.mjs",
     "tts": "python scripts/supertonic_tts.py",
+    "assemble": "python scripts/assemble_project.py",
     "sync:channel": "python scripts/sync_channel_assets.py --all",
     "validate": "python scripts/validate_project.py",
     "validate:all": "python scripts/validate_project.py --all --stage plan",

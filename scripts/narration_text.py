@@ -85,6 +85,20 @@ def _number(n: int) -> str:
     return str(n)
 
 
+def _number_short(n: int) -> str:
+    """Colloquial address speech: 192 -> "one ninety two", 55 -> "fifty five"."""
+    if n < 20:
+        return _NUMBERS[n]
+    if n < 100:
+        return _TENS[n // 10] + (f" {_NUMBERS[n % 10]}" if n % 10 else "")
+    if n < 1000:
+        rest = n % 100
+        if not rest:
+            return f"{_NUMBERS[n // 100]} hundred"
+        return f"{_NUMBERS[n // 100]} {_number_short(rest)}"
+    return str(n)
+
+
 def load_config(project: Path) -> dict[str, Any]:
     path = project / "pronunciation.json"
     if not path.exists():
@@ -109,8 +123,8 @@ def load_config(project: Path) -> dict[str, Any]:
         raise ValueError(
             "pronunciation.json overrides require nonempty string keys and values"
         )
-    if style not in ("digits", "grouped"):
-        raise ValueError("pronunciation.json ipv4_style must be digits or grouped")
+    if style not in ("digits", "grouped", "short"):
+        raise ValueError("pronunciation.json ipv4_style must be digits, grouped, or short")
     return {"terms": terms, "lines": lines, "ipv4_style": style}
 
 
@@ -118,6 +132,8 @@ def _ipv4(value: str, style: str) -> str:
     parts = value.split(".")
     if style == "digits":
         return " dot ".join(" ".join(_NUMBERS[int(c)] for c in part) for part in parts)
+    if style == "short":
+        return " dot ".join(_number_short(int(part)) for part in parts)
     return " dot ".join(_number(int(part)) for part in parts)
 
 

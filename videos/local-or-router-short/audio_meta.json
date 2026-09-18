@@ -1,0 +1,145 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 45.905850340136055,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 5.50312925170068,
+      "original_text": "Does every message from your laptop need the router? Watch these two devices.",
+      "spoken_text": "Does every message from your laptop need the router? Watch these two devices.",
+      "normalization_fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 8.568163265306122,
+      "original_text": "Here, both addresses use a slash twenty-four prefix. Their network portions match, even though the devices have different numbers.",
+      "spoken_text": "Here, both addresses use a slash twenty-four prefix. Their network portions match, even though the devices have different numbers.",
+      "normalization_fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 6.130068027210885,
+      "original_text": "The destination is local. The laptop sends the packet through the switch to the other device.",
+      "spoken_text": "The destination is local. The laptop sends the packet through the switch to the other device.",
+      "normalization_fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 7.1053061224489795,
+      "original_text": "Now change the destination's network. Those highlighted portions no longer match. The destination is remote.",
+      "spoken_text": "Now change the destination's network. Those highlighted portions no longer match. The destination is remote.",
+      "normalization_fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 5.572789115646258,
+      "original_text": "In this simple setup, remote traffic goes to the default gateway: the router.",
+      "spoken_text": "In this simple setup, remote traffic goes to the default gateway: the router.",
+      "normalization_fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 5.921088435374149,
+      "original_text": "The router forwards the packet toward the other network, where it can reach the destination.",
+      "spoken_text": "The router forwards the packet toward the other network, where it can reach the destination.",
+      "normalization_fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 7.1053061224489795,
+      "original_text": "Same subnet: local delivery. Different subnet: use a router. That is the decision to remember.",
+      "spoken_text": "Same subnet: local delivery. Different subnet: use a router. That is the decision to remember.",
+      "normalization_fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab",
+      "frame": 7
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 5.50312925170068
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 5.50312925170068,
+      "duration_s": 8.568163265306122
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 14.071292517006803,
+      "duration_s": 6.130068027210885
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 20.20136054421769,
+      "duration_s": 7.1053061224489795
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 27.30666666666667,
+      "duration_s": 5.572789115646258
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 32.879455782312924,
+      "duration_s": 5.921088435374149
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 38.800544217687076,
+      "duration_s": 7.1053061224489795
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "d2aad78b8b4acf1902269a003e5019fb63371d3f69137e6cbbf26e47f361daab"
+  }
+}

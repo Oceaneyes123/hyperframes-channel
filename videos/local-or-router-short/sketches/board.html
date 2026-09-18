@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Local or router? — storyboard review</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:32px;background:#080c16;color:#f5f7ff;font:16px/1.5 Arial,sans-serif}h1{font-size:36px;margin:0 0 10px}.intro{max-width:900px;color:#aab5cc;margin-bottom:30px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}article{min-width:0}h2{font-size:18px}svg{width:100%;display:block;border:1px solid #33415f}article p{color:#aab5cc}article .voice{color:#f5f7ff}a{color:#4da3ff}footer{margin-top:32px}button{font:inherit;padding:8px 16px;color:#f5f7ff;background:#141d35;border:1px solid #4da3ff;border-radius:6px;cursor:pointer}button:focus-visible{outline:3px solid #63d69a}
+</style>
+</head>
+<body>
+<h1>Local or router?</h1>
+<p class="intro">Reference short · 49 seconds estimated · seven scenes · awaiting storyboard approval.<br>Resolved-state sketches use the actual local icons. Narration and motion beats appear below each scene. Final timing follows measured narration after approval.</p>
+<div class="grid" id="board"></div>
+<footer><a href="../SCRIPT.md">Script</a> · <a href="../STORYBOARD.md">Timed storyboard</a> · <a href="../FACTS.md">Facts</a></footer>
+<script>
+const scenes = [
+  ['Need a router?', '0–6s', 'Does every message from your laptop need the router? Watch these two devices.', 'Show endpoints immediately → approach switch → highlight destination.'],
+  ['Compare', '6–14s', 'Here, both addresses use a slash twenty-four prefix. Their network portions match, even though the devices have different numbers.', 'Reveal addresses → divide prefix/host → match blue prefixes → contrast host numbers.'],
+  ['Deliver locally', '14–21s', 'The destination is local. The laptop sends the packet through the switch to the other device.', 'Launch → switch forwards → receiver lights green.'],
+  ['Different network', '21–28s', "Now change the destination's network. Those highlighted portions no longer match. The destination is remote.", 'Change destination prefix → highlight mismatch → separate logical subnet regions.'],
+  ['Default gateway', '28–35s', 'In this simple setup, remote traffic goes to the default gateway: the router.', 'Retain switch → reveal gateway → move packet to router.'],
+  ['Delivered', '35–42s', 'The router forwards the packet toward the other network, where it can reach the destination.', 'Continue from router → cross subnet boundary → reach receiver.'],
+  ['Local or router', '42–49s', 'Same subnet: local delivery. Different subnet: use a router. That is the decision to remember.', 'Replay local route → change prefix → replay routed path. Use the button to compare the two planned states.']
+];
+function diagram(i, remote = i >= 3) {
+  const routed = remote && i >= 4;
+  const delivered = i === 2 || i === 5;
+  const color = remote ? '#F5B94D' : '#4DA3FF';
+  const region = remote
+    ? '<rect x="72" y="340" width="864" height="620" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3"/><rect x="72" y="1170" width="864" height="410" rx="28" fill="#141D35" stroke="#F5B94D" stroke-width="3"/>'
+    : '<rect x="72" y="340" width="864" height="1240" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3"/>';
+  const addresses = i === 1 || i === 3 || i === 6;
+  const active = remote && !routed ? '#33415F' : (delivered ? '#63D69A' : '#4DA3FF');
+  return `<svg viewBox="0 0 1080 1920" role="img" aria-label="${remote ? 'Different' : 'Same'} subnet: two laptops, switch${routed ? ', and router' : ''}">
+    <rect width="1080" height="1920" fill="#0B1020"/>
+    <text x="72" y="265" fill="#F5F7FF" font-size="76" font-weight="700">${scenes[i][0]}</text>
+    ${region}
+    <path d="${addresses ? 'M504 650V665 M504 730V1165 M504 1240V1260' : 'M504 650V1260'}" stroke="${active}" stroke-width="12" stroke-dasharray="22 20"/>
+    <image href="../public/icons/laptop.png" x="354" y="360" width="300" height="300"/>
+    <image href="../public/icons/switch.svg" x="354" y="720" width="300" height="240"/>
+    ${routed ? '<image href="../public/icons/router.png" x="384" y="950" width="240" height="240"/>' : ''}
+    <image href="../public/icons/laptop.png" x="354" y="1255" width="300" height="300"/>
+    ${addresses ? `<text x="504" y="705" text-anchor="middle" fill="#4DA3FF" font-size="44" font-family="monospace">192.168.1<tspan fill="#F5F7FF">.20 /24</tspan></text><text x="504" y="1220" text-anchor="middle" fill="${color}" font-size="44" font-family="monospace">192.168.${remote ? '2' : '1'}<tspan fill="#F5F7FF">.50 /24</tspan></text>` : ''}
+    ${i !== 1 && i !== 3 ? `<circle cx="504" cy="${delivered ? 1280 : (routed ? 1000 : 735)}" r="22" fill="${delivered ? '#63D69A' : '#4DA3FF'}"/>` : ''}
+    ${delivered ? '<path d="M455 1380l35 35 70-80" stroke="#63D69A" stroke-width="16" fill="none"/>' : ''}
+  </svg>`;
+}
+const board = document.getElementById('board');
+scenes.forEach(([title, time, narration, beats], i) => {
+  const card = document.createElement('article');
+  const heading = document.createElement('h2');
+  heading.textContent = `${i+1}. ${time}`;
+  const picture = document.createElement('div');
+  picture.innerHTML = diagram(i);
+  const voice = document.createElement('p'); voice.className = 'voice'; voice.textContent = narration;
+  const action = document.createElement('p'); action.textContent = beats;
+  card.append(heading, picture, voice, action);
+  if (i === 6) {
+    const button = document.createElement('button');
+    let remote = true;
+    button.textContent = 'Show local state';
+    button.addEventListener('click', () => {
+      remote = !remote; picture.innerHTML = diagram(i, remote);
+      button.textContent = remote ? 'Show local state' : 'Show routed state';
+    });
+    card.append(button);
+  }
+  board.append(card);
+});
+</script>
+</body>
+</html>

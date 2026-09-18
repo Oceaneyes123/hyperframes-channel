@@ -1,0 +1,235 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 111.66427210884353,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 12.19047619047619,
+      "original_text": "Two laptops, one network: 192.168.1.20 and 192.168.1.50. Add /24. What does it mean?",
+      "spoken_text": "Two laptops, one network: one ninety two dot one sixty eight dot one dot twenty and one ninety two dot one sixty eight dot one dot fifty. Add slash 24. What does it mean?",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 9.195102040816327,
+      "original_text": "An IP address is really 32 bits, written as four groups called octets. Eight bits, eight bits, eight bits, eight bits.",
+      "spoken_text": "An I P address is really 32 bits, written as four groups called octets. Eight bits, eight bits, eight bits, eight bits.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 10.518639455782314,
+      "original_text": "/24 says the first 24 bits describe the network. So the first three octets name the network, and the last octet is left for hosts.",
+      "spoken_text": "slash 24 says the first 24 bits describe the network. So the first three octets name the network, and the last octet is left for hosts.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 10.866938775510205,
+      "original_text": "That same boundary has a second name: the subnet mask. /24 and 255.255.255.0 are the same divide.",
+      "spoken_text": "That same boundary has a second name: the subnet mask. slash 24 and two fifty five dot two fifty five dot two fifty five dot zero are the same divide.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 5.990748299319728,
+      "original_text": "Set every host bit to zero, and you get the network address: the name of this subnet.",
+      "spoken_text": "Set every host bit to zero, and you get the network address: the name of this subnet.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 8.6378231292517,
+      "original_text": "Inside the subnet, addresses run from dot zero to dot two fifty five. The last one, all host bits set, is the broadcast address.",
+      "spoken_text": "Inside the subnet, addresses run from dot zero to dot two fifty five. The last one, all host bits set, is the broadcast address.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 9.195102040816327,
+      "original_text": "Reserve those two, and 254 addresses are left for devices. Here: a router, a laptop, a phone, and a server.",
+      "spoken_text": "Reserve those two, and 254 addresses are left for devices. Here: a router, a laptop, a phone, and a server.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 6.2693877551020405,
+      "original_text": "Both laptops now. Same first 24 bits, so they reach each other through the switch.",
+      "spoken_text": "Both laptops now. Same first 24 bits, so they reach each other through the switch.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 8
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 8.568163265306122,
+      "original_text": "Move one laptop to 192.168.2.50, and the network portions stop matching. Different subnets.",
+      "spoken_text": "Move one laptop to one ninety two dot one sixty eight dot two dot fifty, and the network portions stop matching. Different subnets.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 9
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 6.548027210884354,
+      "original_text": "That destination is not local, so the laptop sends it to its default gateway, the router at dot one.",
+      "spoken_text": "That destination is not local, so the laptop sends it to its default gateway, the router at dot one.",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 10
+    },
+    {
+      "id": "line-11",
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 9.404081632653062,
+      "original_text": "Zoom out: two subnets, one router. Every device asks one simple question: is the destination local, or does it go to the router?",
+      "spoken_text": "Zoom out: two subnets, one router. Every device asks one simple question: is the destination local, or does it go to the router?",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 11
+    },
+    {
+      "id": "line-12",
+      "path": ".media/audio/voice/line-12.wav",
+      "duration_s": 14.280272108843537,
+      "original_text": "So /24 means the first 24 bits name the network, and the last 8 address the devices inside it. Same subnet, local. Different subnet, the router. Next: a switch, or a router?",
+      "spoken_text": "So slash 24 means the first 24 bits name the network, and the last 8 address the devices inside it. Same subnet, local. Different subnet, the router. Next: a switch, or a router?",
+      "normalization_fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92",
+      "frame": 12
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "s01-hook",
+      "src": "compositions/frames/s01-hook.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 12.19047619047619
+    },
+    {
+      "index": 2,
+      "id": "s02-ipv4-bits",
+      "src": "compositions/frames/s02-ipv4-bits.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 12.19,
+      "duration_s": 9.195102040816327
+    },
+    {
+      "index": 3,
+      "id": "s03-prefix-boundary",
+      "src": "compositions/frames/s03-prefix-boundary.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 21.384999999999998,
+      "duration_s": 10.518639455782314
+    },
+    {
+      "index": 4,
+      "id": "s04-subnet-mask",
+      "src": "compositions/frames/s04-subnet-mask.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 31.903999999999996,
+      "duration_s": 10.866938775510205
+    },
+    {
+      "index": 5,
+      "id": "s05-network-address",
+      "src": "compositions/frames/s05-network-address.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 42.771,
+      "duration_s": 5.990748299319728
+    },
+    {
+      "index": 6,
+      "id": "s06-range-broadcast",
+      "src": "compositions/frames/s06-range-broadcast.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 48.762,
+      "duration_s": 8.6378231292517
+    },
+    {
+      "index": 7,
+      "id": "s07-usable-hosts",
+      "src": "compositions/frames/s07-usable-hosts.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 57.4,
+      "duration_s": 9.195102040816327
+    },
+    {
+      "index": 8,
+      "id": "s08-same-subnet",
+      "src": "compositions/frames/s08-same-subnet.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 66.595,
+      "duration_s": 6.2693877551020405
+    },
+    {
+      "index": 9,
+      "id": "s09-different-subnet",
+      "src": "compositions/frames/s09-different-subnet.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 72.864,
+      "duration_s": 8.568163265306122
+    },
+    {
+      "index": 10,
+      "id": "s10-default-gateway",
+      "src": "compositions/frames/s10-default-gateway.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 81.432,
+      "duration_s": 6.548027210884354
+    },
+    {
+      "index": 11,
+      "id": "s11-why-subnets",
+      "src": "compositions/frames/s11-why-subnets.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 87.98,
+      "duration_s": 9.404081632653062
+    },
+    {
+      "index": 12,
+      "id": "s12-recap",
+      "src": "compositions/frames/s12-recap.html",
+      "audio_id": "voice-line-12",
+      "audio_path": ".media/audio/voice/line-12.wav",
+      "start_s": 97.384,
+      "duration_s": 14.280272108843537
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "short"
+    },
+    "fingerprint": "e849cfb5cb16558941fd98aff8654c82f8549b369e233dc109941654266ead92"
+  }
+}

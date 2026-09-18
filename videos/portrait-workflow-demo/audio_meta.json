@@ -2,12 +2,12 @@
   "schema": "hyperframes-channel/narration@1",
   "provider": "supertonic-3",
   "voice": "M1",
-  "timeline_duration_s": 39.482669484924315,
+  "timeline_duration_s": 39.70612244897959,
   "voices": [
     {
       "id": "line-1",
       "path": ".media/audio/voice/line-1.wav",
-      "duration_s": 6.56898307800293,
+      "duration_s": 6.617687074829932,
       "original_text": "When you type a site name, your computer still needs an IP address before it can contact that site.",
       "spoken_text": "When you type a site name, your computer still needs an I P address before it can contact that site.",
       "normalization_fingerprint": "76e03275dd574d1d8bc9432cf428249c33bd67230ba2ab046ae91fb7d4294684",
@@ -16,7 +16,7 @@
     {
       "id": "line-2",
       "path": ".media/audio/voice/line-2.wav",
-      "duration_s": 6.507500648498535,
+      "duration_s": 6.548027210884354,
       "original_text": "It sends a name lookup to a DNS resolver, a service built to find addresses for names.",
       "spoken_text": "It sends a name lookup to a D N S resolver, a service built to find addresses for names.",
       "normalization_fingerprint": "76e03275dd574d1d8bc9432cf428249c33bd67230ba2ab046ae91fb7d4294684",
@@ -25,7 +25,7 @@
     {
       "id": "line-3",
       "path": ".media/audio/voice/line-3.wav",
-      "duration_s": 5.673917293548584,
+      "duration_s": 5.712108843537415,
       "original_text": "For this example, the resolver returns 192.0.2.10.",
       "spoken_text": "For this example, the resolver returns one hundred ninety two dot zero dot two dot ten.",
       "normalization_fingerprint": "76e03275dd574d1d8bc9432cf428249c33bd67230ba2ab046ae91fb7d4294684",
@@ -34,7 +34,7 @@
     {
       "id": "line-4",
       "path": ".media/audio/voice/line-4.wav",
-      "duration_s": 5.910578727722168,
+      "duration_s": 5.921088435374149,
       "original_text": "The answer travels back to your computer, which can now send the real request to that address.",
       "spoken_text": "The answer travels back to your computer, which can now send the real request to that address.",
       "normalization_fingerprint": "76e03275dd574d1d8bc9432cf428249c33bd67230ba2ab046ae91fb7d4294684",
@@ -43,7 +43,7 @@
     {
       "id": "line-5",
       "path": ".media/audio/voice/line-5.wav",
-      "duration_s": 7.457919597625732,
+      "duration_s": 7.523265306122449,
       "original_text": "Next time, while that cached answer is still valid, the resolver can answer nearby without asking upstream again.",
       "spoken_text": "Next time, while that cached answer is still valid, the resolver can answer nearby without asking upstream again.",
       "normalization_fingerprint": "76e03275dd574d1d8bc9432cf428249c33bd67230ba2ab046ae91fb7d4294684",
@@ -52,7 +52,7 @@
     {
       "id": "line-6",
       "path": ".media/audio/voice/line-6.wav",
-      "duration_s": 7.363770484924316,
+      "duration_s": 7.383945578231293,
       "original_text": "Remember the model: a name goes in, an IP address comes out, and that address tells the request where to go.",
       "spoken_text": "Remember the model: a name goes in, an I P address comes out, and that address tells the request where to go.",
       "normalization_fingerprint": "76e03275dd574d1d8bc9432cf428249c33bd67230ba2ab046ae91fb7d4294684",
@@ -67,7 +67,7 @@
       "audio_id": "voice-line-1",
       "audio_path": ".media/audio/voice/line-1.wav",
       "start_s": 0.0,
-      "duration_s": 6.56898307800293
+      "duration_s": 6.617687074829932
     },
     {
       "index": 2,
@@ -75,8 +75,8 @@
       "src": "compositions/frames/line-2.html",
       "audio_id": "voice-line-2",
       "audio_path": ".media/audio/voice/line-2.wav",
-      "start_s": 6.568983,
-      "duration_s": 6.507500648498535
+      "start_s": 6.617687074829932,
+      "duration_s": 6.548027210884354
     },
     {
       "index": 3,
@@ -84,8 +84,8 @@
       "src": "compositions/frames/line-3.html",
       "audio_id": "voice-line-3",
       "audio_path": ".media/audio/voice/line-3.wav",
-      "start_s": 13.076484,
-      "duration_s": 5.673917293548584
+      "start_s": 13.165714285714285,
+      "duration_s": 5.712108843537415
     },
     {
       "index": 4,
@@ -93,8 +93,8 @@
       "src": "compositions/frames/line-4.html",
       "audio_id": "voice-line-4",
       "audio_path": ".media/audio/voice/line-4.wav",
-      "start_s": 18.750401,
-      "duration_s": 5.910578727722168
+      "start_s": 18.877823129251702,
+      "duration_s": 5.921088435374149
     },
     {
       "index": 5,
@@ -102,8 +102,8 @@
       "src": "compositions/frames/line-5.html",
       "audio_id": "voice-line-5",
       "audio_path": ".media/audio/voice/line-5.wav",
-      "start_s": 24.66098,
-      "duration_s": 7.457919597625732
+      "start_s": 24.79891156462585,
+      "duration_s": 7.523265306122449
     },
     {
       "index": 6,
@@ -111,8 +111,8 @@
       "src": "compositions/frames/line-6.html",
       "audio_id": "voice-line-6",
       "audio_path": ".media/audio/voice/line-6.wav",
-      "start_s": 32.118899,
-      "duration_s": 7.363770484924316
+      "start_s": 32.3221768707483,
+      "duration_s": 7.383945578231293
     }
   ],
   "normalization": {

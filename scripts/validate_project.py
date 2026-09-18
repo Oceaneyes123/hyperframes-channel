@@ -4,7 +4,7 @@ import argparse, json, math, re, wave
 from html.parser import HTMLParser
 from pathlib import Path
 from narration_text import prepare_narration
-from supertonic_tts import narration_lines
+from supertonic_tts import narration_lines, scene_sources
 
 ROOT = Path(__file__).resolve().parents[1]
 DESIGN = (ROOT / "DESIGN.md").read_text(encoding="utf-8")
@@ -12,8 +12,29 @@ _match = re.search(r"^version:\s*[\"']?([^\"'\n]+)", DESIGN, re.M)
 DESIGN_VERSION = _match.group(1) if _match else "1.0.0"
 PROVIDERS = {"fontawesome", "icons8", "custom", "approved-local"}
 
+class AssetReferences(HTMLParser):
+    """Resource URLs only: ordinary attribution links are not fetched assets."""
+    def __init__(self):
+        super().__init__()
+        self.urls = []
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        for key in ("src", "poster", "data-composition-src", "data-scene-src"):
+            if attrs.get(key): self.urls.append(attrs[key])
+        if tag in {"link", "image", "use", "feimage"}:
+            self.urls.extend(attrs[key] for key in ("href", "xlink:href") if attrs.get(key))
+        if attrs.get("srcset"):
+            self.urls.extend(part.strip().split()[0] for part in attrs["srcset"].split(",") if part.strip())
+
+def remote_assets(text: str) -> bool:
+    parser = AssetReferences()
+    parser.feed(text)
+    urls = parser.urls + re.findall(r'''(?:url\(\s*|@import\s+)["']?((?:https?:)?//[^\s"')]+)''', text, re.I)
+    return any(re.match(r"^(?:https?:)?//", url.strip(), re.I) for url in urls)
+
 def attr(tag: str, name: str) -> str | None:
-    m = re.search(rf"\b{re.escape(name)}=[\"']([^\"']+)", tag)
+    m = re.search(rf"\s{re.escape(name)}\s*=\s*[\"']([^\"']+)", tag)
     return m.group(1) if m else None
 
 def _json(path: Path, errors: list[str], label: str):
@@ -43,7 +64,9 @@ def _approval(project: Path, errors: list[str], stage: str, v2: bool = False):
     if stage == "render":
         final = project / "review" / "final-preview-approval.json"
         if not final.exists(): errors.append("render requires persisted final-preview approval")
-        elif _json(final, errors, "final-preview approval").get("status") != "approved": errors.append("final-preview approval must be explicitly approved")
+        else:
+            final_data = _json(final, errors, "final-preview approval")
+            if not isinstance(final_data, dict) or final_data.get("status") != "approved": errors.append("final-preview approval must be explicitly approved")
 
 def _icons(project: Path, errors: list[str], v2: bool, stage: str):
     path = project / "ICON_PLAN.json"
@@ -67,15 +90,15 @@ def _icons(project: Path, errors: list[str], v2: bool, stage: str):
             if not re.match(r"^https://(?:[^/]+\.)?icons8\.com/", str(icon.get("source", ""))): errors.append(f"Icons8 icon needs an Icons8 attribution URL: {rel}")
             record = (project / rel).with_suffix(".source.txt")
             if v2 and not record.exists(): errors.append(f"Icons8 icon is missing attribution record: {record.relative_to(project)}")
-        if v2 and isinstance(icon.get("scenes"), list):
+        if v2 and stage != "plan" and isinstance(icon.get("scenes"), list):
             for scene_id in icon["scenes"]:
                 frame = project / "compositions" / "frames" / f"{scene_id}.html"
                 if not frame.is_file() or rel.replace("\\", "/") not in frame.read_text(encoding="utf-8", errors="replace"):
                     errors.append(f"planned icon {rel} is missing from scene {scene_id}")
-    if v2:
-        for asset in list(project.rglob("*.html")) + list(project.rglob("*.css")) + list(project.rglob("*.svg")):
-            if any(part in {"capture", "node_modules", ".media"} for part in asset.parts): continue
-            if re.search(r"(?:src|href|url|@import)\s*\(?[\"']?https?://", asset.read_text(encoding="utf-8", errors="replace"), re.I): errors.append(f"{asset.relative_to(project)}: remote asset reference")
+def _local_assets(project: Path, errors: list[str]):
+    for asset in list(project.rglob("*.html")) + list(project.rglob("*.css")) + list(project.rglob("*.svg")):
+        if any(part in {"capture", "node_modules", ".media"} for part in asset.parts): continue
+        if remote_assets(asset.read_text(encoding="utf-8", errors="replace")): errors.append(f"{asset.relative_to(project)}: remote asset reference")
 
 def _audio(project: Path, errors: list[str], v2: bool, stage: str):
     path = project / "audio_meta.json"
@@ -130,12 +153,18 @@ def _audio(project: Path, errors: list[str], v2: bool, stage: str):
     if stage == "plan": return
     index_path = project / "index.html"
     if not index_path.exists(): errors.append("missing index.html"); return
-    index = index_path.read_text(encoding="utf-8", errors="replace"); tags = re.findall(r"<audio\b[^>]*>", index, re.I)
+    index = index_path.read_text(encoding="utf-8", errors="replace"); all_tags = re.findall(r"<audio\b[^>]*>", index, re.I)
+    all_ids = [attr(tag, "id") for tag in all_tags]
+    if any(not aid for aid in all_ids) or len(set(all_ids)) != len(all_ids): errors.append("audio element ids must be unique and nonempty")
+    narration_ids = {scene.get("audio_id") for scene in scenes}
+    narration_paths = {scene.get("audio_path") for scene in scenes}
+    tags = [tag for tag in all_tags if attr(tag, "id") in narration_ids or attr(tag, "src") in narration_paths]
     if len(tags) != len(scenes): errors.append("index.html audio elements do not match narration scenes")
     ids = set()
     for scene, tag in zip(scenes, tags):
         aid = attr(tag, "id")
         if not aid or aid in ids: errors.append("audio element ids must be unique")
+        if aid != scene.get("audio_id"): errors.append("narration audio id differs from audio metadata")
         ids.add(aid)
         for key in ("src", "data-start", "data-duration"):
             if attr(tag, key) is None: errors.append(f"{scene.get('id', '?')}: missing {key}")
@@ -145,7 +174,7 @@ def _audio(project: Path, errors: list[str], v2: bool, stage: str):
                 tag_value = float(attr(tag, key))
                 if not math.isfinite(tag_value) or abs(tag_value - float(scene[sk])) > .001: errors.append(f"{scene.get('id', '?')}: {key} differs from audio_meta.json")
             except (TypeError, ValueError): errors.append(f"{scene.get('id', '?')}: invalid numeric {key}")
-    frames = sorted(str(p.relative_to(project)).replace("\\", "/") for p in (project / "compositions" / "frames").glob("*.html"))
+    frames = [src for _, src in scene_sources(project, [])]
     if frames and [s.get("src") for s in scenes] != frames: errors.append("audio metadata scene sources do not match compositions/frames")
     timeline = project / "audio_timeline.html"
     if not timeline.exists(): errors.append("missing audio_timeline.html")
@@ -170,15 +199,17 @@ def validate_diagnostics(project: Path, stage="preview") -> tuple[list[str], lis
     elif channel.get("design") != "hyperframes-channel": errors.append("channel.json must declare hyperframes-channel")
     is_v2 = not legacy and DESIGN_VERSION.startswith("2")
     _approval(project, errors, stage, is_v2); _icons(project, errors, is_v2, stage); _audio(project, errors, is_v2, stage)
+    if is_v2: _local_assets(project, errors)
     metadata = project / "audio_meta.json"
     if metadata.exists():
         data = _json(metadata, errors, "audio_meta.json")
         lines = re.findall(r"^## Line \d+(?:\s|$)", (project / "SCRIPT.md").read_text(encoding="utf-8"), re.M)
-        if isinstance(data.get("scenes"), list) and len(lines) != len(data["scenes"]): errors.append("SCRIPT.md line count does not match audio metadata scenes")
+        if isinstance(data, dict) and isinstance(data.get("scenes"), list) and len(lines) != len(data["scenes"]): errors.append("SCRIPT.md line count does not match audio metadata scenes")
     if not legacy and DESIGN_VERSION.startswith("2"):
         index = project / "index.html"; text = index.read_text(encoding="utf-8", errors="replace") if index.exists() else ""
         root = re.search(r"<[^>]+data-composition-id=[\"'][^\"']+[\"'][^>]*>", text, re.I)
-        if not root: errors.append("missing index root composition")
+        if not root and (stage != "plan" or index.exists()): errors.append("missing index root composition")
+        elif not root: pass
         elif (attr(root.group(0), "data-width") != "1080" or attr(root.group(0), "data-height") != "1920"): errors.append("index root must be 1080x1920 portrait")
         elif attr(root.group(0), "data-duration") is None: errors.append("index root must declare data-duration")
         frames = sorted((project / "compositions" / "frames").glob("*.html"))
@@ -195,11 +226,13 @@ def validate_diagnostics(project: Path, stage="preview") -> tuple[list[str], lis
         stylesheet = project / "channel" / "styles.css"
         current_styles = ROOT / "channel" / "styles.css"
         if stage != "plan" and (not stylesheet.exists() or not current_styles.exists() or stylesheet.read_bytes() != current_styles.read_bytes()): errors.append("project channel stylesheet is missing or out of sync")
-        script_text = (project / "SCRIPT.md").read_text(encoding="utf-8")
-        script_lines = re.findall(r"^## Line \d+(?:\s|$).*?$([\s\S]*?)(?=^## Line |\Z)", script_text, re.M)
-        scene_count = len(script_lines) or len(frames)
+        try:
+            spoken = prepare_narration(project, narration_lines(project / "SCRIPT.md"))["lines"]
+        except (OSError, ValueError, json.JSONDecodeError) as exc:
+            errors.append(f"cannot estimate narration: {exc}"); spoken = []
+        scene_count = len(spoken) or len(frames)
         if not 6 <= scene_count <= 10: warnings.append(f"scene count {scene_count} is outside the 6-10 short-form target")
-        estimate = sum(len(re.findall(r"\b[\w'-]+\b", body)) for body in script_lines) / 2.5
+        estimate = sum(len(re.findall(r"\b[\w'-]+\b", line["spoken_text"])) for line in spoken) / 2.5
         if estimate > 60: warnings.append(f"estimated narration {estimate:.1f}s exceeds the 60s target")
         total = None
         if (project / "audio_meta.json").exists():
@@ -211,15 +244,21 @@ def validate_diagnostics(project: Path, stage="preview") -> tuple[list[str], lis
             try:
                 if abs(float(attr(root.group(0), "data-duration")) - float(total)) > .12: errors.append("index root duration differs from audio metadata")
             except (TypeError, ValueError): errors.append("index root has invalid data-duration")
-        hosts = re.findall(r"<[^>]+data-scene-src=[\"'][^\"']+[\"'][^>]*>", text, re.I)
-        scenes = _json(project / "audio_meta.json", errors, "audio_meta.json").get("scenes", [])
+        hosts = re.findall(r"<[^>]+data-(?:composition|scene)-src=[\"'][^\"']+[\"'][^>]*>", text, re.I)
+        audio_data = _json(metadata, errors, "audio_meta.json") if metadata.exists() else {}
+        scenes = audio_data.get("scenes", []) if isinstance(audio_data, dict) else []
+        scenes = [s for s in scenes if isinstance(s, dict)] if isinstance(scenes, list) else []
+        if stage != "plan" and len(hosts) != len(scenes): errors.append("index scene hosts do not match narration scenes")
+        host_sources = [attr(host, "data-composition-src") or attr(host, "data-scene-src") for host in hosts]
+        if stage != "plan" and host_sources != [s.get("src") for s in scenes]: errors.append("index scene host sources/order differ from audio metadata")
         for host in hosts:
-            src = attr(host, "data-scene-src")
+            src = attr(host, "data-composition-src") or attr(host, "data-scene-src")
             scene = next((s for s in scenes if isinstance(s, dict) and s.get("src") == src), None)
             if scene:
                 for key, field in (("data-start", "start_s"), ("data-duration", "duration_s")):
                     try:
-                        if abs(float(attr(host, key)) - float(scene[field])) > .001: errors.append(f"scene host {src}: {key} differs from audio metadata")
+                        value = float(attr(host, key))
+                        if not math.isfinite(value) or abs(value - float(scene[field])) > .001: errors.append(f"scene host {src}: {key} differs from audio metadata")
                     except (TypeError, ValueError): errors.append(f"scene host {src}: invalid {key}")
     return errors, warnings
 

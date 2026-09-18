@@ -1,0 +1,53 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    #root { position:relative; width:1080px; height:1920px; overflow:hidden; color:#F5F7FF; font-family:Arial,sans-serif; }
+    #root .line-2-background { position:absolute; inset:0; background:#0B1020; }
+    #root .line-2-zones { position:absolute; left:354px; top:360px; width:300px; height:1195px; display:grid; grid-template-rows:300px 60px 240px 295px 300px; }
+    #root .line-2-device { width:300px; height:300px; background:url("public/icons/laptop.png") center/contain no-repeat; }
+    #root .line-2-switch { grid-row:3; width:300px; height:240px; background:url("public/icons/switch.svg") center/contain no-repeat; }
+    #root .line-2-receiver { grid-row:5; }
+    #root .line-2-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    #root .line-2-address { font-family:monospace; font-size:44px; fill:#AAB5CC; text-anchor:middle; }
+    #root .line-2-title { font-family:Arial,sans-serif; font-size:76px; font-weight:700; fill:#F5F7FF; }
+  </style>
+  <div data-hf-id="hf-5eup" id="root" data-composition-id="line-2" data-width="1080" data-height="1920" data-duration="8.568163">
+    <div data-hf-id="hf-tsgx" id="line-2-background" class="clip line-2-background" data-start="0" data-duration="8.568163" data-track-index="0"></div>
+    <svg data-hf-id="hf-e2pw" class="line-2-diagram" viewBox="0 0 1080 1920" aria-label="Matching network portions of two local addresses">
+      <rect data-hf-id="hf-vg56" x="72" y="340" width="864" height="1240" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" />
+      <path data-hf-id="hf-392h" d="M504 660V667 M504 717V720 M504 960V1172 M504 1234V1255" fill="none" stroke="#33415F" stroke-width="10" stroke-linecap="round" />
+      <text data-hf-id="hf-90zy" class="line-2-title" x="72" y="252">Compare</text>
+      <text data-hf-id="hf-qth6" class="line-2-address line-2-address-top" x="504" y="705"><tspan data-hf-id="hf-bt01" class="line-2-prefix">192.168.1</tspan><tspan data-hf-id="hf-v35d" class="line-2-host">.20</tspan><tspan data-hf-id="hf-jqg8" class="line-2-mask"> /24</tspan></text>
+      <text data-hf-id="hf-8b95" class="line-2-address line-2-address-bottom" x="504" y="1220"><tspan data-hf-id="hf-5amd" class="line-2-prefix">192.168.1</tspan><tspan data-hf-id="hf-sq2m" class="line-2-host">.50</tspan><tspan data-hf-id="hf-3icg" class="line-2-mask"> /24</tspan></text>
+      <g data-hf-id="hf-gn21" class="line-2-division" stroke="#AAB5CC" stroke-width="3">
+        <path data-hf-id="hf-qd8f" d="M530 657V710 M530 1172V1225" />
+      </g>
+      <g data-hf-id="hf-mhzn" class="line-2-match" fill="none" stroke="#4DA3FF" stroke-width="4" stroke-linecap="round">
+        <path data-hf-id="hf-jdyw" d="M310 713H510 M310 1228H510" />
+      </g>
+    </svg>
+    <div data-hf-id="hf-4wcd" class="line-2-zones">
+      <div data-hf-id="hf-ni9y" class="line-2-device" role="img" aria-label="Sender laptop"></div>
+      <div data-hf-id="hf-d4c5" class="line-2-switch" role="img" aria-label="Network switch"></div>
+      <div data-hf-id="hf-7tnn" class="line-2-device line-2-receiver" role="img" aria-label="Receiver laptop"></div>
+    </div>
+  </div>
+  <script>
+    (() => {
+      const root = document.querySelector('[data-composition-id="line-2"]');
+      const select = (selector) => root.querySelectorAll(selector);
+      const timeline = gsap.timeline({ paused:true });
+      timeline.set(select('.line-2-division, .line-2-match'), { opacity:0 }, 0);
+      timeline.fromTo(select('.line-2-address-top'), { opacity:0 }, { opacity:1, duration:0.45 }, 0.12);
+      timeline.fromTo(select('.line-2-address-bottom'), { opacity:0 }, { opacity:1, duration:0.45 }, 1.1);
+      timeline.to(select('.line-2-mask'), { fill:'#F5F7FF', duration:0.4 }, 2.142);
+      timeline.to(select('.line-2-division'), { opacity:1, duration:0.35 }, 3.2);
+      timeline.to(select('.line-2-prefix'), { fill:'#4DA3FF', duration:0.5 }, 4.284);
+      timeline.to(select('.line-2-match'), { opacity:1, duration:0.5 }, 5.1);
+      timeline.to(select('.line-2-host'), { fill:'#F5F7FF', duration:0.35 }, 6.426);
+      timeline.to(select('.line-2-host'), { fill:'#AAB5CC', duration:0.45 }, 7.75);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-2'] = timeline;
+    })();
+  </script>
+</template>

@@ -75,6 +75,12 @@ class NarrationLinesTests(unittest.TestCase):
             ),
             "one hundred ninety two dot one hundred sixty eight dot one dot ten",
         )
+        self.assertEqual(
+            normalize_text(
+                "192.168.1.10", {"terms": {}, "lines": {}, "ipv4_style": "short"}
+            ),
+            "one ninety two dot one sixty eight dot one dot ten",
+        )
         with tempfile.TemporaryDirectory() as directory:
             project = Path(directory)
             (project / "pronunciation.json").write_text(

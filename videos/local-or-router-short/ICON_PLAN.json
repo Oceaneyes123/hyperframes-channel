@@ -1,0 +1,7 @@
+{
+  "icons": [
+    {"id":"laptop","provider":"icons8","path":"public/icons/laptop.png","role":"system","meaning":"source and destination device","color":"client","style":"colored flat device","source":"https://icons8.com/icons/set/laptop"},
+    {"id":"switch","provider":"custom","path":"public/icons/switch.svg","role":"system","meaning":"local Ethernet forwarding","color":"infrastructure","style":"colored flat device","source":"Reused repository switch-lan.svg"},
+    {"id":"router","provider":"icons8","path":"public/icons/router.png","role":"system","meaning":"default gateway between subnets","color":"infrastructure","style":"colored flat device","source":"https://icons8.com/icons/set/wifi-router"}
+  ]
+}

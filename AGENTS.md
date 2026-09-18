@@ -11,6 +11,12 @@ return must remain legible.
 
 Use the relevant HyperFrames skill before changing a composition.
 
+For a new narrated short, read `channel/EXPLAINER_REFERENCE.md` before planning.
+It maps the approved `videos/local-or-router-short/` output to concrete scene
+examples, commands and acceptance checks. Use it with any model, including
+GPT-5.6-luna. Adapt its causal structure and visual contract; never copy prior
+approval records, narration or generated outputs into a new project.
+
 For narrated multi-scene explainers, lock narration and timing before building frames:
 
 1. Approve storyboard and script.
@@ -38,7 +44,8 @@ Repository v2 portrait defaults override generic skill landscape examples; legac
 - For offline Supertonic runs, `scripts/supertonic_tts.py` writes each `voices[]` entry with `id`, `frame`, `path`, measured WAV `duration_s`, `original_text`, `spoken_text`, and a normalization fingerprint. Treat `audio_meta.json` as the canonical timing source; legacy metadata without provenance must not be presented as normalized.
 - Preflight one real local icon `<img src="public/icons/<name>.svg">` in the first sketch before scaling to the full board; this catches broken mask/path assumptions cheaply.
 - Close completed frame workers before dispatching the next batch; if the worker pool is full, keep edits isolated by frame and continue locally rather than retrying duplicate dispatches.
-- Batch one full check with midpoint snapshots; fix errors and visually confirmed defects only.
+- Batch one full check with opening/action/result samples; compare required objects and connections against the approved sketch, then play sound-off and narrated previews. Fix errors and visually confirmed defects only.
+- Plan local-time causal beats in the existing storyboard and retime them after TTS. Flag unexplained static holds over 3s; decorative pulses do not satisfy the motion requirement. Preserve object identity across adjacent scenes.
 - Keep just two review gates: storyboard/sketch approval and final-preview approval.
 - Iterate with snapshots or draft previews, then render once after approval.
 - Use one screenshot per review milestone; routine UI checks use targeted context without screenshots.
@@ -98,7 +105,24 @@ first, then download or author it locally and preserve the source/attribution UR
 npm run icons8-icon -- --name <name> --url <svg-url> --attribution <icons8-page-url> --project videos\<project>
 ```
 
-For a long icon-led render, avoid CSS `filter` recoloring and repeated identical `<img>` nodes: prefer a pre-colored local SVG or CSS background/mask. This preserves fast capture and avoids duplicate-media lint warnings.
+Icons8 serves SVG only on paid plans: the `format=svg` endpoint answers
+`PAID_FORMAT` and icons8.com is Cloudflare-protected for scraping. On the free
+tier fetch the colored PNG render instead — `curl -o public/icons8/<name>.png
+https://img.icons8.com/color/480/<slug>.png` — keep the `provider: "icons8"` and
+`source` record plus a `<name>.source.txt` attribution file, and record the real
+file path in `ICON_PLAN.json`. When Icons8 has no device-style slug for the
+object (for example a network switch — `switch` is a light switch and `router`
+is a routing-arrows glyph; `wifi-router` is the actual router device), author
+that one icon as a custom SVG in the Icons8 flat palette (greys `#78909C`
+`#455A64` `#37474F`, accents `#2196F3` `#64DD17`).
+
+Font Awesome glyphs stay `public/icons/<name>.svg` on disk, but inside a frame
+inline their path data (`<svg viewBox="…" fill="currentColor"><path d="…"/></svg>`,
+or an in-document `<symbol>` sprite) rather than `<img>` or a CSS `mask`: an
+`<img>` glyph cannot inherit the semantic color, and a `mask-image` that points
+at a local file renders blank in the sketch/preview environment.
+
+For a long icon-led render, avoid CSS `filter` recoloring and repeated identical `<img>` nodes: prefer a pre-colored local SVG, SVG `<image>`, or CSS background. Avoid file-based CSS masks unless the exact path has been visually verified in both sketch and preview.
 
 ## Continuous Improvement
 

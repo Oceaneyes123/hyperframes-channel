@@ -1,0 +1,45 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    #root { position:relative; width:1080px; height:1920px; overflow:hidden; }
+    [data-composition-id="line-6"] .line-6-ground { position:absolute; inset:0; background:#0B1020; }
+    [data-composition-id="line-6"] .line-6-zones { position:absolute; inset:0; display:grid; grid-template-rows:340px 620px 210px 410px 340px; }
+    [data-composition-id="line-6"] .line-6-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    [data-composition-id="line-6"] .line-6-delivered { position:absolute; left:72px; top:180px; margin:0; height:92px; font:700 76px/92px Arial,sans-serif; color:#63D69A; opacity:0; }
+  </style>
+  <div data-hf-id="hf-co29" id="root" data-composition-id="line-6" data-width="1080" data-height="1920" data-duration="5.921088">
+    <div data-hf-id="hf-bcxe" id="line-6-ground" class="clip line-6-ground" data-start="0" data-duration="5.921088" data-track-index="0"></div>
+    <div data-hf-id="hf-8ffd" class="line-6-zones">
+      <svg data-hf-id="hf-j6fa" class="line-6-diagram" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+        <rect data-hf-id="hf-tz17" x="72" y="340" width="864" height="620" rx="28" fill="#141D35" stroke="#4DA3FF" stroke-width="3" />
+        <rect data-hf-id="hf-h3nx" class="line-6-remote" x="72" y="1170" width="864" height="410" rx="28" fill="#141D35" stroke="#F5B94D" stroke-width="3" />
+        <path data-hf-id="hf-yt6y" d="M504 650V720 M504 960V1255" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" />
+        <image data-hf-id="hf-xux6" href="public/icons/laptop.png" x="354" y="360" width="300" height="300" />
+        <image data-hf-id="hf-ob8o" href="public/icons/switch.svg" x="354" y="720" width="300" height="240" opacity="0.4" />
+        <image data-hf-id="hf-igkj" href="public/icons/router.png" x="384" y="950" width="240" height="240" />
+        <image data-hf-id="hf-6gla" href="public/icons/laptop.png" x="354" y="1255" width="300" height="300" />
+        <rect data-hf-id="hf-gz05" class="line-6-receipt" x="419" y="1315" width="170" height="105" rx="10" fill="#63D69A" opacity="0" />
+        <path data-hf-id="hf-3os8" class="line-6-check" d="M466 1363L494 1389L548 1339" fill="none" stroke="#0B1020" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
+        <circle data-hf-id="hf-kgt5" class="line-6-packet" cx="504" cy="1070" r="22" fill="#4DA3FF" />
+      </svg>
+    </div>
+    <h1 data-hf-id="hf-4gpq" class="line-6-delivered">Delivered</h1>
+  </div>
+  <script>
+    (function () {
+      const scope = '[data-composition-id="line-6"] ';
+      const tl = gsap.timeline({ paused: true });
+      tl.to(scope + '.line-6-packet', { y:88, duration:1.692, ease:'power1.inOut' }, 0)
+        .to(scope + '.line-6-packet', { y:185, duration:1.691, ease:'none' }, 1.692)
+        .to(scope + '.line-6-packet', { y:294, duration:1.15, ease:'power1.out' }, 3.383)
+        .set(scope + '.line-6-packet', { opacity:0 }, 4.533)
+        .fromTo(scope + '.line-6-receipt', { opacity:0 }, { opacity:1, duration:0.25 }, 4.533)
+        .fromTo(scope + '.line-6-check', { opacity:0 }, { opacity:1, duration:0.22 }, 4.72)
+        .to(scope + '.line-6-remote', { attr:{stroke:'#63D69A'}, duration:0.4 }, 4.533)
+        .fromTo(scope + '.line-6-delivered', { opacity:0, y:12 }, { opacity:1, y:0, duration:0.35 }, 4.725);
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-6'] = tl;
+    })();
+  </script>
+</template>
+

@@ -1,8 +1,55 @@
-<!doctype html>
-<html><head><meta charset="utf-8"><style>@import url("channel/styles.css");</style></head>
-<body><div id="root" class="hf-frame" data-composition-id="scene-01" data-width="1080" data-height="1920" data-duration="7">
-  <div class="hf-safe hf-source-process-destination">
-    <h1 class="hf-headline">One idea</h1>
-    <div class="hf-stack"><div class="hf-panel hf-client"><span class="hf-label">Source</span><div class="hf-packet" data-hf-role="packet">QUERY</div></div><div class="hf-label hf-infrastructure">↓ PROCESS ↓</div><div class="hf-panel hf-success"><span class="hf-label">Result</span></div></div>
+<template>
+<style>
+@import url("channel/styles.css");
+#scene-01 .diagram { display:block; width:864px; height:1180px; margin-top:24px; }
+#scene-01 .diagram text { font:700 36px Arial,sans-serif; fill:#F5F7FF; text-anchor:middle; }
+#scene-01 .wire { stroke:#33415F; stroke-width:10; fill:none; }
+#scene-01 .received { opacity:0; }
+</style>
+<!-- Teaching example: replace 7s and beat times with measured scene audio.
+     Device geometry reuses portrait-workflow-demo/client-blue.svg locally.
+     Prefix every id when copying a scene. Host supplies the local GSAP runtime. -->
+<div id="scene-01" class="hf-frame" data-composition-id="scene-01" data-width="1080" data-height="1920" data-duration="7">
+  <div class="hf-safe">
+    <h1 class="hf-headline">Same network</h1>
+    <svg class="diagram" viewBox="0 0 864 1180" role="img" aria-label="A packet travels through a switch to another computer, then an acknowledgement returns.">
+      <defs>
+        <g id="scene-01-device">
+          <rect x="24" y="42" width="192" height="132" rx="16" fill="#4DA3FF"/>
+          <rect x="44" y="62" width="152" height="92" rx="8" fill="#0B1020"/>
+          <path d="M72 204h96M120 174v30" stroke="#4DA3FF" stroke-width="14" stroke-linecap="round"/>
+        </g>
+      </defs>
+      <path class="wire" d="M432 285V485 M432 615V855"/>
+      <use href="#scene-01-device" x="312" y="0"/>
+      <text x="432" y="275">Sender</text>
+      <g id="scene-01-switch">
+        <rect x="282" y="485" width="300" height="130" rx="16" fill="#7067E8"/>
+        <path d="M310 550h44m26 0h44m26 0h44m26 0h34" stroke="#0B1020" stroke-width="22"/>
+      </g>
+      <text x="660" y="563">Switch</text>
+      <use href="#scene-01-device" x="312" y="810"/>
+      <text x="432" y="1075">Receiver</text>
+      <g id="scene-01-result" class="received">
+        <path d="M380 915l36 36 70-76" fill="none" stroke="#63D69A" stroke-width="14"/>
+      </g>
+      <circle id="scene-01-packet" cx="432" cy="315" r="22" fill="#4DA3FF"/>
+      <circle id="scene-01-answer" class="received" cx="490" cy="825" r="18" fill="#63D69A"/>
+    </svg>
   </div>
-</div><script>window.__timelines = window.__timelines || {}; window.__timelines["scene-01"] = gsap.timeline({paused:true}); window.__timelines["scene-01"].fromTo('[data-hf-role="packet"]',{y:80,opacity:0},{y:0,opacity:1,duration:.6,ease:'power2.out'});</script></body></html>
+</div>
+<script>
+{
+  const tl = gsap.timeline({paused:true});
+  tl.addLabel('send', .6)
+    .to('#scene-01-packet', {y:150,duration:1.5,ease:'none'}, 'send')
+    .to('#scene-01-switch', {scale:1.04,transformOrigin:'50% 50%',duration:.2,repeat:1,yoyo:true}, 2.1)
+    .to('#scene-01-packet', {y:510,duration:1.8,ease:'none'}, 2.5)
+    .to('#scene-01-packet', {opacity:0,duration:.2}, 4.3)
+    .to('#scene-01-result', {opacity:1,duration:.3}, 4.3)
+    .to('#scene-01-answer', {opacity:1,duration:.2}, 4.7)
+    .to('#scene-01-answer', {y:-510,duration:1.7,ease:'none'}, 4.9);
+  window.__timelines['scene-01'] = tl;
+}
+</script>
+</template>
