@@ -23,6 +23,9 @@ the exact local assets. `channel.json` must declare `{ "design":
    and complexity. Include required object counts and a local-time beat table
    mapping spoken cues to situation → action → consequence. Flag scenes over
    one idea, 2–5 objects, ~16 visible words, or unexplained static holds over 3s.
+   Use the starter's action/evidence table: name objects and changed states now;
+   fill implementation selectors and inspected evidence during build/review.
+   Check that the recap preserves the process order established in the main story.
 4. Resolve every icon locally, then build actual-icon sketches. Gate 1 requires
    inspectable sketches and explicit approval; text-only wireframes do not count.
 5. After gate 1, run `npm run tts -- --project videos/<project> --dry-run`, review
@@ -37,6 +40,10 @@ the exact local assets. `channel.json` must declare `{ "design":
    Use large colored devices, connected routes and destination receipts; wrappers
    and padding do not count toward icon size. Retiming the existing
    storyboard beats after TTS avoids a second timing document.
+   Before scaling a layout/motion pattern to all scenes, build and inspect the
+   hardest causal scene with its real assets and measured duration, using the
+   worked action contract in `EXPLAINER_REFERENCE.md`. Fix that pattern first,
+   then continue autonomously; this self-check adds no user approval gate.
    Assemble v2 projects with `npm run assemble -- --project videos/<project>`;
    stage `public/vendor/gsap.min.js` locally first. This reads the canonical
    audio metadata, so renaming frame files requires `npm run tts -- --project
