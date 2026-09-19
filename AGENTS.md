@@ -63,6 +63,32 @@ Keep one audio metadata record per scene; do not concatenate narration WAVs into
 
 ## Token-Efficient Creation Pipeline
 
+Cheaper starts, learned by measuring a completed 15-scene build:
+
+- Do not load the generic workflow skills (`/faceless-explainer`, `/general-video`) for a
+  channel video. `CHANNEL_RECIPE.md` + `EXPLAINER_REFERENCE.md` are the contract and the
+  generic guides contradict the v2 portrait defaults.
+- The repository path is fixed and named in the channel skill: read it rather than
+  searching the filesystem for "a HyperFrames repository".
+- Grep `scripts/` for the check you are about to satisfy instead of reading a validator or
+  generator whole; those scripts are ~46KB and most of it is never used.
+- Pull the reference video's frames into ONE ffmpeg contact sheet
+  (`-vf "fps=1/10,scale=270:-1,tile=3x2"`) and inspect a single image, not five.
+- Beyond about eight scenes, generate frames from one spec that reads `audio_meta.json`:
+  the spec is written once and retimes for free, while hand-authoring each frame re-enters
+  that whole file in context on every revision.
+- Batch visual fixes: collect every defect from one inspection pass, fix them all, rebuild
+  once, then run a single full snapshot pass. Write interim verification captures with
+  `snapshot -o <tmpdir>` so the project's evidence set survives.
+- Re-run `check` and the snapshot pass only after a change to frames, index or audio; notes
+  and metadata edits do not invalidate them.
+- Edit generator sources with a Python `str.replace` in `execute_code`, not the patch tool:
+  f-strings carrying JS braces make anchors miss, and every miss is a wasted round trip.
+- Download external references (RFCs, specs) into one temp directory and grep the sections
+  out of them; never paste whole documents into context.
+- `validate_project.py` now fails a frame whose timeline targets an id that is not in the
+  same file, so run it before `hyperframes check` instead of paying for a CLI round trip.
+
 Use one source of truth through this flow:
 
 `facts → script → timed storyboard → icon plan → resolve local icons → icon-first sketches → approval → measured TTS → frames + animation → review → render`
@@ -158,6 +184,33 @@ or an in-document `<symbol>` sprite) rather than `<img>` or a CSS `mask`: an
 at a local file renders blank in the sketch/preview environment.
 
 For a long icon-led render, avoid CSS `filter` recoloring and repeated identical `<img>` nodes: prefer a pre-colored local SVG, SVG `<image>`, or CSS background. Avoid file-based CSS masks unless the exact path has been visually verified in both sketch and preview.
+
+## Frame authoring rules
+
+Learned from a completed 15-scene build; each of these cost a failed check or a
+re-render pass.
+
+- Reference assets from the project root inside a frame (`public/icons/x.svg`), never
+  with `../`: a frame that escapes the project root fails `hyperframes check` with
+  `invalid_parent_traversal_in_asset_path` for every scene.
+- Never tween `scale` on an SVG group that already carries a baked
+  `translate(...) scale(...)` transform. GSAP discards the baked scale, so the glyph
+  renders at its raw viewBox size and covers the frame. Bake the size into the group
+  and animate `opacity` only.
+- Every frame must render the state it inherits at local time 0. Values an earlier
+  scene established (table rows, revealed labels, translated addresses) are visible by
+  default; only the scene that creates them starts them hidden. Applying a "reveal"
+  flag to shared markup leaves every later scene blank.
+- Write beats as fractions of the scene's measured duration (`const t = f => f * D`
+  with `D` from `audio_meta.json`) so a retime never edits hand-written timing.
+- Keep a moving token and its value chip out of the device label bands; overlapping text
+  boxes fail the layout check (2px tolerance).
+- Before `check`, confirm every timeline selector exists in its own frame by grepping the
+  `q('#...')` targets against the frame's `id="..."` values. A missing target shows up as
+  a runtime `console_warning: GSAP target null not found`.
+- Supertonic is not always installed in the repository's default interpreter: probe with
+  `python -c "import supertonic"` and run narration with the interpreter that has it (on
+  this machine, `py -3.13`).
 
 ## Continuous Improvement
 

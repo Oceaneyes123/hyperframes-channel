@@ -25,8 +25,12 @@ Use one `## Frame N` section per `SCRIPT.md` `## Line N`. See
 - Icon assets:
 - Required objects and counts: (e.g. 2 laptops, 1 switch, 1 packet; retain these in the built scene)
 - Text shown: (≤6-word headline; labels 1–4 words; ~16 words total)
+- Accent geometry: (highlight boxes are sized from the measured text box — a 12-character mono-32
+  value is 230.4px wide — and wrap the whole value they mark, never a slice of it)
 - Animation:
-- Beginning state:
+- Beginning state: (the previous scene's ending state — anything already established, such as a table
+  row, a revealed value or a translated address, is visible at local time 0; only the scene that
+  creates a value may hide it)
 - Ending state:
 - Transition:
 - Continuity: (which objects keep their position/identity into the next scene)

@@ -71,6 +71,8 @@ Phase 1: Plan and sketch.
   scene, SCRIPT.md headings “## Line N” and STORYBOARD.md headings “## Frame N”.
 - Define each scene's starting state, causal action, ending state, required
   objects, spoken cues, estimated local-time beats and continuity into the next.
+  - Size every highlight or accent box from the measured text box (mono 32px advances
+  19.2px per character) so a box always wraps the whole value or label it marks.
 - Resolve production assets locally with attribution before drawing the sketches.
 - Build one inspectable board containing every scene with the actual icons.
   Verify one real icon first, then review the whole board at phone size.
@@ -89,7 +91,9 @@ Phase 2: Build the complete preview after approval.
   Fix source files or canonical metadata rather than patching generated HTML.
 - Run repository preview validation and the actual HyperFrames check. Stop and
   fix failed checks before proceeding. Inspect opening/action/result samples
-  and at least one visible midpoint per scene; compare with approved sketches.
+  and at least one visible midpoint per scene; compare with approved sketches. Check that
+  each scene opens on the state the previous scene ended with — a table, value or label
+  established earlier must be visible at local time 0, not blank.
 - Play the complete preview with sound off and on where available. Check phone
   readability, causal motion, scene continuity and narration alignment. Do not
   claim to have listened when only audio metadata was checked.

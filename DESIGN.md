@@ -47,6 +47,10 @@ line-height at least 1.05. Primary icons should be at least 240px where space
 allows. The safe zone is a conservative default; platform overlays vary, so
 inspect the target platform before publishing.
 
+Highlight and accent boxes are measured, never drawn by eye: a box wraps the entire
+value or label it marks, and two labels highlighted as a set stay inside the safe width.
+A box around part of a value reads as a defect rather than as emphasis.
+
 Use vertical source → process → destination layouts with CSS grid or flexbox.
 Absolute positioning is for moving packets or connectors inside those zones,
 not for the entire scene. Keep at least 24px between labels and objects and

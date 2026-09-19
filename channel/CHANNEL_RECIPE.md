@@ -34,6 +34,9 @@ the exact local assets. `channel.json` must declare `{ "design":
    `audio_timeline.html`; do not hand-estimate timings or concatenate tracks.
 6. Build frames using the portrait safe zone and `channel/styles.css`; use
    vertical source/process/destination primitives and seekable causal motion.
+   Every frame opens on the state the previous frame ended with: a table row, revealed
+   value or translated address that already exists is visible at local time 0, and only
+   the frame that creates it may hide it.
    Preserve the approved objects and connections, carry persistent objects
    across cuts, and maximize diagrams on the portrait stage without an enclosing
    bordered card. Essential content stays safe; backgrounds may bleed to edges.
@@ -51,7 +54,9 @@ the exact local assets. `channel.json` must declare `{ "design":
    mechanical rebuild. The repository assembler avoids the generic skill
    assembler's remote runtime URL. It creates the base narration-only index;
    add optional captions or sound clips afterward and revalidate them.
-7. Run `npm run validate -- --project videos/<project>` and `npx hyperframes check`,
+7. Before the checks, confirm every timeline selector exists inside its own frame (grep the
+   `q('#...')` targets against that frame's `id="..."` values); a missing target surfaces only
+   as a runtime GSAP warning. Run `npm run validate -- --project videos/<project>` and `npx hyperframes check`,
    inspect opening/action/result samples for every scene and each adjacent cut,
    record inspected times and pass/fix notes in the storyboard, and play the preview with sound off
    and on. Compare built scenes with their approved sketches, not just their

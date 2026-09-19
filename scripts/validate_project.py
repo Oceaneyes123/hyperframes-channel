@@ -95,6 +95,22 @@ def _icons(project: Path, errors: list[str], v2: bool, stage: str):
                 frame = project / "compositions" / "frames" / f"{scene_id}.html"
                 if not frame.is_file() or rel.replace("\\", "/") not in frame.read_text(encoding="utf-8", errors="replace"):
                     errors.append(f"planned icon {rel} is missing from scene {scene_id}")
+def _timeline_targets(project: Path, errors: list[str]):
+    """A v2 frame may only tween ids that exist in that same file.
+
+    Missing targets are invisible until the runtime runs: the CLI reports them as
+    `console_warning: GSAP target null not found`, which costs a full check/render
+    round trip to discover. Catching it here is free.
+    """
+    for frame in sorted((project / "compositions" / "frames").glob("*.html")):
+        text = frame.read_text(encoding="utf-8", errors="replace")
+        targets = set(re.findall(r'''q\(\s*['"]#([^'"]+)['"]\s*\)''', text))
+        if not targets: continue
+        ids = set(re.findall(r'id="([^"]+)"', text))
+        plain = {t for t in targets if re.fullmatch(r"[A-Za-z][\w:-]*", t)}
+        missing = sorted(target for target in plain if target not in ids)
+        if missing: errors.append(f"{frame.relative_to(project)}: timeline targets missing ids: {', '.join(missing)}")
+
 def _local_assets(project: Path, errors: list[str]):
     for asset in list(project.rglob("*.html")) + list(project.rglob("*.css")) + list(project.rglob("*.svg")):
         if any(part in {"capture", "node_modules", ".media"} for part in asset.parts): continue
@@ -199,7 +215,7 @@ def validate_diagnostics(project: Path, stage="preview") -> tuple[list[str], lis
     elif channel.get("design") != "hyperframes-channel": errors.append("channel.json must declare hyperframes-channel")
     is_v2 = not legacy and DESIGN_VERSION.startswith("2")
     _approval(project, errors, stage, is_v2); _icons(project, errors, is_v2, stage); _audio(project, errors, is_v2, stage)
-    if is_v2: _local_assets(project, errors)
+    if is_v2: _local_assets(project, errors); _timeline_targets(project, errors)
     metadata = project / "audio_meta.json"
     if metadata.exists():
         data = _json(metadata, errors, "audio_meta.json")
