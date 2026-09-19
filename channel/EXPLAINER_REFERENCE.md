@@ -160,6 +160,44 @@ route in reverse while devices remain fixed. For verification, show the evidence
 being compared before acceptance. For execution, show command arrival, execution
 and output at the client. Do not replace these beats with a label sliding in.
 
+### Worked action contract: a remote command
+
+Use this level of specificity in the existing storyboard table. These are
+illustrative local times for a 9s scene, not timings to copy over measured speech.
+One main action can require several steps to make its cause and result visible.
+
+| Local time | Named objects and state change | Visible proof |
+| --- | --- | --- |
+| 0–1s | `client`, `server`, connected `route` already visible; `command` at client | Viewer identifies both endpoints before movement |
+| 1–3s | `command` travels from client along route to server | Token reaches the server; no acceptance/result shown early |
+| 3–4.5s | Server receives command; its terminal changes to actual example output | Execution changes the receiving device, not a detached label |
+| 4.5–7s | `response` leaves server and retraces route to client | Same endpoints and route; only travel direction reverses |
+| 7–9s | Response arrives; client terminal displays the returned output | Result belongs to the client; final state carries into next scene |
+
+For other verbs, require equally literal evidence:
+
+- **Exchange:** outbound arrival, then a reply from the receiving endpoint.
+- **Verify:** presented evidence and trusted reference are both visible; compare
+  their relevant parts before showing acceptance or rejection.
+- **Protect:** show readable content becoming an opaque token on the network,
+  then readable content at the receiving endpoint; a lock reveal alone is insufficient.
+- **Keep:** the retained object stays anchored while a different object travels.
+
+In `frame.md`, assign each persistent object an ID, exact asset, visible bounds
+and route attachment point. Scenes reuse those values. A return path reverses
+the token's travel, never the device layout. If a deliberate reframe is needed,
+show how the old positions become the new ones instead of silently swapping them.
+
+After gate 1 and measured TTS, choose the scene with the hardest exchange,
+comparison or return. Build and inspect its opening, every causal step and result
+before replicating the pattern. Check visible artwork size, safe edges and route
+attachments at phone size. Repair failures now; then finish all scenes without
+another user gate. This self-check does not replace the complete final review.
+
+Keep each storyboard promise until it is implemented. Do not rewrite an approved
+action as a simpler decorative reveal to make the review pass. A recap must
+preserve the main story's dependency order, even when its wording is shorter.
+
 Start from `channel/templates/frame.html` or the closest reference scene. Replace
 all content-specific IDs, copy, assets and timings. Use one paused GSAP timeline
 registered under the exact composition ID, an explicit 1080x1920 root and measured
@@ -195,18 +233,23 @@ with broad replacements. Studio may add `data-hf-id`; it is not the audio `id`.
 
 ## 4. Quality gate: evidence, not confidence
 
-Run inside `videos/TOPIC`:
+Run the runtime check inside `videos/TOPIC`:
 
 ```powershell
 npx hyperframes check --samples 21 --json
-npx hyperframes snapshot --at 1,8,17
-npx hyperframes preview --background
 ```
 
-Replace snapshot times with actual measured opening/action/result times; include
-all three states for every scene and inspect each adjacent cut. Batch captures
+Derive capture times from the measured storyboard, not an evenly spaced global
+sample or a copied command. For each scene, select an opening time, each action's
+visible moment and a resolved time before its end. Add the scene's canonical
+start to each local time, then pass the resulting comma-separated list to
+`npx hyperframes snapshot --at <global-times>`. Inspect both sides of each cut.
+Batch captures
 and share one contact sheet for review; do not add approval gates. Record actual
-inspected times and pass/fix notes under each existing storyboard frame. Inspect the returned sample times and
+inspected times, evidence paths and pass/fix notes in each existing storyboard
+action row; leave unseen rows marked `not inspected`. Fix failed rows and inspect
+them again. Source code or a screenshot of a different state is not evidence that
+a promised action occurred. Inspect the returned sample times and
 files: `--samples 21` does not mean every check saved 21 images. Motion results
 with zero assertions/samples are not proof of good movement. Use the existing
 motion sidecar format when adding assertions, then inspect playback regardless.
@@ -253,6 +296,8 @@ These examples describe the inspected version, not permanent defects. Apply
 the acceptance table to current output and remove failures before final preview.
 Smaller models follow the same checks; model capability does not waive a beat.
 
+After every action row and adjacent-cut review passes, run
+`npx hyperframes preview --background`.
 Gate 2: open the actual timeline URL from CLI output, report measured duration
 and checks, then ask for final-preview approval. Never render merely because
 tests pass. Subsequent content changes require review of the changed preview.

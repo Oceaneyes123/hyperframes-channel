@@ -25,6 +25,10 @@ return must remain legible.
 - Every storyboard action must exist in the frame: connected route, movement
   to the actual destination, and visible consequence. A moving label, entrance,
   checkmark or decorative tunnel alone does not prove the process.
+  Use the action/evidence columns in `channel/templates/STORYBOARD.md`; map each
+  promised verb to named objects, a state change, and an inspected time. Before
+  repeating a scene pattern, visually self-check the hardest causal scene using
+  measured audio timing. This is an internal check, not another approval gate.
 - Keep persistent device coordinates and identity across cuts. A response retraces
   the established route; do not swap endpoints to reverse direction.
 - Review opening/action/result states for EVERY scene and each adjacent cut in
