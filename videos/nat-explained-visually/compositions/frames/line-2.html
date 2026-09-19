@@ -1,0 +1,35 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    [data-composition-id="line-2"] { position:relative; width:1080px; height:1920px; overflow:hidden; }
+    [data-composition-id="line-2"] .line-2-ground { position:absolute; inset:0; background:#0B1020; }
+    [data-composition-id="line-2"] .line-2-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    [data-composition-id="line-2"] .hl { font:850 72px/1.05 Barlow, Arial, sans-serif; letter-spacing:-.03em; }
+    [data-composition-id="line-2"] .lbl { font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:700; letter-spacing:.04em; }
+    [data-composition-id="line-2"] .mono { font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:500; }
+  </style>
+  <div data-hf-id="hf-1voa" id="root" data-composition-id="line-2" data-width="1080" data-height="1920" data-duration="10.657959">
+    <div data-hf-id="hf-tnb0" id="line-2-ground" class="clip line-2-ground" data-start="0" data-duration="10.657959" data-track-index="0"></div>
+    <svg data-hf-id="hf-0luk" class="line-2-diagram" viewBox="0 0 1080 1920" aria-label="PRIVATE ADDRESSES">
+      <rect data-hf-id="hf-wqyr" x="0" y="0" width="1080" height="1920" fill="#0B1020" />
+      <text data-hf-id="hf-ji96" class="hl" x="72" y="276" font-size="72" fill="#F5F7FF" text-anchor="start">PRIVATE ADDRESSES</text>
+      <path data-hf-id="hf-6ext" id="line-2-bus" d="M250 706V748 M710 706V748 M250 748H710 M250 748V1340" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><image data-hf-id="hf-vbeq" id="line-2-router" href="public/icons8/router.png" x="110" y="830" width="280" height="280" /><g data-hf-id="hf-xnhe" id="line-2-public" opacity="0"><path data-hf-id="hf-m11u" d="M250 1234H354" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><rect data-hf-id="hf-jf3c" id="line-2-public-rect" x="354" y="1200" width="400" height="68" rx="8" fill="#141D35" stroke="#33415F" stroke-width="3" /><text data-hf-id="hf-mryd" class="lbl" x="376" y="1244" font-size="28" fill="#AAB5CC" text-anchor="start">PUBLIC</text><text data-hf-id="hf-qdhp" class="mono" x="490" y="1244" font-size="36" fill="#4DD9E8" text-anchor="start">203.0.113.7</text></g><image data-hf-id="hf-epfp" id="line-2-globe" href="public/icons8/globe.png" x="140" y="1330" width="220" height="220" /><image data-hf-id="hf-80gj" id="line-2-server" href="public/icons8/server.png" x="630" y="1330" width="220" height="220" /><path data-hf-id="hf-vacj" id="line-2-hop" d="M360 1440H630" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><text data-hf-id="hf-6pkj" class="lbl" x="250" y="1590" font-size="34" fill="#4DD9E8" text-anchor="middle">INTERNET</text><text data-hf-id="hf-nqp4" class="lbl" x="740" y="1590" font-size="30" fill="#AAB5CC" text-anchor="middle">WEBSITE</text><image data-hf-id="hf-q90u" id="line-2-phone" href="public/icons8/phone.png" x="130" y="340" width="240" height="280" /><image data-hf-id="hf-8vyj" id="line-2-laptop" href="public/icons8/laptop.png" x="560" y="340" width="300" height="280" opacity="0.45" /><text data-hf-id="hf-w4kq" id="line-2-addr-phone" class="mono" x="250" y="676" font-size="32" fill="#4DA3FF" text-anchor="middle">192.168.1.10</text><text data-hf-id="hf-cwql" id="line-2-addr-laptop" class="mono" x="710" y="676" font-size="32" fill="#AAB5CC" text-anchor="middle">192.168.1.20</text><rect data-hf-id="hf-3zcg" id="line-2-hl-phone" x="126" y="634" width="248" height="58" rx="8" fill="none" stroke="#4DA3FF" stroke-width="3" opacity="0" /><rect data-hf-id="hf-lw46" id="line-2-hl-laptop" x="586" y="634" width="248" height="58" rx="8" fill="none" stroke="#4DA3FF" stroke-width="3" opacity="0" /><rect data-hf-id="hf-jtto" id="line-2-reuse" x="120" y="618" width="760" height="84" rx="10" fill="none" stroke="#7067E8" stroke-width="3" stroke-dasharray="14 12" opacity="0" />
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const scene = document.querySelector('[data-composition-id="line-2"]');
+      const q = (s) => scene.querySelector(s);
+      const D = 10.657959;
+      const t = (f) => f * D;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(q('#line-2-hl-phone'), {opacity: 0}, {opacity: 1, duration: t(0.12)}, t(0.05));
+      tl.to(q('#line-2-hl-phone'), {opacity: 0.35, duration: t(0.10)}, t(0.30));
+      tl.fromTo(q('#line-2-hl-laptop'), {opacity: 0}, {opacity: 1, duration: t(0.12)}, t(0.38));
+      tl.fromTo(q('#line-2-reuse'), {opacity: 0}, {opacity: 0.55, duration: t(0.18)}, t(0.66));
+      tl.fromTo(q('#line-2-addr-laptop'), {fill: '#AAB5CC'}, {fill: '#4DA3FF', duration: t(0.15)}, t(0.70));
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-2'] = tl;
+    })();
+  </script>
+</template>

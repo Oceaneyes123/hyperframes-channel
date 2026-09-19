@@ -11,7 +11,9 @@ content within the safe rectangle. Copy the teaching behavior, not the enclosure
 
 ## Start here
 
-Read `AGENTS.md`, `DESIGN.md`, this guide, then the relevant HyperFrames skill.
+Read `AGENTS.md`, `DESIGN.md` and this guide, then load only the
+`/hyperframes-channel-videos` skill (the repository path is in it). Do not load the
+generic workflow skills; `AGENTS.md` owns the token-efficiency rules for starting cheaply.
 `CHANNEL_RECIPE.md` owns the pipeline; this guide supplies the worked example.
 Repository portrait defaults override generic landscape skill examples.
 Do not load every skill or every existing video into context.
@@ -119,6 +121,16 @@ colored PNGs or precolored SVGs can use SVG image or CSS backgrounds. Do not use
 file-based masks as a default: they have rendered blank in sketches. Never replace
 a specific device with a vaguely related glyph just to finish quickly.
 
+Size accents from measured text, not by eye. In this channel's mono 32px style one
+character advances 19.2px, so a 12-character value is 230.4px wide and a 17-character
+value 326.4px. A highlight box wraps the whole value or label it marks; a box around a
+narrower slice of a value (or around only its trailing digits) reads as a rendering bug,
+not as emphasis.
+
+Every scene opens on the state the previous scene left behind: a translation table, a
+revealed address or a translated value that already exists is visible at local time 0,
+and only the scene that creates it hides and reveals it.
+
 Make `sketches/board.html` with these exact assets and all scene states. Inspect
 one real icon first, then the whole board. Show script and sketches together.
 Gate 1: obtain approval before generating final narration and building frames.
@@ -198,6 +210,12 @@ Keep each storyboard promise until it is implemented. Do not rewrite an approved
 action as a simpler decorative reveal to make the review pass. A recap must
 preserve the main story's dependency order, even when its wording is shorter.
 
+Express each beat as a fraction of the measured duration and multiply by it, so a retime
+never edits hand-written numbers. Animate opacity, colour and position; do not tween
+`scale` on a glyph group that carries a baked `scale()` transform — GSAP drops the baked
+value and the icon balloons over its slot. Two-line table rows and stacked labels need
+more than the 2px layout tolerance between their text boxes.
+
 Start from `channel/templates/frame.html` or the closest reference scene. Replace
 all content-specific IDs, copy, assets and timings. Use one paused GSAP timeline
 registered under the exact composition ID, an explicit 1080x1920 root and measured
@@ -241,8 +259,16 @@ npx hyperframes check --samples 21 --json
 
 Derive capture times from the measured storyboard, not an evenly spaced global
 sample or a copied command. For each scene, select an opening time, each action's
-visible moment and a resolved time before its end. Add the scene's canonical
-start to each local time, then pass the resulting comma-separated list to
+visible moment and a resolved time before its end. Three samples per scene is the
+working default (45 for a 15-scene short), and both sides of every cut come free
+because one scene's resolved sample sits next to the next scene's opening sample.
+Keep that coverage: trimming the pass to one sample per scene is how a whole class
+of defect stayed invisible — blank table rows and mis-sized highlight boxes only
+appeared once the resolved state of each scene was captured. The pass is the most
+expensive step, and it is still the cheapest place to catch a defect.
+
+Add the scene's canonical start to each local time, then pass the resulting
+comma-separated list to
 `npx hyperframes snapshot --at <global-times>`. Inspect both sides of each cut.
 Batch captures
 and share one contact sheet for review; do not add approval gates. Record actual
@@ -266,9 +292,19 @@ Reject the preview until these concrete tests pass:
 | Continuity | Persistent objects do not jump or swap identity | Reuse shared coordinates and boundary state |
 | Phone readability | Values legible, labels clear of connectors | Increase size, reduce copy, break line around label |
 | Timing | Every WAV mounted once at its canonical start | Rebuild from metadata; do not estimate |
+| Inherited state | Every scene opens on the previous scene's ending state; nothing revealed earlier renders blank | Remove the reveal flag from shared markup; hide a value only in the scene that creates it |
 | Sound off | Viewer can follow the process | Improve visible decision and outcome |
 | Sound on | Speech clear and aligned with action | Retime beats; regenerate only changed narration |
 | Runtime | No failed assets, runtime errors or blocking layout findings | Fix the identified source selector |
+
+`hyperframes snapshot` rewrites the project's `snapshots/` directory, so a targeted
+re-check of one fixed scene deletes the full evidence set. Write those verification
+captures to a temporary directory with `-o <dir>` and re-run the complete pass last.
+
+Investigate `duplicate_audio_track` by measurement rather than by eye: compare each WAV's
+frame count with its metadata duration and the gap between consecutive scenes. Durations
+that agree to six decimals with gaps of exactly 0.000000 are contiguous — the warning is
+the checker rounding the end time it prints.
 
 Do not claim to have listened if tools only verified audio metadata. Make the
 playable preview available for user listening. Investigate warnings, rather than
@@ -318,7 +354,11 @@ ffmpeg -v error -i TOPIC.mp4 -f null NUL
 `NUL` is Windows; use `/dev/null` on Unix. Inspect a frame extracted from the
 actual MP4 as well. Confirm portrait dimensions, fps, video/audio codecs,
 duration and a full successful decode. Frame rounding may slightly extend the
-container duration: reference narration 45.905850s, export 45.933333s at 30fps.
+Frame rounding may slightly extend the container duration: reference narration 45.905850s, export 45.933333s at 30fps.
+A render that logs "a frame failed verification, so parallel drawElement capture fell back
+to the screenshot path" still produced every frame (check `framesCompleted` against
+`totalFrames` in the trace); the fallback costs time, not output. The fast path can be
+re-enabled with `HF_DE_PARALLEL_ROUTER=true`.
 Update brief status, retain approval/check evidence, and embed the absolute MP4
 path in delivery. Do not commit, push or publish unless requested.
 

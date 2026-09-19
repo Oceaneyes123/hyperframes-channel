@@ -1,0 +1,292 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 119.25768707482993,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 7.035646258503402,
+      "original_text": "Your phone and your laptop have different private addresses. So why does the Internet see one public IP?",
+      "spoken_text": "Your phone and your laptop have different private addresses. So why does the Internet see one public I P?",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 10.65795918367347,
+      "original_text": "Inside your home, each device gets a private address from the router, like one ninety two dot one sixty eight dot one dot ten. Every home network reuses these ranges.",
+      "spoken_text": "Inside your home, each device gets a private address from the router, like one ninety two dot one sixty eight dot one dot ten. Every home network reuses these ranges.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 8.359183673469389,
+      "original_text": "Those addresses are not unique on the Internet. Millions of homes use the same ones, so no Internet router will deliver to them.",
+      "spoken_text": "Those addresses are not unique on the Internet. Millions of homes use the same ones, so no Internet router will deliver to them.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 9.682721088435374,
+      "original_text": "On the outside, the router has one public address: two oh three dot zero dot one thirteen dot seven. That is the address the Internet sees.",
+      "spoken_text": "On the outside, the router has one public address: two oh three dot zero dot one thirteen dot seven. That is the address the Internet sees.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 7.453605442176871,
+      "original_text": "Your phone opens a connection to a website. Its packet leaves with a private source address and a source port.",
+      "spoken_text": "Your phone opens a connection to a website. Its packet leaves with a private source address and a source port.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 8.150204081632653,
+      "original_text": "The router replaces that private source with its public address and a port of its own, and writes the pair into its table.",
+      "spoken_text": "The router replaces that private source with its public address and a port of its own, and writes the pair into its table.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 9.05578231292517,
+      "original_text": "Outside, the packet carries the public address. The website sees one connection from your router, and replies to that address and port.",
+      "spoken_text": "Outside, the packet carries the public address. The website sees one connection from your router, and replies to that address and port.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 7.174965986394557,
+      "original_text": "Now your laptop opens its own connection. It has a different private address and a different source port.",
+      "spoken_text": "Now your laptop opens its own connection. It has a different private address and a different source port.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 8
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 7.244625850340136,
+      "original_text": "The router gives it the same public address, but its own outside port, so it can tell the two connections apart.",
+      "spoken_text": "The router gives it the same public address, but its own outside port, so it can tell the two connections apart.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 9
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 6.130068027210885,
+      "original_text": "A reply comes back from the website, addressed to the public address and the first port.",
+      "spoken_text": "A reply comes back from the website, addressed to the public address and the first port.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 10
+    },
+    {
+      "id": "line-11",
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 7.662585034013605,
+      "original_text": "The router looks that port up in the table. It matches one entry, and the destination is rewritten back to the phone.",
+      "spoken_text": "The router looks that port up in the table. It matches one entry, and the destination is rewritten back to the phone.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 11
+    },
+    {
+      "id": "line-12",
+      "path": ".media/audio/voice/line-12.wav",
+      "duration_s": 7.662585034013605,
+      "original_text": "The reply travels to your phone. The laptop's reply uses the other entry, so each device gets only its own answers.",
+      "spoken_text": "The reply travels to your phone. The laptop's reply uses the other entry, so each device gets only its own answers.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 12
+    },
+    {
+      "id": "line-13",
+      "path": ".media/audio/voice/line-13.wav",
+      "duration_s": 7.732244897959184,
+      "original_text": "What if someone on the Internet connects in first? Nothing in the table matches that port, so the router drops the packet.",
+      "spoken_text": "What if someone on the Internet connects in first? Nothing in the table matches that port, so the router drops the packet.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 13
+    },
+    {
+      "id": "line-14",
+      "path": ".media/audio/voice/line-14.wav",
+      "duration_s": 8.010884353741497,
+      "original_text": "That is not the same as a firewall. NAT drops what it cannot match in its table; a firewall decides by rules someone set.",
+      "spoken_text": "That is not the same as a firewall. nat drops what it cannot match in its table; a firewall decides by rules someone set.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 14
+    },
+    {
+      "id": "line-15",
+      "path": ".media/audio/voice/line-15.wav",
+      "duration_s": 7.244625850340136,
+      "original_text": "Many private devices, one public address. NAT keeps the table, so every reply finds the right device.",
+      "spoken_text": "Many private devices, one public address. nat keeps the table, so every reply finds the right device.",
+      "normalization_fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4",
+      "frame": 15
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 7.035646258503402
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 7.035646258503402,
+      "duration_s": 10.65795918367347
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 17.69360544217687,
+      "duration_s": 8.359183673469389
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 26.05278911564626,
+      "duration_s": 9.682721088435374
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 35.735510204081635,
+      "duration_s": 7.453605442176871
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 43.18911564625851,
+      "duration_s": 8.150204081632653
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 51.33931972789116,
+      "duration_s": 9.05578231292517
+    },
+    {
+      "index": 8,
+      "id": "line-8",
+      "src": "compositions/frames/line-8.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 60.395102040816326,
+      "duration_s": 7.174965986394557
+    },
+    {
+      "index": 9,
+      "id": "line-9",
+      "src": "compositions/frames/line-9.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 67.57006802721088,
+      "duration_s": 7.244625850340136
+    },
+    {
+      "index": 10,
+      "id": "line-10",
+      "src": "compositions/frames/line-10.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 74.81469387755102,
+      "duration_s": 6.130068027210885
+    },
+    {
+      "index": 11,
+      "id": "line-11",
+      "src": "compositions/frames/line-11.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 80.9447619047619,
+      "duration_s": 7.662585034013605
+    },
+    {
+      "index": 12,
+      "id": "line-12",
+      "src": "compositions/frames/line-12.html",
+      "audio_id": "voice-line-12",
+      "audio_path": ".media/audio/voice/line-12.wav",
+      "start_s": 88.6073469387755,
+      "duration_s": 7.662585034013605
+    },
+    {
+      "index": 13,
+      "id": "line-13",
+      "src": "compositions/frames/line-13.html",
+      "audio_id": "voice-line-13",
+      "audio_path": ".media/audio/voice/line-13.wav",
+      "start_s": 96.26993197278911,
+      "duration_s": 7.732244897959184
+    },
+    {
+      "index": 14,
+      "id": "line-14",
+      "src": "compositions/frames/line-14.html",
+      "audio_id": "voice-line-14",
+      "audio_path": ".media/audio/voice/line-14.wav",
+      "start_s": 104.00217687074829,
+      "duration_s": 8.010884353741497
+    },
+    {
+      "index": 15,
+      "id": "line-15",
+      "src": "compositions/frames/line-15.html",
+      "audio_id": "voice-line-15",
+      "audio_path": ".media/audio/voice/line-15.wav",
+      "start_s": 112.01306122448979,
+      "duration_s": 7.244625850340136
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {
+        "NAT": "nat",
+        "PAT": "pat"
+      },
+      "lines": {},
+      "ipv4_style": "short"
+    },
+    "fingerprint": "0d2f65a86bbe4acd9a0c884ec1015dfac3157b173d44dd6d68ac9a9eda394ce4"
+  }
+}

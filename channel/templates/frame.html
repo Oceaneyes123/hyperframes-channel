@@ -5,11 +5,21 @@
 #scene-01 .diagram text { font:700 36px Arial,sans-serif; fill:#F5F7FF; text-anchor:middle; }
 #scene-01 .wire { stroke:#33415F; stroke-width:10; fill:none; }
 #scene-01 .received { opacity:0; }
+#scene-01-ground { position:absolute; inset:0; background:#0B1020; }
 </style>
-<!-- Teaching example: replace 7s and beat times with measured scene audio.
-     Device geometry reuses portrait-workflow-demo/client-blue.svg locally.
-     Prefix every id when copying a scene. Host supplies the local GSAP runtime. -->
+<!-- Teaching example. Prefix every id when copying a scene; the host supplies the
+     local GSAP runtime and mounts the narration WAV.
+     - Hold the scene's measured duration in D and write beats as fractions of it, so
+       retiming after TTS never edits hand-written numbers.
+     - Reference assets from the project root ("public/icons8/phone.png"), never with
+       "../": a frame that escapes the project root fails `hyperframes check`.
+     - Keep the full-duration ground clip: a background on #root is gated to the frame's
+       window and dark content can land on the host body.
+     - Animate opacity, colour and position. Do not tween `scale` on a group that already
+       carries a baked `translate() scale()` transform - GSAP drops the baked scale and
+       the artwork balloons over the frame. Inline SVG glyph groups always carry one. -->
 <div id="scene-01" class="hf-frame" data-composition-id="scene-01" data-width="1080" data-height="1920" data-duration="7">
+  <div id="scene-01-ground" class="clip scene-01-ground" data-start="0" data-duration="7" data-track-index="0"></div>
   <div class="hf-safe">
     <h1 class="hf-headline">Same network</h1>
     <svg class="diagram" viewBox="0 0 864 1180" role="img" aria-label="A packet travels through a switch to another computer, then an acknowledgement returns.">
@@ -40,15 +50,20 @@
 </div>
 <script>
 {
+  const scene = document.querySelector('[data-composition-id="scene-01"]');
+  const D = 7;                        // replace with this scene's measured WAV duration
+  const t = (f) => f * D;             // every beat is a fraction of the measured scene
   const tl = gsap.timeline({paused:true});
-  tl.addLabel('send', .6)
-    .to('#scene-01-packet', {y:150,duration:1.5,ease:'none'}, 'send')
-    .to('#scene-01-switch', {scale:1.04,transformOrigin:'50% 50%',duration:.2,repeat:1,yoyo:true}, 2.1)
-    .to('#scene-01-packet', {y:510,duration:1.8,ease:'none'}, 2.5)
-    .to('#scene-01-packet', {opacity:0,duration:.2}, 4.3)
-    .to('#scene-01-result', {opacity:1,duration:.3}, 4.3)
-    .to('#scene-01-answer', {opacity:1,duration:.2}, 4.7)
-    .to('#scene-01-answer', {y:-510,duration:1.7,ease:'none'}, 4.9);
+  tl.fromTo(scene.querySelector('#scene-01-packet'), {y:0}, {y:150, duration:t(.21), ease:'none'}, t(.09))
+    // emphasis is a colour/opacity change, never a scale tween on a baked transform
+    .fromTo(scene.querySelector('#scene-01-switch'), {opacity:1}, {opacity:.6, duration:t(.06)}, t(.30))
+    .to(scene.querySelector('#scene-01-switch'), {opacity:1, duration:t(.06)}, t(.36))
+    .to(scene.querySelector('#scene-01-packet'), {y:510, duration:t(.26), ease:'none'}, t(.36))
+    .to(scene.querySelector('#scene-01-packet'), {opacity:0, duration:t(.03)}, t(.61))
+    .to(scene.querySelector('#scene-01-result'), {opacity:1, duration:t(.04)}, t(.61))
+    .to(scene.querySelector('#scene-01-answer'), {opacity:1, duration:t(.03)}, t(.67))
+    .to(scene.querySelector('#scene-01-answer'), {y:-510, duration:t(.24), ease:'none'}, t(.70));
+  window.__timelines = window.__timelines || {};
   window.__timelines['scene-01'] = tl;
 }
 </script>

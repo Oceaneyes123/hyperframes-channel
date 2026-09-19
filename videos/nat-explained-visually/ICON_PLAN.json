@@ -1,0 +1,17 @@
+{
+  "schema": "hyperframes-channel/icon-plan@2",
+  "icons": [
+    {"id": "phone", "provider": "icons8", "role": "system", "meaning": "the first local device, always the first sender", "color": "client", "style": "flat colored device", "path": "public/icons8/phone.png", "source": "https://icons8.com/icons/set/smartphone"},
+    {"id": "laptop", "provider": "icons8", "role": "system", "meaning": "the second local device on the same home network", "color": "client", "style": "flat colored device", "path": "public/icons8/laptop.png", "source": "https://icons8.com/icons/set/laptop"},
+    {"id": "router", "provider": "icons8", "role": "system", "meaning": "the home router that owns the public address and the NAT table", "color": "infrastructure", "style": "flat colored device", "path": "public/icons8/router.png", "source": "https://icons8.com/icons/set/wifi-router"},
+    {"id": "globe", "provider": "icons8", "role": "system", "meaning": "the public Internet beyond the router", "color": "external", "style": "flat colored device", "path": "public/icons8/globe.png", "source": "https://icons8.com/icons/set/internet"},
+    {"id": "server", "provider": "icons8", "role": "system", "meaning": "the website the devices connect to", "color": "storage", "style": "flat colored device", "path": "public/icons8/server.png", "source": "https://icons8.com/icons/set/server"},
+    {"id": "table-cells", "provider": "fontawesome", "role": "system", "meaning": "the NAT translation table kept by the router", "color": "infrastructure", "style": "solid glyph", "path": "public/icons/table-cells.svg"},
+    {"id": "arrow-down", "provider": "fontawesome", "role": "system", "meaning": "traffic moving down the route toward the Internet", "color": "client", "style": "solid glyph", "path": "public/icons/arrow-down.svg"},
+    {"id": "arrow-right", "provider": "fontawesome", "role": "system", "meaning": "one value translated into another", "color": "external", "style": "solid glyph", "path": "public/icons/arrow-right.svg"},
+    {"id": "check", "provider": "fontawesome", "role": "system", "meaning": "reply delivered to the correct device", "color": "success", "style": "solid glyph", "path": "public/icons/check.svg"},
+    {"id": "xmark", "provider": "fontawesome", "role": "system", "meaning": "packet dropped because no mapping matched", "color": "security", "style": "solid glyph", "path": "public/icons/xmark.svg"},
+    {"id": "triangle-exclamation", "provider": "fontawesome", "role": "system", "meaning": "private addresses are not routable on the public Internet", "color": "warning", "style": "solid glyph", "path": "public/icons/triangle-exclamation.svg"},
+    {"id": "shield-halved", "provider": "fontawesome", "role": "system", "meaning": "a firewall, contrasted with NAT", "color": "security", "style": "solid glyph", "path": "public/icons/shield-halved.svg"}
+  ]
+}

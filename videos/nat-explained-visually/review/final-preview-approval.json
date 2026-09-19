@@ -1,0 +1,13 @@
+{
+  "status": "approved",
+  "scope": "the assembled preview at 119.258s, 15 scenes, 1080x1920",
+  "authorization": "User: \"That is better. Now render the video\" — explicit gate 2 approval of the final preview.",
+  "approved_preview": "http://localhost:3002/#project/nat-explained-visually",
+  "verified_at_approval": [
+    "npx hyperframes check ok: 0 lint errors, 0 runtime, 0 layout errors, contrast ok (4 audio warnings are the checker's rounded end times, disproved against WAV durations)",
+    "validate_project.py --stage preview passes",
+    "45 sample frames inspected (opening/action/resolved per scene plus both sides of every cut)",
+    "scene 2, scene 9 and scene 15 highlight boxes resized to wrap the values they mark; re-inspected in the rendered frames"
+  ],
+  "next_step": "render once at high quality, verify with ffprobe, full decode and an extracted frame"
+}

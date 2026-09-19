@@ -1,0 +1,34 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    [data-composition-id="line-1"] { position:relative; width:1080px; height:1920px; overflow:hidden; }
+    [data-composition-id="line-1"] .line-1-ground { position:absolute; inset:0; background:#0B1020; }
+    [data-composition-id="line-1"] .line-1-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    [data-composition-id="line-1"] .hl { font:850 88px/1.05 Barlow, Arial, sans-serif; letter-spacing:-.03em; }
+    [data-composition-id="line-1"] .lbl { font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:700; letter-spacing:.04em; }
+    [data-composition-id="line-1"] .mono { font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:500; }
+  </style>
+  <div data-hf-id="hf-6faa" id="root" data-composition-id="line-1" data-width="1080" data-height="1920" data-duration="7.035646">
+    <div data-hf-id="hf-16p9" id="line-1-ground" class="clip line-1-ground" data-start="0" data-duration="7.035646" data-track-index="0"></div>
+    <svg data-hf-id="hf-ypip" class="line-1-diagram" viewBox="0 0 1080 1920" aria-label="SAME PUBLIC IP?">
+      <rect data-hf-id="hf-wqyr" x="0" y="0" width="1080" height="1920" fill="#0B1020" />
+      <text data-hf-id="hf-yyk7" class="hl" x="72" y="276" font-size="88" fill="#F5F7FF" text-anchor="start">SAME PUBLIC IP?</text>
+      <path data-hf-id="hf-3ipw" id="line-1-bus" d="M250 706V748 M710 706V748 M250 748H710 M250 748V1340" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><image data-hf-id="hf-bb7r" id="line-1-router" href="public/icons8/router.png" x="110" y="830" width="280" height="280" /><image data-hf-id="hf-r5co" id="line-1-globe" href="public/icons8/globe.png" x="140" y="1330" width="220" height="220" /><image data-hf-id="hf-jv40" id="line-1-server" href="public/icons8/server.png" x="630" y="1330" width="220" height="220" /><path data-hf-id="hf-kljy" id="line-1-hop" d="M360 1440H630" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><text data-hf-id="hf-6pkj" class="lbl" x="250" y="1590" font-size="34" fill="#4DD9E8" text-anchor="middle">INTERNET</text><text data-hf-id="hf-nqp4" class="lbl" x="740" y="1590" font-size="30" fill="#AAB5CC" text-anchor="middle">WEBSITE</text><g data-hf-id="hf-nm87" id="line-1-public" opacity="0"><path data-hf-id="hf-m11u" d="M250 1234H354" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><rect data-hf-id="hf-jtz7" id="line-1-public-rect" x="354" y="1200" width="400" height="68" rx="8" fill="#141D35" stroke="#4DD9E8" stroke-width="3" /><text data-hf-id="hf-mryd" class="lbl" x="376" y="1244" font-size="28" fill="#AAB5CC" text-anchor="start">PUBLIC</text><text data-hf-id="hf-qdhp" class="mono" x="490" y="1244" font-size="36" fill="#4DD9E8" text-anchor="start">203.0.113.7</text></g><image data-hf-id="hf-6kph" id="line-1-phone" href="public/icons8/phone.png" x="130" y="340" width="240" height="280" /><image data-hf-id="hf-74if" id="line-1-laptop" href="public/icons8/laptop.png" x="560" y="340" width="300" height="280" /><text data-hf-id="hf-uqr1" id="line-1-addr-phone" class="mono" x="250" y="676" font-size="32" fill="#4DA3FF" text-anchor="middle" opacity="0">192.168.1.10</text><text data-hf-id="hf-riur" id="line-1-addr-laptop" class="mono" x="710" y="676" font-size="32" fill="#4DA3FF" text-anchor="middle" opacity="0">192.168.1.20</text>
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const scene = document.querySelector('[data-composition-id="line-1"]');
+      const q = (s) => scene.querySelector(s);
+      const D = 7.035646;
+      const t = (f) => f * D;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(q('#line-1-addr-phone'), {opacity: 0}, {opacity: 1, duration: t(0.16)}, t(0.18));
+      tl.fromTo(q('#line-1-addr-laptop'), {opacity: 0}, {opacity: 1, duration: t(0.16)}, t(0.32));
+      tl.fromTo(q('#line-1-public'), {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: t(0.15)}, t(0.55));
+      tl.fromTo(q('#line-1-globe'), {opacity: 0.35}, {opacity: 1, duration: t(0.2)}, t(0.78));
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-1'] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,35 @@
+<template>
+  <style>
+    @import url("channel/styles.css");
+    [data-composition-id="line-4"] { position:relative; width:1080px; height:1920px; overflow:hidden; }
+    [data-composition-id="line-4"] .line-4-ground { position:absolute; inset:0; background:#0B1020; }
+    [data-composition-id="line-4"] .line-4-diagram { position:absolute; inset:0; width:1080px; height:1920px; }
+    [data-composition-id="line-4"] .hl { font:850 76px/1.05 Barlow, Arial, sans-serif; letter-spacing:-.03em; }
+    [data-composition-id="line-4"] .lbl { font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:700; letter-spacing:.04em; }
+    [data-composition-id="line-4"] .mono { font-family:"IBM Plex Mono", ui-monospace, monospace; font-weight:500; }
+  </style>
+  <div data-hf-id="hf-rp3x" id="root" data-composition-id="line-4" data-width="1080" data-height="1920" data-duration="9.682721">
+    <div data-hf-id="hf-yocj" id="line-4-ground" class="clip line-4-ground" data-start="0" data-duration="9.682721" data-track-index="0"></div>
+    <svg data-hf-id="hf-pf3q" class="line-4-diagram" viewBox="0 0 1080 1920" aria-label="PUBLIC ADDRESS">
+      <rect data-hf-id="hf-wqyr" x="0" y="0" width="1080" height="1920" fill="#0B1020" />
+      <text data-hf-id="hf-w226" class="hl" x="72" y="276" font-size="76" fill="#F5F7FF" text-anchor="start">PUBLIC ADDRESS</text>
+      <path data-hf-id="hf-ycjf" id="line-4-bus" d="M250 706V748 M710 706V748 M250 748H710 M250 748V1340" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><image data-hf-id="hf-8r6k" id="line-4-router" href="public/icons8/router.png" x="110" y="830" width="280" height="280" /><image data-hf-id="hf-ipmj" id="line-4-globe" href="public/icons8/globe.png" x="140" y="1330" width="220" height="220" /><image data-hf-id="hf-4l8t" id="line-4-server" href="public/icons8/server.png" x="630" y="1330" width="220" height="220" /><path data-hf-id="hf-ri2x" id="line-4-hop" d="M360 1440H630" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><text data-hf-id="hf-6pkj" class="lbl" x="250" y="1590" font-size="34" fill="#4DD9E8" text-anchor="middle">INTERNET</text><text data-hf-id="hf-nqp4" class="lbl" x="740" y="1590" font-size="30" fill="#AAB5CC" text-anchor="middle">WEBSITE</text><g data-hf-id="hf-rwuk" id="line-4-public" opacity="0"><path data-hf-id="hf-m11u" d="M250 1234H354" fill="none" stroke="#33415F" stroke-width="8" stroke-linecap="round" /><rect data-hf-id="hf-0ef2" id="line-4-public-rect" x="354" y="1200" width="400" height="68" rx="8" fill="#141D35" stroke="#33415F" stroke-width="3" /><text data-hf-id="hf-mryd" class="lbl" x="376" y="1244" font-size="28" fill="#AAB5CC" text-anchor="start">PUBLIC</text><text data-hf-id="hf-qdhp" class="mono" x="490" y="1244" font-size="36" fill="#4DD9E8" text-anchor="start">203.0.113.7</text></g><image data-hf-id="hf-snnd" id="line-4-phone" href="public/icons8/phone.png" x="130" y="340" width="240" height="280" opacity="0.45" /><image data-hf-id="hf-l2lc" id="line-4-laptop" href="public/icons8/laptop.png" x="560" y="340" width="300" height="280" /><text data-hf-id="hf-v099" id="line-4-addr-phone" class="mono" x="250" y="676" font-size="32" fill="#AAB5CC" text-anchor="middle">192.168.1.10</text><text data-hf-id="hf-qh1s" id="line-4-addr-laptop" class="mono" x="710" y="676" font-size="32" fill="#4DA3FF" text-anchor="middle">192.168.1.20</text><rect data-hf-id="hf-k4ax" id="line-4-router-ring" x="110" y="830" width="280" height="280" rx="14" fill="none" stroke="#4DD9E8" stroke-width="4" opacity="0" />
+    </svg>
+  </div>
+  <script>
+    (() => {
+      const scene = document.querySelector('[data-composition-id="line-4"]');
+      const q = (s) => scene.querySelector(s);
+      const D = 9.682721;
+      const t = (f) => f * D;
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(q('#line-4-public'), {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: t(0.16)}, t(0.24));
+      tl.fromTo(q('#line-4-router-ring'), {opacity: 0}, {opacity: 0.6, duration: t(0.14)}, t(0.08));
+      tl.to(q('#line-4-router-ring'), {opacity: 0.18, duration: t(0.12)}, t(0.44));
+      tl.fromTo(q('#line-4-globe'), {opacity: 0.4}, {opacity: 1, duration: t(0.16)}, t(0.66));
+      tl.fromTo(q('#line-4-hop'), {opacity: 0.3}, {opacity: 1, duration: t(0.14)}, t(0.78));
+      window.__timelines = window.__timelines || {};
+      window.__timelines['line-4'] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,15 @@
+{
+  "status": "approved",
+  "icon_plan": "ICON_PLAN.json",
+  "sketches": ["sketches/board.html"],
+  "scope": "fact sheet, script, timed storyboard, icon plan and production-icon sketches",
+  "authorization": "User: \"Please contiinue, I approve it\" — explicit gate 1 approval of the script and the icon-first sketch board.",
+  "approved_deviations": [
+    "15 scenes / ~126.5s estimated, over the repository 45-60s short-form default, per the brief's completeness-over-runtime instruction",
+    "NAT spoken as the word \"nat\" via pronunciation.json",
+    "frame 15 headline 64px so the phrase fits the safe width",
+    "frame 14 omits the public-address chip"
+  ],
+  "platform_note": "YouTube Shorts and Instagram Reels allow up to 3 minutes (verified); Facebook Reels limit unverified, flagged to the user for a separate decision.",
+  "next_gate": "final-preview approval before rendering"
+}
