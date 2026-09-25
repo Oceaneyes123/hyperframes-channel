@@ -1,0 +1,217 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 151.53156462585034,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 6.757006802721088,
+      "original_text": "Your laptop joins the network. It has no usable assigned IP yet. How does it get the settings it needs?",
+      "spoken_text": "Your laptop joins the network. It has no usable assigned I P yet. How does it get the settings it needs?",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 13.862312925170068,
+      "original_text": "Without DHCP, someone could set up each device by hand: an IP address, subnet mask, default gateway, and DNS server. DHCP is a convenient option, not a requirement for every network.",
+      "spoken_text": "Without D H C P, someone could set up each device by hand: an I P address, subnet mask, default gateway, and D N S server. D H C P is a convenient option, not a requirement for every network.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 13.444353741496599,
+      "original_text": "With DHCP, the laptop is the client and a DHCP server offers network settings. The gateway is another role; a router and DHCP server can be separate devices, or one box can do both jobs.",
+      "spoken_text": "With D H C P, the laptop is the client and a D H C P server offers network settings. The gateway is another role; a router and D H C P server can be separate devices, or one box can do both jobs.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 13.02639455782313,
+      "original_text": "First, Discover. On a usual fresh join, the laptop does not know a DHCP server's address, so it broadcasts a call across the local network: \u201cIs a DHCP server here?\u201d",
+      "spoken_text": "First, Discover. On a usual fresh join, the laptop does not know a D H C P server's address, so it broadcasts a call across the local network: \u201cIs a D H C P server here?\u201d",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 28.024625850340136,
+      "original_text": "The server replies with an offer: this example proposes IP 192.168.1.25, subnet mask 255.255.255.0, gateway 192.168.1.1, DNS 192.168.1.1, and a 24-hour lease. It is not confirmed yet.",
+      "spoken_text": "The server replies with an offer: this example proposes I P one hundred ninety two dot one hundred sixty eight dot one dot twenty five, subnet mask two hundred fifty five dot two hundred fifty five dot two hundred fifty five dot zero, gateway one hundred ninety two dot one hundred sixty eight dot one dot one, D N S one hundred ninety two dot one hundred sixty eight dot one dot one, and a 24-hour lease. It is not confirmed yet.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 9.613061224489796,
+      "original_text": "Next, Request. The laptop tells the server it wants to use the offered settings. The offer is still only a proposal while the client asks for it.",
+      "spoken_text": "Next, Request. The laptop tells the server it wants to use the offered settings. The offer is still only a proposal while the client asks for it.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 13.79265306122449,
+      "original_text": "Then the server sends ACK: Acknowledge. That confirms the configuration. Watch the laptop change from no IP to 192.168.1.25, ready to use.",
+      "spoken_text": "Then the server sends ACK: Acknowledge. That confirms the configuration. Watch the laptop change from no I P to one hundred ninety two dot one hundred sixty eight dot one dot twenty five, ready to use.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 12.60843537414966,
+      "original_text": "DHCP can provide more than the address: the subnet mask explains the local network, the gateway is the next stop for other networks, and DNS helps turn names into addresses.",
+      "spoken_text": "D H C P can provide more than the address: the subnet mask explains the local network, the gateway is the next stop for other networks, and D N S helps turn names into addresses.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 8
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 11.981496598639456,
+      "original_text": "The laptop does not own that address forever. DHCP lends it for a lease period. Here the example lease is 24 hours; another network can choose a different duration.",
+      "spoken_text": "The laptop does not own that address forever. D H C P lends it for a lease period. Here the example lease is 24 hours; another network can choose a different duration.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 9
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 12.678095238095239,
+      "original_text": "Before the lease expires, the client can ask to renew. If the server agrees, the lease is extended; the same address can continue, but a device is not guaranteed to get the same address every time.",
+      "spoken_text": "Before the lease expires, the client can ask to renew. If the server agrees, the lease is extended; the same address can continue, but a device is not guaranteed to get the same address every time.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 10
+    },
+    {
+      "id": "line-11",
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 15.74312925170068,
+      "original_text": "Discover, Offer, Request, Acknowledge: D-O-R-A. As devices join, DHCP automatically provides the network settings they need, while the router remains a separate job. The laptop is ready; then the phone and tablet join too.",
+      "spoken_text": "Discover, Offer, Request, Acknowledge: D-O-R-A. As devices join, D H C P automatically provides the network settings they need, while the router remains a separate job. The laptop is ready; then the phone and tablet join too.",
+      "normalization_fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e",
+      "frame": 11
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 6.757006802721088
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 6.757006802721088,
+      "duration_s": 13.862312925170068
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 20.619319727891156,
+      "duration_s": 13.444353741496599
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 34.06367346938775,
+      "duration_s": 13.02639455782313
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 47.09006802721088,
+      "duration_s": 28.024625850340136
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 75.11469387755102,
+      "duration_s": 9.613061224489796
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 84.72775510204082,
+      "duration_s": 13.79265306122449
+    },
+    {
+      "index": 8,
+      "id": "line-8",
+      "src": "compositions/frames/line-8.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 98.5204081632653,
+      "duration_s": 12.60843537414966
+    },
+    {
+      "index": 9,
+      "id": "line-9",
+      "src": "compositions/frames/line-9.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 111.12884353741497,
+      "duration_s": 11.981496598639456
+    },
+    {
+      "index": 10,
+      "id": "line-10",
+      "src": "compositions/frames/line-10.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 123.11034013605442,
+      "duration_s": 12.678095238095239
+    },
+    {
+      "index": 11,
+      "id": "line-11",
+      "src": "compositions/frames/line-11.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 135.78843537414966,
+      "duration_s": 15.74312925170068
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "c77da6513acc9d2db80e4ecf781a0d52a1b4752cc0a062cfb2a360d71b9b015e"
+  }
+}

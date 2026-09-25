@@ -1,0 +1,7 @@
+{
+  "status": "approved",
+  "scope": "final preview of all 21 scenes at measured timings, 1080x1920, captions/SFX/BGM off",
+  "authorization": "User: 'Approved now render' - explicit final-preview approval to render.",
+  "platform_note": "measured runtime 180.628s is 0.63s over the 3-minute vertical-Shorts ceiling; approved as built, no narration trimmed",
+  "next_gate": "none - render and deliver"
+}

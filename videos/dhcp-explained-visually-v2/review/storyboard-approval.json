@@ -1,0 +1,11 @@
+{
+  "status": "approved",
+  "icon_plan": "ICON_PLAN.json",
+  "sketches": [
+    "sketches/board.html"
+  ],
+  "scope": "script, timed storyboard and production-icon sketches",
+  "authorization": "User: I approve the gate 1",
+  "approved_at": "2026-09-24",
+  "next_gate": "final-preview approval before rendering"
+}

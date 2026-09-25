@@ -1,0 +1,16 @@
+{
+  "ipv4_style": "grouped",
+  "terms": {
+    "802.1X": "eight oh two point one X",
+    "NPS": "N P S",
+    "RADIUS": "RADIUS",
+    "SRV": "S R V",
+    "AD DS": "A D D S",
+    "Kerberos": "Kerberos"
+  },
+  "lines": {
+    "line-2": "First, ask whether the network itself requires authentication. On an ordinary network, the laptop can continue toward D H C P. On an eight oh two point one X network, access is conditional.",
+    "line-5": "That N P S exchange is conditional. In the normal path without eight oh two point one X, the laptop goes from the network to D H C P, then D N S, then the Domain Controller. N P S is not involved in every domain connection.",
+    "line-13": "So the complete enterprise flow is: if required, eight oh two point one X authentication through the switch or access point and N P S; then network access; D H C P supplies I P, gateway, and D N S; D N S locates the Domain Controller; and the Domain Controller handles domain login and services."
+  }
+}

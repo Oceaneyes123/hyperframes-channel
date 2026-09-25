@@ -38,28 +38,33 @@ retrace it in reverse and never swap device positions.
 - Narration reference: `SCRIPT.md#Line 1`
 - Timing source: `audio_meta.json` (measured Supertonic 3 WAV; do not hand-edit).
 - Learning objective: pose the question — two different private addresses, one public address.
-- Dominant visual: phone and laptop above one router, with a public address chip on the router's outside.
+- Dominant visual: two blue source markers follow separate routes into the router; one cyan marker leaves it and reaches the website.
 - Icon assets: `public/icons8/phone.png`, `public/icons8/laptop.png`, `public/icons8/router.png`, `public/icons8/globe.png`.
-- Required objects and counts: 2 devices, 1 router, 1 public chip, 1 globe (4 meaningful objects).
+- Required objects and counts: 2 devices, 1 router, 2 private markers merging into 1 public marker, 1 public address, 1 Internet globe and 1 website.
 - Text shown: `SAME PUBLIC IP?` (headline), `192.168.1.10`, `192.168.1.20`, `PUBLIC 203.0.113.7`, `INTERNET`.
-- Animation: devices and router visible at local 0; both private addresses fade in; the public chip lands on the router's outside; the globe brightens.
+- Animation: private markers follow the two drawn branches into the router; one cyan marker continues through the public address and Internet to the website, which lights on arrival.
 - Beginning state: complete inside/outside diagram at local time 0, no packet.
-- Ending state: question asked, both private addresses and the one public address on screen.
+- Ending state: two private addresses converge at the router; one public value is visible and the website lights as the outbound marker arrives.
 - Transition: cut.
 - Continuity: the same two devices, router and globe positions carry into frame 2; no entrance reset.
 - Geometry source: `frame.md` `phone`, `laptop`, `router`, `globe`, `public-chip`.
-- Complexity: 1 idea · 1 action · 4 objects
+- Scene archetype: Hero hook
+- Primary motion verb: route and merge
+- Transition grammar: opening scene; no incoming transition
+- Complexity: 1 idea · 3 actions · 7 objects
 
 | Local time (measured) | Spoken cue | Named objects and visible state change | Implementation selector(s) | Inspected time / evidence / pass or fix |
 | --- | --- | --- | --- | --- |
-| 0.000–2.282s | Your phone and your laptop | `phone`, `laptop`, `router`, `globe` already visible; two `?` markers land | #line-1-phone, #line-1-laptop, #line-1-router, #line-1-globe | 0.15s → pass: all four objects visible at local 0 |
-| 2.282–4.659s | have different private addresses | `phone-addr` and `laptop-addr` appear in client blue | #line-1-addr-phone | 3.518s → pass: private address fade-in |
-| 4.659–7.036s | So why does the Internet see one public IP? | `public-chip` appears on the router's outside; globe label reads | #line-1-addr-laptop, #line-1-public | 6.836s → pass: second address and the public value legible |
+| 0.0–1.6s | Why does the Internet see one public IP? | Devices, router and real route are present immediately | `#line-1-phone`, `#line-1-laptop`, `#line-1-router`, `#line-1-bus` | 0.15s local — `review/improvement-pilot-final/frame-00-at-0.15s.png`; pass: full route and endpoints are visible before the tokens move. |
+| 1.1–3.6s | different private addresses | Phone marker follows its branch into the router as its address appears | `#line-1-packet-phone`, `#line-1-addr-phone` | 3.2s local — `review/improvement-pilot-final/frame-01-at-3.2s.png`; pass: private value is visible and its blue marker follows the drawn branch. |
+| 2.2–4.2s |  | Laptop marker follows the drawn branch into the same router | `#line-1-packet-laptop`, `#line-1-addr-laptop` | 4.2s local — `review/improvement-pilot-final/frame-02-at-4.2s.png`; pass: both private paths converge at the same router. |
+| 4.1–6.2s | one public IP | One cyan marker leaves the router through the public address and reaches the Internet | `#line-1-packet-public`, `#line-1-public`, `#line-1-globe` | 5.3s local — `review/improvement-pilot-final/frame-03-at-5.3s.png`; pass: one cyan marker reaches the Internet with the public address visible. |
+| 5.8–7.0s | the website | The marker touches the website route endpoint and the server lights on receipt | `#line-1-packet-public`, `#line-1-server`, `#line-1-server-glow` | 6.7s local — `review/improvement-pilot-final/frame-04-at-6.7s.png`; pass: marker reaches the server and its arrival glow turns on. |
 
 - Intentional hold over 3s: none.
 - Sound-off check: a viewer sees two devices, two different values, one router and one value on the outside — the question is legible without sound.
-- Review samples (measured local times): opening, both addresses visible, chip landed.
-- Adjacent-cut review: first scene — not applicable.
+- Review samples (audio-local times): opening 0.15s; private route 3.2s; merge 4.2s; public route 5.3s; website receipt 6.7s.
+- Adjacent-cut review: first scene — not applicable. Inspected 7.2s local in `review/improvement-pilot-final/frame-05-at-7.2s.png`; pass: phone, laptop, router and route keep their positions as the scene-local markers clear.
 
 ## Frame 2 — Private addresses inside the home
 - duration: 10.657959s
@@ -212,25 +217,28 @@ retrace it in reverse and never swap device positions.
 - Icon assets: `public/icons8/router.png`, `public/icons8/phone.png`, `public/icons/arrow-right.svg`, `public/icons/table-cells.svg`.
 - Required objects and counts: 1 router, 1 packet, 1 table + row 1, 1 device (muted) (4 objects).
 - Text shown: `REWRITE SOURCE` (72px), `192.168.1.10:51000`, `203.0.113.7:40001`, `NAT TABLE`.
-- Animation: the packet holds at the router; `packet-port` changes from `51000` to `40001` and its colour turns cyan; `nat-row-1` is written into slot 1 with an arrow between the inside and outside values.
+- Animation: the private packet collapses at the router; a cyan public packet snaps into the same position. The table writes the private/public pair and links the values with an arrow.
 - Beginning state: packet at the router, empty table.
 - Ending state: translated packet still at the router, row 1 written and highlighted.
 - Transition: cut.
 - Continuity: row 1 keeps its place and text for the rest of the video.
 - Geometry source: `frame.md` `packet`, `packet-port`, `nat-slot-1`, `nat-row-1`, `nat-panel`.
-- Complexity: 1 idea · 1 action · 4 objects
+- Scene archetype: Transformation
+- Primary motion verb: snap and rewrite
+- Transition grammar: hard cut introduces the router's translation step
+- Complexity: 1 idea · 3 actions · 4 objects
 
 | Local time (measured) | Spoken cue | Named objects and visible state change | Implementation selector(s) | Inspected time / evidence / pass or fix |
 | --- | --- | --- | --- | --- |
-| 0.000–1.992s | The router replaces that private source | `router` emphasises; the packet's chip still reads `51000` | #line-6-pkt-1, #line-6-router-ring | 43.339s → pass: packet at the router still reading 51000 |
-| 1.992–4.075s | with its public address and a port of its own | chip changes to `40001` and turns external cyan | #line-6-pkt-2 | 47.264s → pass: chip 40001, external cyan |
-| 4.075–6.067s | and writes the pair into its table | slot 1 fills: `192.168.1.10:51000` → `203.0.113.7:40001` | #line-6-row-1-in, #line-6-row-1-arrow, #line-6-row-1-out | 45.0s → fix→pass: row 1 was rendered hidden in every later scene (missing reveal flag); now written in |
-| 6.067–8.150s | sentence resolves | row 1 flashes once as the record of this connection | #line-6-row-1-hl | 50.5s → pass: full pair in row 1 plus highlight flash |
+| 0.0–3.71s | router replaces the private source | The private packet and its `51000` value hold at the router | `#line-6-pkt-1`, `#line-6-pkt-1-core`, `#line-6-router-ring` | 0.15s local — `review/improvement-pilot-nat-rewrite-final/frame-01-at-43.34s.png`; 3.71s local — `review/improvement-pilot-nat-rewrite-final/frame-02-at-46.9s.png`; pass: the private value holds before the rewrite. |
+| 3.71–4.21s | with its public address and port | The private marker contracts away; the public `40001` marker snaps into the same point | `#line-6-pkt-1-core`, `#line-6-pkt-2-core`, `#line-6-pkt-2` | 3.71s local — `review/improvement-pilot-nat-rewrite-final/frame-02-at-46.9s.png`; 4.21s local — `review/improvement-pilot-nat-rewrite-final/frame-03-at-47.4s.png`; pass: the marker changes from `51000` to `40001` at the router. |
+| 4.21–7.01s | the router writes the pair into its table | Row 1 records the private endpoint, arrow and public endpoint | `#line-6-row-1-in`, `#line-6-row-1-arrow`, `#line-6-row-1-out` | 4.21s local — `review/improvement-pilot-nat-rewrite-final/frame-03-at-47.4s.png`; 7.01s local — `review/improvement-pilot-nat-rewrite-final/frame-04-at-50.2s.png`; pass: the row builds to the complete private-to-public mapping. |
+| 7.01–8.01s | sentence resolves | The complete mapping holds under one highlighted row | `#line-6-row-1-hl` | 7.01s local — `review/improvement-pilot-nat-rewrite-final/frame-04-at-50.2s.png`; 8.01s local — `review/improvement-pilot-nat-rewrite-final/frame-05-at-51.2s.png`; pass: the highlighted mapping persists to the cut. |
 
 - Intentional hold over 3s: none.
 - Sound-off check: the packet's value visibly changes and the same pair becomes a table row.
-- Review samples: opening, chip changed, row written.
-- Adjacent-cut review: frame 5 ends with the packet at the router and an empty table; frame 6 opens on exactly that state — verify the chip still reads `51000` on the first frame.
+- Review samples (audio-local times): opening 0.15s, old value 3.71s, rewritten value 4.21s, complete row 7.01s, scene end 8.01s.
+- Adjacent-cut review: frame 5 end → frame 6 opening inspected at 43.18s and 43.34s; pass: the router and private `51000` chip persist. Frame 6 end → frame 7 opening inspected at 51.2s and 51.5s; pass: the same public mapping row persists.
 
 ## Frame 7 — What the website sees
 - duration: 9.055782s

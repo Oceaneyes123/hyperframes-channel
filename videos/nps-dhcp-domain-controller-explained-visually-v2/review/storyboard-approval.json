@@ -1,0 +1,11 @@
+{
+  "status": "approved",
+  "icon_plan": "ICON_PLAN.json",
+  "sketches": [
+    "sketches/board.html",
+    "sketches/board.png"
+  ],
+  "scope": "fact sheet, script, timed storyboard, icon plan and production-icon sketches",
+  "authorization": "User: 'I approved it, now please continue' \u2014 explicit gate-1 approval of the script and actual-icon storyboard, including the later request to centre the frame headline text.",
+  "next_gate": "final-preview approval before rendering"
+}

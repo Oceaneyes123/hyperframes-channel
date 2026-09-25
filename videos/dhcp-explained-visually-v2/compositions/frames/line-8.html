@@ -1,0 +1,76 @@
+
+<template><style>@import url("channel/styles.css");
+*,*:before,*:after{box-sizing:border-box}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B1020;color:#F5F7FF;font-family:Arial,sans-serif}
+.bg{position:absolute;inset:0;background:radial-gradient(ellipse at 52% 46%,rgba(49,82,146,.18),transparent 48%),linear-gradient(155deg,#0B1020,#0C1223 62%,#0B1020)}
+.headline{position:absolute;left:72px;top:190px;max-width:900px;font-size:82px;line-height:1.04;font-weight:750;letter-spacing:-2px;z-index:5}
+.eyebrow{position:absolute;left:76px;top:310px;color:#AAB5CC;font:700 28px/1.2 monospace;letter-spacing:2px;z-index:5}
+.client-icon{position:absolute;left:380px;top:350px;width:320px;height:270px;object-fit:contain;z-index:3}
+.client-label{position:absolute;left:410px;top:628px;width:260px;text-align:center;color:#4DA3FF;font:700 26px/1.2 monospace;letter-spacing:2px;z-index:4}
+.state{position:absolute;left:360px;top:674px;width:360px;min-height:68px;display:flex;align-items:center;justify-content:center;border:3px solid #F5B94D;border-radius:20px;background:#2B2730;color:#F5B94D;font:700 28px/1.15 monospace;white-space:nowrap;z-index:4}
+.state-ip{border-color:#63D69A;background:#123B30;color:#63D69A}
+.route{position:absolute;left:536px;top:775px;width:8px;height:520px;border-radius:5px;background:#33415F;z-index:1}
+.route-success{position:absolute;left:536px;top:775px;width:8px;height:520px;border-radius:5px;background:#63D69A;opacity:0;z-index:2}
+.route-success.connected{opacity:1}
+.server-icon{position:absolute;left:415px;top:1290px;width:250px;height:234px;object-fit:contain;z-index:3}
+.server-label{position:absolute;left:360px;top:1532px;width:360px;text-align:center;color:#A59FFF;font:700 27px/1.2 monospace;letter-spacing:2px;z-index:4}
+.router-icon{position:absolute;left:755px;top:873px;width:170px;height:153px;object-fit:contain;z-index:3}
+.router-label{position:absolute;left:728px;top:1038px;width:220px;text-align:center;color:#AAB5CC;font:700 22px/1.2 monospace;letter-spacing:1px;z-index:4}
+.packet{position:absolute;left:522px;top:786px;width:36px;height:36px;border-radius:50%;background:#4DA3FF;border:4px solid #DCEEFF;box-shadow:0 0 24px rgba(77,163,255,.7);z-index:6}
+.packet-server{background:#7067E8;border-color:#E7E4FF;box-shadow:0 0 24px rgba(112,103,232,.68)}
+.packet-ack{background:#63D69A;border-color:#E4FFF1;box-shadow:0 0 24px rgba(99,214,154,.68)}
+.packet-name{position:absolute;left:577px;top:786px;min-width:205px;padding:11px 15px;border-radius:14px;background:#141D35;border:2px solid #33415F;color:#F5F7FF;font:700 24px/1.15 monospace;z-index:6}
+.offer-card{position:absolute;left:72px;top:805px;width:410px;padding:24px 20px 18px;border-radius:24px;background:#141D35;border:3px solid #F5B94D;z-index:4}
+.offer-head{font:700 23px/1.2 monospace;color:#F5B94D;margin-bottom:19px;letter-spacing:.5px}
+.config-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;border-top:1px solid #33415F;font:600 24px/1.15 monospace;white-space:nowrap}
+.config-key{color:#AAB5CC;font-size:21px}.config-value{color:#F5F7FF;font-size:23px}
+.selected{position:absolute;left:80px;top:1210px;color:#63D69A;font:700 22px/1.2 monospace}
+.broadcast{position:absolute;left:360px;top:842px;width:360px;height:360px;border:7px solid rgba(77,163,255,.68);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#4DA3FF;font:700 30px/1.2 monospace;z-index:2;opacity:.75}
+.broadcast:before,.broadcast:after{content:"";position:absolute;border:6px solid rgba(77,163,255,.38);border-radius:50%;inset:-64px}
+.broadcast:after{inset:-128px;border-color:rgba(77,163,255,.18)}
+.stamp{position:absolute;left:362px;top:1170px;width:356px;text-align:center;color:#4DA3FF;font:700 24px/1.2 monospace;z-index:4}
+.clock{position:absolute;left:370px;top:875px;width:300px;height:300px;border:10px solid #F5B94D;border-radius:50%;background:#141D35;display:flex;align-items:center;justify-content:center;z-index:4}
+.clock-face{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#F5F7FF;font:700 52px/1 monospace}
+.clock-hand{position:absolute;left:145px;top:58px;width:8px;height:94px;background:#F5B94D;border-radius:8px;transform-origin:bottom center}
+.renew-clock{left:82px;top:950px;width:260px;height:260px}
+.renew-clock .clock-hand{left:126px;top:44px;height:82px}
+.clock-caption{position:absolute;left:280px;top:1190px;width:520px;text-align:center;color:#F5B94D;font:700 24px/1.2 monospace;letter-spacing:1px;z-index:5}
+.renew-caption{left:72px;top:1220px;width:350px;font-size:19px}
+.renew-note{position:absolute;left:72px;top:1260px;width:330px;color:#AAB5CC;font:600 18px/1.3 monospace;z-index:5}
+.renew-success{position:absolute;left:72px;top:1340px;width:330px;color:#63D69A;font:700 24px/1.2 monospace;z-index:5}
+.bundle-card{position:absolute;left:72px;top:825px;width:430px;padding:20px;border-radius:24px;background:#141D35;border:3px solid #4DA3FF;z-index:4}
+.bundle-card .config-row{min-height:69px}.bundle-card .config-key{font-size:23px}.bundle-card .config-value{font-size:25px}
+.meaning{position:absolute;left:72px;top:1245px;width:330px;color:#AAB5CC;font:600 22px/1.36 Arial,sans-serif;z-index:4}
+.meaning-line{margin:0 0 10px}
+.manual-card{position:absolute;left:105px;top:760px;width:870px;padding:24px 30px;background:#141D35;border:3px solid #33415F;border-radius:28px;z-index:4}
+.manual-row{height:138px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #33415F;color:#AAB5CC;font:700 30px/1.2 monospace;letter-spacing:1px}
+.manual-row:last-child{border-bottom:0}.manual-value{padding:16px 20px;border:2px solid #4DA3FF;border-radius:16px;background:#102947;color:#F5F7FF;font-size:26px}
+.manual-optional{position:absolute;left:150px;top:1395px;width:780px;text-align:center;color:#AAB5CC;font:700 22px/1.2 monospace;letter-spacing:1px;z-index:4}
+.renew-label{position:absolute;left:72px;top:1190px;width:410px;color:#AAB5CC;font:700 20px/1.2 monospace;z-index:4}
+.recap-device{position:absolute;top:500px;object-fit:contain;z-index:3}.recap-laptop{left:115px;width:270px;height:240px}.recap-phone{left:440px;width:170px;height:240px}.recap-tablet{left:700px;width:230px;height:240px}
+.recap-name{position:absolute;top:750px;width:270px;text-align:center;color:#4DA3FF;font:700 25px/1.2 monospace;z-index:4}.recap-a{left:115px}.recap-b{left:390px}.recap-c{left:675px}
+.recap-ip{position:absolute;top:808px;width:270px;text-align:center;color:#63D69A;font:700 23px/1.2 monospace;z-index:4}.recap-ip-a{left:115px}.recap-ip-b{left:390px}.recap-ip-c{left:675px}
+.recap-server{position:absolute;left:102px;top:1000px;width:190px;height:185px;object-fit:contain;z-index:3}.recap-router{position:absolute;left:760px;top:1025px;width:165px;height:145px;object-fit:contain;z-index:3}
+.recap-lan{position:absolute;left:196px;top:945px;width:690px;height:8px;background:#33415F;border-radius:5px;z-index:1}
+.recap-drop{position:absolute;top:735px;width:7px;height:210px;background:#33415F;border-radius:4px;z-index:1}
+.recap-drop-a{left:247px}.recap-drop-b{left:521px}.recap-drop-c{left:806px}
+.recap-dora{position:absolute;left:120px;top:1270px;width:840px;padding:30px 20px;border-radius:26px;background:#141D35;border:2px solid #33415F;text-align:center;color:#F5F7FF;font:700 30px/1.2 monospace;z-index:4;letter-spacing:1px;white-space:nowrap}
+.recap-sub{position:absolute;left:120px;top:1370px;width:840px;text-align:center;color:#AAB5CC;font:600 23px/1.3 monospace;z-index:4}
+.accent-blue{color:#4DA3FF}.accent-green{color:#63D69A}.accent-amber{color:#F5B94D}
+</style>
+<div data-hf-id="hf-08qj" id="root" data-composition-id="line-8" data-width="1080" data-height="1920" data-duration="12.608435">
+<div data-hf-id="hf-70t1" id="scene-background" class="bg clip" data-start="0" data-duration="12.608435" data-track-index="0"></div>
+<div data-hf-id="hf-bhlz" class="headline">More than an address</div>
+<div data-hf-id="hf-dvh3" class="route"></div><div data-hf-id="hf-eiuk" class="route-success connected"></div><img data-hf-id="hf-g08v" class="client-icon" src="public/icons/laptop.png" alt="Laptop client"><div data-hf-id="hf-owij" class="client-label">CLIENT</div><div data-hf-id="hf-hzn6" class="state state-ip">192.168.1.25 ✓</div><img data-hf-id="hf-2dr8" class="router-icon" src="public/icons/router.png" alt="Router gateway"><div data-hf-id="hf-qi1o" class="router-label">GATEWAY</div><img data-hf-id="hf-k9b6" class="server-icon" src="public/icons8/server.svg" alt="DHCP server"><div data-hf-id="hf-ebiq" class="server-label">DHCP SERVER</div><div data-hf-id="hf-gc7s" class="bundle-card bundle-values"><div data-hf-id="hf-53n9" class="config-row"><span data-hf-id="hf-i1u4" class="config-key">IP</span><span data-hf-id="hf-bnku" class="config-value">192.168.1.25</span></div><div data-hf-id="hf-nqw9" class="config-row"><span data-hf-id="hf-9ee0" class="config-key">SUBNET</span><span data-hf-id="hf-36kf" class="config-value">255.255.255.0</span></div><div data-hf-id="hf-oxtc" class="config-row"><span data-hf-id="hf-aucp" class="config-key">GATEWAY</span><span data-hf-id="hf-sipe" class="config-value">192.168.1.1</span></div><div data-hf-id="hf-ojib" class="config-row"><span data-hf-id="hf-5ywc" class="config-key">DNS</span><span data-hf-id="hf-wnsm" class="config-value">192.168.1.1</span></div><div data-hf-id="hf-mjz6" class="config-row"><span data-hf-id="hf-yr9l" class="config-key">LEASE</span><span data-hf-id="hf-8fgm" class="config-value">24 HOURS</span></div></div><div data-hf-id="hf-d5g5" class="meaning"><div data-hf-id="hf-jrud" class="meaning-line">SUBNET · local network</div><div data-hf-id="hf-oktk" class="meaning-line">GATEWAY · other networks</div><div data-hf-id="hf-zg7r" class="meaning-line">DNS · names to addresses</div></div>
+<script>
+const root=document.currentScript.parentElement;
+const q=s=>root.querySelector(s),qa=s=>Array.from(root.querySelectorAll(s));
+const D=12.608435;
+const tl=gsap.timeline({paused:true});
+
+tl.fromTo(qa('.bundle-values .config-row'),{opacity:.35,x:-14},{opacity:1,x:0,duration:.35,stagger:D*.055,ease:'power2.out'},D*.12);
+tl.fromTo(q('.meaning'),{opacity:0,y:20},{opacity:1,y:0,duration:.45,ease:'power2.out'},D*.56);
+
+window.__timelines['line-8']=tl;
+</script>
+</div></template>

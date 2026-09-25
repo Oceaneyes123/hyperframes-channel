@@ -1,0 +1,16 @@
+{
+  "icons": [
+    {"id":"client-laptop","provider":"fontawesome","role":"supplicant/client","meaning":"Windows laptop","color":"#4DA3FF","style":"solid","path":"public/icons/laptop.svg","scenes":["line-1","line-2","line-3","line-5","line-6","line-7","line-8","line-9","line-11","line-13"]},
+    {"id":"network-switch","provider":"fontawesome","role":"authenticator/network","meaning":"switch or access point path","color":"#7067E8","style":"solid","path":"public/icons/network-wired.svg","scenes":["line-1","line-2"]},
+    {"id":"wifi-ap","provider":"fontawesome","role":"authenticator","meaning":"Wi-Fi access point","color":"#4DD9E8","style":"solid","path":"public/icons/wifi.svg","scenes":["line-3","line-13"]},
+    {"id":"dhcp-server","provider":"fontawesome","role":"service","meaning":"DHCP address/configuration service","color":"#7067E8","style":"solid","path":"public/icons/server.svg","scenes":["line-5","line-6","line-7","line-8","line-12","line-13"]},
+    {"id":"nps-shield","provider":"fontawesome","role":"security-service","meaning":"NPS network access decision","color":"#F06A5F","style":"solid","path":"public/icons/shield-halved.svg","scenes":["line-1","line-2","line-3","line-4","line-12","line-13","line-14"]},
+    {"id":"dns-globe","provider":"fontawesome","role":"discovery-service","meaning":"DNS lookup and service discovery","color":"#4DD9E8","style":"solid","path":"public/icons/globe.svg","scenes":["line-1","line-5","line-8","line-9","line-10","line-12","line-13","line-14"]},
+    {"id":"domain-controller","provider":"fontawesome","role":"directory-service","meaning":"Domain Controller / Active Directory","color":"#B07CFF","style":"solid","path":"public/icons/database.svg","scenes":["line-1","line-5","line-9","line-10","line-11","line-12","line-13","line-14"]},
+    {"id":"identity-user","provider":"fontawesome","role":"identity","meaning":"user or computer identity","color":"#F5F7FF","style":"solid","path":"public/icons/user.svg","scenes":["line-4","line-11"]},
+    {"id":"credentials-key","provider":"fontawesome","role":"identity-support","meaning":"credentials / authentication","color":"#F5B94D","style":"solid","path":"public/icons/key.svg","scenes":["line-11"]},
+    {"id":"success","provider":"fontawesome","role":"decision-result","meaning":"Access-Accept / authenticated state","color":"#63D69A","style":"solid","path":"public/icons/circle-check.svg","scenes":["line-4","line-7","line-11","line-13"]},
+    {"id":"reject","provider":"fontawesome","role":"decision-result","meaning":"Access-Reject","color":"#F06A5F","style":"solid","path":"public/icons/circle-xmark.svg","scenes":["line-4"]}
+  ],
+  "attribution": "Font Awesome Free icons, local export via repository script; no remote assets at render time."
+}

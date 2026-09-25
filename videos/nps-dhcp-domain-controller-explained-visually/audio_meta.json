@@ -1,0 +1,282 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 213.7378231292517,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 10.170340136054422,
+      "original_text": "How does a Windows laptop go from no network access to talking to a Domain Controller? Four services may appear in the story, but they do different jobs.",
+      "spoken_text": "How does a Windows laptop go from no network access to talking to a Domain Controller? Four services may appear in the story, but they do different jobs.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 13.444353741496599,
+      "original_text": "First, ask whether the network itself requires authentication. On an ordinary network, the laptop can continue toward DHCP. On an 802.1X network, access is conditional.",
+      "spoken_text": "First, ask whether the network itself requires authentication. On an ordinary network, the laptop can continue toward D H C P. On an eight oh two point one X network, access is conditional.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 13.096054421768708,
+      "original_text": "The Windows laptop is the supplicant. The Wi-Fi access point or switch is the authenticator, and it acts as the RADIUS client. NPS is the RADIUS server that receives the request.",
+      "spoken_text": "The Windows laptop is the supplicant. The Wi-Fi access point or switch is the authenticator, and it acts as the RADIUS client. N P S is the RADIUS server that receives the request.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 16.92734693877551,
+      "original_text": "NPS checks the connection request against its network policies. Where configured, it validates the identity using Active Directory. NPS returns Access-Accept or Access-Reject, and the device gets normal network access only after an accept.",
+      "spoken_text": "N P S checks the connection request against its network policies. Where configured, it validates the identity using Active Directory. N P S returns Access-Accept or Access-Reject, and the device gets normal network access only after an accept.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 15.046530612244897,
+      "original_text": "That NPS exchange is conditional. In the normal path without 802.1X, the laptop goes from the network to DHCP, then DNS, then the Domain Controller. NPS is not involved in every domain connection.",
+      "spoken_text": "That N P S exchange is conditional. In the normal path without eight oh two point one X, the laptop goes from the network to D H C P, then D N S, then the Domain Controller. N P S is not involved in every domain connection.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 12.120816326530612,
+      "original_text": "Now DHCP. The client broadcasts Discover because it does not yet have an address. A DHCP server answers with an Offer: a proposed lease and network settings.",
+      "spoken_text": "Now D H C P. The client broadcasts Discover because it does not yet have an address. A D H C P server answers with an Offer: a proposed lease and network settings.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 12.956734693877552,
+      "original_text": "The client broadcasts Request for the offer it chose. The server replies with Acknowledge, confirming the lease. That four-step exchange is DORA: Discover, Offer, Request, Acknowledge.",
+      "spoken_text": "The client broadcasts Request for the offer it chose. The server replies with Acknowledge, confirming the lease. That four-step exchange is DORA: Discover, Offer, Request, Acknowledge.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 23.42707482993197,
+      "original_text": "The result is more than an IP address. This laptop receives IP 10.10.20.45, subnet mask 255.255.255.0, gateway 10.10.20.1, and DNS server 10.10.1.10. The DNS value is especially important in an Active Directory network.",
+      "spoken_text": "The result is more than an I P address. This laptop receives I P ten dot ten dot twenty dot forty five, subnet mask two hundred fifty five dot two hundred fifty five dot two hundred fifty five dot zero, gateway ten dot ten dot twenty dot one, and D N S server ten dot ten dot one dot ten. The D N S value is especially important in an Active Directory network.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 8
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 13.514013605442177,
+      "original_text": "The client asks its configured DNS server where the Domain Controller for corp.example can be found. It is not simply broadcasting for a controller; it is using DNS-based service discovery.",
+      "spoken_text": "The client asks its configured D N S server where the Domain Controller for corp dot example can be found. It is not simply broadcasting for a controller; it is using D N S-based service discovery.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 9
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 15.74312925170068,
+      "original_text": "DNS returns an Active Directory service location, represented here by the SRV record underscore ldap dot tcp dot dc dot underscore msdcs dot corp dot example. The client uses that answer to reach a suitable Domain Controller.",
+      "spoken_text": "D N S returns an Active Directory service location, represented here by the S R V record underscore ldap dot T C P dot dc dot underscore msdcs dot corp dot example. The client uses that answer to reach a suitable Domain Controller.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 10
+    },
+    {
+      "id": "line-11",
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 15.255510204081633,
+      "original_text": "After it can reach the controller, the Windows client presents a user or computer identity to Active Directory. Kerberos is the common domain authentication protocol here. The controller provides authentication and other domain services.",
+      "spoken_text": "After it can reach the controller, the Windows client presents a user or computer identity to Active Directory. Kerberos is the common domain authentication protocol here. The controller provides authentication and other domain services.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 11
+    },
+    {
+      "id": "line-12",
+      "path": ".media/audio/voice/line-12.wav",
+      "duration_s": 18.877823129251702,
+      "original_text": "Keep the jobs separate. DHCP says, \u201cHere are your network settings.\u201d DNS says, \u201cHere is where the domain service is.\u201d NPS says, \u201cShould this device or user get network access?\u201d The Domain Controller says, \u201cWho are you, and what domain services can you use?\u201d",
+      "spoken_text": "Keep the jobs separate. D H C P says, \u201cHere are your network settings.\u201d D N S says, \u201cHere is where the domain service is.\u201d N P S says, \u201cShould this device or user get network access?\u201d The Domain Controller says, \u201cWho are you, and what domain services can you use?\u201d",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 12
+    },
+    {
+      "id": "line-13",
+      "path": ".media/audio/voice/line-13.wav",
+      "duration_s": 20.271020408163267,
+      "original_text": "So the complete enterprise flow is: if required, 802.1X authentication through the switch or access point and NPS; then network access; DHCP supplies IP, gateway, and DNS; DNS locates the Domain Controller; and the Domain Controller handles domain login and services.",
+      "spoken_text": "So the complete enterprise flow is: if required, eight oh two point one X authentication through the switch or access point and N P S; then network access; D H C P supplies I P, gateway, and D N S; D N S locates the Domain Controller; and the Domain Controller handles domain login and services.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 13
+    },
+    {
+      "id": "line-14",
+      "path": ".media/audio/voice/line-14.wav",
+      "duration_s": 12.887074829931972,
+      "original_text": "Remember the division of labor: NPS decides access, DHCP configures the network, DNS finds the domain, and the Domain Controller handles domain identity and services.",
+      "spoken_text": "Remember the division of labor: N P S decides access, D H C P configures the network, D N S finds the domain, and the Domain Controller handles domain identity and services.",
+      "normalization_fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5",
+      "frame": 14
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 10.170340136054422
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 10.170340136054422,
+      "duration_s": 13.444353741496599
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 23.61469387755102,
+      "duration_s": 13.096054421768708
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 36.710748299319725,
+      "duration_s": 16.92734693877551
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 53.63809523809523,
+      "duration_s": 15.046530612244897
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 68.68462585034013,
+      "duration_s": 12.120816326530612
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 80.80544217687074,
+      "duration_s": 12.956734693877552
+    },
+    {
+      "index": 8,
+      "id": "line-8",
+      "src": "compositions/frames/line-8.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 93.76217687074829,
+      "duration_s": 23.42707482993197
+    },
+    {
+      "index": 9,
+      "id": "line-9",
+      "src": "compositions/frames/line-9.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 117.18925170068026,
+      "duration_s": 13.514013605442177
+    },
+    {
+      "index": 10,
+      "id": "line-10",
+      "src": "compositions/frames/line-10.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 130.70326530612243,
+      "duration_s": 15.74312925170068
+    },
+    {
+      "index": 11,
+      "id": "line-11",
+      "src": "compositions/frames/line-11.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 146.4463945578231,
+      "duration_s": 15.255510204081633
+    },
+    {
+      "index": 12,
+      "id": "line-12",
+      "src": "compositions/frames/line-12.html",
+      "audio_id": "voice-line-12",
+      "audio_path": ".media/audio/voice/line-12.wav",
+      "start_s": 161.70190476190476,
+      "duration_s": 18.877823129251702
+    },
+    {
+      "index": 13,
+      "id": "line-13",
+      "src": "compositions/frames/line-13.html",
+      "audio_id": "voice-line-13",
+      "audio_path": ".media/audio/voice/line-13.wav",
+      "start_s": 180.57972789115647,
+      "duration_s": 20.271020408163267
+    },
+    {
+      "index": 14,
+      "id": "line-14",
+      "src": "compositions/frames/line-14.html",
+      "audio_id": "voice-line-14",
+      "audio_path": ".media/audio/voice/line-14.wav",
+      "start_s": 200.85074829931972,
+      "duration_s": 12.887074829931972
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {
+        "802.1X": "eight oh two point one X",
+        "NPS": "N P S",
+        "RADIUS": "RADIUS",
+        "SRV": "S R V",
+        "AD DS": "A D D S",
+        "Kerberos": "Kerberos"
+      },
+      "lines": {
+        "line-2": "First, ask whether the network itself requires authentication. On an ordinary network, the laptop can continue toward D H C P. On an eight oh two point one X network, access is conditional.",
+        "line-5": "That N P S exchange is conditional. In the normal path without eight oh two point one X, the laptop goes from the network to D H C P, then D N S, then the Domain Controller. N P S is not involved in every domain connection.",
+        "line-13": "So the complete enterprise flow is: if required, eight oh two point one X authentication through the switch or access point and N P S; then network access; D H C P supplies I P, gateway, and D N S; D N S locates the Domain Controller; and the Domain Controller handles domain login and services."
+      },
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "cb96f1232964a54255d7c3a05cd68a32164919ddcd72d6584adbb4a5e37bd8a5"
+  }
+}

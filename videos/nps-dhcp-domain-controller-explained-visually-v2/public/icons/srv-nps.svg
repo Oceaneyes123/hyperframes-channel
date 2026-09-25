@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-hidden="true">
+  <!-- NPS: a policy appliance shaped as a shield. Red-orange = security
+       (channel semantic). Two indicator rows stand for the allow/deny verdict. -->
+  <path d="M120 12l88 30v78c0 50-36 82-88 98-52-16-88-48-88-98V42z" fill="#78909C"/>
+  <path d="M120 30l70 24v66c0 40-29 66-70 80-41-14-70-40-70-80V54z" fill="#37474F"/>
+  <path d="M92 104l20 20 40-44" fill="none" stroke="#F06A5F" stroke-width="14"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="86" y="150" width="68" height="12" rx="6" fill="#F06A5F" opacity=".55"/>
+  <rect x="96" y="176" width="48" height="12" rx="6" fill="#455A64"/>
+</svg>

@@ -25,6 +25,8 @@ Use one `## Frame N` section per `SCRIPT.md` `## Line N`. See
 - Icon assets:
 - Required objects and counts: (e.g. 2 laptops, 1 switch, 1 packet; retain these in the built scene)
 - Text shown: (≤6-word headline; labels 1–4 words; ~16 words total)
+- Scene archetype: (from `MOTION.md`; do not repeat more than twice in a row)
+- Primary motion verb: (the physical action the scene teaches)
 - Accent geometry: (highlight boxes are sized from the measured text box — a 12-character mono-32
   value is 230.4px wide — and wrap the whole value they mark, never a slice of it)
 - Animation:
@@ -33,6 +35,7 @@ Use one `## Frame N` section per `SCRIPT.md` `## Line N`. See
   creates a value may hide it)
 - Ending state:
 - Transition:
+- Transition grammar: (hard cut, match cut, directional push, or major-reveal transition; state why)
 - Continuity: (which objects keep their position/identity into the next scene)
 - Geometry source: (`frame.md` object IDs, asset paths, bounds and route endpoints;
   inherit the prior scene's ending state instead of independently placing devices)

@@ -1,0 +1,7 @@
+{
+  "status": "approved",
+  "approved_at": "2026-09-19",
+  "icon_plan": "ICON_PLAN.json",
+  "sketches": ["sketches/board.html"],
+  "note": "User approved the combined script, timed storyboard plan, and actual-icon sketch board; continue to measured audio and preview build."
+}

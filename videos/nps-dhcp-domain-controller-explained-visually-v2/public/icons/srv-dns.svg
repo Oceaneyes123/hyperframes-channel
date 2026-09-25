@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-hidden="true">
+  <!-- DNS service: a name-to-address table card. Cyan = discovery (channel
+       semantic); the rows are the local zone the resolver answers from. -->
+  <rect x="30" y="34" width="180" height="172" rx="14" fill="#78909C"/>
+  <rect x="42" y="46" width="156" height="148" rx="8" fill="#263238"/>
+  <rect x="56" y="62" width="76" height="14" rx="4" fill="#4DD9E8"/>
+  <path d="M142 69h26" stroke="#4DD9E8" stroke-width="8" stroke-linecap="round"/>
+  <path d="M136 66l10 6-10 6z" fill="#4DD9E8"/>
+  <rect x="56" y="98" width="76" height="14" rx="4" fill="#AAB5CC"/>
+  <rect x="142" y="98" width="42" height="14" rx="4" fill="#4DD9E8"/>
+  <rect x="56" y="134" width="76" height="14" rx="4" fill="#AAB5CC"/>
+  <rect x="142" y="134" width="42" height="14" rx="4" fill="#4DD9E8"/>
+  <rect x="56" y="166" width="52" height="12" rx="4" fill="#455A64"/>
+  <circle cx="186" cy="172" r="10" fill="#455A64"/>
+</svg>

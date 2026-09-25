@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-hidden="true">
+  <!-- Access point: ceiling disc radiating a signal. Icons8 flat palette chassis
+       (#78909C/#455A64/#37474F) with the channel client-blue signal arcs. -->
+  <g fill="none" stroke="#4DA3FF" stroke-width="11" stroke-linecap="round">
+    <path d="M96 100a38 38 0 0 1 48 0"/>
+    <path d="M78 78a64 64 0 0 1 84 0"/>
+    <path d="M60 56a90 90 0 0 1 120 0"/>
+  </g>
+  <ellipse cx="120" cy="166" rx="86" ry="30" fill="#455A64"/>
+  <ellipse cx="120" cy="158" rx="86" ry="32" fill="#78909C"/>
+  <ellipse cx="120" cy="154" rx="60" ry="21" fill="#455A64"/>
+  <circle cx="120" cy="152" r="13" fill="#37474F"/>
+  <circle cx="86" cy="152" r="6" fill="#4DA3FF"/>
+  <circle cx="154" cy="152" r="6" fill="#4DA3FF"/>
+</svg>

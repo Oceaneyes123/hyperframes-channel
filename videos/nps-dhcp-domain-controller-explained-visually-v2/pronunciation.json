@@ -1,0 +1,15 @@
+{
+  "ipv4_style": "short",
+  "terms": {
+    "NPS": "N P S",
+    "RADIUS": "radius",
+    "SRV": "S R V",
+    "802.1X": "eight oh two point one X",
+    "DC": "domain controller",
+    "Kerberos": "kerberos"
+  },
+  "lines": {
+    "line-14": "That is where eight oh two point one X comes in. The laptop is the supplicant. The switch or access point is the authenticator. And N P S is the radius server behind it.",
+    "line-19": "On a network without eight oh two point one X, N P S never appears in this flow. D H C P and D N S take the device straight to the domain."
+  }
+}

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NPS DHCP DC — icon-first storyboard board</title>
+<style>
+  :root{--bg:#0b1020;--surface:#141d35;--ink:#f5f7ff;--muted:#aab5cc;--rule:#33415f;--client:#4da3ff;--infra:#7067e8;--success:#63d69a;--warning:#f5b94d;--external:#4dd9e8;--storage:#b07cff;--security:#f06a5f}
+  *{box-sizing:border-box} body{margin:0;background:#070b16;color:var(--ink);font:16px Arial,sans-serif}
+  header{padding:28px 40px 22px;border-bottom:1px solid var(--rule);position:sticky;top:0;background:#070b16;z-index:2}
+  h1{margin:0 0 8px;font-size:32px} p{margin:0;color:var(--muted)}
+  main{padding:28px 40px 60px;display:grid;grid-template-columns:repeat(4,minmax(220px,1fr));gap:24px}
+  .tile{aspect-ratio:9/16;background:var(--bg);border:1px solid var(--rule);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px;overflow:hidden}
+  .tile h2{font-size:20px;margin:0;line-height:1.1}.tile .sub{font:12px 'IBM Plex Mono',monospace;color:var(--muted);min-height:28px}
+  .stage{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;position:relative}
+  .row{display:flex;align-items:center;justify-content:center;gap:8px;width:100%}.node{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:54px;text-align:center}.node img{width:54px;height:54px;object-fit:contain;filter:none}.node span{font-size:10px;color:var(--muted);line-height:1.05}.arrow{color:var(--success);font-size:20px}.flow{width:2px;height:24px;background:var(--rule);position:relative}.flow:after{content:'↓';position:absolute;left:-7px;bottom:-15px;color:var(--success);font-size:18px}.pill{padding:7px 9px;border:1px solid var(--rule);border-radius:10px;font:11px 'IBM Plex Mono',monospace;color:var(--ink);text-align:center}.client{border-color:var(--client);color:var(--client)}.infra{border-color:var(--infra);color:var(--infra)}.success{border-color:var(--success);color:var(--success)}.warn{border-color:var(--warning);color:var(--warning)}.security{border-color:var(--security);color:var(--security)}.dns{border-color:var(--external);color:var(--external)}.dc{border-color:var(--storage);color:var(--storage)}.lane{width:100%;padding:10px;border:1px dashed var(--rule);border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:6px}.lane strong{font-size:11px}.tiny{font-size:10px;color:var(--muted);text-align:center;line-height:1.2}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}
+  @media(max-width:1100px){main{grid-template-columns:repeat(3,minmax(220px,1fr))}} @media(max-width:800px){main{grid-template-columns:repeat(2,minmax(200px,1fr));padding:16px}.tile{padding:12px}}
+</style>
+</head>
+<body>
+<header><h1>NPS · DHCP · DNS · Domain Controller</h1><p>Icon-first storyboard board · 1080×1920 target · actual local Font Awesome assets · sketch gate, not final animation</p></header>
+<main id="board"></main>
+<script>
+const root='../public/icons/';
+const icons={laptop:'laptop.svg',switch:'network-wired.svg',wifi:'wifi.svg',nps:'shield-halved.svg',dhcp:'server.svg',dns:'globe.svg',dc:'database.svg',user:'user.svg',key:'key.svg',ok:'circle-check.svg',no:'circle-xmark.svg'};
+const img=(name,label,cls='')=>`<div class="node"><img class="${cls}" src="${root+icons[name]}" alt=""><span>${label}</span></div>`;
+const flow=()=>'<div class="flow"></div>';
+const frames=[
+ ['01','How does a laptop reach the domain?',`<div class="row">${img('laptop','WINDOWS','client')}</div>${flow()}<div class="row">${img('switch','AP / SWITCH','infra')}</div>${flow()}<div class="row">${img('dhcp','DHCP','infra')}${img('dns','DNS','dns')}${img('dc','DOMAIN CONTROLLER','dc')}</div><div class="pill security">NPS · if required</div>`],
+ ['02','Network authentication — if required',`<div class="grid2"><div class="lane"><strong>WITHOUT 802.1X</strong>${img('laptop','CLIENT')}${flow()}${img('dhcp','DHCP')}</div><div class="lane"><strong>WITH 802.1X</strong>${img('laptop','CLIENT')}${flow()}${img('nps','NPS','security')}${flow()}${img('dhcp','DHCP')}</div></div>`],
+ ['03','Client → AP / switch → NPS',`<div class="pill client">SUPPLICANT</div>${img('laptop','Windows laptop','client')}${flow()}<div class="pill infra">AUTHENTICATOR · RADIUS CLIENT</div>${img('wifi','Wi-Fi AP','dns')}${flow()}<div class="pill security">RADIUS SERVER</div>${img('nps','NPS','security')}`],
+ ['04','Access-Accept / Access-Reject',`<div class="row">${img('nps','NPS','security')}${img('user','IDENTITY')}${img('dc','AD DS','dc')}</div>${flow()}<div class="grid2"><div class="pill success">✓ ACCESS-ACCEPT<br>NETWORK OPEN</div><div class="pill security">× ACCESS-REJECT<br>STAY BLOCKED</div></div>`],
+ ['05','Without 802.1X',`<div class="row">${img('laptop','CLIENT','client')}${'<span class="arrow">→</span>'}${img('switch','NETWORK','infra')}</div>${flow()}<div class="row">${img('dhcp','DHCP','infra')}<span class="arrow">→</span>${img('dns','DNS','dns')}<span class="arrow">→</span>${img('dc','DC','dc')}</div><div class="pill security">NPS not involved here</div>`],
+ ['06','Discover → Offer',`<div class="row">${img('laptop','NO IP','client')}<span class="arrow">⇢</span>${img('dhcp','DHCP','infra')}</div><div class="pill client">DISCOVER · broadcast</div>${flow()}<div class="pill infra">OFFER · proposed lease</div>`],
+ ['07','Request → Acknowledge',`<div class="row">${img('laptop','CLIENT','client')}<span class="arrow">⇢</span>${img('dhcp','DHCP','infra')}</div><div class="pill client">REQUEST</div>${flow()}<div class="pill success">ACKNOWLEDGE ✓</div><div class="pill">D · O · R · A</div>`],
+ ['08','IP + mask + gateway + DNS',`<div class="row">${img('laptop','CONFIGURED','client')}${img('dhcp','LEASE','infra')}</div><div class="pill client">IP 10.10.20.45</div><div class="pill">MASK 255.255.255.0</div><div class="pill">GATEWAY 10.10.20.1</div><div class="pill dns">DNS 10.10.1.10 ★</div>`],
+ ['09','Where is the domain?',`<div class="row">${img('laptop','QUERY','client')}<span class="arrow">→</span>${img('dns','DNS','dns')}</div>${flow()}<div class="pill dns">corp.example<br>directed lookup</div><div class="tiny">not a broadcast</div>`],
+ ['10','SRV → Domain Controller',`<div class="pill dns">SRV<br>_ldap._tcp.dc._msdcs<br>.corp.example</div>${flow()}<div class="row">${img('dns','DNS','dns')}<span class="arrow">→</span>${img('dc','DC FOUND','dc')}</div>${flow()}<div class="pill success">client connects ✓</div>`],
+ ['11','Identity → AD DS',`<div class="row">${img('laptop','CLIENT','client')}<span class="arrow">→</span>${img('user','IDENTITY')}${img('key','KERBEROS','security')}</div>${flow()}<div class="row">${img('dc','DOMAIN CONTROLLER','dc')}<span class="arrow">→</span>${img('dc','AD DS','dc')}</div><div class="pill success">IDENTITY VERIFIED ✓</div>`],
+ ['12','Four jobs, four services',`<div class="grid2"><div class="lane">${img('dhcp','DHCP','infra')}<strong>network settings</strong></div><div class="lane">${img('dns','DNS','dns')}<strong>find domain</strong></div><div class="lane">${img('nps','NPS','security')}<strong>decide access</strong></div><div class="lane">${img('dc','DOMAIN CONTROLLER','dc')}<strong>identity + services</strong></div></div>`],
+ ['13','Complete enterprise flow',`<div class="pill warn">802.1X if required</div>${flow()}<div class="row">${img('laptop','DEVICE','client')}<span class="arrow">→</span>${img('switch','AP / SWITCH','infra')}<span class="arrow">→</span>${img('nps','NPS','security')}</div>${flow()}<div class="pill success">NETWORK ALLOWED</div>${flow()}<div class="row">${img('dhcp','DHCP','infra')}<span class="arrow">→</span>${img('dns','DNS','dns')}<span class="arrow">→</span>${img('dc','DC','dc')}</div>`],
+ ['14','NPS decides · DHCP configures · DNS finds · DC authenticates',`<div class="grid2"><div class="lane">${img('nps','NPS','security')}<strong>decides access</strong></div><div class="lane">${img('dhcp','DHCP','infra')}<strong>configures network</strong></div><div class="lane">${img('dns','DNS','dns')}<strong>finds domain</strong></div><div class="lane">${img('dc','DC','dc')}<strong>authenticates</strong></div></div>`]
+];
+document.querySelector('#board').innerHTML=frames.map(([n,title,body])=>`<article class="tile"><h2>Frame ${n}</h2><div class="sub">${title}</div><div class="stage">${body}</div></article>`).join('');
+</script>
+</body></html>

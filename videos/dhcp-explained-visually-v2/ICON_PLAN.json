@@ -1,0 +1,59 @@
+{
+  "icons": [
+    {
+      "id": "laptop-client",
+      "provider": "icons8",
+      "path": "public/icons/laptop.png",
+      "role": "hero entity",
+      "meaning": "The same new DHCP client throughout the exchange",
+      "color": "client blue",
+      "style": "large colored flat laptop icon",
+      "source": "https://icons8.com/icons/set/laptop"
+    },
+    {
+      "id": "dhcp-server",
+      "provider": "custom",
+      "path": "public/icons8/server.svg",
+      "role": "hero entity",
+      "meaning": "DHCP server that proposes and confirms client configuration",
+      "color": "infrastructure indigo",
+      "style": "large colored flat server icon",
+      "source": "Original vector artwork for this project"
+    },
+    {
+      "id": "router-gateway",
+      "provider": "icons8",
+      "path": "public/icons/router.png",
+      "role": "supporting network entity",
+      "meaning": "Default gateway, visually distinct from the DHCP server",
+      "color": "infrastructure",
+      "style": "colored flat router icon",
+      "source": "https://icons8.com/icons/set/wifi-router"
+    },
+    {
+      "id": "phone-client",
+      "provider": "custom",
+      "path": "public/icons8/phone.svg",
+      "role": "supporting client entity",
+      "meaning": "A second device in the final network recap",
+      "color": "client blue",
+      "style": "colored flat phone icon",
+      "source": "Original vector artwork for this project"
+    },
+    {
+      "id": "tablet-client",
+      "provider": "custom",
+      "path": "public/icons8/tablet.svg",
+      "role": "supporting client entity",
+      "meaning": "A third device in the final network recap",
+      "color": "client blue",
+      "style": "colored flat tablet icon",
+      "source": "Original vector artwork for this project"
+    }
+  ],
+  "supporting_shapes": [
+    "packet dots and arrows: client blue for requests, success green for ACK",
+    "broadcast rings: blue circles expanding across the local network",
+    "configuration badges and lease timer: inline SVG and HTML shapes"
+  ]
+}

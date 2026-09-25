@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 300" role="img" aria-label="DHCP server">
+  <rect x="32" y="18" width="256" height="264" rx="22" fill="#7067E8"/>
+  <rect x="52" y="40" width="216" height="62" rx="10" fill="#141D35"/>
+  <rect x="52" y="119" width="216" height="62" rx="10" fill="#141D35"/>
+  <rect x="52" y="198" width="216" height="62" rx="10" fill="#141D35"/>
+  <circle cx="78" cy="71" r="10" fill="#63D69A"/><circle cx="78" cy="150" r="10" fill="#4DD9E8"/><circle cx="78" cy="229" r="10" fill="#4DA3FF"/>
+  <path d="M110 71h126M110 150h126M110 229h126" stroke="#AAB5CC" stroke-width="9" stroke-linecap="round"/>
+</svg>

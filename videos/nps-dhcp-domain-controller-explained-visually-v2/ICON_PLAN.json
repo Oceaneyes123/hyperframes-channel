@@ -1,0 +1,128 @@
+{
+  "icons": [
+    {
+      "id": "laptop",
+      "provider": "icons8",
+      "path": "public/icons8/laptop.png",
+      "role": "client",
+      "meaning": "the Windows laptop / RADIUS supplicant",
+      "color": "client",
+      "style": "colored flat device",
+      "source": "https://icons8.com/icons/set/laptop"
+    },
+    {
+      "id": "switch-lan",
+      "provider": "custom",
+      "path": "public/icons/switch-lan.svg",
+      "role": "infrastructure",
+      "meaning": "access switch holding the 802.1X controlled port",
+      "color": "infrastructure",
+      "style": "colored flat device",
+      "source": "Reused repository switch-lan.svg (subnets-and-24-explained-visually)"
+    },
+    {
+      "id": "ap-ceiling",
+      "provider": "custom",
+      "path": "public/icons/ap-ceiling.svg",
+      "role": "infrastructure",
+      "meaning": "Wi-Fi access point / 802.1X authenticator",
+      "color": "infrastructure",
+      "style": "colored flat device",
+      "source": "Authored for this project in the Icons8 flat palette"
+    },
+    {
+      "id": "srv-dhcp",
+      "provider": "custom",
+      "path": "public/icons/srv-dhcp.svg",
+      "role": "service",
+      "meaning": "DHCP server and its address pool",
+      "color": "infrastructure",
+      "style": "colored flat device",
+      "source": "Authored for this project in the Icons8 flat palette"
+    },
+    {
+      "id": "srv-dns",
+      "provider": "custom",
+      "path": "public/icons/srv-dns.svg",
+      "role": "service",
+      "meaning": "DNS name-to-address service holding the SRV records",
+      "color": "external",
+      "style": "colored flat device",
+      "source": "Authored for this project in the Icons8 flat palette"
+    },
+    {
+      "id": "srv-dc",
+      "provider": "custom",
+      "path": "public/icons/srv-dc.svg",
+      "role": "directory",
+      "meaning": "domain controller hosting the directory",
+      "color": "storage",
+      "style": "colored flat device",
+      "source": "Authored for this project in the Icons8 flat palette"
+    },
+    {
+      "id": "srv-nps",
+      "provider": "custom",
+      "path": "public/icons/srv-nps.svg",
+      "role": "security",
+      "meaning": "NPS policy appliance acting as the RADIUS server",
+      "color": "security",
+      "style": "colored flat device",
+      "source": "Authored for this project in the Icons8 flat palette"
+    },
+    {
+      "id": "sitemap",
+      "provider": "fontawesome",
+      "path": "public/icons/sitemap.svg",
+      "role": "directory",
+      "meaning": "the Active Directory the account is checked against",
+      "color": "storage",
+      "style": "inline glyph, currentColor"
+    },
+    {
+      "id": "key",
+      "provider": "fontawesome",
+      "path": "public/icons/key.svg",
+      "role": "security",
+      "meaning": "credential mark during the domain sign-in",
+      "color": "security",
+      "style": "inline glyph, currentColor"
+    },
+    {
+      "id": "lock",
+      "provider": "fontawesome",
+      "path": "public/icons/lock.svg",
+      "role": "security",
+      "meaning": "switch port not yet authorised",
+      "color": "warning",
+      "style": "inline glyph, currentColor"
+    },
+    {
+      "id": "lock-open",
+      "provider": "fontawesome",
+      "path": "public/icons/lock-open.svg",
+      "role": "security",
+      "meaning": "switch port authorised after Access-Accept",
+      "color": "success",
+      "style": "inline glyph, currentColor"
+    },
+    {
+      "id": "circle-check",
+      "provider": "fontawesome",
+      "path": "public/icons/circle-check.svg",
+      "role": "result",
+      "meaning": "a completed step or an accepted outcome",
+      "color": "success",
+      "style": "inline glyph, currentColor"
+    },
+    {
+      "id": "circle-xmark",
+      "provider": "fontawesome",
+      "path": "public/icons/circle-xmark.svg",
+      "role": "result",
+      "meaning": "a refused outcome or a struck-out path",
+      "color": "warning",
+      "style": "inline glyph, currentColor"
+    }
+  ]
+}

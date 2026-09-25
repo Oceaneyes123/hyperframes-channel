@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" aria-hidden="true">
+  <!-- Domain Controller: a tall directory tower. Violet = directory/identity
+       (channel semantic); the tree is the domain it holds accounts for. -->
+  <rect x="62" y="18" width="116" height="204" rx="14" fill="#78909C"/>
+  <rect x="74" y="30" width="92" height="180" rx="8" fill="#37474F"/>
+  <g fill="#B07CFF">
+    <rect x="96" y="46" width="48" height="26" rx="6"/>
+    <rect x="96" y="118" width="48" height="26" rx="6"/>
+    <rect x="96" y="160" width="48" height="26" rx="6"/>
+  </g>
+  <path d="M120 72v46M120 144v16" stroke="#B07CFF" stroke-width="8"/>
+  <rect x="140" y="92" width="30" height="26" rx="6" fill="#B07CFF" opacity=".75"/>
+  <rect x="70" y="92" width="26" height="18" rx="5" fill="#455A64"/>
+  <rect x="112" y="196" width="16" height="10" rx="5" fill="#63D69A"/>
+</svg>

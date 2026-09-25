@@ -1,0 +1,35 @@
+<template>
+<style>
+@import url("channel/styles.css");
+#line-4{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B1020;color:#F5F7FF;font-family:Arial,sans-serif}
+#line-4-bg{position:absolute;inset:0;background:linear-gradient(180deg,#0B1020,#101932 72%,#0B1020)}
+#line-4-title{position:absolute;left:72px;top:190px;width:880px;font-size:76px;line-height:1.05;font-weight:700;letter-spacing:-.02em}
+#line-4-subtitle{position:absolute;left:76px;top:390px;width:860px;color:#AAB5CC;font-size:34px;line-height:1.2}
+#line-4-route{position:absolute;left:96px;top:575px;width:888px;display:grid;grid-template-columns:repeat(2,1fr);gap:48px 28px;align-items:center;justify-items:center}
+#line-4-route:before{content:"";position:absolute;left:50%;top:8%;bottom:8%;width:4px;background:#33415F;z-index:0}
+#line-4-node-0,#line-4-node-1,#line-4-node-2,#line-4-node-3,#line-4-node-4,#line-4-node-5,#line-4-node-6{position:relative;z-index:1}
+.node{width:100%;max-width:240px;min-height:246px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:#141D35;border:2px solid #33415F;border-radius:24px;padding:18px;text-align:center}
+.node img{width:148px;height:148px;object-fit:contain;filter:none}.node-label{font-size:27px;line-height:1.05;font-weight:700;max-width:220px}.client{border-color:#4DA3FF}.client .node-label{color:#4DA3FF}.infra{border-color:#7067E8}.infra .node-label{color:#7067E8}.dns{border-color:#4DD9E8}.dns .node-label{color:#4DD9E8}.dc{border-color:#B07CFF}.dc .node-label{color:#B07CFF}.security{border-color:#F06A5F}.security .node-label{color:#F06A5F}.success{border-color:#63D69A}.success .node-label{color:#63D69A}.external{border-color:#4DD9E8}.external .node-label{color:#4DD9E8}.ink .node-label{color:#F5F7FF}
+#line-4-route.compact .node{min-height:190px;padding:12px;gap:10px}#line-4-route.compact .node img{width:110px;height:110px}#line-4-route.compact .node-label{font-size:22px}
+#line-4-route.compact{top:500px}
+#line-4-message{position:absolute;left:72px;bottom:350px;width:864px;min-height:98px;padding:24px;border:2px solid #33415F;border-radius:18px;text-align:center;color:#F5F7FF;font:34px/1.15 'Courier New',monospace;background:#141D35}
+#line-4-packet{position:absolute;left:526px;top:560px;width:28px;height:28px;border-radius:50%;background:#63D69A;box-shadow:0 0 22px #63D69A;z-index:2}
+</style>
+<div data-hf-id="hf-mo7g" id="line-4" data-composition-id="line-4" data-width="1080" data-height="1920" data-duration="16.92734693877551">
+  <div data-hf-id="hf-jjv0" id="line-4-bg" class="clip" data-start="0" data-duration="16.92734693877551" data-track-index="0"></div>
+  <div data-hf-id="hf-rw5s" id="line-4-title">NPS makes the access decision</div>
+  <div data-hf-id="hf-874b" id="line-4-subtitle">Policy first · identity where configured</div>
+  <div data-hf-id="hf-wemb" id="line-4-route"><div data-hf-id="hf-n1it" id="line-4-node-0" class="node security"><img data-hf-id="hf-grsf" src="public/icons/shield-halved.svg" alt=""><div data-hf-id="hf-cuzw" class="node-label">NPS</div></div><div data-hf-id="hf-jhxy" id="line-4-node-1" class="node ink"><img data-hf-id="hf-xhhs" src="public/icons/user.svg" alt=""><div data-hf-id="hf-cd67" class="node-label">IDENTITY</div></div><div data-hf-id="hf-skz4" id="line-4-node-2" class="node dc"><img data-hf-id="hf-d9oi" src="public/icons/database.svg" alt=""><div data-hf-id="hf-s750" class="node-label">ACTIVE DIRECTORY</div></div><div data-hf-id="hf-kq2n" id="line-4-node-3" class="node success"><img data-hf-id="hf-gzta" src="public/icons/circle-check.svg" alt=""><div data-hf-id="hf-x4ra" class="node-label">ACCESS-ACCEPT</div></div><div data-hf-id="hf-znip" id="line-4-node-4" class="node security"><img data-hf-id="hf-yyo5" src="public/icons/circle-xmark.svg" alt=""><div data-hf-id="hf-wkr9" class="node-label">ACCESS-REJECT</div></div></div>
+  <div data-hf-id="hf-hzr5" id="line-4-message">EVALUATE → DECIDE</div>
+  <div data-hf-id="hf-lbid" id="line-4-packet"></div>
+</div>
+<script>
+const tl=gsap.timeline({paused:true});window.__timelines["line-4"]=tl;
+const D=16.92734693877551; const t=f=>Math.min(D-.05,Math.max(0,f*D));
+tl.fromTo("#line-4-title",{opacity:0,y:24},{opacity:1,y:0,duration:.45,ease:"power3.out"},t(.02))
+  .fromTo("#line-4-subtitle",{opacity:0,y:18},{opacity:1,y:0,duration:.35,ease:"power3.out"},t(.10))
+  .fromTo("#line-4-node-0,#line-4-node-1,#line-4-node-2,#line-4-node-3,#line-4-node-4,#line-4-node-5,#line-4-node-6",{opacity:0,scale:.86},{opacity:1,scale:1,duration:.5,ease:"back.out(1.5)",stagger:.08},t(.18))
+  .fromTo("#line-4-packet",{y:0,opacity:0},{y:640,opacity:1,duration:Math.max(1.2,D*.28),ease:"power2.inOut"},t(.34))
+  .fromTo("#line-4-message",{opacity:0,y:20},{opacity:1,y:0,duration:.4,ease:"power3.out"},t(.62));
+</script>
+</template>
