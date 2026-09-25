@@ -23,7 +23,7 @@ def assemble(project: Path) -> Path:
         raise ValueError("Missing public/vendor/gsap.min.js; stage the local runtime before assembly")
     hosts, audio, seen = [], [], set()
     end = 0.0
-    for scene in scenes:
+    for audio_track, scene in enumerate(scenes, 10):
         start, duration = float(scene["start_s"]), float(scene["duration_s"])
         if not all(math.isfinite(n) for n in (start, duration)) or duration <= 0 or abs(start - end) > .001:
             raise ValueError("Scenes must have finite, positive, contiguous measured timing")
@@ -38,7 +38,7 @@ def assemble(project: Path) -> Path:
         sid, aid = escape(scene["id"], quote=True), escape(scene["audio_id"], quote=True)
         src, wav = escape(scene["src"], quote=True), escape(scene["audio_path"], quote=True)
         hosts.append(f'<div id="{sid}" class="scene clip" data-composition-id="{sid}" data-composition-src="{src}" data-start="{start:.6f}" data-duration="{duration:.6f}" data-track-index="1"></div>')
-        audio.append(f'<audio id="{aid}" src="{wav}" data-start="{start:.6f}" data-duration="{duration:.6f}" data-track-index="10" data-volume="1"></audio>')
+        audio.append(f'<audio id="{aid}" src="{wav}" data-start="{start:.6f}" data-duration="{duration:.6f}" data-track-index="{audio_track}" data-volume="1"></audio>')
         end = start + duration
     total = float(metadata["timeline_duration_s"])
     if not math.isfinite(total) or abs(total - end) > .001: raise ValueError("Total differs from measured scene timings")
