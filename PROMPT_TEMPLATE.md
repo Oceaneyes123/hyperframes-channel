@@ -63,12 +63,45 @@ CREATIVE REQUIREMENTS
    End each scene in a state that the next scene can inherit. Finish by visually
    reinforcing the takeaway, without introducing another concept.
 
+SCRIPT-WRITING STYLE
+- Use original, fast-paced, curiosity-driven educational storytelling. Borrow
+  only broad qualities; do not imitate ZAC D films or any creator's recognizable
+  voice, wording, catchphrases, jokes or scripts.
+- Start immediately with a strong curiosity hook, surprising fact, question or
+  relatable situation. Skip greetings, channel branding, slow introductions and
+  setup that does not advance the explanation.
+- Write short, natural spoken sentences in a conversational voice. Explain one
+  idea at a time, prefer active voice, use contractions naturally and avoid
+  textbook definitions. Make the script easy to understand without an IT
+  background while keeping every claim technically correct.
+- Prefer concrete examples. Show the idea with the icons and action first, then
+  introduce its technical name. Tell the explanation through visible cause and
+  effect: this happens, which causes this, so this happens. Reveal information
+  progressively and use small, answerable curiosity gaps or natural transitions
+  when they help the next visual land.
+- Make every narration line correspond to something visible happening on
+  screen. Plan words and visuals together. If a line cannot be represented
+  clearly with the existing icon-first language—primarily colored Icons8 assets,
+  with Font Awesome for supporting symbols—rewrite the line.
+- Keep one narration beat per scene. A beat may contain multiple short spoken
+  sentences when they describe one continuous visual action. End with a payoff
+  that answers the hook; omit generic conclusions unless they improve the
+  ending.
+- Use the Hook → Setup → Problem / Question → Flow → Twist / Important Detail →
+  Payoff pattern when it fits. Each sentence should either advance that flow or
+  make the next visible change understandable; remove filler.
+- Make the pace brisk through concise language and clear visual progression.
+  Completeness still takes priority over a runtime target: do not rush narration
+  or omit required information; extend the runtime when needed.
+
 WORKFLOW — TWO APPROVAL GATES
 Phase 1: Plan and sketch.
 - Create BRIEF.md, FACTS.md, SCRIPT.md, STORYBOARD.md, ICON_PLAN.json and frame.md
   using the repository templates and reference guide.
 - Keep spoken narration separate from display copy. Use one narration beat per
   scene, SCRIPT.md headings “## Line N” and STORYBOARD.md headings “## Frame N”.
+  A beat may contain several short sentences when one continuous visual action
+  supports them.
 - Define each scene's starting state, causal action, ending state, required
   objects, spoken cues, estimated local-time beats and continuity into the next.
   - Size every highlight or accent box from the measured text box (mono 32px advances
