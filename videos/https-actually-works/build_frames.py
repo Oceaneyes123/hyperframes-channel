@@ -1,15 +1,20 @@
 from __future__ import annotations
 
 import json
+import argparse
+import sys
 from pathlib import Path
 
 
 PROJECT = Path(__file__).resolve().parent
+sys.path.insert(0, str(PROJECT.parents[1] / 'scripts'))
+from motion_beats import load_beats
+from motion_pilot import markup as motion_markup
 META = json.loads((PROJECT / "audio_meta.json").read_text(encoding="utf-8"))
 
 STYLE = """
 *{box-sizing:border-box}
-#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B1020;color:#F5F7FF;font-family:Arial,sans-serif}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B1020;color:#F5F7FF;font-family:var(--hf-display)}
 .bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(49,82,146,.16),transparent 52%),linear-gradient(155deg,#0B1020,#0C1223 62%,#0B1020)}
 .title{position:absolute;z-index:7;left:72px;top:178px;width:936px;color:#F5F7FF;font-size:66px;line-height:1.04;font-weight:800;letter-spacing:-1.5px}
 .server{position:absolute;z-index:5;left:380px;top:285px;width:320px;height:320px;object-fit:contain}
@@ -133,7 +138,7 @@ tl.fromTo(q('.check-signature'),{scale:.9,opacity:0},{scale:1,opacity:1,duration
             + key_icon("twist-key", 215, 985, 105, "Certificate public key")
             + chip("green", 92, 1110, 300, "PROVES IDENTITY", "identity-chip")
             + '<div class="connector key-path" style="left:330px;top:1010px;width:200px;background:#F06A5F"></div>'
-            + '<div class="stop-mark" style="position:absolute;z-index:7;left:490px;top:975px;width:72px;height:72px;border:6px solid #F06A5F;border-radius:50%;color:#F06A5F;font:700 52px/58px Arial;text-align:center">×</div>'
+            + '<div class="stop-mark" style="position:absolute;z-index:7;left:490px;top:975px;width:72px;height:72px;border:6px solid #F06A5F;border-radius:50%;color:#F06A5F;font:700 52px/58px var(--hf-display);text-align:center">×</div>'
             + '<div class="packet clear-packet" style="left:590px;top:950px">HTTP REQUEST</div>'
             + chip("amber", 615, 1060, 315, "NOT EVERY REQUEST", "not-data-key")
         )
@@ -227,14 +232,35 @@ window.__timelines['line-{index}']=tl;
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--motion-pilot', action='store_true', help='Regenerate only scenes 2, 4, 7 using measured cues')
+    args = parser.parse_args()
+    config = json.loads((PROJECT / 'channel.json').read_text())
+    beats = load_beats(PROJECT) if config.get('motion_version') else {}
     scenes = META["scenes"]
     assert len(scenes) == 8 and [s["id"] for s in scenes] == [f"line-{i}" for i in range(1, 9)]
     for scene in scenes:
-        source, _ = markup(int(scene["index"]), float(scene["duration_s"]))
+        index = int(scene['index'])
+        if args.motion_pilot and index not in (2, 4, 7):
+            continue
+        if index in (2, 4, 7) and config.get('motion_version'):
+            source, _ = motion_markup(index, float(scene['duration_s']), beats[scene['id']])
+        else:
+            source, _ = markup(index, float(scene["duration_s"]))
         target = PROJECT / scene["src"]
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(source, encoding="utf-8")
-    print(f"Wrote {len(scenes)} seekable scenes for {META['timeline_duration_s']:.3f}s of measured narration.")
+    if config.get('motion_version'):
+        assertions = []
+        for index, target, result, cue in [(2, '.hello .hf-payload', '.handshake', 'handshake'), (4, '.certificate', '.proof', 'key'), (7, '.request .hf-payload', '.symmetric', 'symmetric')]:
+            scene = scenes[index - 1]
+            prefix = f'[data-composition-id="{scene["id"]}"] '
+            assertions.extend([
+                {'kind': 'staysInFrame', 'selector': prefix + target},
+                {'kind': 'appearsBy', 'selector': prefix + result, 'bySec': scene['start_s'] + beats[scene['id']][cue] + .55},
+            ])
+        (PROJECT / 'index.motion.json').write_text(json.dumps({'duration': META['timeline_duration_s'], 'assertions': assertions}, indent=2) + '\n')
+    print(f"Wrote {3 if args.motion_pilot else len(scenes)} seekable scenes; narration remains {META['timeline_duration_s']:.3f}s.")
 
 
 if __name__ == "__main__":

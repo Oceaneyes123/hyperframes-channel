@@ -2,12 +2,14 @@
 <style>
 @import url("channel/styles.css");
 #scene-01 .diagram { display:block; width:864px; height:1180px; margin-top:24px; }
-#scene-01 .diagram text { font:700 36px Arial,sans-serif; fill:#F5F7FF; text-anchor:middle; }
+#scene-01 .diagram text { font:700 36px var(--hf-display); fill:var(--hf-ink); text-anchor:middle; }
 #scene-01 .wire { stroke:#33415F; stroke-width:10; fill:none; }
 #scene-01 .received { opacity:0; }
 #scene-01-ground { position:absolute; inset:0; background:#0B1020; }
 </style>
-<!-- Teaching example. Prefix every id when copying a scene; the host supplies the
+<!-- Legacy tween teaching example. For new motion-v1 scenes use the state/path
+     example in channel/MOTION_API.md and audio-derived motion_beats.json cues.
+     Prefix every id when copying a scene; the host supplies the
      local GSAP runtime and mounts the narration WAV.
      - Hold the scene's measured duration in D and write beats as fractions of it, so
        retiming after TTS never edits hand-written numbers.

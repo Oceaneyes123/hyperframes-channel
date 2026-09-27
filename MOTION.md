@@ -3,6 +3,27 @@
 This file owns archetypes, rhythm, action verbs and transitions. `BUILD.md`
 owns the HyperFrames timeline contract.
 
+## Shared motion layer
+
+Future design-v2 videos should opt into `channel/motion.js` (motion v1).
+See `channel/MOTION_API.md` for the API. Prefer one persistent object changing
+state over replacing it at every beat. Keep travel, contents and camera on
+separate wrappers. Choose MORPH for geometry, FAST for packets/highlights,
+SLOW for devices, SOFT for labels, CAMERA for critically damped framing and
+IMPACT for small arrival compression. No cartoon bounce.
+
+Use SVG arc-length paths for routes and retrace them for replies. Leading and
+trailing edges may respond at different speeds. Content swaps blur and fade
+old content before revealing new content; this differs from temporal motion
+blur in the renderer. Align key actions with audio-derived named cues, leaving
+time to anticipate and settle inside narration. Frame packets include cue names.
+
+Reframe around a teaching detail: promote a certificate, follow a request or
+pull back for comparison. Keep endpoint identity legible and inherit explicit
+poses at cuts. A fixed headline/device stack is not required. The layer supplies
+hard-cut, match-morph, directional-push, route-continuation, camera-reveal,
+zoom-reveal and iris states; use only the transition the lesson needs.
+
 ## Pick a scene shape
 
 Use a scene archetype to organize the idea, not as a full-screen template. Do

@@ -71,6 +71,12 @@ contrast against the actual background at phone size.
 
 ## Assets
 
+Motion-v1 projects bundle Barlow Bold and IBM Plex Mono Bold locally through
+`channel/motion.css`. Use `var(--hf-display)` and `var(--hf-mono)`; do not
+override them with generic Arial in generated scenes. Keep labels in the safe
+rectangle throughout camera movement, not only at the settled pose. Fixed
+endpoint labels can live outside the camera wrapper while a detail reframes.
+
 Use one coherent family of colored local technical art for primary devices.
 Use compact inline Font Awesome glyphs only for supporting marks. Never use
 emoji or small black glyphs in white tiles as teaching objects. Record provider,

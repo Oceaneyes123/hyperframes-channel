@@ -19,7 +19,11 @@ measured duration, scene start and provenance. Do not present legacy metadata
 without a normalization fingerprint as normalized. Do not estimate timings
 after WAVs exist.
 
-Write storyboard beats as fractions of the measured scene duration (`t = f * D`).
+Use optional `motion_beats.json` for important spoken-word actions. Import
+timestamps from actual-WAV alignment or manual listening and record the WAV
+SHA-256 and provenance. Do not estimate word timing when measured cues exist.
+Fractions of measured D remain suitable for broad build/hold windows in legacy
+scenes; named cue seconds are canonical for word-synchronized motion.
 Keep each scene's narration on its own uniquely identified audio element at the
 matching start and duration. Inspect the assembled audio timeline after sync.
 
@@ -60,3 +64,17 @@ npm run assemble -- --project videos\<project>
 
 The assembler reads measured metadata. If frame files are renamed, refresh the
 metadata first. See `VERIFY.md` for structural checks and preview review.
+
+## Opt-in shared motion
+
+Set `motion_version` to `1.0.0` in a design-v2 `channel.json`, then run
+`python scripts/sync_channel_assets.py --project videos/<project>` before
+assembly. This stages motion.js, motion.css and local fonts. Do not use `--all`
+to migrate unrelated videos. The assembler loads the runtime once; frames
+import motion.css after styles.css. See `channel/MOTION_API.md` for the API.
+Attach pure drawing to one paused GSAP timeline with `ChannelMotion.mount`;
+the property setter works under callback-suppressed seeking.
+
+The HTTPS generator's `--motion-pilot` rebuilds only scenes 2, 4 and 7. Normal
+regeneration respects the opt-in too. Edit motion_pilot.py and regenerate;
+do not patch assembled HTML. Keep narration audio unchanged.

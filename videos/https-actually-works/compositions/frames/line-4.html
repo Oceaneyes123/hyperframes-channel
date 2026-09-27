@@ -1,44 +1,58 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>HTTPS scene 4</title></head><body><template>
-<style>@import url("channel/styles.css");
-*{box-sizing:border-box}
-#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B1020;color:#F5F7FF;font-family:Arial,sans-serif}
-.bg{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 48%,rgba(49,82,146,.16),transparent 52%),linear-gradient(155deg,#0B1020,#0C1223 62%,#0B1020)}
-.title{position:absolute;z-index:7;left:72px;top:178px;width:936px;color:#F5F7FF;font-size:66px;line-height:1.04;font-weight:800;letter-spacing:-1.5px}
-.server{position:absolute;z-index:5;left:380px;top:285px;width:320px;height:320px;object-fit:contain}
-.browser{position:absolute;z-index:5;left:380px;top:1200px;width:320px;height:320px;object-fit:contain}
-.server-label,.browser-label{position:absolute;z-index:6;left:300px;width:480px;text-align:center;font:700 26px/1.15 monospace;letter-spacing:2px}
-.server-label{top:607px;color:#A59FFF}.browser-label{top:1530px;color:#4DA3FF}
-.route{position:absolute;z-index:1;left:536px;top:645px;width:8px;height:600px;border-radius:5px;background:#33415F}
-.route-dash{position:absolute;z-index:2;left:532px;top:650px;width:16px;height:586px;background:repeating-linear-gradient(to bottom,#AAB5CC 0 12px,transparent 12px 28px);opacity:.45}
-.tunnel{position:absolute;z-index:2;left:392px;top:665px;width:296px;height:565px;border:8px solid #4DD9E8;border-radius:148px;background:rgba(20,29,53,.82);opacity:0}
-.object{position:absolute;z-index:4;object-fit:contain}
-.key-icon{background:url('public/icons8/key.png') center/contain no-repeat}
-.label{position:absolute;z-index:6;text-align:center;font:700 25px/1.15 monospace;letter-spacing:.4px}
-.chip{position:absolute;z-index:6;display:flex;align-items:center;justify-content:center;min-height:62px;padding:12px 20px;border:2px solid #33415F;border-radius:16px;background:#141D35;color:#F5F7FF;font:700 25px/1.15 monospace;text-align:center;white-space:nowrap}
-.chip.blue{border-color:#4DA3FF;color:#4DA3FF}.chip.purple{border-color:#7067E8;color:#C3BEFF}.chip.green{border-color:#63D69A;color:#63D69A}.chip.amber{border-color:#F5B94D;color:#F5B94D}.chip.red{border-color:#F06A5F;color:#F06A5F}
-.packet{position:absolute;z-index:8;display:flex;align-items:center;justify-content:center;width:224px;height:80px;border:3px solid #4DD9E8;border-radius:18px;background:#141D35;color:#F5F7FF;font:700 23px/1.1 monospace;letter-spacing:.4px}
-.dots{font-size:30px;letter-spacing:7px;color:#4DD9E8}
-.connector{position:absolute;z-index:3;height:6px;border-radius:3px;background:#4DD9E8;transform-origin:left center}
-.quiet{opacity:0}
+<template>
+<style>@import url("channel/styles.css");@import url("channel/motion.css");
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--hf-canvas);color:var(--hf-ink);font-family:var(--hf-display)}
+.world{position:absolute;inset:0;width:1080px;height:1920px}
+.device{position:absolute;width:320px;height:320px;object-fit:contain;left:380px}
+.server{top:285px}.browser{top:1200px}
+.endpoint{position:absolute;left:280px;width:520px;text-align:center;font:700 30px/1.2 var(--hf-mono)}
+.server-name{top:607px;color:var(--hf-infrastructure)}.browser-name{top:1530px;color:var(--hf-client)}
+.packet{display:flex;align-items:center;justify-content:center;border:3px solid var(--hf-client);border-radius:18px;background:var(--hf-surface);color:var(--hf-ink);font:700 26px/1.1 var(--hf-mono)}
+.packet img{width:60px;height:60px;object-fit:contain;margin-left:10px}
+.headline{position:absolute;left:72px;top:185px;width:864px;font-size:76px;line-height:1.06;font-weight:800}
+.caption{position:absolute;text-align:center;color:var(--hf-ink);font:700 36px/1.2 var(--hf-mono)}
+.art{position:absolute;object-fit:contain}
+.status{position:absolute;left:360px;top:995px;width:470px;height:92px;border:3px solid var(--hf-client);background:var(--hf-surface);border-radius:14px;font:700 32px/1.2 var(--hf-mono)}
+.shield{position:absolute;left:393px;top:665px;width:294px;height:535px;border:6px solid var(--hf-external);border-radius:145px;background:var(--hf-surface)}
+.dots{color:var(--hf-external);letter-spacing:6px}
 </style>
-<div data-hf-id="hf-p8sz" id="root" data-composition-id="line-4" data-width="1080" data-height="1920" data-duration="10.518639">
-<div data-hf-id="hf-m7dd" class="bg"></div><div data-hf-id="hf-dvh3" class="route"></div><div data-hf-id="hf-m56k" class="route-dash"></div><img data-hf-id="hf-mvee" class="object server" src="public/icons8/server.png" alt="Website server" style="left:380px;top:285px;width:320px;height:320px"><div data-hf-id="hf-ermd" class="server-label">WEBSITE</div><img data-hf-id="hf-zr9k" class="object browser" src="public/icons8/laptop.png" alt="Browser laptop" style="left:380px;top:1200px;width:320px;height:320px"><div data-hf-id="hf-t4l6" class="browser-label">YOUR BROWSER</div><div data-hf-id="hf-lxp6" class="title">CHECK THE ID</div><img data-hf-id="hf-o0t0" class="object checked-cert" src="public/icons8/certificate.png" alt="Certificate being checked" style="left:120px;top:755px;width:200px;height:200px"><img data-hf-id="hf-kzj9" class="object trust" src="public/icons8/verified-account.png" alt="Trusted certificate authority" style="left:760px;top:760px;width:170px;height:170px"><div data-hf-id="hf-vrdl" class="object key-icon signature-key" role="img" aria-label="Server signature proof" style="left:445px;top:1010px;width:130px;height:130px"></div><div data-hf-id="hf-95xp" class="chip blue check-name" style="left:335px;top:730px;width:400px">NAME MATCH</div><div data-hf-id="hf-46bu" class="chip green check-valid" style="left:335px;top:830px;width:400px">VALID</div><div data-hf-id="hf-rc3i" class="chip green check-issuer" style="left:335px;top:930px;width:400px">TRUSTED AUTHORITY</div><div data-hf-id="hf-3cg8" class="chip green check-signature" style="left:340px;top:1150px;width:400px">SIGNATURE OK</div>
+<div id="root" data-composition-id="line-4" data-width="1080" data-height="1920" data-duration="10.518639">
+<img class="device server" src="public/icons8/server.png" alt="Website server">
+<div class="endpoint server-name">WEBSITE</div>
+<img class="device browser" src="public/icons8/laptop.png" alt="Browser laptop">
+<div class="endpoint browser-name">YOUR BROWSER</div><div class="world hf-world" data-layout-allow-overflow>
+<img class="art certificate" src="public/icons8/certificate.png" alt="The same server certificate being checked" style="left:450px;top:760px;width:180px;height:180px">
+<div class="status"><span class="hf-state-content name">NAME MATCH</span><span class="hf-state-content valid">VALID</span><span class="hf-state-content issuer">TRUSTED AUTHORITY</span><span class="hf-state-content proof">SIGNATURE OK</span></div>
+<svg class="hf-routes" viewBox="0 0 1080 1920"><path class="hf-route trust-route" d="M800 815 Q800 870 720 870 L625 870"/></svg>
+<img class="art authority" src="public/icons8/verified-account.png" alt="Trusted certificate authority" style="left:730px;top:650px;width:160px;height:160px">
+<img class="art proof-key" src="public/icons8/key.png" alt="Server proves possession of its private key; the key stays at the server" style="left:710px;top:385px;width:120px;height:120px">
+<div class="caption proof-label" style="left:700px;top:520px;width:220px;font-size:26px">PROOF</div></div><div class="headline">CHECK THE ID</div>
 </div>
 <script>
-const root=document.currentScript.parentElement;
-const q=s=>root.querySelector(s);
-const D=10.518639;
+const root=document.querySelector('[data-composition-id="line-4"]');
+const q=s=>{const el=root.querySelector(s);if(!el)throw new Error(s);return el;};
+const M=ChannelMotion,D=10.518639,c={"name": 1.9, "valid": 3.52, "authority": 5.42, "trusted": 6.04, "proves": 7.56, "key": 9.36};
 const tl=gsap.timeline({paused:true});
 
-tl.fromTo(q('.checked-cert'),{x:-110,opacity:0},{x:0,opacity:1,duration:.48,ease:'power2.out'},.1);
-tl.fromTo(q('.trust'),{scale:.65,opacity:0},{scale:1,opacity:1,duration:.42,ease:'power3.out'},D*.2);
-tl.fromTo(q('.check-name'),{x:-18,opacity:0},{x:0,opacity:1,duration:.28},.04);
-tl.fromTo(q('.check-valid'),{x:-18,opacity:0},{x:0,opacity:1,duration:.32},D*.32);
-tl.fromTo(q('.check-issuer'),{x:-18,opacity:0},{x:0,opacity:1,duration:.32},D*.52);
-tl.fromTo(q('.signature-key'),{y:115,opacity:0},{y:0,opacity:1,duration:.42,ease:'power2.out'},D*.7);
-tl.fromTo(q('.check-signature'),{scale:.9,opacity:0},{scale:1,opacity:1,duration:.38},D*.83);
+const cert=M.state({x:0,y:0,scale:1},[[.3,{x:-125,y:-25,scale:1.65},'SLOW',1.4],[c.key-.7,{x:-300,y:35,scale:1.055},'SLOW',.8]]);
+const focus=M.state({x:540,y:960,scale:1},[[c.name-.5,{x:530,y:930,scale:1.035},'CAMERA',1.6],[c.proves,{x:540,y:960,scale:1},'CAMERA',1.6]]);
+const cam=M.camera(focus);
+const status=M.state({borderColor:'#4DA3FF'},[[c.valid,{borderColor:'#63D69A'}],[c.trusted,{borderColor:'#63D69A'}]]);
 
+M.mount(tl,D,t=>{
+M.apply(q('.world'),cam(t));
+M.apply(q('.certificate'),{...cert(t),scale:cert(t).scale*M.impact(t,c.trusted)});
+M.apply(q('.status'),{...status(t),opacity:M.visibility(t,c.name-.25,null).opacity});
+const first=M.swap(t,c.valid), second=M.swap(t,c.trusted), third=M.swap(t,c.key);
+M.apply(q('.name'),first.old);
+M.apply(q('.valid'),t<c.trusted?first.next:second.old);
+M.apply(q('.issuer'),t<c.key?{...second.next,opacity:t<c.valid?0:second.next.opacity}:third.old);
+M.apply(q('.proof'),third.next);
+M.apply(q('.authority'),M.visibility(t,c.authority-.3,null,.4));
+q('.trust-route').setAttribute('d',`M800 815 Q800 870 720 870 L${540+cert(t).x+90*cert(t).scale+24} 870`);
+M.routeReveal(q('.trust-route'),0,M.smooth((t-c.authority)/.65));
+M.apply(q('.proof-key'),M.visibility(t,c.proves,null,.4));
+M.apply(q('.proof-label'),M.visibility(t,c.proves+.2,null,.4));
+});
 window.__timelines=window.__timelines||{};
 window.__timelines['line-4']=tl;
-</script>
-</template></body></html>
+</script></template>

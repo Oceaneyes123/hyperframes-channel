@@ -29,6 +29,14 @@ scene intent and review evidence, `ICON_PLAN.json` for exact local assets, and
 `frame.md` for persistent geometry. Give frame workers only one scene packet,
 the needed design tokens and measured timings.
 
+For new v2 motion, opt into the shared `channel/motion.js` layer via
+`motion_version: 1.0.0`; see `channel/MOTION_API.md`. Optional motion_beats.json
+owns audio-derived word cues and WAV fingerprints. Use pure drawing attached
+to the paused GSAP timeline, explicit composition-scoped selectors and local
+shared assets. Do not migrate old videos implicitly. Inspect mid-motion states
+and backward seeks. A revised preview needs renewed Gate 2 approval; previous
+render approval does not authorize a changed composition.
+
 Preserve two approval gates: combined script and timed storyboard with actual-
 icon sketches, then the complete preview before rendering. “Continue,” “next
 step,” and “do remaining” advance to the next gate. A passing check is not

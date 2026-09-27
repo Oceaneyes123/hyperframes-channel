@@ -44,3 +44,16 @@ then enclosed/glowing only after the handshake finishes. An observer can point
 to the route but never reveal the plaintext after encryption. This file owns
 persistent positions; `STORYBOARD.md` owns each scene's starting and resolved
 states.
+
+## Motion-v1 pilot overrides (Frames 2, 4, 7)
+
+Endpoints remain at their original positions, outside the camera wrapper.
+Frames 2 and 7 use SVG world coordinates x=540, y=1170 to y=690; replies
+reverse the same route. Contents change inside one persistent message shell.
+Frame 4 inherits the actual Frame 3 certificate box (450,760,180,180), promotes
+it with scale 1.65 and offset (-125,-25), then ends near Frame 5's identity area
+(145,790,190,190). Its connector endpoint follows the certificate.
+The authority badge stays near (730,650); the proof key stays beside the server.
+Camera focus changes only the central diagram. Labels remain inside the safe
+rectangle; headlines and endpoint labels do not zoom. Exact cues and WAV
+fingerprints belong to motion_beats.json, not this geometry contract.

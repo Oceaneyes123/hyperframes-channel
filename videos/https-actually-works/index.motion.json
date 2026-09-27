@@ -1,0 +1,32 @@
+{
+  "duration": 71.0530612244898,
+  "assertions": [
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-2\"] .hello .hf-payload"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-2\"] .handshake",
+      "bySec": 14.368367346938776
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-4\"] .certificate"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-4\"] .proof",
+      "bySec": 31.295578231292517
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-7\"] .request .hf-payload"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-7\"] .symmetric",
+      "bySec": 58.442244897959185
+    }
+  ]
+}

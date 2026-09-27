@@ -1,0 +1,58 @@
+{
+  "seekChecks": [
+    {
+      "time": 8.4,
+      "sha256": "0d8dc116452bfaf5e62c964988e7739310931ea864516861a4bb91778a9d6f64",
+      "identical": true
+    },
+    {
+      "time": 22.2,
+      "sha256": "c1e2cd821a9018f80e352ae58230391fef780fb7776810112b486aa3e367f841",
+      "identical": true
+    },
+    {
+      "time": 51.4,
+      "sha256": "6ef7ae6a10ad758d584ab85047632ddae47617a53d6f320969aa73c2c50c4b6a",
+      "identical": true
+    },
+    {
+      "time": 54.9,
+      "sha256": "295d4bdff0a1b4edec4a63e7d941bf1278c67c50afb233a334ae67f55d09bbcb",
+      "identical": true
+    }
+  ],
+  "samples": [
+    {
+      "scene": "line-2",
+      "fps": 30,
+      "largestStep": 18.17669677734375,
+      "teleportThreshold": 70,
+      "safeArea": "72..936 / 180..1600"
+    },
+    {
+      "scene": "line-4",
+      "fps": 30,
+      "largestStep": 29.467548127992025,
+      "teleportThreshold": 70,
+      "safeArea": "72..936 / 180..1600"
+    },
+    {
+      "scene": "line-7",
+      "fps": 30,
+      "largestStep": 16.00701904296875,
+      "teleportThreshold": 70,
+      "safeArea": "72..936 / 180..1600"
+    }
+  ],
+  "notes": [
+    "Stillness is reported for visual review; reading pauses are allowed.",
+    "Listening review and MP4 encoding are separate from these checks."
+  ],
+  "temporalBlend": {
+    "time": 8.4,
+    "samples": 4,
+    "shutter": 180,
+    "distinctSamples": 4,
+    "repeatIdentical": true
+  }
+}

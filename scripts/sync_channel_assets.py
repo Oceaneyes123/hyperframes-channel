@@ -24,9 +24,15 @@ def sync(project: Path) -> None:
         raise ValueError(f"{project}: unsupported channel design version {version}")
     if not root.exists():
         raise FileNotFoundError(f"missing channel stylesheet for {version}: {root}")
+    if channel.get("motion_version") is not None and (version != "2.0.0" or channel["motion_version"] != "1.0.0"):
+        raise ValueError("Motion v1 requires design v2 and motion_version 1.0.0")
     destination = project / "channel"
     destination.mkdir(exist_ok=True)
     shutil.copy2(root, destination / "styles.css")
+    if channel.get("motion_version") is not None:
+        for name in ("motion.js", "motion.css"):
+            shutil.copy2(ROOT / "channel" / name, destination / name)
+        shutil.copytree(ROOT / "channel" / "fonts", destination / "fonts", dirs_exist_ok=True)
 
 
 def _design_version() -> str:

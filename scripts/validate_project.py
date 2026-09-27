@@ -214,6 +214,16 @@ def validate_diagnostics(project: Path, stage="preview") -> tuple[list[str], lis
         elif frozen.read_bytes() != local.read_bytes(): errors.append("legacy project channel stylesheet differs from channel/legacy/v1/styles.css")
     elif channel.get("design") != "hyperframes-channel": errors.append("channel.json must declare hyperframes-channel")
     is_v2 = not legacy and DESIGN_VERSION.startswith("2")
+    if channel.get("motion_version") is not None:
+        if not is_v2 or channel["motion_version"] != "1.0.0": errors.append("unsupported motion/design version pairing")
+        for name in ("motion.js", "motion.css"):
+            local = project / "channel" / name
+            if not local.exists() or local.read_bytes() != (ROOT / "channel" / name).read_bytes(): errors.append(f"channel/{name} is missing or stale; sync assets")
+        try:
+            from motion_beats import load_beats
+            load_beats(project)
+        except (ValueError, KeyError, TypeError, AttributeError, OSError) as exc:
+            errors.append(f"motion cues: {exc}")
     _approval(project, errors, stage, is_v2); _icons(project, errors, is_v2, stage); _audio(project, errors, is_v2, stage)
     if is_v2: _local_assets(project, errors); _timeline_targets(project, errors)
     metadata = project / "audio_meta.json"

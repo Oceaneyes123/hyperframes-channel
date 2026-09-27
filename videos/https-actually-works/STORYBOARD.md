@@ -1,15 +1,18 @@
 # How HTTPS Actually Works — timed storyboard
 
 Measured runtime: 71.053 seconds across eight scenes. Scene durations and starts
-match `audio_meta.json`. The complete preview received 26 fixed-time checks
-across scene openings, action states, resolutions and adjacent cuts. Captures
-and contact sheets are in `review/final-preview-evidence/frames/`.
+match `audio_meta.json`. Motion-v1 revises only Frames 2, 4 and 7. Original
+review evidence and the MP4 remain historical; current evidence is in
+`review/motion-after`, `review/motion-blur` and `review/MOTION_REVIEW.md`.
+The revised complete preview awaits renewed Gate 2 approval. Machine-aligned
+word cues still need listening review. Other frame review rows below are historical.
 
 All scenes: 1080x1920, 30 fps, safe rectangle x=72..936/y=180..1600. The same
 browser, server and route remain in place. Use the local assets in
 `ICON_PLAN.json`; narration stays in `SCRIPT.md`. The approved board is a static
-resolved-state sketch, not animation. Gate 2 preview approval is recorded in
-`review/final-preview-approval.json`; the rendered MP4 is in `renders/`.
+resolved-state sketch, not animation. The prior approval is preserved in
+`review/motion-before/final-preview-approval.json`; the current approval file
+is pending. The original MP4 remains in `renders/`.
 
 ## Frame 1 — What does the lock promise?
 - duration: 6.478s (measured); window: 0.000–6.478s
@@ -31,11 +34,11 @@ resolved-state sketch, not animation. Gate 2 preview approval is recorded in
 
 ## Frame 2 — Start the handshake
 - duration: 8.568s (measured); window: 6.478–15.047s
-- status: animated; archetype: journey; primary verb: exchange
+- status: motion-v1 pilot; archetype: journey; primary verb: exchange
 - Objective: show the first hello messages and temporary key shares that begin
   TLS.
-- Required objects: browser, server, handshake icon, two key-share messages.
-- Icon assets: laptop, server, handshake, key (twice).
+- Required objects: fixed endpoints, SVG route, persistent hello shell, public-share icon, handshake.
+- Icon assets: laptop, server, handshake, key.
 - Beginning state: retain the route and endpoints from Frame 1.
 - Ending state: one hello and one key share have gone each way; label the
   exchange `TLS handshake`.
@@ -45,9 +48,10 @@ resolved-state sketch, not animation. Gate 2 preview approval is recorded in
 
 | Local time | Spoken cue | Action | Review evidence |
 | --- | --- | --- | --- |
-| 0.000–2.705s | browser says hello | Send the client hello toward the server | [0.302s pass](review/final-preview-evidence/frames/frame-03-at-6.78s.png) |
-| 2.705–5.860s | little piece to help create a secret | Return the server hello and key share | [4.284s pass](review/final-preview-evidence/frames/frame-04-at-10.762s.png) |
-| 5.860–8.568s | That's the TLS handshake | Bring up the handshake symbol and label | [8.369s pass](review/final-preview-evidence/frames/frame-05-at-14.847s.png) |
+| cue 1.20s | hello | Anticipate at 0.60s; send persistent shell along SVG route | global 7.7s onset and 8.4s midpoint inspected in review/motion-after/contact-sheet.jpg |
+| cue 2.96s | piece | Share joins the traveling hello; shell geometry expands slightly | global 9.6s inspected |
+| cue 5.84s | back | Blur-swap shell contents, then retrace with the public share | global 12.1s inspected |
+| cue 7.34s | handshake | Resolve into the handshake symbol and hold | global 14.8s and adjacent cut at 15.1s inspected |
 
 ## Frame 3 — Meet the certificate
 - duration: 6.339s (measured); window: 15.047–21.386s
@@ -71,24 +75,26 @@ resolved-state sketch, not animation. Gate 2 preview approval is recorded in
 
 ## Frame 4 — Check the identity
 - duration: 10.519s (measured); window: 21.386–31.904s
-- status: animated; archetype: decision machine; primary verb: verify
+- status: motion-v1 pilot; archetype: decision machine; primary verb: verify
 - Objective: show domain matching, validity, a trusted certificate chain, and
   proof that the server controls the matching private key.
 - Required objects: browser, server, certificate, trust badge, signing-key
   proof.
 - Icon assets: laptop, server, certificate, verified-account, key.
-- Beginning state: preserve the certificate's domain and public key from Frame 3.
+- Beginning state: inherit the certificate's Frame 3 box; promote it to hero size.
 - Ending state: matching domain, valid certificate and signature proof resolve
   green; show the chain ending at a trusted-authority badge.
 - Visible text: `NAME MATCH`; `VALID`; `TRUSTED AUTHORITY`; `SIGNATURE OK`.
-- Continuity: the accepted identity stays attached to the same server in the
-  following scenes.
+- Continuity: identity stays attached to the same server. Certificate reframes
+  toward Frame 5's identity area before narration ends. Frame 5's existing
+  entrance is retained as a concept cut, not a continuous object handoff.
 
 | Local time | Spoken cue | Action | Review evidence |
 | --- | --- | --- | --- |
-| 0.000–3.347s | checks the site name | Scan the requested domain and validity window | [0.300s pass](review/final-preview-evidence/frames/frame-09-at-21.686s.png) |
-| 3.347–6.694s | certificate's validity, and whether it leads to an authority it trusts | Trace the certificate chain to the trust badge | [5.259s pass](review/final-preview-evidence/frames/frame-10-at-26.645s.png) |
-| 6.694–10.519s | proves it holds the matching private key | Check the server's handshake signature against the certificate key | [10.318s pass](review/final-preview-evidence/frames/frame-11-at-31.704s.png) |
+| cue 1.90s | name | Heavy spring promotes certificate; small camera reframe directs attention | global 21.35/21.4s cut, 22.2s morph and 23.2s settled inspected |
+| cue 3.52s | validity | Same status field changes to VALID with a non-overlapping blur swap | global 25.1s midpoint and 25.7s settled inspected |
+| cues 5.42 / 6.04s | authority / trusts | Trace to badge; connector follows certificate geometry | global 27.8s inspected |
+| cues 7.56 / 9.36s | proves / key | Key stays by server; status becomes SIGNATURE OK; camera returns | global 29.2s and 31.7s inspected; Frame 5 at 32s reviewed |
 
 ## Frame 5 — The certificate's job
 - duration: 7.941s (measured); window: 31.904–39.845s
@@ -132,23 +138,25 @@ resolved-state sketch, not animation. Gate 2 preview approval is recorded in
 
 ## Frame 7 — HTTP goes inside TLS
 - duration: 10.867s (measured); window: 48.692–59.559s
-- status: animated; archetype: journey; primary verb: enclose
+- status: motion-v1 pilot; archetype: journey/transformation; primary verb: protect
 - Objective: follow readable HTTP requests and replies through the now-encrypted
   TLS connection.
-- Required objects: browser, server, encrypted route, request packet, response
-  packet, lock.
+- Required objects: fixed endpoints, SVG route, TLS boundary, one persistent
+  request/reply shell, lock.
 - Icon assets: laptop, server, lock.
 - Beginning state: the handshake is complete and the route is protected.
 - Ending state: request reaches the server as protected data; the response
   returns over the same route.
 - Visible text: `HTTP REQUEST`; `HTTP RESPONSE`; `TLS`.
-- Continuity: keep the packet's contents opaque in Frame 8.
+- Continuity: Frame 8 retains its original observer diagram and a different
+  packet position. Hard cut to that overview; do not claim uninterrupted travel.
 
 | Local time | Spoken cue | Action | Review evidence |
 | --- | --- | --- | --- |
-| 0.000–2.860s | requests and replies travel inside TLS | Enclose the route after the completed-handshake marker | [0.300s pass](review/final-preview-evidence/frames/frame-18-at-48.992s.png) |
-| 2.860–6.863s | encrypts outgoing messages with its own secret traffic key | Send the request as an opaque packet to the server | [5.434s pass](review/final-preview-evidence/frames/frame-19-at-54.126s.png) |
-| 6.863–10.867s | That's symmetric encryption | Return the protected response to the browser | [10.667s pass](review/final-preview-evidence/frames/frame-20-at-59.359s.png) |
+| cue 1.66s | requests | Swap plaintext before departure at 1.91s; preserve shell | global 48.65/48.75s cut and 50.5s inspected |
+| cue 3.82s | TLS | Arrive at server; change contents to response; camera directs attention to tunnel | global 51.4s travel and 52.8s swap inspected |
+| cues 5.32 / 8.12s | encrypts / key | Protect response before departure at 5.72s; retrace to browser | global 54.9s departure and 56.7s arrival inspected |
+| cue 9.20s | symmetric | Label the process, then settle before narration ends | global 59.4s settled and 59.6s observer cut inspected |
 
 ## Frame 8 — Answer the hook
 - duration: 11.494s (measured); window: 59.559–71.053s
