@@ -8,6 +8,7 @@ import math
 from pathlib import Path
 
 from supertonic_tts import scene_sources
+from motion_beats import load_beats
 
 
 def assemble(project: Path) -> Path:
@@ -21,6 +22,15 @@ def assemble(project: Path) -> Path:
         raise ValueError("Scene sources differ from frames; run supertonic_tts.py --metadata-only after naming frames")
     if not (project / "public/vendor/gsap.min.js").is_file():
         raise ValueError("Missing public/vendor/gsap.min.js; stage the local runtime before assembly")
+    motion_script = ""
+    if channel.get("motion_version") is not None:
+        if channel["motion_version"] != "1.0.0":
+            raise ValueError("Unsupported motion version")
+        for name in ("motion.js", "motion.css"):
+            if not (project / "channel" / name).is_file():
+                raise ValueError(f"Missing channel/{name}; sync channel assets first")
+        load_beats(project)
+        motion_script = '<script src="channel/motion.js"></script>'
     hosts, audio, seen = [], [], set()
     end = 0.0
     for audio_track, scene in enumerate(scenes, 10):
@@ -48,6 +58,7 @@ def assemble(project: Path) -> Path:
 <meta name="viewport" content="width=1080,height=1920">
 <title>{escape(project.name)}</title>
 <script src="public/vendor/gsap.min.js"></script>
+{motion_script}
 <style>*{{box-sizing:border-box}}html,body{{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1020}}#root{{position:relative;width:1080px;height:1920px;background:#0B1020;overflow:hidden}}.scene{{position:absolute;inset:0;width:1080px;height:1920px}}</style>
 </head><body>
 <div id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="{total:.6f}">

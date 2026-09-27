@@ -62,6 +62,11 @@ CREATIVE REQUIREMENTS
 6. Preserve object identity, semantic colors and positions across adjacent scenes.
    End each scene in a state that the next scene can inherit. Finish by visually
    reinforcing the takeaway, without introducing another concept.
+7. Opt into channel/motion.js v1 for new v2 scenes. Describe objects, target
+   states, SVG paths and named audio cues using the shared primitives. Use
+   restrained spring personalities, persistent state changes and purposeful
+   camera framing. Avoid repeating the same headline/device stack. Inherit
+   font tokens; never override them with Arial. Preserve old videos.
 
 SCRIPT-WRITING STYLE
 - Use original, fast-paced, curiosity-driven educational storytelling. Borrow
@@ -117,6 +122,10 @@ Phase 2: Build the complete preview after approval.
   Supertonic 3 WAV per scene. Use audio_meta.json as the canonical timing source.
 - Replace estimated timings and retime the existing storyboard action beats
   before building animation. Do not concatenate WAVs or estimate final durations.
+- Record important spoken-word cues from actual-WAV alignment or listening in
+  motion_beats.json, including WAV hashes and provenance. Check stale cues.
+  Inspect motion onset, morph midpoint, arrival, camera extrema and scene cuts;
+  test backward/random-order seeks. Reading pauses remain intentional.
 - Build every scene against the approved visual contract and measured duration.
   Use seekable paused GSAP timelines, explicit root dimensions, local assets and
   stable scene-specific IDs. Keep audio and the shared local runtime in the parent.

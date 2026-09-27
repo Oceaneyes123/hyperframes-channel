@@ -1,0 +1,11 @@
+/* Opt-in motion primitives; load after the versioned design tokens. */
+@font-face { font-family:Barlow; font-style:normal; font-weight:700 900; src:url('fonts/Barlow-Bold.ttf') format('truetype'); }
+@font-face { font-family:'IBM Plex Mono'; font-style:normal; font-weight:700; src:url('fonts/IBMPlexMono-Bold.ttf') format('truetype'); }
+.hf-world { position:absolute; inset:0; width:1080px; height:1920px; transform-origin:0 0; }
+.hf-routes { position:absolute; inset:0; width:1080px; height:1920px; overflow:visible; }
+.hf-route { fill:none; stroke:var(--hf-rule); stroke-width:7; stroke-linecap:round; stroke-linejoin:round; }
+.hf-route-active { stroke:var(--hf-external); }
+.hf-mover { position:absolute; left:0; top:0; width:0; height:0; }
+.hf-mover > .hf-payload { position:absolute; left:-112px; top:-40px; width:224px; height:80px; }
+.hf-state-content { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+.hf-motion-label { font:700 36px/1.15 var(--hf-mono); color:var(--hf-ink); }
