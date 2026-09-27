@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "preferences": {
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "google-browser-explainer"
+      ],
+      "updated_at": "2026-09-13T10:48:25.807Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "google-browser-explainer"
+      ],
+      "updated_at": "2026-09-13T10:48:25.916Z"
+    }
+  },
+  "sightings": {}
+}
