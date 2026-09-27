@@ -1,0 +1,19 @@
+{
+  "style": "Icons8 Color family; local 512px PNGs; Font Awesome only for small supporting marks",
+  "accessed": "2026-09-25",
+  "icons": [
+    {"id":"browser","provider":"icons8","path":"public/icons8/laptop.png","role":"client endpoint","meaning":"the viewer's browser","color":"client","style":"Color","source":"https://icons8.com/icons/set/laptop","download":"https://img.icons8.com/color/512/laptop.png"},
+    {"id":"server","provider":"icons8","path":"public/icons8/server.png","role":"origin endpoint","meaning":"the HTTPS website server","color":"infrastructure","style":"Color","source":"https://icons8.com/icons/set/server","download":"https://img.icons8.com/color/512/server.png"},
+    {"id":"certificate","provider":"icons8","path":"public/icons8/certificate.png","role":"identity evidence","meaning":"the server certificate with domain and public-key labels","color":"external","style":"Color","source":"https://icons8.com/icons/set/certificate","download":"https://img.icons8.com/color/512/certificate.png"},
+    {"id":"trust-badge","provider":"icons8","path":"public/icons8/verified-account.png","role":"trust anchor cue","meaning":"browser accepts the certificate chain","color":"success","style":"Color","source":"https://icons8.com/icons/set/verified-account","download":"https://img.icons8.com/color/512/verified-account.png"},
+    {"id":"key","provider":"icons8","path":"public/icons8/key.png","role":"cryptographic key symbol","meaning":"labeled certificate public key, private-key proof, or temporary key shares depending on scene","color":"security","style":"Color","source":"https://icons8.com/icons/set/key","download":"https://img.icons8.com/color/512/key.png"},
+    {"id":"lock","provider":"icons8","path":"public/icons8/lock.png","role":"security symbol","meaning":"HTTPS connection protection; illustrative lock, not browser chrome","color":"success","style":"Color","source":"https://icons8.com/icons/set/lock","download":"https://img.icons8.com/color/512/lock.png"},
+    {"id":"handshake","provider":"icons8","path":"public/icons8/handshake.png","role":"supporting teaching symbol","meaning":"the TLS handshake phase","color":"client","style":"Color","source":"https://icons8.com/icons/set/handshake","download":"https://img.icons8.com/color/512/handshake.png"},
+    {"id":"observer","provider":"icons8","path":"public/icons8/user.png","role":"observer endpoint","meaning":"a person watching the encrypted traffic","color":"muted","style":"Color","source":"https://icons8.com/icons/set/user","download":"https://img.icons8.com/color/512/user.png"}
+  ],
+  "supporting-graphics": [
+    {"id":"http-packet","provider":"local-diagram","role":"moving data","meaning":"small labeled HTTP request and response packets; contents change to ciphertext inside TLS"},
+    {"id":"routes","provider":"local-diagram","role":"cause-and-effect path","meaning":"one persistent browser-server route that changes from open to encrypted after the handshake"}
+  ],
+  "attribution": "Each .source.txt records Icons8, the icon page, and the downloaded CDN URL. Keep the Icons8 links with the final video description or other publication credit."
+}

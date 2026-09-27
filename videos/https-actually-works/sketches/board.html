@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How HTTPS Actually Works — Gate 1 sketches</title>
+<style>
+*{box-sizing:border-box}body{margin:0;padding:28px;background:#080c16;color:#f5f7ff;font:16px/1.5 Arial,system-ui,sans-serif}h1{font-size:36px;margin:0 0 8px}.intro{max-width:920px;color:#aab5cc;margin:0 0 24px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(480px,1fr));gap:24px}article{min-width:0}h2{font-size:18px;margin:0 0 8px;color:#aab5cc}svg{display:block;width:100%;height:auto;border:1px solid #33415f;background:#0b1020}.voice{color:#f5f7ff;margin:10px 0 4px}.action{color:#aab5cc;margin:0 0 24px}footer{margin-top:24px;padding-top:16px;border-top:1px solid #33415f;color:#aab5cc}a{color:#4da3ff}a:focus-visible{outline:3px solid #63d69a;outline-offset:3px}@media(max-width:520px){body{padding:16px}.grid{grid-template-columns:minmax(0,1fr);gap:20px}h1{font-size:28px}}
+</style>
+</head>
+<body>
+<h1>How HTTPS Actually Works</h1>
+<p class="intro">Gate 1 approved. The eight measured scenes run 71.053 seconds. The board uses local Icons8 Color assets. Read the spoken lines with the timed storyboard; all pictures are static sketches. Animated frames and render are not part of this board.</p>
+<div class="grid" id="board"></div>
+<footer>Review <a href="SCRIPT.md">the script</a>, <a href="STORYBOARD.md">timed storyboard</a>, <a href="FACTS.md">sourced facts</a> and <a href="ICON_PLAN.json">icon plan</a>. Icons8 attribution links are recorded beside each local asset.</footer>
+<script>
+const scenes = [
+  ["Who's at the other end?","0–6.478s","That little lock looks like a promise. But what did your browser check before you send a password?","Open the site → show the lock → hold the password packet back."],
+  ["Start the handshake","6.478–15.047s","Your browser says hello. Then it sends a little piece to help create a secret. The site sends one back. That's the TLS handshake.","Send ClientHello + key share → return ServerHello + share → reveal TLS handshake."],
+  ["Meet the certificate","15.047–21.386s","Then the site sends an ID card—its certificate. It lists the site's name and a public key.","Move the certificate from server to browser → reveal example.com and its public key."],
+  ["Check the identity","21.386–31.904s","Your browser checks the site name, the certificate's validity, and whether it leads to an authority it trusts. Then the site proves it holds the matching private key.","Match domain + validity → trace issuer to trusted badge → verify the server's signature."],
+  ["The certificate's job","31.904–39.845s","Here's the twist: that public key doesn't encrypt every page. The certificate helps your browser check the server's identity.","Keep certificate at identity check → stop its key before the HTTP packet → resolve identity."],
+  ["Derive traffic keys","39.845–48.692s","Those hello pieces are called key shares. They help both sides derive secret traffic keys locally. The keys never cross the network.","Recall earlier shares → derive local traffic keys → activate protection at handshake finish."],
+  ["HTTP goes inside TLS","48.692–59.559s","Now your HTTP requests and replies travel inside TLS. Each side encrypts outgoing messages with its own secret traffic key. That's symmetric encryption.","Enclose the route → send opaque request → return protected response."],
+  ["Answer the hook","59.559–71.053s","Someone watching can still see traffic, but not the messages inside. So the lock means your browser checked the domain and encrypted the connection. It doesn't mean the site is safe.","Reveal observer → show visible traffic and opaque contents → return to checked domain and lock."]
+];
+
+function image(name,x,y,w,h,alt){return `<image href="../public/icons8/${name}.png" x="${x}" y="${y}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="${alt}"/>`;}
+function text(x,y,value,size=38,color="#F5F7FF",anchor="middle",weight=600){return `<text x="${x}" y="${y}" text-anchor="${anchor}" fill="${color}" font-size="${size}" font-weight="${weight}" font-family="Arial,system-ui,sans-serif">${value}</text>`;}
+function arrow(y1,y2,color="#4DD9E8",dash=""){return `<path d="M540 ${y1}V${y2}" fill="none" stroke="${color}" stroke-width="12" ${dash?`stroke-dasharray="${dash}"`:""} marker-end="url(#arrow)"/>`;}
+function sketch(i){
+  const tunnel=i>=6;
+  let detail="";
+  if(i===0){
+    detail=`${image("lock",450,770,180,180,"Lock symbol")}${text(540,990,"PASSWORD",34,"#AAB5CC")}${text(540,1050,"HELD BACK",34,"#F5B94D")}`;
+  }else if(i===1){
+    detail=`${image("key",205,760,145,145,"Client temporary key share")}${image("key",730,760,145,145,"Server temporary key share")}${arrow(950,700)}<path d="M540 700V920" fill="none" stroke="#7067E8" stroke-width="10" stroke-dasharray="16 16" marker-end="url(#arrow)"/>${image("handshake",450,900,180,180,"TLS handshake")}${text(540,1120,"TLS HANDSHAKE",34,"#4DD9E8")}`;
+  }else if(i===2){
+    detail=`${arrow(700,740)}${image("certificate",435,755,210,210,"Server certificate")}${text(540,990,"example.com",34,"#63D69A")}${image("key",460,1010,100,100,"Certificate public key")}${text(540,1150,"PUBLIC KEY",30,"#7067E8")}`;
+  }else if(i===3){
+    detail=`${image("certificate",300,755,190,190,"Certificate being checked")}${image("verified-account",700,755,180,180,"Trusted authority")}${text(395,990,"DOMAIN MATCH",28,"#63D69A")}${text(790,990,"TRUSTED CA",28,"#63D69A")}${image("key",475,1000,90,90,"Private key proof")}${text(540,1150,"SIGNATURE OK",30,"#63D69A")}`;
+  }else if(i===4){
+    detail=`${image("certificate",300,750,190,190,"Certificate for identity")}${image("key",465,775,125,125,"Certificate public key")}${text(395,975,"IDENTITY",28,"#63D69A")}${pathStop()}<rect x="450" y="1010" width="180" height="85" rx="16" fill="#141D35" stroke="#F5B94D" stroke-width="5"/><text x="540" y="1065" text-anchor="middle" fill="#F5B94D" font-size="27" font-weight="700">HTTP</text>${text(540,1150,"NOT THE DATA KEY",27,"#F5B94D")}`;
+  }else if(i===5){
+    detail=`<path d="M350 835H455 M625 835H730" fill="none" stroke="#4DD9E8" stroke-width="10" stroke-dasharray="14 14"/>${image("key",205,750,145,145,"Client key share")}${image("key",730,750,145,145,"Server key share")}${image("key",235,930,120,120,"Client-local traffic keys")}${image("key",725,930,120,120,"Server-local traffic keys")}${text(295,1080,"LOCAL",28,"#63D69A")}${text(785,1080,"LOCAL",28,"#63D69A")}${text(540,1130,"TRAFFIC KEYS",28,"#63D69A")}${text(540,1175,"KEYS STAY LOCAL",24,"#63D69A")}`;
+  }else if(i===6){
+    detail=`${image("lock",460,755,160,160,"TLS protection lock")}${packet(452,955,"••••••")}${text(540,1135,"HTTP INSIDE TLS",30,"#4DD9E8")}`;
+  }else{
+    detail=`${image("lock",460,735,145,145,"Encrypted connection")}${packet(452,905,"••••••")}${image("user",770,750,145,145,"Network observer")}${text(845,930,"OBSERVER",25,"#AAB5CC")}${text(845,980,"TRAFFIC VISIBLE",22,"#F5B94D")}${text(540,1080,"CONTENTS HIDDEN",28,"#63D69A")}${text(540,1150,"SITE SAFETY NOT CHECKED",23,"#AAB5CC")}`;
+  }
+  const route=tunnel
+    ? `<rect x="424" y="690" width="232" height="510" rx="116" fill="#141D35" stroke="#4DD9E8" stroke-width="8"/><path d="M540 690V1200" stroke="#4DD9E8" stroke-width="12" opacity=".65"/>`
+    : `<path d="M540 690V1200" stroke="#33415F" stroke-width="12" stroke-dasharray="22 20"/>`;
+  return `<svg viewBox="0 0 1080 1920" role="img" aria-label="${scenes[i][0]} sketch"><title>${scenes[i][0]}</title><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M0 0L12 6L0 12Z" fill="#4DD9E8"/></marker></defs><rect width="1080" height="1920" fill="#0B1020"/>${text(72,238,scenes[i][0].toUpperCase(),68,"#F5F7FF","start",700)}${route}${text(540,650,"HTTPS SERVER",30,"#AAB5CC")}${image("server",380,285,320,320,"Website server")}${image("laptop",380,1200,320,320,"Browser laptop")}${text(540,1590,"YOUR BROWSER",30,"#AAB5CC")}${detail}</svg>`;
+}
+function pathStop(){return `<path d="M540 900V1005" fill="none" stroke="#F06A5F" stroke-width="8" stroke-dasharray="12 12"/><circle cx="540" cy="980" r="24" fill="#0B1020" stroke="#F06A5F" stroke-width="8"/><path d="M528 968l24 24m0-24l-24 24" stroke="#F06A5F" stroke-width="7"/>`;}
+function packet(x,y,label){return `<rect x="${x}" y="${y}" width="176" height="92" rx="16" fill="#141D35" stroke="#4DD9E8" stroke-width="5"/><text x="${x+88}" y="${y+58}" text-anchor="middle" fill="#F5F7FF" font-size="27" font-weight="700">${label}</text>`;}
+const board=document.getElementById("board");
+scenes.forEach(([title,time,narration,action],i)=>{
+  const article=document.createElement("article");
+  const heading=document.createElement("h2");heading.textContent=`${i+1}. ${time} — ${title}`;
+  const picture=document.createElement("div");picture.innerHTML=sketch(i);
+  const voice=document.createElement("p");voice.className="voice";voice.textContent=narration;
+  const motion=document.createElement("p");motion.className="action";motion.textContent=action;
+  article.append(heading,picture,voice,motion);board.append(article);
+});
+</script>
+</body>
+</html>
