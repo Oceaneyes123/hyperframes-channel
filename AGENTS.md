@@ -7,6 +7,7 @@ video. Then load only the phase guides that apply; do not load the generic
 | Phase | Read | Skip by default |
 | --- | --- | --- |
 | Design critique | `DESIGN.md` and selected frames | workflow guides |
+| Script writing | `SCRIPT_GUIDE.md`, `FACTS.md`, `channel/EXPLAINER_REFERENCE.md` | build and verify guides |
 | Planning | `channel/CHANNEL_RECIPE.md`, `DESIGN.md`, `channel/EXPLAINER_REFERENCE.md` | — |
 | Storyboard and sketches | `DESIGN.md`, `MOTION.md` | build and verify guides |
 | TTS and timing | `BUILD.md` audio section, `SCRIPT.md` | full storyboard |
@@ -16,12 +17,14 @@ video. Then load only the phase guides that apply; do not load the generic
 | Render | `VERIFY.md` render section and saved approval | planning docs |
 | Failure | only the matching troubleshooting section | unrelated guides |
 
-`DESIGN.md` owns visual identity and layout. `MOTION.md` owns scene rhythm
-and transitions. `channel/CHANNEL_RECIPE.md` owns phases, handoffs and approval
-gates. `BUILD.md` owns audio, frame assembly and commands. `VERIFY.md` owns
-checks, evidence and rendering. `channel/EXPLAINER_REFERENCE.md` is the short-
-form script and worked-example reference; use it when planning a new narrated
-short, and skip it in unrelated phases.
+`SCRIPT_GUIDE.md` guides script writing; `SCRIPT.md` remains the source of
+truth for the spoken lines. `DESIGN.md` owns visual identity and layout.
+`MOTION.md` owns scene rhythm and transitions. `channel/CHANNEL_RECIPE.md`
+owns phases, handoffs and approval gates. `BUILD.md` owns audio, frame assembly
+and commands. `VERIFY.md` owns checks, evidence and rendering.
+`channel/EXPLAINER_REFERENCE.md` is the short-form script and worked-example
+reference; use it when planning a new narrated short, and skip it in unrelated
+phases.
 
 Keep the source of truth singular: `FACTS.md` for sourced claims, `SCRIPT.md`
 for spoken lines, `audio_meta.json` for measured timing, `STORYBOARD.md` for

@@ -1,0 +1,10 @@
+{
+  "status": "approved",
+  "approved_by": "user",
+  "approved_at": "2026-09-28",
+  "approval_source": "explicit approval in conversation: I approve the Gate 1",
+  "icon_plan": "ICON_PLAN.json",
+  "sketches": ["sketches/board.html"],
+  "script": "SCRIPT.md",
+  "storyboard": "STORYBOARD.md"
+}

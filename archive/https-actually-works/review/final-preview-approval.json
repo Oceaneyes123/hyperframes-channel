@@ -1,6 +1,0 @@
-{
-  "status": "pending",
-  "scope": "motion v1 pilot: scenes 2, 4, 7; complete 71.053s preview needs renewed approval",
-  "previous_approval": "motion-before/final-preview-approval.json",
-  "reason": "Previous approval applies to the preserved original render, not changed motion."
-}

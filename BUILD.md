@@ -13,8 +13,10 @@ py -3 scripts\supertonic_tts.py --project videos\<project>
 ```
 
 Supertonic 3 is the default. Use `pronunciation.json` for specific terms or IP
-address style. Keep one WAV and one metadata record per scene; never concatenate
-them. `audio_meta.json` is canonical: it records WAV paths, normalized speech,
+address style. A custom Supertonic Voice Builder JSON can be selected with
+`--voice-style`; a raw reference recording must first be converted to that JSON.
+Keep one WAV and one metadata record per scene; never concatenate them.
+`audio_meta.json` is canonical: it records WAV paths, normalized speech,
 measured duration, scene start and provenance. Do not present legacy metadata
 without a normalization fingerprint as normalized. Do not estimate timings
 after WAVs exist.

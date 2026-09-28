@@ -1,7 +1,0 @@
-{
-  "ipv4_style": "short",
-  "terms": {
-    "NAT": "nat",
-    "PAT": "pat"
-  }
-}

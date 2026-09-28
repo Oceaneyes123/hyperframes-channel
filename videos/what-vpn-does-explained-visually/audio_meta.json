@@ -1,0 +1,271 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "M1",
+  "timeline_duration_s": 130.1942857142857,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 7.383945578231293,
+      "original_text": "You turn on a VPN, and your internet traffic takes a new exit. What can everyone along the way still see?",
+      "spoken_text": "You turn on a VPN, and your internet traffic takes a new exit. What can everyone along the way still see?",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 7.383945578231293,
+      "original_text": "First, your device opens an encrypted tunnel to a VPN server. We'll follow one website request through it.",
+      "spoken_text": "First, your device opens an encrypted tunnel to a VPN server. We'll follow one website request through it.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 10.309659863945578,
+      "original_text": "The tunnel is ready. Route rules choose what enters it. Here, all internet traffic uses the tunnel\u2014a consumer full-tunnel setup. Other settings vary.",
+      "spoken_text": "The tunnel is ready. Route rules choose what enters it. Here, all internet traffic uses the tunnel\u2014a consumer full-tunnel setup. Other settings vary.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 9.05578231292517,
+      "original_text": "Your website request stays inside an outer packet addressed to the VPN server. That outer packet travels across the local network.",
+      "spoken_text": "Your website request stays inside an outer packet addressed to the VPN server. That outer packet travels across the local network.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 12.678095238095239,
+      "original_text": "Your Wi-Fi and ISP can see that outer connection: the VPN server, when data moves, and roughly how much. If the tunnel works as intended, they can't read the protected traffic inside.",
+      "spoken_text": "Your Wi-Fi and ISP can see that outer connection: the VPN server, when data moves, and roughly how much. If the tunnel works as intended, they can't read the protected traffic inside.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 7.383945578231293,
+      "original_text": "At the VPN server, that outer packet opens. The server forwards your original request to the website.",
+      "spoken_text": "At the VPN server, that outer packet opens. The server forwards your original request to the website.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 8.428843537414966,
+      "original_text": "From the website's side, this request comes from the VPN server's public IP. That's the new exit for traffic using this route.",
+      "spoken_text": "From the website's side, this request comes from the VPN server's public I P. That's the new exit for traffic using this route.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 8.568163265306122,
+      "original_text": "Your local network sees less of the protected traffic. But now your VPN provider runs that exit point. Trust has shifted.",
+      "spoken_text": "Your local network sees less of the protected traffic. But now your VPN provider runs that exit point. Trust has shifted.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 8
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 16.021768707482995,
+      "original_text": "What the provider can observe or keep depends on its service and setup. A VPN doesn't replace HTTPS. HTTPS is a separate lock that can protect page contents from your device to the website, even after the VPN tunnel ends.",
+      "spoken_text": "What the provider can observe or keep depends on its service and setup. A VPN doesn't replace H T T P S. H T T P S is a separate lock that can protect page contents from your device to the website, even after the VPN tunnel ends.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 9
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 7.174965986394557,
+      "original_text": "A different exit doesn't hide who you are. Sign in or bring the same cookie, and the website may recognize you.",
+      "spoken_text": "A different exit doesn't hide who you are. Sign in or bring the same cookie, and the website may recognize you.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 10
+    },
+    {
+      "id": "line-11",
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 9.195102040816327,
+      "original_text": "If a compromised device exposes information before traffic enters the tunnel, the VPN can't hide it. Protection starts at the device.",
+      "spoken_text": "If a compromised device exposes information before traffic enters the tunnel, the VPN can't hide it. Protection starts at the device.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 11
+    },
+    {
+      "id": "line-12",
+      "path": ".media/audio/voice/line-12.wav",
+      "duration_s": 7.244625850340136,
+      "original_text": "The tunnel may not carry every app. Split tunneling sends chosen connections out over a different route.",
+      "spoken_text": "The tunnel may not carry every app. Split tunneling sends chosen connections out over a different route.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 12
+    },
+    {
+      "id": "line-13",
+      "path": ".media/audio/voice/line-13.wav",
+      "duration_s": 7.732244897959184,
+      "original_text": "Even a website lookup needs a route. DNS may go through the VPN, or somewhere else; the settings decide.",
+      "spoken_text": "Even a website lookup needs a route. D N S may go through the VPN, or somewhere else; the settings decide.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 13
+    },
+    {
+      "id": "line-14",
+      "path": ".media/audio/voice/line-14.wav",
+      "duration_s": 11.633197278911565,
+      "original_text": "So who sees the road? Your local network sees the VPN connection. The website sees the VPN server's address. The provider sits at the exit. New path, new trust.",
+      "spoken_text": "So who sees the road? Your local network sees the VPN connection. The website sees the VPN server's address. The provider sits at the exit. New path, new trust.",
+      "normalization_fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497",
+      "frame": 14
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 7.383945578231293
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 7.383945578231293,
+      "duration_s": 7.383945578231293
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 14.767891156462586,
+      "duration_s": 10.309659863945578
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 25.077551020408166,
+      "duration_s": 9.05578231292517
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 34.13333333333334,
+      "duration_s": 12.678095238095239
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 46.81142857142858,
+      "duration_s": 7.383945578231293
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 54.19537414965987,
+      "duration_s": 8.428843537414966
+    },
+    {
+      "index": 8,
+      "id": "line-8",
+      "src": "compositions/frames/line-8.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 62.62421768707483,
+      "duration_s": 8.568163265306122
+    },
+    {
+      "index": 9,
+      "id": "line-9",
+      "src": "compositions/frames/line-9.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 71.19238095238096,
+      "duration_s": 16.021768707482995
+    },
+    {
+      "index": 10,
+      "id": "line-10",
+      "src": "compositions/frames/line-10.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 87.21414965986395,
+      "duration_s": 7.174965986394557
+    },
+    {
+      "index": 11,
+      "id": "line-11",
+      "src": "compositions/frames/line-11.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 94.3891156462585,
+      "duration_s": 9.195102040816327
+    },
+    {
+      "index": 12,
+      "id": "line-12",
+      "src": "compositions/frames/line-12.html",
+      "audio_id": "voice-line-12",
+      "audio_path": ".media/audio/voice/line-12.wav",
+      "start_s": 103.58421768707483,
+      "duration_s": 7.244625850340136
+    },
+    {
+      "index": 13,
+      "id": "line-13",
+      "src": "compositions/frames/line-13.html",
+      "audio_id": "voice-line-13",
+      "audio_path": ".media/audio/voice/line-13.wav",
+      "start_s": 110.82884353741497,
+      "duration_s": 7.732244897959184
+    },
+    {
+      "index": 14,
+      "id": "line-14",
+      "src": "compositions/frames/line-14.html",
+      "audio_id": "voice-line-14",
+      "audio_path": ".media/audio/voice/line-14.wav",
+      "start_s": 118.56108843537416,
+      "duration_s": 11.633197278911565
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "030888873495f5b87d16b93443417f202d7f216c91ffd64081e0d9bf06196497"
+  }
+}

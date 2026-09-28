@@ -169,6 +169,9 @@ def main() -> None:
     parser.add_argument("--script", type=Path)
     parser.add_argument("--out", type=Path)
     parser.add_argument("--voice", default="M1")
+    parser.add_argument(
+        "--voice-style", type=Path, help="Supertonic Voice Builder JSON style"
+    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--metadata-only", action="store_true")
     parser.add_argument("--sync-index", action="store_true")
@@ -183,7 +186,12 @@ def main() -> None:
             json.dumps(
                 {
                     "project": str(project),
-                    "voice": args.voice,
+                    "voice": (
+                        f"custom:{args.voice_style.name}"
+                        if args.voice_style
+                        else args.voice
+                    ),
+                    "voice_style": str(args.voice_style) if args.voice_style else None,
                     "out": str(out),
                     **prepared,
                 },
@@ -219,7 +227,13 @@ def main() -> None:
         from supertonic import TTS
 
         tts = TTS(auto_download=True)
-        style = tts.get_voice_style(voice_name=args.voice)
+        if args.voice_style:
+            voice_style_path = args.voice_style.resolve()
+            style = tts.get_voice_style_from_path(str(voice_style_path))
+            metadata_voice = f"custom:{voice_style_path.name}"
+        else:
+            style = tts.get_voice_style(voice_name=args.voice)
+            metadata_voice = args.voice
         manifest = []
         for record in prepared["lines"]:
             wav, _duration = tts.synthesize(
@@ -246,7 +260,7 @@ def main() -> None:
         else prepared["normalization"]
     )
     metadata_voice = (
-        existing.get("voice", args.voice) if args.metadata_only else args.voice
+        existing.get("voice", args.voice) if args.metadata_only else metadata_voice
     )
     metadata = native_metadata(
         project,

@@ -1,0 +1,36 @@
+<template>
+<style>
+@import url("channel/styles.css");
+@import url("channel/motion.css");
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B1020;color:#F5F7FF;font-family:var(--hf-display);}
+#root:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 76% 36%,#202b513b,transparent 48%),radial-gradient(ellipse at 20% 77%,#142b463b,transparent 40%);pointer-events:none}
+#root:after{content:"";position:absolute;inset:0;opacity:.14;background-image:linear-gradient(#33415f55 1px,transparent 1px),linear-gradient(90deg,#33415f55 1px,transparent 1px);background-size:108px 108px;mask-image:linear-gradient(transparent,black 20%,black 85%,transparent);pointer-events:none}
+#root .head{position:absolute;z-index:4;left:72px;right:72px;top:180px}
+#root .eyebrow{color:var(--hf-external);font:700 30px/1.2 var(--hf-mono);letter-spacing:.14em}
+#root .headline{max-width:900px;margin:24px 0 0;font-size:76px;line-height:1.05;letter-spacing:-.035em;font-weight:800}
+#root .routes{position:absolute;inset:0;width:1080px;height:1920px;z-index:1;overflow:visible}
+#root .routes path{fill:none;stroke:var(--hf-infrastructure);stroke-width:4;stroke-linecap:round;stroke-linejoin:round;marker-end:url(#arrow-4)}
+#root .routes path.direct{stroke:var(--hf-external)}#root .routes path.closed{stroke:var(--hf-security);stroke-dasharray:7 8}#root .routes path.faint{stroke:#64718e;stroke-width:3;stroke-dasharray:5 9;marker-end:none}#root .routes path.https{stroke:var(--hf-success);stroke-width:3;stroke-dasharray:5 6}
+#root .node{position:absolute;z-index:2;margin-left:-156px;margin-top:-156px;width:312px;text-align:center}
+#root .server-label-top .tag{position:absolute;top:-78px;left:50%;transform:translateX(-50%)}
+#root .node img{display:block;width:252px;height:252px;object-fit:contain;margin:0 auto 15px;filter:drop-shadow(0 24px 42px #0008)}
+#root .tag{display:inline-block;padding:12px 18px;border:3px solid var(--hf-rule);border-radius:8px;background:#0B1020e8;color:var(--hf-ink);font:700 28px/1.1 var(--hf-mono);letter-spacing:.04em;white-space:nowrap}
+#root .device .tag{border-color:#4DA3FF88}#root .server .tag{border-color:#7067E899}#root .site .tag{border-color:#4DD9E888}#root .warn .tag{border-color:#F06A5F99}
+#root .pill{position:absolute;z-index:3;padding:18px 24px;border:3px solid var(--hf-infrastructure);border-radius:10px;background:#171c34;color:var(--hf-ink);font:700 27px/1 var(--hf-mono);white-space:nowrap;box-shadow:0 0 54px #7067e833}
+#root .pill.amber{border-color:var(--hf-warning);color:var(--hf-warning)}#root .pill.green{border-color:var(--hf-success);color:var(--hf-success)}#root .pill.red{border-color:var(--hf-security);color:var(--hf-security)}
+#root .packet{position:absolute;z-index:3;display:flex;align-items:center;gap:15px;padding:15px 21px;background:#141D35;border:6px solid var(--hf-client);border-radius:12px;color:var(--hf-ink);font:700 24px/1 var(--hf-mono);white-space:nowrap}
+#root .packet:before{content:"";width:18px;height:18px;border-radius:50%;background:var(--hf-client)}#root .packet.secure{border-color:var(--hf-security)}#root .packet.secure:before{background:var(--hf-security)}#root .packet.reply{border-color:var(--hf-success)}#root .packet.reply:before{background:var(--hf-success)}
+#root .foot{position:absolute;z-index:4;bottom:48px;left:60px;right:60px;display:flex;justify-content:space-between;color:var(--hf-muted);font:600 24px var(--hf-mono);letter-spacing:.06em}
+</style>
+<div id="root" data-composition-id="line-4" data-width="1080" data-height="1920" data-duration="9.055782"><div class="head"><div class="eyebrow">ENCAPSULATION</div><h1 class="headline">INSIDE → VPN SERVER</h1></div>
+<svg class="routes" viewBox="0 0 360 640" aria-hidden="true"><defs><marker id="arrow-4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#AAB5CC"/></marker></defs><path data-route="0" class="vpn" d="M65 345 C130 290 215 290 295 345"/></svg>
+<div class="node device" data-node="0" style="left:195px;top:1050px"><img src="public/icons8/laptop.png" alt=""><span class="tag">DEVICE</span></div>
+<div class="node server" data-node="1" style="left:885px;top:1050px"><img src="public/icons8/server.png" alt=""><span class="tag">VPN SERVER</span></div><div class="pill red" data-pill="0" style="left:540px;top:780px">OUTER: VPN SERVER</div>
+<div class="pill green" data-pill="1" style="left:540px;top:1305px">INNER: SITE REQUEST</div><div class="packet " data-packet="0" style="left:540px;top:1110px">SITE REQUEST</div>
+<div class="packet secure" data-packet="1" style="left:540px;top:990px">WRAPPED</div><div class="foot"><span>FRAME 04</span><span>VPN · 04/14</span></div></div>
+<script>
+(()=>{const id='line-4',D=9.055782,M=ChannelMotion,root=document.querySelector('[data-composition-id="'+id+'"][data-width="1080"]'),routes=[...root.querySelectorAll('[data-route]')],nodes=[...root.querySelectorAll('[data-node]')],pills=[...root.querySelectorAll('[data-pill]')],packets=[...root.querySelectorAll('[data-packet]')],tl=gsap.timeline({paused:true});[...pills,...packets].forEach(el=>{el.style.marginLeft=-(el.offsetWidth/2)+'px';el.style.marginTop=-(el.offsetHeight/2)+'px';});
+M.mount(tl,D,t=>{const p=t/D;routes.forEach((el,i)=>{const reveal=Math.max(0,Math.min(1,(p-.08-i*.12)/.45));M.routeReveal(el,0,reveal);el.style.markerEnd=reveal>=.999?'url(#arrow-4)':'none';});nodes.forEach(el=>M.apply(el,{opacity:1,scale:1}));pills.forEach((el,i)=>M.apply(el,M.visibility(t,.28+i*.15,null,.32,0)));packets.forEach((el,i)=>{const enter=.38+i*.12,vis=M.visibility(t,enter,null,.28,0),route=routes[Math.min(i,routes.length-1)];if(route){let pose;if(id==='line-3'&&routes.length>1){const split=enter+(D*.82-enter)*.62,first=M.path(routes[0],M.travel(enter,split)),second=M.path(routes[1],M.travel(split,D*.82));pose=t<split?first(t):second(t);el.classList.toggle('secure',t<split);}else if(id==='line-14'&&routes.length>1){const split=enter+(D*.82-enter)*.48,first=M.path(routes[0],M.travel(enter,split)),second=M.path(routes[1],M.travel(split,D*.82));pose=t<split?first(t):second(t);}else pose=M.path(route,M.travel(enter,D*.82))(t);const bundle=id==='line-4'?(i===0?42:-42):0;el.style.left=(pose.x*3)+'px';el.style.top=(pose.y*3+bundle)+'px';}M.apply(el,{opacity:vis.opacity,blur:vis.blur,scale:vis.scale});});});
+window.__timelines=window.__timelines||{};window.__timelines[id]=tl;})();
+</script>
+</template>

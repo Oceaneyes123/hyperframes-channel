@@ -13,7 +13,8 @@ priority over a short-form runtime target. Do not truncate, split into a series
 or omit required information to meet a platform duration limit; flag any
 platform compatibility issue separately for my decision.
 
-INPUTS
+### Inputs
+
 - Topic: [TOPIC]
 - Audience: beginners with no prior knowledge
 - Single takeaway: choose the most useful beginner takeaway from the topic
@@ -27,7 +28,8 @@ INPUTS
 - Background music: off
 - Project folder: choose a descriptive new slug under videos/
 
-REFERENCE AND PREPARATION
+### Reference and preparation
+
 Read AGENTS.md, DESIGN.md, channel/CHANNEL_RECIPE.md and
 channel/EXPLAINER_REFERENCE.md. Use the relevant HyperFrames skills.
 Inspect videos/local-or-router-short/local-or-router-short.mp4 as the approved
@@ -40,10 +42,12 @@ Adapt its structure to this topic rather than copying its networking story.
 Do not copy approval records, narration audio, generated index or output video
 into the new project. Preserve unrelated files. Do not commit, push or publish.
 
-CREATIVE REQUIREMENTS
+### Creative requirements
+
 1. Teach one clear mental model. Fact-check once and retain concise sources and
-   assumptions in FACTS.md. Cover every required point, including prerequisites and
-   qualifications needed for accuracy. Map each required point to storyboard scenes.
+   assumptions in FACTS.md. Cover every required point, including prerequisites
+   and qualifications needed for accuracy. Map each required point to storyboard
+   scenes.
    Extend the runtime instead of omitting information or rushing speech.
 2. Hook the viewer with a concrete question or visible problem within 1–2 seconds.
    Show the main objects immediately; no logo intro or empty-canvas fade-in.
@@ -68,7 +72,8 @@ CREATIVE REQUIREMENTS
    camera framing. Avoid repeating the same headline/device stack. Inherit
    font tokens; never override them with Arial. Preserve old videos.
 
-SCRIPT-WRITING STYLE
+### Script-writing style
+
 - Use original, fast-paced, curiosity-driven educational storytelling. Borrow
   only broad qualities; do not imitate ZAC D films or any creator's recognizable
   voice, wording, catchphrases, jokes or scripts.
@@ -99,8 +104,10 @@ SCRIPT-WRITING STYLE
   Completeness still takes priority over a runtime target: do not rush narration
   or omit required information; extend the runtime when needed.
 
-WORKFLOW — TWO APPROVAL GATES
-Phase 1: Plan and sketch.
+### Workflow: two approval gates
+
+#### Phase 1: Plan and sketch
+
 - Create BRIEF.md, FACTS.md, SCRIPT.md, STORYBOARD.md, ICON_PLAN.json and frame.md
   using the repository templates and reference guide.
 - Keep spoken narration separate from display copy. Use one narration beat per
@@ -109,15 +116,17 @@ Phase 1: Plan and sketch.
   supports them.
 - Define each scene's starting state, causal action, ending state, required
   objects, spoken cues, estimated local-time beats and continuity into the next.
-  - Size every highlight or accent box from the measured text box (mono 32px advances
-  19.2px per character) so a box always wraps the whole value or label it marks.
+  - Size every highlight or accent box from the measured text box. At 32px,
+    monospace text advances 19.2px per character. Make each box wrap the full
+    value or label it marks.
 - Resolve production assets locally with attribution before drawing the sketches.
 - Build one inspectable board containing every scene with the actual icons.
   Verify one real icon first, then review the whole board at phone size.
 - Present the script and sketches together and wait for my approval. Do not
   synthesize final narration or build animated frames before this gate.
 
-Phase 2: Build the complete preview after approval.
+#### Phase 2: Build the complete preview after approval
+
 - Dry-run narration normalization, inspect pronunciation, then generate one
   Supertonic 3 WAV per scene. Use audio_meta.json as the canonical timing source.
 - Replace estimated timings and retime the existing storyboard action beats
@@ -133,9 +142,10 @@ Phase 2: Build the complete preview after approval.
   Fix source files or canonical metadata rather than patching generated HTML.
 - Run repository preview validation and the actual HyperFrames check. Stop and
   fix failed checks before proceeding. Inspect opening/action/result samples
-  and at least one visible midpoint per scene; compare with approved sketches. Check that
-  each scene opens on the state the previous scene ended with — a table, value or label
-  established earlier must be visible at local time 0, not blank.
+  and at least one visible midpoint per scene; compare with approved sketches.
+  Check that each scene opens on the state the previous scene ended with — a
+  table, value or label established earlier must be visible at local time 0,
+  not blank.
 - Play the complete preview with sound off and on where available. Check phone
   readability, causal motion, scene continuity and narration alignment. Do not
   claim to have listened when only audio metadata was checked.
@@ -143,14 +153,16 @@ Phase 2: Build the complete preview after approval.
   wait for my explicit approval to render. Complete all scenes and checks before
   this gate; do not stop after each scene to ask permission to continue.
 
-Phase 3: Render only after final-preview approval.
+#### Phase 3: Render only after final-preview approval
+
 - Record my actual approval, pass render-stage validation, and render the MP4.
 - Independently verify dimensions, frame rate, video/audio streams and duration
   with ffprobe; run a full decode check and inspect a frame from the actual MP4.
 - Deliver the playable video using its absolute local path, plus a brief summary
   of verified properties and any unresolved limitation. Update project status.
 
-WORKING STYLE
+### Working style
+
 Ask only questions whose answers materially change the result. If the topic is
 broad, propose a focused takeaway at the first approval gate. Choose routine
 details yourself using the reference. Keep progress updates short. Investigate
