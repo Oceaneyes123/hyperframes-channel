@@ -10,6 +10,7 @@ video. Then load only the phase guides that apply; do not load the generic
 | Script writing | `SCRIPT_GUIDE.md`, `FACTS.md`, `channel/EXPLAINER_REFERENCE.md` | build and verify guides |
 | Planning | `channel/CHANNEL_RECIPE.md`, `DESIGN.md`, `channel/EXPLAINER_REFERENCE.md` | — |
 | Storyboard and sketches | `DESIGN.md`, `MOTION.md` | build and verify guides |
+| Voice cloning | `VOICE_CLONE.md` | video workflow guides |
 | TTS and timing | `BUILD.md` audio section, `SCRIPT.md` | full storyboard |
 | One frame | `DESIGN.md`, `MOTION.md`, its scene packet | full project |
 | Assembly | `BUILD.md` assembly section | visual example |

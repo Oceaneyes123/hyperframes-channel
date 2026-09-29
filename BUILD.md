@@ -12,10 +12,16 @@ py -3 scripts\supertonic_tts.py --project videos\<project> --dry-run
 py -3 scripts\supertonic_tts.py --project videos\<project>
 ```
 
-Supertonic 3 is the default. Use `pronunciation.json` for specific terms or IP
-address style. A custom Supertonic Voice Builder JSON can be selected with
-`--voice-style`; a raw reference recording must first be converted to that JSON.
-Keep one WAV and one metadata record per scene; never concatenate them.
+All new HyperFrames narration uses the shared cloned voice at
+`.tools/supertonic3-model/voice_styles/channel-voice.json`, already generated
+from `reference/voice.wav`. Reuse it for new videos; normal narration needs
+neither WSL nor retraining. Follow `VOICE_CLONE.md` only when creating or
+correcting the clone. It owns setup, reference caches and checkpoint validation.
+Narration uses the local ONNX files and records `voice_style_sha256` in each
+scene's metadata. Narration generation stops if the shared clone is
+missing; it never falls back to a preset voice. Use `pronunciation.json`
+for specific terms or IP address style. Keep one WAV and one metadata record per
+scene; never concatenate them.
 `audio_meta.json` is canonical: it records WAV paths, normalized speech,
 measured duration, scene start and provenance. Do not present legacy metadata
 without a normalization fingerprint as normalized. Do not estimate timings

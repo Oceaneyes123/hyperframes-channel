@@ -33,7 +33,7 @@ class ValidatorTests(unittest.TestCase):
             out.setnchannels(1); out.setsampwidth(2); out.setframerate(8000); out.writeframes(b"\0" * 16000)
         prepared = prepare_narration(root, [("line-1", "Test packet.")])
         voice = {"id": "line-1", "frame": 1, "path": "line-1.wav", "duration_s": 1.0, **prepared["lines"][0], "normalization_fingerprint": prepared["normalization"]["fingerprint"]}
-        metadata = native_metadata(root, "en", [voice], lines=[("line-1", "Test packet.")], normalization=prepared["normalization"])
+        metadata = native_metadata(root, "custom:channel-voice.json", [voice], lines=[("line-1", "Test packet.")], normalization=prepared["normalization"])
         (root / "audio_meta.json").write_text(json.dumps(metadata), encoding="utf-8")
         (root / "ICON_PLAN.json").write_text(json.dumps({"icons": [{"id": "packet", "provider": "custom", "role": "system", "meaning": "packet", "style": "outline", "path": "public/icons/packet.svg", "scenes": ["line-1"]}]}), encoding="utf-8")
         (root / "review/sketches/line-1.html").write_text("sketch", encoding="utf-8")
