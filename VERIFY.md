@@ -60,6 +60,10 @@ After all scene and cut reviews pass, open the actual HyperFrames preview.
 Gate 2 is explicit user approval of that complete preview. Do not render before
 approval. Persist the approval and run render-stage validation:
 
+Render-stage validation requires `audio_meta.json` to name the shared cloned
+channel voice. For an older project, regenerate narration, review the complete
+updated preview, and record Gate 2 approval before rendering.
+
 ```powershell
 py -3 scripts\validate_project.py --project videos\<project> --stage render
 npx hyperframes render --quality high --output <name>.mp4

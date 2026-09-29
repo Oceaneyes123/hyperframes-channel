@@ -1,0 +1,121 @@
+{
+  "icons": [
+    {
+      "id": "ai-model",
+      "provider": "icons8",
+      "style": "Color",
+      "role": "model",
+      "meaning": "Claude model stand-in; no Anthropic logo or proprietary model artwork implied",
+      "color": "infrastructure",
+      "path": "public/icons8/artificial-intelligence.png",
+      "source": "https://icons8.com/icons/set/artificial-intelligence",
+      "scenes": [
+        "line-1",
+        "line-11",
+        "line-14",
+        "line-2",
+        "line-3",
+        "line-4",
+        "line-5",
+        "line-6",
+        "line-8"
+      ]
+    },
+    {
+      "id": "code",
+      "provider": "icons8",
+      "style": "Color",
+      "role": "coding-task",
+      "meaning": "multi-step coding work and one task family in the performance discussion",
+      "color": "client",
+      "path": "public/icons8/code.png",
+      "source": "https://icons8.com/icons/set/code",
+      "scenes": [
+        "line-11",
+        "line-14",
+        "line-3",
+        "line-4",
+        "line-9"
+      ]
+    },
+    {
+      "id": "document",
+      "provider": "icons8",
+      "style": "Color",
+      "role": "knowledge-task",
+      "meaning": "professional knowledge work and input/output text",
+      "color": "external",
+      "path": "public/icons8/document.png",
+      "source": "https://icons8.com/icons/set/document",
+      "scenes": [
+        "line-11",
+        "line-3",
+        "line-4",
+        "line-6"
+      ]
+    },
+    {
+      "id": "coins",
+      "provider": "icons8",
+      "style": "Color",
+      "role": "cost",
+      "meaning": "API billing and reduced typical-workload estimate",
+      "color": "success",
+      "path": "public/icons8/coins.png",
+      "source": "https://icons8.com/icons/set/coins",
+      "scenes": [
+        "line-1",
+        "line-11",
+        "line-14",
+        "line-7"
+      ]
+    },
+    {
+      "id": "shield",
+      "provider": "icons8",
+      "style": "Color",
+      "role": "safeguard",
+      "meaning": "safety classifiers and restricted-access barrier; not a guarantee of safety",
+      "color": "security",
+      "path": "public/icons8/shield.png",
+      "source": "https://icons8.com/icons/set/shield",
+      "scenes": [
+        "line-12",
+        "line-13",
+        "line-14"
+      ]
+    },
+    {
+      "id": "biology",
+      "provider": "icons8",
+      "style": "Color",
+      "role": "biology-risk",
+      "meaning": "biology capability area subject to safeguards",
+      "color": "warning",
+      "path": "public/icons8/dna-helix.png",
+      "source": "https://icons8.com/icons/set/dna-helix",
+      "scenes": [
+        "line-12"
+      ]
+    },
+    {
+      "id": "cybersecurity",
+      "provider": "icons8",
+      "style": "Color",
+      "role": "cyber-risk",
+      "meaning": "cybersecurity capability area with high-risk dual-use restrictions",
+      "color": "security",
+      "path": "public/icons8/bug.png",
+      "source": "https://icons8.com/icons/set/bug",
+      "scenes": [
+        "line-12"
+      ]
+    }
+  ],
+  "notes": [
+    "Icons8 Color PNGs were downloaded locally from img.icons8.com; each asset has a matching .source.txt attribution URL.",
+    "The AI icon is a generic model metaphor, not Claude branding.",
+    "Icons are loaded only from the project folder; no render-time network fetches.",
+    "No narration audio, music, sound effects, or generated video were copied into this project."
+  ]
+}

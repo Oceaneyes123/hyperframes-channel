@@ -1,0 +1,181 @@
+{
+  "schema": "hyperframes-channel/motion-beats@1",
+  "scenes": {
+    "line-1": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "3a104435534a2aec13f6cce7624a77dfa91961e64b7a9e41c1fb9cb781402e48",
+      "cues": {
+        "model": 1.08,
+        "work": 2.1,
+        "less": 3.16
+      }
+    },
+    "line-2": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "39eff91ba8202ad6ac45ea00e24209d3db32058af0a4bbb08bab970cdc723b10",
+      "cues": {
+        "announced": 2.72,
+        "model": 6.0,
+        "family": 7.6
+      }
+    },
+    "line-3": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "81ff0a70a63d32adf3c04c264565c2eb7fee94a821ed1baef087f74146c1c8e4",
+      "cues": {
+        "coding": 1.4,
+        "knowledge": 2.62,
+        "tools": 5.24,
+        "result": 8.66
+      }
+    },
+    "line-4": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "73628369148780f7eab00207e730f7e3fc2b81a6b8e5b5bdc05c56b6100b8abf",
+      "cues": {
+        "gains": 1.42,
+        "coding": 2.9,
+        "computer": 4.1,
+        "company-reported": 7.38,
+        "benchmark": 8.42,
+        "professional": 5.38
+      }
+    },
+    "line-5": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "da8f2bb8c5ae5b8235110e34ee9f4fd9c12de4e3b39394c51f89b64ee6a1ab7c",
+      "cues": {
+        "test": 1.84,
+        "real-world": 4.64,
+        "score": 6.2,
+        "promise": 6.94
+      }
+    },
+    "line-6": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "5dc67b861d258654849f3b1fee4e119c510a1caa7f0e392240da396d1ea397a1",
+      "cues": {
+        "chunks": 2.58,
+        "input": 5.64,
+        "output": 7.28,
+        "reply": 8.34,
+        "back": 4.56
+      }
+    },
+    "line-7": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "04190f2fa2ee3b5dded9b131eddf78eeb4f4ad6f37920518fd83c60f4a33cf39",
+      "cues": {
+        "input-price": 3.72,
+        "output-price": 6.66,
+        "savings": 14.78,
+        "default-settings": 13.04,
+        "caveat": 14.78
+      }
+    },
+    "line-8": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "49a0def388c9ccc236c84ca1cc8a33aa8e7de1e747c371f42f6ef56b72ec6a4a",
+      "cues": {
+        "maximum-effort": 3.96,
+        "score": 5.36,
+        "index": 8.92,
+        "six-of-ten": 10.32,
+        "ranking": 15.18
+      }
+    },
+    "line-9": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "da783697c18d9ebd3d103393d068a795a604612b82b73f8d71cae800f01fc190",
+      "cues": {
+        "java-test": 1.42,
+        "pass-rate": 3.4,
+        "tasks": 9.66,
+        "bug-rate": 11.2,
+        "findings-down": 14.06
+      }
+    },
+    "line-10": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "ff5353b436a34b8af021336120ac7fdf4ef2c4b888c362a392581fec33cf2b8d",
+      "cues": {
+        "tasks": 3.22,
+        "days": 4.8,
+        "modest": 8.98,
+        "review": 12.72,
+        "alignment": 16.48
+      }
+    },
+    "line-11": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "02b7d4911f1528f350d9bdaea23cfc01a49b515fb8e4835e9ad46712e570976d",
+      "cues": {
+        "narrow-slice": 4.46,
+        "not-verified": 8.48,
+        "performance": 9.96,
+        "cost-claim": 10.52
+      }
+    },
+    "line-12": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "32e9274fef424055c0a1a190587b71fad1d2f0b655a8bc5d4a5ed0f8f37d0153",
+      "cues": {
+        "biology": 3.32,
+        "cybersecurity": 4.36,
+        "classifiers": 7.04,
+        "source-code": 14.4,
+        "allowed": 15.24,
+        "vetted-access": 16.54
+      }
+    },
+    "line-13": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "74197b809963152b142dc29b3e2c9daaa59669e9b4340375d9213da8a3e00ec9",
+      "cues": {
+        "verified": 0.0,
+        "program-expands": 4.4,
+        "barriers": 7.22,
+        "risk": 10.08
+      }
+    },
+    "line-14": {
+      "source": "word-alignment",
+      "method": "faster-whisper base; English; CPU int8; word_timestamps=true; transcripts aligned from each generated WAV; matching script anchors only",
+      "review_status": "machine-aligned; ASR has proper-name and compound-word transcription variance; listening audit pending",
+      "audio_sha256": "ec97a1decf170d71cd6034258cc915cfc22caadbf6847bba0bad26f7283c7cdf",
+      "cues": {
+        "announcement": 0.82,
+        "results": 3.72,
+        "lower-cost": 6.14,
+        "estimate": 8.28,
+        "misuse": 11.6
+      }
+    }
+  }
+}
