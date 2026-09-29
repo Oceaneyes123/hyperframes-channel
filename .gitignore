@@ -14,7 +14,8 @@ __pycache__/
 *.py[cod]
 
 artifacts/
-modeks/
+models/
+**/review/
 
 # Downloaded Supertonic 3 model files
 .tools/supertonic3-model/
