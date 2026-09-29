@@ -1,64 +1,77 @@
-# CORE WRITING RULES & TONE
+# Explainer script guidance
 
-1. **Tone:** Neutral, objective, urgent, precise, and slightly ominous. The voiceover operates like an unflinching technical narrator revealing the hidden, invisible mechanics running underneath everyday internet interactions.
-2. **Perspective:** Second-person ("When you tap...", "If you send...") or direct physical framing of hardware/data ("As packet A leaves your router...").
-3. **Pacing:** Ultra-fast, dense, and cause-and-effect driven. Zero fluff, zero greetings ("Hey guys"), and zero channel intros/outros.
-4. **Physicalizing the Digital (CRITICAL RULE):** Never use abstract descriptions like "it encrypts data safely" or "the server processes the request." Instead, describe physical animation actions: *"it scrambles your message into an unreadable key before shoving it through a sealed, steel tunnel."*
-5. **Word Choice:** Swap passive/generic words for mechanical, high-action verbs:
-   - Instead of *data travels* $\rightarrow$ **shoots, blasts, flows, gets funneled**
-   - Instead of *blocks traffic* $\rightarrow$ **slams shut, chokes off, drops instantly**
-   - Instead of *encrypts* $\rightarrow$ **locks inside a steel vault, scrambles into gibberish**
-   - Instead of *sends a request* $\rightarrow$ **blasts a cry, knocks on the door, hands over a token**
+This file owns storytelling, retention, curiosity, narration and sentence
+quality. `SCRIPT.md` owns spoken lines and display copy; `FACTS.md` owns sourced
+claims. `MOTION.md` owns attention beats and visual direction. Use
+`channel/templates/SCRIPT.md` for output, with one `## Line N` per scene.
 
----
+## Hook-to-payoff progression
 
-# SCRIPT STRUCTURE (THE 4-STAGE FORMULA)
+Default to **Hook → Setup → Problem / Question → Flow → Twist / Important Detail → Payoff** when appropriate:
 
-Every script MUST follow this exact 4-part progression:
+1. **Hook:** give the viewer an immediate reason to want an answer. Open on a
+   concrete question, unexpected behavior or visible situation.
+2. **Setup:** establish only the objects and conditions needed to understand it.
+3. **Problem / Question:** make the missing explanation clear.
+4. **Flow:** reveal the mechanism through visible cause and effect, one idea at
+   a time. Follow an object or state through the explanation.
+5. **Twist / Important Detail:** reveal an accurate qualification, contrast or
+   misconception that changes understanding. Do not invent a twist.
+6. **Payoff:** answer the opening question with a visible outcome or useful
+   mental model. Finish when that answer lands.
 
-### 1. The 3-Second Hook (High-Stakes Digital/Physical Action)
-* **Rule:** NO greetings ("Hey guys"), NO questions starting with "Did you know?", and NO channel intros.
-* **Length:** 1 to 2 short sentences (under 12–15 words total).
-* **Hook Archetype Patterns (SELECT ONE):**
-  - **Pattern A: Vulnerability Exposure** $\rightarrow$ *"The second you [common digital action] without [security layer], anyone on [environment] can instantly [visceral threat action]..."*
-  - **Pattern B: Physical Cable & Hardware** $\rightarrow$ *"If you [physical action to hardware], the [light/signal/electricity] inside [physical mechanical breakdown]..."*
-  - **Pattern C: Network Collision & Chaos** $\rightarrow$ *"If two [network entities] try to [action] at the exact same nanosecond, [system breakdown]..."*
-  - **Pattern D: Under the Hood Split-Second** $\rightarrow$ *"Before [everyday visual result] appears on your screen, your browser has to [secret 3-step handshake/lookup]..."*
-  - **Pattern E: Imposter / Spoofing** $\rightarrow$ *"You typed in the exact address for [popular site], but a poisoned [protocol component] secretly redirected your data to..."*
+These are narrative functions, not six required scenes or headings. Combine
+functions or use a simpler question → demonstration → answer when appropriate.
+A section may span scenes; a scene may contain several attention beats. Each
+major section should answer something it raised. Let that answer open a natural
+next question where useful; resolve the remaining question at the end.
 
-### 2. The Internal Network Reaction (Physicalized Data Flow)
-* **Rule:** Step-by-step physical breakdown of the request/response loop or threat escalation.
-* **Mechanism:** Track the digital packet or signal moving through hardware (device $\rightarrow$ local router $\rightarrow$ ISP $\rightarrow$ destination server). Use mechanical verbs (*assigns, handshakes, routes, blocks, scrambles*).
+## Curiosity without manufactured stakes
 
-### 3. The Protocol / Security Mechanism
-* **Rule:** Reveal the underlying protocol or physical principle doing the work (DHCP, DNS, TLS/HTTPS, AES, Fiber Reflection, BGP).
-* **Mechanism:** Zoom in visually (e.g., microscopic view, internal router cross-section, server vault cutaway) to reveal the hidden mechanism like an engine.
+Use an unanswered question, unexpected behavior, visible problem, cause and
+effect, contrast, transformation, misconception or surprising but accurate
+consequence. Match the tone to the topic. Do not manufacture danger, exaggerate
+consequences or force an ominous, threatening or dramatic voice. Security risks
+need sourced conditions and scope, not universal threat claims.
 
-### 4. The Abrupt Resolution
-* **Rule:** End immediately once the packet arrives safely, the breach occurs, or the explanation finishes.
-* **Mechanism:** NO call-to-actions ("Like and subscribe"), NO "Thanks for watching." Let the video loop naturally.
+Keep gaps small and answerable. Reveal enough for the viewer to predict or
+question the next action, then show the answer. Avoid withholding basic context
+or repeatedly promising an explanation without delivering it.
 
----
+## Sentence quality and narration
 
-# DO'S AND DON'TS
+Every sentence must do at least one of these:
 
-| DO | DON'T |
-| :--- | :--- |
-| Use active, physical verbs (*slice, rupture, lock, expand, crush, blast*). | Use vague terms (*it gets bad, things happen, data is sent*). |
-| Focus on internal cross-sections, cutaways, and micro-views. | Include broad historical background or unnecessary lore. |
-| Keep sentence structures short, direct, and under 15 words per sentence. | Use complex technical jargon without an immediate visual metaphor. |
-| End abruptly on the final outcome or destination step. | Ask the audience to like, subscribe, or comment. |
+- Advance the explanation.
+- Create a useful curiosity gap.
+- Resolve or pay off an earlier question.
 
----
+Remove filler, repeated setup, redundant explanations and sentences that serve
+none of those goals. Skip greetings, channel branding and promotional outros.
+Use short, natural, conversational sentences, active voice and contractions
+where they sound right. Explain one idea at a time; use concrete examples.
+Keep pace brisk through concise wording and clear progression, not dense or
+rushed delivery. Cover all required information and extend runtime as needed;
+there is no fixed word count or duration.
 
-# OUTPUT FORMAT FOR GENERATED SCRIPTS
+Prefer showing an idea visually before introducing its formal technical name.
+Pair every spoken line with a visible action, state, comparison or result that
+it describes or clarifies, including deliberate comprehension pauses. Design
+words and visuals together using the icon-first language in `DESIGN.md`.
+Rewrite a line whose meaning cannot be shown clearly. Use precise verbs such
+as compare, route, change or reject rather than forcing violent metaphors.
+Physical metaphors must preserve the mechanism: an encrypted message does not
+become a key, and a drawn tunnel does not imply a physical private cable.
 
-When asked to generate a script, output in the following clean layout:
+Keep one coherent narration passage per scene, with as many short sentences
+and meaningful attention beats as its explanation needs. Keep display copy
+separate from narration. Add concise visual cues for planning; do not require
+3D animation or put production instructions into the spoken text.
 
-**Topic:** [Networking / Cybersecurity Concept]
-**Applied Hook Pattern:** [e.g., Pattern A: Vulnerability Exposure]
-**Estimated Duration:** [30–45 Seconds]
-**Word Count:** [75–100 Words]
+Write original educational narration. Use only broad storytelling qualities
+from influences; do not imitate ZAC D films or another creator's recognizable
+voice, wording, catchphrases, jokes or scripts.
 
-**VOICEOVER SCRIPT & ANIMATION CUES:**
-[The continuous voiceover script text, broken into natural speech beats with concise [3D ANIMATION CUES in brackets] describing explicit physical/mechanical motions for the 3D animator.]
+Before handoff, trace the hook, section answers and final payoff; remove any
+sentence that fails the quality rule. `channel/EXPLAINER_REFERENCE.md` supplies
+a generic worked example; `VERIFY.md` owns the complete quality review.

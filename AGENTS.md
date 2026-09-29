@@ -7,9 +7,9 @@ video. Then load only the phase guides that apply; do not load the generic
 | Phase | Read | Skip by default |
 | --- | --- | --- |
 | Design critique | `DESIGN.md` and selected frames | workflow guides |
-| Script writing | `SCRIPT_GUIDE.md`, `FACTS.md`, `channel/EXPLAINER_REFERENCE.md` | build and verify guides |
-| Planning | `channel/CHANNEL_RECIPE.md`, `DESIGN.md`, `channel/EXPLAINER_REFERENCE.md` | — |
-| Storyboard and sketches | `DESIGN.md`, `MOTION.md` | build and verify guides |
+| Script writing | `SCRIPT_GUIDE.md`, `FACTS.md`, `channel/templates/SCRIPT.md` | build and verify guides |
+| Planning | `channel/CHANNEL_RECIPE.md`, `SCRIPT_GUIDE.md`, `DESIGN.md`, `MOTION.md` | build and verify guides |
+| Storyboard and sketches | `DESIGN.md`, `MOTION.md`, `channel/templates/STORYBOARD.md` | build and verify guides |
 | Voice cloning | `VOICE_CLONE.md` | video workflow guides |
 | TTS and timing | `BUILD.md` audio section, `SCRIPT.md` | full storyboard |
 | One frame | `DESIGN.md`, `MOTION.md`, its scene packet | full project |
@@ -20,12 +20,13 @@ video. Then load only the phase guides that apply; do not load the generic
 
 `SCRIPT_GUIDE.md` guides script writing; `SCRIPT.md` remains the source of
 truth for the spoken lines. `DESIGN.md` owns visual identity and layout.
-`MOTION.md` owns scene rhythm and transitions. `channel/CHANNEL_RECIPE.md`
-owns phases, handoffs and approval gates. `BUILD.md` owns audio, frame assembly
+`MOTION.md` owns attention beats, motion direction, rhythm and continuity.
+`channel/CHANNEL_RECIPE.md` owns phases, handoffs and approval gates.
+`BUILD.md` owns audio, frame assembly
 and commands. `VERIFY.md` owns checks, evidence and rendering.
-`channel/EXPLAINER_REFERENCE.md` is the short-form script and worked-example
-reference; use it when planning a new narrated short, and skip it in unrelated
-phases.
+`channel/EXPLAINER_REFERENCE.md` is an optional generic worked example. New
+videos use permanent references, templates, workflow and topic-specific research
+and assets; no previous video project or exported media is required.
 
 Keep the source of truth singular: `FACTS.md` for sourced claims, `SCRIPT.md`
 for spoken lines, `audio_meta.json` for measured timing, `STORYBOARD.md` for
@@ -46,32 +47,15 @@ icon sketches, then the complete preview before rendering. “Continue,” “ne
 step,” and “do remaining” advance to the next gate. A passing check is not
 approval to render. Keep local edits uncommitted and preserve unrelated work.
 Never commit or push unless the user explicitly asks. Do not shorten required
-content to match the duration of a reference video; extend runtime as needed.
+content to meet a runtime target; extend runtime as needed.
 
-## Narration style
+## Creative guidance routing
 
-Write original, fast-paced, curiosity-driven educational narration. Keep any
-influence at the level of broad storytelling qualities; do not imitate ZAC D
-films or any other creator's recognizable voice, wording, catchphrases, jokes
-or scripts.
-Start immediately with a strong hook, question, surprising fact or familiar
-situation. Skip greetings, branding, slow setup and filler. Keep sentences
-short, natural, conversational and easy to say. Explain one idea at a time,
-prefer active voice and use contractions naturally. Use concrete examples;
-show the idea visually before naming a technical term.
-
-Build a cause-and-effect chain and reveal it progressively. Leave small,
-answerable information gaps when the next visual can resolve them; use a natural
-transition when it helps. Every spoken line must match something visible
-happening. Keep one narration beat per scene, while allowing several short
-sentences in that beat when one continuous visual action supports them. Design
-words and visuals together: if a line cannot be shown with the existing
-icon-first language (primarily colored Icons8 assets, with Font Awesome for
-supporting symbols), rewrite it. End by paying off the opening hook; skip a
-generic conclusion unless it adds a useful final idea. Stay technically correct
-and cover all required information; achieve pace with concise wording, not
-rushed delivery or omissions. Use the hook-to-payoff pattern in
-`channel/EXPLAINER_REFERENCE.md` when it fits.
+Use `SCRIPT_GUIDE.md` for narrative structure, curiosity, tone and sentence
+quality. Use `MOTION.md` for attention beats, motion lifecycle and narration
+cue intent; `channel/MOTION_API.md` owns measured cue schema and runtime API.
+Use the storyboard template to record the plan and `VERIFY.md` for quality
+review. Keep creative rules in their owners rather than duplicating them here.
 
 ## CodeGraph
 
@@ -80,6 +64,5 @@ reading files to locate code. Prefer the `codegraph_explore` MCP tool; when it
 is unavailable, use `codegraph explore "<question>"`. If the directory is
 absent, skip CodeGraph.
 
-Adapt the reference's causal teaching pattern; never copy its narration,
-approval records, or generated output into a new project. Existing v1 videos
-remain on the frozen legacy design until explicitly redesigned.
+Existing v1 videos remain on the frozen legacy design until explicitly
+redesigned. Approval records apply only to the project and preview reviewed.

@@ -83,6 +83,7 @@ import motion.css after styles.css. See `channel/MOTION_API.md` for the API.
 Attach pure drawing to one paused GSAP timeline with `ChannelMotion.mount`;
 the property setter works under callback-suppressed seeking.
 
-The HTTPS generator's `--motion-pilot` rebuilds only scenes 2, 4 and 7. Normal
-regeneration respects the opt-in too. Edit motion_pilot.py and regenerate;
-do not patch assembled HTML. Keep narration audio unchanged.
+If the target project uses a scene generator, edit that project's source and
+regenerate its frames before assembly. Do not require another project's pilot
+or generator. Preserve measured narration unless an audio change is requested;
+changed WAVs require new cue alignment and preview review.
