@@ -12,3 +12,10 @@ videos/**/renders/
 videos/**/node_modules/
 __pycache__/
 *.py[cod]
+
+artifacts/
+modeks/
+
+# Downloaded Supertonic 3 model files
+.tools/supertonic3-model/
+.tools/supertonic-voice-cloning/

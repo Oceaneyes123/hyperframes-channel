@@ -123,6 +123,8 @@ def _audio(project: Path, errors: list[str], v2: bool, stage: str):
         return
     data = _json(path, errors, "audio_meta.json")
     if not isinstance(data, dict): errors.append("audio_meta.json must be an object"); return
+    if stage == "render" and data.get("voice") != "custom:channel-voice.json":
+        errors.append("render requires narration generated with the shared cloned channel voice")
     scenes, voices = data.get("scenes", []), data.get("voices", [])
     # v2 design changes do not fork the stable per-scene narration schema.
     schema = "hyperframes-channel/narration@1"

@@ -1,10 +1,15 @@
 """Generate per-scene Supertonic 3 narration for a HyperFrames project."""
 
 from __future__ import annotations
-import argparse, json, re, wave
+import argparse, hashlib, json, re, wave
 from pathlib import Path
 from typing import Any
 from narration_text import prepare_narration
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+CHANNEL_VOICE_STYLE = (
+    REPO_ROOT / ".tools" / "supertonic3-model" / "voice_styles" / "channel-voice.json"
+)
 
 
 def narration_lines(script: Path) -> list[tuple[str, str]]:
@@ -168,10 +173,6 @@ def main() -> None:
     parser.add_argument("--project", type=Path, default=Path.cwd())
     parser.add_argument("--script", type=Path)
     parser.add_argument("--out", type=Path)
-    parser.add_argument("--voice", default="M1")
-    parser.add_argument(
-        "--voice-style", type=Path, help="Supertonic Voice Builder JSON style"
-    )
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--metadata-only", action="store_true")
     parser.add_argument("--sync-index", action="store_true")
@@ -186,12 +187,8 @@ def main() -> None:
             json.dumps(
                 {
                     "project": str(project),
-                    "voice": (
-                        f"custom:{args.voice_style.name}"
-                        if args.voice_style
-                        else args.voice
-                    ),
-                    "voice_style": str(args.voice_style) if args.voice_style else None,
+                    "voice": f"custom:{CHANNEL_VOICE_STYLE.name}",
+                    "voice_style": str(CHANNEL_VOICE_STYLE),
                     "out": str(out),
                     **prepared,
                 },
@@ -226,14 +223,16 @@ def main() -> None:
         out.mkdir(parents=True, exist_ok=True)
         from supertonic import TTS
 
-        tts = TTS(auto_download=True)
-        if args.voice_style:
-            voice_style_path = args.voice_style.resolve()
-            style = tts.get_voice_style_from_path(str(voice_style_path))
-            metadata_voice = f"custom:{voice_style_path.name}"
-        else:
-            style = tts.get_voice_style(voice_name=args.voice)
-            metadata_voice = args.voice
+        voice_style_path = CHANNEL_VOICE_STYLE
+        if not voice_style_path.is_file():
+            raise FileNotFoundError(
+                f"Channel voice clone is missing: {voice_style_path}. "
+                "Create it with the Supertonic voice-cloning command in BUILD.md."
+            )
+        tts = TTS(model_dir=CHANNEL_VOICE_STYLE.parents[1], auto_download=False)
+        style = tts.get_voice_style_from_path(str(voice_style_path))
+        style_sha256 = hashlib.sha256(voice_style_path.read_bytes()).hexdigest()
+        metadata_voice = f"custom:{voice_style_path.name}"
         manifest = []
         for record in prepared["lines"]:
             wav, _duration = tts.synthesize(
@@ -248,6 +247,7 @@ def main() -> None:
                     "id": record["id"],
                     "path": str(path.relative_to(project)).replace("\\", "/"),
                     "duration_s": measured_duration,
+                    "voice_style_sha256": style_sha256,
                     **{k: record[k] for k in ("original_text", "spoken_text")},
                     "normalization_fingerprint": prepared["normalization"][
                         "fingerprint"
@@ -260,7 +260,7 @@ def main() -> None:
         else prepared["normalization"]
     )
     metadata_voice = (
-        existing.get("voice", args.voice) if args.metadata_only else metadata_voice
+        existing.get("voice", "") if args.metadata_only else metadata_voice
     )
     metadata = native_metadata(
         project,
