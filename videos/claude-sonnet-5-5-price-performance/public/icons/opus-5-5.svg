@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title id="title">Opus 5.5 model token</title>
+  <desc id="desc">Original amber technical token, larger and more layered than the Sonnet token.</desc>
+  <defs>
+    <linearGradient id="shell" x1=".08" y1="0" x2=".88" y2="1"><stop stop-color="#fff0ad"/><stop offset=".46" stop-color="#e8ac50"/><stop offset="1" stop-color="#935a36"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#473827"/><stop offset="1" stop-color="#191d30"/></linearGradient>
+    <filter id="shadow" x="-.2" y="-.2" width="1.4" height="1.5"><feGaussianBlur in="SourceAlpha" stdDeviation="12"/><feOffset dy="14"/><feComponentTransfer><feFuncA type="linear" slope=".32"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <path d="M210 20 365 110v200l-155 90L55 310V110z" fill="url(#shell)"/>
+    <path d="m210 45 126 73v164l-126 73-126-73V118z" fill="url(#face)" stroke="#ffe6a3" stroke-opacity=".76" stroke-width="3"/>
+    <path d="M210 45v73l126 72M84 118l126 72 126-72M84 282l126-92 126 92M210 190v165" fill="none" stroke="#f3bd68" stroke-opacity=".48" stroke-width="3"/>
+    <path d="m130 142 47 28m66 0 47-28M130 239l47-27m66 0 47 27" fill="none" stroke="#fff0bf" stroke-width="5" stroke-linecap="round"/>
+    <circle cx="130" cy="142" r="13" fill="#fff0bf"/><circle cx="290" cy="142" r="13" fill="#ffe09b"/>
+    <circle cx="177" cy="170" r="12" fill="#e8ac50"/><circle cx="243" cy="170" r="12" fill="#e8ac50"/>
+    <circle cx="210" cy="190" r="27" fill="#fff5d1"/><circle cx="210" cy="190" r="12" fill="#bb783b"/>
+    <circle cx="130" cy="239" r="13" fill="#ffe09b"/><circle cx="290" cy="239" r="13" fill="#fff0bf"/>
+    <circle cx="177" cy="212" r="12" fill="#e8ac50"/><circle cx="243" cy="212" r="12" fill="#e8ac50"/>
+    <path d="m210 71 92 53v120l-92 54-92-54V124z" fill="none" stroke="#fff0bf" stroke-opacity=".22" stroke-width="2"/>
+  </g>
+</svg>

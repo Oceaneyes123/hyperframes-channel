@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title desc">
+  <title id="title">Knowledge-work artifact</title>
+  <desc id="desc">Briefcase carrying a finished report and a small chart.</desc>
+  <rect x="92" y="135" width="236" height="210" rx="27" fill="#6e55bd"/>
+  <path d="M158 135v-29a21 21 0 0 1 21-21h62a21 21 0 0 1 21 21v29" fill="none" stroke="#cbbcff" stroke-width="18"/>
+  <rect x="126" y="99" width="168" height="210" rx="17" fill="#f5f7ff"/>
+  <path d="M153 141h93m-93 24h111m-111 24h82" stroke="#7e879c" stroke-width="9" stroke-linecap="round"/>
+  <path d="M156 263v-25m31 25v-48m31 48v-35m31 35v-67" stroke="#63d69a" stroke-width="15" stroke-linecap="round"/>
+  <path d="M92 210h236v50H92z" fill="#8e72df"/>
+  <path d="M92 231h236" stroke="#d1c4ff" stroke-width="4" stroke-dasharray="9 9"/>
+  <rect x="182" y="215" width="56" height="36" rx="9" fill="#f5b94d"/>
+  <circle cx="210" cy="233" r="8" fill="#473827"/>
+</svg>

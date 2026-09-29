@@ -1,0 +1,171 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "custom:channel-voice.json",
+  "timeline_duration_s": 114.38149659863946,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 7.1053061224489795,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "A flagship can do more. But how much of that extra capability do everyday tasks actually need?",
+      "spoken_text": "A flagship can do more. But how much of that extra capability do everyday tasks actually need?",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 8.777142857142858,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Choosing isn't just picking the smartest model. Response time, repeated tokens, and retries push back on every real task.",
+      "spoken_text": "Choosing isn't just picking the smartest model. Response time, repeated tokens, and retries push back on every real task.",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 13.514013605442177,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Anthropic says Sonnet 5.5 generates output more than thirty percent faster than Sonnet 5. That's generation speed, not a promise that every whole task finishes that much sooner.",
+      "spoken_text": "Anthropic says Sonnet 5.5 generates output more than thirty percent faster than Sonnet 5. That's generation speed, not a promise that every whole task finishes that much sooner.",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 22.569795918367348,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Those list rates match Sonnet 5 and are half of Opus 5.5's. Anthropic says fewer tokens can lower task cost by up to thirty percent. In CodeRabbit's 44-review run, Sonnet 5.5 model calls averaged forty-six cents per review versus a dollar sixteen for Sonnet 5; scoring was still pending.",
+      "spoken_text": "Those list rates match Sonnet 5 and are half of Opus 5.5's. Anthropic says fewer tokens can lower task cost by up to thirty percent. In CodeRabbit's 44-review run, Sonnet 5.5 model calls averaged forty-six cents per review versus a dollar sixteen for Sonnet 5; scoring was still pending.",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 13.653333333333334,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "On CursorBench's multi-file coding tasks, Sonnet 5.5 scored fifty-five point five percent, up from Sonnet 5's thirty-four point one, and close to Opus at fifty-seven point eight.",
+      "spoken_text": "On CursorBench's multi-file coding tasks, Sonnet 5.5 scored fifty-five point five percent, up from Sonnet 5's thirty-four point one, and close to Opus at fifty-seven point eight.",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 10.727619047619047,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "On one knowledge-work test, Sonnet scored eighteen forty-four, just two points behind Opus. A close score here doesn't make the models interchangeable.",
+      "spoken_text": "On one knowledge-work test, Sonnet scored eighteen forty-four, just two points behind Opus. A close score here doesn't make the models interchangeable.",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 15.952108843537415,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "CodeRabbit's thirteen hardest review cases show the other side: Opus caught eight known bugs at standard effort, to Sonnet's six, and ten at max. It's a small, specific test, but difficult judgment can justify the premium.",
+      "spoken_text": "CodeRabbit's thirteen hardest review cases show the other side: Opus caught eight known bugs at standard effort, to Sonnet's six, and ten at max. It's a small, specific test, but difficult judgment can justify the premium.",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 22.0821768707483,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "So the case for Sonnet 5.5 is the combination: strong results on selected coding and knowledge-work tests, faster output, and lower operating cost than Opus. For well-scoped everyday work, that's a compelling mid-range value. For open-ended work where the hardest judgment matters, choose Opus.",
+      "spoken_text": "So the case for Sonnet 5.5 is the combination: strong results on selected coding and knowledge-work tests, faster output, and lower operating cost than Opus. For well-scoped everyday work, that's a compelling mid-range value. For open-ended work where the hardest judgment matters, choose Opus.",
+      "normalization_fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718",
+      "frame": 8
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 7.1053061224489795
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 7.1053061224489795,
+      "duration_s": 8.777142857142858
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 15.882448979591837,
+      "duration_s": 13.514013605442177
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 29.396462585034016,
+      "duration_s": 22.569795918367348
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 51.96625850340136,
+      "duration_s": 13.653333333333334
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 65.6195918367347,
+      "duration_s": 10.727619047619047
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 76.34721088435374,
+      "duration_s": 15.952108843537415
+    },
+    {
+      "index": 8,
+      "id": "line-8",
+      "src": "compositions/frames/line-8.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 92.29931972789116,
+      "duration_s": 22.0821768707483
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "fda97688540dfa6bda1700a1faaeb451e085d91b7c4e2b9ef0c4a4e38be99718"
+  }
+}

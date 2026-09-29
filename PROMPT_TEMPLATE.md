@@ -1,17 +1,16 @@
 # Repeatable visual explainer prompt
 
-Replace `[TOPIC]` below, optionally edit the other inputs, then paste the entire
-prompt block into a new task in this repository. Defaults are ready to use.
-This template works with any model; the review checks still determine quality.
+Replace `[TOPIC]`, optionally edit the inputs, then paste the prompt block into
+a new task in this repository. Authoritative references control quality; no
+previous video project is required.
 
 ## Copy this prompt
 
 ```text
-Create a polished, highly visual narrated explainer for YouTube Shorts and
-Facebook/Instagram Reels in this HyperFrames repository. Completeness takes
-priority over a short-form runtime target. Do not truncate, split into a series
-or omit required information to meet a platform duration limit; flag any
-platform compatibility issue separately for my decision.
+Create a polished narrated explainer for YouTube Shorts and Facebook/Instagram
+Reels in this HyperFrames repository. Completeness takes priority over runtime.
+Do not truncate, split into a series or omit required information for a platform
+limit; report compatibility separately for my decision.
 
 ### Inputs
 
@@ -19,168 +18,100 @@ platform compatibility issue separately for my decision.
 - Audience: beginners with no prior knowledge
 - Single takeaway: choose the most useful beginner takeaway from the topic
 - Language: English
-- Duration: no fixed limit; use as much time and as many scenes as required
+- Duration: no fixed limit; cover all required information at a natural pace
 - Source material: research authoritative sources if none are supplied
 - Required information: [LIST REQUIRED POINTS, or derive a complete coverage checklist from the topic and source material]
-- Exclude: tangents, jargon without explanation, promotional intro/outro
+- Exclude: tangents, unexplained jargon, promotional intro/outro
 - Captions: off
 - Sound effects: off
 - Background music: off
 - Project folder: choose a descriptive new slug under videos/
 
-### Reference and preparation
+### References and creative direction
 
-Read AGENTS.md, DESIGN.md, channel/CHANNEL_RECIPE.md and
-channel/EXPLAINER_REFERENCE.md. Use the relevant HyperFrames skills.
-Inspect videos/local-or-router-short/local-or-router-short.mp4 as the approved
-quality reference, plus its frame.md, storyboard and the one or two source
-frames most relevant to this topic. If video inspection is unavailable, inspect
-representative frames and say what you actually verified.
+Read AGENTS.md for phase routing. SCRIPT_GUIDE.md owns narrative structure,
+curiosity, tone and sentence quality. DESIGN.md owns visual identity. MOTION.md
+owns attention beats, lifecycle, continuity, camera and rhythm. Use
+channel/CHANNEL_RECIPE.md and channel/templates/ for production and artifacts;
+BUILD.md and VERIFY.md own build and checks. Consult channel/MOTION_API.md for
+shared motion and measured cue contracts. channel/EXPLAINER_REFERENCE.md is an
+optional generic example, not a required prior project.
 
-Reuse the reference's visual clarity, scale, continuity and causal animation.
-Adapt its structure to this topic rather than copying its networking story.
-Do not copy approval records, narration audio, generated index or output video
-into the new project. Preserve unrelated files. Do not commit, push or publish.
-
-### Creative requirements
-
-1. Teach one clear mental model. Fact-check once and retain concise sources and
-   assumptions in FACTS.md. Cover every required point, including prerequisites
-   and qualifications needed for accuracy. Map each required point to storyboard
-   scenes.
-   Extend the runtime instead of omitting information or rushing speech.
-2. Hook the viewer with a concrete question or visible problem within 1–2 seconds.
-   Show the main objects immediately; no logo intro or empty-canvas fade-in.
-3. Make the explanation understandable with sound off. Use real objects, routes,
-   comparisons and state changes. Narration adds meaning; it does not compensate
-   for missing visual explanation.
-4. Use large local icons and sparse text: native 1080x1920 at 30 fps, important
-   content inside x72..936/y180..1600, 2–5 meaningful objects per scene, primary
-   icons around 240–300px or larger where appropriate, headline at most 6 words,
-   labels 1–4 words and about 16 visible words. Follow DESIGN.md for colors and
-   spacing. Keep technical values readable and connectors clear of labels.
-5. Make motion explain cause and effect: move an object through a process,
-   highlight a decision, change one condition, then show the resulting outcome.
-   Entrances and decorative pulses are not explanatory action. Flag unexplained
-   static holds over 3 seconds. Do not add constant motion just to look busy.
-6. Preserve object identity, semantic colors and positions across adjacent scenes.
-   End each scene in a state that the next scene can inherit. Finish by visually
-   reinforcing the takeaway, without introducing another concept.
-7. Opt into channel/motion.js v1 for new v2 scenes. Describe objects, target
-   states, SVG paths and named audio cues using the shared primitives. Use
-   restrained spring personalities, persistent state changes and purposeful
-   camera framing. Avoid repeating the same headline/device stack. Inherit
-   font tokens; never override them with Arial. Preserve old videos.
-
-### Script-writing style
-
-- Use original, fast-paced, curiosity-driven educational storytelling. Borrow
-  only broad qualities; do not imitate ZAC D films or any creator's recognizable
-  voice, wording, catchphrases, jokes or scripts.
-- Start immediately with a strong curiosity hook, surprising fact, question or
-  relatable situation. Skip greetings, channel branding, slow introductions and
-  setup that does not advance the explanation.
-- Write short, natural spoken sentences in a conversational voice. Explain one
-  idea at a time, prefer active voice, use contractions naturally and avoid
-  textbook definitions. Make the script easy to understand without an IT
-  background while keeping every claim technically correct.
-- Prefer concrete examples. Show the idea with the icons and action first, then
-  introduce its technical name. Tell the explanation through visible cause and
-  effect: this happens, which causes this, so this happens. Reveal information
-  progressively and use small, answerable curiosity gaps or natural transitions
-  when they help the next visual land.
-- Make every narration line correspond to something visible happening on
-  screen. Plan words and visuals together. If a line cannot be represented
-  clearly with the existing icon-first language—primarily colored Icons8 assets,
-  with Font Awesome for supporting symbols—rewrite the line.
-- Keep one narration beat per scene. A beat may contain multiple short spoken
-  sentences when they describe one continuous visual action. End with a payoff
-  that answers the hook; omit generic conclusions unless they improve the
-  ending.
-- Use the Hook → Setup → Problem / Question → Flow → Twist / Important Detail →
-  Payoff pattern when it fits. Each sentence should either advance that flow or
-  make the next visible change understandable; remove filler.
-- Make the pace brisk through concise language and clear visual progression.
-  Completeness still takes priority over a runtime target: do not rush narration
-  or omit required information; extend the runtime when needed.
+Apply the narrative progression in SCRIPT_GUIDE.md flexibly. Plan words and
+visuals together; give each scene meaningful attention beats using the storyboard
+template. Apply motion direction from MOTION.md and review against VERIFY.md.
+Use the permanent references and topic-specific research/assets as the quality
+source. Do not require inspection of a previous MP4, composition or project.
+Preserve the pipeline, design system and source ownership. Preserve unrelated
+files and existing videos. Do not commit, push or publish.
 
 ### Workflow: two approval gates
 
 #### Phase 1: Plan and sketch
 
 - Create BRIEF.md, FACTS.md, SCRIPT.md, STORYBOARD.md, ICON_PLAN.json and frame.md
-  using the repository templates and reference guide.
-- Keep spoken narration separate from display copy. Use one narration beat per
-  scene, SCRIPT.md headings “## Line N” and STORYBOARD.md headings “## Frame N”.
-  A beat may contain several short sentences when one continuous visual action
-  supports them.
-- Define each scene's starting state, causal action, ending state, required
-  objects, spoken cues, estimated local-time beats and continuity into the next.
-  - Size every highlight or accent box from the measured text box. At 32px,
-    monospace text advances 19.2px per character. Make each box wrap the full
-    value or label it marks.
-- Resolve production assets locally with attribution before drawing the sketches.
-- Build one inspectable board containing every scene with the actual icons.
-  Verify one real icon first, then review the whole board at phone size.
-- Present the script and sketches together and wait for my approval. Do not
-  synthesize final narration or build animated frames before this gate.
+  using the repository templates. Fact-check claims and assumptions; map every
+  required point to script and scenes. Extend runtime instead of rushing or omitting.
+- Keep narration separate from display copy. Retain SCRIPT.md headings “## Line N”
+  and STORYBOARD.md headings “## Frame N”, with one narration passage per scene.
+  A scene may contain multiple meaningful attention beats.
+- Fill viewer question, payoff, persistent object, causal action, attention beats,
+  narration cues, consequence, comprehension pause, next question and energy.
+  Record estimated local windows in the single storyboard action table.
+- Resolve exact local assets and attribution before sketching. Use frame.md for
+  persistent geometry. Build one inspectable board with every scene and actual
+  production icons, then review it at phone size against DESIGN.md.
+- Present the script and sketches together. Wait for my Gate 1 approval before
+  final narration synthesis or animated frame implementation.
 
 #### Phase 2: Build the complete preview after approval
 
-- Dry-run narration normalization, inspect pronunciation, then generate one
-  Supertonic 3 WAV per scene. Use audio_meta.json as the canonical timing source.
-- Replace estimated timings and retime the existing storyboard action beats
-  before building animation. Do not concatenate WAVs or estimate final durations.
-- Record important spoken-word cues from actual-WAV alignment or listening in
-  motion_beats.json, including WAV hashes and provenance. Check stale cues.
-  Inspect motion onset, morph midpoint, arrival, camera extrema and scene cuts;
-  test backward/random-order seeks. Reading pauses remain intentional.
-- Build every scene against the approved visual contract and measured duration.
-  Use seekable paused GSAP timelines, explicit root dimensions, local assets and
-  stable scene-specific IDs. Keep audio and the shared local runtime in the parent.
-- Assemble using scripts/assemble_project.py, following the reference guide.
-  Fix source files or canonical metadata rather than patching generated HTML.
-- Run repository preview validation and the actual HyperFrames check. Stop and
-  fix failed checks before proceeding. Inspect opening/action/result samples
-  and at least one visible midpoint per scene; compare with approved sketches.
-  Check that each scene opens on the state the previous scene ended with — a
-  table, value or label established earlier must be visible at local time 0,
-  not blank.
-- Play the complete preview with sound off and on where available. Check phone
-  readability, causal motion, scene continuity and narration alignment. Do not
-  claim to have listened when only audio metadata was checked.
-- Open the working final-preview URL, summarize duration and verification, and
-  wait for my explicit approval to render. Complete all scenes and checks before
-  this gate; do not stop after each scene to ask permission to continue.
+- Follow BUILD.md for narration: dry-run normalization, inspect pronunciation,
+  generate one WAV per scene, and use audio_meta.json for measured timing.
+- Retime the same storyboard rows. Measure important phrase cues from actual-WAV
+  alignment or listening; record named events, hashes and provenance in
+  motion_beats.json when used. Follow MOTION.md and channel/MOTION_API.md;
+  check cue freshness and semantic synchronization, not every word.
+- Build all scenes against the approved plan using the shared motion layer for
+  new v2 scenes, seekable paused GSAP timelines and local assets. Inherit states
+  at scene openings. Follow BUILD.md for assembly; fix sources or canonical
+  metadata rather than patching generated HTML.
+- Run the required preview checks in VERIFY.md. Inspect each attention beat,
+  important motion lifecycle, camera extrema and adjacent cut; test backward
+  and random-order seeks. Record evidence in storyboard rows. Fix failures.
+- Review the complete preview at phone size, sound off and with narration where
+  available. Apply VERIFY.md's final quality questions. Report unavailable
+  listening or visual evidence honestly; metadata does not prove listening.
+- Open the working complete-preview URL with duration, evidence and limitations.
+  Wait for my explicit Gate 2 approval to render. Complete all scenes and checks
+  before this gate; do not ask permission after each scene.
 
 #### Phase 3: Render only after final-preview approval
 
-- Record my actual approval, pass render-stage validation, and render the MP4.
-- Independently verify dimensions, frame rate, video/audio streams and duration
-  with ffprobe; run a full decode check and inspect a frame from the actual MP4.
-- Deliver the playable video using its absolute local path, plus a brief summary
-  of verified properties and any unresolved limitation. Update project status.
+- Record my actual approval and follow VERIFY.md's render-stage checks and export
+  procedure. A revised preview needs renewed approval; passing checks is not approval.
+- Verify the exported MP4's dimensions, frame rate, streams, duration, full decode
+  and an actual exported frame as required by VERIFY.md.
+- Deliver the playable video at its absolute local path, verified properties and
+  any unresolved limitation. Update project status.
 
 ### Working style
 
-Ask only questions whose answers materially change the result. If the topic is
-broad, propose a focused takeaway at the first approval gate. Choose routine
-details yourself using the reference. Keep progress updates short. Investigate
-warnings rather than silently ignoring them. Never claim a check passed without
-evidence, and never infer render approval from passing tests.
+Ask only questions whose answers materially change the result. Choose routine
+details using the authoritative references. If the topic is broad, propose a
+focused takeaway at Gate 1. Keep progress updates short. Investigate warnings
+and never claim a check passed without evidence.
 
-Begin with the facts, script and actual-icon storyboard for approval.
+Begin with facts, script and actual-icon storyboard for approval.
 ```
 
 ## Optional input example
 
-Replace the corresponding input lines with:
-
 ```text
 - Topic: Why a second visit to a website can load faster
-- Single takeaway: a cached copy can avoid repeating the same fetch
-- Required information: first request, saved copy, repeat request, visible faster return
-- Exclude: cache invalidation details, HTTP header syntax, CDN architecture
+- Single takeaway: a fresh cached copy can avoid repeating a server fetch
+- Required information: first request, saved copy, freshness condition, repeat request, local return
+- Exclude: HTTP header syntax and CDN architecture
 ```
 
 ## Replies for the two gates

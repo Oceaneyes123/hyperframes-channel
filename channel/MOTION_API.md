@@ -89,7 +89,7 @@ time. Do not change timed-host visibility or extend host/audio windows.
   "method": "tool/model and settings, or manual audio review",
   "review_status": "machine-aligned; listening review pending",
   "audio_sha256": "SHA-256 of the actual scene WAV",
-  "cues": {"hello": 1.2, "piece": 2.96}
+  "cues": {"rejects": 1.2, "changes": 2.96}
 }
 ```
 
@@ -97,9 +97,17 @@ The other source value is `manual-audio-review`. `scripts/motion_beats.py`
 validates scene IDs, finite in-range cues and audio hashes. Import `load_beats`
 in the generator and embed the scene cue map as static JSON; do not fetch it
 at render time. Changed audio requires realignment, never fractional fallback.
-The pilot retains raw timestamps in `review/motion-alignment.json`. The model
-misheard some words (including H T T P); SCRIPT.md remains canonical, and only
-matching anchor words supply cues. Alignment is not proof of listening review.
+Store raw alignment evidence in the target project's review directory and name
+it in the method/provenance. `SCRIPT.md` remains canonical; use only anchor
+phrases that match the actual WAV. Alignment is not proof of listening review.
+
+`MOTION.md` owns cue intent. Cue keys name semantic events such as `rejects`,
+`address_changes`, `arrives` or `detail_reveal`, not every spoken word. Reference
+the same keys in storyboard rows and embed them in the scene generator. Cue
+seconds mark the meaningful event: schedule anticipation before it and reaction
+or settling after it as needed. All windows must fit the measured scene.
+Validation proves ranges and WAV freshness, not semantic synchronization;
+review the event against its spoken phrase with narration playing.
 
 ## Reference study
 

@@ -1,0 +1,64 @@
+{
+  "icons": [
+    {
+      "id": "sonnet-5-5",
+      "provider": "approved-local",
+      "role": "persistent model object",
+      "meaning": "Claude Sonnet 5.5; the evidence moves this same object through the argument",
+      "color": "coral / warm white",
+      "style": "dimensional technical token, no Anthropic logo imitation",
+      "path": "public/icons/sonnet-5-5.svg",
+      "scenes": ["line-1", "line-2", "line-3", "line-4", "line-5", "line-6", "line-7", "line-8"]
+    },
+    {
+      "id": "opus-5-5",
+      "provider": "approved-local",
+      "role": "flagship comparator",
+      "meaning": "Claude Opus 5.5; higher cost and stronger on the selected hard-review set",
+      "color": "amber / warm white",
+      "style": "dimensional technical token, visually related to Sonnet but distinct",
+      "path": "public/icons/opus-5-5.svg",
+      "scenes": ["line-1", "line-4", "line-5", "line-6", "line-7", "line-8"]
+    },
+    {
+      "id": "sonnet-5",
+      "provider": "approved-local",
+      "role": "predecessor comparator",
+      "meaning": "Claude Sonnet 5; same base token rates, comparison for speed and per-task efficiency",
+      "color": "blue / warm white",
+      "style": "dimensional technical token, same family",
+      "path": "public/icons/sonnet-5.svg",
+      "scenes": ["line-3", "line-4"]
+    },
+    {
+      "id": "coding-task",
+      "provider": "approved-local",
+      "role": "benchmark context",
+      "meaning": "Multi-file agentic coding task",
+      "color": "blue / cyan",
+      "style": "large terminal and linked files, not an article screenshot",
+      "path": "public/icons/task-terminal.svg",
+      "scenes": ["line-5"]
+    },
+    {
+      "id": "knowledge-work",
+      "provider": "approved-local",
+      "role": "benchmark context",
+      "meaning": "Knowledge-work artifact evaluated by GDPval-AA",
+      "color": "violet / green",
+      "style": "briefcase with document and chart",
+      "path": "public/icons/work-briefcase.svg",
+      "scenes": ["line-6"]
+    },
+    {
+      "id": "code-review",
+      "provider": "approved-local",
+      "role": "limitation context",
+      "meaning": "Known-bug pull request under CodeRabbit's small hard-case review set",
+      "color": "amber / red-orange",
+      "style": "pull request diff with magnifier",
+      "path": "public/icons/code-review.svg",
+      "scenes": ["line-7"]
+    }
+  ]
+}
