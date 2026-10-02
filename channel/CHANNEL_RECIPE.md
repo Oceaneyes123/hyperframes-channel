@@ -15,9 +15,12 @@ persistent object IDs, bounds and route attachments.
 
 1. **Plan:** capture facts once; map every required point to the script and
    scenes. Use `SCRIPT_GUIDE.md` for storytelling, `DESIGN.md` and `MOTION.md`
-   for visual decisions, and the templates for canonical artifacts.
+   for visual decisions, and the templates for canonical artifacts. Record
+   prompt inputs in `BRIEF.md`; select relevant motion examples through
+   `MOTION_LIBRARY.md` and the storyboard's adaptation fields.
 2. **Gate 1:** review the combined script and timed storyboard with sketches
-   that use the planned production icons. Approve them together.
+   that use the planned production icons. Apply `VERIFY.md`'s Gate 1 quality and
+   text-minimization review, then approve them together.
 3. **Measure:** after approval, normalize and synthesize one final WAV per
    scene, then use its measured timing as the canonical storyboard timeline.
 4. **Build:** implement against the approved scene packet and persistent
@@ -39,6 +42,13 @@ cue names, causal action, named local assets/counts, opening and resolved states
 route endpoints, consequence, comprehension pause, next question, energy and
 transition. Estimate timing at Gate 1; replace it with measured timing after TTS.
 Use the storyboard action table as the single beat plan.
+
+For significant choreography, include only the chosen
+[flow-motion example](../examples/flow-motion/README.md) section/source excerpt,
+its planned adaptation, object performance, layer/occlusion plan and handoff
+pose references. The sample's one-composition global windows must become the
+target scene's measured local cues. Do not hand a frame worker an unrelated
+example sequence or another video's project as a required dependency.
 
 `channel/EXPLAINER_REFERENCE.md` supplies an optional generic example. No
 previous video artifacts are required for a new project.

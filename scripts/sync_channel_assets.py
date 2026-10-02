@@ -30,9 +30,10 @@ def sync(project: Path) -> None:
     destination.mkdir(exist_ok=True)
     shutil.copy2(root, destination / "styles.css")
     if channel.get("motion_version") is not None:
-        for name in ("motion.js", "motion.css"):
+        for name in ("motion.js", "motion-presets.js", "motion.css"):
             shutil.copy2(ROOT / "channel" / name, destination / name)
         shutil.copytree(ROOT / "channel" / "fonts", destination / "fonts", dirs_exist_ok=True)
+        shutil.copytree(ROOT / "channel" / "artwork", destination / "artwork", dirs_exist_ok=True)
 
 
 def _design_version() -> str:

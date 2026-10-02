@@ -1,0 +1,247 @@
+{
+  "schema": "hyperframes-channel/narration@1",
+  "provider": "supertonic-3",
+  "voice": "custom:channel-voice.json",
+  "timeline_duration_s": 170.17904761904762,
+  "voices": [
+    {
+      "id": "line-1",
+      "path": ".media/audio/voice/line-1.wav",
+      "duration_s": 9.334421768707482,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "A website's reply passes your firewall. Another incoming connection gets blocked. Both came from outside. Why the difference?",
+      "spoken_text": "A website's reply passes your firewall. Another incoming connection gets blocked. Both came from outside. Why the difference?",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 1
+    },
+    {
+      "id": "line-2",
+      "path": ".media/audio/voice/line-2.wav",
+      "duration_s": 10.379319727891156,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Follow your browser connecting to a website. Traffic travels in small pieces called packets. This stateful firewall remembers connections.",
+      "spoken_text": "Follow your browser connecting to a website. Traffic travels in small pieces called packets. This stateful firewall remembers connections.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 2
+    },
+    {
+      "id": "line-3",
+      "path": ".media/audio/voice/line-3.wav",
+      "duration_s": 18.250884353741498,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "At arrival, it checks source and destination addresses, protocol, meaning communication method, and ports: numbers identifying the conversation's endpoints. It also checks the arrival side. This packet is going out to web port four forty-three.",
+      "spoken_text": "At arrival, it checks source and destination addresses, protocol, meaning communication method, and ports: numbers identifying the conversation's endpoints. It also checks the arrival side. This packet is going out to web port four forty-three.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 3
+    },
+    {
+      "id": "line-4",
+      "path": ".media/audio/voice/line-4.wav",
+      "duration_s": 14.767891156462586,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "It's new, with no existing state. Our example checks rules top to bottom: block listed destination addresses. This site isn't listed. Next: allow outgoing web connections. That matches.",
+      "spoken_text": "It's new, with no existing state. Our example checks rules top to bottom: block listed destination addresses. This site isn't listed. Next: allow outgoing web connections. That matches.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 4
+    },
+    {
+      "id": "line-5",
+      "path": ".media/audio/voice/line-5.wav",
+      "duration_s": 13.235374149659863,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Here, the first matching rule decides. Move the broad allowance above the block, and listed destinations pass before that block is checked. Firewalls can use different priorities.",
+      "spoken_text": "Here, the first matching rule decides. Move the broad allowance above the block, and listed destinations pass before that block is checked. Firewalls can use different priorities.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 5
+    },
+    {
+      "id": "line-6",
+      "path": ".media/audio/voice/line-6.wav",
+      "duration_s": 19.504761904761907,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "The allowed connection gets a temporary record of addresses, ports, protocol, and progress, updated as it develops. The website's reply has reversed endpoints and expected connection state, so it passes. That permission covers this conversation, not everyone outside.",
+      "spoken_text": "The allowed connection gets a temporary record of addresses, ports, protocol, and progress, updated as it develops. The website's reply has reversed endpoints and expected connection state, so it passes. That permission covers this conversation, not everyone outside.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 6
+    },
+    {
+      "id": "line-7",
+      "path": ".media/audio/voice/line-7.wav",
+      "duration_s": 17.345306122448978,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Another computer starts an incoming connection. It matches neither the record nor an allow rule. Our default is block: the fallback for unmatched traffic. Different rules or defaults could allow it; unsolicited doesn't automatically mean blocked.",
+      "spoken_text": "Another computer starts an incoming connection. It matches neither the record nor an allow rule. Our default is block: the fallback for unmatched traffic. Different rules or defaults could allow it; unsolicited doesn't automatically mean blocked.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 7
+    },
+    {
+      "id": "line-8",
+      "path": ".media/audio/voice/line-8.wav",
+      "duration_s": 14.698231292517006,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Blocked traffic isn't forwarded. A silent drop discards the packet without replying; the sender may retry, then time out. A reject discards it and sends a refusal. Logging can record the decision if enabled.",
+      "spoken_text": "Blocked traffic isn't forwarded. A silent drop discards the packet without replying; the sender may retry, then time out. A reject discards it and sends a refusal. Logging can record the decision if enabled.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 8
+    },
+    {
+      "id": "line-9",
+      "path": ".media/audio/voice/line-9.wav",
+      "duration_s": 20.340680272108845,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "Capabilities vary. Basic packet filters don't remember connections; stateful firewalls do. Some also examine application information or content. Ordinary network firewalls can't read encrypted HTTPS contents without additional decryption capability and configuration.",
+      "spoken_text": "Capabilities vary. Basic packet filters don't remember connections; stateful firewalls do. Some also examine application information or content. Ordinary network firewalls can't read encrypted H T T P S contents without additional decryption capability and configuration.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 9
+    },
+    {
+      "id": "line-10",
+      "path": ".media/audio/voice/line-10.wav",
+      "duration_s": 9.822040816326531,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "A dangerous download can therefore pass inside an allowed web connection, unseen by this firewall. Permission doesn't guarantee safety.",
+      "spoken_text": "A dangerous download can therefore pass inside an allowed web connection, unseen by this firewall. Permission doesn't guarantee safety.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 10
+    },
+    {
+      "id": "line-11",
+      "path": ".media/audio/voice/line-11.wav",
+      "duration_s": 9.05578231292517,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "A legitimate app can fail too: its new connection needs a port our web-only rule doesn't allow, so default block stops it.",
+      "spoken_text": "A legitimate app can fail too: its new connection needs a port our web-only rule doesn't allow, so default block stops it.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 11
+    },
+    {
+      "id": "line-12",
+      "path": ".media/audio/voice/line-12.wav",
+      "duration_s": 13.444353741496599,
+      "voice_style_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+      "original_text": "A firewall doesn't simply recognize bad traffic. It compares available information with configured rules and, when applicable, connection state. The default handles unmatched traffic.",
+      "spoken_text": "A firewall doesn't simply recognize bad traffic. It compares available information with configured rules and, when applicable, connection state. The default handles unmatched traffic.",
+      "normalization_fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400",
+      "frame": 12
+    }
+  ],
+  "scenes": [
+    {
+      "index": 1,
+      "id": "line-1",
+      "src": "compositions/frames/line-1.html",
+      "audio_id": "voice-line-1",
+      "audio_path": ".media/audio/voice/line-1.wav",
+      "start_s": 0.0,
+      "duration_s": 9.334421768707482
+    },
+    {
+      "index": 2,
+      "id": "line-2",
+      "src": "compositions/frames/line-2.html",
+      "audio_id": "voice-line-2",
+      "audio_path": ".media/audio/voice/line-2.wav",
+      "start_s": 9.334421768707482,
+      "duration_s": 10.379319727891156
+    },
+    {
+      "index": 3,
+      "id": "line-3",
+      "src": "compositions/frames/line-3.html",
+      "audio_id": "voice-line-3",
+      "audio_path": ".media/audio/voice/line-3.wav",
+      "start_s": 19.713741496598637,
+      "duration_s": 18.250884353741498
+    },
+    {
+      "index": 4,
+      "id": "line-4",
+      "src": "compositions/frames/line-4.html",
+      "audio_id": "voice-line-4",
+      "audio_path": ".media/audio/voice/line-4.wav",
+      "start_s": 37.964625850340134,
+      "duration_s": 14.767891156462586
+    },
+    {
+      "index": 5,
+      "id": "line-5",
+      "src": "compositions/frames/line-5.html",
+      "audio_id": "voice-line-5",
+      "audio_path": ".media/audio/voice/line-5.wav",
+      "start_s": 52.73251700680272,
+      "duration_s": 13.235374149659863
+    },
+    {
+      "index": 6,
+      "id": "line-6",
+      "src": "compositions/frames/line-6.html",
+      "audio_id": "voice-line-6",
+      "audio_path": ".media/audio/voice/line-6.wav",
+      "start_s": 65.96789115646258,
+      "duration_s": 19.504761904761907
+    },
+    {
+      "index": 7,
+      "id": "line-7",
+      "src": "compositions/frames/line-7.html",
+      "audio_id": "voice-line-7",
+      "audio_path": ".media/audio/voice/line-7.wav",
+      "start_s": 85.47265306122449,
+      "duration_s": 17.345306122448978
+    },
+    {
+      "index": 8,
+      "id": "line-8",
+      "src": "compositions/frames/line-8.html",
+      "audio_id": "voice-line-8",
+      "audio_path": ".media/audio/voice/line-8.wav",
+      "start_s": 102.81795918367347,
+      "duration_s": 14.698231292517006
+    },
+    {
+      "index": 9,
+      "id": "line-9",
+      "src": "compositions/frames/line-9.html",
+      "audio_id": "voice-line-9",
+      "audio_path": ".media/audio/voice/line-9.wav",
+      "start_s": 117.51619047619047,
+      "duration_s": 20.340680272108845
+    },
+    {
+      "index": 10,
+      "id": "line-10",
+      "src": "compositions/frames/line-10.html",
+      "audio_id": "voice-line-10",
+      "audio_path": ".media/audio/voice/line-10.wav",
+      "start_s": 137.85687074829931,
+      "duration_s": 9.822040816326531
+    },
+    {
+      "index": 11,
+      "id": "line-11",
+      "src": "compositions/frames/line-11.html",
+      "audio_id": "voice-line-11",
+      "audio_path": ".media/audio/voice/line-11.wav",
+      "start_s": 147.67891156462585,
+      "duration_s": 9.05578231292517
+    },
+    {
+      "index": 12,
+      "id": "line-12",
+      "src": "compositions/frames/line-12.html",
+      "audio_id": "voice-line-12",
+      "audio_path": ".media/audio/voice/line-12.wav",
+      "start_s": 156.73469387755102,
+      "duration_s": 13.444353741496599
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "898cac12146aae1cba46c5850a9ce3e05d6c20a470c577e6346d21e1003ab400"
+  }
+}

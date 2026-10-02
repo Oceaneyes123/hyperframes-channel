@@ -1,0 +1,182 @@
+{
+  "schema": "hyperframes-channel/motion-beats@1",
+  "scenes": {
+    "line-1": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "e87b7c996aca2254a072696e95a679b523e7faf436943f455aa92f44175e1502",
+      "cues": {
+        "reply": 1.24,
+        "passes": 1.52,
+        "incoming": 3.22,
+        "blocked": 4.84,
+        "question": 8.02
+      }
+    },
+    "line-2": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "5b3d300096f1fbf1ada4ad9e40f847889467c49c967becc1531bb1fa11c41392",
+      "cues": {
+        "launch": 1.4,
+        "pieces": 4.5,
+        "packet": 5.62,
+        "memory": 8.06
+      }
+    },
+    "line-3": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "3213e2763a06c2bc58be68e11c2e73b8b64434f5ac9b814b39b0478fe7b08af8",
+      "cues": {
+        "arrival": 0.72,
+        "inspect": 1.8,
+        "addresses": 2.06,
+        "protocol": 4.5,
+        "ports": 7.4,
+        "side": 13,
+        "web": 15.94
+      }
+    },
+    "line-4": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "26be2489e21bbe2f588be0cc6e6aa8216e36b5887e25f32abf9e2f0f250129b1",
+      "cues": {
+        "fresh": 0.64,
+        "empty": 1.38,
+        "rules": 3.94,
+        "first": 5.74,
+        "miss": 8.82,
+        "web": 10.9,
+        "match": 13.3
+      }
+    },
+    "line-5": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "7c7eeb528468718016f6d40bae31a3bfc76cb7955a659e815a6901e6f44b08e7",
+      "cues": {
+        "first": 1.36,
+        "reorder": 2.9,
+        "above": 4.7,
+        "listed": 6.34,
+        "passes": 7.26,
+        "other": 10.14
+      }
+    },
+    "line-6": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "ddcae1d4154ae247d5a0c97e94d51a0b7d09ae2a76222fe7fc6d6a90cfe2584a",
+      "cues": {
+        "record": 1.84,
+        "addresses": 2.98,
+        "ports": 3.94,
+        "protocol": 4.2,
+        "progress": 5.36,
+        "develops": 7.06,
+        "update": 5.86,
+        "reply": 9.46,
+        "reverse": 10.2,
+        "match": 12.16,
+        "passes": 13.44,
+        "scope": 16.08,
+        "outside": 18.1
+      }
+    },
+    "line-7": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "d0d20b46eefd3590fa35399d9927b417032a98cde952109bb4b38cb2ce84995d",
+      "cues": {
+        "launch": 1.32,
+        "miss": 3.48,
+        "rules": 5.18,
+        "default": 6.82,
+        "block": 7.5,
+        "fallback": 8.54,
+        "different": 11.02
+      }
+    },
+    "line-8": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "9763f29b6fd39214dee7feab011af047e57feac25a8e1a5bb6c7971029369ba9",
+      "cues": {
+        "stop": 1.6,
+        "drop": 3.02,
+        "discard": 3.26,
+        "retry": 6.08,
+        "timeout": 7.46,
+        "reject": 8.66,
+        "refusal": 10.52,
+        "log": 12.22,
+        "enabled": 13.4
+      }
+    },
+    "line-9": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "9ef1fae912fc00b3ebf43058af412cf37bcdc09da1034f80f7fa6d3cd7bd2a69",
+      "cues": {
+        "filter": 2.72,
+        "packets": 2.38,
+        "memory": 5.18,
+        "content": 9.94,
+        "opaque": 13.3,
+        "connection": 3.76,
+        "decryption": 17.02
+      }
+    },
+    "line-10": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "2889ec3030b32764160c25dbee5f37e4342921f869fad050f06740b6dc51cc13",
+      "cues": {
+        "harmful": 0.54,
+        "download": 0.96,
+        "allowed": 3.28,
+        "inspect": 4.46,
+        "safety": 8.32
+      }
+    },
+    "line-11": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "103b19415410fffc414f8e1e1f60520e81827da6c8da6ed1bba744a1a393f942",
+      "cues": {
+        "app": 1.1,
+        "fresh": 3.1,
+        "miss": 5.4,
+        "default": 6.86,
+        "block": 7.24
+      }
+    },
+    "line-12": {
+      "source": "word-alignment",
+      "method": "faster-whisper base, CPU int8, English beam=5, word_timestamps, no prompt; review/word-alignment.json",
+      "review_status": "machine-aligned; listening review pending",
+      "audio_sha256": "85757111d1550acbc88fd491b10610078d362a70b95106928afdd3b072feac67",
+      "cues": {
+        "bad": 2.42,
+        "compare": 4.1,
+        "inspect": 5.1,
+        "rules": 6.66,
+        "state": 9.26,
+        "fallback": 10.56
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=1080,height=1920">
+<title>how-firewalls-decide-what-to-block</title>
+<script src="public/vendor/gsap.min.js"></script>
+<script src="channel/motion.js"></script>
+<script src="channel/motion-presets.js"></script>
+<style>*{box-sizing:border-box}html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0B1020}#root{position:relative;width:1080px;height:1920px;background:#0B1020;overflow:hidden}.scene{position:absolute;inset:0;width:1080px;height:1920px}</style>
+</head><body>
+<div data-hf-id="hf-sr1n" id="root" data-composition-id="main" data-width="1080" data-height="1920" data-duration="170.179048">
+<div data-hf-id="hf-ueob" id="line-1" class="scene clip" data-composition-id="line-1" data-composition-src="compositions/frames/line-1.html" data-start="0.000000" data-duration="9.334422" data-track-index="1"></div>
+<div data-hf-id="hf-yzup" id="line-2" class="scene clip" data-composition-id="line-2" data-composition-src="compositions/frames/line-2.html" data-start="9.334422" data-duration="10.379320" data-track-index="1"></div>
+<div data-hf-id="hf-k9hn" id="line-3" class="scene clip" data-composition-id="line-3" data-composition-src="compositions/frames/line-3.html" data-start="19.713741" data-duration="18.250884" data-track-index="1"></div>
+<div data-hf-id="hf-b7t7" id="line-4" class="scene clip" data-composition-id="line-4" data-composition-src="compositions/frames/line-4.html" data-start="37.964626" data-duration="14.767891" data-track-index="1"></div>
+<div data-hf-id="hf-wvqy" id="line-5" class="scene clip" data-composition-id="line-5" data-composition-src="compositions/frames/line-5.html" data-start="52.732517" data-duration="13.235374" data-track-index="1"></div>
+<div data-hf-id="hf-trl8" id="line-6" class="scene clip" data-composition-id="line-6" data-composition-src="compositions/frames/line-6.html" data-start="65.967891" data-duration="19.504762" data-track-index="1"></div>
+<div data-hf-id="hf-r67t" id="line-7" class="scene clip" data-composition-id="line-7" data-composition-src="compositions/frames/line-7.html" data-start="85.472653" data-duration="17.345306" data-track-index="1"></div>
+<div data-hf-id="hf-6klp" id="line-8" class="scene clip" data-composition-id="line-8" data-composition-src="compositions/frames/line-8.html" data-start="102.817959" data-duration="14.698231" data-track-index="1"></div>
+<div data-hf-id="hf-3eoy" id="line-9" class="scene clip" data-composition-id="line-9" data-composition-src="compositions/frames/line-9.html" data-start="117.516190" data-duration="20.340680" data-track-index="1"></div>
+<div data-hf-id="hf-uc1g" id="line-10" class="scene clip" data-composition-id="line-10" data-composition-src="compositions/frames/line-10.html" data-start="137.856871" data-duration="9.822041" data-track-index="1"></div>
+<div data-hf-id="hf-3wkg" id="line-11" class="scene clip" data-composition-id="line-11" data-composition-src="compositions/frames/line-11.html" data-start="147.678912" data-duration="9.055782" data-track-index="1"></div>
+<div data-hf-id="hf-nk6f" id="line-12" class="scene clip" data-composition-id="line-12" data-composition-src="compositions/frames/line-12.html" data-start="156.734694" data-duration="13.444354" data-track-index="1"></div>
+<audio data-hf-id="hf-vkdi" id="voice-line-1" src=".media/audio/voice/line-1.wav" data-start="0.000000" data-duration="9.334422" data-track-index="10" data-volume="1"></audio>
+<audio data-hf-id="hf-59di" id="voice-line-2" src=".media/audio/voice/line-2.wav" data-start="9.334422" data-duration="10.379320" data-track-index="11" data-volume="1"></audio>
+<audio data-hf-id="hf-pjzu" id="voice-line-3" src=".media/audio/voice/line-3.wav" data-start="19.713741" data-duration="18.250884" data-track-index="12" data-volume="1"></audio>
+<audio data-hf-id="hf-ytdu" id="voice-line-4" src=".media/audio/voice/line-4.wav" data-start="37.964626" data-duration="14.767891" data-track-index="13" data-volume="1"></audio>
+<audio data-hf-id="hf-grp1" id="voice-line-5" src=".media/audio/voice/line-5.wav" data-start="52.732517" data-duration="13.235374" data-track-index="14" data-volume="1"></audio>
+<audio data-hf-id="hf-op7b" id="voice-line-6" src=".media/audio/voice/line-6.wav" data-start="65.967891" data-duration="19.504762" data-track-index="15" data-volume="1"></audio>
+<audio data-hf-id="hf-uswk" id="voice-line-7" src=".media/audio/voice/line-7.wav" data-start="85.472653" data-duration="17.345306" data-track-index="16" data-volume="1"></audio>
+<audio data-hf-id="hf-3z1q" id="voice-line-8" src=".media/audio/voice/line-8.wav" data-start="102.817959" data-duration="14.698231" data-track-index="17" data-volume="1"></audio>
+<audio data-hf-id="hf-2r27" id="voice-line-9" src=".media/audio/voice/line-9.wav" data-start="117.516190" data-duration="20.340680" data-track-index="18" data-volume="1"></audio>
+<audio data-hf-id="hf-jkji" id="voice-line-10" src=".media/audio/voice/line-10.wav" data-start="137.856871" data-duration="9.822041" data-track-index="19" data-volume="1"></audio>
+<audio data-hf-id="hf-5in7" id="voice-line-11" src=".media/audio/voice/line-11.wav" data-start="147.678912" data-duration="9.055782" data-track-index="20" data-volume="1"></audio>
+<audio data-hf-id="hf-zsc4" id="voice-line-12" src=".media/audio/voice/line-12.wav" data-start="156.734694" data-duration="13.444354" data-track-index="21" data-volume="1"></audio>
+</div>
+<script>window.__timelines=window.__timelines||{};window.__timelines['main']=gsap.timeline({paused:true});</script>
+</body></html>

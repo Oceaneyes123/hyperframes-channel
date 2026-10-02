@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Firewall decisions | Gate 1 storyboard</title>
+  <link rel="icon" href="../public/icons/shield-halved.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../channel/styles.css">
+  <link rel="stylesheet" href="../channel/motion.css">
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#080d18;color:#F5F7FF;font:16px/1.5 var(--hf-display);letter-spacing:0}
+    main{max-width:1160px;margin:auto;padding:28px 16px 64px}header{padding:0 0 24px;border-bottom:1px solid #33415F}
+    h1{font-size:30px;line-height:1.15;margin:8px 0 14px}h2{font-size:22px;line-height:1.2;margin:0 0 12px}
+    p{margin:10px 0;max-width:900px}a{color:#4DD9E8}label{display:inline-flex;gap:8px;align-items:center;cursor:pointer}
+    section{padding:28px 0;border-bottom:1px solid #33415F}.meta{color:#AAB5CC;font:13px/1.5 var(--hf-mono)}
+    .narration{font:18px/1.5 var(--hf-display);margin-bottom:22px}.poses{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    figure{margin:0;min-width:0}figcaption{font:13px/1.35 var(--hf-mono);color:#AAB5CC;min-height:44px;margin-bottom:8px}
+    .sketch{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#0B1020;border:1px solid #33415F}
+    .sketch text{font-family:var(--hf-mono);font-weight:700;letter-spacing:0}.sketch .display{font-family:var(--hf-display)}
+    .safe{display:none;fill:none;stroke:#F5B94D;stroke-width:2;stroke-dasharray:12 10;opacity:.7}.show-safe .safe{display:block}
+    .review-note{font-size:14px;color:#AAB5CC}.status{color:#F5B94D}#error{color:#F06A5F}
+    @media(max-width:760px){main{padding:20px 12px 40px}.poses{grid-template-columns:1fr;justify-items:center}figure{width:min(100%,360px)}h1{font-size:26px}.narration{font-size:17px}figcaption{min-height:0}.poses{gap:22px}}
+    @media print{header label{display:none}section{break-inside:avoid}.poses{grid-template-columns:repeat(3,1fr)}body{print-color-adjust:exact}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="meta status">REVISED GATE 1 APPROVED · GATE 2 PREVIEW READY</div>
+    <h1>How does a firewall decide what to block?</h1>
+    <p>Complete script with actual local artwork. One boundary, two incoming outcomes, visible rule and state comparisons.</p>
+    <p class="meta" id="summary">Loading canonical script and storyboard...</p>
+    <p><a href="../FACTS.md">Sourced facts and platform compatibility</a> · <a href="../SCRIPT.md">Script</a> · <a href="../STORYBOARD.md">Motion plan</a> · <a href="../frame.md">Geometry</a></p>
+    <label><input id="safe-toggle" type="checkbox"> Show safe area</label>
+    <p class="review-note">Headings, narration and pose captions sit outside the video canvas. Revised narration measured 2:50.179, with all required information retained and no faster speech. These are static poses; motion and listening require the <a href="http://localhost:3048/#project/how-firewalls-decide-what-to-block">complete Gate 2 preview</a>. Rendering awaits explicit Gate 2 approval.</p>
+  </header>
+  <p id="error" hidden></p>
+  <div id="scenes"></div>
+</main>
+<script type="module">
+const C={ink:'#F5F7FF',muted:'#AAB5CC',rule:'#33415F',blue:'#4DA3FF',cyan:'#4DD9E8',green:'#63D69A',amber:'#F5B94D',red:'#F06A5F',violet:'#B07CFF'};
+const sprite='../channel/artwork/flow-props.svg';
+const glyphNames=['lock','shield-halved','list','ban','check','arrow-up','arrow-down','hourglass-half','triangle-exclamation','file-lines'];
+const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+const fetchText=async path=>{const r=await fetch(path);if(!r.ok)throw new Error(`${path}: HTTP ${r.status}`);return r.text();};
+const glyphs={};
+const text=(x,y,value,size=36,color=C.ink,anchor='middle')=>`<text data-teaching="true" x="${x}" y="${y}" font-size="${size}" fill="${color}" text-anchor="${anchor}">${escape(value)}</text>`;
+const shape=(x,y,w,h,color,fill='#141D35')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="${fill}" stroke="${color}" stroke-width="4"/>`;
+const icon=(name,x,y,size,color=C.ink)=>`<svg data-asset="${name}" x="${x}" y="${y}" width="${size}" height="${size}" viewBox="${glyphs[name].viewBox}" fill="${color}">${glyphs[name].paths}</svg>`;
+const part=(name,x,y,size)=>`<svg data-asset="flow:${name}" x="${x}" y="${y}" width="${size}" height="${size}" viewBox="0 0 400 400"><use href="${sprite}#${name}"/></svg>`;
+const device=(x=314,y=1180,size=380,role='DEVICE',tone=C.blue,hazard=false)=>
+  part('shadow',x,y,size)+part('device-body',x,y,size)+part('device-lid',x,y,size)+part('device-screen',x,y,size)+
+  `<rect x="${x+size*.12}" y="${y+size*.18}" width="${size*.76}" height="${size*.51}" rx="10" fill="none" stroke="${tone}" stroke-width="9"/>`+
+  (hazard?icon('triangle-exclamation',x+size*.4,y+size*.4,size*.22,C.amber):'')+
+  text(x+size/2,y+size*.96,role,36,tone);
+const endpoint=()=>device(334,200,340,'SITE',C.cyan);
+const other=()=>device(674,290,240,'OTHER',C.amber);
+const gate=(open=false)=>`<path d="M72 880H936" stroke="${C.red}" stroke-width="7"/>`+
+  part('shadow',294,650,420)+part('gate-posts',294,650,420)+
+  `<g transform="rotate(${open?-64:0} 355 876)">${part('gate-arm',294,650,420)}</g>`+
+  icon('shield-halved',472,690,64,C.red)+text(174,845,'FIREWALL',36,C.red);
+const route=(kind='out',tone=C.blue)=>`<path d="${kind==='other'?'M794 500Q794 700 504 742L504 880':'M504 1285L504 1030L504 880L504 497'}" fill="none" stroke="${tone}" stroke-width="7" opacity=".6"/>`;
+const packet=(cx,cy,tone=C.blue,size=180,kind='arrow-up')=>`<g data-packet="${kind}">`+
+  `<ellipse cx="${cx}" cy="${cy+size*.43}" rx="${size*.4}" ry="${size*.07}" fill="#020819"/>`+
+  part('packet-back',cx-size/2,cy-size/2,size)+part('packet-front',cx-size/2,cy-size/2,size)+part('packet-flap',cx-size/2,cy-size/2,size)+
+  `<rect x="${cx-size*.43}" y="${cy-size*.21}" width="${size*.86}" height="${size*.54}" rx="10" fill="none" stroke="${tone}" stroke-width="7"/>`+
+  icon(kind,cx-size*.09,cy+size*.025,size*.18,tone)+'</g>';
+const result=(value,tone=C.green)=>text(504,995,value,48,tone);
+const evidence=(value,tone=C.cyan,y=650)=>shape(304,y,400,80,tone)+text(504,y+55,value,40,tone);
+const state=(mode='match')=>shape(84,1080,840,100,C.violet)+text(108,1115,'STATE',28,C.violet,'start')+
+  (mode==='empty'?text(504,1150,'NEW',40,C.muted):text(504,1150,'DEVICE:51514 / SITE:443',36)+
+    icon('check',847,1097,40,C.green))+
+  (mode==='empty'?'':text(794,1115,'TCP',28,C.muted)+[0,1,2].map(i=>`<circle cx="${570+i*30}" cy="1108" r="7" fill="${mode==='initial'&&i>0?C.rule:C.green}"/>`).join(''));
+const rule=(y,kind,selected=false)=>shape(108,y,792,100,selected?(kind==='web'?C.green:C.red):C.rule)+
+  icon(kind==='web'?'arrow-up':'list',138,y+28,42,kind==='web'?C.blue:C.ink)+
+  text(236,y+65,kind==='web'?'OUT / 443':'LISTED',40,C.ink,'start')+
+  icon(kind==='web'?'check':'ban',760,y+28,42,kind==='web'?C.green:C.red);
+const rules=(order='normal',selected='none',fallback=false)=>text(504,300,'RULES',36,C.muted)+
+  (order==='reverse'?rule(330,'web',selected==='web')+rule(460,'listed',selected==='listed'):rule(330,'listed',selected==='listed')+rule(460,'web',selected==='web'))+
+  (fallback?shape(108,590,792,100,C.red)+text(236,655,'DEFAULT',40,C.ink,'start')+icon('ban',760,618,42,C.red):'');
+const metadata=(from='DEVICE:51514',to='SITE:443',direction=true)=>shape(108,260,792,320,C.blue)+
+  text(144,322,'FROM',32,C.muted,'start')+text(872,322,from,40,C.ink,'end')+
+  text(144,407,'TO',32,C.muted,'start')+text(872,407,to,40,C.ink,'end')+
+  text(144,495,'PROTOCOL',32,C.muted,'start')+text(872,495,'TCP',40,C.ink,'end')+
+  (direction?icon('arrow-up',150,527,32,C.blue)+text(220,557,'OUTGOING',32,C.blue,'start'):'');
+const locked=(cx,cy,size=240)=>part('chunk',cx-size/2,cy-size/2,size)+
+  shape(cx-size*.33,cy-size*.33,size*.66,size*.66,C.cyan,'#16364A')+icon('lock',cx-size*.18,cy-size*.2,size*.36,C.ink);
+const base=(opts={})=>gate(opts.open)+device(314,1180,380,opts.app?'APP':'DEVICE',C.blue,opts.hazard)+
+  (opts.site===false?'':endpoint())+(opts.other?other():'')+(opts.route?route(opts.route,opts.route==='other'?C.amber:C.blue):'');
+
+// Each row is a static setup, comparison and result pose, not a timeline.
+const scenes=[
+  {captions:['Reply approaches from the website','Reply crosses the same boundary','Independent incoming attempt stops outside'],draw:p=>base({open:p<2,other:p===2,route:p===2?'other':'out'})+packet(504,p===0?610:p===1?1190:810,p===2?C.amber:C.cyan,180,'arrow-down')+(p===1?result('ALLOWED'):p===2?result('BLOCKED',C.red):'')},
+  {captions:['Fresh browser connection','Opening packet approaches the firewall','Packet arrives; no decision yet'],draw:p=>base({route:'out'})+packet(504,[1190,1070,810][p])+text(744,1100,'NEW',40,C.blue)},
+  {captions:['Same packet, available metadata','Addresses, ports and method separate from content','Arrival side provides outgoing direction'],draw:p=>base({site:false})+metadata()+packet(504,810,C.blue,420)+part('header',p?132:300,635,p?220:170)+(p?part('data',658,633,220):'')},
+  {captions:['Empty state slot; fresh attempt','Listed-destination check misses','Outgoing port 443 allowance matches'],draw:p=>base({site:false})+rules('normal',p===2?'web':'none')+state('empty')+packet(504,810)+evidence('SITE:443')+(p===2?result('ALLOW'):p===1?icon('ban',765,717,50,C.muted):'')},
+  {captions:['Listed destination blocks with block first','Broad outgoing allowance moves above block','Same listed attempt passes before later block'],draw:p=>base({site:false,open:p===2})+rules(p===0?'normal':'reverse',p===0?'listed':'web')+packet(504,p===2?610:830)+evidence('LISTED:443',C.amber,680)+result(p===0?'BLOCK':'ALLOW',p===0?C.red:C.green)+text(504,245,'FIRST MATCH',36,C.muted)},
+  {captions:['Main allowed attempt creates temporary state','Reversed reply endpoints match valid progress','Expected reply passes; record remains'],draw:p=>base({site:p!==1,open:p!==1,route:'out'})+state(p===0?'initial':'match')+(p===1?metadata('SITE:443','DEVICE:51514',false):'')+packet(504,p===0?610:p===1?810:1190,p===0?C.blue:C.cyan,180,p===0?'arrow-up':'arrow-down')+(p>0?result(p===1?'MATCH':'ALLOWED'):'')},
+  {captions:['OTHER starts a separate incoming attempt','Same device port, different conversation','No allow applies; default block decides'],draw:p=>base({site:false,other:p===0,route:'other'})+(p===1?metadata('OTHER:4444','DEVICE:51514',false):p===2?rules('normal','none',true):'')+state(p===0?'match':'miss')+packet(p===0?794:504,p===0?590:810,C.amber,180,'arrow-down')+result(p===0?'':p===1?'NO MATCH':'BLOCK',C.red)},
+  {captions:['Drop discards at the boundary; no reply','Sender waits; device receives nothing','Reject returns a distinct refusal; optional log'],draw:p=>base({site:false,other:true,route:'other'})+state()+text(504,285,p===2?'REJECT':'DROP',48,p===2?C.red:C.amber)+(p===0?packet(504,810,C.amber,180,'arrow-down'):p===1?icon('hourglass-half',758,610,72,C.amber):icon('ban',758,610,72,C.red)+icon('file-lines',755,1210,90,C.muted)+text(800,1370,'LOG',36,C.muted))+icon('ban',469,795,70,C.red)},
+  {captions:['Packet filtering compares available fields','State memory; some types add content inspection','Opaque HTTPS content remains closed here'],draw:p=>base({site:false})+text(270,325,'RULES',36)+part('header',125,350,290)+(p>0?text(734,325,'STATE',36,C.violet)+part('header',589,350,290)+state():'')+(p===1?part('data',674,580,240)+text(794,845,'CONTENT',32,C.cyan):'')+(p===2?locked(504,770)+text(504,615,'CONTENT',36,C.muted)+text(504,1030,'HTTPS',40,C.cyan):packet(504,810,C.blue,320))},
+  {captions:['Encrypted content approaches on permitted flow','State match allows the closed wrapper through','Hazard revealed only at device after delivery'],draw:p=>base({open:p<2,route:'out',hazard:p===2})+state()+(p<2?locked(504,[610,970][p]):'')+text(804,610,'HTTPS',40,C.cyan)+text(804,995,'ALLOWED',36,C.green)},
+  {captions:['Fresh useful app attempt needs port 8443','Port 8443 misses the 443-only allowance','Default block prevents app delivery'],draw:p=>base({site:false,app:true})+rules('normal','none',p===2)+packet(504,p===0?1190:930)+evidence('8443',C.amber,720)+(p===1?`<path d="M650 740Q720 650 700 550" fill="none" stroke="${C.amber}" stroke-width="6" stroke-dasharray="12 10"/>`+icon('ban',660,530,45,C.red):'')+(p===2?text(504,1050,'BLOCKED',48,C.red):'')},
+  {captions:['Same boundary, configured rules and state','Known reply matches and passes','Independent incoming attempt reaches default block'],draw:p=>base({site:false,open:p===1,route:p===2?'other':'out'})+rules('normal',p===0?'web':'none',p===2)+state(p===2?'miss':'match')+packet(504,p===1?1190:810,p===2?C.amber:C.cyan,180,'arrow-down')+(p>0?result(p===1?'ALLOW':'BLOCK',p===1?C.green:C.red):'')}
+];
+
+try{
+  const [script,storyboard]=await Promise.all([fetchText('../SCRIPT.md'),fetchText('../STORYBOARD.md')]);
+  await Promise.all(glyphNames.map(async name=>{const raw=await fetchText(`../public/icons/${name}.svg`);const svg=new DOMParser().parseFromString(raw,'image/svg+xml').documentElement;glyphs[name]={viewBox:svg.getAttribute('viewBox'),paths:[...svg.querySelectorAll('path')].map(path=>path.outerHTML).join('')};}));
+  const passages=[...script.matchAll(/^## Line (\d+) - ([^\n]+)\n([\s\S]*?)(?=^## Line |$(?![\s\S]))/gm)];
+  const durations=[...storyboard.matchAll(/^- duration: (\d+(?:\.\d+)?)s$/gm)].map(m=>+m[1]);
+  if(passages.length!==scenes.length||durations.length!==scenes.length)throw new Error('Script/storyboard/sketch counts differ');
+  let start=0,words=0;
+  passages.forEach((m,i)=>{
+    const narration=[...m[3].matchAll(/^ {4}(.+)$/gm)].map(v=>v[1]).join(' ');
+    if(!narration)throw new Error(`Missing narration for scene ${i+1}`);
+    words+=narration.split(/\s+/).length;
+    const section=document.createElement('section');section.id=`scene-${i+1}`;
+    const title=document.createElement('h2');title.textContent=`${i+1}. ${m[2]}`;section.append(title);
+    const meta=document.createElement('div');meta.className='meta';meta.textContent=`${start.toFixed(3)}-${(start+durations[i]).toFixed(3)}s measured · ${durations[i]}s scene`;section.append(meta);
+    const voice=document.createElement('p');voice.className='narration';voice.textContent=narration;section.append(voice);
+    const poses=document.createElement('div');poses.className='poses';
+    for(let p=0;p<3;p++){
+      const figure=document.createElement('figure'),caption=document.createElement('figcaption');caption.textContent=`${['BEFORE','COMPARE / ACTION','RESULT'][p]} · ${scenes[i].captions[p]}`;figure.append(caption);
+      figure.insertAdjacentHTML('beforeend',`<svg class="sketch" role="img" aria-label="Scene ${i+1}, ${escape(scenes[i].captions[p])}" data-scene="${i+1}" data-pose="${p}" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg"><rect width="1080" height="1920" fill="#0B1020"/>${scenes[i].draw(p)}<rect class="safe" x="72" y="180" width="864" height="1420"/></svg>`);
+      poses.append(figure);
+    }
+    section.append(poses);document.querySelector('#scenes').append(section);start+=durations[i];
+  });
+  document.querySelector('#summary').textContent=`${scenes.length} scenes · ${words} spoken words · ${start.toFixed(3)}s (${Math.floor(start/60)}:${String(Math.round(start%60)).padStart(2,'0')}) measured · captions / music / effects off`;
+  document.querySelector('#safe-toggle').addEventListener('change',e=>document.body.classList.toggle('show-safe',e.target.checked));
+  document.body.dataset.ready='true';
+}catch(error){document.querySelector('#error').hidden=false;document.querySelector('#error').textContent=error.message;console.error(error);}
+</script>
+</body>
+</html>

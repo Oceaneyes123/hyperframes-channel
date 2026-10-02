@@ -41,7 +41,8 @@ jumps, repeated entrances, unexplained disappearances and mismatched handoff pos
 deliberate reading pauses. Check label safety throughout zooms and settle actions
 before narration ends. Record limitations instead of marking unseen beats passed.
 
-Run `node scripts/test_motion.mjs` and `python -m unittest discover -s scripts`.
+Run `node scripts/test_motion.mjs`, `node scripts/test_motion_presets.mjs`,
+and `python -m unittest discover -s scripts`.
 For a new video, inspect its own compiled preview at the storyboard's measured
 sample times. Check backward/random seeks, label bounds throughout movement,
 arrival reactions and settled results. No previous project is needed.
@@ -69,7 +70,8 @@ required. Evaluate the creative rules in `SCRIPT_GUIDE.md` and `MOTION.md`:
   natural next question where appropriate? Does the final payoff answer the hook?
 - Are technical ideas shown before being named where possible? Does every
   sentence advance explanation, create useful curiosity or pay off a question?
-- Can the main causal explanation be understood with sound off?
+- Can the main causal explanation be understood with sound off through objects,
+  relationships, state changes and consequences, without written narration?
 - Do important actions happen around the spoken phrases that give them meaning?
   Inspect the actual event with narration, not merely the cue file's timestamps.
 - Does motion show cause before effect, including the receiving object's response?
@@ -81,6 +83,25 @@ required. Evaluate the creative rules in `SCRIPT_GUIDE.md` and `MOTION.md`:
 - Which effects, transitions or camera moves can be removed without losing meaning?
 - Does the sequence feel like directed motion graphics, with visible mechanisms,
   rather than an animated slide presentation dominated by entrances and labels?
+- Does the sequence use the visual treatments in `MOTION.md` according to the
+  ideas, rather than defaulting every scene to connected nodes and moving dots?
+- Do expressive poses, playful reactions, transformations or visual surprises
+  make discoveries and payoffs engaging throughout? Check actual anticipation,
+  action and settling at phone size; a named recipe is not evidence of execution.
+- Do playful metaphors preserve technical causality, counts, scope and exact
+  values? Can the viewer distinguish a presentation gag from a literal mechanism?
+- For performances and depth, do travel, whole-body deformation and delayed
+  parts behave coherently while labels stay rigid? Do lift/landing shadows and
+  layer occlusion preserve the intended material and retained/copy relationship?
+- For composited handoffs, inspect both endpoints and the middle: do the carried
+  identity and geometry match, does a wipe cover the scene change, and does the
+  incoming mask cover the outgoing state before it disappears? Are there
+  duplicate heroes, exposed cuts or labels moving before they can be read?
+
+The [flow-motion example checks](examples/flow-motion/README.md#verification)
+demonstrate these inspections. Reuse the check intent and appropriate sample
+times on the target project's compiled preview; passing the silent example's
+browser test does not validate that project's narration, storyboard or gates.
 
 Prioritize viewer retention, clarity and comprehension, story progression,
 motion quality, visual continuity, narration-to-motion synchronization, then
@@ -88,6 +109,28 @@ production consistency. Technical accuracy, required coverage and approval gates
 remain constraints. Every line, animation, transition, camera move and visual
 change must serve the explanation or viewer attention; impressive effects alone
 do not pass review. Structural checks do not establish these creative qualities.
+
+## Text-minimization review at both gates
+
+At Gate 1 inspect every proposed visible text element in the script and actual-
+icon sketches. At Gate 2 inspect every actual visible text element across the
+complete preview, including temporary words and mid-motion states. Apply
+`DESIGN.md`'s text contract. For each element ask:
+
+- Could the viewer understand this through objects and animation instead?
+  If yes, remove it.
+- Is it repeating the narrator? If yes, remove it unless the exact word or value
+  is necessary to identify the object, state or technical detail.
+- If needed, can it be a 1–3 word label? Does an exact technical value need
+  reading time? Has a temporary word finished its purpose and left the stage?
+
+Flag transcript duplication, sentence-length explanations, unnecessary headings,
+static scene or chapter numbers, explanatory cards, redundant labels and
+permanently visible titles. Reject fixed header areas, repeated top bars and
+decorative navigation UI. Record each removal or justified retained element in
+the storyboard's text-necessity cells and text-review notes, with preview times
+and evidence at Gate 2. Resolve all flags before handing off for approval.
+Reviewing copy alone does not establish that the animation teaches the mechanism.
 
 ## Final preview and render
 

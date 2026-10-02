@@ -175,6 +175,24 @@ class ValidatorTests(unittest.TestCase):
         finally:
             shutil.rmtree(root)
 
+    def test_motion_presets_load_only_when_staged(self):
+        root = self.fixture()
+        try:
+            (root / "public/vendor").mkdir()
+            (root / "public/vendor/gsap.min.js").write_text("// local runtime", encoding="utf-8")
+            channel = json.loads((root / "channel.json").read_text(encoding="utf-8"))
+            channel["motion_version"] = "1.0.0"
+            (root / "channel.json").write_text(json.dumps(channel), encoding="utf-8")
+            for name in ("motion.js", "motion.css"):
+                shutil.copy2(Path(__file__).parents[1] / "channel" / name, root / "channel" / name)
+            assemble(root)
+            self.assertNotIn("motion-presets.js", (root / "index.html").read_text(encoding="utf-8"))
+            shutil.copy2(Path(__file__).parents[1] / "channel/motion-presets.js", root / "channel/motion-presets.js")
+            assemble(root)
+            self.assertIn('src="channel/motion-presets.js"', (root / "index.html").read_text(encoding="utf-8"))
+        finally:
+            shutil.rmtree(root)
+
     @staticmethod
     def replace(path, old, new):
         path.write_text(path.read_text(encoding="utf-8").replace(old, new), encoding="utf-8")

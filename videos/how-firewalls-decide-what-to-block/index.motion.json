@@ -1,0 +1,167 @@
+{
+  "duration": 170.17904761904762,
+  "assertions": [
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-1\"] .gate-arm",
+      "bySec": 0.8
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-1\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-1\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-2\"] .gate-arm",
+      "bySec": 10.134421768707483
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-2\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-2\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-3\"] .gate-arm",
+      "bySec": 20.513741496598637
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-3\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-3\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-4\"] .gate-arm",
+      "bySec": 38.76462585034013
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-4\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-4\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-5\"] .gate-arm",
+      "bySec": 53.53251700680272
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-5\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-5\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-6\"] .gate-arm",
+      "bySec": 66.76789115646258
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-6\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-6\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-7\"] .gate-arm",
+      "bySec": 86.27265306122449
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-7\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-7\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-8\"] .gate-arm",
+      "bySec": 103.61795918367346
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-8\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-8\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-9\"] .gate-arm",
+      "bySec": 118.31619047619047
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-9\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-9\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-10\"] .gate-arm",
+      "bySec": 138.65687074829933
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-10\"] .diagram"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-11\"] .gate-arm",
+      "bySec": 148.47891156462586
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-11\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-11\"] .packet"
+    },
+    {
+      "kind": "appearsBy",
+      "selector": "[data-composition-id=\"line-12\"] .gate-arm",
+      "bySec": 157.53469387755104
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-12\"] .diagram"
+    },
+    {
+      "kind": "staysInFrame",
+      "selector": "[data-composition-id=\"line-12\"] .packet"
+    },
+    {
+      "kind": "before",
+      "a": "[data-composition-id=\"line-6\"] .ledger",
+      "b": "[data-composition-id=\"line-6\"] .match"
+    },
+    {
+      "kind": "before",
+      "a": "[data-composition-id=\"line-10\"] .allow",
+      "b": "[data-composition-id=\"line-10\"] .hazard"
+    }
+  ]
+}

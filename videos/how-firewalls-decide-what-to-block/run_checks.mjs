@@ -1,0 +1,16 @@
+import {spawnSync} from 'node:child_process';
+import {readFileSync, writeFileSync} from 'node:fs';
+import {dirname, join} from 'node:path';
+import {fileURLToPath} from 'node:url';
+const project=dirname(fileURLToPath(import.meta.url));
+const meta=JSON.parse(readFileSync(join(project,'audio_meta.json')));
+const beats=JSON.parse(readFileSync(join(project,'motion_beats.json')));
+const times=[0,...meta.scenes.flatMap(s=>[s.start_s+.03,...Object.values(beats.scenes[s.id].cues).map(t=>s.start_s+t+.5)])].map(t=>t.toFixed(3)).join(',');
+const result=spawnSync('npx', ['--yes','hyperframes@0.8.108','check','--json','--samples','24','--at',times,'--at-transitions'],{cwd:project,shell:true,encoding:'utf8',maxBuffer:10*1024*1024});
+writeFileSync(join(project,'review/hyperframes-check.log'),result.stdout+(result.stderr??''));
+const start=result.stdout.indexOf('{\n');
+if(start<0)throw new Error('No HyperFrames JSON report');
+const report=JSON.parse(result.stdout.slice(start));
+writeFileSync(join(project,'review/hyperframes-check.json'),JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify(Object.fromEntries(['ok','lint','runtime','layout','motion','contrast'].map(k=>[k,typeof report[k]==='object'?{ok:report[k].ok,errors:report[k].errorCount,warnings:report[k].warningCount,samples:report[k].samples,findings:report[k].findings?.map(f=>({code:f.code,time:f.time,text:f.text,selector:f.selector,message:f.message})).slice(0,15)}:report[k]])),null,2));
+process.exitCode=result.status;

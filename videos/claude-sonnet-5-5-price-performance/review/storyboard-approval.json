@@ -1,8 +1,0 @@
-{
-  "status": "approved",
-  "approved_at": "2026-09-29",
-  "approved_by": "user",
-  "gate": 1,
-  "icon_plan": "ICON_PLAN.json",
-  "sketches": ["review/gate-1-board.html"]
-}

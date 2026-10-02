@@ -77,11 +77,25 @@ metadata first. See `VERIFY.md` for structural checks and preview review.
 
 Set `motion_version` to `1.0.0` in a design-v2 `channel.json`, then run
 `python scripts/sync_channel_assets.py --project videos/<project>` before
-assembly. This stages motion.js, motion.css and local fonts. Do not use `--all`
+assembly. This stages motion.js, motion-presets.js, motion.css, local fonts and
+`channel/artwork/`. Do not use `--all`
 to migrate unrelated videos. The assembler loads the runtime once; frames
 import motion.css after styles.css. See `channel/MOTION_API.md` for the API.
 Attach pure drawing to one paused GSAP timeline with `ChannelMotion.mount`;
-the property setter works under callback-suppressed seeking.
+the property setter works under callback-suppressed seeking. Use
+`channel/MOTION_LIBRARY.md` for optional scene-local presets; old projects
+without the preset asset retain their existing runtime.
+
+For articulated props and complete visual handoffs, adapt the selected
+[flow-motion source](examples/flow-motion/index.html) using its
+[layer/pivot notes](examples/flow-motion/README.md#layered-artwork).
+Reference staged symbols from the project root, for example
+`channel/artwork/flow-props.svg#packet-back`, and record them in `ICON_PLAN.json`.
+Copy only the needed layers/choreography into the target scene; keep its
+composition ID, measured cues and single mounted timeline. The example's
+global clock belongs to its one 32s composition, not an assembled video's
+individual frames. The legacy `channel/templates/frame.html` duration-fraction
+tweens do not replace measured semantic cues in new motion-v1 scenes.
 
 If the target project uses a scene generator, edit that project's source and
 regenerate its frames before assembly. Do not require another project's pilot
