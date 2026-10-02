@@ -31,6 +31,8 @@ def assemble(project: Path) -> Path:
                 raise ValueError(f"Missing channel/{name}; sync channel assets first")
         load_beats(project)
         motion_script = '<script src="channel/motion.js"></script>'
+        if (project / "channel/motion-presets.js").is_file():
+            motion_script += '\n<script src="channel/motion-presets.js"></script>'
     hosts, audio, seen = [], [], set()
     end = 0.0
     for audio_track, scene in enumerate(scenes, 10):

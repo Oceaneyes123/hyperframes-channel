@@ -18,10 +18,13 @@ class MotionBeatChecks(unittest.TestCase):
             config.write_text(json.dumps({'design_version': '2.0.0'}))
             sync(p)
             self.assertFalse((p / 'channel/motion.js').exists())
+            self.assertFalse((p / 'channel/artwork').exists())
             config.write_text(json.dumps({'design_version': '2.0.0', 'motion_version': '1.0.0'}))
             sync(p)
             self.assertTrue((p / 'channel/motion.js').is_file())
+            self.assertTrue((p / 'channel/motion-presets.js').is_file())
             self.assertTrue((p / 'channel/fonts/Barlow-Bold.ttf').is_file())
+            self.assertTrue((p / 'channel/artwork/flow-props.svg').is_file())
 
     def test_audio_fingerprint_and_cue_bounds(self):
         with tempfile.TemporaryDirectory() as folder:

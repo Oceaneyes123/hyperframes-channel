@@ -39,3 +39,20 @@ Keep these in the storyboard's action table. Use estimated local windows for
 planning, then measured WAV cues after Gate 1. The same objects carry continuity;
 the scene need not clear and refill the canvas between beats. No fixed interval
 or decorative movement is needed.
+
+## Motion implementation references
+
+Use the [flow-motion guide](../examples/flow-motion/README.md) and
+[composition source](../examples/flow-motion/index.html) for articulated local
+props and playable motion patterns. The packet cutaway supports inspecting
+contents; file assembly supports ordered arrivals; rejection supports a visible
+decision; the cache drawer supports stored content, occlusion and a returned
+copy. Their handoffs demonstrate matched geometry, wipe coverage and composited
+zoom states; choose one only when it serves the actual explanation.
+
+The cache-hit example begins with valid cached content. It does not implement
+this narrative's first miss, storage or freshness decision. Plan and research
+those additional beats for a complete repeated-fetch video. The four silent
+examples are independent authoring demonstrations, not a script, a factual
+end-to-end process or an approved preview for a new project. Owners above
+control style, measured timing and the two gates.

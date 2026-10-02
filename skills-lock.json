@@ -79,6 +79,12 @@
       "skillPath": "skills/media-use/SKILL.md",
       "computedHash": "b01947a858ea78a25e7bb145431f4c0fc39f13b041bbd33a63476dfcffe22a5b"
     },
+    "motion-design": {
+      "source": "LottieFiles/motion-design-skill",
+      "sourceType": "github",
+      "skillPath": "skills/motion-design/SKILL.md",
+      "computedHash": "4f16f46c81f25a2a25b7a4720b7ea001e65f384b31b5b7f4b455fef87fbc9016"
+    },
     "motion-graphics": {
       "source": "heygen-com/hyperframes",
       "sourceType": "github",

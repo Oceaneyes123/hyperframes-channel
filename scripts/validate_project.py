@@ -218,7 +218,10 @@ def validate_diagnostics(project: Path, stage="preview") -> tuple[list[str], lis
     is_v2 = not legacy and DESIGN_VERSION.startswith("2")
     if channel.get("motion_version") is not None:
         if not is_v2 or channel["motion_version"] != "1.0.0": errors.append("unsupported motion/design version pairing")
-        for name in ("motion.js", "motion.css"):
+        assets = ("motion.js", "motion.css")
+        if (project / "channel/motion-presets.js").exists():
+            assets += ("motion-presets.js",)
+        for name in assets:
             local = project / "channel" / name
             if not local.exists() or local.read_bytes() != (ROOT / "channel" / name).read_bytes(): errors.append(f"channel/{name} is missing or stale; sync assets")
         try:
