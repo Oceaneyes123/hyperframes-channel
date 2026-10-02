@@ -9,10 +9,10 @@ video. Then load only the phase guides that apply; do not load the generic
 | Design critique | `DESIGN.md` and selected frames | workflow guides |
 | Script writing | `SCRIPT_GUIDE.md`, `FACTS.md`, `channel/templates/SCRIPT.md` | build and verify guides |
 | Planning | `channel/CHANNEL_RECIPE.md`, `SCRIPT_GUIDE.md`, `DESIGN.md`, `MOTION.md` | build and verify guides |
-| Storyboard and sketches | `DESIGN.md`, `MOTION.md`, `channel/templates/STORYBOARD.md` | build and verify guides |
+| Storyboard and sketches | `DESIGN.md`, `MOTION.md`, `channel/templates/STORYBOARD.md`; add `channel/MOTION_LIBRARY.md` and installed `motion-design` skill for significant choreography | build and verify guides |
 | Voice cloning | `VOICE_CLONE.md` | video workflow guides |
 | TTS and timing | `BUILD.md` audio section, `SCRIPT.md` | full storyboard |
-| One frame | `DESIGN.md`, `MOTION.md`, its scene packet | full project |
+| One frame | `DESIGN.md`, `MOTION.md`, its scene packet; add `channel/MOTION_LIBRARY.md` and installed `motion-design` skill for significant motion decisions | full project |
 | Assembly | `BUILD.md` assembly section | visual example |
 | Checks and preview | `VERIFY.md` and target project state | full recipe |
 | Render | `VERIFY.md` render section and saved approval | planning docs |
@@ -55,7 +55,11 @@ Use `SCRIPT_GUIDE.md` for narrative structure, curiosity, tone and sentence
 quality. Use `MOTION.md` for attention beats, motion lifecycle and narration
 cue intent; `channel/MOTION_API.md` owns measured cue schema and runtime API.
 Use the storyboard template to record the plan and `VERIFY.md` for quality
-review. Keep creative rules in their owners rather than duplicating them here.
+review. During motion planning or frame implementation, use the relevant
+[flow-motion example](examples/flow-motion/README.md) via
+`channel/MOTION_LIBRARY.md`; it is a permanent authoring reference, not a
+required previous video. Keep creative rules in their owners rather than
+duplicating them here.
 
 ## CodeGraph
 

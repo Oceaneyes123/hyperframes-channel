@@ -5,6 +5,11 @@ Sync assets, then assemble. The parent loads `channel/motion.js` once; frames
 import `channel/styles.css` and `channel/motion.css`. Existing projects do not
 change. Frozen v1 projects cannot opt in without migration.
 
+`motion.js` is the low-level runtime. Optional `motion-presets.js` composes its
+primitives; see `MOTION_LIBRARY.md` for intent and recipe selection. Syncing a
+new motion-v1 project stages both scripts. The assembler loads the preset file
+only when present, so existing project copies retain their current behavior.
+
 ```js
 const root = document.querySelector('[data-composition-id="line-2"]');
 const q = selector => root.querySelector(selector);
@@ -77,6 +82,14 @@ scene/audio windows contiguous: animate an outgoing inner wrapper and inherit
 its endpoint in the next scene. For a true visual overlap, keep both visual
 states inside one scene and drive their inner wrappers from one transition
 time. Do not change timed-host visibility or extend host/audio windows.
+
+See the [complete local handoffs](../examples/flow-motion/README.md#object-performances-transitions-and-depth)
+and [source](../examples/flow-motion/index.html) for a foreground carrier,
+covered content wipe and camera/iris composition. The source uses one 32s host;
+when adapting a handoff into an assembled frame, convert its global times to
+that frame's measured local cues and compose both states within that host.
+The samples use existing primitives; no arbitrary SVG morphing or additional
+transition scheduler is provided.
 
 ## Cue file
 

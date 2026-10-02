@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080,height=1920">
+  <title>Technical flow motion examples</title>
+  <link rel="stylesheet" href="channel/styles.css">
+  <link rel="stylesheet" href="channel/motion.css">
+  <script src="public/vendor/gsap.min.js"></script>
+  <script src="channel/motion.js"></script>
+  <script src="channel/motion-presets.js"></script>
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;width:1080px;height:1920px;background:#0B1020}
+    #flow-examples{position:relative;width:1080px;height:1920px;overflow:hidden;color:#F5F7FF}
+    #flow-examples .sample{position:absolute;inset:0;width:1080px;height:1920px}
+    #flow-examples .world{position:absolute;inset:0;width:1080px;height:1920px}
+    #flow-examples .prop,#flow-examples .part{position:absolute;display:block}
+    #flow-examples .part{inset:0;width:100%;height:100%;transform-origin:50% 50%}
+    #flow-examples svg{display:block;width:100%;height:100%;overflow:visible}
+    #flow-examples .label{position:absolute;font:700 36px/1.2 var(--hf-mono);text-align:center;white-space:nowrap}
+    #flow-examples .floor{position:absolute;left:105px;right:165px;top:1370px;height:4px;background:#33415F}
+    #flow-examples .flap{transform-origin:50% 32%;backface-visibility:visible}
+    #flow-examples .gate-arm{transform-origin:14.5% 53.75%}
+    #flow-examples .device-lid,#flow-examples .device-screen{transform-origin:50% 75%}
+    #flow-examples .packet .body{transform-origin:50% 72%}
+    #flow-examples .depth-plane{position:absolute;left:155px;top:350px;width:680px;height:1000px;border-radius:50%;background:radial-gradient(ellipse,#25395966,transparent 70%)}
+    #flow-examples .contact-shadow svg{filter:brightness(0)}
+    #flow-examples .ground-shadow .part{transform-origin:50% 87.5%}
+    #flow-examples .handoff-packet{left:0;top:0;width:400px;height:400px;transform-origin:0 0}
+    #flow-examples .content-wipe{left:0;top:0;width:400px;height:400px;transform-origin:0 0}
+    #flow-examples [data-example="cache"] .world{background:#0B1020}
+  </style>
+</head>
+<body>
+  <div data-hf-id="hf-mhc3" id="flow-examples" class="scene" data-composition-id="flow-examples" data-start="0" data-duration="32" data-width="1080" data-height="1920">
+    <section data-hf-id="hf-lvjn" class="sample" data-example="reject"><div data-hf-id="hf-n1vw" class="world">
+      <div data-hf-id="hf-kk9u" class="floor"></div>
+      <div data-hf-id="hf-jhz6" class="prop device" style="left:295px;top:1035px;width:400px;height:400px"></div>
+      <div data-hf-id="hf-no3r" class="prop gate" style="left:285px;top:370px;width:420px;height:420px"></div>
+      <div data-hf-id="hf-c4n8" class="prop packet" style="left:385px;top:885px;width:220px;height:220px"></div>
+      <div data-hf-id="hf-ylii" class="label result" style="left:285px;top:920px;width:420px;color:#FFC4AF">BLOCKED</div>
+    </div></section>
+    <section data-hf-id="hf-81qi" class="sample" data-example="unfold"><div data-hf-id="hf-8m78" class="world">
+      <div data-hf-id="hf-f1pf" class="prop packet" style="left:225px;top:630px;width:550px;height:550px"></div>
+      <div data-hf-id="hf-755d" class="prop header" style="left:110px;top:535px;width:320px;height:320px"></div>
+      <div data-hf-id="hf-dh9s" class="prop data" style="left:570px;top:535px;width:320px;height:320px"></div>
+      <div data-hf-id="hf-vk7q" class="label header-label" style="left:110px;top:490px;width:320px">HEADER</div>
+      <div data-hf-id="hf-uozk" class="label data-label" style="left:570px;top:490px;width:320px">DATA</div>
+    </div></section>
+    <section data-hf-id="hf-fbky" class="sample" data-example="assemble"><div data-hf-id="hf-7fa5" class="world" data-layout-allow-overflow>
+      <div data-hf-id="hf-kgct" class="prop file-outline" style="left:245px;top:530px;width:500px;height:500px"></div>
+      <div data-hf-id="hf-tsca" class="prop chunk" data-piece="0" style="left:342px;top:700px;width:145px;height:145px"></div>
+      <div data-hf-id="hf-v8ur" class="prop chunk" data-piece="1" style="left:492px;top:700px;width:145px;height:145px"></div>
+      <div data-hf-id="hf-f8eo" class="prop chunk" data-piece="2" style="left:342px;top:850px;width:145px;height:145px"></div>
+      <div data-hf-id="hf-1i6l" class="prop chunk" data-piece="3" style="left:492px;top:850px;width:145px;height:145px"></div>
+      <div data-hf-id="hf-c8n6" class="prop success" style="left:655px;top:970px;width:150px;height:150px"></div>
+      <div data-hf-id="hf-i4t3" class="label result" style="left:245px;top:1150px;width:500px;color:#A1F2C4">COMPLETE</div>
+    </div></section>
+    <section data-hf-id="hf-r82o" class="sample" data-example="cache"><div data-hf-id="hf-7tl6" class="world" data-layout-allow-overflow>
+      <div data-hf-id="hf-89dy" class="floor"></div>
+      <div data-hf-id="hf-wt4f" class="prop device" style="left:290px;top:1035px;width:400px;height:400px"></div>
+      <div data-hf-id="hf-bkky" class="prop cache" style="left:270px;top:385px;width:440px;height:440px"></div>
+      <div data-hf-id="hf-4j20" class="prop stored-data" style="left:400px;top:535px;width:180px;height:180px"></div>
+      <div data-hf-id="hf-1say" class="prop request packet" style="left:400px;top:930px;width:180px;height:180px"></div>
+      <div data-hf-id="hf-01u1" class="prop response" style="left:400px;top:535px;width:180px;height:180px"></div>
+      <div data-hf-id="hf-5alx" class="label cache-label" style="left:270px;top:845px;width:440px;color:#D4C8FF">CACHE</div>
+      <div data-hf-id="hf-gtsj" class="label result" style="left:270px;top:905px;width:440px;color:#A1F2C4">HIT</div>
+    </div></section>
+  </div>
+  <script>
+  {
+    const root = document.querySelector('[data-composition-id="flow-examples"]');
+    const M = ChannelMotion, P = ChannelMotionPresets;
+    const q = (scene, selector) => scene.querySelector(selector);
+    // Every part uses the same viewBox. A wrapper owns each independently animated layer.
+    const artwork = (target, symbol, name = symbol) => {
+      const layer = document.createElement('div');
+      layer.className = `part ${name}`;
+      layer.innerHTML = `<svg viewBox="0 0 400 400" aria-hidden="true"><use href="channel/artwork/flow-props.svg#${symbol}"></use></svg>`;
+      target.append(layer);
+      return layer;
+    };
+    const scenes = [...root.querySelectorAll('.sample')];
+    for (const scene of scenes) {
+      const plane = document.createElement('div'); plane.className = 'depth-plane';
+      q(scene,'.world').prepend(plane);
+    }
+    // A foreground carrier keeps one packet visible while both scene states change.
+    const carrier = document.createElement('div'); carrier.className = 'prop packet handoff-packet'; root.append(carrier);
+    const wipe = document.createElement('div'); wipe.className = 'prop content-wipe'; root.append(wipe);
+    artwork(wipe,'data');
+    for (const device of root.querySelectorAll('.device')) {
+      artwork(device, 'shadow'); artwork(device, 'device-body');
+      artwork(device, 'device-lid'); artwork(device, 'device-screen');
+    }
+    for (const packet of root.querySelectorAll('.packet')) {
+      const body = document.createElement('div'); body.className = 'part body'; packet.append(body);
+      artwork(body, 'packet-back'); artwork(body, 'packet-front');
+      artwork(body, 'packet-flap', 'flap'); artwork(body, 'packet-seal', 'seal');
+    }
+    for (const scene of [scenes[0],scenes[3]]) {
+      const shadow = document.createElement('div'); shadow.className = 'prop ground-shadow';
+      shadow.style.cssText = 'left:385px;top:1177px;width:220px;height:220px';
+      q(scene,'.world').insertBefore(shadow,q(scene,'.packet')); artwork(shadow,'shadow');
+    }
+    const gate = root.querySelector('.gate');
+    for (const part of ['shadow', 'gate-posts', 'gate-arm', 'gate-badge']) artwork(gate, part);
+    const cache = root.querySelector('.cache');
+    for (const part of ['shadow', 'cache-body']) artwork(cache, part);
+    const stored = root.querySelector('.stored-data');
+    stored.style.cssText = 'left:130px;top:80px;width:180px;height:180px';
+    cache.append(stored); artwork(stored,'data'); artwork(cache,'cache-drawer');
+    for (const name of ['header', 'data', 'file-outline', 'chunk', 'success']) {
+      for (const target of root.querySelectorAll('.prop')) {
+        if (target.classList.contains(name)) {
+          if (['header','data','chunk'].includes(name)) artwork(target,name,'contact-shadow');
+          artwork(target, name);
+        }
+      }
+    }
+    root.querySelector('.response').style.top = '465px';
+    artwork(root.querySelector('.response'), 'data');
+    artwork(root.querySelector('[data-example="cache"] .device'), 'data', 'device-content');
+
+    const fade = (t, at, duration = .25) => M.smooth((t - at) / duration);
+    const pose = (initial, keys) => M.state(initial, keys);
+
+    const rejectTravel = pose({x:0,y:0,rotation:0}, [
+      [.25,{y:30,rotation:-6},'FAST',.3],
+      [.7,{x:20,y:-400,rotation:4},'SLOW',1.3],
+      [2.35,{x:-35,y:-225,rotation:-16},'IMPACT',.65],
+      [3.25,{x:0,y:-215,rotation:0},'SOFT',.65]
+    ]);
+    const gateClose = pose({rotation:-68}, [[1.55,{rotation:3},'SLOW',.6],[2.2,{rotation:0},'SOFT',.25]]);
+    const rejectBody = pose({scaleX:1,scaleY:1}, [
+      [.25,{scaleX:1.14,scaleY:.86},'FAST',.25],
+      [.7,{scaleX:.9,scaleY:1.13},'FAST',.25],
+      [1.3,{scaleX:1,scaleY:1},'SOFT',.4],
+      [2.2,{scaleX:1.18,scaleY:.8},'FAST',.15],
+      [2.45,{scaleX:.92,scaleY:1.1},'IMPACT',.35],
+      [3.1,{scaleX:1,scaleY:1},'SOFT',.6]
+    ]);
+    const sealLag = pose({y:0,rotation:0}, [[2.3,{y:8,rotation:12},'FAST',.2],[2.65,{y:0,rotation:0},'SOFT',.6]]);
+    const rejectDevice = pose({rotation:0}, [[.35,{rotation:-4},'SOFT',.4],[1.2,{rotation:0},'SOFT',.5]]);
+    const rejection = t => {
+      const s = scenes[0], packet = q(s,'.packet');
+      const travel = rejectTravel(t), lift = M.clamp(-travel.y/400);
+      M.apply(packet,{...travel,opacity:t<7.15 ? 1 : 0});
+      M.apply(q(packet,'.body'),rejectBody(t));
+      M.apply(q(packet,'.seal'),sealLag(t));
+      M.apply(q(s,'.ground-shadow .part'),{x:travel.x,scale:1-.5*lift,opacity:.55-.35*lift,blur:8*lift});
+      M.apply(q(s,'.gate-arm'),gateClose(t));
+      M.apply(q(s,'.gate-badge'),{scale:1 + .1 * Math.sin(Math.PI * fade(t,2.3,.5))});
+      M.apply(q(s,'.device-lid'),rejectDevice(t));
+      M.apply(q(s,'.device-screen'),rejectDevice(t));
+      M.apply(q(s,'.result'),{opacity:fade(t,2.65)});
+    };
+
+    const flap = M.track(0, [[.55,-155,'SLOW',.9],[5.6,0,'SLOW',.9]]);
+    const headerPose = pose({x:230,y:255,scale:.6,rotation:-8}, [
+      [1.25,{x:0,y:0,scale:1,rotation:-5},'MORPH',1.1],
+      [5.05,{x:230,y:255,scale:.6,rotation:0},'SLOW',.8]
+    ]);
+    const dataPose = pose({x:-230,y:255,scale:.6,rotation:8}, [
+      [1.45,{x:0,y:0,scale:1,rotation:5},'MORPH',1.1],
+      [5.15,{x:-230,y:255,scale:.6,rotation:0},'SLOW',.8]
+    ]);
+    const unfolding = t => {
+      const s = scenes[1], open = fade(t,.55,.9)*(1-fade(t,5.6,.9));
+      q(s,'.flap').style.transform = `perspective(700px) rotateX(${flap(t)}deg)`;
+      M.apply(q(s,'.seal'),{opacity:1-open});
+      M.apply(q(s,'.packet'),{y:70*open,scale:1-.16*open,opacity:t>=.4 ? 1 : 0});
+      M.apply(q(s,'.header'),{...headerPose(t),opacity:fade(t,1.1)*(1-fade(t,5.7))});
+      M.apply(q(s,'.data'),{...dataPose(t),opacity:fade(t,1.3)*(1-fade(t,5.8))});
+      for (const part of s.querySelectorAll('.contact-shadow')) M.apply(part,{y:18+14*open,scale:.96,opacity:.24,blur:8+6*open});
+      for (const label of s.querySelectorAll('.label')) M.apply(label,{opacity:fade(t,2.5)*(1-fade(t,4.9))});
+    };
+
+    const starts = [{x:-210,y:-250,rotation:-22},{x:230,y:-110,rotation:18},
+      {x:-185,y:210,rotation:15},{x:210,y:240,rotation:-18}];
+    const pieces = starts.map((start,i) => pose({...start,scale:.85}, [
+      [.8 + i*.32,{x:0,y:0,rotation:0,scale:1},'MORPH',.9]
+    ]));
+    const landings = starts.map((_,i) => P.emphasis({at:1.7+i*.32,kind:'receive',amount:.055}));
+    const assembly = t => {
+      const s = scenes[2];
+      [...s.querySelectorAll('.prop.chunk')].forEach((part,i) => {
+        M.apply(part,pieces[i](t)); M.apply(q(part,'.part.chunk'),landings[i](t));
+        const landing = fade(t,.8+i*.32,.9);
+        M.apply(q(part,'.contact-shadow'),{y:28-20*landing,scale:.95,opacity:.12+.25*landing,blur:14-10*landing});
+      });
+      M.apply(q(s,'.file-outline'),{opacity:.3+.7*fade(t,1.75,.7)});
+      M.apply(q(s,'.success'),{opacity:fade(t,2.8),scale:.75+.25*fade(t,2.8,.4)});
+      M.apply(q(s,'.result'),{opacity:fade(t,3.05)*(1-fade(t,7.2,.15))});
+    };
+
+    const request = pose({y:0,rotation:0}, [[.45,{y:22,rotation:-5},'FAST',.25],
+      [.85,{y:-290,rotation:5},'SLOW',1.05]]);
+    const requestBody = pose({scaleX:1,scaleY:1}, [[.45,{scaleX:1.06,scaleY:.94},'FAST',.2],
+      [.85,{scaleX:.96,scaleY:1.05},'FAST',.2],[1.5,{scaleX:1,scaleY:1},'SOFT',.35]]);
+    const drawer = pose({y:0,scale:1}, [[1.9,{y:78,scale:1.05},'SLOW',.7],
+      [2.65,{y:72,scale:1.05},'SOFT',.2],[4.3,{y:0,scale:1},'SLOW',.65]]);
+    const response = pose({x:0,y:0,scale:.7,rotation:-8}, [
+      [2.6,{x:130,y:130,scale:1,rotation:8},'MORPH',.6],
+      [3.25,{x:0,y:675,scale:1,rotation:0},'SLOW',1.1]
+    ]);
+    const screenResponse = P.emphasis({at:4.4,kind:'success',amount:.06});
+    const cacheHit = t => {
+      const s = scenes[3];
+      M.apply(q(s,'.request'),{...request(t),opacity:1-fade(t,1.95)});
+      M.apply(q(s,'.request .body'),requestBody(t));
+      const lift = M.clamp(-request(t).y/290);
+      M.apply(q(s,'.ground-shadow .part'),{scale:1-.45*lift,opacity:(.5-.3*lift)*(1-fade(t,1.95)),blur:7*lift});
+      M.apply(q(s,'.cache-drawer'),drawer(t));
+      M.apply(q(s,'.stored-data'),{opacity:.4 + .6*fade(t,1.95),scale:.85});
+      M.apply(q(s,'.response'),{...response(t),opacity:fade(t,2.65)*(1-fade(t,4.45))});
+      M.apply(q(s,'.device-screen'),screenResponse(t));
+      M.apply(q(s,'.device-content'),{x:-66,y:4,scale:.37,opacity:fade(t,4.4)});
+      M.apply(q(s,'.result'),{opacity:fade(t,2.15)});
+      M.apply(q(s,'.cache-label'),{opacity:fade(t,.8)});
+    };
+
+    const draws = [rejection,unfolding,assembly,cacheHit];
+    const match = P.transition({kind:'match-morph',at:7.15,duration:1.25,
+      from:{x:385,y:670,scale:.55},to:{x:225,y:630,scale:1.375}});
+    const sweep = pose({x:-4700,y:-1100,scale:12}, [
+      [15.2,{x:-1850},'SLOW',.8],[16,{x:1800},'SLOW',.8]
+    ]);
+    const pushIn = P.camera({at:23.3,duration:.65,from:{x:540,y:960,scale:1},to:{x:490,y:780,scale:5}});
+    const pullOut = P.camera({at:23.85,duration:.95,from:{x:490,y:610,scale:1.7},to:{x:540,y:960,scale:1}});
+    const reveal = P.transition({kind:'iris',at:23.85,duration:.9,origin:'45.4% 31.8%'});
+    const parallax = [P.counter({hero:pushIn,ratio:-.08}),P.counter({hero:pullOut,ratio:-.08})];
+    const timeline = gsap.timeline({paused:true});
+    M.mount(timeline,32,t => {
+      scenes.forEach((scene,i) => {
+        const local = M.clamp(t-i*8,0,8);
+        const visible = [t<8 ? 1-fade(t,7.15,.45) : 0,
+          t>=7.75 && t<16 ? fade(t,7.75,.4) : 0,
+          t>=16 && t<24.75 ? 1 : 0,t>=23.85 ? 1 : 0][i];
+        const camera = i===2 ? pushIn(t) : i===3 ? pullOut(t) : {x:0,y:0,scale:1,origin:'0 0'};
+        M.apply(q(scene,'.world'),{...camera,opacity:visible,clipPath:i===3 ? reveal(t).clipPath : 'none'});
+        M.apply(q(scene,'.depth-plane'),i>=2 ? parallax[i-2](t) : {x:0,y:0});
+        draws[i](local);
+      });
+      M.apply(carrier,{...match(t),origin:'0 0',opacity:t>=7.15 && t<8.4 ? 1 : 0});
+      M.apply(wipe,{...sweep(t),origin:'0 0',opacity:t>=15.2 && t<16.8 ? 1 : 0});
+    });
+    window.__timelines = window.__timelines || {};
+    window.__timelines['flow-examples'] = timeline;
+  }
+  </script>
+</body>
+</html>

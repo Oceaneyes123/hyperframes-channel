@@ -58,14 +58,22 @@ Prefer showing an idea visually before introducing its formal technical name.
 Pair every spoken line with a visible action, state, comparison or result that
 it describes or clarifies, including deliberate comprehension pauses. Design
 words and visuals together using the icon-first language in `DESIGN.md`.
-Rewrite a line whose meaning cannot be shown clearly. Use precise verbs such
-as compare, route, change or reject rather than forcing violent metaphors.
+Ask: **What physically changes on screen while this sentence is spoken?** If
+the only answer is “show the sentence as text,” rewrite the narration or rethink
+the visual. Important lines should normally create movement, transformation,
+comparison, reveal, decision, connection, separation, obstruction, reaction or
+consequence. Do not fix a weak visual idea by adding display copy. Preserve the
+required fact when rewriting; deliberate comprehension pauses remain valid.
+Use precise verbs such as compare, route, change or reject rather than forcing
+violent metaphors.
 Physical metaphors must preserve the mechanism: an encrypted message does not
 become a key, and a drawn tunnel does not imply a physical private cable.
 
 Keep one coherent narration passage per scene, with as many short sentences
-and meaningful attention beats as its explanation needs. Keep display copy
-separate from narration. Add concise visual cues for planning; do not require
+and meaningful attention beats as its explanation needs. Keep any necessary
+display copy separate from narration and follow `DESIGN.md` for text necessity.
+Scene names and narrative functions organize the script; they do not instruct
+the frame to show a title. Add concise visual cues for planning; do not require
 3D animation or put production instructions into the spoken text.
 
 Write original educational narration. Use only broad storytelling qualities
