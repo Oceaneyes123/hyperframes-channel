@@ -1,22 +1,22 @@
-# Agent-installed workflow packages
-.agents/
+# Installed dependencies and Python caches
 node_modules/
-
-# HyperFrames generated media and Studio caches
-videos/**/.media/
-videos/**/.hyperframes/
-videos/**/.thumbnails/
-videos/**/.waveform-cache/
-videos/**/snapshots/
-videos/**/renders/
-videos/**/node_modules/
+.venv/
 __pycache__/
 *.py[cod]
 
-artifacts/
-models/
-**/review/
+# Agent packages, local worktrees, and browser captures
+.agents/
+**/.kilo/worktrees/
+.playwright-cli/
 
-# Downloaded Supertonic 3 model files
-.tools/supertonic3-model/
-.tools/supertonic-voice-cloning/
+# Generated video projects, artifacts, and review evidence
+videos/
+artifacts/
+review/
+models/
+
+# Downloaded audio tooling and voice models
+**/.tools/audio.cpp/
+**/.tools/supertonic3-model/
+**/.tools/supertonic-voice-cloning/
+/2d-animation/tools/supertonic3-tts/

@@ -1,0 +1,9 @@
+# OneTake's rendering, analysis, looks and optional sound tools.
+playwright
+numpy
+Pillow
+matplotlib
+fonttools
+brotli
+opencv-python
+scipy
