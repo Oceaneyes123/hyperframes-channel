@@ -4,8 +4,9 @@ Open a chat rooted in `2d-animation-v2`, replace `[TOPIC]`, and paste this block
 Unfilled optional inputs use their stated defaults.
 
 ```text
-Create a complete narrated technology explainer for YouTube Shorts in this
-workspace. Read AGENTS.md and apply the installed onetake skill as the motion
+Create a complete narrated Finance, Technology or AI explainer for YouTube Shorts
+in this workspace. Read AGENTS.md and SCRIPT_GUIDE.md; use SCRIPT_GUIDE.md as the
+single storytelling authority. Apply the installed onetake skill as the motion
 authority. Use its standalone HTML composition, move library, continuous carry,
 camera and shutter renderer with this workspace's portrait-explainer adaptations.
 
@@ -15,6 +16,7 @@ Inputs:
 - Single takeaway: [TAKEAWAY, or choose the most useful beginner mental model]
 - Process scope: [START, RESULT AND CONDITIONS, or derive from the topic]
 - Required information: [POINTS, or derive a complete coverage checklist]
+- Ending: [complete conclusion, seamless verbal loop, visual loop, or choose the best fit]
 - Sources: [SOURCES, or research authoritative sources]
 - Language: English
 - Duration: natural pacing; target a complete Short within 180 seconds
@@ -32,15 +34,19 @@ Preserve complete coverage. If the scope cannot fit within 180 seconds naturally
 report Shorts incompatibility and let me choose the scope or a longer format.
 Do not silently cut information, accelerate narration or split the video.
 
-Start with OneTake's three distinct visual concepts, including hook, carrying
-subject and look. Let me choose before storyboarding. Then research and draft
-the facts, script, timed beat sheet and actual-asset board together. Demonstrate
+Research the surprising angle and compare at least three distinct opening hooks
+using SCRIPT_GUIDE.md before writing the full script. Select the strongest and
+pair it with the payoff and ending choice. Use this story direction in OneTake's
+three distinct visual concepts, including hook, carrying subject and look. Let
+me choose before storyboarding. Then draft and revise the facts, script, timed
+beat sheet and actual-asset board together using SCRIPT_GUIDE.md. Demonstrate
 the mechanism through persistent objects, visible triggers and consequences;
 use sparse labels and comprehension holds. Keep required claims and conditions
 traceable to spoken lines and visual evidence.
 
-Gate 1: present the complete script and phone-readable board together. Wait for
-my approval before final narration synthesis or animated implementation.
+Gate 1: present the revised complete script, brief qualitative review evidence
+and phone-readable board together. Include any planned loop seam. Wait for my
+approval before final narration synthesis or animated implementation.
 
 After Gate 1, dry-run normalization, generate measured narration and retime the
 approved beats to actual WAV durations and important measured phrase cues. Build

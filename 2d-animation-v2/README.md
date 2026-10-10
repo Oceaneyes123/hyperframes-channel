@@ -1,10 +1,13 @@
 # 2d-animation-v2
 
-Beginner technology explainers using OneTake for motion and rendering, native
-1080 x 1920 YouTube Shorts, and the existing channel narration voice.
+Beginner Finance, Technology and AI explainers using OneTake for motion and
+rendering, native 1080 x 1920 YouTube Shorts, and the existing channel narration
+voice.
 
 Start a chat in this directory with [PROMPT_TEMPLATE.md](PROMPT_TEMPLATE.md).
 [AGENTS.md](AGENTS.md) owns the channel adaptations and two approval gates.
+[SCRIPT_GUIDE.md](SCRIPT_GUIDE.md) owns storytelling and script review; its
+[three-topic trial](SCRIPT_TESTS.md) records text-only examples and comparison.
 The installed [OneTake skill](C:/Users/Dave/.codex/skills/onetake/SKILL.md) owns
 motion. Its references are available on demand; the sibling's motion guides are
 not prerequisites. No previous video is required.
