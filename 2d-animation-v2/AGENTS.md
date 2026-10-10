@@ -1,14 +1,15 @@
 # OneTake narrated explainers
 
-This workspace creates beginner technology explainers for YouTube Shorts, in
-the same subject area as `../2d-animation`: networking, browsers, protocols,
-privacy, security and everyday computing. Work only inside this workspace.
+This workspace creates beginner Finance, Technology and AI explainers for
+YouTube Shorts, including networking, browsers, protocols, privacy, security
+and everyday computing. Work only inside this workspace.
 The sibling workspace is a read-only source of shared voice tooling and assets.
 Never commit, push, publish or migrate existing videos unless explicitly asked.
 
 ## Owners and routing
 
-Read this file and the installed `onetake/SKILL.md`. OneTake is the sole motion
+Read this file, [SCRIPT_GUIDE.md](SCRIPT_GUIDE.md) for all storytelling and script
+review decisions, and the installed `onetake/SKILL.md`. OneTake is the sole motion
 authority: concept, choreography, object performance, rhythm, carry, camera,
 curves, deterministic composition, shutter blur and motion review. Consult its
 bundled references or source only when that skill calls for them or an API needs
@@ -51,16 +52,10 @@ adaptations below take precedence over the skill's product-promo defaults.
 
 Research authoritative sources for the actual topic; record links, conditions,
 limits and metaphor boundaries. Map every required point to spoken lines and
-visible evidence. Show a concrete hook, establish necessary context, unfold
-cause and effect, explain the important qualification and visibly answer the
-hook. These are narrative functions, not a required six-scene formula.
-
-Use short, conversational sentences and explain jargon when it becomes useful.
-Every sentence advances the mechanism, opens a useful question or resolves one.
-Avoid greetings, promotional endings, invented danger and unsupported absolutes.
-For each beat ask: what did the viewer learn, what visibly established it, and
-why does the next beat follow? If the only visual is the spoken sentence rendered
-as text, redesign the action. A quiet comprehension hold is valid.
+visible evidence. Follow SCRIPT_GUIDE.md's discovery, hook comparison, paired
+payoff, ending selection and revision workflow before presenting Gate 1. Keep
+writing decisions and review evidence in unspoken SCRIPT.md notes; put causal
+visual evidence and any loop seam in the existing storyboard.
 
 Make transformations factually meaningful: a request may become a response only
 after the responding action; an encrypted payload does not become a key. Carry
@@ -70,15 +65,18 @@ lengths; do not force its fast promo word cadence onto explanatory narration.
 
 ## Production and approvals
 
-1. Record inputs, complete coverage and estimated runtime. Follow OneTake's
+1. Record inputs, complete coverage and estimated runtime. Research the angle
+   and select the hook/payoff through SCRIPT_GUIDE.md, then follow OneTake's
    concept round: show three genuinely different visual ideas and let the user
    select one before storyboarding. A supplied concept can count as that selection.
    Inspect a supplied reference; otherwise choose a relevant shipped OneTake case
    and state the transferable traits. No previous channel video is required.
-2. Create the facts, script, timed storyboard and one board of actual production
-   assets. Include decisive before/action/result poses and carry across every
+2. Draft and revise the facts and script through SCRIPT_GUIDE.md, then create
+   the timed storyboard and one board of actual production assets.
+   Include decisive before/action/result poses and carry across every
    section boundary. Review every beat at phone size. **Gate 1:** present the
-   script and board together; wait for approval before final TTS or animation.
+   revised script with brief script-review evidence and board together; wait for
+   approval before final TTS or animation.
 3. After Gate 1, dry-run the sibling's TTS normalizer, inspect pronunciation and
    generate one WAV per narration passage. Preserve these source WAVs and their
    metadata. Use actual durations and aligned/listened phrase cues to retime the
