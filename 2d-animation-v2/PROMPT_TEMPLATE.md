@@ -36,7 +36,11 @@ Do not silently cut information, accelerate narration or split the video.
 
 Research the surprising angle and compare at least three distinct opening hooks
 using SCRIPT_GUIDE.md before writing the full script. Select the strongest and
-pair it with the payoff and ending choice. Use this story direction in OneTake's
+pair it with the payoff and ending choice. Prioritize the first two and final
+two sentences: show why the viewer needs the next line, then earn the answer.
+Use SCRIPT_GUIDE.md's exact spoken or visual seam check for any loop; document
+specific weaknesses and corrections rather than only marking checks ready.
+Use this story direction in OneTake's
 three distinct visual concepts, including hook, carrying subject and look. Let
 me choose before storyboarding. Then draft and revise the facts, script, timed
 beat sheet and actual-asset board together using SCRIPT_GUIDE.md. Demonstrate
