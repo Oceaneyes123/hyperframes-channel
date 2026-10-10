@@ -54,8 +54,9 @@ Research authoritative sources for the actual topic; record links, conditions,
 limits and metaphor boundaries. Map every required point to spoken lines and
 visible evidence. Follow SCRIPT_GUIDE.md's discovery, hook comparison, paired
 payoff, ending selection and revision workflow before presenting Gate 1. Keep
-writing decisions and review evidence in unspoken SCRIPT.md notes; put causal
-visual evidence and any loop seam in the existing storyboard.
+writing decisions, specific weaknesses/corrections and review limits in unspoken
+SCRIPT.md notes; put causal visual evidence and any loop seam in the existing
+storyboard.
 
 Make transformations factually meaningful: a request may become a response only
 after the responding action; an encrypted payload does not become a key. Carry

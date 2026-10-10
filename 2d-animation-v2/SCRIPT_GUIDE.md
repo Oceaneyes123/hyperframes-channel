@@ -28,6 +28,19 @@ Creator practices are useful craft evidence, not controlled proof of engagement.
 The workflow below is our adaptation, not a creator's signature voice or formula.
 Neither a checklist nor a score guarantees views, retention or learning.
 
+## Optional skill inputs
+
+`viral-hooks` and `viral-short-form` were not found in the standard user skill
+folders on 2026-10-10 and are not in this session's skill catalog. Their upstream
+[hook skill](https://github.com/vyralcontent/content-skills/blob/main/skills/viral-hooks/SKILL.md)
+and [script skill](https://github.com/vyralcontent/content-skills/blob/main/skills/viral-short-form/SKILL.md)
+were inspected. We adapt varied angles, spoken/visual alignment and pinpointed
+critique of a weak opening, stalled middle or buried payoff. If installed later,
+consult them as optional idea/critique inputs; this guide remains the authority.
+If unavailable, continue here without installation or another required document.
+Do not import mandatory CTAs/captions, creator imitation, invented credentials,
+algorithm guarantees, fixed cuts or removal of useful breaths and holds.
+
 ## Before the full script
 
 1. **Find the discovery.** Research the topic first. Write the audience's likely
@@ -35,19 +48,27 @@ Neither a checklist nor a score guarantees views, retention or learning.
    takeaway. Choose a concrete example that makes the difference visible. If the
    surprise needs an exaggerated claim, choose another angle.
 2. **Generate at least three distinct hooks.** Change the premise, not just the
-   wording: a counterintuitive result, a familiar moment with a hidden cause, or
-   a small experiment whose outcome defies expectation. Name the subject early.
+   wording: an observed contradiction, a relatable moment with a hidden cause,
+   or a prediction the viewer can test against a visible result. Include an
+   opening picture for each: which expectation does it establish or break?
+   Name the subject early. An accurate fact announcement is not enough: show
+   what is odd, missing or personally recognizable about it.
    A question is useful only when specific and answerable; skip generic "Did you
    know?", "What if AI changes everything?" and "You won't believe this."
 3. **Compare, then select.** Use one compact table in SCRIPT.md's unspoken notes:
 
-   | Hook | Curiosity | Clarity | Originality | Accuracy | Visual potential |
+   | Angle + spoken hook | Curiosity / next sentence | Clarity | Originality | Accuracy | Opening picture |
    | --- | --- | --- | --- | --- | --- |
-   | Exact spoken candidate | Specific missing answer | Understood without setup | Topic-specific angle | Supported, with essential conditions | Concrete opening action |
+   | Distinct premise, exact words | What must I hear next, and what does sentence two add? | Understood without setup | Topic-specific angle | Supported, with essential conditions | Visible expectation, contradiction or result |
 
    Give short reasons, not arbitrary points. Reject misleading hooks regardless
-   of their other strengths. Select the strongest and explain its tradeoff in
-   one sentence. Estimate whether its curiosity-bearing phrase lands in 1–3
+   of their other strengths. Judge the **first two sentences together**: the
+   first creates a specific itch; the second makes progress rather than defining
+   the topic or repeating the tease. Ask "Why hear the next sentence?" If the
+   answer is only "to learn about caching/AI/finance", rewrite the angle. Prefer
+   the strongest accurate observation plus its visible evidence, not merely the
+   shortest or safest-sounding fact. Explain the selection's tradeoff in one
+   sentence. Estimate whether its curiosity-bearing phrase lands in 1–3
    seconds at a comfortable pace; shorten or move the reveal earlier if needed.
    Do not claim measured timing before TTS.
 4. **Pair hook and payoff.** Write the opening promise and final answer together.
@@ -106,35 +127,52 @@ A conceptual callback can make the opening mean something new on replay without
 being an exact verbal splice. Name it honestly; do not call it a seamless verbal
 loop unless the spoken boundary works.
 
-Test both ending-alone and ending-followed-by-opening. Reject dangling "because",
-forced questions, unexplained "this", or an answer that only exists on replay.
+Test the **final two sentences**, then concatenate the exact final sentence and
+opening sentence, including punctuation. Record that seam verbatim in unspoken
+notes: what does each connector or pronoun refer to, and what causal/contrast
+link makes this continuing speech rather than a closing speech plus a restart?
+Both ends must also work on a first viewing; do not add "so" or "but" just to
+claim a loop. Reject dangling "because", forced questions, unexplained "this",
+repeated identical conclusions, or an answer that only exists on replay.
 Do not withhold the payoff to manufacture another view. Fall back to a complete
 conclusion when the loop adds nothing. No "like and subscribe" or generic outro.
 
 For a loop, add a seam note to STORYBOARD.md: final spoken words / opening words,
-or final / opening visual states, carrying subject, and reset action. A visual
-reset must not imply a false event (for example, restoring an investment loss).
+or final / opening visual states, carrying subject, and reset action. For a visual
+seam compare object IDs, positions, scale, camera, labels and logical state.
+Trace every changed state through an explained action or elapsed time. Returning
+to the same picture is insufficient if an expired copy silently becomes fresh.
+A reset must not imply a false event (for example, restoring an investment loss).
 Gate 1 judges the planned seam; actual audio and visual continuity are checked
 in the complete preview after measured narration, before Gate 2. Never rush or
 clip a final word, useful hold or required explanation to make the loop fit.
 
 ## Review before presenting Gate 1
 
-Use **ready / revise** with a line or beat as evidence, not a numerical verdict.
+Quote the weakest passage, diagnose its specific problem, rewrite it, and record
+what changed. A list of "ready" labels or a numerical verdict is not evidence.
 
 | Check | Evidence to inspect / repair |
 | --- | --- |
-| Hook and first three seconds | Quote the first sentence and name its immediate visual. Is the subject and specific reason to stay apparent without an introduction? Timing is an estimate until measured. |
+| Hook and first three seconds | Quote the first two sentences and name the immediate visual. What surprising observation makes the second sentence necessary? Reject topic announcements even when accurate. Timing is an estimate until measured. |
 | Curiosity progression | Name the opening question and the discoveries that answer it. Repair a stalled middle, redundant tease or unresolved promise. |
 | Natural narration | Read the text aloud without synthesis, or mark breath groups and awkward phrasing in a text-only pass. Vary rhythm; remove stiff transitions. Record which review actually happened. |
 | Visual storytelling | Name a visible cause/result and carry for each beat. Replace text-only explanation with an observable action or comparison; keep comprehension holds. |
 | Accuracy and clarity | Trace factual lines and the hook to FACTS.md. Check numbers, conditions, jargon and analogy limits; distinguish evidence, hypothesis and illustration. |
-| Final payoff | Quote the answer to the opening promise. Does the explanation earn it, and does the ending stand alone? |
-| Loop, if selected | Inspect ending + opening grammar or the planned visual seam. Verify no false reset or missing answer; otherwise choose a complete conclusion. Mark not applicable when appropriate. |
+| Final payoff | Quote the final two sentences and the earlier discovery that earns them. Is the opening question answered without replay, generic advice or an unrelated new claim? |
+| Loop, if selected | Quote the actual end + start or compare visual states. Diagnose dangling syntax, awkward repetition, false resets or missing answers; otherwise choose a complete conclusion. |
 
 Revise each weak section and inspect the changed passage with its neighbors.
 Present only the revised draft, with brief review evidence and material limits.
 This script review does not approve TTS, animation or rendering.
+
+When evaluating a guide change, compare **complete scripts** using identical
+topics, audience, factual constraints and visual possibilities; preserve the
+actual baseline, not a weaker reconstructed outline. Mask guide labels and vary
+pair order for an independent reviewer when available. Report whether that
+review actually occurred; author review is not blind. Include counterexamples
+for flat hooks, misleading gaps, unfinished payoffs and broken seams, with
+specific corrections. Text checks can expose these failures, not prove retention.
 
 Finance: keep percentage bases, periods, fees and hypothetical assumptions
 explicit where material; avoid promised returns or personalized recommendations.
