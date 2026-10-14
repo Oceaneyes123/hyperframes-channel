@@ -1,10 +1,10 @@
-# OneTake explainer prompt
+# OneTake tutorial or explainer prompt
 
 Open a chat rooted in `2d-animation-v2`, replace `[TOPIC]`, and paste this block.
 Unfilled optional inputs use their stated defaults.
 
 ```text
-Create a complete narrated Finance, Technology or AI explainer for YouTube Shorts
+Create a complete narrated Finance, Technology or AI tutorial or explainer for YouTube Shorts
 in this workspace. Read AGENTS.md and SCRIPT_GUIDE.md; use SCRIPT_GUIDE.md as the
 single storytelling authority. Apply the installed onetake skill as the motion
 authority. Use its standalone HTML composition, move library, continuous carry,
@@ -12,8 +12,9 @@ camera and shutter renderer with this workspace's portrait-explainer adaptations
 
 Inputs:
 - Topic: [TOPIC]
+- Video type: [quick tutorial or explainer, or derive from the viewer's intended outcome]
 - Audience: beginners with no prior knowledge
-- Single takeaway: [TAKEAWAY, or choose the most useful beginner mental model]
+- Single takeaway: [TASK RESULT OR MENTAL MODEL, or choose the most useful beginner outcome]
 - Process scope: [START, RESULT AND CONDITIONS, or derive from the topic]
 - Required information: [POINTS, or derive a complete coverage checklist]
 - Ending: [complete conclusion, seamless verbal loop, visual loop, or choose the best fit]
@@ -34,10 +35,21 @@ Preserve complete coverage. If the scope cannot fit within 180 seconds naturally
 report Shorts incompatibility and let me choose the scope or a longer format.
 Do not silently cut information, accelerate narration or split the video.
 
-Research the surprising angle and compare at least three distinct opening hooks
+Choose the video type before drafting. A quick tutorial teaches one reproducible
+task: show the result, necessary setup, exact actions, and a success check. Begin
+useful instruction promptly; include theory only when needed to act correctly.
+An explainer answers what something is or how it works: use a concrete question,
+causal demonstration, necessary qualifications and a memorable mental model.
+"How DNS works" is an explainer; "How to change DNS settings" is a tutorial.
+Keep the chosen promise clear through the opening, visuals and ending. Quick
+does not mean rushed speech or missing steps. Verify current tool behavior and
+report unverified actions; do not present an illustrative demo as a tested result.
+
+Research the task or discovery and compare at least three distinct opening hooks
 using SCRIPT_GUIDE.md before writing the full script. Select the strongest and
 pair it with the payoff and ending choice. Prioritize the first two and final
-two sentences: show why the viewer needs the next line, then earn the answer.
+two sentences: show why the viewer needs the next line, then deliver the promised
+task result or explanation.
 Use SCRIPT_GUIDE.md's exact spoken or visual seam check for any loop; document
 specific weaknesses and corrections rather than only marking checks ready.
 Use this story direction in OneTake's
