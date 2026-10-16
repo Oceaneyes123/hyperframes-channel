@@ -1,0 +1,3753 @@
+{
+  "comp_sha256": "203375b8c979b297c6d2627c1886965a30cb40eb6f900983b701c5dc9365ceb6",
+  "muted": false,
+  "scope": "Complete realtime browser playback and audio API state. This is not audible listening.",
+  "max_sync_error_s": 0.019650999999996088,
+  "samples": [
+    {
+      "visual": 0,
+      "audio": 0.012831,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 0.005448099924251437,
+      "sync_error_s": 0.012831
+    },
+    {
+      "visual": 0.756569,
+      "audio": 0.765752,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 0.7964401000645012,
+      "sync_error_s": 0.009182999999999941
+    },
+    {
+      "visual": 1.268031,
+      "audio": 1.275374,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 1.3074161999393255,
+      "sync_error_s": 0.0073430000000000994
+    },
+    {
+      "visual": 1.899279,
+      "audio": 1.899722,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 1.9329335999209434,
+      "sync_error_s": 0.0004429999999999712
+    },
+    {
+      "visual": 2.407275,
+      "audio": 2.416296,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 2.450020399875939,
+      "sync_error_s": 0.009021000000000168
+    },
+    {
+      "visual": 3.031114,
+      "audio": 3.049881,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 3.0733926000539213,
+      "sync_error_s": 0.018766999999999978
+    },
+    {
+      "visual": 3.658369,
+      "audio": 3.666288,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 3.69461530004628,
+      "sync_error_s": 0.007919000000000231
+    },
+    {
+      "visual": 4.158507,
+      "audio": 4.174717,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 4.203879399923608,
+      "sync_error_s": 0.016210000000000058
+    },
+    {
+      "visual": 4.789844,
+      "audio": 4.794394,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 4.82804589997977,
+      "sync_error_s": 0.004549999999999166
+    },
+    {
+      "visual": 5.308627,
+      "audio": 5.315393,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 5.3470399000216275,
+      "sync_error_s": 0.006765999999999828
+    },
+    {
+      "visual": 5.932407,
+      "audio": 5.942391,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 5.966474900022149,
+      "sync_error_s": 0.009983999999999327
+    },
+    {
+      "visual": 6.440937,
+      "audio": 6.44704,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 6.480111300013959,
+      "sync_error_s": 0.006103000000000414
+    },
+    {
+      "visual": 7.043432,
+      "audio": 7.059884,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 7.089385200059041,
+      "sync_error_s": 0.016452000000000133
+    },
+    {
+      "visual": 7.664749,
+      "audio": 7.67348,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 7.696200999896973,
+      "sync_error_s": 0.008731000000000044
+    },
+    {
+      "visual": 8.183004,
+      "audio": 8.183004,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 8.212187599856406,
+      "sync_error_s": 0.0
+    },
+    {
+      "visual": 8.7947,
+      "audio": 8.810521,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 8.835335900075734,
+      "sync_error_s": 0.015820999999998975
+    },
+    {
+      "visual": 9.314983,
+      "audio": 9.322433,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 9.34864389989525,
+      "sync_error_s": 0.007450000000000401
+    },
+    {
+      "visual": 9.946235,
+      "audio": 9.95326,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 9.980893800035119,
+      "sync_error_s": 0.007025000000000503
+    },
+    {
+      "visual": 10.462601,
+      "audio": 10.471032,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 10.495782299898565,
+      "sync_error_s": 0.008430999999999855
+    },
+    {
+      "visual": 11.074601,
+      "audio": 11.090446,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 11.119796100072563,
+      "sync_error_s": 0.015845000000000553
+    },
+    {
+      "visual": 11.706606,
+      "audio": 11.710689,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 11.744779200060293,
+      "sync_error_s": 0.004082999999999615
+    },
+    {
+      "visual": 12.21643,
+      "audio": 12.222226,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 12.253778599901125,
+      "sync_error_s": 0.005795999999998358
+    },
+    {
+      "visual": 12.828824,
+      "audio": 12.838543,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 12.866338700056076,
+      "sync_error_s": 0.009719000000000477
+    },
+    {
+      "visual": 13.34722,
+      "audio": 13.358422,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 13.384446199983358,
+      "sync_error_s": 0.011201999999999046
+    },
+    {
+      "visual": 13.975614,
+      "audio": 13.991714,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 14.018291600048542,
+      "sync_error_s": 0.01609999999999978
+    },
+    {
+      "visual": 14.494819,
+      "audio": 14.502917,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 14.530366800026968,
+      "sync_error_s": 0.008098000000000383
+    },
+    {
+      "visual": 15.108546,
+      "audio": 15.112067,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 15.144639499951154,
+      "sync_error_s": 0.003520999999999219
+    },
+    {
+      "visual": 15.732003,
+      "audio": 15.742241,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 15.767981600016356,
+      "sync_error_s": 0.010237999999999303
+    },
+    {
+      "visual": 16.250251,
+      "audio": 16.258403,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 16.282000300008804,
+      "sync_error_s": 0.008152000000002602
+    },
+    {
+      "visual": 16.858524,
+      "audio": 16.878001,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 16.905619399854913,
+      "sync_error_s": 0.019477000000001965
+    },
+    {
+      "visual": 17.377411,
+      "audio": 17.39331,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 17.41815929999575,
+      "sync_error_s": 0.015899000000000996
+    },
+    {
+      "visual": 17.9892,
+      "audio": 17.994237,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 18.0270523999352,
+      "sync_error_s": 0.00503699999999796
+    },
+    {
+      "visual": 18.488849,
+      "audio": 18.507965,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 18.538614599965513,
+      "sync_error_s": 0.019116000000000355
+    },
+    {
+      "visual": 19.113626,
+      "audio": 19.120138,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 19.14720240002498,
+      "sync_error_s": 0.006512000000000739
+    },
+    {
+      "visual": 19.72483,
+      "audio": 19.73405,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 19.76526920008473,
+      "sync_error_s": 0.009219999999999118
+    },
+    {
+      "visual": 20.24396,
+      "audio": 20.252304,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 20.281467099906877,
+      "sync_error_s": 0.008343999999997465
+    },
+    {
+      "visual": 20.863955,
+      "audio": 20.868411,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 20.901868999935687,
+      "sync_error_s": 0.004455999999997573
+    },
+    {
+      "visual": 21.383787,
+      "audio": 21.385143,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 21.4168032000307,
+      "sync_error_s": 0.0013559999999976924
+    },
+    {
+      "visual": 22.015191,
+      "audio": 22.019565,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 22.04402119992301,
+      "sync_error_s": 0.004373999999998546
+    },
+    {
+      "visual": 22.62641,
+      "audio": 22.634279,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 22.662968300050125,
+      "sync_error_s": 0.00786899999999946
+    },
+    {
+      "visual": 23.145601,
+      "audio": 23.156314,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 23.182445999933407,
+      "sync_error_s": 0.010712999999999084
+    },
+    {
+      "visual": 23.76665,
+      "audio": 23.774124,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 23.80514100007713,
+      "sync_error_s": 0.007474000000001979
+    },
+    {
+      "visual": 24.273357,
+      "audio": 24.289611,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 24.318500299938023,
+      "sync_error_s": 0.01625399999999999
+    },
+    {
+      "visual": 24.897485,
+      "audio": 24.904722,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 24.929469299968332,
+      "sync_error_s": 0.007236999999999938
+    },
+    {
+      "visual": 25.416762,
+      "audio": 25.424825,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 25.482221300015226,
+      "sync_error_s": 0.008062999999999931
+    },
+    {
+      "visual": 26.283693,
+      "audio": 26.283693,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 26.313131799921393,
+      "sync_error_s": 0.0
+    },
+    {
+      "visual": 26.893982,
+      "audio": 26.898597,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 26.926882700063288,
+      "sync_error_s": 0.004614999999997593
+    },
+    {
+      "visual": 27.413713,
+      "audio": 27.418279,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 27.444227800006047,
+      "sync_error_s": 0.004565999999996961
+    },
+    {
+      "visual": 28.02494,
+      "audio": 28.03509,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 28.065353200072423,
+      "sync_error_s": 0.010149999999999437
+    },
+    {
+      "visual": 28.648758,
+      "audio": 28.661899,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 28.685208200011402,
+      "sync_error_s": 0.013140999999997405
+    },
+    {
+      "visual": 29.165135,
+      "audio": 29.168407,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 29.201157300034538,
+      "sync_error_s": 0.0032719999999990534
+    },
+    {
+      "visual": 29.776476,
+      "audio": 29.794514,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 29.819802300073206,
+      "sync_error_s": 0.018038000000000665
+    },
+    {
+      "visual": 30.296009,
+      "audio": 30.312963,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 30.33616239996627,
+      "sync_error_s": 0.01695399999999836
+    },
+    {
+      "visual": 30.947591,
+      "audio": 30.954389,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 30.979681799886748,
+      "sync_error_s": 0.00679799999999986
+    },
+    {
+      "visual": 31.446778,
+      "audio": 31.462475,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 31.48768169991672,
+      "sync_error_s": 0.01569700000000296
+    },
+    {
+      "visual": 32.075025,
+      "audio": 32.085691,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 32.11240139999427,
+      "sync_error_s": 0.010666000000000508
+    },
+    {
+      "visual": 32.679011,
+      "audio": 32.694956,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 32.71755369985476,
+      "sync_error_s": 0.01594499999999499
+    },
+    {
+      "visual": 33.197769,
+      "audio": 33.199582,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 33.23169659986161,
+      "sync_error_s": 0.0018129999999985102
+    },
+    {
+      "visual": 33.790449,
+      "audio": 33.809976,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 33.838124400004745,
+      "sync_error_s": 0.01952699999999652
+    },
+    {
+      "visual": 34.309579,
+      "audio": 34.325612,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 34.351478999946266,
+      "sync_error_s": 0.016033000000000186
+    },
+    {
+      "visual": 34.922201,
+      "audio": 34.927537,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 34.96108929999173,
+      "sync_error_s": 0.005335999999999785
+    },
+    {
+      "visual": 35.440506,
+      "audio": 35.445964,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 35.47733519994654,
+      "sync_error_s": 0.005457999999997298
+    },
+    {
+      "visual": 36.080777,
+      "audio": 36.084625,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 36.11254039988853,
+      "sync_error_s": 0.0038480000000049586
+    },
+    {
+      "visual": 36.692402,
+      "audio": 36.711217,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 36.736919099930674,
+      "sync_error_s": 0.018814999999996473
+    },
+    {
+      "visual": 37.211683,
+      "audio": 37.222169,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 37.24858359992504,
+      "sync_error_s": 0.010486000000000217
+    },
+    {
+      "visual": 37.823654,
+      "audio": 37.826942,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 37.85850730002858,
+      "sync_error_s": 0.0032880000000048426
+    },
+    {
+      "visual": 38.324199,
+      "audio": 38.338861,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 38.37111579999328,
+      "sync_error_s": 0.014662000000001285
+    },
+    {
+      "visual": 38.971673,
+      "audio": 38.974859,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 39.00841540005058,
+      "sync_error_s": 0.003185999999999467
+    },
+    {
+      "visual": 39.482486,
+      "audio": 39.488367,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 39.51942109991796,
+      "sync_error_s": 0.00588099999999514
+    },
+    {
+      "visual": 40.114192,
+      "audio": 40.119499,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 40.14367959997617,
+      "sync_error_s": 0.005306999999994844
+    },
+    {
+      "visual": 40.726528,
+      "audio": 40.737095,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 40.76579859992489,
+      "sync_error_s": 0.010566999999994664
+    },
+    {
+      "visual": 41.246164,
+      "audio": 41.254317,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 41.280529299983755,
+      "sync_error_s": 0.008153000000000077
+    },
+    {
+      "visual": 41.865992,
+      "audio": 41.86707,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 41.8981687000487,
+      "sync_error_s": 0.0010779999999996903
+    },
+    {
+      "visual": 42.373672,
+      "audio": 42.377264,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 42.40906920004636,
+      "sync_error_s": 0.003591999999997597
+    },
+    {
+      "visual": 42.977844,
+      "audio": 42.981625,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 43.009536399971694,
+      "sync_error_s": 0.003781000000003587
+    },
+    {
+      "visual": 43.476518,
+      "audio": 43.493794,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 43.51942069991492,
+      "sync_error_s": 0.01727600000000251
+    },
+    {
+      "visual": 44.087832,
+      "audio": 44.094429,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 44.12765869987197,
+      "sync_error_s": 0.006596999999999298
+    },
+    {
+      "visual": 44.711725,
+      "audio": 44.718623,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 44.74488690006547,
+      "sync_error_s": 0.006897999999999627
+    },
+    {
+      "visual": 45.230829,
+      "audio": 45.239285,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 45.26302640000358,
+      "sync_error_s": 0.008456000000002462
+    },
+    {
+      "visual": 45.84251,
+      "audio": 45.856294,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 45.8847858000081,
+      "sync_error_s": 0.013784000000001129
+    },
+    {
+      "visual": 46.358904,
+      "audio": 46.369457,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 46.39591809990816,
+      "sync_error_s": 0.010552999999994483
+    },
+    {
+      "visual": 46.96214,
+      "audio": 46.979501,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 47.002108099870384,
+      "sync_error_s": 0.01736100000000107
+    },
+    {
+      "visual": 47.481794,
+      "audio": 47.488121,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 47.519567099865526,
+      "sync_error_s": 0.006326999999998861
+    },
+    {
+      "visual": 48.094213,
+      "audio": 48.102738,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 48.13040199992247,
+      "sync_error_s": 0.008524999999998784
+    },
+    {
+      "visual": 48.706554,
+      "audio": 48.710447,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 48.74364240001887,
+      "sync_error_s": 0.0038930000000050313
+    },
+    {
+      "visual": 49.204676,
+      "audio": 49.223453,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 49.25365019985475,
+      "sync_error_s": 0.018777000000000044
+    },
+    {
+      "visual": 49.828455,
+      "audio": 49.833745,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 49.85983400000259,
+      "sync_error_s": 0.005290000000002237
+    },
+    {
+      "visual": 50.347177,
+      "audio": 50.351667,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 50.37619099998847,
+      "sync_error_s": 0.004489999999996996
+    },
+    {
+      "visual": 50.956118,
+      "audio": 50.969747,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 50.99839199986309,
+      "sync_error_s": 0.013629000000001668
+    },
+    {
+      "visual": 51.47593,
+      "audio": 51.481259,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 51.51086169993505,
+      "sync_error_s": 0.005329000000003248
+    },
+    {
+      "visual": 52.098546,
+      "audio": 52.101858,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 52.13296499988064,
+      "sync_error_s": 0.003312000000001092
+    },
+    {
+      "visual": 52.711661,
+      "audio": 52.715443,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 52.742993500083685,
+      "sync_error_s": 0.0037820000000010623
+    },
+    {
+      "visual": 53.230016,
+      "audio": 53.233351,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 53.258131799986586,
+      "sync_error_s": 0.003334999999999866
+    },
+    {
+      "visual": 53.842551,
+      "audio": 53.853151,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 53.88254359993152,
+      "sync_error_s": 0.010599999999996612
+    },
+    {
+      "visual": 54.357882,
+      "audio": 54.368789,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 54.39568699989468,
+      "sync_error_s": 0.010907000000003109
+    },
+    {
+      "visual": 54.980842,
+      "audio": 54.981537,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 55.01291269995272,
+      "sync_error_s": 0.0006950000000003342
+    },
+    {
+      "visual": 55.48873,
+      "audio": 55.495222,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 55.52729359990917,
+      "sync_error_s": 0.006492000000001497
+    },
+    {
+      "visual": 56.112679,
+      "audio": 56.124939,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 56.15035740006715,
+      "sync_error_s": 0.012259999999997717
+    },
+    {
+      "visual": 56.724435,
+      "audio": 56.731589,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 56.76220489991829,
+      "sync_error_s": 0.007153999999999883
+    },
+    {
+      "visual": 57.244375,
+      "audio": 57.248448,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 57.27614139998332,
+      "sync_error_s": 0.004073000000005322
+    },
+    {
+      "visual": 57.864203,
+      "audio": 57.864793,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 57.89685330004431,
+      "sync_error_s": 0.0005899999999954275
+    },
+    {
+      "visual": 58.37176,
+      "audio": 58.384439,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 58.414217700017616,
+      "sync_error_s": 0.012678999999998553
+    },
+    {
+      "visual": 59.014943,
+      "audio": 59.018652,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 59.04168440005742,
+      "sync_error_s": 0.0037090000000006285
+    },
+    {
+      "visual": 59.627201,
+      "audio": 59.632857,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 59.660661600064486,
+      "sync_error_s": 0.005656000000001882
+    },
+    {
+      "visual": 60.14674,
+      "audio": 60.150345,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 60.17541499994695,
+      "sync_error_s": 0.0036050000000003024
+    },
+    {
+      "visual": 60.754946,
+      "audio": 60.766758,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 60.796865300042555,
+      "sync_error_s": 0.011812000000006151
+    },
+    {
+      "visual": 61.274314,
+      "audio": 61.285481,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 61.31317489990033,
+      "sync_error_s": 0.011167000000000371
+    },
+    {
+      "visual": 61.897987,
+      "audio": 61.901899,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 61.93411480006762,
+      "sync_error_s": 0.0039119999999996935
+    },
+    {
+      "visual": 62.405061,
+      "audio": 62.41466,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 62.44743619998917,
+      "sync_error_s": 0.009598999999994362
+    },
+    {
+      "visual": 63.048652,
+      "audio": 63.056472,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 63.0808683000505,
+      "sync_error_s": 0.00782000000000238
+    },
+    {
+      "visual": 63.676493,
+      "audio": 63.690824,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 63.71474560000934,
+      "sync_error_s": 0.01433099999999854
+    },
+    {
+      "visual": 64.195939,
+      "audio": 64.20541,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 64.23040360002778,
+      "sync_error_s": 0.009471000000004892
+    },
+    {
+      "visual": 64.807553,
+      "audio": 64.827204,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 64.85328079992905,
+      "sync_error_s": 0.019650999999996088
+    },
+    {
+      "visual": 65.327986,
+      "audio": 65.340627,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 65.36742069991305,
+      "sync_error_s": 0.012641000000002123
+    },
+    {
+      "visual": 65.939759,
+      "audio": 65.945074,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 65.97683629998937,
+      "sync_error_s": 0.005315000000010173
+    },
+    {
+      "visual": 66.456349,
+      "audio": 66.463287,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 66.49287119996734,
+      "sync_error_s": 0.006937999999991007
+    },
+    {
+      "visual": 67.078193,
+      "audio": 67.091554,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 67.11398779996671,
+      "sync_error_s": 0.013361000000003287
+    },
+    {
+      "visual": 67.69015,
+      "audio": 67.694018,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 67.72440279996954,
+      "sync_error_s": 0.003867999999997096
+    },
+    {
+      "visual": 68.209157,
+      "audio": 68.212466,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 68.24041099986061,
+      "sync_error_s": 0.0033090000000015607
+    },
+    {
+      "visual": 68.814115,
+      "audio": 68.824843,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 68.84901949996129,
+      "sync_error_s": 0.010728000000000293
+    },
+    {
+      "visual": 69.3218,
+      "audio": 69.33034,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 69.36317309993319,
+      "sync_error_s": 0.00854000000001065
+    },
+    {
+      "visual": 69.944887,
+      "audio": 69.948733,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 69.97510050004348,
+      "sync_error_s": 0.003846000000010008
+    },
+    {
+      "visual": 70.459906,
+      "audio": 70.473783,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 70.49721689987928,
+      "sync_error_s": 0.0138769999999937
+    },
+    {
+      "visual": 71.073063,
+      "audio": 71.07858,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 71.11037830007263,
+      "sync_error_s": 0.005516999999997552
+    },
+    {
+      "visual": 71.675829,
+      "audio": 71.692144,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 71.71667260001414,
+      "sync_error_s": 0.016315000000005853
+    },
+    {
+      "visual": 72.194604,
+      "audio": 72.204909,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 72.2302786000073,
+      "sync_error_s": 0.010305000000002451
+    },
+    {
+      "visual": 72.807892,
+      "audio": 72.811912,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 72.84200369985774,
+      "sync_error_s": 0.004020000000011237
+    },
+    {
+      "visual": 73.307,
+      "audio": 73.325324,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 73.35321179986931,
+      "sync_error_s": 0.01832399999999268
+    },
+    {
+      "visual": 73.938805,
+      "audio": 73.942941,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 73.9752894998528,
+      "sync_error_s": 0.004136000000002582
+    },
+    {
+      "visual": 74.438061,
+      "audio": 74.451711,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 74.48475930001587,
+      "sync_error_s": 0.013649999999998386
+    },
+    {
+      "visual": 75.07842,
+      "audio": 75.09128,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 75.11410730006173,
+      "sync_error_s": 0.012860000000003424
+    },
+    {
+      "visual": 75.681036,
+      "audio": 75.688552,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 75.71942300000228,
+      "sync_error_s": 0.007515999999995415
+    },
+    {
+      "visual": 76.188864,
+      "audio": 76.197849,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 76.22929430007935,
+      "sync_error_s": 0.00898500000000979
+    },
+    {
+      "visual": 76.812036,
+      "audio": 76.817877,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 76.84242990007624,
+      "sync_error_s": 0.005840999999989549
+    },
+    {
+      "visual": 77.331235,
+      "audio": 77.335532,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 77.35804499988444,
+      "sync_error_s": 0.004296999999994
+    },
+    {
+      "visual": 77.939988,
+      "audio": 77.952638,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 77.97929470008239,
+      "sync_error_s": 0.01264999999999361
+    },
+    {
+      "visual": 78.459211,
+      "audio": 78.471439,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 78.49557609995827,
+      "sync_error_s": 0.012228000000007455
+    },
+    {
+      "visual": 79.090849,
+      "audio": 79.094599,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 79.12354649999179,
+      "sync_error_s": 0.0037499999999965894
+    },
+    {
+      "visual": 79.714599,
+      "audio": 79.725055,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 79.74705979996361,
+      "sync_error_s": 0.010455999999990695
+    },
+    {
+      "visual": 80.221992,
+      "audio": 80.232973,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 80.26384499995038,
+      "sync_error_s": 0.010981000000001018
+    },
+    {
+      "visual": 80.842718,
+      "audio": 80.852519,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 80.87671860004775,
+      "sync_error_s": 0.009800999999995952
+    },
+    {
+      "visual": 81.361608,
+      "audio": 81.361608,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 81.39336710004136,
+      "sync_error_s": 0.0
+    },
+    {
+      "visual": 81.974041,
+      "audio": 81.986265,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 82.01263269991614,
+      "sync_error_s": 0.012224000000003343
+    },
+    {
+      "visual": 82.492562,
+      "audio": 82.497281,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 82.52444209996611,
+      "sync_error_s": 0.004718999999994367
+    },
+    {
+      "visual": 83.096405,
+      "audio": 83.102743,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 83.13446790003218,
+      "sync_error_s": 0.006337999999999511
+    },
+    {
+      "visual": 83.709345,
+      "audio": 83.71362,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 83.74175140005536,
+      "sync_error_s": 0.004275000000006912
+    },
+    {
+      "visual": 84.207424,
+      "audio": 84.221333,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 84.25015989993699,
+      "sync_error_s": 0.013908999999998173
+    },
+    {
+      "visual": 84.830928,
+      "audio": 84.839857,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 84.86198529996909,
+      "sync_error_s": 0.008928999999994858
+    },
+    {
+      "visual": 85.347068,
+      "audio": 85.347068,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 85.37436959985644,
+      "sync_error_s": 0.0
+    },
+    {
+      "visual": 85.959247,
+      "audio": 85.97153,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 85.99626279994845,
+      "sync_error_s": 0.012282999999996491
+    },
+    {
+      "visual": 86.477753,
+      "audio": 86.482271,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 86.50724210008048,
+      "sync_error_s": 0.004517999999990252
+    },
+    {
+      "visual": 87.070272,
+      "audio": 87.082005,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 87.11196839995682,
+      "sync_error_s": 0.011732999999992444
+    },
+    {
+      "visual": 87.675655,
+      "audio": 87.690217,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 87.71605889988132,
+      "sync_error_s": 0.014561999999997965
+    },
+    {
+      "visual": 88.1929,
+      "audio": 88.202022,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 88.22907379991375,
+      "sync_error_s": 0.00912200000000496
+    },
+    {
+      "visual": 88.796968,
+      "audio": 88.802048,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 88.83310679998249,
+      "sync_error_s": 0.005079999999992424
+    },
+    {
+      "visual": 89.304906,
+      "audio": 89.315836,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 89.34814359992743,
+      "sync_error_s": 0.010930000000001883
+    },
+    {
+      "visual": 89.928384,
+      "audio": 89.932595,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 89.95759709994309,
+      "sync_error_s": 0.004211000000012177
+    },
+    {
+      "visual": 90.44818,
+      "audio": 90.452512,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 90.4755363999866,
+      "sync_error_s": 0.0043320000000051095
+    },
+    {
+      "visual": 91.055886,
+      "audio": 91.069051,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 91.09683509985916,
+      "sync_error_s": 0.01316500000000076
+    },
+    {
+      "visual": 91.687914,
+      "audio": 91.705018,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 91.73431580001488,
+      "sync_error_s": 0.017103999999989128
+    },
+    {
+      "visual": 92.20643,
+      "audio": 92.218138,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 92.2497902000323,
+      "sync_error_s": 0.01170799999999872
+    },
+    {
+      "visual": 92.85586,
+      "audio": 92.872719,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 92.90042119985446,
+      "sync_error_s": 0.016858999999996627
+    },
+    {
+      "visual": 93.37567,
+      "audio": 93.388935,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 93.41423080000095,
+      "sync_error_s": 0.013265000000004079
+    },
+    {
+      "visual": 93.986345,
+      "audio": 93.989992,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 94.02327129989862,
+      "sync_error_s": 0.003647000000000844
+    },
+    {
+      "visual": 94.50689,
+      "audio": 94.510527,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 94.54125769995153,
+      "sync_error_s": 0.00363699999999767
+    },
+    {
+      "visual": 95.128839,
+      "audio": 95.139488,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 95.16405700007454,
+      "sync_error_s": 0.010649000000000797
+    },
+    {
+      "visual": 95.737865,
+      "audio": 95.744847,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 95.7739643000532,
+      "sync_error_s": 0.006981999999993604
+    },
+    {
+      "visual": 96.25704,
+      "audio": 96.260636,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 96.2899599999655,
+      "sync_error_s": 0.003596000000001709
+    },
+    {
+      "visual": 96.881358,
+      "audio": 96.881358,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 96.91110889986157,
+      "sync_error_s": 0.0
+    },
+    {
+      "visual": 97.379123,
+      "audio": 97.388285,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 97.41964269988239,
+      "sync_error_s": 0.009161999999989234
+    },
+    {
+      "visual": 97.991821,
+      "audio": 97.999917,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 98.02810969995335,
+      "sync_error_s": 0.008095999999994774
+    },
+    {
+      "visual": 98.510196,
+      "audio": 98.516833,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 98.54187259986065,
+      "sync_error_s": 0.006637000000011994
+    },
+    {
+      "visual": 99.12315,
+      "audio": 99.130304,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 99.16082590003498,
+      "sync_error_s": 0.007153999999999883
+    },
+    {
+      "visual": 99.743748,
+      "audio": 99.755156,
+      "paused": false,
+      "ended": false,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": false
+        }
+      ],
+      "reduced": false,
+      "wall_s": 99.77792089991271,
+      "sync_error_s": 0.011408000000002971
+    },
+    {
+      "visual": 99.96666666666667,
+      "audio": 99.966667,
+      "paused": true,
+      "ended": true,
+      "ready": 4,
+      "muted": false,
+      "volume": 1,
+      "rate": 1,
+      "media": [
+        {
+          "src": "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+          "paused": true
+        }
+      ],
+      "reduced": false,
+      "wall_s": 100.29365190002136,
+      "sync_error_s": 3.3333333249174757e-07
+    }
+  ],
+  "browser_events": {
+    "page_errors": [],
+    "console_errors": [],
+    "requests": [
+      "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/comp.html?preview",
+      "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/motion.js",
+      "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/timeline.js",
+      "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/audio/narration.wav",
+      "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/assets/body-v7.svg",
+      "file:///D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/assets/body-v8.svg"
+    ]
+  },
+  "frames": [
+    {
+      "time_s": 0.246713,
+      "path": "film-realtime-000-phone.png"
+    },
+    {
+      "time_s": 1.392891,
+      "path": "film-realtime-001-phone.png"
+    },
+    {
+      "time_s": 2.521141,
+      "path": "film-realtime-002-phone.png"
+    },
+    {
+      "time_s": 3.151514,
+      "path": "film-realtime-003-phone.png"
+    },
+    {
+      "time_s": 4.282014,
+      "path": "film-realtime-004-phone.png"
+    },
+    {
+      "time_s": 5.428649,
+      "path": "film-realtime-005-phone.png"
+    },
+    {
+      "time_s": 6.553017,
+      "path": "film-realtime-006-phone.png"
+    },
+    {
+      "time_s": 7.154887,
+      "path": "film-realtime-007-phone.png"
+    },
+    {
+      "time_s": 8.296167,
+      "path": "film-realtime-008-phone.png"
+    },
+    {
+      "time_s": 9.432236,
+      "path": "film-realtime-009-phone.png"
+    },
+    {
+      "time_s": 10.566404,
+      "path": "film-realtime-010-phone.png"
+    },
+    {
+      "time_s": 11.199338,
+      "path": "film-realtime-011-phone.png"
+    },
+    {
+      "time_s": 12.324778,
+      "path": "film-realtime-012-phone.png"
+    },
+    {
+      "time_s": 13.472853,
+      "path": "film-realtime-013-phone.png"
+    },
+    {
+      "time_s": 14.604746,
+      "path": "film-realtime-014-phone.png"
+    },
+    {
+      "time_s": 15.219769,
+      "path": "film-realtime-015-phone.png"
+    },
+    {
+      "time_s": 16.359301,
+      "path": "film-realtime-016-phone.png"
+    },
+    {
+      "time_s": 17.486821,
+      "path": "film-realtime-017-phone.png"
+    },
+    {
+      "time_s": 18.599821,
+      "path": "film-realtime-018-phone.png"
+    },
+    {
+      "time_s": 19.212846,
+      "path": "film-realtime-019-phone.png"
+    },
+    {
+      "time_s": 20.356328,
+      "path": "film-realtime-020-phone.png"
+    },
+    {
+      "time_s": 21.501493,
+      "path": "film-realtime-021-phone.png"
+    },
+    {
+      "time_s": 22.114596,
+      "path": "film-realtime-022-phone.png"
+    },
+    {
+      "time_s": 23.248665,
+      "path": "film-realtime-023-phone.png"
+    },
+    {
+      "time_s": 24.390783,
+      "path": "film-realtime-024-phone.png"
+    },
+    {
+      "time_s": 25.773167,
+      "path": "film-realtime-025-phone.png"
+    },
+    {
+      "time_s": 26.387866,
+      "path": "film-realtime-026-phone.png"
+    },
+    {
+      "time_s": 27.523465,
+      "path": "film-realtime-027-phone.png"
+    },
+    {
+      "time_s": 28.138233,
+      "path": "film-realtime-028-phone.png"
+    },
+    {
+      "time_s": 29.276008,
+      "path": "film-realtime-029-phone.png"
+    },
+    {
+      "time_s": 30.420918,
+      "path": "film-realtime-030-phone.png"
+    },
+    {
+      "time_s": 31.566713,
+      "path": "film-realtime-031-phone.png"
+    },
+    {
+      "time_s": 32.185358,
+      "path": "film-realtime-032-phone.png"
+    },
+    {
+      "time_s": 33.29958,
+      "path": "film-realtime-033-phone.png"
+    },
+    {
+      "time_s": 34.424673,
+      "path": "film-realtime-034-phone.png"
+    },
+    {
+      "time_s": 35.571801,
+      "path": "film-realtime-035-phone.png"
+    },
+    {
+      "time_s": 36.185051,
+      "path": "film-realtime-036-phone.png"
+    },
+    {
+      "time_s": 37.30993,
+      "path": "film-realtime-037-phone.png"
+    },
+    {
+      "time_s": 38.465113,
+      "path": "film-realtime-038-phone.png"
+    },
+    {
+      "time_s": 39.600298,
+      "path": "film-realtime-039-phone.png"
+    },
+    {
+      "time_s": 40.212972,
+      "path": "film-realtime-040-phone.png"
+    },
+    {
+      "time_s": 41.344779,
+      "path": "film-realtime-041-phone.png"
+    },
+    {
+      "time_s": 42.469133,
+      "path": "film-realtime-042-phone.png"
+    },
+    {
+      "time_s": 43.582191,
+      "path": "film-realtime-043-phone.png"
+    },
+    {
+      "time_s": 44.200176,
+      "path": "film-realtime-044-phone.png"
+    },
+    {
+      "time_s": 45.334556,
+      "path": "film-realtime-045-phone.png"
+    },
+    {
+      "time_s": 46.462935,
+      "path": "film-realtime-046-phone.png"
+    },
+    {
+      "time_s": 47.579869,
+      "path": "film-realtime-047-phone.png"
+    },
+    {
+      "time_s": 48.203297,
+      "path": "film-realtime-048-phone.png"
+    },
+    {
+      "time_s": 49.316455,
+      "path": "film-realtime-049-phone.png"
+    },
+    {
+      "time_s": 50.446842,
+      "path": "film-realtime-050-phone.png"
+    },
+    {
+      "time_s": 51.585028,
+      "path": "film-realtime-051-phone.png"
+    },
+    {
+      "time_s": 52.196288,
+      "path": "film-realtime-052-phone.png"
+    },
+    {
+      "time_s": 53.328128,
+      "path": "film-realtime-053-phone.png"
+    },
+    {
+      "time_s": 54.478358,
+      "path": "film-realtime-054-phone.png"
+    },
+    {
+      "time_s": 55.608329,
+      "path": "film-realtime-055-phone.png"
+    },
+    {
+      "time_s": 56.211448,
+      "path": "film-realtime-056-phone.png"
+    },
+    {
+      "time_s": 57.355365,
+      "path": "film-realtime-057-phone.png"
+    },
+    {
+      "time_s": 58.491298,
+      "path": "film-realtime-058-phone.png"
+    },
+    {
+      "time_s": 59.115329,
+      "path": "film-realtime-059-phone.png"
+    },
+    {
+      "time_s": 60.244293,
+      "path": "film-realtime-060-phone.png"
+    },
+    {
+      "time_s": 61.390183,
+      "path": "film-realtime-061-phone.png"
+    },
+    {
+      "time_s": 62.518459,
+      "path": "film-realtime-062-phone.png"
+    },
+    {
+      "time_s": 63.173594,
+      "path": "film-realtime-063-phone.png"
+    },
+    {
+      "time_s": 64.304318,
+      "path": "film-realtime-064-phone.png"
+    },
+    {
+      "time_s": 65.437535,
+      "path": "film-realtime-065-phone.png"
+    },
+    {
+      "time_s": 66.571653,
+      "path": "film-realtime-066-phone.png"
+    },
+    {
+      "time_s": 67.1769,
+      "path": "film-realtime-067-phone.png"
+    },
+    {
+      "time_s": 68.301345,
+      "path": "film-realtime-068-phone.png"
+    },
+    {
+      "time_s": 69.430424,
+      "path": "film-realtime-069-phone.png"
+    },
+    {
+      "time_s": 70.565726,
+      "path": "film-realtime-070-phone.png"
+    },
+    {
+      "time_s": 71.183366,
+      "path": "film-realtime-071-phone.png"
+    },
+    {
+      "time_s": 72.294962,
+      "path": "film-realtime-072-phone.png"
+    },
+    {
+      "time_s": 73.437964,
+      "path": "film-realtime-073-phone.png"
+    },
+    {
+      "time_s": 74.566129,
+      "path": "film-realtime-074-phone.png"
+    },
+    {
+      "time_s": 75.175542,
+      "path": "film-realtime-075-phone.png"
+    },
+    {
+      "time_s": 76.298941,
+      "path": "film-realtime-076-phone.png"
+    },
+    {
+      "time_s": 77.428787,
+      "path": "film-realtime-077-phone.png"
+    },
+    {
+      "time_s": 78.569003,
+      "path": "film-realtime-078-phone.png"
+    },
+    {
+      "time_s": 79.201737,
+      "path": "film-realtime-079-phone.png"
+    },
+    {
+      "time_s": 80.336694,
+      "path": "film-realtime-080-phone.png"
+    },
+    {
+      "time_s": 81.468729,
+      "path": "film-realtime-081-phone.png"
+    },
+    {
+      "time_s": 82.602019,
+      "path": "film-realtime-082-phone.png"
+    },
+    {
+      "time_s": 83.194995,
+      "path": "film-realtime-083-phone.png"
+    },
+    {
+      "time_s": 84.318861,
+      "path": "film-realtime-084-phone.png"
+    },
+    {
+      "time_s": 85.448716,
+      "path": "film-realtime-085-phone.png"
+    },
+    {
+      "time_s": 86.563758,
+      "path": "film-realtime-086-phone.png"
+    },
+    {
+      "time_s": 87.179924,
+      "path": "film-realtime-087-phone.png"
+    },
+    {
+      "time_s": 88.30323,
+      "path": "film-realtime-088-phone.png"
+    },
+    {
+      "time_s": 89.416686,
+      "path": "film-realtime-089-phone.png"
+    },
+    {
+      "time_s": 90.545193,
+      "path": "film-realtime-090-phone.png"
+    },
+    {
+      "time_s": 91.180323,
+      "path": "film-realtime-091-phone.png"
+    },
+    {
+      "time_s": 92.353731,
+      "path": "film-realtime-092-phone.png"
+    },
+    {
+      "time_s": 93.479203,
+      "path": "film-realtime-093-phone.png"
+    },
+    {
+      "time_s": 94.618772,
+      "path": "film-realtime-094-phone.png"
+    },
+    {
+      "time_s": 95.227855,
+      "path": "film-realtime-095-phone.png"
+    },
+    {
+      "time_s": 96.36725,
+      "path": "film-realtime-096-phone.png"
+    },
+    {
+      "time_s": 97.476996,
+      "path": "film-realtime-097-phone.png"
+    },
+    {
+      "time_s": 98.609919,
+      "path": "film-realtime-098-phone.png"
+    },
+    {
+      "time_s": 99.234377,
+      "path": "film-realtime-099-phone.png"
+    }
+  ],
+  "raf_intervals_ms": {
+    "count": 6017,
+    "median": 16.69999999999709,
+    "p95": 16.70000000001164,
+    "maximum": 83.39999999999964
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "status": "concept_A_selected_static_board_complete_gate1_pending",
+  "selectedConcept": "A",
+  "source": "Locally authored inline SVG; no remote requests or generated raster assets",
+  "minimumObjectLabelPxAt1080": 50,
+  "concepts": [
+    {
+      "id": "A",
+      "name": "The image lightbox",
+      "hero": "hill-image-lightbox",
+      "assets": [
+        "hill-and-sun-image",
+        "lightbox-housing",
+        "freshness-tab"
+      ],
+      "persistentSubject": "same framed image",
+      "semanticBoundary": "Freshness tab changes; expiry does not erase the body."
+    },
+    {
+      "id": "B",
+      "name": "The dispatch desk",
+      "hero": "saved-image-folder",
+      "assets": [
+        "hill-and-sun-image",
+        "filing-desk",
+        "etag-slip",
+        "server-hatch"
+      ],
+      "persistentSubject": "same image folder",
+      "semanticBoundary": "Only validator slip goes to server; image body stays local during validation."
+    },
+    {
+      "id": "C",
+      "name": "The version comparison bench",
+      "hero": "comparison-bracket-and-image-plate",
+      "assets": [
+        "hill-and-sun-image",
+        "saved-version-tab",
+        "server-version-tab",
+        "comparison-bracket"
+      ],
+      "persistentSubject": "same punched image plate",
+      "semanticBoundary": "Matching illustrative ETags refer to one image representation; not the whole page."
+    }
+  ],
+  "license": "Original geometric artwork authored for this local trial; no third-party asset licenses required",
+  "noIconPackNeeded": true,
+  "assetProduction": "Actual authored inline SVG assets reused in sketches/board.html for 30 selected-A static key poses. No animation before Gate 1.",
+  "selectedAssets": [
+    "main-lightbox-housing",
+    "cache-body-v7",
+    "image-notch",
+    "cache-freshness",
+    "saved-validator-v7",
+    "conditional-request",
+    "server-shelf",
+    "response-304",
+    "local-display",
+    "alt-lightbox-housing",
+    "alt-cache-body-v7",
+    "alt-cache-body-v8",
+    "incoming-body-v8"
+  ]
+}

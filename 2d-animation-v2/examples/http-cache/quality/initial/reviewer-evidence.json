@@ -1,0 +1,273 @@
+{
+  "role": "independent-quality-reviewer",
+  "agent_id": "/root/quality_reviewer",
+  "date": "2026-10-15",
+  "status": "partial",
+  "full_film_audit": "blocked",
+  "animator_identity": null,
+  "independence": "Reviewer wrote only quality/ and reviewer-evidence.json; no Animator or guard files edited, no gates granted.",
+  "skill": {
+    "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\SKILL.md",
+    "name": "design-motion-principles",
+    "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e",
+    "upstream": "kylezantos/design-motion-principles",
+    "identity_source": "Director-verified installed original; this reviewer did not independently fetch GitHub."
+  },
+  "references_read": [
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\SKILL.md",
+      "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\workflows\\audit.md",
+      "sha256": "a570e7e112781b949da9ce5c1b3934b7c8a3128cc9cb96198293959e97a64d68"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\audit-checklist.md",
+      "sha256": "42dfa5637766c6868aea875b24b7ceab8a156ea91b79c0cf7233579992b46f4d"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\jakub-krehel.md",
+      "sha256": "7c996dbbe830f7dcebbf76ea46efcd1583ca5265db2f76291de5974674f43b51"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\jhey-tompkins.md",
+      "sha256": "dfcc542d5b86275bb24ab72a9feacc973927925c4f50dc2e4918a915df2e5a59"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\emil-kowalski.md",
+      "sha256": "aa0e77771a352fcecff8cd64b790ec8ec09a07befdbb2de145bb80d7755bd071"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\accessibility.md",
+      "sha256": "1cb43ec768e800e31b8017d90a0ba0c050e3bc94d027cb2cac32c4b4834f1c0d"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\anti-checklist.md",
+      "sha256": "f9c5a255a98cc790b7e6190ee8653d4c3ef00ce096f0b93c9d3fe1e9ffb44f32"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\demo-shell.html",
+      "sha256": "a8434c6cd5e3738e3f223478c34c20f3224a380ce9b67525b3dc763431f69fd9"
+    }
+  ],
+  "unavailable_reference": {
+    "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\output-format.md",
+    "action": "Read-only Get-Content, followed by read-only Python read_text alternative",
+    "reason": "Command blocked by PreToolUse hook: Blocked filesystem or disk modification. Use a narrowly scoped, non-destructive alternative.",
+    "resolution": "Stopped after rejection; did not read or reproduce unavailable format. Original skill completion remains partial."
+  },
+  "weighting": {
+    "primary": "Jakub Krehel: readability and polish",
+    "secondary": "Jhey Tompkins: creative teaching",
+    "selective": "Emil Kowalski: preview controls"
+  },
+  "weighting_user_source": "User reply questionItemId [request_user_input_async, call_bfe7e30e99284198b77911397c9806fc, 0]: Confirm weighting",
+  "inputs": {
+    "BRIEF.md": "7ed72845ee3ae411ca286c663948dc186ef8df375bf914b8b7fde1c2d2fbc059",
+    "FACTS.md": "9455c3dfaaa6e4e3127207c36d36523ae970d0d2ac12a4d3060ae39566e91fa5",
+    "SCRIPT.md": "8ed741c9f4f8dadb0c4a26636f32b353cc1bc8bfa1aaf34731d290636eb60574",
+    "VISUAL.md": "7a090be553cf9388e63c3b72c58ef8d2b047889a15d078b05e50cecfd29ab0cb",
+    "MOTION_OPTIONS.md": "1447891fd68d1a5d7c1bc8175e61798606714f3cfad07228126408390fd856ca",
+    "sketches/concepts.html": "870f95bae05a6c715e2800fa8aa3ebe6cf007bdf90da88afcb01396e77703ba2"
+  },
+  "guard_source": {
+    "path": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\scripts\\studio.py",
+    "sha256": "32ae4b2e4718a3b9a58dcf38bde96d6060cd8cc2db808d08bb80b8f83e45bcf0"
+  },
+  "procedures": [
+    "Read original Audit workflow and available required references",
+    "Reconnaissance of purpose, structure and source patterns",
+    "Motion-gap search: no conditional UI or animation in static SVG concepts; no missing-animation finding for intentional static proposals",
+    "Native Chromium captures at 1080x1920 and 350px CSS width; inspected all six images",
+    "Asserted no page error, horizontal page overflow or animations; reduced-motion emulation leaves static board unchanged",
+    "Measured SVG text bounds against production safe area",
+    "Applied anti-checklist: no pulse, blur entrance, hover scale, stagger, spring utility or uniform fade present in static source",
+    "Text-only narrative and motion-feasibility handoff review; not executed animation",
+    "Synthetic source-WAV reproduction of timing validation defect",
+    "Sent findings to Director for owner revisions; reviewer never fixes production artifacts",
+    "Wrote explicit partial HTML with distinct per-lens findings, working-well observations and summaries"
+  ],
+  "findings": [
+    {
+      "id": "QR-01",
+      "severity": "important",
+      "owner": "Art Director",
+      "status": "open",
+      "title": "Teaching text falls outside the production safe area",
+      "evidence": [
+        "quality/initial/static-check.json",
+        "quality/initial/a-phone.png",
+        "quality/initial/b-phone.png",
+        "quality/initial/c-phone.png"
+      ],
+      "effect": "Platform overlays or camera reframing can obscure the hook and retention explanation.",
+      "correction": "Recompose essential text inside x72..936/y180..1600 while preserving readable labels and large proof objects.",
+      "initial_measurements": "A retention caveat y1769..1834; B cache label y1595..1675 and headline right992; C reuse label y1669..1746; top headings y129..153.",
+      "recheck_evidence": [],
+      "remaining_violations": [
+        {
+          "concept": "a",
+          "text": "Expired.",
+          "native": {
+            "x": 84.00253993443081,
+            "y": 153.42717982700893,
+            "right": 504.9132542201451,
+            "bottom": 270.6843226841518
+          },
+          "phone_font_px": 37.59259259259259
+        },
+        {
+          "concept": "a",
+          "text": "The image is still stored.",
+          "native": {
+            "x": 143.00220598493306,
+            "y": 1557.5338727678572,
+            "right": 662.8004202706474,
+            "bottom": 1622.3338727678572
+          },
+          "phone_font_px": 15.87962962962963
+        },
+        {
+          "concept": "a",
+          "text": "Stale does not mean deleted.",
+          "native": {
+            "x": 143.00220598493306,
+            "y": 1769.5326520647322,
+            "right": 784.0593959263393,
+            "bottom": 1834.3326520647322
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "concept": "b",
+          "text": "Send the tag.",
+          "native": {
+            "x": 175.5,
+            "y": 129.17012067522322,
+            "right": 904.5,
+            "bottom": 255.68440638950895
+          },
+          "phone_font_px": 35.648148148148145
+        },
+        {
+          "concept": "b",
+          "text": "Keep the image.",
+          "native": {
+            "x": 88.18392857142858,
+            "y": 260.16941789899556,
+            "right": 991.8160714285715,
+            "bottom": 386.6837036132813
+          },
+          "phone_font_px": 35.648148148148145
+        },
+        {
+          "concept": "b",
+          "text": "Server",
+          "native": {
+            "x": 793.8454833984375,
+            "y": 433.54017333984376,
+            "right": 941.2468191964286,
+            "bottom": 498.34022042410714
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "concept": "b",
+          "text": "Browser cache",
+          "native": {
+            "x": 344.9732142857143,
+            "y": 1595.190736607143,
+            "right": 735.0267857142858,
+            "bottom": 1675.4193080357143
+          },
+          "phone_font_px": 19.444444444444443
+        },
+        {
+          "concept": "b",
+          "text": "Saved image stays here.",
+          "native": {
+            "x": 287.28482142857143,
+            "y": 1680.5332240513394,
+            "right": 792.7151785714286,
+            "bottom": 1745.3332240513394
+          },
+          "phone_font_px": 15.555555555555555
+        },
+        {
+          "concept": "b",
+          "text": "The slip carries no image body.",
+          "native": {
+            "x": 198.20892857142857,
+            "y": 1760.532777622768,
+            "right": 881.7910714285715,
+            "bottom": 1825.332777622768
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "concept": "c",
+          "text": "Same version?",
+          "native": {
+            "x": 80.00256696428572,
+            "y": 147.51297258649555,
+            "right": 815.4150669642858,
+            "bottom": 258.59868687220984
+          },
+          "phone_font_px": 36.2962962962963
+        },
+        {
+          "concept": "c",
+          "text": "Reuse the saved image.",
+          "native": {
+            "x": 243.24107142857144,
+            "y": 1669.2761300223215,
+            "right": 836.7589285714286,
+            "bottom": 1746.4189871651786
+          },
+          "phone_font_px": 18.14814814814815
+        },
+        {
+          "concept": "c",
+          "text": "Example: one image version",
+          "native": {
+            "x": 232.73035714285714,
+            "y": 1760.532777622768,
+            "right": 847.2696428571429,
+            "bottom": 1825.332777622768
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ]
+    },
+    {
+      "id": "QR-02",
+      "severity": "important",
+      "owner": "Director / workflow guard",
+      "status": "open",
+      "title": "Narration validation accepts nonfinite metadata durations",
+      "evidence": [
+        "quality/initial/guard-check.json",
+        "quality/guard_check.py"
+      ],
+      "effect": "Invalid timing metadata can pass the check despite a finite source WAV.",
+      "correction": "Require finite numeric durations before tolerance comparisons.",
+      "recheck_evidence": []
+    }
+  ],
+  "evidence": [
+    "quality/static-check.json",
+    "quality/guard-check.json",
+    "quality/motion-audit-2026-10-15.html"
+  ],
+  "limitations": [
+    "No approved Gate1 or production comp, measured narration, synchronized preview, full playback, animation-quality result or Gate2.",
+    "Original output-format reference blocked by automatic review; original audit cannot be reported complete.",
+    "No production timing, weight, smoothing, transitions, camera extrema, continuity, synchronization, performance, preview keyboard controls or motion-sensitivity behavior tested.",
+    "No production motion findings or looping fix demos invented. Static-layout and Python validation fixes have no applicable motion demo.",
+    "Static image text and handoff quality are not beginner-comprehension, audience-retention, token-cost or old/new finished-video evidence.",
+    "The guard initially checked mix length rather than PCM correspondence; this reviewer did not prove preview/export contain every source passage at its recorded start."
+  ],
+  "full_playback_evidence": [],
+  "approvals_granted": []
+}

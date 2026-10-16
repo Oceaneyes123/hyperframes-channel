@@ -1,0 +1,214 @@
+{
+  "comp_sha256": "1e8c1b20629df25aa8a4b53067f8a337059fdccc4d90a2e95870a4e79257565b",
+  "samples": [
+    {
+      "line": 1,
+      "phase": "before",
+      "time_s": 0.39999999999999997,
+      "path": "animator-captures/line-01-before.png"
+    },
+    {
+      "line": 1,
+      "phase": "action",
+      "time_s": 3.96,
+      "path": "animator-captures/line-01-action.png"
+    },
+    {
+      "line": 1,
+      "phase": "result",
+      "time_s": 4.8672108843537405,
+      "path": "animator-captures/line-01-result.png"
+    },
+    {
+      "line": 2,
+      "phase": "before",
+      "time_s": 5.517210884353742,
+      "path": "animator-captures/line-02-before.png"
+    },
+    {
+      "line": 2,
+      "phase": "action",
+      "time_s": 11.837210884353741,
+      "path": "animator-captures/line-02-action.png"
+    },
+    {
+      "line": 2,
+      "phase": "result",
+      "time_s": 14.512312925170068,
+      "path": "animator-captures/line-02-result.png"
+    },
+    {
+      "line": 3,
+      "phase": "before",
+      "time_s": 15.162312925170069,
+      "path": "animator-captures/line-03-before.png"
+    },
+    {
+      "line": 3,
+      "phase": "action",
+      "time_s": 18.642312925170067,
+      "path": "animator-captures/line-03-action.png"
+    },
+    {
+      "line": 3,
+      "phase": "result",
+      "time_s": 23.739455782312927,
+      "path": "animator-captures/line-03-result.png"
+    },
+    {
+      "line": 4,
+      "phase": "before",
+      "time_s": 24.389455782312925,
+      "path": "animator-captures/line-04-before.png"
+    },
+    {
+      "line": 4,
+      "phase": "action",
+      "time_s": 30.869455782312926,
+      "path": "animator-captures/line-04-action.png"
+    },
+    {
+      "line": 4,
+      "phase": "result",
+      "time_s": 31.712721088435373,
+      "path": "animator-captures/line-04-result.png"
+    },
+    {
+      "line": 5,
+      "phase": "before",
+      "time_s": 32.36272108843537,
+      "path": "animator-captures/line-05-before.png"
+    },
+    {
+      "line": 5,
+      "phase": "action",
+      "time_s": 39.302721088435376,
+      "path": "animator-captures/line-05-action.png"
+    },
+    {
+      "line": 5,
+      "phase": "result",
+      "time_s": 42.751020408163264,
+      "path": "animator-captures/line-05-result.png"
+    },
+    {
+      "line": 6,
+      "phase": "before",
+      "time_s": 43.40102040816326,
+      "path": "animator-captures/line-06-before.png"
+    },
+    {
+      "line": 6,
+      "phase": "action",
+      "time_s": 50.18102040816326,
+      "path": "animator-captures/line-06-action.png"
+    },
+    {
+      "line": 6,
+      "phase": "result",
+      "time_s": 52.39612244897959,
+      "path": "animator-captures/line-06-result.png"
+    },
+    {
+      "line": 7,
+      "phase": "before",
+      "time_s": 53.44612244897959,
+      "path": "animator-captures/line-07-before.png"
+    },
+    {
+      "line": 7,
+      "phase": "action",
+      "time_s": 59.40612244897959,
+      "path": "animator-captures/line-07-action.png"
+    },
+    {
+      "line": 7,
+      "phase": "result",
+      "time_s": 65.22761904761904,
+      "path": "animator-captures/line-07-result.png"
+    },
+    {
+      "line": 8,
+      "phase": "before",
+      "time_s": 66.27761904761904,
+      "path": "animator-captures/line-08-before.png"
+    },
+    {
+      "line": 8,
+      "phase": "action",
+      "time_s": 72.31761904761905,
+      "path": "animator-captures/line-08-action.png"
+    },
+    {
+      "line": 8,
+      "phase": "result",
+      "time_s": 77.0838775510204,
+      "path": "animator-captures/line-08-result.png"
+    },
+    {
+      "line": 9,
+      "phase": "before",
+      "time_s": 77.7338775510204,
+      "path": "animator-captures/line-09-before.png"
+    },
+    {
+      "line": 9,
+      "phase": "action",
+      "time_s": 86.2938775510204,
+      "path": "animator-captures/line-09-action.png"
+    },
+    {
+      "line": 9,
+      "phase": "result",
+      "time_s": 87.4255782312925,
+      "path": "animator-captures/line-09-result.png"
+    },
+    {
+      "line": 10,
+      "phase": "before",
+      "time_s": 88.07557823129251,
+      "path": "animator-captures/line-10-before.png"
+    },
+    {
+      "line": 10,
+      "phase": "action",
+      "time_s": 91.93557823129251,
+      "path": "animator-captures/line-10-action.png"
+    },
+    {
+      "line": 10,
+      "phase": "result",
+      "time_s": 96.79204081632652,
+      "path": "animator-captures/line-10-result.png"
+    }
+  ],
+  "page_errors": [],
+  "external_requests": [],
+  "timeline": {
+    "frames": 2999,
+    "safe_area_violations": [],
+    "tracked_still_fraction": 0.7339113037679227,
+    "longest_tracked_rest_s": 9.766666666666667
+  },
+  "deterministic_seeks": [
+    0,
+    3.7,
+    39.50272108843538,
+    71.26761904761905,
+    99.86666666666667
+  ],
+  "player": {
+    "running_sample": {
+      "paused": false,
+      "audio_s": 1.389257,
+      "visual_s": 1.37336,
+      "playing": 1
+    },
+    "pause": "PASS",
+    "seek": "PASS",
+    "restart": "PASS",
+    "keyboard": "PASS",
+    "reduced_motion_export_isolation": "PASS",
+    "audible_listening": "Not performed; media API playback and clock synchronization only"
+  }
+}

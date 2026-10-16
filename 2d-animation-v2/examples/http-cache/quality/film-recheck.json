@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "comp_sha256": "203375b8c979b297c6d2627c1886965a30cb40eb6f900983b701c5dc9365ceb6",
+  "transition_samples": 312,
+  "semantic_pairs": [
+    [
+      "freshness-main",
+      "body-v7-main"
+    ],
+    [
+      "freshness-main",
+      "housing-main-label"
+    ],
+    [
+      "server-current-main",
+      "body-v7-main"
+    ],
+    [
+      "server-current-main",
+      "housing-main-label"
+    ],
+    [
+      "server-label",
+      "body-v7-main"
+    ],
+    [
+      "reply-304-main",
+      "body-v7-main"
+    ],
+    [
+      "reply-304-main",
+      "housing-main-label"
+    ],
+    [
+      "housing-alt",
+      "body-v7-main"
+    ],
+    [
+      "housing-alt-label",
+      "body-v7-main"
+    ],
+    [
+      "reply-200-alt",
+      "housing-alt-label"
+    ]
+  ],
+  "semantic_collisions": [],
+  "line2_native_displacement_px": 96,
+  "body_bounds_unchanged": true,
+  "visual_recheck": "Reviewer inspected corrected phone contacts for lines2,3,4,9,10; marker, server and response no longer obscure retained-body roles at reported poses."
+}

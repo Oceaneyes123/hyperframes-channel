@@ -1,0 +1,14 @@
+usage: stills.py [-h] --times TIMES [--out OUT] [--width WIDTH]
+                 [--height HEIGHT] [--cols COLS]
+                 comp
+
+positional arguments:
+  comp
+
+options:
+  -h, --help       show this help message and exit
+  --times TIMES
+  --out OUT
+  --width WIDTH
+  --height HEIGHT
+  --cols COLS

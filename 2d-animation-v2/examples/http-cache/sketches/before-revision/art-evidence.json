@@ -1,0 +1,50 @@
+{
+  "role": "Art Director",
+  "agentIdentity": "/root/art_director",
+  "date": "2026-10-15",
+  "status": "three_static_concepts_ready_for_selection",
+  "selectedConcept": null,
+  "skillExecution": {
+    "path": "C:/Users/Dave/.codex/skills/anthropic-frontend-design/SKILL.md",
+    "frontmatterName": "frontend-design",
+    "identityEvidence": "Read exact requested local file in full. The director identified this installation as the verified Anthropic original alias; no similarly named frontend-design package was substituted. Upstream repository identity was not independently reverified by this specialist.",
+    "readSections": ["Ground your designs in the subject matter", "Design principles", "Process: plan, review against the brief, build, critique", "Restraint and self-critique", "More on writing in design"],
+    "procedure": [
+      {"step": "plan", "evidence": "VISUAL.md defines audience, persistent subject, three distinct staging concepts, 4-6 named hex tokens, type roles, alignment, wireframes and asset plans."},
+      {"step": "review_against_brief_before_build", "evidence": "VISUAL.md records rejection of three framed-image variants and revision into retained-image, validator-dispatch and version-comparison mechanisms before HTML construction."},
+      {"step": "build", "evidence": "sketches/concepts.html contains three original 1080x1920 static SVG compositions with local system font fallbacks and no external assets."},
+      {"step": "screenshot_critique", "evidence": "Captured desktop and phone boards with Python Playwright Chromium, inspected with view_image, enlarged 44-46 px secondary labels to 50 px, shortened two caveats, recaptured and inspected all three individual phone compositions."}
+    ],
+    "adaptation": "Applied the original skill to static portrait video concept compositions instead of a website. No animation authority was claimed and no alternate frontend design skill was used."
+  },
+  "inputsRead": ["BRIEF.md", "FACTS.md"],
+  "outputs": ["VISUAL.md", "ICON_PLAN.json", "sketches/concepts.html", "sketches/concepts-wide.png", "sketches/concepts-phone.png", "sketches/concept-a-phone.png", "sketches/concept-b-phone.png", "sketches/concept-c-phone.png"],
+  "screenshotEvidence": {
+    "runtime": "C:/Python313/python.exe with installed playwright.sync_api and Chromium",
+    "wideViewport": {"width": 1440, "height": 1200, "deviceScaleFactor": 1},
+    "phoneViewport": {"width": 390, "height": 844, "deviceScaleFactor": 1},
+    "individualPhoneFrame": {"width": 350, "height": 623},
+    "observations": ["All three hooks and persistent image objects are visible at phone size.", "A clearly separates freshness state from retained body.", "B clearly separates small validator slip from large stored image folder.", "C emphasizes matching version tabs and the retained local image.", "No clipping observed after font-size revision."]
+  },
+  "checks": {
+    "portraitSvgCount": 3,
+    "phoneHorizontalOverflow": false,
+    "browserAnimationCount": 0,
+    "externalAssetReferenceCount": 0,
+    "result": "Passed focused browser assertions after final label revision."
+  },
+  "handoffConstraints": [
+    "No concept selection, approved storyboard, Gate 1, animation, Gate 2 or final render exists.",
+    "A matches the current expiry-oriented opening directly. If B or C is selected, preserve the stale stored image in the actual opening and introduce dispatch or comparison later at the matching narration.",
+    "A 304 permits local reuse; the server does not send the saved folder back.",
+    "C's comparison represents server-side validation after an outbound conditional request, not tags meeting locally before the request.",
+    "Jakub primary, Jhey secondary, Emil selective is the user-confirmed independent reviewer weighting, not an art specialist review result."
+  ],
+  "limitations": [
+    "Static composition review only; no motion execution or animation-quality evidence.",
+    "Research facts inherited from FACTS.md; this role did not independently open RFC or MDN sources.",
+    "System font fallbacks may change glyph metrics on another machine.",
+    "Smallest secondary label is about 15.6 px at 350 px frame width and requires recheck if selected for narrower playback.",
+    "No beginner comprehension study, audience-retention measurement, final narration or playback audit."
+  ]
+}

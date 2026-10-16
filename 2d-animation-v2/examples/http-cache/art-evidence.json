@@ -1,0 +1,196 @@
+{
+  "role": "Art Director",
+  "agentIdentity": "/root/art_director",
+  "date": "2026-10-15",
+  "status": "selected_A_static_art_executed_independently_rechecked",
+  "selectedConcept": "A",
+  "skillExecution": {
+    "path": "C:/Users/Dave/.codex/skills/anthropic-frontend-design/SKILL.md",
+    "frontmatterName": "frontend-design",
+    "identityEvidence": "Read exact requested local file in full. The director identified this installation as the verified Anthropic original alias; no similarly named frontend-design package was substituted. Upstream repository identity was not independently reverified by this specialist.",
+    "readSections": [
+      "Ground your designs in the subject matter",
+      "Design principles",
+      "Process: plan, review against the brief, build, critique",
+      "Restraint and self-critique",
+      "More on writing in design"
+    ],
+    "procedure": [
+      {
+        "step": "plan",
+        "evidence": "VISUAL.md defines audience, persistent subject, three distinct staging concepts, 4-6 named hex tokens, type roles, alignment, wireframes and asset plans."
+      },
+      {
+        "step": "review_against_brief_before_build",
+        "evidence": "VISUAL.md records rejection of three framed-image variants and revision into retained-image, validator-dispatch and version-comparison mechanisms before HTML construction."
+      },
+      {
+        "step": "build",
+        "evidence": "sketches/concepts.html contains three original 1080x1920 static SVG compositions with local system font fallbacks and no external assets."
+      },
+      {
+        "step": "screenshot_critique",
+        "evidence": "Captured desktop and phone boards with Python Playwright Chromium, inspected with view_image, enlarged 44-46 px secondary labels to 50 px, shortened two caveats, recaptured and inspected all three individual phone compositions."
+      },
+      {
+        "step": "independent_findings_and_selected_board",
+        "evidence": "Independent safe-area failures preserved under sketches/before-revision; corrected geometry and text, produced all 30 selected-A before/action/result key poses, inspected ten full line contact sheets, fixed actual marker/display overlap and request-state rewind, refreshed 45 screenshots. Independent Reviewer receives final source hashes and decides acceptance."
+      }
+    ],
+    "adaptation": "Applied the original skill to static portrait video concept compositions instead of a website. No animation authority was claimed and no alternate frontend design skill was used."
+  },
+  "inputsRead": [
+    "BRIEF.md",
+    "FACTS.md",
+    "SCRIPT.md",
+    "MOTION_OPTIONS.md",
+    "../../AGENTS.md"
+  ],
+  "outputs": [
+    "VISUAL.md",
+    "ICON_PLAN.json",
+    "sketches/concepts.html",
+    "sketches/board.html",
+    "sketches/framing-check.json",
+    "sketches/board-L01-action-phone.png",
+    "sketches/board-L01-before-phone.png",
+    "sketches/board-L01-result-phone.png",
+    "sketches/board-L02-action-phone.png",
+    "sketches/board-L02-before-phone.png",
+    "sketches/board-L02-result-phone.png",
+    "sketches/board-L03-action-phone.png",
+    "sketches/board-L03-before-phone.png",
+    "sketches/board-L03-result-phone.png",
+    "sketches/board-L04-action-phone.png",
+    "sketches/board-L04-before-phone.png",
+    "sketches/board-L04-result-phone.png",
+    "sketches/board-L05-action-phone.png",
+    "sketches/board-L05-before-phone.png",
+    "sketches/board-L05-result-phone.png",
+    "sketches/board-L06-action-phone.png",
+    "sketches/board-L06-before-phone.png",
+    "sketches/board-L06-result-phone.png",
+    "sketches/board-L07-action-phone.png",
+    "sketches/board-L07-before-phone.png",
+    "sketches/board-L07-result-phone.png",
+    "sketches/board-L08-action-phone.png",
+    "sketches/board-L08-before-phone.png",
+    "sketches/board-L08-result-phone.png",
+    "sketches/board-L09-action-phone.png",
+    "sketches/board-L09-before-phone.png",
+    "sketches/board-L09-result-phone.png",
+    "sketches/board-L10-action-phone.png",
+    "sketches/board-L10-before-phone.png",
+    "sketches/board-L10-result-phone.png",
+    "sketches/board-line-01.png",
+    "sketches/board-line-02.png",
+    "sketches/board-line-03.png",
+    "sketches/board-line-04.png",
+    "sketches/board-line-05.png",
+    "sketches/board-line-06.png",
+    "sketches/board-line-07.png",
+    "sketches/board-line-08.png",
+    "sketches/board-line-09.png",
+    "sketches/board-line-10.png",
+    "sketches/concept-a-phone.png",
+    "sketches/concept-b-phone.png",
+    "sketches/concept-c-phone.png",
+    "sketches/concepts-phone.png",
+    "sketches/concepts-wide.png"
+  ],
+  "screenshotEvidence": {
+    "runtime": "C:/Python313/python.exe with installed playwright.sync_api and Chromium",
+    "wideViewport": {
+      "width": 1440,
+      "height": 1200,
+      "deviceScaleFactor": 1
+    },
+    "phoneViewport": {
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 1
+    },
+    "individualPhoneFrame": {
+      "width": 350,
+      "height": 623
+    },
+    "observations": [
+      "All ten complete line contact sheets visually inspected.",
+      "Initial selected board showed display/tab occlusion; moved marker into independent lower row.",
+      "L05 ends with request at server and L06-before now holds that same server-arrived state.",
+      "Line8 keeps main v7 witness distinct from alternate v7-to-v8 storage replacement.",
+      "Post-304 marker reads Prior expiry without asserting current freshness policy.",
+      "Selected-board source remains immutable during independent recheck."
+    ],
+    "selectedBoardPoseCount": 30
+  },
+  "checks": {
+    "totalFramesMeasured": 33,
+    "selectedBoardPoses": 30,
+    "conceptFrames": 3,
+    "safeArea": {
+      "left": 72,
+      "right": 936,
+      "top": 180,
+      "bottom": 1600
+    },
+    "ownerMeasuredSafeAreaViolations": 0,
+    "phoneHorizontalOverflow": false,
+    "browserAnimationCount": 0,
+    "result": "Owner framing passed and independent Reviewer rechecked all30 selected poses; no gate approval implied."
+  },
+  "handoffConstraints": [
+    "The user selected A. Complete static board and Motion-owned storyboard exist; Gate 1 remains pending.",
+    "No final TTS, animation, Gate 2 or MP4 exists.",
+    "Canonical Art role handoff records execution only; Director and Reviewer acceptance remain separate.",
+    "Selected board actual data-object IDs and scenario identity map are documented in VISUAL.md.",
+    "A 304 status response has no new image body.",
+    "Only alternate cache changes from v7 to v8; main cache-body-v7 persists through the line8 alternative."
+  ],
+  "limitations": [
+    "Static composition review only; no animation or motion-quality evidence.",
+    "Research inherited from FACTS.md; this specialist did not independently open RFC/MDN.",
+    "System font fallbacks may change glyph metrics.",
+    "Selected-board smallest secondary status label is 44 native px, approximately14.3 px at350 px frame width. Actual independent phone review decides readability.",
+    "No measured narration, synchronization, beginner comprehension study or audience-retention measurement."
+  ],
+  "revisionEvidence": {
+    "finding": "Original actual concept text/art breached internal safe area despite no page overflow.",
+    "beforeDirectory": "sketches/before-revision/",
+    "beforeConceptSha256": "11aa2e2bf797079a6ad53a2583e7d21a4e9528f3c6c2cc669298f4242514d648",
+    "fixes": [
+      "Recomposed all headings and lower labels into internal safe area.",
+      "Retained large teaching art; no tiny replacements.",
+      "Moved freshness marker away from local-display panel.",
+      "Held server-arrived request across L05/L06 boundary.",
+      "Preserved main v7 as witness during distinct alternate changed path."
+    ],
+    "afterBoundsEvidence": "sketches/framing-check.json",
+    "independentReviewer": "/root/quality_reviewer",
+    "acceptance": "QR-01 closed by Independent Reviewer, relayed by Director; independently generated quality/board-check.json matches final board hash, covers30 poses, and reports zero safe-area violations and page errors."
+  },
+  "sourceSha256": {
+    "VISUAL.md": "da672a17c77e3e6d3e9814530aa2f448a4668039cb24df080efe0459aedea3c1",
+    "ICON_PLAN.json": "4047f1ca99f92b86f89d4ebb5042fae3fe3c3e15fc5ad41d1c40a57855165bd6",
+    "sketches/concepts.html": "91fcdfab173f9077a6628ceba19dee60aab8dd89d291d5e311fbc6968429cedc",
+    "sketches/board.html": "bb68e2ed36463f29458c4a83570f8bae4742e1b2bb6ae3ae7ee2438439353d52",
+    "sketches/framing-check.json": "4396b3822d10888e49a34ba26b0c74fd3d4a0551bc6d0f2f632a50a9e225b234"
+  },
+  "finalInputs": {
+    "BRIEF.md": "7ed72845ee3ae411ca286c663948dc186ef8df375bf914b8b7fde1c2d2fbc059",
+    "FACTS.md": "9455c3dfaaa6e4e3127207c36d36523ae970d0d2ac12a4d3060ae39566e91fa5",
+    "SCRIPT.md": "0daf295caaa35f8197c7dad4abc42e4fd4366dd5feaf7c15159da6c405f26d23",
+    "MOTION_OPTIONS.md": "12fd1fa6ecc6ec2f3614a437fe11dead5d801898c625bc12b8c4bd7efd8f7de8"
+  },
+  "statusOnlyScriptRefresh": {
+    "sha256": "0daf295caaa35f8197c7dad4abc42e4fd4366dd5feaf7c15159da6c405f26d23",
+    "review": "Read refreshed opening status. Director confirmed status-only revision; spoken content unchanged."
+  },
+  "independentEvidence": {
+    "path": "quality/board-check.json",
+    "sha256": "4a522ada4240089bf134d3dc5eb88697b2b3a200937337cd05cc06a399127acc",
+    "boardSourceSha256": "bb68e2ed36463f29458c4a83570f8bae4742e1b2bb6ae3ae7ee2438439353d52",
+    "poses": 30,
+    "safeAreaViolations": 0
+  }
+}

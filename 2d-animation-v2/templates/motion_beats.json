@@ -1,0 +1,13 @@
+{
+  "narration": [
+    {
+      "id": "line-1",
+      "start_s": 0,
+      "duration_s": 0,
+      "sha256": "REPLACE_WITH_SOURCE_WAV_SHA256",
+      "cues": [
+        {"time_s": 0, "method": "listened", "evidence": "review/phrase-listening.md"}
+      ]
+    }
+  ]
+}

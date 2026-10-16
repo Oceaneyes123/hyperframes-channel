@@ -1,0 +1,17 @@
+
+comp.html — 3000 samples at 30 fps, 35 tracked elements (__track)
+continuity  score 1.00  — 0 boundaries: 0 carried, 0 anchored, 0 bare; 0 exempt; hard cuts 0, bursts []
+curves      peak 237 px/frame (server-current-main: at 88.90 s) · travel on soft curves 93 % · median t80 0.78 · 60 moves
+  freshness-main-label:                     32.30–34.13 s  path   3226  t80 0.82  peak   137  overshoot 0.00
+  freshness-main-label:                     14.50–16.33 s  path   3226  t80 0.82  peak   137  overshoot 0.00
+  freshness-main:                           14.50–16.33 s  path   3222  t80 0.82  peak    97  overshoot 0.00
+  freshness-main:                           32.30–34.13 s  path   3222  t80 0.82  peak    97  overshoot 0.00
+  freshness-main:                           87.53–89.33 s  path   3220  t80 0.83  peak    97  overshoot 0.00
+  freshness-main-label:                     87.53–89.33 s  path   3166  t80 0.83  peak    97  overshoot 0.00
+  freshness-main-role:                      32.57–34.13 s  path   2758  t80 0.83  peak    97  overshoot 0.00
+  freshness-main-role:                      14.77–16.33 s  path   2757  t80 0.83  peak    97  overshoot 0.00
+framing  housing-main: wholly in frame 0–99.9667 s — off at 0 of 2999 samples
+framing  body-v7-main: wholly in frame 0–99.9667 s — off at 0 of 2999 samples
+framing  notch-main: wholly in frame 0–99.9667 s — off at 0 of 2999 samples
+
+wrote examples/http-cache/animator-probe/tracks.json and examples/http-cache/animator-probe/curves.png

@@ -1,0 +1,15 @@
+usage: probe.py [-h] [--fps FPS] [--out OUT] [--from T0] [--to T1]
+                [--width WIDTH] [--height HEIGHT]
+                comp
+
+positional arguments:
+  comp
+
+options:
+  -h, --help       show this help message and exit
+  --fps FPS
+  --out OUT
+  --from T0
+  --to T1
+  --width WIDTH
+  --height HEIGHT

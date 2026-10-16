@@ -1,0 +1,24 @@
+{
+ "comp": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\examples\\http-cache\\comp.html",
+ "fps": 30,
+ "scale": 1,
+ "size": [
+  1080,
+  1920
+ ],
+ "shutter": 180.0,
+ "samples": "adaptive",
+ "gap_px": 24.0,
+ "samples_per_moving_frame": {
+  "4": 850,
+  "5": 1,
+  "10": 2
+ },
+ "workers": 8,
+ "frames": 2999,
+ "still_frames": 2146,
+ "cut_frames": 113,
+ "captures": 7717,
+ "seconds": 197.9,
+ "final": false
+}

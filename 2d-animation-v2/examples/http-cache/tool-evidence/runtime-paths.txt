@@ -1,0 +1,4 @@
+supertonic installed: True
+channel clone present: True
+upstream Windows file URL: file:///C:/Users/Dave/.codex/skills/onetake/SKILL.md
+loaded skill text: True

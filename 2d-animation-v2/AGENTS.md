@@ -1,159 +1,90 @@
-# OneTake narrated explainers
+# Director-led production
 
-This workspace creates beginner Finance, Technology and AI explainers for
-YouTube Shorts, including networking, browsers, protocols, privacy, security
-and everyday computing. Work only inside this workspace.
-The sibling workspace is a read-only source of shared voice tooling and assets.
-Never commit, push, publish or migrate existing videos unless explicitly asked.
+Work inside V2. Preserve existing projects and unrelated edits. The sibling is a
+read-only source of shared voice tooling/assets. Never commit, push, publish or
+deploy unless requested. Use CodeGraph first only when `.codegraph/` exists.
 
-## Owners and routing
+## Authority and delegation
 
-Read this file, [SCRIPT_GUIDE.md](SCRIPT_GUIDE.md) for all storytelling and script
-review decisions, and the installed `onetake/SKILL.md`. OneTake is the sole motion
-authority: concept, choreography, object performance, rhythm, carry, camera,
-curves, deterministic composition, shutter blur and motion review. Consult its
-bundled references or source only when that skill calls for them or an API needs
-clarification. Do not load the sibling's DESIGN.md, MOTION.md, motion library,
-research documents or HyperFrames workflows as additional motion authorities.
-README.md contains executable setup and production commands, not creative rules.
+Main agent is Director: research, scope, dependencies, factual coverage, handoffs,
+conflict resolution, approvals and acceptance. Delegate substantial specialist
+work through native subagent tools. Reuse idle specialists; respect slot limits;
+no recursive delegation or custom agent runtime. One writer per mutable artifact.
+Independent tasks may overlap; dependent stages wait for accepted inputs.
+Director alone owns BRIEF.md and production.json, the approved decision record.
 
-The user explicitly selected OneTake. Use its standalone HTML pipeline and
-`lib/motion.js`, not HyperFrames, GSAP frame assembly or Remotion. The local
-adaptations below take precedence over the skill's product-promo defaults.
+Read [workflow/DIRECTOR.md](workflow/DIRECTOR.md), then only the active role in
+[workflow/ROLES.md](workflow/ROLES.md). Resolve originals with
+`python scripts/studio.py skills`. Specialists read and execute original skills
+and relevant references; role cards are contracts, not replacement skills.
+Never edit upstream skills or claim execution from reading alone.
 
-## Channel adaptations
+| Role | Original skill | Writing responsibility |
+| --- | --- | --- |
+| Scriptwriter | yaxeen/storytelling-skills: storytelling-hooks | SCRIPT.md |
+| Art Director | anthropics/skills: frontend-design | VISUAL.md, ICON_PLAN.json, sketches/ |
+| Motion Director | LottieFiles/motion-design-skill: motion-design | STORYBOARD.md |
+| Animator | feitangyuan/onetake: onetake | narration, runtime, comp, assets, timing, preview |
+| Independent Reviewer | kylezantos/design-motion-principles | audit findings and evidence |
 
-- Author natively at **1080 x 1920, 9:16, 30 fps**. Preview, probe and render at
-  those dimensions. Do not crop or stretch a landscape composition into portrait.
-  Final export is 1080 x 1920 at 30 fps unless another quality is requested.
-- Aim for a complete, naturally paced Short within **180 seconds**. Do not
-  silently omit, rush, truncate or split required content. If the complete scope
-  exceeds 180 seconds, flag Shorts incompatibility at planning and ask the user
-  to choose a narrower scope or a longer video. Recheck measured duration after TTS.
-  Platform reference: https://support.google.com/youtube/answer/15424877
-- OneTake's 10–30-second promo and approximately 60-second demo ranges are not
-  explainer cutoffs. Build a mechanism and payoff rather than a product pitch.
-- Keep essential objects, labels and causal actions within `x=72..936` and
-  `y=180..1600`; these are channel layout margins, not official YouTube guarantees.
-  Inspect camera extrema and phone-size playback. Prefer visible primary artwork
-  around 320–420 px, with 240 px as a practical minimum; necessary labels normally
-  start at 36 px and exact values at 40 px. Readability overrides small-element
-  promo styling and the skill's white-space percentage. Choose the look through
-  OneTake's concept round; do not inherit a fixed palette or the template's story.
-- Narration explains, motion demonstrates, text identifies. Default to sparse
-  1–3-word labels and exact technical values, no chapter banners or decorative
-  cards. Use locally available fonts with real fallbacks and licensed local art.
-- English narration uses the existing channel voice and pronunciation tooling.
-  Captions, sound effects and background music are **off** unless requested.
-  OneTake's synthetic score and Kokoro narration do not replace the channel voice.
-  Preserve visual rests without inserting unnatural silences into speech.
+Original skills own specialist methods. SCRIPT_GUIDE.md contains channel checks.
+Motion Director plans; OneTake alone implements and renders. Resolve conflicting
+recommendations in the brief. No HyperFrames, Remotion, GSAP frame assembly or
+competing renderer. Reviewer never edits Animator files or approves its own fixes.
+Route revisions to the owner, then return to Reviewer.
 
-## Narrative and accuracy
+## Sequence and gates
 
-Research authoritative sources for the actual topic; record links, conditions,
-limits and metaphor boundaries. Map every required point to spoken lines and
-visible evidence. Follow SCRIPT_GUIDE.md's discovery, hook comparison, paired
-payoff, ending selection and revision workflow before presenting Gate 1. Keep
-writing decisions, specific weaknesses/corrections and review limits in unspoken
-SCRIPT.md notes; put causal visual evidence and any loop seam in the existing
-storyboard.
+Research → Scriptwriting → Visual Direction → Motion Planning → **Gate 1** →
+Narration → Animation → Quality Audit → Revisions → **Gate 2** → Rendering.
 
-Make transformations factually meaningful: a request may become a response only
-after the responding action; an encrypted payload does not become a key. Carry
-the subject, container, state or camera destination into the next beat. Use
-OneTake moves rather than reimplementing springs or easing. Vary action and hold
-lengths; do not force its fast promo word cadence onto explanatory narration.
+Show three distinct visual concepts; obtain user selection before storyboarding
+(a supplied concept counts). Gate 1 requires complete revised script, visual
+direction, actual-asset board and storyboard. Explicit user approval precedes
+final TTS and animation. Gate 2 requires the complete, independently reviewed,
+synchronized preview and resolved blocking findings. Explicit user approval
+precedes **any MP4**, including drafts.
 
-## Production and approvals
+Record exact user approval/message reference against file hashes with
+`studio.py approve`. Director verifies the real message; JSON cannot authenticate
+a human. Checks, elapsed time, "continue" and "do remaining" never grant approval.
+Changes invalidate affected receipts. Use guarded `tts` and `render` commands;
+direct upstream calls bypass guards and are prohibited in this workflow.
+Trial/setup approval never approves a film.
 
-1. Record inputs, complete coverage and estimated runtime. Research the angle
-   and select the hook/payoff through SCRIPT_GUIDE.md, then follow OneTake's
-   concept round: show three genuinely different visual ideas and let the user
-   select one before storyboarding. A supplied concept can count as that selection.
-   Inspect a supplied reference; otherwise choose a relevant shipped OneTake case
-   and state the transferable traits. No previous channel video is required.
-2. Draft and revise the facts and script through SCRIPT_GUIDE.md, then create
-   the timed storyboard and one board of actual production assets.
-   Include decisive before/action/result poses and carry across every
-   section boundary. Review every beat at phone size. **Gate 1:** present the
-   revised script with brief script-review evidence and board together; wait for
-   approval before final TTS or animation.
-3. After Gate 1, dry-run the sibling's TTS normalizer, inspect pronunciation and
-   generate one WAV per narration passage. Preserve these source WAVs and their
-   metadata. Use actual durations and aligned/listened phrase cues to retime the
-   same storyboard; store WAV hashes and cue provenance. Do not infer word timing
-   from word count. The sibling generator's frame paths and audio_timeline.html
-   are legacy metadata; they do not require HyperFrames scenes in this workspace.
-4. Build one complete OneTake composition against the approved plan. Derive one
-   render audio mix from the original WAVs at their measured starts, including
-   planned pauses; keep the per-passage sources. Play the same mix against the
-   same timeline in the browser. Muted seeks must be deterministic; playback must
-   synchronize audio, pause, restart and seeking without overlapping narration.
-   Keep `__seek(t)` free of audio playback side effects.
-5. Inspect the complete browser preview with and without narration. Capture native
-   portrait stills, boundary poses, mid-motion states and camera extrema; test
-   repeated, backward and random-order seeks. Run OneTake's portrait probe and
-   inspect continuity, curves, framing, page errors and failed seeks. **Gate 2:**
-   present the working complete-preview URL, measured duration and review evidence;
-   wait for explicit approval before any MP4 render, including a draft.
-6. Render only the approved preview, using OneTake's shutter renderer and explicit
-   portrait dimensions. Verify the exported MP4's streams, dimensions, frame rate,
-   duration, complete decode, actual frames and narration through the ending.
-   Deliver the absolute local path and record unresolved limitations honestly.
+## Preserved production contract
 
-Passing checks is neither listening approval nor render approval. "Continue",
-"next step" and "do remaining" advance to the next gate. A changed script,
-composition or audio needs the relevant gate renewed. Complete all beats before
-Gate 2; do not ask permission after each beat.
+- Native **1080 x 1920, 9:16, 30 fps**. Complete, natural coverage; target ≤180 s.
+  If scope/measured duration exceeds that, ask for scope/format choice. Never
+  silently truncate, accelerate or split.
+- Existing Supertonic channel clone/pronunciation. No preset replacement.
+  Captions, SFX, music off unless requested. Preserve original passage WAVs,
+  measured durations, hashes, actual starts and phrase-cue provenance. Never
+  present word-count timing as measured.
+- Narration explains, motion demonstrates, text identifies. Sparse labels;
+  essential artwork inside x=72..936, y=180..1600 at camera extrema. Prefer
+  320–420 px primary artwork (240 minimum), labels ≥36 px, values ≥40 px.
+  Actual phone-size review decides readability.
+- Contiguous `## Line N` from 1; four-space-indented speech; unindented notes.
+  Keep sourced claims, qualifications and metaphor boundaries.
+- One comp: `__ready`, pure `__seek(t)`, `__meta={dur,fps:30,w:1080,h:1920,
+  cuts:[],inFrame:{...}}`, screen-space `__track(t)`, camera-aware `__motion`.
+  Pass `{W:1080,H:1920}` to OneTake camera/projection helpers; defaults landscape.
+  Await fonts/assets; declare real cuts only. Preserve identity, visible cause,
+  meaningful carry, varied action/holds and deterministic seeks.
+- Browser/export share full narration mix/timeline. No audio inside `__seek`.
+  Verify play/pause/restart/seeks and no overlapping VO. Keyboard/focus and
+  reduced-motion preview controls must not change deterministic export.
+- Capture portrait stills/phone views; upstream `stills.py` forces landscape.
+  Inspect portrait probe errors, seeks, framing, curves and continuity. Exit
+  code alone proves none. Carry <0.5 fails; 0.5–0.7 needs review. Promo oracle
+  uses landscape/audio rules: report original failures and justified exceptions.
+  Probe speed is normalized by `1920/width`; distinguish it from raw pixel travel.
+- Render approved files with explicit dimensions/fps/scale; never `--final`.
+  Mix covers ending (`-shortest` can truncate). Verify streams, complete decode,
+  frames, narration and ending after render.
+- Preserve asset licenses and OneTake LICENSE/Required Notice with copied runtime.
+  PolyForm Noncommercial does not establish monetized-use permission.
 
-## Project files
-
-Create each video under `videos/<descriptive-slug>/`. Use only needed artifacts:
-
-| File | Owns |
-| --- | --- |
-| BRIEF.md | Topic, takeaway, required coverage, concept/look, runtime and status |
-| FACTS.md | Sourced claims, conditions and metaphor boundaries |
-| SCRIPT.md | Spoken lines and separate display copy |
-| STORYBOARD.md | Estimated then measured beat windows, cues, carry and review evidence |
-| ICON_PLAN.json | Exact local assets, source and license |
-| sketches/board.html | Complete actual-asset board for Gate 1 |
-| audio_meta.json | Measured narration passages, starts and voice provenance |
-| motion_beats.json | Important phrase times, WAV hashes and measurement provenance |
-| comp.html | One seekable film and synchronized preview player |
-| motion.js, look.js, assets/ | Local runtime, selected look and licensed assets |
-| audio/ | Derived full-length mix; original WAVs stay at their generated paths |
-| review/ | Portrait captures, probe reports and approvals tied to reviewed files |
-| output/ | Approved export and OneTake render metadata |
-
-SCRIPT.md keeps contiguous `## Line N` headings starting at 1; indent spoken
-paragraphs by four spaces for the existing TTS parser. Keep labels and production
-notes unindented. STORYBOARD.md uses a single beat table with columns for time,
-line/cue, learning, before state, action, result/hold and carry to the next beat.
-
-The composition defines `window.__ready`, `window.__seek(t)` and
-`window.__meta = {dur, fps: 30, w: 1080, h: 1920, cuts: [], inFrame: {...}}`.
-Await local fonts and decoded assets. Track persistent subject IDs with screen
-boxes through `__track(t)` and supply camera-aware `__motion(t0, t1)` for shutter
-sampling. Declare actual intentional cuts only; do not exempt every boundary to
-inflate carry scores. Provide `?play`, `?t=<seconds>` and working playback controls.
-
-## Review boundaries
-
-OneTake's current stills helper resizes every image to 640 x 360, even when a
-portrait viewport is supplied. Capture with Playwright at 1080 x 1920 instead,
-and preserve 9:16 in contact sheets and phone-size reviews.
-
-Its MP4 oracle probes `--comp` at 1920 x 1080 and uses a promo audio-silence
-threshold. Use the explicit portrait probe for composition evidence. MP4 rhythm
-checks may be run separately after approved rendering, but report original
-failures and explain narration-specific exceptions; never invent a passing verdict.
-The probe's exit code alone does not certify continuity, framing or successful seeks.
-
-The installed OneTake package is PolyForm Noncommercial 1.0.0. Preserve its
-LICENSE and Required Notice when copying its runtime. Do not describe the setup
-as cleared for commercial or monetized use; record any separately granted license.
-
-Use CodeGraph before locating code only when a `.codegraph/` directory exists.
-Choose the smallest complete solution, preserve unrelated edits and verify the
-actual changed surface. Setup or documentation checks do not validate a future film.
+Production lives in `videos/<slug>/`; tracked `examples/` contains workflow trials.
+README owns commands, role cards own handoffs, original skills own methods.

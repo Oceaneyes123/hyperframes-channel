@@ -1,9 +1,10 @@
 # Storytelling for Finance, Technology and AI Shorts
 
-This is V2's single source of truth for storytelling, hook selection, narration,
-endings and script review. AGENTS.md owns production, accuracy records and approval
-gates; the installed OneTake skill owns motion. Use this guide before drafting.
-The aim is a task the viewer can complete or a mechanism they can understand.
+These are channel constraints and editorial checks for the Scriptwriter executing
+the original installed `storytelling-hooks` skill. That skill owns its generation
+workflow and required patterns reference. AGENTS.md owns production/approvals;
+Motion Director plans choreography and OneTake alone implements it. The aim is
+a task the viewer can complete or a mechanism they can understand.
 
 ## Choose the video type before writing
 
@@ -59,18 +60,14 @@ Creator practices are useful craft evidence, not controlled proof of engagement.
 The workflow below is our adaptation, not a creator's signature voice or formula.
 Neither a checklist nor a score guarantees views, retention or learning.
 
-## Optional skill inputs
+## Original skill and channel integration
 
-`viral-hooks` and `viral-short-form` were not found in the standard user skill
-folders on 2026-10-10 and are not in this session's skill catalog. Their upstream
-[hook skill](https://github.com/vyralcontent/content-skills/blob/main/skills/viral-hooks/SKILL.md)
-and [script skill](https://github.com/vyralcontent/content-skills/blob/main/skills/viral-short-form/SKILL.md)
-were inspected. We adapt varied angles, spoken/visual alignment and pinpointed
-critique of a weak opening, stalled middle or buried payoff. If installed later,
-consult them as optional idea/critique inputs; this guide remains the authority.
-If unavailable, continue here without installation or another required document.
-Do not import mandatory CTAs/captions, creator imitation, invented credentials,
-algorithm guarantees, fixed cuts or removal of useful breaths and holds.
+Resolve `storytelling-hooks` with `studio.py skills`; read its original SKILL.md
+and required patterns.md. Execute its intake, at least five labeled variants,
+selection, full-script development and checklist. Record actual outputs and
+limitations in the handoff. The checks below supplement that execution, rather
+than substitute a local rewritten storytelling skill. No promotional CTA,
+mandatory captions, invented credentials, algorithm guarantees or fixed cut rate.
 
 ## Before the full script
 
@@ -81,7 +78,7 @@ algorithm guarantees, fixed cuts or removal of useful breaths and holds.
    likely expectation, the surprising fact or mechanism, its conditions, and one useful
    takeaway. Choose a concrete example that makes the difference visible. If the
    surprise needs an exaggerated claim, choose another angle.
-2. **Generate at least three distinct hooks.** For a tutorial, compare accurate
+2. **Generate at least five distinct hooks through the original skill.** For a tutorial, compare accurate
    result-first, problem-first or before/after openings for the same task. Start
    the demonstration promptly; do not add a mystery before the instructions.
    For an explainer, change the premise, not just the wording: an observed
@@ -120,7 +117,7 @@ algorithm guarantees, fixed cuts or removal of useful breaths and holds.
 6. **Draft and revise.** Write the explanation between the chosen opening and
    payoff. Map required facts to lines and storyboard evidence. Complete the
    review below before Gate 1. Hook candidates are a writing choice made by the
-   writer, not an extra approval gate; OneTake's visual concept selection remains.
+   writer, not an extra approval gate; user visual concept selection remains.
 
 Keep the selected hook/payoff, ending choice and brief review in existing
 SCRIPT.md notes. No separate hook report, scoring system or new production file.
@@ -175,7 +172,8 @@ honest figure exists, use a task or problem hook instead.
   state. Let a subject, container or destination carry the discovery into the
   next beat. Tutorial narration directs actions; explainer narration explains
   causes. Objects demonstrate; sparse text identifies.
-  Plan the teaching action here; OneTake chooses its choreography and timing.
+  Plan the teaching action here; Motion Director choreographs and OneTake
+  implements its approved timing and moves.
 
 ## Teach a person, not a checklist
 

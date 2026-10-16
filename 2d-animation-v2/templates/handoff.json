@@ -1,0 +1,13 @@
+{
+  "role": "",
+  "agent_id": "",
+  "status": "blocked",
+  "skill": {"path": "", "sha256": ""},
+  "references_read": [],
+  "procedures": [],
+  "inputs": {},
+  "outputs": {},
+  "evidence": [],
+  "limitations": [],
+  "findings": []
+}

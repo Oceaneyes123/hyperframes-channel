@@ -1,0 +1,3305 @@
+{
+  "source_sha256": "bb68e2ed36463f29458c4a83570f8bae4742e1b2bb6ae3ae7ee2438439353d52",
+  "poses": [
+    {
+      "id": "L01-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Expired. Still here.",
+      "caption": "Before Opening state: expired freshness tab and intact, notched local image.",
+      "texts": [
+        {
+          "text": "Expired. Still here.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 743.2829289027624,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Expired",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 578.2751743861608,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L01-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Only freshness expired.",
+      "caption": "Action Attention shifts to the independent freshness tab; the image stays untouched.",
+      "texts": [
+        {
+          "text": "Only freshness expired.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 929.8720733642579,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Expired",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 578.2751743861608,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        },
+        {
+          "object": "path",
+          "native": {
+            "x": 819.9984375,
+            "y": 469.99737723214287,
+            "right": 819.9984375,
+            "bottom": 589.9967075892857
+          }
+        }
+      ]
+    },
+    {
+      "id": "L01-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "The image stays.",
+      "caption": "Result The opening contradiction remains visible, awaiting the explanation.",
+      "texts": [
+        {
+          "text": "The image stays.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 681.3757389613561,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Expired",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 578.2751743861608,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "The stored body is intact.",
+          "native": {
+            "x": 120.91661420549666,
+            "y": 1469.8772879464286,
+            "right": 681.4593841552735,
+            "bottom": 1522.3344308035714
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L02-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "A stored response.",
+      "caption": "Before The lightbox identifies browser-local storage.",
+      "texts": [
+        {
+          "text": "A stored response.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 763.6293574741909,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Expired",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 578.2751743861608,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L02-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Freshness is separate.",
+      "caption": "Action The marker and body are physically separate pieces, not a deletion timer.",
+      "texts": [
+        {
+          "text": "Freshness is separate.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 902.8239532470703,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Expired",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 578.2751743861608,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Permission, not existence.",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 389.8833147321429,
+            "right": 710.0904772077288,
+            "bottom": 439.25474330357144
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L02-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Still stored.",
+      "caption": "Result The notched v7 image remains in the same lightbox.",
+      "texts": [
+        {
+          "text": "Still stored.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 499.8489532470703,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Expired",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 578.2751743861608,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness ended; the body remains.",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1469.8772879464286,
+            "right": 932.7932987758091,
+            "bottom": 1522.3344308035714
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L03-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Fresh reuse.",
+      "caption": "Before Policy permits fresh reuse; server is present and idle.",
+      "texts": [
+        {
+          "text": "Fresh case",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 335.10078604561943,
+            "bottom": 389.2550223214286
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Fresh reuse.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 537.2631918770927,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Fresh",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 464.9095458984375,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Idle",
+          "native": {
+            "x": 591.9997192382813,
+            "y": 847.9664899553571,
+            "right": 672.7443341936385,
+            "bottom": 894.2522042410715
+          },
+          "phone_font_px": 15.555555555555555
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        }
+      ]
+    },
+    {
+      "id": "L03-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Use the local copy.",
+      "caption": "Action A view of the stored body supplies the local display; no outbound request.",
+      "texts": [
+        {
+          "text": "Fresh case",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 335.10078604561943,
+            "bottom": 389.2550223214286
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Use the local copy.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 752.2025717599051,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Fresh",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 464.9095458984375,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Local display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 424.9688598632813,
+            "right": 369.93989214215964,
+            "bottom": 474.34024135044643
+          },
+          "phone_font_px": 15.555555555555555
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "local-display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 489.997265625,
+            "right": 474.4827771868025,
+            "bottom": 829.9953683035715
+          }
+        },
+        {
+          "object": "local-display-view-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 509.99715401785716,
+            "right": 474.48275364467077,
+            "bottom": 803.437677873884
+          }
+        },
+        {
+          "object": "path",
+          "native": {
+            "x": 278.00145263671874,
+            "y": 853.9952532087054,
+            "right": 278.00145263671874,
+            "bottom": 894.9950055803572
+          }
+        }
+      ]
+    },
+    {
+      "id": "L03-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "No new image transfer.",
+      "caption": "Result Identical notch and hill image connect stored body with local display.",
+      "texts": [
+        {
+          "text": "Fresh case",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 335.10078604561943,
+            "bottom": 389.2550223214286
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "No new image transfer.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 920.2293103899275,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Fresh",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 464.9095458984375,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Local display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 424.9688598632813,
+            "right": 369.93989214215964,
+            "bottom": 474.34024135044643
+          },
+          "phone_font_px": 15.555555555555555
+        },
+        {
+          "text": "Idle",
+          "native": {
+            "x": 591.9997192382813,
+            "y": 847.9664899553571,
+            "right": 672.7443341936385,
+            "bottom": 894.2522042410715
+          },
+          "phone_font_px": 15.555555555555555
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "local-display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 489.997265625,
+            "right": 474.4827771868025,
+            "bottom": 829.9953683035715
+          }
+        },
+        {
+          "object": "local-display-view-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 509.99715401785716,
+            "right": 474.48275364467077,
+            "bottom": 803.437677873884
+          }
+        }
+      ]
+    },
+    {
+      "id": "L04-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Freshness can end.",
+      "caption": "Before Freshness and image remain separate before the state change.",
+      "texts": [
+        {
+          "text": "Freshness can end.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 784.4579289027623,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Fresh",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 540.909197126116,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L04-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Now stale.",
+      "caption": "Action Only the marker changes; the same image body remains fully opaque.",
+      "texts": [
+        {
+          "text": "Now stale.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 462.0971675327846,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 527.6069981166295,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L04-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Stale. Still stored.",
+      "caption": "Result No eviction, fading, damaged pixels or automatic re-download implied.",
+      "texts": [
+        {
+          "text": "Stale. Still stored.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 721.8275717599051,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 527.6069981166295,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "The browser may need a check.",
+          "native": {
+            "x": 120.91661420549666,
+            "y": 1469.8772879464286,
+            "right": 828.1299721854074,
+            "bottom": 1522.3344308035714
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L05-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "A version label.",
+      "caption": "Before Saved ETag v7 is attached to the retained image response.",
+      "texts": [
+        {
+          "text": "A version label.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 641.7918103899275,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 104.0024400983538,
+            "y": 789.9668701171876,
+            "right": 295.46971435546874,
+            "bottom": 836.252490234375
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "saved-validator-v7",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 754.9957868303571,
+            "right": 368.00096217564175,
+            "bottom": 870.9951206752232
+          }
+        }
+      ]
+    },
+    {
+      "id": "L05-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Send the saved label.",
+      "caption": "Action Explicit midpoint: only the validator slip leaves; the body remains local.",
+      "texts": [
+        {
+          "text": "Send the saved label.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 847.0882860456195,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 486.0003295898438,
+            "y": 1074.9652797154017,
+            "right": 677.4676391601563,
+            "bottom": 1121.2510881696428
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "conditional-request",
+          "native": {
+            "x": 470.000390625,
+            "y": 1039.9941964285715,
+            "right": 749.998828125,
+            "bottom": 1155.9935302734375
+          }
+        },
+        {
+          "object": "path",
+          "native": {
+            "x": 480.00033482142857,
+            "y": 1159.9935267857143,
+            "right": 599.9996651785715,
+            "bottom": 1189.993359375
+          }
+        }
+      ]
+    },
+    {
+      "id": "L05-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "The request arrives.",
+      "caption": "Result Server-side request arrival, with the original local image still readable.",
+      "texts": [
+        {
+          "text": "The request arrives.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 803.9365003313337,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 625.9995012555804,
+            "y": 834.9666190011161,
+            "right": 817.4668108258929,
+            "bottom": 881.2522391183036
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "conditional-request",
+          "native": {
+            "x": 609.999609375,
+            "y": 799.9955357142858,
+            "right": 889.998046875,
+            "bottom": 915.9948695591519
+          }
+        }
+      ]
+    },
+    {
+      "id": "L06-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Which version?",
+      "caption": "Before Same request remains at the server after line 5; the actual saved image stays local.",
+      "texts": [
+        {
+          "text": "Which version?",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 627.038238961356,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 625.9995012555804,
+            "y": 834.9666190011161,
+            "right": 817.4668108258929,
+            "bottom": 881.2522391183036
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "conditional-request",
+          "native": {
+            "x": 609.999609375,
+            "y": 799.9955357142858,
+            "right": 889.998046875,
+            "bottom": 915.9948695591519
+          }
+        }
+      ]
+    },
+    {
+      "id": "L06-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Compare at the server.",
+      "caption": "Action The request reaches the labeled server area before comparison.",
+      "texts": [
+        {
+          "text": "Compare at the server.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 906.3918103899275,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 625.9995012555804,
+            "y": 834.9666190011161,
+            "right": 817.4668108258929,
+            "bottom": 881.2522391183036
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "conditional-request",
+          "native": {
+            "x": 609.999609375,
+            "y": 799.9955357142858,
+            "right": 889.998046875,
+            "bottom": 915.9948695591519
+          }
+        }
+      ]
+    },
+    {
+      "id": "L06-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "The image stays local.",
+      "caption": "Result The conditional request did not upload the cached body.",
+      "texts": [
+        {
+          "text": "The image stays local.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 875.1489532470704,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 625.9995012555804,
+            "y": 834.9666190011161,
+            "right": 817.4668108258929,
+            "bottom": 881.2522391183036
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "No image sent back.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 612.9678013392858,
+            "right": 522.9831468854632,
+            "bottom": 662.3392299107143
+          },
+          "phone_font_px": 15.555555555555555
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "conditional-request",
+          "native": {
+            "x": 609.999609375,
+            "y": 799.9955357142858,
+            "right": 889.998046875,
+            "bottom": 915.9948695591519
+          }
+        }
+      ]
+    },
+    {
+      "id": "L07-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "The version matches.",
+      "caption": "Before Saved and current ETags match at the server for this representation.",
+      "texts": [
+        {
+          "text": "The version matches.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 847.2329289027623,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 625.9995012555804,
+            "y": 834.9666190011161,
+            "right": 817.4668108258929,
+            "bottom": 881.2522391183036
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "conditional-request",
+          "native": {
+            "x": 609.999609375,
+            "y": 799.9955357142858,
+            "right": 889.998046875,
+            "bottom": 915.9948695591519
+          }
+        }
+      ]
+    },
+    {
+      "id": "L07-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "304 Not Modified.",
+      "caption": "Action The server issues status/metadata only; this reply contains no image body.",
+      "texts": [
+        {
+          "text": "304 Not Modified.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 708.3757389613561,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Freshness: Stale",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 451.6074881417411,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "304",
+          "native": {
+            "x": 579.9997767857143,
+            "y": 1079.5365966796876,
+            "right": 692.1462053571429,
+            "bottom": 1147.422310965402
+          },
+          "phone_font_px": 22.037037037037035
+        },
+        {
+          "text": "Not Modified",
+          "native": {
+            "x": 579.9997767857143,
+            "y": 1159.0505231584823,
+            "right": 826.7604910714286,
+            "bottom": 1202.250523158482
+          },
+          "phone_font_px": 14.259259259259258
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "response-304",
+          "native": {
+            "x": 559.9998883928572,
+            "y": 1059.9940848214287,
+            "right": 889.998046875,
+            "bottom": 1229.9931361607144
+          }
+        }
+      ]
+    },
+    {
+      "id": "L07-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Reuse the saved body.",
+      "caption": "Result Local display uses existing v7 body after 304, not a body arriving from server.",
+      "texts": [
+        {
+          "text": "Reuse the saved body.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 877.7525717599052,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Prior expiry",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 350.29175851004464,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Local display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 424.9688598632813,
+            "right": 369.93989214215964,
+            "bottom": 474.34024135044643
+          },
+          "phone_font_px": 15.555555555555555
+        },
+        {
+          "text": "304",
+          "native": {
+            "x": 500.0002232142857,
+            "y": 1089.536540876116,
+            "right": 612.1466517857143,
+            "bottom": 1157.4222551618304
+          },
+          "phone_font_px": 22.037037037037035
+        },
+        {
+          "text": "Not Modified",
+          "native": {
+            "x": 500.0002232142857,
+            "y": 1169.0504673549108,
+            "right": 746.7609375000001,
+            "bottom": 1212.2504673549108
+          },
+          "phone_font_px": 14.259259259259258
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "local-display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 489.997265625,
+            "right": 474.4827771868025,
+            "bottom": 829.9953683035715
+          }
+        },
+        {
+          "object": "local-display-view-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 509.99715401785716,
+            "right": 474.48275364467077,
+            "bottom": 803.437677873884
+          }
+        },
+        {
+          "object": "response-304",
+          "native": {
+            "x": 480.00033482142857,
+            "y": 1069.9940290178572,
+            "right": 809.9984933035714,
+            "bottom": 1239.9930803571428
+          }
+        }
+      ]
+    },
+    {
+      "id": "L08-before",
+      "scenario": "scenario-main-and-alt",
+      "width": 350,
+      "title": "Changed instead.",
+      "caption": "Before Separate alternative: server v8 differs; alternate cache still holds v7. Main v7 remains below.",
+      "texts": [
+        {
+          "text": "Changed instead.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 699.022214617048,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path: v7",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1490.269482421875,
+            "right": 489.7096396309989,
+            "bottom": 1536.555385044643
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Changed path: v7",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 950.2724958147322,
+            "right": 439.4445988246373,
+            "bottom": 996.5581159319197
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 459.88292410714286,
+            "right": 732.1295026506697,
+            "bottom": 509.2543526785715
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "New version: v8",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 862.9664062500001,
+            "right": 900.4354980468751,
+            "bottom": 909.2521205357143
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1109.9938058035714,
+            "right": 452.92510593959264,
+            "bottom": 1463.2982979910714
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 91.1180903843471,
+            "y": 1134.993666294643,
+            "right": 452.92510593959264,
+            "bottom": 1411.1730050223216
+          }
+        },
+        {
+          "object": "alt-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 569.9968191964286,
+            "right": 452.92510593959264,
+            "bottom": 923.3014055524554
+          }
+        },
+        {
+          "object": "alt-cache-body-v7",
+          "native": {
+            "x": 91.1180903843471,
+            "y": 594.9966796875,
+            "right": 452.92510593959264,
+            "bottom": 871.1760184151786
+          }
+        },
+        {
+          "object": "server-body-v8",
+          "native": {
+            "x": 591.9997192382813,
+            "y": 544.9969587053572,
+            "right": 911.9978864397322,
+            "bottom": 821.1762974330358
+          }
+        }
+      ]
+    },
+    {
+      "id": "L08-action",
+      "scenario": "scenario-main-and-alt",
+      "width": 350,
+      "title": "200 brings the image.",
+      "caption": "Action New body v8 is in transit, outside storage. Alternate old body stays visible until arrival.",
+      "texts": [
+        {
+          "text": "200 brings the image.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 854.8025717599052,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path: v7",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1490.269482421875,
+            "right": 489.7096396309989,
+            "bottom": 1536.555385044643
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Changed path: v7",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 950.2724958147322,
+            "right": 439.4445988246373,
+            "bottom": 996.5581159319197
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 459.88292410714286,
+            "right": 732.1295026506697,
+            "bottom": 509.2543526785715
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "200 OK + body",
+          "native": {
+            "x": 540,
+            "y": 902.9661830357144,
+            "right": 833.1848563058036,
+            "bottom": 949.2518973214286
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1109.9938058035714,
+            "right": 452.92510593959264,
+            "bottom": 1463.2982979910714
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 91.1180903843471,
+            "y": 1134.993666294643,
+            "right": 452.92510593959264,
+            "bottom": 1411.1730050223216
+          }
+        },
+        {
+          "object": "alt-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 569.9968191964286,
+            "right": 452.92510593959264,
+            "bottom": 923.3014055524554
+          }
+        },
+        {
+          "object": "alt-cache-body-v7",
+          "native": {
+            "x": 91.1180903843471,
+            "y": 594.9966796875,
+            "right": 452.92510593959264,
+            "bottom": 871.1760184151786
+          }
+        },
+        {
+          "object": "server-body-v8",
+          "native": {
+            "x": 591.9997192382813,
+            "y": 544.9969587053572,
+            "right": 911.9978864397322,
+            "bottom": 821.1762974330358
+          }
+        },
+        {
+          "object": "incoming-body-v8",
+          "native": {
+            "x": 540,
+            "y": 999.9944196428572,
+            "right": 859.9982142857143,
+            "bottom": 1276.1737583705358
+          }
+        }
+      ]
+    },
+    {
+      "id": "L08-result",
+      "scenario": "scenario-main-and-alt",
+      "width": 350,
+      "title": "Replace after arrival.",
+      "caption": "Result Only alternate cache becomes v8. Main retained v7 witness remains unchanged.",
+      "texts": [
+        {
+          "text": "Replace after arrival.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 841.7365003313338,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path: v7",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1490.269482421875,
+            "right": 489.7096396309989,
+            "bottom": 1536.555385044643
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Changed path: v8",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 950.2724958147322,
+            "right": 440.64181038992746,
+            "bottom": 996.5581159319197
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 459.88292410714286,
+            "right": 732.1295026506697,
+            "bottom": 509.2543526785715
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "200 OK",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 880.6233816964286,
+            "right": 775.5064453125001,
+            "bottom": 942.3376674107143
+          },
+          "phone_font_px": 20.74074074074074
+        },
+        {
+          "text": "Body arrived.",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 962.9658482142858,
+            "right": 843.735498046875,
+            "bottom": 1009.2515625000001
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1109.9938058035714,
+            "right": 452.92510593959264,
+            "bottom": 1463.2982979910714
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 91.1180903843471,
+            "y": 1134.993666294643,
+            "right": 452.92510593959264,
+            "bottom": 1411.1730050223216
+          }
+        },
+        {
+          "object": "alt-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 569.9968191964286,
+            "right": 448.0005157470703,
+            "bottom": 923.3014055524554
+          }
+        },
+        {
+          "object": "alt-cache-body-v8",
+          "native": {
+            "x": 108.00241306849888,
+            "y": 594.9966796875,
+            "right": 428.0006273542132,
+            "bottom": 871.1760184151786
+          }
+        },
+        {
+          "object": "server-body-v8",
+          "native": {
+            "x": 591.9997192382813,
+            "y": 544.9969587053572,
+            "right": 911.9978864397322,
+            "bottom": 821.1762974330358
+          }
+        }
+      ]
+    },
+    {
+      "id": "L09-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Example conditions.",
+      "caption": "Before Return emphasis to the unchanged-path witness; no reversal of alternate v8.",
+      "texts": [
+        {
+          "text": "Example conditions.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 804.5632860456194,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 448.2114532470703,
+            "bottom": 392.3407366071429
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Prior expiry",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 426.291268484933,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L09-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Reuse when allowed.",
+      "caption": "Action Policy is a stated condition, not a universal browser behavior.",
+      "texts": [
+        {
+          "text": "Reuse when allowed.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 842.5079289027623,
+            "bottom": 301.42695661272325
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 448.2114532470703,
+            "bottom": 392.3407366071429
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Prior expiry",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 426.291268484933,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Cache instructions matter.",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1469.8772879464286,
+            "right": 713.9958343505859,
+            "bottom": 1519.2487165178572
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L09-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "A copy must remain.",
+      "caption": "Result The shown v7 body was retained, not evicted; no new eviction plot.",
+      "texts": [
+        {
+          "text": "A copy must remain.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 818.9311431884767,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 448.2114532470703,
+            "bottom": 392.3407366071429
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Prior expiry",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 426.291268484933,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "This copy is still stored.",
+          "native": {
+            "x": 120.91661420549666,
+            "y": 1469.8772879464286,
+            "right": 649.2400935581752,
+            "bottom": 1522.3344308035714
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    },
+    {
+      "id": "L10-before",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Expired. Still useful.",
+      "caption": "Before The main unchanged path is explicitly restored to focus; alternate v8 was not undone.",
+      "texts": [
+        {
+          "text": "Expired. Still useful.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 801.284714617048,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 448.2114532470703,
+            "bottom": 392.3407366071429
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Prior expiry",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 350.29175851004464,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "304",
+          "native": {
+            "x": 591.9997192382813,
+            "y": 1089.536540876116,
+            "right": 704.1461007254464,
+            "bottom": 1157.4222551618304
+          },
+          "phone_font_px": 22.037037037037035
+        },
+        {
+          "text": "Not Modified",
+          "native": {
+            "x": 591.9997192382813,
+            "y": 1169.0504673549108,
+            "right": 838.7603864397322,
+            "bottom": 1212.2504673549108
+          },
+          "phone_font_px": 14.259259259259258
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "response-304",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 1069.9940290178572,
+            "right": 901.9979422433037,
+            "bottom": 1239.9930803571428
+          }
+        }
+      ]
+    },
+    {
+      "id": "L10-action",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "Check permits reuse.",
+      "caption": "Action The matching check connects 304 to a local view of the original v7 body.",
+      "texts": [
+        {
+          "text": "Check permits reuse.",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 221.1983851841518,
+            "right": 847.4740003313337,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 448.2114532470703,
+            "bottom": 392.3407366071429
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1296.6023018973215,
+            "right": 397.6655548095703,
+            "bottom": 1342.8880161830357
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Prior expiry",
+          "native": {
+            "x": 106.00242658342634,
+            "y": 1454.9632533482143,
+            "right": 350.29175851004464,
+            "bottom": 1501.2489676339287
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Server",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 451.8829310825893,
+            "right": 732.1295026506697,
+            "bottom": 501.2543596540179
+          },
+          "phone_font_px": 16.85185185185185
+        },
+        {
+          "text": "Current",
+          "native": {
+            "x": 609.999609375,
+            "y": 602.9678571428572,
+            "right": 768.567919921875,
+            "bottom": 649.2535714285715
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "ETag \"v7\"",
+          "native": {
+            "x": 609.999609375,
+            "y": 667.8818010602679,
+            "right": 816.9835379464286,
+            "bottom": 720.3389439174108
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Local display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 424.9688598632813,
+            "right": 369.93989214215964,
+            "bottom": 474.34024135044643
+          },
+          "phone_font_px": 15.555555555555555
+        },
+        {
+          "text": "304",
+          "native": {
+            "x": 500.0002232142857,
+            "y": 1089.536540876116,
+            "right": 612.1466517857143,
+            "bottom": 1157.4222551618304
+          },
+          "phone_font_px": 22.037037037037035
+        },
+        {
+          "text": "Not Modified",
+          "native": {
+            "x": 500.0002232142857,
+            "y": 1169.0504673549108,
+            "right": 746.7609375000001,
+            "bottom": 1212.2504673549108
+          },
+          "phone_font_px": 14.259259259259258
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 899.9949776785714,
+            "right": 474.4827771868025,
+            "bottom": 1269.631117466518
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 924.9948381696429,
+            "right": 474.48275364467077,
+            "bottom": 1218.4354561941964
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 1429.9920200892857,
+            "right": 468.00040413992747,
+            "bottom": 1525.9915597098216
+          }
+        },
+        {
+          "object": "server-shelf",
+          "native": {
+            "x": 571.9998308454242,
+            "y": 519.9970982142858,
+            "right": 931.9977748325894,
+            "bottom": 959.9946428571429
+          }
+        },
+        {
+          "object": "local-display",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 489.997265625,
+            "right": 474.4827771868025,
+            "bottom": 829.9953683035715
+          }
+        },
+        {
+          "object": "local-display-view-v7",
+          "native": {
+            "x": 90.0628143310547,
+            "y": 509.99715401785716,
+            "right": 474.48275364467077,
+            "bottom": 803.437677873884
+          }
+        },
+        {
+          "object": "response-304",
+          "native": {
+            "x": 480.00033482142857,
+            "y": 1069.9940290178572,
+            "right": 809.9984933035714,
+            "bottom": 1239.9930803571428
+          }
+        }
+      ]
+    },
+    {
+      "id": "L10-result",
+      "scenario": "scenario-main",
+      "width": 350,
+      "title": "The image it has.",
+      "caption": "Result Bookend: same notched image and expired freshness marker, now with the reuse condition earned.",
+      "texts": [
+        {
+          "text": "The image it has.",
+          "native": {
+            "x": 84.91681038992746,
+            "y": 221.1983851841518,
+            "right": 688.6560961042132,
+            "bottom": 304.51267089843753
+          },
+          "phone_font_px": 25.925925925925924
+        },
+        {
+          "text": "Unchanged path",
+          "native": {
+            "x": 88.00252467564175,
+            "y": 339.88359375,
+            "right": 448.2114532470703,
+            "bottom": 392.3407366071429
+          },
+          "phone_font_px": 16.203703703703702
+        },
+        {
+          "text": "Browser cache",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1336.90341796875,
+            "right": 433.6653586251395,
+            "bottom": 1383.189320591518
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Prior expiry",
+          "native": {
+            "x": 182.00200718470984,
+            "y": 516.9683558872769,
+            "right": 426.291268484933,
+            "bottom": 563.2540701729911
+          },
+          "phone_font_px": 14.907407407407407
+        },
+        {
+          "text": "Same saved body. Matching check.",
+          "native": {
+            "x": 124.00232849121095,
+            "y": 1469.8772879464286,
+            "right": 894.0571694510325,
+            "bottom": 1522.3344308035714
+          },
+          "phone_font_px": 16.203703703703702
+        }
+      ],
+      "essential": [
+        {
+          "object": "main-lightbox-housing",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 629.996484375,
+            "right": 920.078287615095,
+            "bottom": 1309.932421875
+          }
+        },
+        {
+          "object": "cache-body-v7",
+          "native": {
+            "x": 106.01246730259487,
+            "y": 654.9963448660715,
+            "right": 920.078287615095,
+            "bottom": 1276.3997628348216
+          }
+        },
+        {
+          "object": "cache-freshness",
+          "native": {
+            "x": 164.0020935058594,
+            "y": 491.997216796875,
+            "right": 823.9984104701451,
+            "bottom": 587.9967564174108
+          }
+        }
+      ]
+    }
+  ],
+  "reduced_motion_static": true,
+  "page_errors": [],
+  "safe_area_violations": []
+}

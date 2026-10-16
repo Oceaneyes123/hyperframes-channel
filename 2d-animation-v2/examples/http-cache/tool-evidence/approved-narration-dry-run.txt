@@ -1,0 +1,68 @@
+{
+  "project": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\examples\\http-cache",
+  "voice": "custom:channel-voice.json",
+  "voice_style": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation\\.tools\\supertonic3-model\\voice_styles\\channel-voice.json",
+  "out": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\examples\\http-cache\\.media\\audio\\voice",
+  "lines": [
+    {
+      "id": "line-1",
+      "original_text": "This browser's image copy expired. So why is it still here?",
+      "spoken_text": "This browser's image copy expired. So why is it still here?"
+    },
+    {
+      "id": "line-2",
+      "original_text": "Because expiration ends its freshness, not its existence. A browser cache can keep a stored response, including the image.",
+      "spoken_text": "Because expiration ends its freshness, not its existence. A browser cache can keep a stored response, including the image."
+    },
+    {
+      "id": "line-3",
+      "original_text": "If the rules allow it, a fresh copy can be reused without checking with the server. That saves another transfer of the image.",
+      "spoken_text": "If the rules allow it, a fresh copy can be reused without checking with the server. That saves another transfer of the image."
+    },
+    {
+      "id": "line-4",
+      "original_text": "But once this copy becomes stale, the browser may need to check before reusing it. Stale doesn't mean deleted.",
+      "spoken_text": "But once this copy becomes stale, the browser may need to check before reusing it. Stale doesn't mean deleted."
+    },
+    {
+      "id": "line-5",
+      "original_text": "For this example, the server gave the image an ETag: a label for that version. The browser sends that saved label in a conditional request.",
+      "spoken_text": "For this example, the server gave the image an ETag: a label for that version. The browser sends that saved label in a conditional request."
+    },
+    {
+      "id": "line-6",
+      "original_text": "It's asking, \u201cDoes your current image still match this version?\u201d The request carries the label; it doesn't send the saved image back.",
+      "spoken_text": "It's asking, \u201cDoes your current image still match this version?\u201d The request carries the label; it doesn't send the saved image back."
+    },
+    {
+      "id": "line-7",
+      "original_text": "If the version still matches, the server can reply \u201c304 Not Modified.\u201d No new image body comes with that reply, so the browser reuses its stored body.",
+      "spoken_text": "If the version still matches, the server can reply \u201c304 Not Modified.\u201d No new image body comes with that reply, so the browser reuses its stored body."
+    },
+    {
+      "id": "line-8",
+      "original_text": "If the image has changed instead, the server can reply \u201c200 OK\u201d with the new image. The browser can store that response and use the replacement.",
+      "spoken_text": "If the image has changed instead, the server can reply \u201c200 OK\u201d with the new image. The browser can store that response and use the replacement."
+    },
+    {
+      "id": "line-9",
+      "original_text": "These are permitted cache paths, not a rule for every request or reload. Cache instructions and whether the copy is still stored matter.",
+      "spoken_text": "These are permitted cache paths, not a rule for every request or reload. Cache instructions and whether the copy is still stored matter."
+    },
+    {
+      "id": "line-10",
+      "original_text": "So an expired copy can still be useful. A matching server check can let your browser reuse the image it already has.",
+      "spoken_text": "So an expired copy can still be useful. A matching server check can let your browser reuse the image it already has."
+    }
+  ],
+  "normalization": {
+    "version": "1",
+    "config": {
+      "terms": {},
+      "lines": {},
+      "ipv4_style": "grouped"
+    },
+    "fingerprint": "1084833fc8785f1ff0cac49f65ef99d920430397238ffa11dc5045035100a75a"
+  }
+}
+OK: tts

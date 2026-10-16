@@ -1,4 +1,4 @@
-# OneTake's rendering, analysis, looks and optional sound tools.
+# OneTake rendering, analysis, looks and measured narration alignment.
 playwright
 numpy
 Pillow
@@ -7,3 +7,4 @@ fonttools
 brotli
 opencv-python
 scipy
+faster-whisper

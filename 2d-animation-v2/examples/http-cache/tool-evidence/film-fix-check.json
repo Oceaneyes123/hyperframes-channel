@@ -1,0 +1,88 @@
+{
+  "agent_id": "/root/animator",
+  "recorded_at_utc": "2026-10-16T00:13:51.755485+00:00",
+  "comp_sha256": "203375b8c979b297c6d2627c1886965a30cb40eb6f900983b701c5dc9365ceb6",
+  "responding_to": [
+    "FILM-1",
+    "FILM-2"
+  ],
+  "status": "implemented-awaiting-independent-recheck",
+  "timeline_check": {
+    "frames": 2999,
+    "safe_area_violations": [],
+    "semantic_collisions": [],
+    "collision_pairs": [
+      [
+        "freshness-main",
+        "body-v7-main"
+      ],
+      [
+        "freshness-main",
+        "housing-main-label"
+      ],
+      [
+        "server-current-main",
+        "body-v7-main"
+      ],
+      [
+        "server-current-main",
+        "housing-main-label"
+      ],
+      [
+        "server-label",
+        "body-v7-main"
+      ],
+      [
+        "reply-304-main",
+        "body-v7-main"
+      ],
+      [
+        "reply-304-main",
+        "housing-main-label"
+      ],
+      [
+        "housing-alt",
+        "body-v7-main"
+      ],
+      [
+        "housing-alt-label",
+        "body-v7-main"
+      ],
+      [
+        "reply-200-alt",
+        "housing-alt-label"
+      ]
+    ],
+    "allowed_overlap": "Containing housings/body/notch/labels, server/current validator/request, and local-display source-to-view transfer are intentional; not a global no-overlap rule.",
+    "tracked_still_fraction": 0.7012337445815272,
+    "longest_tracked_rest_s": 9.766666666666667
+  },
+  "line2_separation": {
+    "cue_s": 7.507210884353742,
+    "tab_displacement_px": 96,
+    "phone_displacement_px": 31.822222222222223,
+    "body_before": {
+      "x": 144,
+      "y": 655,
+      "w": 720,
+      "h": 587.9396984924624,
+      "op": 1
+    },
+    "body_after": {
+      "x": 144,
+      "y": 655,
+      "w": 720,
+      "h": 587.9396984924624,
+      "op": 1
+    }
+  },
+  "phone_captures": [
+    "animator-captures/revision-7.627-phone.png",
+    "animator-captures/revision-15.162-phone.png",
+    "animator-captures/revision-24.389-phone.png",
+    "animator-captures/revision-77.734-phone.png",
+    "animator-captures/revision-88.076-phone.png"
+  ],
+  "preserved_before": "animator-before-film-fixes/",
+  "source_wavs_mix_and_timing": "Byte-identical to archived pre-fix output SHA256 maps"
+}

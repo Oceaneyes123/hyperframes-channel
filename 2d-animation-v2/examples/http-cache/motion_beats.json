@@ -1,0 +1,364 @@
+{
+  "approved_storyboard_sha256": "0d0b1ec91db63d3c7f11c25134dd5da2d255686fdd45cfed36bd07f8f312ac93",
+  "timing_method": "Source WAV frame counts plus native OneTake faster-whisper-base word alignment",
+  "alignment_note": "Line 7 raw status recognition is 3/home/4; pronunciation needs independent listening, not silent correction.",
+  "narration": [
+    {
+      "id": "line-1",
+      "start_s": 0.35,
+      "duration_s": 4.667210884353741,
+      "sha256": "b72df8e27c9724a278893b5bd8bec55e19185dfe2186ceb5c4ef5909e809585c",
+      "cues": [
+        {
+          "name": "l1_expired",
+          "phrase": "expired.",
+          "time_s": 2.03,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 4,
+          "source_sha256": "b72df8e27c9724a278893b5bd8bec55e19185dfe2186ceb5c4ef5909e809585c"
+        },
+        {
+          "name": "l1_here",
+          "phrase": "still",
+          "time_s": 3.71,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 9,
+          "source_sha256": "b72df8e27c9724a278893b5bd8bec55e19185dfe2186ceb5c4ef5909e809585c"
+        }
+      ]
+    },
+    {
+      "id": "line-2",
+      "start_s": 5.467210884353742,
+      "duration_s": 9.195102040816327,
+      "sha256": "fe3d94697740883ae34e64c338675523539160cdaf314400f3f3bfd823e9b0f3",
+      "cues": [
+        {
+          "name": "l2_freshness",
+          "phrase": "freshness,",
+          "time_s": 7.507210884353742,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 4,
+          "source_sha256": "fe3d94697740883ae34e64c338675523539160cdaf314400f3f3bfd823e9b0f3"
+        },
+        {
+          "name": "l2_stored",
+          "phrase": "stored",
+          "time_s": 11.587210884353741,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 14,
+          "source_sha256": "fe3d94697740883ae34e64c338675523539160cdaf314400f3f3bfd823e9b0f3"
+        }
+      ]
+    },
+    {
+      "id": "line-3",
+      "start_s": 15.112312925170068,
+      "duration_s": 8.777142857142858,
+      "sha256": "10ef9feebeb689cbacadb8f7fd7df5fd3ab74153de3e92ef395422b626317053",
+      "cues": [
+        {
+          "name": "l3_fresh",
+          "phrase": "fresh",
+          "time_s": 17.352312925170068,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 6,
+          "source_sha256": "10ef9feebeb689cbacadb8f7fd7df5fd3ab74153de3e92ef395422b626317053"
+        },
+        {
+          "name": "l3_reuse",
+          "phrase": "reused",
+          "time_s": 18.392312925170067,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 10,
+          "source_sha256": "10ef9feebeb689cbacadb8f7fd7df5fd3ab74153de3e92ef395422b626317053"
+        },
+        {
+          "name": "l3_without",
+          "phrase": "without",
+          "time_s": 18.872312925170068,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 11,
+          "source_sha256": "10ef9feebeb689cbacadb8f7fd7df5fd3ab74153de3e92ef395422b626317053"
+        }
+      ]
+    },
+    {
+      "id": "line-4",
+      "start_s": 24.339455782312925,
+      "duration_s": 7.523265306122449,
+      "sha256": "bb81cfdd1c275616d376280d7ecc08a7fcd89d02d6c02ac2decc8533a6d3d29b",
+      "cues": [
+        {
+          "name": "l4_stale",
+          "phrase": "stale,",
+          "time_s": 26.059455782312924,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 5,
+          "source_sha256": "bb81cfdd1c275616d376280d7ecc08a7fcd89d02d6c02ac2decc8533a6d3d29b"
+        },
+        {
+          "name": "l4_retained",
+          "phrase": "deleted.",
+          "time_s": 30.619455782312926,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 18,
+          "source_sha256": "bb81cfdd1c275616d376280d7ecc08a7fcd89d02d6c02ac2decc8533a6d3d29b"
+        }
+      ]
+    },
+    {
+      "id": "line-5",
+      "start_s": 32.312721088435374,
+      "duration_s": 10.588299319727891,
+      "sha256": "9a10d27d2c22fc9937ab289a91e1274477e67f0490748904d25764352b170abd",
+      "cues": [
+        {
+          "name": "l5_etag",
+          "phrase": "ETag:",
+          "time_s": 35.672721088435374,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 9,
+          "source_sha256": "9a10d27d2c22fc9937ab289a91e1274477e67f0490748904d25764352b170abd"
+        },
+        {
+          "name": "l5_send",
+          "phrase": "sends",
+          "time_s": 39.052721088435376,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 17,
+          "source_sha256": "9a10d27d2c22fc9937ab289a91e1274477e67f0490748904d25764352b170abd"
+        },
+        {
+          "name": "l5_conditional",
+          "phrase": "conditional",
+          "time_s": 40.97272108843538,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 23,
+          "source_sha256": "9a10d27d2c22fc9937ab289a91e1274477e67f0490748904d25764352b170abd"
+        }
+      ]
+    },
+    {
+      "id": "line-6",
+      "start_s": 43.351020408163265,
+      "duration_s": 9.195102040816327,
+      "sha256": "fade79aae95ed9df44b1f24fc0ee12a9d082106aa636e161b9d5c4973a376d5e",
+      "cues": [
+        {
+          "name": "l6_compare",
+          "phrase": "match",
+          "time_s": 46.37102040816327,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 7,
+          "source_sha256": "fade79aae95ed9df44b1f24fc0ee12a9d082106aa636e161b9d5c4973a376d5e"
+        },
+        {
+          "name": "l6_no_upload",
+          "phrase": "doesn't",
+          "time_s": 49.93102040816326,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 16,
+          "source_sha256": "fade79aae95ed9df44b1f24fc0ee12a9d082106aa636e161b9d5c4973a376d5e"
+        }
+      ]
+    },
+    {
+      "id": "line-7",
+      "start_s": 53.39612244897959,
+      "duration_s": 11.981496598639456,
+      "sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18",
+      "cues": [
+        {
+          "name": "l7_match",
+          "phrase": "matches,",
+          "time_s": 54.75612244897959,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 4,
+          "source_sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18"
+        },
+        {
+          "name": "l7_status304",
+          "phrase": "3",
+          "time_s": 56.67612244897959,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 9,
+          "source_sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18"
+        },
+        {
+          "name": "l7_bodyless",
+          "phrase": "No",
+          "time_s": 59.15612244897959,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 14,
+          "source_sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18"
+        },
+        {
+          "name": "l7_reuse304",
+          "phrase": "reuses",
+          "time_s": 62.97612244897959,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 25,
+          "source_sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18"
+        }
+      ]
+    },
+    {
+      "id": "line-8",
+      "start_s": 66.22761904761904,
+      "duration_s": 11.00625850340136,
+      "sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97",
+      "cues": [
+        {
+          "name": "l8_changed",
+          "phrase": "instead,",
+          "time_s": 67.90761904761905,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 5,
+          "source_sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97"
+        },
+        {
+          "name": "l8_status200",
+          "phrase": "\u201c200",
+          "time_s": 70.06761904761905,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 10,
+          "source_sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97"
+        },
+        {
+          "name": "l8_new_body",
+          "phrase": "new",
+          "time_s": 72.06761904761905,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 14,
+          "source_sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97"
+        },
+        {
+          "name": "l8_store",
+          "phrase": "store",
+          "time_s": 73.82761904761904,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 19,
+          "source_sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97"
+        }
+      ]
+    },
+    {
+      "id": "line-9",
+      "start_s": 77.6838775510204,
+      "duration_s": 9.891700680272109,
+      "sha256": "52de64fb954fa68132d9f2a0830b078e48928ac5e258dd8eb481c1756875bf8f",
+      "cues": [
+        {
+          "name": "l9_rules",
+          "phrase": "instructions",
+          "time_s": 83.58387755102041,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 14,
+          "source_sha256": "52de64fb954fa68132d9f2a0830b078e48928ac5e258dd8eb481c1756875bf8f"
+        },
+        {
+          "name": "l9_retained",
+          "phrase": "stored",
+          "time_s": 86.0438775510204,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 21,
+          "source_sha256": "52de64fb954fa68132d9f2a0830b078e48928ac5e258dd8eb481c1756875bf8f"
+        }
+      ]
+    },
+    {
+      "id": "line-10",
+      "start_s": 88.02557823129251,
+      "duration_s": 8.916462585034013,
+      "sha256": "d39b9eb3a009d4eb12114db76df0402afba10c9c9dde5aa6ed6280b22043f36f",
+      "cues": [
+        {
+          "name": "l10_useful",
+          "phrase": "useful.",
+          "time_s": 90.62557823129251,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 7,
+          "source_sha256": "d39b9eb3a009d4eb12114db76df0402afba10c9c9dde5aa6ed6280b22043f36f"
+        },
+        {
+          "name": "l10_match",
+          "phrase": "matching",
+          "time_s": 91.68557823129251,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 9,
+          "source_sha256": "d39b9eb3a009d4eb12114db76df0402afba10c9c9dde5aa6ed6280b22043f36f"
+        },
+        {
+          "name": "l10_reuse",
+          "phrase": "reuse",
+          "time_s": 94.06557823129252,
+          "method": "aligned",
+          "evidence": "audio/alignment/words.json",
+          "word_index": 16,
+          "source_sha256": "d39b9eb3a009d4eb12114db76df0402afba10c9c9dde5aa6ed6280b22043f36f"
+        }
+      ]
+    }
+  ],
+  "events": {
+    "l1_expired": 2.03,
+    "l1_here": 3.71,
+    "l2_freshness": 7.507210884353742,
+    "l2_stored": 11.587210884353741,
+    "l3_fresh": 17.352312925170068,
+    "l3_reuse": 18.392312925170067,
+    "l3_without": 18.872312925170068,
+    "l4_stale": 26.059455782312924,
+    "l4_retained": 30.619455782312926,
+    "l5_etag": 35.672721088435374,
+    "l5_send": 39.052721088435376,
+    "l5_conditional": 40.97272108843538,
+    "l6_compare": 46.37102040816327,
+    "l6_no_upload": 49.93102040816326,
+    "l7_match": 54.75612244897959,
+    "l7_status304": 56.67612244897959,
+    "l7_bodyless": 59.15612244897959,
+    "l7_reuse304": 62.97612244897959,
+    "l8_changed": 67.90761904761905,
+    "l8_status200": 70.06761904761905,
+    "l8_new_body": 72.06761904761905,
+    "l8_store": 73.82761904761904,
+    "l9_rules": 83.58387755102041,
+    "l9_retained": 86.0438775510204,
+    "l10_useful": 90.62557823129251,
+    "l10_match": 91.68557823129251,
+    "l10_reuse": 94.06557823129252
+  },
+  "duration_s": 99.96666666666667,
+  "ending_hold_s": 3.0,
+  "captions": false,
+  "sfx": false,
+  "music": false
+}
