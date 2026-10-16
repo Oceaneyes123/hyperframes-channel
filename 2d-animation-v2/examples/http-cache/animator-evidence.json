@@ -1,0 +1,234 @@
+{
+  "role": "animator",
+  "agent_id": "/root/animator",
+  "status": "partial-preparation",
+  "timestamp_utc": "2026-10-15T14:21:20.619293+00:00",
+  "skill": {
+    "name": "onetake",
+    "path": "C:\\Users\\Dave\\.codex\\skills\\onetake\\SKILL.md",
+    "sha256": "b604fabedf15c868e7bee00ce93d946e7862d9bb2acfad936f2edc901a3a0d7e",
+    "repository": "feitangyuan/onetake",
+    "ref": "415758128aa45cc54340df40d8109363447f582e",
+    "original_files_unchanged": true
+  },
+  "inputs": {
+    "BRIEF.md": "7afbc31bba19f722b6afce7e32786de8df47073bea1c89fe5023e93b49b8ff6e",
+    "SCRIPT.md": "8ed741c9f4f8dadb0c4a26636f32b353cc1bc8bfa1aaf34731d290636eb60574",
+    "VISUAL.md": "7a090be553cf9388e63c3b72c58ef8d2b047889a15d078b05e50cecfd29ab0cb",
+    "MOTION_OPTIONS.md": "1447891fd68d1a5d7c1bc8175e61798606714f3cfad07228126408390fd856ca"
+  },
+  "references": {
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\SKILL.md": "b604fabedf15c868e7bee00ce93d946e7862d9bb2acfad936f2edc901a3a0d7e",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\LICENSE": "1f7a4f2449fb543769568a4f0e6e2c622bf28e841fde09a4b6819dcaa4567412",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\references\\motion-library.md": "b3a8b5e49d27167f3f93cbe0dcd88e2c7c998cfd8c2e5ed03bdf2685dbdbe297",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\references\\composition.md": "d8401aecf9b76a7a96e49ef280e271d558584ba3f4dfb0ea212bd45391940cbf",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\cases\\knockon-15s\\README.md": "ae2af1a66e4a635f2f240462e576e2eb14dcdb4b328ee8ffa61ebbad6379a999",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\gallery\\sheets\\hop.png": "650ce09c380f0abb6b6b172f918d140e240594f23290ecb271f4dcd1d5b5b011",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\gallery\\sheets\\morphRect.png": "559a8b872d6dec58d1ec0d97df745cc4ca83ceb2159fb5b2a3b603b4014ad747",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\gallery\\sheets\\camera.png": "f50bcce3ecfa730bc8b60ed20c0563eb3ff9768e426a8e54f2b366701ae9ee7b",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\lib\\motion.js": "64697ab4df78496ea95999135fe098a9b24bff10d687273fbec193b6cfd1d27e",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\test_motion.js": "6f59a86deed143902c2740c5df3b5c677d949bd44a3de0da410d1ed553f103f0",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\probe.py": "702fe27141cbdae39424d055e336c09c16d27088760cf915be5309817b6eedc2",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\render.py": "f2d664b96379a7368fb90804f2a88dc2ec9606ad0558ac33a9baf8132075ce82",
+    "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\stills.py": "2c2c3672a15cbaedc55943db65606a48b1068f4ca74170fdf6d419f63e365eb0"
+  },
+  "procedures": [
+    {
+      "original_step": "1 reference deconstruction",
+      "status": "not-applicable-without-reference-film",
+      "evidence": "Read knockon case; no supplied or selected reference video; no measured reference numbers invented."
+    },
+    {
+      "original_step": "2 concept selection",
+      "status": "blocked",
+      "evidence": "Art Director proposed three concepts; user has not selected one."
+    },
+    {
+      "original_step": "3 storyboard",
+      "status": "blocked",
+      "evidence": "Concept selection and complete selected board required first; no storyboard authored."
+    },
+    {
+      "original_step": "5 library/runtime preparation",
+      "status": "executed-preparation-only",
+      "evidence": "Read original references, inspected three gallery sheets, ran original library test and portrait math assertions; did not compose."
+    },
+    {
+      "original_step": "4 narration integration override",
+      "status": "executed-dry-run-only",
+      "evidence": "Channel Supertonic parser/normalizer dry run; no native Kokoro call and no synthesized audio."
+    },
+    {
+      "original_step": "5 probe / 6 render tooling",
+      "status": "executed-help-only",
+      "evidence": "Original --help invocations exit 0; no composition probe, screenshots of a film, or encoder run."
+    },
+    {
+      "original_step": "7 sound",
+      "status": "disabled-by-channel-default",
+      "evidence": "Captions, SFX and music remain off."
+    },
+    {
+      "original_step": "8 film verification",
+      "status": "blocked",
+      "evidence": "No approved animation exists."
+    }
+  ],
+  "outputs": [
+    "ANIMATOR.md"
+  ],
+  "evidence": [
+    "tool-evidence/motion-library.txt",
+    "tool-evidence/probe-help.txt",
+    "tool-evidence/stills-help.txt",
+    "tool-evidence/narration-dry-run.txt",
+    "tool-evidence/runtime.txt",
+    "tool-evidence/render-help.txt",
+    "tool-evidence/runtime-paths.txt",
+    "tool-evidence/portrait-library.txt",
+    "tool-evidence/skill-discovery.txt",
+    "tool-evidence/animator-tool-execution.json"
+  ],
+  "executions": [
+    {
+      "name": "motion-library",
+      "argv": [
+        "node",
+        "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\test_motion.js"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/motion-library.txt",
+      "sha256": "7ed31943c696bd608d49b5ae16ef555afff1332403430934205038901ab1a074"
+    },
+    {
+      "name": "probe-help",
+      "argv": [
+        "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\probe.py",
+        "--help"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/probe-help.txt",
+      "sha256": "330f07eb94f9855ea4df4e0a46a8fd5f86d55959bb1b05b3da5e173cd712ec23"
+    },
+    {
+      "name": "stills-help",
+      "argv": [
+        "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\stills.py",
+        "--help"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/stills-help.txt",
+      "sha256": "e9998054ba6abf3ea447b58eb162e3bd28f41b200807f0697daa758f0c531d6e"
+    },
+    {
+      "name": "narration-dry-run",
+      "argv": [
+        "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\.venv\\Scripts\\python.exe",
+        "scripts/studio.py",
+        "tts",
+        "--project",
+        "examples/http-cache",
+        "--dry-run"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/narration-dry-run.txt",
+      "sha256": "0a6fae402d2df65098b7d749cc2a26b86a8eb000c98ec56315eb75f8103a6687"
+    },
+    {
+      "name": "runtime",
+      "argv": [
+        "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\.venv\\Scripts\\python.exe",
+        "-c",
+        "import sys, importlib.util, shutil, json; print(sys.executable); print(sys.version); mods=[\"numpy\",\"scipy\",\"PIL\",\"matplotlib\",\"fontTools\",\"brotli\",\"cv2\",\"playwright\"]; print(json.dumps({m:importlib.util.find_spec(m) is not None for m in mods})); print(json.dumps({m:shutil.which(m) for m in [\"node\",\"ffmpeg\",\"ffprobe\"]})); from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(); print(\"chromium \"+b.version); page=b.new_page(viewport={\"width\":1080,\"height\":1920}); print(\"portrait viewport \"+str(page.viewport_size)); b.close(); p.stop()"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/runtime.txt",
+      "sha256": "481607580e9c81ef463fb718bbf39dab466b4b1cc5df223a2ea0fc7f6c8496fd"
+    },
+    {
+      "name": "render-help",
+      "argv": [
+        "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\.venv\\Scripts\\python.exe",
+        "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\render.py",
+        "--help"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/render-help.txt",
+      "sha256": "941f680ca1b1006b4c0892a0a5ac654cb5a7a3ed4a04d847c1e985907ba3c9f3",
+      "environment": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "runtime-paths",
+      "argv": [
+        "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\.venv\\Scripts\\python.exe",
+        "-c",
+        "import importlib.util,pathlib; from playwright.sync_api import sync_playwright; skill=pathlib.Path(\"C:/Users/Dave/.codex/skills/onetake/SKILL.md\"); print(\"supertonic installed:\",importlib.util.find_spec(\"supertonic\") is not None); print(\"channel clone present:\",pathlib.Path(\"D:/Project/Javascript/hyperframes-channel/2d-animation/.tools/supertonic3-model/voice_styles/channel-voice.json\").is_file()); p=sync_playwright().start(); b=p.chromium.launch(); page=b.new_page(); page.goto(\"file://\"+str(skill)); print(\"upstream Windows file URL:\",page.url); print(\"loaded skill text:\",\"# onetake\" in page.locator(\"body\").inner_text()); b.close(); p.stop()"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/runtime-paths.txt",
+      "sha256": "0f5ecd48abb486e3330bcfcd9246d6b05535e54dd746b0ddebcdc1d561bf9b06",
+      "environment": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    {
+      "name": "portrait-library",
+      "argv": [
+        "node",
+        "-e",
+        "const assert=require(\"node:assert/strict\");const OM=require(\"C:/Users/Dave/.codex/skills/onetake/lib/motion.js\");const size={W:1080,H:1920};const c=OM.camera(0,[],size);assert.deepEqual(c,{x:540,y:960,zoom:1,rot:0});const m=OM.view(c,size);assert.deepEqual(OM.project(m,540,960),[540,960]);assert.deepEqual(OM.projectBox(m,{x:72,y:180,w:864,h:1420,op:1}),{x:72,y:180,w:864,h:1420,op:1});assert.equal(OM.screenTravel(c,c,c,size),0);const keys=[{t:0,x:540,y:960,zoom:1},{t:1,x:540,y:900,zoom:1.2}];const before=OM.camera(.4,keys,size);OM.camera(.9,keys,size);OM.camera(.1,keys,size);assert.deepEqual(OM.camera(.4,keys,size),before);console.log(\"PASS original portrait camera center, identity projection, safe-area box, zero travel and deterministic evaluation\");"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/portrait-library.txt",
+      "sha256": "7a565fc676429632bae0295d009971aee117de9e39e20a5908beef30d306b056"
+    },
+    {
+      "name": "skill-discovery",
+      "argv": [
+        "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\.venv\\Scripts\\python.exe",
+        "scripts/studio.py",
+        "skills"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "stdout_stderr": "tool-evidence/skill-discovery.txt",
+      "sha256": "2816fc424b23c7b1df80bcf7000e6b13dff1eaed69572c3ff7975e30f51f0029"
+    }
+  ],
+  "observed_results": {
+    "original_motion_tests": "ALL PASS",
+    "original_motion_assertion_pass_lines": 58,
+    "portrait_library_assertions": "PASS",
+    "normalizer_passages": 10,
+    "selected_voice": "custom:channel-voice.json",
+    "python": "3.13.5",
+    "chromium": "149.0.7827.55",
+    "portrait_viewport": [
+      1080,
+      1920
+    ]
+  },
+  "limits": [
+    "Preparation only, not animation execution or finished-film acceptance.",
+    "No concept selection or Gate 1; no TTS, composition, motion timeline, synchronized preview, film probe, review approval or MP4.",
+    "No supplied reference film; case documentation and move sheets only, no reference-energy analysis.",
+    "Original stills tool resizes even portrait captures to 640x360 tiles; browser portrait stills needed.",
+    "Probe px/frame normalizes to1920-width; portrait report uses1920/1080=1.7778 factor.",
+    "Original portrait-capable library APIs require explicit W/H.",
+    "Presence/help/browser launch checks do not establish model inference or encoder compatibility.",
+    "Original test log runner first hit cp1252 console output encoding; corrected log capture without upstream modifications. A second optional log-runner attempt had a nested Windows-path quoting SyntaxError before running; corrected using forward slash paths.",
+    "No runtime copied; retain Required Notice/PolyForm Noncommercial when copying; no monetized-use permission established."
+  ]
+}

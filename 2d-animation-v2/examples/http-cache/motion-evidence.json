@@ -1,0 +1,424 @@
+{
+  "role": "Motion Director",
+  "agent_id": "/root/motion_director",
+  "status": "executed",
+  "scope": "Selected A complete motion planning, not animation execution",
+  "skill": {
+    "upstream_modified_by_agent": false,
+    "hash_unchanged_since_initial_invocation": true,
+    "path": "C:/Users/Dave/.codex/skills/motion-design/SKILL.md",
+    "source_repository": "LottieFiles/motion-design-skill",
+    "original_name": "motion-design",
+    "sha256": "8729ecbc7e5736c1295baaa8ba0384bb4b1aac9cf91b83fcdc64d9548a57bb19"
+  },
+  "references_read": [
+    {
+      "path": "C:/Users/Dave/.codex/skills/motion-design/director/core-philosophy.md",
+      "sha256": "7aaa8a065d9940dad0198cf9cfe74979008495e6daf87f46f9022fff1b6a85e9",
+      "read": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/motion-design/director/choreography.md",
+      "sha256": "c81257b56160b9b2f3d99f78d4b8172b425c22d9ca73be06d3ffaa7305a34deb",
+      "read": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/motion-design/director/narrative-structure.md",
+      "sha256": "d49db19db40425dec027c3012d553b50fd74ed79e27ace9dec1226796469061b",
+      "read": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/motion-design/director/context-adaptation.md",
+      "sha256": "550e96a1c8c369513304ee74c0e89b63168bc7287b83e9ed5685bb65609986b3",
+      "read": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/motion-design/reference/timing-easing-tables.md",
+      "sha256": "e478f3b99c4cac3f96eca008e20f8808d4cfae165f5799f260092baf9b6ebcff",
+      "read": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/onetake/SKILL.md",
+      "sha256": "b604fabedf15c868e7bee00ce93d946e7862d9bb2acfad936f2edc901a3a0d7e",
+      "read": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/onetake/references/motion-library.md",
+      "sha256": "b3a8b5e49d27167f3f93cbe0dcd88e2c7c998cfd8c2e5ed03bdf2685dbdbe297",
+      "read": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/motion-design/reference/quality-checklist.md",
+      "read": true,
+      "sha256": "c11bf193b700d9c9ebc5d871f1d5f193bccc441c4eccc0509b53a40d6e8dc558"
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/motion-design/reference/property-selection.md",
+      "read": true,
+      "sha256": "053d830795fc824fed27618fbd18084207af6aeed55b73c0a6e1d5665de894ae"
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/onetake/references/rhythm.md",
+      "read": true,
+      "sha256": "9aea765b6102663063405edde6f9ec7a43242fe14c3f598ca4dc40426875d7a1"
+    }
+  ],
+  "procedures": [
+    "Execute original emotional-target/personality/property/duration/easing/hero/layers/one-third checklist for selected A, preserving preselection alternatives",
+    "Apply original three-pillar and four-act narrative analysis to all ten accepted spoken lines",
+    "Read original choreography, narrative, context, property, timing and quality references plus OneTake rhythm/move reference",
+    "Inspect installed hop/morphRect/camera sheets and verify actual easing exports",
+    "Author one complete ten-line beat table with estimated windows, literal phrase cues, learning, stable identities, key poses, visible causes, action/result/hold, overlap, easing, camera and carry",
+    "Read final Art selected board and reconcile actual L01 through L10 before/action/result poses",
+    "Inspect ten final selected-board contact sheets and six critical individual phone poses",
+    "Send concrete Art revision requests for label occlusion, request reset, scenario identity and prior-expiry marker; consume corrected handoff",
+    "Resolve camera framing against actual near-full safe width: fixed wide during multi-role proof and checked reframes between layouts",
+    "Document board-to-production ID mapping and old/new body transfer provenance",
+    "Freeze storyboard on Gate1 approval; measured retiming belongs only in motion_beats.json",
+    "Check ten contiguous storyboard line cues and all thirty selected-board pose IDs",
+    "Reread final Scriptwriter status-only revision and refresh SCRIPT input hash"
+  ],
+  "inputs": {
+    "BRIEF.md": {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/BRIEF.md",
+      "sha256": "7ed72845ee3ae411ca286c663948dc186ef8df375bf914b8b7fde1c2d2fbc059"
+    },
+    "FACTS.md": {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/FACTS.md",
+      "sha256": "9455c3dfaaa6e4e3127207c36d36523ae970d0d2ac12a4d3060ae39566e91fa5"
+    },
+    "SCRIPT.md": {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/SCRIPT.md",
+      "sha256": "0daf295caaa35f8197c7dad4abc42e4fd4366dd5feaf7c15159da6c405f26d23"
+    },
+    "VISUAL.md": {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/VISUAL.md",
+      "sha256": "da672a17c77e3e6d3e9814530aa2f448a4668039cb24df080efe0459aedea3c1"
+    },
+    "ICON_PLAN.json": {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/ICON_PLAN.json",
+      "sha256": "4047f1ca99f92b86f89d4ebb5042fae3fe3c3e15fc5ad41d1c40a57855165bd6"
+    },
+    "sketches/board.html": {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board.html",
+      "sha256": "bb68e2ed36463f29458c4a83570f8bae4742e1b2bb6ae3ae7ee2438439353d52"
+    }
+  },
+  "outputs": [
+    {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/STORYBOARD.md",
+      "sha256": "0d0b1ec91db63d3c7f11c25134dd5da2d255686fdd45cfed36bd07f8f312ac93"
+    },
+    {
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/MOTION_OPTIONS.md",
+      "sha256": "12fd1fa6ecc6ec2f3614a437fe11dead5d801898c625bc12b8c4bd7efd8f7de8"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "C:/Users/Dave/.codex/skills/onetake/gallery/sheets/hop.png",
+      "sha256": "650ce09c380f0abb6b6b172f918d140e240594f23290ecb271f4dcd1d5b5b011",
+      "visually_inspected": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/onetake/gallery/sheets/morphRect.png",
+      "sha256": "559a8b872d6dec58d1ec0d97df745cc4ca83ceb2159fb5b2a3b603b4014ad747",
+      "visually_inspected": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/onetake/gallery/sheets/camera.png",
+      "sha256": "f50bcce3ecfa730bc8b60ed20c0563eb3ff9768e426a8e54f2b366701ae9ee7b",
+      "visually_inspected": true
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/onetake/lib/motion.js",
+      "verified_lines": [
+        43,
+        50,
+        51
+      ],
+      "kind": "source_lookup",
+      "exports": [
+        "ease.sineInOut",
+        "ease.expoOut",
+        "ease.expoIn"
+      ]
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-01.png",
+      "visually_inspected": true,
+      "sha256": "8d5113767cd4ce0026b7273fb809e6c8b56b62ec6037ac59e9e89ca850ad9f50"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-02.png",
+      "visually_inspected": true,
+      "sha256": "0633937db4bc9bab92b5a7f3ffb0f3a6fc7c4b6691b95b08346829e4b6c283a5"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-03.png",
+      "visually_inspected": true,
+      "sha256": "f62b2eed9398698e137907b64d312571c180b8d9bb45b0c166045f7d849861bf"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-04.png",
+      "visually_inspected": true,
+      "sha256": "35fdeb5ec9f38bc53f31c7bd602d3afe2e791bd2cd6f13aa1c3eefbdf6818e31"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-05.png",
+      "visually_inspected": true,
+      "sha256": "d1f86d58d246ccef2069d29a3b3f88804462855e2da764f79cd9ebc6fdc0f2e2"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-06.png",
+      "visually_inspected": true,
+      "sha256": "b2f2f50fd3781542303147af3a73cdc13732298db3c38079219ae5ceecbfbf73"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-07.png",
+      "visually_inspected": true,
+      "sha256": "cf4200dba4f6ec43aa34b394ff98c875a5dfad2a34e2f51154e6527c7f5e6ba2"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-08.png",
+      "visually_inspected": true,
+      "sha256": "41e84975e5e4e5e73f305aee74137e9bd4bd5cc2a1e80a22a5972f7e0bc383b4"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-09.png",
+      "visually_inspected": true,
+      "sha256": "8898ff09d6c25a991da51575b6a46933138e01e5e32d446d834eafcac271dd63"
+    },
+    {
+      "kind": "complete line before-action-result contact sheet",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-line-10.png",
+      "visually_inspected": true,
+      "sha256": "38817130776f07cb00a7142067f650c90af0666803935f24a0a50c47f303aba2"
+    },
+    {
+      "kind": "individual phone pose",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-L04-before-phone.png",
+      "visually_inspected": true,
+      "sha256": "8aec2250f894ebe565f76730ab4f62c4f9b280e58bc22c1a9fa70847d815df36"
+    },
+    {
+      "kind": "individual phone pose",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-L06-result-phone.png",
+      "visually_inspected": true,
+      "sha256": "4fc7f15fde77f3848020bbc6dd4d3e573cb4a4612bb37b2b91cccd8067fbad25"
+    },
+    {
+      "kind": "individual phone pose",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-L10-before-phone.png",
+      "visually_inspected": true,
+      "sha256": "93f8d3cd728f2033911d0b93cd1acd5c14ab9c91a5b54499038fcea055fc7057"
+    },
+    {
+      "kind": "individual phone pose",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-L03-action-phone.png",
+      "visually_inspected": true,
+      "sha256": "69259fb7986a0323f5a246422b014087f8c9006600c095e7957ee0456ced080b"
+    },
+    {
+      "kind": "individual phone pose",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-L07-result-phone.png",
+      "visually_inspected": true,
+      "sha256": "d519db21fca2f6136211c458d67d9849ef1c244f5f4ceec8a4b3cf03481f668d"
+    },
+    {
+      "kind": "individual phone pose",
+      "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/sketches/board-L08-action-phone.png",
+      "visually_inspected": true,
+      "sha256": "f4a47248f1c0880dc9a47f4a78c428e79824dd5f4eb7bfd19f263a2807cf3c98"
+    }
+  ],
+  "preselection_phase": {
+    "limitations": [
+      "Selected-concept storyboard cannot exist until user selects a concept and Art completes the selected board",
+      "Event duration ranges are craft proposals; no measured narration or phrase timing",
+      "Static plans and upstream gallery sheets cannot establish finished motion/readability/quality/synchronization",
+      "No reference film supplied or analyzed",
+      "Full-film independent audit, revision playback and both user approval gates remain pending"
+    ],
+    "inputs": {
+      "BRIEF.md": {
+        "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/BRIEF.md",
+        "sha256": "7afbc31bba19f722b6afce7e32786de8df47073bea1c89fe5023e93b49b8ff6e"
+      },
+      "FACTS.md": {
+        "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/FACTS.md",
+        "sha256": "9455c3dfaaa6e4e3127207c36d36523ae970d0d2ac12a4d3060ae39566e91fa5"
+      },
+      "SCRIPT.md": {
+        "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/SCRIPT.md",
+        "sha256": "8ed741c9f4f8dadb0c4a26636f32b353cc1bc8bfa1aaf34731d290636eb60574"
+      },
+      "VISUAL.md": {
+        "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/VISUAL.md",
+        "sha256": "7a090be553cf9388e63c3b72c58ef8d2b047889a15d078b05e50cecfd29ab0cb"
+      }
+    },
+    "original_output_hashes": [
+      {
+        "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/MOTION_OPTIONS.md",
+        "sha256": "1447891fd68d1a5d7c1bc8175e61798606714f3cfad07228126408390fd856ca"
+      },
+      {
+        "path": "D:/Project/Javascript/hyperframes-channel/2d-animation-v2/examples/http-cache/motion-evidence.json"
+      }
+    ],
+    "procedures": [
+      "Read original skill and five relevant motion director/timing references",
+      "Execute all eight original planning checklist decisions independently for A, B and C",
+      "Apply emotional intent, visual narrative and craft before property choices",
+      "Apply four-act anticipation/action/reaction/resolution to bounded mechanisms",
+      "Define stable body, freshness, validator, request and response identities",
+      "Inspect original OneTake hop, morphRect and camera sheets before proposing mappings",
+      "Verify expoOut, expoIn and sineInOut names against installed motion.js source",
+      "Review each alternative against six research claims and ten script lines",
+      "Send three concrete Art conflicts through native specialist handoff; consume acknowledged VISUAL revision",
+      "Leave selected-concept storyboard and production execution pending"
+    ],
+    "status": "partial"
+  },
+  "selected_concept": {
+    "gate1_approval": false,
+    "name": "The image lightbox",
+    "selection_source": "Director native follow-up conveying explicit user async concept-selection reply; current BRIEF.md and production.json",
+    "id": "A"
+  },
+  "checklist": {
+    "static_board_poses": 30,
+    "cue_sequence": "1,2,3,4,5,6,7,8,9,10",
+    "preselection_concepts": 3,
+    "selected_steps_executed": 8,
+    "storyboard_rows": 10
+  },
+  "handoff": {
+    "channel": "native collaboration.send_message",
+    "art_files_edited_by_motion": false,
+    "final_art_reply": "Final visual handoff ready; board SHA256 bb68e2ed36463f29458c4a83570f8bae4742e1b2bb6ae3ae7ee2438439353d52",
+    "feedback_and_resolution": [
+      {
+        "owner": "Art Director",
+        "issue": "B/C concept hook mismatch with expiry opening",
+        "status": "historical alternatives acknowledged; user selected A",
+        "id": "motion-art-01"
+      },
+      {
+        "owner": "Art Director",
+        "issue": "Local-display occluded independent freshness marker",
+        "status": "resolved in final board; visually rechecked phone L03-action L07-result L10-before",
+        "id": "motion-art-02"
+      },
+      {
+        "owner": "Art Director",
+        "issue": "L06-before reset request after L05 server arrival",
+        "status": "resolved; final L06-before retains arrived request",
+        "id": "motion-art-03"
+      },
+      {
+        "owner": "Motion Director",
+        "issue": "Main/alternate housing identity aliases could conflate separate cases",
+        "status": "resolved with scenario-qualified art IDs and explicit production map",
+        "id": "motion-art-04"
+      },
+      {
+        "owner": "Motion Director",
+        "issue": "Camera pan would exceed selected wide safe width",
+        "status": "resolved in storyboard: neutral wide during multi-role proof",
+        "id": "motion-art-05"
+      },
+      {
+        "owner": "Art Director",
+        "issue": "Section contact-sheet heading clipping impression",
+        "status": "individual phone poses and Art native bounds show full heading; contact capture artifact recorded, no native composition finding",
+        "id": "motion-art-06"
+      }
+    ],
+    "recipient": "/root/art_director"
+  },
+  "timing": {
+    "measurement_status": "unmeasured",
+    "approved_storyboard_mutable": false,
+    "planning_end_is_runtime_claim": false,
+    "post_gate1_measured_path": "motion_beats.json",
+    "material_choreography_change_requires_renewed_approval": true,
+    "planning_end_seconds": 132
+  },
+  "local_overrides": [
+    "OneTake remains sole implementation engine",
+    "True rests override continuous ambient suggestions",
+    "No particles/confetti",
+    "UI gesture durations do not constrain narration or semantic action duration",
+    "No storyboard before user concept selection",
+    "Native portrait and readable art override small landscape promo defaults",
+    "No final TTS/animation before Gate 1; no MP4 before Gate 2"
+  ],
+  "production_state": {
+    "preview_played": false,
+    "mp4_rendered": false,
+    "gate_2_approved": false,
+    "animation_created": false,
+    "storyboard_created": true,
+    "gate_1_approved": false,
+    "concept_selected": true,
+    "narration_generated": false
+  },
+  "limitations": [
+    "Selected storyboard planning executed; Director acceptance and Gate1 approval remain separate and absent",
+    "All storyboard windows unmeasured; 132-second end is a planning placeholder, not runtime or fit evidence",
+    "No final TTS, measured phrase cues, animation, browser synchronized playback, probe, full-film independent audit or render",
+    "Static board/contact/phone inspection cannot establish finished motion, synchronization, audience engagement or quality",
+    "No supplied reference film analyzed",
+    "Some section contact captures clip heading edges while individual phone poses show full text; judge production framing from native bounds and actual preview",
+    "Final SCRIPT status-only revision reread and hash refreshed; accepted speech unchanged per Scriptwriter handoff"
+  ],
+  "findings": [
+    {
+      "owner": "Art Director",
+      "issue": "B/C concept hook mismatch with expiry opening",
+      "status": "historical alternatives acknowledged; user selected A",
+      "id": "motion-art-01"
+    },
+    {
+      "owner": "Art Director",
+      "issue": "Local-display occluded independent freshness marker",
+      "status": "resolved in final board; visually rechecked phone L03-action L07-result L10-before",
+      "id": "motion-art-02"
+    },
+    {
+      "owner": "Art Director",
+      "issue": "L06-before reset request after L05 server arrival",
+      "status": "resolved; final L06-before retains arrived request",
+      "id": "motion-art-03"
+    },
+    {
+      "owner": "Motion Director",
+      "issue": "Main/alternate housing identity aliases could conflate separate cases",
+      "status": "resolved with scenario-qualified art IDs and explicit production map",
+      "id": "motion-art-04"
+    },
+    {
+      "owner": "Motion Director",
+      "issue": "Camera pan would exceed selected wide safe width",
+      "status": "resolved in storyboard: neutral wide during multi-role proof",
+      "id": "motion-art-05"
+    },
+    {
+      "owner": "Art Director",
+      "issue": "Section contact-sheet heading clipping impression",
+      "status": "individual phone poses and Art native bounds show full heading; contact capture artifact recorded, no native composition finding",
+      "id": "motion-art-06"
+    }
+  ]
+}

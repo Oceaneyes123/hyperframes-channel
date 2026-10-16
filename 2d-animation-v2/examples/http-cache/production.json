@@ -1,0 +1,102 @@
+{
+  "concept": {
+    "selected": "A — Image lightbox",
+    "user_source": "This chat: concept-selection async reply, 2026-10-15, A — Image lightbox (recommended)"
+  },
+  "owners": {
+    "scriptwriter": "/root/scriptwriter",
+    "art-director": "/root/art_director",
+    "motion-director": "/root/motion_director",
+    "animator": "/root/animator",
+    "reviewer": "/root/quality_reviewer"
+  },
+  "audit_weighting": {
+    "primary": "Jakub Krehel",
+    "secondary": "Jhey Tompkins",
+    "selective": "Emil Kowalski for preview controls",
+    "user_source": "This chat: audit-weighting async reply, 2026-10-15, Confirm weighting"
+  },
+  "decisions": [
+    "Research handoff uses RFC 9111 and MDN; one permitted browser-cache example.",
+    "Scriptwriter executed original skill and supplied ten complete passages; no measured timing claimed.",
+    "User selected concept A; this does not approve Gate 1.",
+    "Original installed skills are immutable; local adapters own integration conflicts.",
+    "Director accepts the complete written plan for Gate 1 presentation; user approval remains absent.",
+    "Independent static review closed both actual findings; full-film audit remains blocked."
+  ],
+  "revisions": [
+    {
+      "id": "ART-1",
+      "owner": "art-director",
+      "request": "Move important headings and teaching labels inside channel safe area",
+      "status": "closed",
+      "requested_by": "quality_reviewer",
+      "rechecked_by": "/root/quality_reviewer",
+      "evidence": "quality/board-check.json"
+    },
+    {
+      "id": "GUARD-1",
+      "owner": "Director",
+      "request": "Reject nonfinite durations and verify actual source PCM at measured starts",
+      "status": "closed",
+      "requested_by": "quality_reviewer",
+      "rechecked_by": "/root/quality_reviewer",
+      "evidence": "quality/guard-check.json"
+    },
+    {
+      "id": "FILM-1",
+      "owner": "animator",
+      "request": "Keep freshness/source captions and server/status proof separated during all four reported reframes",
+      "times_s": [
+        15.162,
+        24.389,
+        77.734,
+        88.076
+      ],
+      "status": "closed",
+      "reviewer_finding_id": "FILM-01",
+      "fix_author_id": "/root/animator",
+      "rechecked_by": "/root/quality_reviewer",
+      "recheck_evidence": ["quality/film-recheck.json", "quality/film-capture-check.json"],
+      "requested_by": "/root/quality_reviewer",
+      "evidence": "quality/film-initial/"
+    },
+    {
+      "id": "FILM-2",
+      "owner": "animator",
+      "request": "Make approved line2 freshness/body separation perceptible at phone size while retained body stays in place",
+      "time_s": 7.627,
+      "status": "closed",
+      "reviewer_finding_id": "FILM-02",
+      "fix_author_id": "/root/animator",
+      "rechecked_by": "/root/quality_reviewer",
+      "recheck_evidence": ["quality/film-recheck.json", "quality/film-capture-check.json"],
+      "requested_by": "/root/quality_reviewer",
+      "evidence": "quality/film-initial/"
+    }
+  ],
+  "stage": "preview-ready-awaiting-human-listening-and-gate-2",
+  "independent_review": {
+    "reviewer": "/root/quality_reviewer",
+    "report": "quality/film-audit-2026-10-16.html",
+    "handoff": "review/reviewer.json",
+    "visual_findings": "closed",
+    "full_playback_evidence": ["quality/film-playback-audio-state.json", "quality/film-playback-muted.json"],
+    "original_skill_execution": "partial-required-output-format-reference-read-blocked",
+    "human_listening": "pending",
+    "gate_2": "not-approved",
+    "mp4_rendered": false
+  },
+  "gate_1_approval": {
+    "source": "User async reply call_eb4b848ff7824f39a43dffc9c751f3d9 item0, 2026-10-16",
+    "quote": "Approve Gate 1; build and review preview, do not render",
+    "receipt": "review/gate-1.json"
+  },
+  "implementation": {
+    "duration_s": 99.96666666666667,
+    "speech_duration_s": 91.74204081632654,
+    "preview": "comp.html?preview",
+    "animator_handoff": "review/animator.json",
+    "mp4_rendered": false
+  }
+}

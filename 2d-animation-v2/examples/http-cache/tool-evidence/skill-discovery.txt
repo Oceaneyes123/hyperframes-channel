@@ -1,0 +1,5 @@
+scriptwriter: C:\Users\Dave\.codex\skills\storytelling-hooks\SKILL.md
+art-director: C:\Users\Dave\.codex\skills\anthropic-frontend-design\SKILL.md
+motion-director: C:\Users\Dave\.codex\skills\motion-design\SKILL.md
+animator: C:\Users\Dave\.codex\skills\onetake\SKILL.md
+reviewer: C:\Users\Dave\.codex\skills\design-motion-principles\SKILL.md

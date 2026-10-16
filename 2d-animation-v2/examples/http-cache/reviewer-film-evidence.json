@@ -1,0 +1,184 @@
+{
+  "role": "independent-quality-reviewer",
+  "agent_id": "/root/quality_reviewer",
+  "animator_agent_id": "/root/animator",
+  "date": "2026-10-16",
+  "status": "executed-supported-audit",
+  "full_film_audit": "completed-supported-procedures",
+  "initial_comp_sha256": "1e8c1b20629df25aa8a4b53067f8a337059fdccc4d90a2e95870a4e79257565b",
+  "gate_1": {
+    "approval": "Approve Gate 1; build and review preview, do not render",
+    "source": "Director-provided human reply: async call_eb4b848ff7824f39a43dffc9c751f3d9 item 0",
+    "receipt": "review/gate-1.json"
+  },
+  "original_skill": {
+    "path": "C:/Users/Dave/.codex/skills/design-motion-principles/SKILL.md",
+    "mode": "Audit",
+    "execution_status": "partial",
+    "weighting": "Previously user-confirmed: Jakub primary, Jhey secondary, Emil selective for preview controls",
+    "unavailable_step": "Original required output-format.md remained unread after normal read-only attempts were rejected by automatic approval review. No retry in this film-audit task.",
+    "prior_retry_record": "quality/required-reference-retry-2026-10-16.json",
+    "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e"
+  },
+  "procedures_completed": [
+    "Read current audio metadata, measured cue timeline, native alignment log and raw word alignment",
+    "Independently verified ten original WAV hashes against alignment copies, cue hashes and actual channel-clone hash",
+    "Verified all 27 phrase cues against original aligned word indexes and absolute source starts",
+    "Verified full derived narration PCM exactly matches original source passages at measured starts",
+    "Captured and inspected all 30 initial phone before/action/result poses and captured their native counterparts",
+    "634 independent bounds samples found no safe-area violation; eight forward/backward deterministic targets matched pixel-for-pixel and did not start media",
+    "Keyboard play/pause/seek/Home, slider seeking, reduced-motion initial preference/toggle and deterministic export invariance passed",
+    "Routed concrete transition occlusions and weak planned separation gesture to Animator; preserved initial film evidence before revisions",
+    "Independent corrected-source capture: all 30 phone poses inspected, native captures produced and complex native poses inspected; 634 bounds samples and eight deterministic seeks passed",
+    "Independent focused recheck: 312 transition times across 10 semantic collision pairs, no collisions; 96px line2 tab displacement with body bounds unchanged",
+    "Full normal-speed sound-enabled audio API-state playback completed in 100.29 seconds; full muted playback completed in 100.26 seconds; no overlapping media, browser errors or remote inputs",
+    "Inspected all 100 normal-playback phone screenshots via ten contact sheets, supplemented by targeted before/action/result, camera and boundary captures",
+    "Checked the long line6 hold against aligned narration: retained body remains local while the validator is at the server; did not approve or reject pacing from stillness percentage alone",
+    "Original anti-checklist, motion-gap, weighted-lens, accessibility and performance procedures applied with Canvas/video adaptations and disclosed unsupported original-format step"
+  ],
+  "timing_evidence": "quality/film-timing-check.json",
+  "speech_duration_s": 91.74204081632654,
+  "timeline_duration_s": 99.96666666666667,
+  "ending_after_last_source_s": 3.0246258503401435,
+  "full_playback_evidence": [
+    "quality/film-playback-audio-state.json",
+    "quality/film-playback-muted.json"
+  ],
+  "findings": [
+    {
+      "id": "FILM-01",
+      "severity": "important",
+      "status": "closed",
+      "owner": "Animator",
+      "fix_author_id": "/root/animator",
+      "rechecked_by": "/root/quality_reviewer",
+      "time_s": [
+        15.1623,
+        24.3895,
+        77.7339,
+        88.0756
+      ],
+      "title": "Layout transitions obscure retained-body and freshness roles",
+      "effect": "Freshness crosses the retained image and cache caption; entering server/status elements cover the body before the shared housing reframe resolves. Safe bounds do not establish non-occlusion.",
+      "correction": "Stage the shared hero/wide/alternative transitions so metadata, server and response remain separate from the retained proof object and its identifying caption.",
+      "evidence": [
+        "quality/film-initial/film-line-03-before-phone.png",
+        "quality/film-initial/film-line-04-before-phone.png",
+        "quality/film-initial/film-line-09-before-phone.png",
+        "quality/film-initial/film-line-10-before-phone.png",
+        "quality/film-initial/film-capture-check.json"
+      ],
+      "recheck_evidence": [
+        "quality/film-recheck.json",
+        "quality/film-capture-check.json",
+        "quality/film-line-03-before-phone.png",
+        "quality/film-line-04-before-phone.png",
+        "quality/film-line-09-before-phone.png",
+        "quality/film-line-10-before-phone.png"
+      ]
+    },
+    {
+      "id": "FILM-02",
+      "severity": "important",
+      "status": "closed",
+      "owner": "Animator",
+      "fix_author_id": "/root/animator",
+      "rechecked_by": "/root/quality_reviewer",
+      "time_s": [
+        7.5072,
+        7.8572
+      ],
+      "title": "Planned freshness/body separation is barely perceptible at phone size",
+      "effect": "The freshness-versus-existence explanation repeats the same 16px native nudge as the expiry cue, about 5.3px at phone width, then returns. It does not clearly stage the approved distinction as a new physical action.",
+      "correction": "Make this approved separation gesture perceptible while the body stays still, with a readable resulting pose; do not add unrelated idle motion or alter speech.",
+      "evidence": [
+        "quality/film-initial/film-l2-before-phone.png",
+        "quality/film-initial/film-l2-peak-phone.png",
+        "quality/film-initial/film-l2-after-phone.png",
+        "quality/film-initial/film-line-02-phone-contact.png"
+      ],
+      "recheck_evidence": [
+        "quality/film-recheck.json",
+        "quality/film-line-02-phone-contact.png"
+      ]
+    }
+  ],
+  "limitations": [
+    "Audio input/listening is unsupported by available tools. No audible quality, pronunciation or listening approval is claimed.",
+    "Original required report-format reference remained unavailable after rejected reads; original skill execution remains partial despite completion of available film checks.",
+    "No low-end physical device, audience comprehension or retention study; headless browser timing is not a hardware performance guarantee.",
+    "No MP4 or other video encoding was performed. Gate 2 is not granted by this review."
+  ],
+  "gate_2_approval": false,
+  "rendering_performed": false,
+  "references_read": [
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\SKILL.md",
+      "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\workflows\\audit.md",
+      "sha256": "a570e7e112781b949da9ce5c1b3934b7c8a3128cc9cb96198293959e97a64d68"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\audit-checklist.md",
+      "sha256": "42dfa5637766c6868aea875b24b7ceab8a156ea91b79c0cf7233579992b46f4d"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\jakub-krehel.md",
+      "sha256": "7c996dbbe830f7dcebbf76ea46efcd1583ca5265db2f76291de5974674f43b51"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\jhey-tompkins.md",
+      "sha256": "dfcc542d5b86275bb24ab72a9feacc973927925c4f50dc2e4918a915df2e5a59"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\emil-kowalski.md",
+      "sha256": "aa0e77771a352fcecff8cd64b790ec8ec09a07befdbb2de145bb80d7755bd071"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\accessibility.md",
+      "sha256": "1cb43ec768e800e31b8017d90a0ba0c050e3bc94d027cb2cac32c4b4834f1c0d"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\anti-checklist.md",
+      "sha256": "f9c5a255a98cc790b7e6190ee8653d4c3ef00ce096f0b93c9d3fe1e9ffb44f32"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\demo-shell.html",
+      "sha256": "a8434c6cd5e3738e3f223478c34c20f3224a380ce9b67525b3dc763431f69fd9"
+    },
+    {
+      "path": "C:/Users/Dave/.codex/skills/design-motion-principles/references/performance.md",
+      "sha256": "f82512adc9aca4de7b880f26a5ba4b487a839d9e85ead9be0acac80d52aedb2a"
+    }
+  ],
+  "commands_executed": [
+    "python quality/film-timing-check.py",
+    "python quality/film-audit.py capture (initial and corrected sources)",
+    "python quality/film-recheck.py",
+    "python quality/film-audit.py playback",
+    "python quality/film-report.py"
+  ],
+  "harness_calibration": "The body-invariance baseline moved from 7.45 to 7.49 seconds to sample after the already-approved camera settle ending at 7.4672 and before the separation cue at 7.5072. This corrected the reviewer check, not production code.",
+  "current_inputs": {
+    "comp.html": "203375b8c979b297c6d2627c1886965a30cb40eb6f900983b701c5dc9365ceb6",
+    "motion.js": "64697ab4df78496ea95999135fe098a9b24bff10d687273fbec193b6cfd1d27e",
+    "timeline.js": "9f203cd73915ce5a335c6a805e165b64352a554953db611f633006b7374734ca",
+    "audio/narration.wav": "f8f3437d3763070bf30b4dfe167f913a5fe5ca283a3af64dafddbfb2073e9f5b",
+    "audio_meta.json": "87d83eab663ee7b9d93fe5b674703791c67965d21eb573eb5cbc2b354cab812d",
+    "motion_beats.json": "33078ac408ece562f420e11eb7786b5c4044539fb9850030bbff4c8aa1d845fa",
+    "SCRIPT.md": "0daf295caaa35f8197c7dad4abc42e4fd4366dd5feaf7c15159da6c405f26d23",
+    "STORYBOARD.md": "0d0b1ec91db63d3c7f11c25134dd5da2d255686fdd45cfed36bd07f8f312ac93",
+    "VISUAL.md": "da672a17c77e3e6d3e9814530aa2f448a4668039cb24df080efe0459aedea3c1",
+    "assets/body-v7.svg": "c31be6a66117a6574e2d4025fd3df2a30bd166945c92ca071f2a485848268fbb",
+    "assets/body-v8.svg": "7f55c442412050dfcfb10c792e348e60a6b16b0b168f5c719e71027cc29e4fea"
+  },
+  "actual_captures": "quality/film-capture-check.json",
+  "report": "quality/film-audit-2026-10-16.html",
+  "human_confirmation_required": {
+    "time_s": 56.67612244897959,
+    "item": "Listen to 304 Not Modified and confirm pronunciation. Native ASR heard 3/home/4; this is ambiguity, not proof of a pronunciation defect.",
+    "other": "Human listening to narration quality remains unverified; browser audio API state and PCM identity are verified separately."
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "video": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\examples\\http-cache\\output\\video.mp4",
+  "sha256": "658a5459ae7bad0872f4e2ca3927060ae05a0618a74358507675b9604fb05e01",
+  "duration_s": 99.96666666666667,
+  "frames": 2999,
+  "dimensions": [
+    1080,
+    1920
+  ],
+  "fps": "30/1",
+  "full_decode": "PASS",
+  "source_audio_correlation": 0.9999498884815659,
+  "passage_correlations": [
+    {
+      "id": "line-1",
+      "correlation": 0.9999190881979447,
+      "start_s": 0.35,
+      "end_s": 5.017210884353742
+    },
+    {
+      "id": "line-2",
+      "correlation": 0.9999244788058964,
+      "start_s": 5.467210884353742,
+      "end_s": 14.662312925170069
+    },
+    {
+      "id": "line-3",
+      "correlation": 0.9999508680093158,
+      "start_s": 15.112312925170068,
+      "end_s": 23.889455782312925
+    },
+    {
+      "id": "line-4",
+      "correlation": 0.9999569828128277,
+      "start_s": 24.339455782312925,
+      "end_s": 31.862721088435375
+    },
+    {
+      "id": "line-5",
+      "correlation": 0.9999456044100865,
+      "start_s": 32.312721088435374,
+      "end_s": 42.90102040816326
+    },
+    {
+      "id": "line-6",
+      "correlation": 0.999961676240699,
+      "start_s": 43.351020408163265,
+      "end_s": 52.546122448979595
+    },
+    {
+      "id": "line-7",
+      "correlation": 0.9999626868810803,
+      "start_s": 53.39612244897959,
+      "end_s": 65.37761904761905
+    },
+    {
+      "id": "line-8",
+      "correlation": 0.9999499526786442,
+      "start_s": 66.22761904761904,
+      "end_s": 77.23387755102041
+    },
+    {
+      "id": "line-9",
+      "correlation": 0.9999537417711729,
+      "start_s": 77.6838775510204,
+      "end_s": 87.57557823129251
+    },
+    {
+      "id": "line-10",
+      "correlation": 0.9999457061406883,
+      "start_s": 88.02557823129251,
+      "end_s": 96.94204081632653
+    }
+  ],
+  "source_samples": 4408530,
+  "decoded_samples": 4409344,
+  "tail_2s_rms": 0.0,
+  "decoded_peak_dbfs": -0.47532284223973453,
+  "decoded_clipped_samples": 0,
+  "ending_frame": {
+    "requested_s": 99.93333333333334,
+    "frame_index": 2998,
+    "frame_time_s": 99.93333333333334,
+    "encoded": "encoded-frames\\encoded-06.png",
+    "approved": "encoded-frames\\approved-06.png",
+    "mean_absolute_rgb_error": 1.0126127004623413,
+    "note": "Moving frames legitimately differ from an instant seek because of real shutter blur."
+  },
+  "frame_comparisons": [
+    {
+      "requested_s": 7.627,
+      "frame_index": 229,
+      "frame_time_s": 7.633333333333334,
+      "encoded": "encoded-frames\\encoded-01.png",
+      "approved": "encoded-frames\\approved-01.png",
+      "mean_absolute_rgb_error": 1.15294349193573,
+      "note": "Moving frames legitimately differ from an instant seek because of real shutter blur."
+    },
+    {
+      "requested_s": 15.162,
+      "frame_index": 455,
+      "frame_time_s": 15.166666666666666,
+      "encoded": "encoded-frames\\encoded-02.png",
+      "approved": "encoded-frames\\approved-02.png",
+      "mean_absolute_rgb_error": 1.6137664318084717,
+      "note": "Moving frames legitimately differ from an instant seek because of real shutter blur."
+    },
+    {
+      "requested_s": 24.389,
+      "frame_index": 732,
+      "frame_time_s": 24.4,
+      "encoded": "encoded-frames\\encoded-03.png",
+      "approved": "encoded-frames\\approved-03.png",
+      "mean_absolute_rgb_error": 1.811843991279602,
+      "note": "Moving frames legitimately differ from an instant seek because of real shutter blur."
+    },
+    {
+      "requested_s": 77.734,
+      "frame_index": 2332,
+      "frame_time_s": 77.73333333333333,
+      "encoded": "encoded-frames\\encoded-04.png",
+      "approved": "encoded-frames\\approved-04.png",
+      "mean_absolute_rgb_error": 1.0503348112106323,
+      "note": "Moving frames legitimately differ from an instant seek because of real shutter blur."
+    },
+    {
+      "requested_s": 88.076,
+      "frame_index": 2642,
+      "frame_time_s": 88.06666666666666,
+      "encoded": "encoded-frames\\encoded-05.png",
+      "approved": "encoded-frames\\approved-05.png",
+      "mean_absolute_rgb_error": 1.2790806293487549,
+      "note": "Moving frames legitimately differ from an instant seek because of real shutter blur."
+    },
+    {
+      "requested_s": 99.93333333333334,
+      "frame_index": 2998,
+      "frame_time_s": 99.93333333333334,
+      "encoded": "encoded-frames\\encoded-06.png",
+      "approved": "encoded-frames\\approved-06.png",
+      "mean_absolute_rgb_error": 1.0126127004623413,
+      "note": "Moving frames legitimately differ from an instant seek because of real shutter blur."
+    }
+  ],
+  "approved_source_and_audit_receipts": "UNCHANGED: both current receipts pass",
+  "render_settings": {
+    "comp": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\examples\\http-cache\\comp.html",
+    "fps": 30,
+    "scale": 1,
+    "size": [
+      1080,
+      1920
+    ],
+    "shutter": 180.0,
+    "samples": "adaptive",
+    "gap_px": 24.0,
+    "samples_per_moving_frame": {
+      "4": 850,
+      "5": 1,
+      "10": 2
+    },
+    "workers": 8,
+    "frames": 2999,
+    "still_frames": 2146,
+    "cut_frames": 113,
+    "captures": 7717,
+    "seconds": 197.9,
+    "final": false
+  },
+  "limits": [
+    "AAC is lossy; correlations establish source placement/content, not audible listening.",
+    "Shutter frames differ legitimately from unblurred instant preview seeks.",
+    "No additional creative/source/audit files were changed."
+  ]
+}

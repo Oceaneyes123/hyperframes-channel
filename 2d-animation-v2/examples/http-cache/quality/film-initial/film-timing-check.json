@@ -1,0 +1,120 @@
+{
+  "status": "passed",
+  "scope": "WAV and cue provenance only; no human listening or film review",
+  "pcm": [
+    1,
+    2,
+    44100
+  ],
+  "clone_sha256": "c537c5f830347b971f29add657dc0f0376945ec73b0a5a6412bd06d715f4dd91",
+  "passages": [
+    {
+      "id": "line-1",
+      "source": ".media/audio/voice/line-1.wav",
+      "sha256": "b72df8e27c9724a278893b5bd8bec55e19185dfe2186ceb5c4ef5909e809585c",
+      "start_s": 0.35,
+      "duration_s": 4.667210884353741,
+      "gap_before_s": 0.35
+    },
+    {
+      "id": "line-2",
+      "source": ".media/audio/voice/line-2.wav",
+      "sha256": "fe3d94697740883ae34e64c338675523539160cdaf314400f3f3bfd823e9b0f3",
+      "start_s": 5.467210884353742,
+      "duration_s": 9.195102040816327,
+      "gap_before_s": 0.45000000000000107
+    },
+    {
+      "id": "line-3",
+      "source": ".media/audio/voice/line-3.wav",
+      "sha256": "10ef9feebeb689cbacadb8f7fd7df5fd3ab74153de3e92ef395422b626317053",
+      "start_s": 15.112312925170068,
+      "duration_s": 8.777142857142858,
+      "gap_before_s": 0.4499999999999993
+    },
+    {
+      "id": "line-4",
+      "source": ".media/audio/voice/line-4.wav",
+      "sha256": "bb81cfdd1c275616d376280d7ecc08a7fcd89d02d6c02ac2decc8533a6d3d29b",
+      "start_s": 24.339455782312925,
+      "duration_s": 7.523265306122449,
+      "gap_before_s": 0.4499999999999993
+    },
+    {
+      "id": "line-5",
+      "source": ".media/audio/voice/line-5.wav",
+      "sha256": "9a10d27d2c22fc9937ab289a91e1274477e67f0490748904d25764352b170abd",
+      "start_s": 32.312721088435374,
+      "duration_s": 10.588299319727891,
+      "gap_before_s": 0.45000000000000284
+    },
+    {
+      "id": "line-6",
+      "source": ".media/audio/voice/line-6.wav",
+      "sha256": "fade79aae95ed9df44b1f24fc0ee12a9d082106aa636e161b9d5c4973a376d5e",
+      "start_s": 43.351020408163265,
+      "duration_s": 9.195102040816327,
+      "gap_before_s": 0.45000000000000284
+    },
+    {
+      "id": "line-7",
+      "source": ".media/audio/voice/line-7.wav",
+      "sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18",
+      "start_s": 53.39612244897959,
+      "duration_s": 11.981496598639456,
+      "gap_before_s": 0.8500000000000014
+    },
+    {
+      "id": "line-8",
+      "source": ".media/audio/voice/line-8.wav",
+      "sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97",
+      "start_s": 66.22761904761904,
+      "duration_s": 11.00625850340136,
+      "gap_before_s": 0.8499999999999943
+    },
+    {
+      "id": "line-9",
+      "source": ".media/audio/voice/line-9.wav",
+      "sha256": "52de64fb954fa68132d9f2a0830b078e48928ac5e258dd8eb481c1756875bf8f",
+      "start_s": 77.6838775510204,
+      "duration_s": 9.891700680272109,
+      "gap_before_s": 0.45000000000000284
+    },
+    {
+      "id": "line-10",
+      "source": ".media/audio/voice/line-10.wav",
+      "sha256": "d39b9eb3a009d4eb12114db76df0402afba10c9c9dde5aa6ed6280b22043f36f",
+      "start_s": 88.02557823129251,
+      "duration_s": 8.916462585034013,
+      "gap_before_s": 0.45000000000000284
+    }
+  ],
+  "aligned_cues": 27,
+  "speech_s": 91.74204081632654,
+  "timeline_duration_s": 99.96666666666667,
+  "ending_after_last_source_s": 3.0246258503401435,
+  "mix_sha256": "f8f3437d3763070bf30b4dfe167f913a5fe5ca283a3af64dafddbfb2073e9f5b",
+  "alignment_words_sha256": "d18eb2ea477e9c1449066798f181f26cba2314cc7b56f69e6610d58a76c7380d",
+  "alignment_log_sha256": "28f2d36fea4f86b0e6d7b066dd8e9d517cc6c5a92e7d4523ec340584b95abab9",
+  "pronunciation_human_check": {
+    "time_s": 56.67612244897959,
+    "raw_tokens": [
+      [
+        "3",
+        3.28,
+        3.74
+      ],
+      [
+        "home",
+        3.74,
+        3.96
+      ],
+      [
+        "4",
+        3.96,
+        4.24
+      ]
+    ],
+    "reason": "ASR hears 3/home/4; cannot establish audible pronunciation without supported audio input or a human."
+  }
+}

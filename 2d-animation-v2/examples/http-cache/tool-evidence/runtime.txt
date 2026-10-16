@@ -1,0 +1,6 @@
+D:\Project\Javascript\hyperframes-channel\2d-animation-v2\.venv\Scripts\python.exe
+3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]
+{"numpy": true, "scipy": true, "PIL": true, "matplotlib": true, "fontTools": true, "brotli": true, "cv2": true, "playwright": true}
+{"node": "C:\\Program Files\\nodejs\\node.EXE", "ffmpeg": "C:\\Project\\ffmpeg\\bin\\ffmpeg.EXE", "ffprobe": "C:\\Project\\ffmpeg\\bin\\ffprobe.EXE"}
+chromium 149.0.7827.55
+portrait viewport {'width': 1080, 'height': 1920}

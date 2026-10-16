@@ -1,0 +1,36 @@
+usage: render.py [-h] [--out OUT] [--fps FPS] [--scale SCALE] [--final]
+                 [--shutter SHUTTER] [--samples SAMPLES] [--gap GAP]
+                 [--samples-min SAMPLES_MIN] [--samples-max SAMPLES_MAX]
+                 [--workers WORKERS] [--width WIDTH] [--height HEIGHT]
+                 [--dur DUR] [--sfx SFX] [--crf CRF] [--keep-frames]
+                 [--recycle RECYCLE] [--resume]
+                 comp
+
+positional arguments:
+  comp
+
+options:
+  -h, --help            show this help message and exit
+  --out OUT
+  --fps FPS
+  --scale SCALE
+  --final               3840×2160 at 60 fps (sets --fps 60 --scale 2) — only
+                        once the cut is accepted
+  --shutter SHUTTER     shutter angle in degrees; 0 = no motion blur
+  --samples SAMPLES     captures per moving frame when the page has no
+                        window.__motion
+  --gap GAP             px between neighbouring captures, for a page with
+                        window.__motion
+  --samples-min SAMPLES_MIN
+  --samples-max SAMPLES_MAX
+  --workers WORKERS     browsers rendering in parallel processes
+  --width WIDTH
+  --height HEIGHT
+  --dur DUR
+  --sfx SFX
+  --crf CRF
+  --keep-frames
+  --recycle RECYCLE     relaunch each worker's browser after this many frames
+                        (0 = never)
+  --resume              keep _frames/ from a run that died and render only the
+                        missing frames (counts in the log cover this run only)

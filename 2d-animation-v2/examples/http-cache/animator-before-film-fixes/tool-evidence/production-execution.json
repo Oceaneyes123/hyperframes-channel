@@ -1,0 +1,112 @@
+{
+  "agent_id": "/root/animator",
+  "recorded_at_utc": "2026-10-15T23:55:03.559774+00:00",
+  "commands": [
+    {
+      "argv": [
+        ".venv/Scripts/python.exe",
+        "scripts/studio.py",
+        "tts",
+        "--project",
+        "examples/http-cache",
+        "--dry-run"
+      ],
+      "exit_code": 0,
+      "log": "tool-evidence/approved-narration-dry-run.txt",
+      "scope": "parser and normalizer",
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "log_sha256": "54522c2c6b10d188f9fd0705583e371a1559457861e5377932f0282866db2412"
+    },
+    {
+      "argv": [
+        ".venv/Scripts/python.exe",
+        "scripts/studio.py",
+        "tts",
+        "--project",
+        "examples/http-cache"
+      ],
+      "exit_code": 0,
+      "log": "tool-evidence/approved-synthesis.txt",
+      "scope": "actual cloned-voice inference",
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "log_sha256": "5d648058c33331e6a31802ccb7d4967543eef37385c417640e64567066409a9f"
+    },
+    {
+      "argv": [
+        ".venv/Scripts/python.exe",
+        "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\vo_tools.py",
+        "words",
+        "examples/http-cache/audio/alignment",
+        "--model",
+        "base",
+        "--lang",
+        "en",
+        "--lines",
+        "examples/http-cache/audio/alignment/lines.txt"
+      ],
+      "exit_code": 0,
+      "log": "tool-evidence/phrase-alignment.txt",
+      "scope": "native measured word alignment",
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "log_sha256": "28f2d36fea4f86b0e6d7b066dd8e9d517cc6c5a92e7d4523ec340584b95abab9"
+    },
+    {
+      "argv": [
+        ".venv/Scripts/python.exe",
+        "examples/http-cache/prepare_preview.py"
+      ],
+      "exit_code": 0,
+      "log": "tool-evidence/measured-timeline.txt",
+      "scope": "measured full PCM placement and asset freeze",
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "log_sha256": "9c98e425e3d12991394773ee590aa00faef8bc12b2ca6077a995b88dc363ed59"
+    },
+    {
+      "argv": [
+        ".venv/Scripts/python.exe",
+        "examples/http-cache/verify_preview.py"
+      ],
+      "exit_code": 0,
+      "log": "tool-evidence/preview-check.txt",
+      "scope": "full-timeline bounds/determinism/player/captures",
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "log_sha256": "b3673e6ab92080caae21ab784662d560fc01371e4032665c312360a34b23cbf8"
+    },
+    {
+      "argv": [
+        ".venv/Scripts/python.exe",
+        "C:\\Users\\Dave\\.codex\\skills\\onetake\\scripts\\probe.py",
+        "examples/http-cache/comp.html",
+        "--width",
+        "1080",
+        "--height",
+        "1920",
+        "--fps",
+        "30",
+        "--out",
+        "examples/http-cache/animator-probe"
+      ],
+      "exit_code": 0,
+      "log": "tool-evidence/portrait-probe.txt",
+      "scope": "actual original OneTake film probe",
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "log_sha256": "303d5a8e7c2e0082b53d593a218867452df9dbd9f3c13a1e0fc56dfdea35cc7d"
+    },
+    {
+      "argv": [
+        ".venv/Scripts/python.exe",
+        "scripts/studio.py",
+        "check",
+        "--stage",
+        "animation",
+        "--project",
+        "examples/http-cache"
+      ],
+      "cwd": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2",
+      "exit_code": 0,
+      "log": "tool-evidence/guarded-animation-check.txt",
+      "log_sha256": "12156a0e12001bba1c2d303e8c1bd8b7abc7c140dcdc8fbf60d65de8dfcf8e7a",
+      "scope": "guarded complete native implementation, actual source narration and lossless mix"
+    }
+  ]
+}

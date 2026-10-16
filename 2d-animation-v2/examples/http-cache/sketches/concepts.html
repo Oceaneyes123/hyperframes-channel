@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTP cache · three static concept proposals</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px; color: #233047; background: #e9eaf0; font: 17px/1.5 "Segoe UI", Arial, sans-serif; }
+header { max-width: 1120px; margin: 0 auto 28px; }
+h1 { margin: 0 0 8px; font-size: clamp(24px, 3vw, 38px); line-height: 1.15; }
+header p { margin: 8px 0; max-width: 75ch; }
+main { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; max-width: 1400px; margin: auto; }
+figure { margin: 0; min-width: 0; }
+figcaption { min-height: 100px; padding: 14px 0; }
+figcaption strong { display: block; font-size: 21px; }
+svg.frame { display: block; width: 100%; height: auto; aspect-ratio: 9/16; }
+.sans { font-family: "Segoe UI", Arial, sans-serif; }
+.display { font-family: Bahnschrift, "Arial Narrow", Arial, sans-serif; font-weight: 700; }
+.serif { font-family: Georgia, "Times New Roman", serif; font-weight: 700; }
+footer { max-width: 1120px; margin: 24px auto 0; }
+@media (max-width: 850px) { main { grid-template-columns: 1fr; max-width: 540px; } body { padding: 20px; } figcaption { min-height: 0; } }
+</style>
+</head>
+<body>
+<header>
+<h1>One cached image. Three visual directions.</h1>
+<p>Three visual directions for a beginner HTTP cache explainer. The user selected A, the image lightbox. These comparison portraits remain concept compositions; the full selected board is separate.</p>
+<p>1080 × 1920 composition space. Illustrative ETags. One permitted cache path; behavior depends on cache policy and request conditions.</p>
+</header>
+<main>
+<figure id="concept-a">
+<svg class="frame" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="a-title a-desc">
+<title id="a-title">The image lightbox: Expired. Still here.</title><desc id="a-desc">A large image stays intact in a browser cache lightbox. A separate freshness tab says expired.</desc>
+<defs><clipPath id="a-image"><rect x="142" y="723" width="796" height="650" rx="6"/></clipPath></defs>
+<rect width="1080" height="1920" fill="#D7EEFA"/>
+<path d="M0 1580 L1080 1475 L1080 1920 L0 1920Z" fill="#BED9E8"/>
+<g fill="#16334A" class="display" font-size="116"><text x="84" y="300">Expired.</text><text x="84" y="431">Still here.</text></g>
+<g data-art-safe="true" transform="translate(-7,-10) scale(.92)"><path d="M102 663 L978 663 L978 1450 L102 1450Z" fill="#16334A"/>
+<path d="M102 663 L142 624 L1018 624 L978 663Z" fill="#618DA3"/>
+<path d="M978 663 L1018 624 L1018 1406 L978 1450Z" fill="#7EA6B8"/>
+<rect x="128" y="697" width="824" height="702" fill="#FFFFFF"/>
+<g clip-path="url(#a-image)"><rect x="142" y="723" width="796" height="650" fill="#B1DDE7"/><circle cx="737" cy="917" r="103" fill="#E8B733"/><path d="M100 1380 L430 910 L720 1380Z" fill="#247B69"/><path d="M426 1380 L768 1064 L1000 1380Z" fill="#16334A"/><path d="M142 1300 Q480 1180 938 1327 L938 1410 L142 1410Z" fill="#4BA491"/></g>
+<path d="M873 723 L938 723 L938 788Z" fill="#FFFFFF"/>
+<g transform="translate(0,65) rotate(8 710 630)"><path d="M436 492 H972 V663 H436 L396 579Z" fill="#FFFFFF"/><path d="M454 514 H948 V641 H454 L424 579Z" fill="#BC3A12"/><text x="490" y="566" fill="#FFFFFF" class="sans" font-size="50" font-weight="600">Freshness</text><text x="490" y="621" fill="#FFFFFF" class="display" font-size="57">expired</text></g>
+</g>
+<text x="143" y="1425" fill="#16334A" class="display" font-size="64">Browser cache</text>
+<text x="143" y="1500" fill="#16334A" class="sans" font-size="49">The image is still stored.</text>
+
+<text x="143" y="1580" fill="#16334A" class="sans" font-size="50">Stale does not mean deleted.</text>
+</svg>
+<figcaption><strong>A. The image lightbox</strong>One intact image. One changed permission tab. Spacious, tactile, direct.</figcaption>
+</figure>
+<figure id="concept-b">
+<svg class="frame" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="b-title b-desc">
+<title id="b-title">The dispatch desk: Send the tag. Keep the image.</title><desc id="b-desc">A small illustrative ETag slip goes toward a server hatch while a larger image folder stays on a browser cache desk.</desc>
+<defs><clipPath id="b-image"><path d="M192 1116 H748 V1502 H192Z"/></clipPath></defs>
+<rect width="1080" height="1920" fill="#FAF5FF"/>
+<text x="504" y="300" text-anchor="middle" fill="#43265F" class="serif" font-size="98">Send the tag.</text>
+<text x="504" y="430" text-anchor="middle" fill="#43265F" class="serif" font-size="98">Keep the image.</text>
+<g transform="translate(-88,60)"><path d="M727 525 H1006 V849 H727Z" fill="#B7A0D2"/>
+<path d="M761 559 H972 V815 H761Z" fill="#43265F"/>
+<path d="M779 683 H954 V726 H779Z" fill="#271338"/>
+<text x="866" y="486" text-anchor="middle" fill="#43265F" class="sans" font-size="50" font-weight="600">Server</text>
+</g>
+<path d="M297 866 C391 832 455 755 598 702" fill="none" stroke="#C44814" stroke-width="13" stroke-linecap="round" stroke-dasharray="17 30"/>
+<path d="M570 676 L620 691 L586 732" fill="none" stroke="#C44814" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+<g transform="rotate(-15 410 704)"><path d="M211 595 H551 L599 650 V813 H211Z" fill="#C44814"/><path d="M551 595 V650 H599Z" fill="#ECA582"/><text x="250" y="683" fill="#FFFFFF" class="sans" font-size="50" font-weight="600">ETag "v7"</text><text x="250" y="755" fill="#FFFFFF" class="sans" font-size="50">Still current?</text></g>
+<g data-art-safe="true" transform="translate(42,10) scale(.84)"><path d="M36 1232 H1044 V1320 H36Z" fill="#43265F"/>
+<path d="M80 1320 H1001 V1890 H80Z" fill="#B7A0D2"/>
+<path d="M80 1320 H1001 V1425 H80Z" fill="#9C7FBD"/>
+<path d="M150 1024 H340 L393 1078 H805 V1559 H150Z" fill="#43265F"/>
+<rect x="177" y="1100" width="588" height="424" fill="#FFFFFF"/>
+<g clip-path="url(#b-image)"><rect x="192" y="1116" width="556" height="386" fill="#E5D9F0"/><circle cx="631" cy="1236" r="61" fill="#C44814"/><path d="M174 1519 L377 1210 L600 1520Z" fill="#9C7FBD"/><path d="M430 1520 L661 1312 L778 1520Z" fill="#43265F"/></g>
+</g>
+<text x="504" y="1420" text-anchor="middle" fill="#271338" class="sans" font-size="60" font-weight="600">Browser cache</text>
+<text x="504" y="1500" text-anchor="middle" fill="#271338" class="sans" font-size="48">Saved image stays here.</text>
+<text x="504" y="1580" text-anchor="middle" fill="#271338" class="sans" font-size="50">The slip carries no image body.</text>
+</svg>
+<figcaption><strong>B. The dispatch desk</strong>Small question, large saved body. Paper engineering makes the distinction physical.</figcaption>
+</figure>
+<figure id="concept-c">
+<svg class="frame" xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="c-title c-desc">
+<title id="c-title">The version comparison bench: Same version? Same picture.</title><desc id="c-desc">Saved and server version tabs both say v7. An equal sign links the match to one retained local image plate.</desc>
+<defs><pattern id="c-grid" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M90 0 H0 V90" stroke="#FFFFFF" stroke-opacity=".12" stroke-width="2" fill="none"/></pattern><clipPath id="c-image"><rect x="275" y="1193" width="530" height="405"/></clipPath></defs>
+<rect width="1080" height="1920" fill="#2448A1"/><rect width="1080" height="1920" fill="url(#c-grid)"/>
+<g fill="#FFFFFF" class="display" font-size="112"><text x="80" y="300">Same version?</text><text x="80" y="431">Same picture.</text></g>
+<g data-art-safe="true" transform="translate(9,50) scale(.9)"><path d="M70 560 H458 L501 603 V878 H70Z" fill="#9DE7F0"/><path d="M580 560 H968 L1011 603 V878 H580Z" fill="#FFFFFF"/>
+<circle cx="112" cy="602" r="12" fill="#2448A1"/><circle cx="622" cy="602" r="12" fill="#2448A1"/>
+<g fill="#142D66" class="sans" font-size="50" font-weight="600"><text x="108" y="680">Saved ETag</text><text x="618" y="680">Server ETag</text></g>
+<g fill="#142D66" class="display" font-size="100"><text x="180" y="805">"v7"</text><text x="690" y="805">"v7"</text></g>
+<path d="M305 913 V955 H775 V913" fill="none" stroke="#FFE479" stroke-width="15"/>
+<path d="M445 1020 H635 M445 1070 H635" stroke="#FFE479" stroke-width="22"/>
+</g>
+<g data-art-safe="true" transform="translate(-15,-85) scale(.97)"><path d="M234 1148 H847 V1639 H234Z" fill="#9DE7F0"/>
+<path d="M255 1171 H825 V1620 H255Z" fill="#FFFFFF"/>
+<g clip-path="url(#c-image)"><rect x="275" y="1193" width="530" height="405" fill="#9DE7F0"/><circle cx="692" cy="1304" r="66" fill="#FFE479"/><path d="M246 1625 L477 1276 L679 1625Z" fill="#4DB3AA"/><path d="M493 1625 L713 1390 L858 1625Z" fill="#142D66"/></g>
+<path d="M766 1148 H847 V1229Z" fill="#FFE479"/>
+</g>
+<text x="504" y="1570" text-anchor="middle" fill="#FFFFFF" class="sans" font-size="56" font-weight="600">Reuse the saved image.</text>
+</svg>
+<figcaption><strong>C. The version comparison bench</strong>Oversized comparison geometry. One version match, one retained image. Illustrative validator example for one image representation.</figcaption>
+</figure>
+</main>
+<footer>Static local SVG artwork. Font fallbacks use installed system families. No animation, final narration, approved storyboard or final render exists.</footer>
+</body>
+</html>

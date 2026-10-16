@@ -1,0 +1,68 @@
+{
+  "timeline": {
+    "frames": 2999,
+    "safe_area_violations": [],
+    "semantic_collisions": [],
+    "collision_pairs": [
+      [
+        "freshness-main",
+        "body-v7-main"
+      ],
+      [
+        "freshness-main",
+        "housing-main-label"
+      ],
+      [
+        "server-current-main",
+        "body-v7-main"
+      ],
+      [
+        "server-current-main",
+        "housing-main-label"
+      ],
+      [
+        "server-label",
+        "body-v7-main"
+      ],
+      [
+        "reply-304-main",
+        "body-v7-main"
+      ],
+      [
+        "reply-304-main",
+        "housing-main-label"
+      ],
+      [
+        "housing-alt",
+        "body-v7-main"
+      ],
+      [
+        "housing-alt-label",
+        "body-v7-main"
+      ],
+      [
+        "reply-200-alt",
+        "housing-alt-label"
+      ]
+    ],
+    "allowed_overlap": "Containing housings/body/notch/labels, server/current validator/request, and local-display source-to-view transfer are intentional; not a global no-overlap rule.",
+    "tracked_still_fraction": 0.7012337445815272,
+    "longest_tracked_rest_s": 9.766666666666667
+  },
+  "deterministic_targets": 5,
+  "captures": 30,
+  "player": {
+    "running_sample": {
+      "paused": false,
+      "audio_s": 1.401614,
+      "visual_s": 1.38391,
+      "playing": 1
+    },
+    "pause": "PASS",
+    "seek": "PASS",
+    "restart": "PASS",
+    "keyboard": "PASS",
+    "reduced_motion_export_isolation": "PASS",
+    "audible_listening": "Not performed; media API playback and clock synchronization only"
+  }
+}

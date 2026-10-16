@@ -1,0 +1,38 @@
+
+video.mp4 — energy map:
+  0.0s |                                              . |
+  4.0s |                                                |
+  8.0s |                                                |
+ 12.0s |                               :-::.. .......   |
+ 16.0s |  .                          ....               |
+ 20.0s |                                            .:: |
+ 24.0s |    ......  ::-:.                               |
+ 28.0s |                                                |
+ 32.0s |    .:-::.  .......                             |
+ 36.0s |                                                |
+ 40.0s |                                                |
+ 44.0s |                                                |
+ 48.0s |                                                |
+ 52.0s |                                                |
+ 56.0s |                                                |
+ 60.0s |                                    ...         |
+ 64.0s |                         .   :.       ..... . : |
+ 68.0s |                                                |
+ 72.0s |                                                |
+ 76.0s |                    :.   ...::-::..             |
+ 80.0s |                                                |
+ 84.0s |                                           .-::.|
+ 88.0s |  .......   .                                   |
+ 92.0s |                         ....                   |
+ 96.0s |                                                |
+
+  skip  cadence    (pass --shots t0,t1,… to check shot-length variety)
+  PASS  rest       still 0.809  longest quiet 22.67 s
+  PASS  burst      bursts [(14.67, 14.83), (78.33, 78.67), (87.67, 87.83)]
+  PASS  not-flat   row-profile variation 1.05 (advisory, >= 0.35)
+  PASS  audio      peak -3.5 dBFS  clipped 0  quiet 0.329
+  PASS  continuity carry score 1.00 over 0 boundaries; nothing carried at — (probe.py lists each)
+  PASS  curves     peak 133 px/frame @30 fps (server-current-main: at 88.90 s), shutter 180° (render.json); soft curves 93 % of travel, median t80 0.77
+  FAIL  framing    housing-main off frame at 2999 samples [0.0, 0.033, 0.067, 0.1, 0.133, 0.167]; body-v7-main off frame at 2999 samples [0.0, 0.033, 0.067, 0.1, 0.133, 0.167]; notch-main off frame at 316 samples [67.7, 67.733, 67.767, 67.8, 67.833, 67.867]
+
+VERDICT: FAIL

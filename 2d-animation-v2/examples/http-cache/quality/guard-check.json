@@ -1,0 +1,8 @@
+{
+  "finding": "nonfinite_metadata_duration",
+  "result": "rejected",
+  "message": "Narration duration differs from source WAV",
+  "pcm_at_measured_start": "accepted_correct_placement",
+  "silenced_mix": "rejected",
+  "silenced_mix_message": "Mix does not match source narration at measured starts"
+}

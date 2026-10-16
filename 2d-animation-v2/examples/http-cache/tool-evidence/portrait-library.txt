@@ -1,0 +1,1 @@
+PASS original portrait camera center, identity projection, safe-area box, zero travel and deterministic evaluation

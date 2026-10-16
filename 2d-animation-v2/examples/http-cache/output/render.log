@@ -1,0 +1,17 @@
+2999 frames on 8 workers · shutter 180°, captures per frame sized by __motion (gap 24 px, 4–12)
+  196/2999  15s
+  456/2999  30s
+  699/2999  45s
+  812/2999  60s
+  930/2999  75s
+  1088/2999  90s
+  1379/2999  105s
+  1718/2999  120s
+  1976/2999  135s
+  2126/2999  150s
+  2364/2999  165s
+  2653/2999  180s
+  2964/2999  195s
+2999 frames, 7717 captures (2146 still frames skipped the shutter, 113 kept a cut hard) in 198s on 8 workers; page errors: none
+wrote D:\Project\Javascript\hyperframes-channel\2d-animation-v2\examples\http-cache\output\video.mp4
+OK: render

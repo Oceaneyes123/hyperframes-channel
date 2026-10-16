@@ -1,0 +1,119 @@
+{
+  "scriptwriter": {
+    "directory": "storytelling-hooks",
+    "name": "storytelling-hooks",
+    "repository": "yaxeen/storytelling-skills",
+    "ref": "24ef3c1e3d7fde66cc5f1c5953cd6c1d7afc0b4f",
+    "path": "skills/storytelling-hooks",
+    "files": {
+      "patterns.md": "c62489b929e7382cccdf464b62e7889b55a4e6a064b1d926a519005e18f4c86f",
+      "SKILL.md": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
+    }
+  },
+  "art-director": {
+    "directory": "anthropic-frontend-design",
+    "name": "frontend-design",
+    "repository": "anthropics/skills",
+    "ref": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+    "path": "skills/frontend-design",
+    "files": {
+      "LICENSE.txt": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "SKILL.md": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    }
+  },
+  "motion-director": {
+    "directory": "motion-design",
+    "name": "motion-design",
+    "repository": "LottieFiles/motion-design-skill",
+    "ref": "f9a8a041b85185ee4881b3471d3415e939aac772",
+    "path": "skills/motion-design",
+    "files": {
+      "director/choreography.md": "c81257b56160b9b2f3d99f78d4b8172b425c22d9ca73be06d3ffaa7305a34deb",
+      "director/context-adaptation.md": "550e96a1c8c369513304ee74c0e89b63168bc7287b83e9ed5685bb65609986b3",
+      "director/core-philosophy.md": "7aaa8a065d9940dad0198cf9cfe74979008495e6daf87f46f9022fff1b6a85e9",
+      "director/decision-framework.md": "4b6758da6742475c928b4f8be8c662f4b5ed0964468ba7760df8f7635c779358",
+      "director/disney-principles.md": "39024711890c2684a3434659a4d95a52ca8231facea74e87e79503054aaca671",
+      "director/emotion-mapping.md": "a279e55a3f52a9f5830d38dc54679c652d9a5c26f0dd360700c16e23766d468b",
+      "director/motion-personality.md": "66a3623b6654869482c02157ca791034a614ca6dcb02a8112049e28d292ee18a",
+      "director/narrative-structure.md": "d49db19db40425dec027c3012d553b50fd74ed79e27ace9dec1226796469061b",
+      "patterns/ambient-continuous.md": "f9cfa00d3325dceadcb9ffd77dcb5dcbc51d34121f3b1f162979939006056773",
+      "patterns/entrance-exit.md": "70b3fc3a8d58ebe58e293e643b78fd13750d9c8ef1c8fc5fe85e52f7378cbd91",
+      "patterns/multi-element.md": "46c8da91843c593deb763a4a7fa32849bdaeb7a7ecd4d559e3b21bcc976f2c46",
+      "patterns/state-feedback.md": "dac86388c2d8fcdfc2f194b4f8877caedcdc010df9ce29d27dfc99d08cf8c60e",
+      "reference/property-selection.md": "053d830795fc824fed27618fbd18084207af6aeed55b73c0a6e1d5665de894ae",
+      "reference/quality-checklist.md": "c11bf193b700d9c9ebc5d871f1d5f193bccc441c4eccc0509b53a40d6e8dc558",
+      "reference/timing-easing-tables.md": "e478f3b99c4cac3f96eca008e20f8808d4cfae165f5799f260092baf9b6ebcff",
+      "reference/troubleshooting.md": "69e5aaeee108231d51187143ae3fce4db7a42936f10682908ca9462a008a047a",
+      "SKILL.md": "8729ecbc7e5736c1295baaa8ba0384bb4b1aac9cf91b83fcdc64d9548a57bb19"
+    }
+  },
+  "animator": {
+    "directory": "onetake",
+    "name": "onetake",
+    "repository": "feitangyuan/onetake",
+    "ref": "415758128aa45cc54340df40d8109363447f582e",
+    "path": ".",
+    "files": {
+      ".gitignore": "53f0c100a33a56ebada040287b3d0f5dbab21c6ec6b66209fec5515c508f1144",
+      "lib/motion.js": "64697ab4df78496ea95999135fe098a9b24bff10d687273fbec193b6cfd1d27e",
+      "lib/ui_kit.js": "defca09f3532537c59ce89b55899b977ae31d18d4e2275fe217d63f6afc4ca49",
+      "LICENSE": "1f7a4f2449fb543769568a4f0e6e2c622bf28e841fde09a4b6819dcaa4567412",
+      "looks/fonts/Archivo.ttf": "0e094a7d3c7c4c25cf1310c4b30014f1dae9332220b1c2c88f4fa996f0b05053",
+      "looks/fonts/Fraunces.ttf": "177ff6c0f14e5550a3c624247cd1189611d4eb65d000b14944c63d967958abbb",
+      "looks/fonts/Geist.ttf": "73894e0448cae90a92b6c2f8732b7bb9acb7b94c418bff559dad4a18e1de9659",
+      "looks/fonts/GeistMono.ttf": "d00e590b8eb3a59acc329b2d044fd143ae935090b7da33199ebee27cc7de8196",
+      "looks/fonts/InstrumentSans.ttf": "b24f1812584816958afcf22e22d08e44318c5e51651e25d2438efdde389b33b1",
+      "looks/fonts/InstrumentSerif.ttf": "498efd461f6ddfcb7a111bf9a565709d2085d48201d501ead960d93e84ffbb88",
+      "looks/fonts/Inter.ttf": "cf3cb43b0366e2dc6df60e1132b1c9a4c15777f0cd8e5a53e0c15124003e9ed4",
+      "looks/fonts/LICENSES.txt": "1eae9d4407e9950ea5b6f13f4437a3bb1d3d2a82ae65d9bdd45b36d75bea749c",
+      "looks/looks.json": "c0e1bb926f8aeff8a73b0cf2f10c4b717fe4631f2e1c3d8595e915811db2ca8e",
+      "README.md": "ebb71b6d1fdc89837cdb78d112d782b618e865dd7cdf9b18b7575858db8f1cd0",
+      "references/composition.md": "d8401aecf9b76a7a96e49ef280e271d558584ba3f4dfb0ea212bd45391940cbf",
+      "references/motion-library.md": "b3a8b5e49d27167f3f93cbe0dcd88e2c7c998cfd8c2e5ed03bdf2685dbdbe297",
+      "references/product-demo.md": "a9176e6e0e15d4a98956e14734c4a5b4e1216cfae4c28c8a68a2cb67de377d31",
+      "references/reference-deconstruction.md": "7d57961af3121eb51ee29d133c32bd728dc483f64622b6c1c1469f61a226b9a0",
+      "references/rhythm.md": "9aea765b6102663063405edde6f9ec7a43242fe14c3f598ca4dc40426875d7a1",
+      "references/sound.md": "a73601f1bd4bfd5dab0c0d174fc62369ab9664ce42d889b39acfece4eb2a51b8",
+      "scripts/analyze_ref.py": "fa8e0f2977df6171a89bd03cce7856453ba157e3b5136c0e9ef7b99d781dd8d7",
+      "scripts/frame_diff.py": "aecde6e5d552ddc7bf7a45519a9f3c092d818811f73d5c1e62618198138062c8",
+      "scripts/gallery.py": "3b9078737c9604c012de517ceabf330c1cccd983a7c8ffde77d409c3d2319909",
+      "scripts/look.py": "d1f2c12c23f83b2bf8c00036a316f04e13cdc06b2a76e84685fbb0db442c1f4c",
+      "scripts/probe.py": "702fe27141cbdae39424d055e336c09c16d27088760cf915be5309817b6eedc2",
+      "scripts/record_footage.py": "8ab0534802be60f94a246fe3d068eeb0fc45c2220ceac5136eb36706e529aca0",
+      "scripts/render.py": "f2d664b96379a7368fb90804f2a88dc2ec9606ad0558ac33a9baf8132075ce82",
+      "scripts/sfx_palette.py": "4f947fff6a268a88786d7152aafc5c2693087959d0984090a8cdac9c82663e9e",
+      "scripts/stills.py": "2c2c3672a15cbaedc55943db65606a48b1068f4ca74170fdf6d419f63e365eb0",
+      "scripts/test_motion.js": "6f59a86deed143902c2740c5df3b5c677d949bd44a3de0da410d1ed553f103f0",
+      "scripts/verify_promo.py": "20803fcedbbe865eb602d28b35bf9ab2db65d85c7da45db4a818aafaafdcc922",
+      "scripts/vo_tools.py": "de5bb64ccfa8bf02a5091347692b282726e6d034d9241fa640a010514b26ed89",
+      "SKILL.md": "b604fabedf15c868e7bee00ce93d946e7862d9bb2acfad936f2edc901a3a0d7e",
+      "templates/comp.html": "c3a4c328c0f5827078e4f0a674ccb36c1ecf30adc46b70e22581e6a7b8e3f151",
+      "templates/footage.example.json": "e95fe97dd344ba8c043a76b853133f0e5737d05aeb0d38a5c43adf9d47c4a8f1",
+      "templates/sfx_score.example.py": "74445d8b6b2ae03b777742674e7855ce8dd9d01f7c9575f7c2918b8f65b51e29"
+    }
+  },
+  "reviewer": {
+    "directory": "design-motion-principles",
+    "name": "design-motion-principles",
+    "repository": "kylezantos/design-motion-principles",
+    "ref": "4a9ca879f24a361f4dca4174fe2da0f67b5ddee3",
+    "path": "skills/design-motion-principles",
+    "files": {
+      "references/accessibility.md": "1cb43ec768e800e31b8017d90a0ba0c050e3bc94d027cb2cac32c4b4834f1c0d",
+      "references/anti-checklist.md": "f9c5a255a98cc790b7e6190ee8653d4c3ef00ce096f0b93c9d3fe1e9ffb44f32",
+      "references/audit-checklist.md": "42dfa5637766c6868aea875b24b7ceab8a156ea91b79c0cf7233579992b46f4d",
+      "references/creation-gotchas.md": "c9869ee6f62ad53fd726ddef8ae0434259b104469ad2f84019bf6cb48540c07b",
+      "references/demo-shell.html": "a8434c6cd5e3738e3f223478c34c20f3224a380ce9b67525b3dc763431f69fd9",
+      "references/emil-kowalski.md": "aa0e77771a352fcecff8cd64b790ec8ec09a07befdbb2de145bb80d7755bd071",
+      "references/jakub-krehel.md": "7c996dbbe830f7dcebbf76ea46efcd1583ca5265db2f76291de5974674f43b51",
+      "references/jhey-tompkins.md": "dfcc542d5b86275bb24ab72a9feacc973927925c4f50dc2e4918a915df2e5a59",
+      "references/motion-cookbook.md": "1be5919557a16a0a85abfc74a3cca2181f23df16d960a38b8838d211f5408e27",
+      "references/output-format.md": "5c0f0f8adc1ff2a858666af592647e4889347c0a09a2105e7ac49645ae6ffde2",
+      "references/performance.md": "f82512adc9aca4de7b880f26a5ba4b487a839d9e85ead9be0acac80d52aedb2a",
+      "references/report-template.html": "08eaa17fa53ae9cff8554a04d253567ea9c9ec39d405d600ecb436bb2489392b",
+      "SKILL.md": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e",
+      "workflows/audit.md": "a570e7e112781b949da9ce5c1b3934b7c8a3128cc9cb96198293959e97a64d68",
+      "workflows/create.md": "8560fdf2476eeb783b7cf70feb750f5ab743fa644bb0d486388b762868785282"
+    }
+  }
+}

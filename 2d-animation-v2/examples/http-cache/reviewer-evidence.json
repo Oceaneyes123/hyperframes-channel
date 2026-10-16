@@ -1,0 +1,176 @@
+{
+  "role": "independent-quality-reviewer",
+  "agent_id": "/root/quality_reviewer",
+  "date": "2026-10-15",
+  "status": "partial",
+  "full_film_audit": "blocked",
+  "animator_identity": null,
+  "independence": "Reviewer wrote only quality/ and reviewer-evidence.json; no Animator or guard files edited, no gates granted.",
+  "skill": {
+    "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\SKILL.md",
+    "name": "design-motion-principles",
+    "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e",
+    "upstream": "kylezantos/design-motion-principles",
+    "identity_source": "Director-verified installed original; this reviewer did not independently fetch GitHub."
+  },
+  "references_read": [
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\SKILL.md",
+      "sha256": "599f42dbf011df38f3fcaf1497533af447d91cf97443b92439455af103c25b2e"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\workflows\\audit.md",
+      "sha256": "a570e7e112781b949da9ce5c1b3934b7c8a3128cc9cb96198293959e97a64d68"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\audit-checklist.md",
+      "sha256": "42dfa5637766c6868aea875b24b7ceab8a156ea91b79c0cf7233579992b46f4d"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\jakub-krehel.md",
+      "sha256": "7c996dbbe830f7dcebbf76ea46efcd1583ca5265db2f76291de5974674f43b51"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\jhey-tompkins.md",
+      "sha256": "dfcc542d5b86275bb24ab72a9feacc973927925c4f50dc2e4918a915df2e5a59"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\emil-kowalski.md",
+      "sha256": "aa0e77771a352fcecff8cd64b790ec8ec09a07befdbb2de145bb80d7755bd071"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\accessibility.md",
+      "sha256": "1cb43ec768e800e31b8017d90a0ba0c050e3bc94d027cb2cac32c4b4834f1c0d"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\anti-checklist.md",
+      "sha256": "f9c5a255a98cc790b7e6190ee8653d4c3ef00ce096f0b93c9d3fe1e9ffb44f32"
+    },
+    {
+      "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\demo-shell.html",
+      "sha256": "a8434c6cd5e3738e3f223478c34c20f3224a380ce9b67525b3dc763431f69fd9"
+    }
+  ],
+  "unavailable_reference": {
+    "path": "C:\\Users\\Dave\\.codex\\skills\\design-motion-principles\\references\\output-format.md",
+    "action": "Read-only Get-Content, followed by read-only Python read_text alternative",
+    "reason": "Command blocked by PreToolUse hook: Blocked filesystem or disk modification. Use a narrowly scoped, non-destructive alternative.",
+    "resolution": "Stopped after rejection; did not read or reproduce unavailable format. Original skill completion remains partial."
+  },
+  "weighting": {
+    "primary": "Jakub Krehel: readability and polish",
+    "secondary": "Jhey Tompkins: creative teaching",
+    "selective": "Emil Kowalski: preview controls"
+  },
+  "weighting_user_source": "User reply questionItemId [request_user_input_async, call_bfe7e30e99284198b77911397c9806fc, 0]: Confirm weighting",
+  "inputs": {
+    "BRIEF.md": "7ed72845ee3ae411ca286c663948dc186ef8df375bf914b8b7fde1c2d2fbc059",
+    "FACTS.md": "9455c3dfaaa6e4e3127207c36d36523ae970d0d2ac12a4d3060ae39566e91fa5",
+    "SCRIPT.md": "0daf295caaa35f8197c7dad4abc42e4fd4366dd5feaf7c15159da6c405f26d23",
+    "VISUAL.md": "da672a17c77e3e6d3e9814530aa2f448a4668039cb24df080efe0459aedea3c1",
+    "MOTION_OPTIONS.md": "12fd1fa6ecc6ec2f3614a437fe11dead5d801898c625bc12b8c4bd7efd8f7de8",
+    "STORYBOARD.md": "0d0b1ec91db63d3c7f11c25134dd5da2d255686fdd45cfed36bd07f8f312ac93",
+    "sketches/concepts.html": "91fcdfab173f9077a6628ceba19dee60aab8dd89d291d5e311fbc6968429cedc",
+    "sketches/board.html": "bb68e2ed36463f29458c4a83570f8bae4742e1b2bb6ae3ae7ee2438439353d52"
+  },
+  "guard_source": {
+    "path": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v2\\scripts\\studio.py",
+    "sha256": "27ec9b09d17af1eb80549d6441d16102d30f0ffd2371b7fc940c8d886473659d"
+  },
+  "procedures": [
+    "Read original Audit workflow and available required references",
+    "Reconnaissance of purpose, structure and source patterns",
+    "Motion-gap search: no conditional UI or animation in static SVG concepts; no missing-animation finding for intentional static proposals",
+    "Native Chromium captures at 1080x1920 and 350px CSS width; inspected all six images",
+    "Asserted no page error, horizontal page overflow or animations; reduced-motion emulation leaves static board unchanged",
+    "Measured SVG text bounds against production safe area",
+    "Applied anti-checklist: no pulse, blur entrance, hover scale, stagger, spring utility or uniform fade present in static source",
+    "Independently captured all 30 selected-board poses at 350px phone and 1080x1920 native; inspected every phone pose via 10 contact sheets and complex native L03/L07/L08 states",
+    "Rechecked final board: 0 text/essential-object safe violations, 14.26px smallest phone label, no local-display/freshness occlusion, L05 to L06 remains server-side, alternate 200 changes only its own body",
+    "Reviewed explicit scenario-qualified board-to-production ID mapping and sparse runtime-label adaptation in STORYBOARD.md",
+    "Final guard code review: Gate1 snapshots creative decisions, ready must be promise-like, external inputs recorded, CLI project scope remains V2, unsupported dry-run fails closed",
+    "Text-only narrative and motion-feasibility handoff review; not executed animation",
+    "Synthetic source-WAV reproduction of timing validation defect",
+    "Sent findings to Director for owner revisions; reviewer never fixes production artifacts",
+    "Wrote explicit partial HTML with distinct per-lens findings, working-well observations and summaries"
+  ],
+  "findings": [
+    {
+      "id": "QR-01",
+      "severity": "important",
+      "owner": "Art Director",
+      "status": "closed",
+      "title": "Teaching text falls outside the production safe area",
+      "evidence": [
+        "quality/initial/static-check.json",
+        "quality/initial/a-phone.png",
+        "quality/initial/b-phone.png",
+        "quality/initial/c-phone.png"
+      ],
+      "effect": "Platform overlays or camera reframing can obscure the hook and retention explanation.",
+      "correction": "Recompose essential text inside x72..936/y180..1600 while preserving readable labels and large proof objects.",
+      "initial_measurements": "A retention caveat y1769..1834; B cache label y1595..1675 and headline right992; C reuse label y1669..1746; top headings y129..153.",
+      "recheck_evidence": [
+        "quality/static-check.json",
+        "quality/a-phone.png",
+        "quality/b-phone.png",
+        "quality/c-phone.png"
+      ],
+      "remaining_violations": []
+    },
+    {
+      "id": "QR-02",
+      "severity": "important",
+      "owner": "Director / workflow guard",
+      "status": "closed",
+      "title": "Narration validation accepts nonfinite metadata durations",
+      "evidence": [
+        "quality/initial/guard-check.json",
+        "quality/guard_check.py"
+      ],
+      "effect": "Invalid timing metadata can pass the check despite a finite source WAV.",
+      "correction": "Require finite numeric durations before tolerance comparisons.",
+      "recheck_evidence": [
+        "quality/guard-check.json"
+      ]
+    }
+  ],
+  "evidence": [
+    "quality/static-check.json",
+    "quality/board-check.json",
+    "quality/guard-check.json",
+    "quality/report-check.json",
+    "quality/motion-audit-2026-10-15.html"
+  ],
+  "commands_executed": [
+    "python quality/static_check.py",
+    "python quality/board_check.py",
+    "python quality/guard_check.py",
+    "python quality/write_report.py",
+    "python quality/report_check.py"
+  ],
+  "selected_board": {
+    "concept": "A",
+    "user_source": "Director-reported explicit user selection, recorded in BRIEF.md/production.json; not Gate1 approval",
+    "poses_reviewed_phone": 30,
+    "native_captures": 30,
+    "native_poses_visually_inspected": [
+      "L03-action",
+      "L07-result",
+      "L08-result"
+    ],
+    "safe_area_violations": [],
+    "smallest_phone_label_px": 14.259259259259258,
+    "image_capture_fix": "Native evidence capture isolates each figure and captures a verified 0,0/1080x1920 viewport to avoid long-page locator screenshot offsets; this changes no source art."
+  },
+  "limitations": [
+    "No approved Gate1 or production comp, measured narration, synchronized preview, full playback, animation-quality result or Gate2.",
+    "Original output-format reference blocked by automatic review; original audit cannot be reported complete.",
+    "No production timing, weight, smoothing, transitions, camera extrema, continuity, synchronization, performance, preview keyboard controls or motion-sensitivity behavior tested.",
+    "No production motion findings or looping fix demos invented. Static-layout and Python validation fixes have no applicable motion demo.",
+    "Static image text and handoff quality are not beginner-comprehension, audience-retention, token-cost or old/new finished-video evidence.",
+    "Independent synthetic PCM check accepts correct placement at start_s=.25 and rejects a same-length silenced mix; no real preview/export narration was available to test."
+  ],
+  "full_playback_evidence": [],
+  "approvals_granted": []
+}

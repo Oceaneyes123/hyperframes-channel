@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "current_source_hashes": true,
+  "source_wavs_and_mix_unchanged": true,
+  "closed_findings": 2,
+  "embedded_images_loaded": 20,
+  "phone_report_overflow": false,
+  "mp4_files": 0,
+  "upstream_skill_status": "partial",
+  "human_audio_confirmation": "outstanding"
+}

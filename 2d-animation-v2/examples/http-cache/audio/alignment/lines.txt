@@ -1,0 +1,10 @@
+This browser's image copy expired. So why is it still here?
+Because expiration ends its freshness, not its existence. A browser cache can keep a stored response, including the image.
+If the rules allow it, a fresh copy can be reused without checking with the server. That saves another transfer of the image.
+But once this copy becomes stale, the browser may need to check before reusing it. Stale doesn't mean deleted.
+For this example, the server gave the image an ETag: a label for that version. The browser sends that saved label in a conditional request.
+It's asking, “Does your current image still match this version?” The request carries the label; it doesn't send the saved image back.
+If the version still matches, the server can reply “304 Not Modified.” No new image body comes with that reply, so the browser reuses its stored body.
+If the image has changed instead, the server can reply “200 OK” with the new image. The browser can store that response and use the replacement.
+These are permitted cache paths, not a rule for every request or reload. Cache instructions and whether the copy is still stored matter.
+So an expired copy can still be useful. A matching server check can let your browser reuse the image it already has.
