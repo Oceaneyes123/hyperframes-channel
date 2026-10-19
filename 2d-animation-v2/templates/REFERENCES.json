@@ -1,0 +1,24 @@
+{
+  "references": [
+    {
+      "id": "ailabs",
+      "source_url": "https://www.youtube.com/@AILABS-393",
+      "video_url": "",
+      "status": "pending",
+      "checked_on": "",
+      "inspection": null,
+      "observations": [],
+      "limitation": ""
+    },
+    {
+      "id": "bytewithoutbite",
+      "source_url": "https://www.youtube.com/@ByteWithoutBite",
+      "video_url": "",
+      "status": "pending",
+      "checked_on": "",
+      "inspection": null,
+      "observations": [],
+      "limitation": ""
+    }
+  ]
+}

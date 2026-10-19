@@ -1,10 +1,15 @@
 # Storytelling for Finance, Technology and AI Shorts
 
 These are channel constraints and editorial checks for the Scriptwriter executing
-the original installed `storytelling-hooks` skill. That skill owns its generation
-workflow and required patterns reference. AGENTS.md owns production/approvals;
+the original installed `storytelling-hooks` skill, followed by `blader/humanizer`
+in the same Scriptwriter. Originals own their methods; storytelling-hooks also
+requires its patterns reference. AGENTS.md owns production/approvals;
 Motion Director plans choreography and OneTake alone implements it. The aim is
 a task the viewer can complete or a mechanism they can understand.
+
+**Think from the payoff, but tell the story from the hook.** Define the specific
+result, realization or usable knowledge before choosing an opening. Research
+and outline the evidence that earns it; the viewer hears the hook first.
 
 ## Choose the video type before writing
 
@@ -41,16 +46,17 @@ that work and why incomplete inquiries still need a person.
 
 - [YouTube's conversation with Jenny Hoyos and Todd Sherman](https://blog.youtube/creator-and-artist-stories/youtube-shorts-deep-dive/)
   emphasizes an immediate hook and a compact story with satisfaction. Adapt this
-  as a concrete surprise in the first spoken sentence and opening picture, with
-  the reason to watch apparent within 1–3 seconds. Prefer discovery over shock.
+  as a concrete premise, task result or useful surprise in the first spoken
+  sentence and opening picture, with the reason to watch apparent within 1–3
+  seconds. Use surprise only when the subject supports it.
 - [Hoyos on causal storytelling](https://www.linkedin.com/posts/jennyhoyos_the-most-misunderstood-skill-that-separates-activity-7464706854963720192-akRj)
   uses the **But → Therefore** principle: a change creates a consequence that
   drives the next beat. For education, the obstacle can be a mistaken expectation
   or a real constraint; never manufacture danger. These are logical links, not
   words to repeat in every sentence.
 - [Andrew Stanton's TED talk](https://www.ted.com/talks/andrew_stanton_the_clues_to_a_great_story)
-  describes working backward from the ending. Write the payoff alongside the
-  hook so the opening promises something the explanation actually delivers.
+  describes working backward from the ending. Define the payoff before choosing
+  the hook so the opening promises something the explanation actually delivers.
 - [Gruber, Gelman and Ranganath's curiosity study](https://pmc.ncbi.nlm.nih.gov/articles/PMC4252494/)
   found memory benefits in a trivia-learning experiment during high curiosity.
   Adapt this as a specific missing explanation, then reveal enough to let the
@@ -62,38 +68,51 @@ Neither a checklist nor a score guarantees views, retention or learning.
 
 ## Original skill and channel integration
 
-Resolve `storytelling-hooks` with `studio.py skills`; read its original SKILL.md
-and required patterns.md. Execute its intake, at least five labeled variants,
+Resolve both skills with `studio.py skills`; read their original SKILL.md files
+and storytelling-hooks' required patterns.md. Execute intake, five labeled variants,
 selection, full-script development and checklist. Record actual outputs and
 limitations in the handoff. The checks below supplement that execution, rather
-than substitute a local rewritten storytelling skill. No promotional CTA,
-mandatory captions, invented credentials, algorithm guarantees or fixed cut rate.
+than substitute a local rewritten storytelling skill. Its levers are craft
+options: never invent emotion, conflict or suspense to satisfy its checklist.
+Account for its visual, spoken and text layers, but record **text: none** when
+the picture and narration suffice. Add a label or value only when it helps
+identify, compare or qualify something; never add an overlay to fill a layer or
+repeat speech. No mandatory CTA/captions, invented credentials, algorithm
+guarantees or fixed cut rate. These are channel adaptations; keep the original
+installed skill unchanged.
 
 ## Before the full script
 
-1. **Find the task or discovery.** Research the topic first. For a tutorial,
+1. **Define the payoff.** Research the topic first. For a tutorial,
    identify one reproducible task, starting requirements, exact result and
    success check. Build the outline around completing it, without requiring a
-   surprise or withholding instructions. For an explainer, write the audience's
-   likely expectation, the surprising fact or mechanism, its conditions, and one useful
-   takeaway. Choose a concrete example that makes the difference visible. If the
-   surprise needs an exaggerated claim, choose another angle.
-2. **Generate at least five distinct hooks through the original skill.** For a tutorial, compare accurate
+   surprise or withholding instructions. For an explainer, name the question the
+   viewer should be able to answer and the mechanism and conditions that make
+   that answer true. Write the intended final understanding in plain language.
+   Reject a payoff that only says "understand AI" or "start earning."
+2. **Build the evidence chain.** List the facts, necessary actions or causal links
+   between the viewer's starting knowledge and that payoff. Choose one concrete
+   example; map required facts and material limits to the progression. A real
+   difficulty can supply stakes, but a straightforward task needs no invented
+   obstacle. This chain determines what the opening can honestly promise.
+3. **Generate at least five distinct hooks through the original skill.** Derive
+   each from the same payoff and label its levers. For a tutorial, compare accurate
    result-first, problem-first or before/after openings for the same task. Start
    the demonstration promptly; do not add a mystery before the instructions.
    For an explainer, change the premise, not just the wording: an observed
    contradiction, a relatable moment with a hidden cause,
    or a prediction the viewer can test against a visible result. Include an
    opening picture for each: which expectation does it establish or break?
-   Name the subject early. An accurate fact announcement is not enough: show
-   what is odd, missing or personally recognizable about it.
+   Name the subject early and deliver the title's actual value. A specific fact
+   or question can work when it gives a reason to continue and sentence two
+   advances it; surprise is optional. Skip greetings and introductory context.
    A question is useful only when specific and answerable; skip generic "Did you
    know?", "What if AI changes everything?" and "You won't believe this."
-3. **Compare, then select.** Use one compact table in SCRIPT.md's unspoken notes:
+4. **Compare, then select.** Use one compact table in SCRIPT.md's unspoken notes:
 
-   | Angle + spoken hook | Reason to continue / next sentence | Clarity | Originality | Accuracy | Opening picture |
+   | Angle + spoken hook | Payoff promised / next sentence | Clarity | Originality | Accuracy | Opening picture / needed text |
    | --- | --- | --- | --- | --- | --- |
-   | Distinct premise, exact words | What must I hear next, and what does sentence two add? | Understood without setup | Topic-specific angle | Supported, with essential conditions | Visible expectation, contradiction or result |
+   | Distinct premise, exact words | What will the viewer receive, and what does sentence two add? | Understood without setup | Topic-specific angle | Supported, with essential conditions | Visible expectation or result; text only with a reason |
 
    Give short reasons, not arbitrary points. Reject misleading hooks regardless
    of their other strengths. Judge the **first two sentences together**: the
@@ -103,24 +122,83 @@ mandatory captions, invented credentials, algorithm guarantees or fixed cut rate
    the strongest accurate task promise or observation plus its visible evidence,
    not merely the shortest or safest-sounding fact. Explain the selection's
    tradeoff in one sentence. Estimate whether its result or curiosity lands in 1–3
-   seconds at a comfortable pace; shorten or move the reveal earlier if needed.
+   seconds at a comfortable pace; shorten or move the premise earlier if needed.
+   Do not fill 5–15 seconds because a generic structure reserves that much time.
    Do not claim measured timing before TTS.
-4. **Pair hook and payoff.** Write the opening promise and final answer together.
-   Choose an ending style below. The takeaway must be earned by the mechanism,
-   understandable on a first viewing and still useful without replay.
-5. **Connect the actions or discoveries.** For a tutorial, order the necessary
-   actions by their dependencies, then verify the result. For an explainer,
-   outline what the viewer expects, what changes that expectation, what follows, and the qualification
-   that makes the answer true. Each discovery should answer something and, when
-   useful, expose the next specific question. Keep one main unresolved question;
-   do not stack unrelated mysteries or delay the basic answer with teasing.
-6. **Draft and revise.** Write the explanation between the chosen opening and
-   payoff. Map required facts to lines and storyboard evidence. Complete the
-   review below before Gate 1. Hook candidates are a writing choice made by the
-   writer, not an extra approval gate; user visual concept selection remains.
+5. **Draft one connected narrative.** Use the functions below to develop the
+   selected promise through the evidence chain to the payoff. Each section must
+   move the viewer toward that same outcome. Deliver useful answers along the
+   way; never delay essential instructions to create suspense. Choose an ending
+   style only after the payoff works on a first viewing.
+6. **Humanize, then recheck.** Preserve the completed storytelling draft and run
+   the original humanizer on its narration using the integration below. Verify
+   the final script still fulfills the opening promise. Complete the review
+   below before Gate 1.
+   Hook selection is the writer's decision, not an extra approval gate; user
+   visual concept selection remains.
 
 Keep the selected hook/payoff, ending choice and brief review in existing
-SCRIPT.md notes. No separate hook report, scoring system or new production file.
+SCRIPT.md notes. Keep refinement evidence in the existing review/ area, not in
+spoken passages. No separate specialist, scoring system or production stage.
+
+### Required humanizer handoff
+
+Use humanizer's original embedded workflow; do not copy its pattern catalog or
+use a local substitute. Pass only narration as the editing material, with the
+brief's audience, payoff and factual boundaries as context. Return final prose
+to the existing line sections. Preserve headings, indentation, notes, technical
+identifiers, sources and required coverage. Do not invent anecdotes, feelings,
+facts or sales claims to make the voice seem human. Keep a useful specific hook.
+An already natural passage may remain unchanged after an actual review.
+
+Save `review/scriptwriter-draft.md` before refinement. Save the marked tells,
+intermediate rewrite, remaining-pattern check, final corrections and claim-by-
+claim comparison in `review/scriptwriter-humanizer.md`. Follow the original's
+spoken read instruction without TTS when possible; otherwise record text-only
+breath/phrasing review and leave audible naturalness explicitly unverified.
+Never report a spoken read from silent inspection or generated timing.
+
+Keep the canonical handoff's primary `skill` as storytelling-hooks. Its existing
+`procedures` describe that execution. Add `refinement` to the same report:
+
+```json
+{
+  "status": "executed",
+  "skill": {"path": "RESOLVED humanizer/SKILL.md", "sha256": "SOURCE_HASH"},
+  "before": "review/scriptwriter-draft.md",
+  "audit": "review/scriptwriter-humanizer.md",
+  "procedures": ["Actual refinement work performed; cite journal passages"]
+}
+```
+
+Put this object under `refinement`, not in place of the report. Hash the before
+draft, journal and final SCRIPT.md in the existing `outputs` map; list both
+review paths in `evidence`. Both stages belong to the same `agent_id`. Record
+limitations in the existing field. Mark partial/blocked work honestly; reading
+the originals or naming them is insufficient. Source hashes, artifact hashes
+and completed statuses establish provenance, not quality or actual delivery.
+Director inspects the journal's substantive changes and the full final script.
+
+New or revised script handoffs require this evidence. Unchanged historical
+handoffs without `refinement` remain readable only while their original Gate 1
+receipt still matches the current approved plan. They do not imply humanizer
+ran; a changed plan must supply the new evidence before renewed approval.
+
+### Narrative functions, not five required sections
+
+The audience experiences **Hook → Setup → Rising action / Core value → Climax &
+Payoff → Optional CTA**. These functions can overlap within a passage. Merge
+setup into the hook or first action when no separate setup is needed; omit the
+CTA when it weakens the ending. Do not impose headings, numbered steps, fixed
+durations or a dramatic twist on every script.
+
+| Function | Job in an educational script |
+| --- | --- |
+| Hook | Establish a specific premise and promise derived from the payoff. Open curiosity about the actual subject without withholding basic orientation or inventing a mystery. |
+| Setup | Supply only the problem, misconception, prerequisites or friction needed for the next action or explanation. Add context instead of repeating the hook; use stakes only when real. |
+| Rising action / Core value | Connect actions, causes or discoveries. Each sentence adds information, a necessary condition or immediate utility. Use concrete examples and verified facts; let difficult ideas breathe. |
+| Climax & Payoff | Resolve the question or demonstrate the completed task and success check. A final connection can be the climax; no spectacle is required. The result must follow from the middle, without a generic summary or motivational line. |
+| Optional CTA | Add one short related resource or practical next action only when it serves the objective. No forced subscription, like or comment request. Stop on the payoff when it is the stronger ending. |
 
 ## Money and earning hooks
 
@@ -164,6 +242,12 @@ honest figure exists, use a task or problem hook instead.
   nouns. Mix a short reaction with a longer explanation; avoid identical sentence
   lengths and a rigid word rate. Explain jargon when it unlocks the next step.
   Give difficult numbers breathing room rather than accelerating speech.
+- Reject generic AI hype, financial-freedom promises, "What if I told you...",
+  polished corporate phrasing, repetitive teasers and motivational endings.
+  "Find a profitable niche" or "scale your business" needs a specific action
+  and check, or it goes. If a passage fits another topic after swapping a few
+  nouns, rewrite the actual mechanism, decision or example. Fragments and
+  slogans do not make compressed prose conversational.
 - For every sentence, identify its job: direct a necessary action, verify its
   result, advance the causal explanation, create useful curiosity or resolve an
   earlier question. Necessary context and
@@ -218,15 +302,17 @@ A conceptual callback can make the opening mean something new on replay without
 being an exact verbal splice. Name it honestly; do not call it a seamless verbal
 loop unless the spoken boundary works.
 
-Test the **final two sentences**, then concatenate the exact final sentence and
-opening sentence, including punctuation. Record that seam verbatim in unspoken
+Test the **final two sentences** against the opening promise. If choosing a
+verbal loop, concatenate the exact final sentence and opening sentence,
+including punctuation. Record that seam verbatim in unspoken
 notes: what does each connector or pronoun refer to, and what causal/contrast
 link makes this continuing speech rather than a closing speech plus a restart?
 Both ends must also work on a first viewing; do not add "so" or "but" just to
 claim a loop. Reject dangling "because", forced questions, unexplained "this",
 repeated identical conclusions, or an answer that only exists on replay.
 Do not withhold the payoff to manufacture another view. Fall back to a complete
-conclusion when the loop adds nothing. No "like and subscribe" or generic outro.
+conclusion when the loop adds nothing. A useful next action may follow once;
+omit generic sign-offs and engagement requests.
 
 For a loop, add a seam note to STORYBOARD.md: final spoken words / opening words,
 or final / opening visual states, carrying subject, and reset action. For a visual
@@ -245,13 +331,14 @@ what changed. A list of "ready" labels or a numerical verdict is not evidence.
 
 | Check | Evidence to inspect / repair |
 | --- | --- |
-| Video type and viewer outcome | State tutorial or explainer and its promise. For tutorials, can a beginner repeat the actions with the shown inputs, prerequisites and success check? For explainers, can they describe the mechanism and its limits? Repair mixed promises. |
-| Hook and first three seconds | Quote the first two sentences and name the immediate visual. What specific task/result or surprising observation makes the second sentence useful? Reject vague topic announcements. Tutorials should begin useful instruction promptly. For money hooks, state which form it is (rate, labeled example or the creator's own evidenced result) and confirm the figure is not presented as typical or guaranteed income. Timing is an estimate until measured. |
-| Progression | For tutorials, trace required actions to the result and success check; repair missing steps, delayed instruction or unrelated theory. For explainers, name the opening question and the discoveries that answer it; repair a stalled middle, redundant tease or unresolved promise. |
+| Video type and payoff | State tutorial or explainer and the specific outcome defined before hooks. For tutorials, can a beginner repeat the actions with the shown inputs, prerequisites and success check? For explainers, can they describe the mechanism and its limits? Repair vague outcomes and mixed promises. |
+| Hook and first three seconds | Quote the first two sentences and name the immediate visual. What specific task, result, mechanism question or observation makes the second sentence useful? Surprise is optional. Reject vague topic announcements. Tutorials should begin useful instruction promptly. For money hooks, state which form it is (rate, labeled example or the creator's own evidenced result) and confirm the figure is not presented as typical or guaranteed income. Timing is an estimate until measured. |
+| Promise and progression | Trace the selected hook to the planned payoff and quote the setup's new information. Follow required actions or causal links to that outcome. Repair missing steps, delayed instruction, repeated openings, shallow middles or unrelated theory. Narrative functions can share a passage. |
 | Natural narration | Read the text aloud without synthesis, or mark breath groups and awkward phrasing in a text-only pass. Read adjacent passages together: does this sound like guiding one beginner, or isolated commands? For tutorials, show the viewer's current state, why the next action matters and how to recognize success at useful handoffs. Repair robotic lists and repetitive connectors without losing exact controls. Vary rhythm; record which review actually happened. |
-| Visual storytelling | Name a visible cause/result and carry for each beat. Replace text-only explanation with an observable action or comparison; keep comprehension holds. |
+| Specificity and naturalness | Could this script fit another topic with minor word changes? Quote and replace the generic passage with a concrete example, decision or causal detail. Reject structurally correct scripts that still sound robotic, repetitive or unsatisfying. |
+| Visual storytelling | Name a visible cause/result and carry for each beat. Replace text-only explanation with an observable action or comparison; keep comprehension holds. For each proposed text label, state its teaching job or remove it. |
 | Accuracy and clarity | Trace factual lines and the hook to FACTS.md. Check numbers, conditions, jargon and analogy limits; distinguish evidence, hypothesis and illustration. |
-| Final payoff | Quote the final two sentences and the earlier discovery that earns them. Is the opening question answered without replay, generic advice or an unrelated new claim? |
+| Final payoff and outro | Quote the final two sentences and the earlier discovery that earns them. Does the specific result fulfill the opening promise on first viewing? Cut redundant summaries, generic advice and unrelated claims. Include a CTA only with a clear purpose. |
 | Loop, if selected | Quote the actual end + start or compare visual states. Diagnose dangling syntax, awkward repetition, false resets or missing answers; otherwise choose a complete conclusion. |
 
 Revise each weak section and inspect the changed passage with its neighbors.

@@ -10,6 +10,18 @@
       "SKILL.md": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
     }
   },
+  "humanizer": {
+    "directory": "humanizer",
+    "name": "humanizer",
+    "repository": "blader/humanizer",
+    "ref": "8c307f367c91bd974002f10f2be2965d642c13df",
+    "path": ".",
+    "installation_path": "C:/Users/Dave/.codex/skills/humanizer",
+    "files": {
+      "SKILL.md": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+      "LICENSE": "4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96"
+    }
+  },
   "art-director": {
     "directory": "anthropic-frontend-design",
     "name": "frontend-design",

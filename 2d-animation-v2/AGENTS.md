@@ -12,6 +12,10 @@ work through native subagent tools. Reuse idle specialists; respect slot limits;
 no recursive delegation or custom agent runtime. One writer per mutable artifact.
 Independent tasks may overlap; dependent stages wait for accepted inputs.
 Director alone owns BRIEF.md and production.json, the approved decision record.
+Director also owns REFERENCES.json and reference-evidence/ during Research;
+follow [the reference handoff](workflow/REFERENCE_STUDY.md). Inspect actual moving
+frames, preserve timestamped observations/limits, and pass the study to existing
+specialists. Never claim animation analysis from metadata or isolated stills.
 
 Read [workflow/DIRECTOR.md](workflow/DIRECTOR.md), then only the active role in
 [workflow/ROLES.md](workflow/ROLES.md). Resolve originals with
@@ -21,7 +25,7 @@ Never edit upstream skills or claim execution from reading alone.
 
 | Role | Original skill | Writing responsibility |
 | --- | --- | --- |
-| Scriptwriter | yaxeen/storytelling-skills: storytelling-hooks | SCRIPT.md |
+| Scriptwriter | yaxeen/storytelling-skills: storytelling-hooks → blader/humanizer | SCRIPT.md |
 | Art Director | anthropics/skills: frontend-design | VISUAL.md, ICON_PLAN.json, sketches/ |
 | Motion Director | LottieFiles/motion-design-skill: motion-design | STORYBOARD.md |
 | Animator | feitangyuan/onetake: onetake | narration, runtime, comp, assets, timing, preview |

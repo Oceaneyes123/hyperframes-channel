@@ -1,8 +1,11 @@
 """Regression checks for approval, ownership, stale evidence and narration guards."""
 import json
+import copy
 import contextlib
 import io
+import hashlib
 from pathlib import Path
+import re
 import sys
 import tempfile
 import unittest
@@ -36,12 +39,153 @@ class StudioTests(unittest.TestCase):
             "source": "user:2", "files": studio.snapshot(self.project, gate),
             "audit_files": studio.audit_snapshot(self.project)})
 
+    def reference_study(self):
+        production = studio.read(self.project / "production.json")
+        production["reference_study"] = True
+        self.write("production.json", production)
+        self.write("reference-evidence/viewing.json", {"fixture": "synthetic viewing log, not inspected footage"})
+        study = {"references": [{
+            "id": "clip-a", "source_url": "https://example.org/channel",
+            "video_url": "https://example.org/clip", "status": "inspected", "checked_on": "2026-10-17",
+            "inspection": {"method": "playback", "viewed_ranges_s": [[1, 4], [8, 10]],
+                           "evidence": ["reference-evidence/viewing.json"]},
+            "observations": [{"id": "carry", "range_s": [2, 3],
+                              "observation": "Synthetic object remains through a reframe.",
+                              "technique": "Carry a meaningful object.",
+                              "use_when": "Identity teaches retained state.",
+                              "avoid_when": "A transformation would change meaning."}],
+            "limitation": "Synthetic test fixture only."}]}
+        self.write("REFERENCES.json", study)
+        return study
+
+    def test_reference_study_accepts_partial_ranges_and_future_sources(self):
+        study = self.reference_study()
+        extra = copy.deepcopy(study["references"][0])
+        extra.update(id="supplied-clip", source_url="https://example.org/new-source")
+        extra["inspection"]["method"] = "ordered-frames"
+        study["references"].append(extra)
+        self.write("REFERENCES.json", study)
+        self.assertEqual(studio.check_references(self.project), study)
+
+    def test_reference_study_rejects_unwatched_claims_and_bad_evidence(self):
+        original = self.reference_study()
+        mutations = [
+            ("pending", lambda r: r.update(status="pending")),
+            ("moving-frame method", lambda r: r["inspection"].update(method="thumbnail")),
+            ("moving-frame evidence", lambda r: r["inspection"].update(evidence=[])),
+            ("outside inspected", lambda r: r["observations"][0].update(range_s=[3, 9])),
+            ("outside inspected", lambda r: r["observations"][0].update(range_s=[3, 3])),
+            ("outside inspected", lambda r: r["observations"][0].update(range_s=[2, float("nan")])),
+            ("Invalid viewed ranges", lambda r: r["inspection"].update(viewed_ranges_s=[[-1, 2]])),
+            ("Invalid viewed ranges", lambda r: r["inspection"].update(viewed_ranges_s=[[1, float("inf")]])),
+            ("Missing reference-evidence", lambda r: r["inspection"].update(evidence=["reference-evidence/missing.md"])),
+            ("outside project", lambda r: r["inspection"].update(evidence=["../escape.md"])),
+            ("missing avoid_when", lambda r: r["observations"][0].update(avoid_when="")),
+            ("IDs must be unique", lambda r: r["observations"].append(copy.deepcopy(r["observations"][0]))),
+        ]
+        for message, mutate in mutations:
+            with self.subTest(message=message):
+                study = copy.deepcopy(original)
+                mutate(study["references"][0])
+                self.write("REFERENCES.json", study)
+                with self.assertRaisesRegex(ValueError, message):
+                    studio.check_references(self.project)
+
+    def test_inaccessible_reference_reports_limits_without_invented_analysis(self):
+        study = self.reference_study()
+        reference = study["references"][0]
+        reference.update(status="inaccessible", inspection=None, observations=[],
+                         limitation="Player unavailable; no moving frames inspected.")
+        self.write("REFERENCES.json", study)
+        studio.check_references(self.project)
+        for changes in ({"limitation": ""}, {"observations": [{"observation": "invented"}]},
+                        {"inspection": {"method": "thumbnail"}}):
+            with self.subTest(changes=changes):
+                modified = copy.deepcopy(study)
+                modified["references"][0].update(changes)
+                self.write("REFERENCES.json", modified)
+                with self.assertRaisesRegex(ValueError, "no animation claims"):
+                    studio.check_references(self.project)
+
+    def test_reference_template_cannot_pass_as_executed_research(self):
+        template = studio.read(studio.ROOT / "templates/REFERENCES.json")
+        self.assertEqual(len(template["references"]), 2)
+        self.write("REFERENCES.json", template)
+        with self.assertRaisesRegex(ValueError, "pending"):
+            studio.check_references(self.project)
+
+    def test_reference_plan_and_gate_bind_study_and_moving_frame_evidence(self):
+        study = self.reference_study()
+        with patch.object(studio, "handoff"):
+            studio.check_plan(self.project)
+            study["references"][0]["status"] = "pending"
+            self.write("REFERENCES.json", study)
+            with self.assertRaisesRegex(ValueError, "pending"):
+                studio.check_plan(self.project)
+        self.reference_study()
+        self.gate()
+        studio.receipt(self.project, 1)
+        self.write("reference-evidence/viewing.json", {"fixture": "changed evidence"})
+        with self.assertRaisesRegex(ValueError, "stale"):
+            studio.receipt(self.project, 1)
+        self.gate()
+        self.write("REFERENCES.json", {"references": []})
+        with self.assertRaisesRegex(ValueError, "stale"):
+            studio.receipt(self.project, 1)
+        self.reference_study()
+        self.gate()
+        production = studio.read(self.project / "production.json")
+        production.pop("reference_study")
+        self.write("production.json", production)
+        with self.assertRaisesRegex(ValueError, "stale"):
+            studio.receipt(self.project, 1)
+
     def test_real_channel_parser_rejects_gaps_and_unspoken_passages(self):
         self.assertEqual(studio.check_script(self.project), [("line-1", "A stored image.")])
         for text in ("## Line 2\n    Wrong numbering.\n", "## Line 1\nUnspoken only\n"):
             (self.project / "SCRIPT.md").write_text(text, encoding="utf-8")
             with self.assertRaises(ValueError):
                 studio.check_script(self.project)
+
+    def test_http_cache_planning_preserves_every_narration_passage(self):
+        baseline = studio.check_script(studio.ROOT / "examples/http-cache")
+        comparison = (studio.ROOT / "workflow/HTTP_CACHE_STORYTELLING.md").read_text(encoding="utf-8")
+        planned_speech = [line[2:] for line in comparison.splitlines() if line.startswith("> ")]
+        self.assertEqual(planned_speech, [speech for _, speech in baseline])
+
+    def test_script_trial_preserves_actual_historical_baselines(self):
+        trial = (studio.ROOT / "SCRIPT_TESTS.md").read_text(encoding="utf-8")
+        samples = dict(re.findall(r"^### ([FTA][123])\n\n~~~markdown\n(.*?)^~~~",
+                                  trial, re.M | re.S))
+        # Lock the actual pre-revision drafts, not reconstructed comparisons.
+        expected = {
+            "F1": "d229f016ffc0ca55b00a9687c10de91ca6435e1f8e7fa4287622c9222e7cec7b",
+            "F2": "7ad0cb228501928d4512cc8e521a0c87c421294f4a65e359dca10b52661a8793",
+            "T1": "6f9d0d7f03eff7f0c3ed9d4639bbab8869e003417cba7fc518340bc9c2365d31",
+            "T2": "7eb0e2addfac18434b02188dd48820ba5f7c61cf76c2d15ee37db93c2bf69b46",
+            "A1": "12e58a480ffa249cf626cea21356b99ebcde8d0af6daa645e7815e8766bc146d",
+            "A2": "d639aa5cdb3ed5ccfd3b5f9d5c9634895ec558e2b6ebf6c77f0fdec8772d87a5",
+            "F3": "26909ddc184c22a4be550bdfb91ca3806ab08456a61e3a3abaec49131e2b7127",
+            "T3": "0f26d0c9cd20c05685bd43f4ab495887c9508b283b78168b842af3d6bc30c849",
+            "A3": "5f6cda58d92a3c244a545ccd0e5691668a94aaacfeb7c39764aa6325baed0bf2",
+        }
+        self.assertEqual({key: hashlib.sha256(value.encode()).hexdigest()
+                          for key, value in samples.items()}, expected)
+
+    def test_script_trial_parses_without_speaking_editorial_notes(self):
+        trial = (studio.ROOT / "SCRIPT_TESTS.md").read_text(encoding="utf-8")
+        samples = re.findall(r"^### ([FTA][1234])\n\n~~~markdown\n(.*?)^~~~",
+                             trial, re.M | re.S)
+        self.assertCountEqual([key for key, _ in samples],
+                              [f"{topic}{version}" for topic in "FTA" for version in (1, 2, 3, 4)])
+        for key, script in samples:
+            with self.subTest(sample=key):
+                (self.project / "SCRIPT.md").write_text(script, encoding="utf-8")
+                lines = studio.check_script(self.project)
+                self.assertTrue(lines)
+                if key.endswith(("3", "4")):
+                    self.assertIn("Narrative review:", script)
+                    self.assertNotIn("Narrative review:", " ".join(text for _, text in lines))
 
     def test_path_escape_is_rejected(self):
         for name in ("../elsewhere", str(self.project.parent / "elsewhere")):
@@ -108,15 +252,100 @@ class StudioTests(unittest.TestCase):
         skill_root.mkdir(parents=True)
         (skill_root / "SKILL.md").write_text("original", encoding="utf-8")
         manifest = self.project / "manifest.json"
-        manifest.write_text(json.dumps({"scriptwriter": {"directory": "test", "files": {
-            "SKILL.md": studio.digest(skill_root / "SKILL.md")}}}), encoding="utf-8")
+        spec = {"directory": "test", "files": {"SKILL.md": studio.digest(skill_root / "SKILL.md")}}
+        manifest.write_text(json.dumps({name: spec for name in ("scriptwriter", "humanizer")}), encoding="utf-8")
         with patch.object(studio, "MANIFEST", manifest), patch.dict("os.environ", {"CODEX_HOME": str(self.project)}):
-            self.assertEqual(studio.skill("scriptwriter"), skill_root)
+            for name in ("scriptwriter", "humanizer"):
+                self.assertEqual(studio.skill(name), skill_root)
             (skill_root / "SKILL.md").write_text("rewritten", encoding="utf-8")
-            with self.assertRaisesRegex(ValueError, "differs from verified source"):
-                studio.skill("scriptwriter")
+            for name in ("scriptwriter", "humanizer"):
+                with self.subTest(skill=name), self.assertRaisesRegex(ValueError, "differs from verified source"):
+                    studio.skill(name)
+
+    def refinement_handoff(self):
+        sources = {}
+        for name in ("storytelling-hooks", "humanizer"):
+            folder = self.project / "skills" / name
+            folder.mkdir(parents=True)
+            (folder / "SKILL.md").write_text(f"Synthetic {name} source", encoding="utf-8")
+            sources[name] = folder / "SKILL.md"
+        self.write("skill-manifest.json", {
+            role: {"directory": name, "files": {"SKILL.md": studio.digest(sources[name])}}
+            for role, name in (("scriptwriter", "storytelling-hooks"), ("humanizer", "humanizer"))})
+        before, audit = "review/scriptwriter-draft.md", "review/scriptwriter-humanizer.md"
+        (self.project / "review").mkdir(exist_ok=True)
+        (self.project / before).write_bytes((self.project / "SCRIPT.md").read_bytes())
+        (self.project / audit).write_text("Synthetic zero-edit refinement audit; no actual execution.", encoding="utf-8")
+        report = {
+            "role": "scriptwriter", "agent_id": "writer", "status": "executed",
+            "procedures": ["Synthetic storytelling procedure"],
+            "skill": {"path": str(sources["storytelling-hooks"]),
+                      "sha256": studio.digest(sources["storytelling-hooks"])},
+            "refinement": {
+                "skill": {"path": str(sources["humanizer"]), "sha256": studio.digest(sources["humanizer"])},
+                "status": "executed", "before": before, "audit": audit,
+                "procedures": ["Synthetic refinement procedure"]},
+            "inputs": {"FACTS.md": studio.digest(self.project / "FACTS.md")},
+            "outputs": {name: studio.digest(self.project / name) for name in (before, audit, "SCRIPT.md")},
+            "evidence": [before, audit], "limitations": ["Synthetic fixture, not an executed skill."]}
+        self.write("review/scriptwriter.json", report)
+        return report, self.project / "skill-manifest.json"
+
+    def test_refinement_required_for_new_or_revised_plan_but_preserves_historical_approval(self):
+        report, manifest = self.refinement_handoff()
+        refinement = report.pop("refinement")
+        self.write("review/scriptwriter.json", report)
+        with patch.object(studio, "MANIFEST", manifest), patch.dict("os.environ", {"CODEX_HOME": str(self.project)}):
+            with self.assertRaisesRegex(ValueError, "Missing Scriptwriter humanizer"):
+                studio.handoff(self.project, "scriptwriter")
+            self.gate()
+            studio.handoff(self.project, "scriptwriter")
+            (self.project / "SCRIPT.md").write_text("## Line 1\n    A changed image.\n", encoding="utf-8")
+            report["outputs"]["SCRIPT.md"] = studio.digest(self.project / "SCRIPT.md")
+            self.write("review/scriptwriter.json", report)
+            with self.assertRaisesRegex(ValueError, "Missing Scriptwriter humanizer"):
+                studio.handoff(self.project, "scriptwriter")
+            report["refinement"] = refinement
+            self.write("review/scriptwriter.json", report)
+            studio.handoff(self.project, "scriptwriter")
+
+    def test_humanizer_needs_real_source_and_distinct_current_draft_audit_final_evidence(self):
+        report, manifest = self.refinement_handoff()
+        mutations = [
+            ("Incomplete", lambda r: r.update(refinement=None)),
+            ("Incomplete", lambda r: r["refinement"].update(status="partial")),
+            ("Incomplete", lambda r: r["refinement"].update(procedures=[])),
+            ("stale humanizer", lambda r: r["refinement"]["skill"].update(sha256="wrong")),
+            ("stale humanizer", lambda r: r["refinement"]["skill"].update(path=r["skill"]["path"])),
+            ("distinct hashed", lambda r: r["refinement"].update(before="SCRIPT.md")),
+            ("distinct hashed", lambda r: r["refinement"].update(before="./SCRIPT.md")),
+            ("outside project", lambda r: r["refinement"].update(before="../escape.md")),
+            ("distinct hashed", lambda r: r["outputs"].pop(r["refinement"]["audit"])),
+            ("distinct hashed", lambda r: r["evidence"].remove(r["refinement"]["audit"])),
+        ]
+        with patch.object(studio, "MANIFEST", manifest), patch.dict("os.environ", {"CODEX_HOME": str(self.project)}):
+            # A justified zero-edit pass remains valid; hashes need not differ.
+            studio.handoff(self.project, "scriptwriter")
+            for message, mutate in mutations:
+                with self.subTest(message=message):
+                    changed = copy.deepcopy(report)
+                    mutate(changed)
+                    self.write("review/scriptwriter.json", changed)
+                    with self.assertRaisesRegex(ValueError, message):
+                        studio.handoff(self.project, "scriptwriter")
+            self.write("review/scriptwriter.json", report)
+            audit = self.project / report["refinement"]["audit"]
+            audit.write_text("changed audit", encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "Stale scriptwriter output"):
+                studio.handoff(self.project, "scriptwriter")
+            audit.write_text("", encoding="utf-8")
+            report["outputs"][report["refinement"]["audit"]] = studio.digest(audit)
+            self.write("review/scriptwriter.json", report)
+            with self.assertRaisesRegex(ValueError, "must not be empty"):
+                studio.handoff(self.project, "scriptwriter")
 
     def test_partial_and_stale_handoffs_are_rejected(self):
+        self.gate()
         original = self.project / "original/SKILL.md"
         original.parent.mkdir()
         original.write_text("original", encoding="utf-8")
@@ -138,6 +367,66 @@ class StudioTests(unittest.TestCase):
             (self.project / "SCRIPT.md").write_text("changed output", encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "Stale scriptwriter output"):
                 studio.handoff(self.project, "scriptwriter")
+
+    def test_specialists_must_consume_reference_study_when_enabled(self):
+        self.reference_study()
+        original = self.project / "original/SKILL.md"
+        original.parent.mkdir()
+        original.write_text("original", encoding="utf-8")
+        for role in studio.ROLES[1:]:
+            with self.subTest(role=role), patch.object(studio, "skill", return_value=original.parent):
+                report = {"role": role, "agent_id": role, "status": "executed",
+                          "procedures": ["original method"],
+                          "skill": {"path": str(original), "sha256": studio.digest(original)},
+                          "inputs": {"FACTS.md": studio.digest(self.project / "FACTS.md")},
+                          "outputs": {"VISUAL.md": studio.digest(self.project / "VISUAL.md")},
+                          "evidence": ["VISUAL.md"]}
+                self.write(f"review/{role}.json", report)
+                with self.assertRaisesRegex(ValueError, "reference-study input"):
+                    studio.handoff(self.project, role)
+                report["inputs"]["REFERENCES.json"] = studio.digest(self.project / "REFERENCES.json")
+                self.write(f"review/{role}.json", report)
+                with self.assertRaisesRegex(ValueError, "reference-study input: reference-evidence"):
+                    studio.handoff(self.project, role)
+                report["inputs"]["reference-evidence/viewing.json"] = studio.digest(
+                    self.project / "reference-evidence/viewing.json")
+                self.write(f"review/{role}.json", report)
+                studio.handoff(self.project, role)
+                self.write("reference-evidence/viewing.json", {"fixture": "changed viewing log"})
+                with self.assertRaisesRegex(ValueError, "Stale .* input: reference-evidence"):
+                    studio.handoff(self.project, role)
+                self.reference_study()
+                self.write("REFERENCES.json", {"references": []})
+                with self.assertRaisesRegex(ValueError, "Stale .* input: REFERENCES"):
+                    studio.handoff(self.project, role)
+                self.reference_study()
+
+    def test_reference_workflow_requires_timestamped_storytelling_review(self):
+        self.reference_study()
+        reviewer = {"agent_id": "reviewer", "preview_files": studio.snapshot(self.project, 2),
+                    "weighting_user_source": "user:3", "full_playback_evidence": ["SCRIPT.md"],
+                    "findings": []}
+        with patch.object(studio, "check_animation", return_value={"agent_id": "animator", "duration_s": 2}), \
+                patch.object(studio, "handoff", return_value=reviewer):
+            with self.assertRaisesRegex(ValueError, "storytelling review: cause_effect"):
+                studio.check_review(self.project)
+            reviewer["storytelling"] = {key: {"assessment": "Synthetic coverage, no film quality claim.",
+                                              "times_s": [0, 1.5], "evidence": ["SCRIPT.md"]}
+                                         for key in studio.STORYTELLING}
+            studio.check_review(self.project)
+            for changes in ({"assessment": ""}, {"times_s": []}, {"times_s": [float("nan")]},
+                            {"times_s": [-1]}, {"times_s": [2]}, {"times_s": [1000000000]},
+                            {"evidence": []}):
+                with self.subTest(changes=changes):
+                    assessment = reviewer["storytelling"]["transitions"]
+                    previous = assessment.copy()
+                    assessment.update(changes)
+                    with self.assertRaisesRegex(ValueError, "storytelling review: transitions"):
+                        studio.check_review(self.project)
+                    assessment.update(previous)
+            reviewer["storytelling"]["transitions"]["evidence"] = ["missing-playback.md"]
+            with self.assertRaisesRegex(ValueError, "Missing missing-playback"):
+                studio.check_review(self.project)
 
     def test_review_rejects_self_review_open_findings_and_stale_preview(self):
         reviewer = {"agent_id": "animator", "preview_files": studio.snapshot(self.project, 2),
@@ -241,7 +530,7 @@ window.__seek=t=>document.getElementById('value').textContent=t.toFixed(3);
         with patch.object(studio, "check_plan"), patch.object(studio, "receipt"), \
                 patch.object(studio, "handoff", return_value={"agent_id": "fixture"}), \
                 patch.object(studio, "check_narration"), patch.object(studio, "check_mix"):
-            studio.check_animation(self.project)
+            self.assertEqual(studio.check_animation(self.project)["duration_s"], 2)
             (self.project / "comp.html").write_text(html.replace("w:1080", "w:1920"), encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "native 1080x1920"):
                 studio.check_animation(self.project)

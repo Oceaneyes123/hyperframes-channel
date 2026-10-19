@@ -1,5 +1,6 @@
 {
   "concept": {"selected": "", "user_source": ""},
+  "reference_study": true,
   "owners": {"scriptwriter": "", "art-director": "", "motion-director": "", "animator": "", "reviewer": ""},
   "decisions": [],
   "revisions": []
