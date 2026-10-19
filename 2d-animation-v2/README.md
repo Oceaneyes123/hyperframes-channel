@@ -9,6 +9,8 @@ Director; five native specialists execute their original installed skills.
 [AGENTS.md](AGENTS.md) owns production rules and approvals;
 [Director runbook](workflow/DIRECTOR.md) and [role cards](workflow/ROLES.md) own
 handoffs. [SCRIPT_GUIDE.md](SCRIPT_GUIDE.md) supplies channel editorial checks.
+The same Scriptwriter develops with storytelling-hooks, then refines the
+completed narration with humanizer and preserves before/audit/final evidence.
 OneTake alone implements animation and rendering. No previous video is required.
 
 ## Skills and validation
@@ -28,13 +30,29 @@ To install on another machine, use the supported Codex skill-installer helper:
 `install-skill-from-github.py --repo REPOSITORY --ref REF --path PATH`, taking
 values from the manifest. For the Anthropic skill add
 `--name anthropic-frontend-design`; an unrelated existing `frontend-design` must
-not be overwritten. OneTake uses `--path . --name onetake`. Keep originals unchanged.
+not be overwritten. OneTake uses `--path . --name onetake`; humanizer uses
+`--path . --name humanizer`. Keep originals unchanged. An existing installation
+that matches the pinned source can be reused without overwriting it.
 
 Copy [production.json](templates/production.json) into a new project. Each
 specialist fills [handoff.json](templates/handoff.json) under review/ using its
 role slug. `inputs` and `outputs` map project-relative paths to SHA256; evidence
 paths are project-relative. Set `executed` only for completed applicable work.
 Director accepts each handoff; consumers must use those exact inputs.
+
+For new projects also copy [REFERENCES.json](templates/REFERENCES.json). Director
+uses [the reference handoff](workflow/REFERENCE_STUDY.md) to study actual clips
+from the initial channels and any supplied videos, retaining moving-frame
+evidence and timestamped techniques/limits. New templates enable this contract;
+old approved projects are not retrofitted. Check the study during Research with
+`python scripts/studio.py check --project videos/my-topic --stage references`.
+Art/Motion/Animator/Reviewer consume its exact hash. Plan checks and Gate 1 bind
+the study/evidence; review checks require timestamped storytelling assessments.
+This validates records, not whether the animation is good.
+
+[HTTP-cache storytelling comparison](workflow/HTTP_CACHE_STORYTELLING.md) gives
+concrete cue-relative storyboard/OneTake decisions for the same ten passages.
+It is a planning exercise outside the approved example, not a new film.
 
 The tracked [HTTP-cache trial](examples/http-cache/BRIEF.md) and
 [validation report](workflow/VALIDATION.md) distinguish actual specialist outputs,

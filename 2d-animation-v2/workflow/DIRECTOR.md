@@ -7,7 +7,14 @@ record genuine older approvals only after checking their messages and files.
 1. Research primary sources into FACTS.md. Record type, outcome, complete coverage,
    factual limits and runtime in BRIEF.md. A task is tutorial; a mechanism is
    explainer. Reuse local licensed assets where useful.
-2. Run `studio.py skills`; pass exact resolved SKILL.md to each native subagent.
+   Complete [reference deconstruction](REFERENCE_STUDY.md) alongside factual
+   research: select actual clips from the initial channels and supplied videos,
+   inspect moving frames, record REFERENCES.json and local timestamped evidence.
+   Keep observation, inference and unverified dimensions separate. Disclose
+   inaccessible references and record the fallback in decisions; never fabricate
+   findings. No extra specialist or approval stage is needed.
+2. Run `studio.py skills`; pass exact resolved SKILL.md to each native subagent
+   (both storytelling-hooks and humanizer to the same Scriptwriter, in order).
    Load only its role card and required references. Spawn/follow-up/messages are
    orchestration; do not create user-owned chats or recursively delegate.
    For a new specialist, use native `fork_turns: "none"` with a bounded prompt:
@@ -20,12 +27,27 @@ record genuine older approvals only after checking their messages and files.
    restart it. Verify activation when returning a failed handoff or audit.
 3. Scriptwriter completes the research-to-script handoff. Art Director may explore
    concepts concurrently on the same facts, then reconciles with accepted script.
+   Accept the script against SCRIPT_GUIDE.md: payoff planned before hooks, a
+   connected evidence chain, naturalness review with a specific repair, and a
+   final answer that fulfills the selected hook. Required narrative functions
+   may overlap; reject generic prose even when the parser/checklist passes.
+   Inspect the saved storytelling draft, humanizer journal and final script;
+   confirm both original methods were executed and no required claim or payoff
+   was lost. A skill path, hash or completed status alone does not prove this.
+   Require a teaching reason for added text; no overlay is the default when
+   narration and visible action suffice.
    Require a visible mechanism, not a renamed node diagram.
 4. Present three distinct concepts. Record user selection/source in production.json.
    Art Director completes actual-asset board; Motion Director consumes accepted
    script, selected concept and visual tokens. Return specific Art/Motion conflicts
    to the owner; never silently rewrite another output. OneTake's concept/reference
    procedures stay active; no unselected storyboard.
+   Accept reference transfer only when Art explains its composition/material
+   choices and Motion links adapted/rejected techniques to teaching beats.
+   Ask what the learner sees change and why. Carry meaning through objects,
+   spatial relations and transformations; a persistent border alone is not a
+   connected story. Use [HTTP-cache planning](HTTP_CACHE_STORYTELLING.md) as a
+   concrete same-content example, not a template or approved replacement.
 5. Accept handoffs against role criteria and input hashes. Present complete script,
    visual specification, board and storyboard at Gate 1. Only the user approves.
 6. Animator normalizes, measures channel narration and executes OneTake. Retiming
@@ -44,6 +66,10 @@ record genuine older approvals only after checking their messages and files.
    severity, time/pose, evidence, effect, owner, correction and recheck. Owners fix
    only assigned files. Reviewer rechecks new preview and affected neighboring
    beats. Close findings with evidence; no self-approved fixes.
+   Require timestamped storytelling assessments in the existing review receipt
+   for reference-enabled projects (ROLES.md). Missing causal action, repetitive
+   presentation, confusing transitions or lost subject identity are findings,
+   even when the probe passes. More camera travel/effects is not a quality score.
 9. Present Gate 2 after blocking findings close and every beat has actual playback
    evidence. Record user approval, guarded render, export verification. Changed
    preview inputs require re-audit and renewed Gate 2.

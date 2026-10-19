@@ -20,6 +20,9 @@ Inputs:
 - Tone: clear, engaging, playful when it helps teach
 - Ending: [conclusion, verbal loop, visual loop; choose what earns the payoff]
 - Visual reference or supplied concept: [OPTIONAL]
+- Additional reference videos: [OPTIONAL exact URLs or local source paths]
+- Initial creative references: https://www.youtube.com/@AILABS-393 and
+  https://www.youtube.com/@ByteWithoutBite
 - Language: English
 - Duration: complete natural coverage, target within 180 seconds
 - Format: native 1080 x 1920, 9:16, 30 fps
@@ -27,12 +30,22 @@ Inputs:
 - Captions, sound effects, music: off
 - Folder: videos/[SLUG; derive a descriptive new slug if omitted]
 
-Research, then Scriptwriter (storytelling-hooks), Art Director (original
+Research, then Scriptwriter (storytelling-hooks followed by humanizer in that
+same agent, with saved draft/refinement evidence), Art Director (original
 Anthropic frontend-design), Motion Director (motion-design), Gate 1, measured
 channel narration, Animator (onetake), independent Reviewer
 (design-motion-principles), targeted revisions, Gate 2, OneTake rendering.
 One writer per mutable artifact. Parallelize only independent work; no recursive
 delegation or competing renderer. Keep approved decisions in production.json.
+Use the new-project templates with reference_study enabled. During Research,
+follow workflow/REFERENCE_STUDY.md: inspect moving frames of actual clips, record
+timestamped observations and limitations, and report inaccessible references.
+Pass REFERENCES.json to Art, Motion, Animator and Reviewer. Adapt useful
+techniques to this topic; do not copy channel style or scene order. Connect
+teaching beats through meaningful actions, persistent objects and cause/effect.
+Vary composition and rhythm while keeping one visual identity. Prefer a still
+hold when it teaches better. Use the existing beat table and independent audit;
+passing structure checks never establishes animation quality.
 
 Show three genuinely different visual concepts; let me select before storyboard.
 Gate 1: complete revised script, visual direction, actual-asset board and storyboard.

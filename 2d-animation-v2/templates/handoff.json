@@ -3,6 +3,7 @@
   "agent_id": "",
   "status": "blocked",
   "skill": {"path": "", "sha256": ""},
+  "refinement": null,
   "references_read": [],
   "procedures": [],
   "inputs": {},

@@ -1,0 +1,90 @@
+{
+  "references": [
+    {
+      "id": "ai-labs-opening",
+      "source_url": "https://www.youtube.com/@AILABS-393",
+      "video_url": "https://www.youtube.com/watch?v=rw0fqnrZgNM",
+      "status": "inspected",
+      "checked_on": "2026-10-17",
+      "inspection": {
+        "method": "ordered-frames",
+        "viewed_ranges_s": [[0, 8]],
+        "evidence": ["VIEWING_LOG.md"]
+      },
+      "observations": [
+        {
+          "id": "A1",
+          "range_s": [0, 2],
+          "observation": "The REA entry rises from row four through intermediate positions to row one; displaced entries redistribute and the destination row receives orange emphasis.",
+          "technique": "Identity-preserving state change with destination emphasis.",
+          "use_when": "The learner needs to track one object through a real change of status or position.",
+          "avoid_when": "Movement would imply a false ordering, such as ranking cached responses."
+        },
+        {
+          "id": "A2",
+          "range_s": [2, 5],
+          "observation": "The retained ranking panel shifts left while a tool badge and two browser/app windows assemble on the right; window interiors subsequently become code-like lines.",
+          "technique": "Lateral restaging that preserves context while exposing a related view.",
+          "use_when": "A detail view explains an already established object's behavior.",
+          "avoid_when": "Keeping every panel forces teaching labels below readable size."
+        },
+        {
+          "id": "A3",
+          "range_s": [6, 8],
+          "observation": "User silhouettes move from lower scattered positions into a cluster beneath one item in a choice strip; that item becomes orange.",
+          "technique": "Actor choreography makes a distribution visible.",
+          "use_when": "The distribution of many actors is the actual subject.",
+          "avoid_when": "One request is sufficient to teach the mechanism; extra actors would add noise."
+        }
+      ],
+      "limitation": "Opening only, sampled ordered decoded frames through the displayed 00:08. Whole-second times are approximate; intermediate frames between screenshots were not individually inspected. The 00:05–00:06 transition is unresolved. No measured easing, smoothness, camera path, audio sync or full-film rhythm. Evidence is a written viewing log; screenshots were inspected in tool history but not retained locally."
+    },
+    {
+      "id": "byte-without-bite-opening",
+      "source_url": "https://www.youtube.com/@ByteWithoutBite",
+      "video_url": "https://www.youtube.com/watch?v=2j4_iPG5Aqk",
+      "status": "inspected",
+      "checked_on": "2026-10-17",
+      "inspection": {
+        "method": "ordered-frames",
+        "viewed_ranges_s": [[0, 16]],
+        "evidence": ["VIEWING_LOG.md"]
+      },
+      "observations": [
+        {
+          "id": "B1",
+          "range_s": [0, 3],
+          "observation": "A large 2023 type anchor is followed by a bright source-post image against dark ground.",
+          "technique": "Brief orientation anchor followed by readable evidence.",
+          "use_when": "A date or exact label must orient a learner before its source is introduced.",
+          "avoid_when": "Another isolated title card would interrupt an existing causal story."
+        },
+        {
+          "id": "B2",
+          "range_s": [3, 11],
+          "observation": "Python appears left, Rust right, then an arrow, an AGI? badge and a Language choice label; earlier objects keep their positions and later frames preserve the arrangement.",
+          "technique": "Progressive disclosure followed by a reading hold.",
+          "use_when": "The relation must be understood before its qualifier is introduced.",
+          "avoid_when": "A relation arrow merely repeats narration; show a traveling request and resulting response when teaching causality."
+        },
+        {
+          "id": "B3",
+          "range_s": [12, 14],
+          "observation": "The same source-post image visibly grows in successive frames while its text remains the main subject.",
+          "technique": "Slow scale change toward relevant detail.",
+          "use_when": "Increased scale makes the detail named in narration easier to inspect.",
+          "avoid_when": "A push reveals no new information or crops the teaching label."
+        },
+        {
+          "id": "B4",
+          "range_s": [15, 16],
+          "observation": "After the source-post image, a diagram shows xAI, Mostly Rust and Rust; the X mark is subsequently added below.",
+          "technique": "Interpret source evidence through staged explanation.",
+          "use_when": "The next picture explains the evidence just introduced.",
+          "avoid_when": "Replacing the whole scene discards an object that could carry the explanation."
+        }
+      ],
+      "limitation": "Opening only, sampled ordered decoded frames through the displayed 00:16. Whole-second times are approximate; intermediate frames between screenshots were not individually inspected. Source-to-diagram transition mechanics are unresolved. The 12–14 second image growth is visible scaling, not proof of a 3D camera. No measured curves, full-film rhythm, soundtrack review or final-phone-size legibility approval. Evidence is a written viewing log; screenshots were inspected in tool history but not retained locally."
+    }
+  ]
+}

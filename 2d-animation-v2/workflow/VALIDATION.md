@@ -1,5 +1,8 @@
 # Overhaul evidence and limits
 
+The original overhaul below is historical. See the final **2026-10-17 reference
+and storytelling update** for the current documentation/script-only change.
+
 Local implementation and representative trial, 2026-10-15. No commit, push,
 publication, deployment, final narration or MP4. Existing ignored video preserved.
 
@@ -126,3 +129,59 @@ The guard cannot authenticate a user or prevent deliberate direct upstream calls
 Director verifies consent in chat; Reviewer verifies full playback/listening,
 semantic carry, readability and timing. Finish those production checks only after
 Gate 1, then request Gate 2 before any MP4. The overhaul does not grant either.
+
+## 2026-10-17 reference and storytelling update
+
+Inspected the current V2 workflow and HTTP-cache plan before editing. Existing
+P0 capabilities were retained and strengthened rather than duplicated:
+
+| Already present | Strengthened implementation |
+| --- | --- |
+| OneTake reference deconstruction before concepts | Director-owned REFERENCES.json and evidence, two initial channel studies, additional per-project clips, explicit access/range limits and adapted/rejected technique decisions |
+| Three concepts, persistent IDs, cause/action/result/holds, varied timing | Existing Art/Motion cards now connect composition, semantic transformations, layering, camera purpose and adjacent-beat variation to the teaching mechanism |
+| Independent original-skill audit and owner revision loop | Six timestamped storytelling dimensions in the same reviewer receipt, bound to actual preview duration and current evidence |
+| Hash-bound handoffs and approval gates | Reference report and inspection evidence bind Gate 1 and every consuming specialist; legacy projects without reference_study preserve their prior contract |
+
+Actual temporal inspection: AI LABS opening **00:00–00:08** and Byte Without Bite
+opening **00:00–00:16**, using actual decoded ordered frames. Seven observations,
+exact source links and limitations live in [the initial study](references/INITIAL_STUDY.md),
+[viewing log](references/VIEWING_LOG.md) and machine-readable REFERENCES.json.
+No reference channel remained inaccessible, but some sampled transition mechanics
+are unresolved. No source download, numerical flow analysis, full-film watch or
+soundtrack review was performed. Screenshots were inspected in the tool session;
+only the written viewing log is retained locally. Do not claim exact curves,
+smoothness or entire-channel coverage from this evidence.
+
+[HTTP-cache comparison](HTTP_CACHE_STORYTELLING.md) preserves all ten original
+passages and the selected lightbox concept. It provides concrete cutaway,
+aperture, validator-comparison, alternate-drawer, camera and rest decisions,
+plus specific reference adaptations/rejections and eventual playback rejection
+checks. Library APIs were checked against installed OneTake. This is proposed
+direction outside the approved example, not a replacement storyboard or preview.
+
+Verification completed from V2:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe scripts/studio.py skills
+.\.venv\Scripts\python.exe scripts/studio.py check --project workflow/references --stage references
+.\.venv\Scripts\python.exe scripts/studio.py check --project examples/http-cache --stage plan
+```
+
+**24 tests passed**, including the existing real Chromium static fixture. New
+checks cover pending/inaccessible/unsupported reference claims, invalid ranges,
+missing/outside-project evidence, future reference sources, changed study/log
+hashes, specialist consumption, out-of-preview review timestamps and exact
+HTTP-cache narration preservation. All five installed skill integrity checks,
+the actual initial study check, existing HTTP-cache plan and whitespace check
+passed. Independent code review found stale viewing-log handoffs and unbounded
+review timestamps; both were fixed, regression-tested and independently rechecked.
+Legacy Gate 1 snapshots were compared with the prior implementation and match
+when reference_study is absent.
+
+No new agent, dependency, renderer or approval gate. No upstream skills, approved
+examples or production artifacts were changed. No TTS, animation, preview or
+video was created; no commit or push. Proposed motion quality, cue fit, phone
+readability and beginner comprehension remain unverified until an explicitly
+approved future production is independently watched. Structural checks do not
+establish that the new direction produces a better film.
