@@ -1,15 +1,25 @@
 # V3 foundation and interactive script review
 
 ## Goal
-Initialize isolated, runnable v3 foundation from PLAN.md and PLAN2.md, then complete the user-authorized interactive script-review increment. No video generation features, commits, pushes, subagents, or changes to v1/v2.
+Initialize isolated, runnable v3 foundation from PLAN.md and PLAN2.md, then complete the authorized script-review, evidence-grounded writing and matched-input evaluation preparation increments. No production video features, commits, pushes, subagents, or changes to v1/v2.
 
 ## Current Phase
-Phase 0 and the authorized interactive script-review increment are complete. Real gpt-6-luna streaming, comparison, acceptance and reload passed after homeserver recovery. Production video generation remains disabled; the full roadmap is not complete.
+Concept and storyboard planning is implemented and verified: immutable dependencies, safe static planning images, explicit concept selection, shot narration navigation, scoped shot revisions and exact storyboard acceptance. Lint/typecheck, 45 tests, production build, fixture browser flow and live synthetic model generation pass. Human acceptance of the real revised evaluation scripts and full production remain unfinished.
 
 ## Next Step
-Next product milestone: researched topic/payoff/hook writing and editorial evaluation, then visual concepts/storyboards. Integrate selected Remotion after those dependencies. Retain no-subagent/no-commit/no-push boundaries. Homeserver boot-readiness remediation remains a separate maintenance task.
+Review real revised scripts and accept exact text before creative production. The next software increment is Remotion Player and shot timeline, followed by voice synchronization, moving/audio review, formal gates and guarded export. Static boards do not establish animation quality. No subagents, commits, pushes or production media were used.
 
 ## Phases
+### Phase 23: Record human text feedback
+**Status:** complete
+- Preserve the original packet/provenance. Bind A/A/B/B/B choices to packet labels and exact preferred text hashes; record missing read-aloud/blinding attestations without inference.
+### Phase 24: Apply guidance and propose revised drafts
+**Status:** complete
+- Share concise channel narration guidance across full writer/refiner/editor and scoped revisions. Reuse installed skill execution and existing immutable storage for new text-only proposals from the preferred drafts; no automatic approval or source loss.
+### Phase 25: Verify and report feedback continuation
+**Status:** complete
+- Focused checks for guidance propagation and preserved source/selection scope, required checks/build, factual/payoff review, unchanged frozen comparison and sibling evidence.
+- Focused 14/14 and required 37/37 tests, clean lint/TypeScript and production build pass. Five proposed texts preserve source coverage, opening text and requested takeaways; live advice is hash-bound and not human approval. Original comparison hashes, 731 v2 hashes and 22 benchmark hashes match. No imported/accepted proposal, dependency/environment/host change, media, subagent or Git publication.
 ### Phase 1: Repository and plan review
 **Status:** complete
 - Read both source plans and current v2/publishing baseline; preserve all sibling projects.
@@ -99,7 +109,7 @@ Next product milestone: researched topic/payoff/hook writing and editorial evalu
 ## Remaining scope and limitations
 - Full roadmap Phase 0 is complete within approved foundation scope: frozen baseline, source/license fit review, initial contracts, user-approved architecture and measured renderer selection. Scripting efficacy remains a later matched-output/human test.
 - Runtime SQLite experimental; development dependency audit/deprecation outstanding upstream. Do not claim production readiness.
-- Creation/list/load, immutable script history, scoped gateway revisions, jobs/sessions, comparison/acceptance and script-staleness detection are complete. Full researched writing, visual concepts/storyboards, downstream invalidation, production and publishing remain future tasks.
+- Creation/list/load, immutable script history, scoped gateway revisions, jobs/sessions, comparison/acceptance, source-bound full writing and script-staleness detection are technically complete. Five matched-input pairs and author checks are prepared. Human writing evaluation, flagged revisions, visual concepts/storyboards, downstream production and publishing remain unfinished.
 
 | Installed error guide 16-error-handling.md did not exist | Use existing guide filenames; required server/actions/page guides were available. |
 
@@ -134,3 +144,64 @@ Error: use-server.mdx is absent in this installed Next release. Located actual u
 - Confirmed boot-time Tailscale bind failure; existing-container start did not publish ports. Validated both Compose files and bind mounts; recreated only CLIProxyAPI without pulling an image. Runtime binding and HTTP 200/model access restored. Persistent boot ordering unchanged.
 | Combined remote formatted inspection rejected by automatic review as filesystem/disk modification | Narrow unformatted read-only docker ps succeeded; continue exact service inspection. |
 | Live proposal exceeded the browser locator short wait | Observed current UI; original request completed successfully. No duplicate model request. |
+
+## Researched scriptwriting continuation — user authorized
+### Phase 17: Evidence/payoff and writing contracts
+**Status:** complete
+- Save versioned source notes/claims/payoff; generate distinct supported hooks; separate full writing, installed-skill refinement and role-isolated editorial review. No automatic factual verification or production approval claims.
+### Phase 18: Persistent writing workflow and UI
+**Status:** complete
+- Reuse the bounded gateway and immutable storage conventions. Keep generated outputs proposed, require explicit hook choice and reviewed-draft import, preserve earlier scripts and reject stale dependencies.
+### Phase 19: Verify researched writing milestone
+**Status:** complete
+- Focused failure/concurrency/migration checks, required check/build, fixture and actual browser/live writing verification, and an honest five-brief human-evaluation boundary.
+- Clean lint/typecheck, 35 tests, production build, fixture/live browser flow and restart persistence pass. Schema 3-to-4 preserves six table snapshots and nine prior files; frozen v2/benchmark hashes match. No human writing-quality result, production approval or video output claimed.
+| TypeScript lost union narrowing inside findings callback | Capture validated draft line count before the callback. |
+| Read-only search containing destructive SQL keywords rejected by automatic review | Read the exact migration test file without SQL search patterns; no database operation was attempted. |
+| Existing migration test simulated schema 2 by stripping only schema 3 tables, leaving schema 4 state | Build a real schema 2 fixture from scratch and preserve the exact revision file/hash. |
+| Unused type import in new writing tests | Remove it; keep lint clean. |
+| Browser summary appears as a button in AX but Playwright button lookup did not match | Inspect DOM semantics and target the observed summary text. |
+
+## Matched writing evaluation — 2026-10-22
+## Concepts and storyboards — user authorized 2026-10-22
+### Phase 26: Visual planning contracts and persistence
+**Status:** complete
+- Bind immutable concepts and shot boards to the current accepted script; require explicit concept selection. Use safe declarative SVG planning images, never generated executable markup. Preserve earlier proposals and invalidate stale dependencies.
+### Phase 27: Visual planning service and review UI
+**Status:** complete
+- Generate three distinct concepts and shot boards through the bounded gateway. Support selected-shot revisions, narration references, explicit storyboard acceptance and readable request history. No production gates, voice, animation playback or rendering.
+### Phase 28: Verify visual planning increment
+**Status:** complete
+- Focused contract, migration, stale-dependency and failure checks; required check/build; isolated browser workflow and screenshot proof. Document remaining production work.
+- All 45 tests, lint/TypeScript and production build pass. Synthetic fixture UI flow and live gpt-6-luna concept/board generation verified. Fixed the shared framed-stream cap after a concrete live failure; regression passes. Safe static image screenshot and verification receipt saved. Human/model quality, moving/audio review and production approval are not inferred.
+
+| PowerShell wildcard read of [id] page failed | Use Get-Content -LiteralPath for bracketed route paths. |
+| Migration fixture inserted revisions before creating their referenced writing table | Create all original tables first, then restore rows. |
+| First live synthetic request failed without a diagnostic category | Preserved the failed job; add sanitized validation paths/codes and fixed transport categories to history. Its cause is not established as schema rejection. |
+| Live board exceeded the 300 KB raw SSE limit after about 3 KB of JSON | Bound decoded content at 300 KB separately from a 4 MB framed-stream allowance; retain a bounded pending frame and add token-fragmentation regression coverage. |
+| Final whitespace check found extra EOF blank lines in the planning logs | Normalize only those two log endings and repeat the whitespace check. |
+| Guessed database.test.ts filename was absent | Use the actual test inventory (foundation.test.ts, studio.test.ts and review.test.ts). |
+
+### Phase 20: Freeze evaluation protocol and supplied evidence
+**Status:** complete
+- Same five briefs, supplied claims, target duration, shared selected hook and configured model alias. Preserve source hashes and exact request settings; identify provider revision/defaults as unknown when not exposed.
+- Baseline is a new v2-guide reconstruction through the shared JSON transport, not a historical v2 run or an isolated test of one skill. Trial uses the actual v3 writer/refiner/editor. Author-selected shared hooks are diagnostic choices, not user creative approval.
+### Phase 21: Generate matched outputs and factual diagnostics
+**Status:** complete
+- Isolated storage, no script acceptance or media. Save every successful stage and explicit failure; no silent retries or cherry-picking. Verify facts/calculations against sources and record concrete weak lines.
+### Phase 22: Package and verify blinded human review
+**Status:** complete
+- Blind labels/order with separate provenance; provide factual-first, hook/payoff, read-aloud and preference/tie response fields. Verify packet completeness, required checks and preserved sibling hashes.
+- Human review completion is a separate pending acceptance item, not fulfilled by this technical phase.
+- Final run 4cadfc94-8b1d-4da2-92f4-58624d1a2a0d: 5 pairs, 20 completed stages, 30 successful chat calls inferred from executed stage paths, no failed stage in the final round. 10 source hashes and immutable trial dependencies verified; exact text of all 10 blind narrations independently compared to saved outputs. No script imported/accepted.
+- Required check: clean lint/TypeScript and 37/37 tests; production build passes. Packet/provenance SHA-256, documentation links and git diff --check pass. V2 731/731 and benchmark 22/22 frozen hashes matched; sibling/source-plan tracked diffs empty. No new dependencies, env/host changes, commits, pushes or subagents.
+
+| RFC 9110 main page exceeds web tool response limit | Use the section-specific HTTP semantics HTML page for 304 checks. |
+| Cornell generative-AI guide URL inaccessible | Use verified University of Arizona Libraries FAQ 387173 for citation existence/support checks. |
+| Packet test treated the plain-language phrase "human verdict" as leaked condition metadata | Narrow the check to serialized verdict metadata; condition/model/hash labels remain forbidden. |
+| Three cache-hook attempts failed strict validation | Observed complete model response with digit-leading id 304-no-image; clarify existing first-letter and max-40 ID requirements in the prompt. Preserve aborted run and start a new source freeze. |
+| Prompt clarification still allowed model ID-format failures | Assign option IDs in the server; validate creative content and preserve historical IDs. Focused 11/11 checks pass. |
+| Combined documentation append and generation command rejected by automatic review | Apply the documentation patch separately, then invoke the bounded runner directly. No host or disk maintenance action was requested. |
+| Invoice narration included evaluation model/hash bookkeeping | Keep the execution recording rule in runner metadata, exclude it from narration boundaries, add regression coverage, preserve the diagnostic round and start a new frozen comparison. |
+| Documentation patch included a nonexistent generic heading context | Reapply only the verified file contexts; no source or data changed. |
+| Combined final log append/check command rejected by automatic review | Apply logs with the file patch tool and run the read-only completion check separately. |

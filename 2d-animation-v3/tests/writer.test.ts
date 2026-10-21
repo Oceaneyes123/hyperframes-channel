@@ -9,6 +9,7 @@ import { openWritingJobs } from "../server/writing-jobs.ts";
 import { readConfig } from "../server/config.ts";
 import { reviseScript } from "../server/writer.ts";
 import { requestReplacement } from "../server/gateway.ts";
+import { narrationGuidance } from "../server/writing-guidance.ts";
 import { fakeGateway } from "./fixtures/gateway.ts";
 
 const context = { script: "Opening.\nKeep ending.", start: 0, end: 8, instruction: "Clarify", history: [] };
@@ -21,6 +22,13 @@ test("gateway adapter handles split SSE and rejects unsupported/unsafe/incomplet
       if (mode === "ok") assert.equal((await promise).replacement, "A clearer opening.");
       else await assert.rejects(promise, Error, mode);
       if (mode === "missing-model") assert.equal(gateway.requests.length, 0);
+      if (mode === "ok") {
+        assert.ok(gateway.requests[0].messages[0].content.includes(narrationGuidance));
+        assert.match(gateway.requests[0].messages[0].content, /only within that section/);
+        const supplied = JSON.parse(gateway.requests[0].messages[1].content);
+        assert.equal(supplied.selection, "Opening.");
+        assert.equal(supplied.script, context.script);
+      }
     } finally { await gateway.close(); }
   }
 });

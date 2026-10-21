@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-22",
+  "feedbackRunId": "f267786c-4336-4fa0-917b-da39993675ad",
+  "proposals": [
+    {
+      "id": "finance-recovery",
+      "sharedOpening": true,
+      "allClaimsCovered": true,
+      "narrationSha256": "6ffd332d14c5b7b108af63b71ea44eca44ed8bdb5373dc4b37fd83439062b184",
+      "modelAdvice": "ready",
+      "words": 68
+    },
+    {
+      "id": "http-cache-image",
+      "sharedOpening": true,
+      "allClaimsCovered": true,
+      "narrationSha256": "4cda0d3ccab50f6f99b44eb9f56d41dfcff4977c532dc6f319d85bee70be62d7",
+      "modelAdvice": "ready",
+      "words": 117
+    },
+    {
+      "id": "ai-citation-check",
+      "sharedOpening": true,
+      "allClaimsCovered": true,
+      "narrationSha256": "c67832bbc76ab5f42f79486db8d48b7b6c831c6fde51d7caf7e04226437ae411",
+      "modelAdvice": "ready",
+      "words": 78
+    },
+    {
+      "id": "ai-invoice-check",
+      "sharedOpening": true,
+      "allClaimsCovered": true,
+      "narrationSha256": "fecd752997ce0cc0653e718ea21a2ce38d1bc3bff5f755a6dc8fd8f52508ce12",
+      "modelAdvice": "ready",
+      "words": 100
+    },
+    {
+      "id": "ai-newsletter-costs",
+      "sharedOpening": true,
+      "allClaimsCovered": true,
+      "narrationSha256": "19a56ca4c19127c1e4521bb0b8c969db6a5d340d4eb6b3a13346cb3b80fb8c88",
+      "modelAdvice": "ready",
+      "words": 83
+    }
+  ],
+  "checks": {
+    "preferredLabelsAndHashes": true,
+    "frozenComparisonUnchanged": true,
+    "rawArtifactsAndDependencies": true,
+    "exactProposedText": true,
+    "modelAdviceBoundByScriptHash": true,
+    "invoiceAnnotationVersioned": true,
+    "noImportedOrAcceptedRevisions": true,
+    "v2HashesMatched": 731,
+    "benchmarkHashesMatched": 22,
+    "tests": 37,
+    "productionBuild": "pass"
+  },
+  "codeBoundary": "Full feedback generation preceded the instruction-handoff fix; fixture tests verify propagation to refiner/editor. Later live editorial checks explicitly include the user requirements.",
+  "modelCalls": {
+    "fullPipeline": 15,
+    "authorEditorial": 5,
+    "annotationFollowup": 1
+  },
+  "hashes": {
+    "humanReview": "1f572784a0b1979f86f9d377306ba5ff555172205e4b75c32f537ec45008d24a",
+    "rawRevisionProvenance": "25b728290dcd4e4dd2dfbc51307c1ce79186f9087449bc305c7caebc11b74365",
+    "authorRevisions": "200c7021413352a4a26824f2a1032b7826268fb19f533cff96e71f831571e8c7",
+    "proposedDrafts": "84f97aa37c0bf4ba54f4c64abc03ba8756668dc6b11c60d79f71a69fc358b927"
+  },
+  "readAloud": "unassessed",
+  "fullyBlindedPreferenceEstablished": false,
+  "newTextAccepted": false,
+  "productionApproval": false
+}

@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "createdOn": "2026-10-22",
+  "feedbackRunId": "f267786c-4336-4fa0-917b-da39993675ad",
+  "humanReviewSha256": "1f572784a0b1979f86f9d377306ba5ff555172205e4b75c32f537ec45008d24a",
+  "rawRevisionProvenanceSha256": "25b728290dcd4e4dd2dfbc51307c1ce79186f9087449bc305c7caebc11b74365",
+  "proposals": [
+    {
+      "id": "finance-recovery",
+      "parentModelArtifactId": "655794d7-09e3-4e7e-b3be-fd065b13cb35",
+      "parentModelArtifactSha256": "61fd2029f3d41a5990cd13bb55218f5645c5066310b4655438bdc56845be950a",
+      "sourceBriefId": "c2b30f4d-13a2-4a90-a605-d19b1dfc2410",
+      "author": "Implementation author applying direct user feedback",
+      "reason": "Remove repeated base explanations and the duplicate conclusion/disclaimer. Preserve the arithmetic and make the final line deliver the 100% recovery gain.",
+      "proposed": {
+        "lines": [
+          {
+            "text": "If a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "Ignoring fees and deposits, a 50% loss takes 50 away from 100, leaving 50.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "The 50% gain now starts from 50. Half of 50 is 25, so you reach 75.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Getting from 50 back to 100 means adding another 50—the whole amount you have left. Recovering from a 50% loss requires a 100% gain.",
+            "claimIds": [
+              "claim-3"
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "sharedOpening": true,
+        "structuralClaimCoverage": true,
+        "factualAuthorReview": "completed against supplied evidence",
+        "modelEditorialForThisText": "not-run",
+        "humanAcceptance": false,
+        "audibleReview": "unassessed"
+      }
+    },
+    {
+      "id": "http-cache-image",
+      "parentModelArtifactId": "4a8fe829-5714-4ceb-be81-2ff79cf8bf24",
+      "parentModelArtifactSha256": "e0affe4faf2c65fdfc7c41d345eb7afba9706ab54dee1f78f4f3b2ca3209ac6a",
+      "sourceBriefId": "083434d8-3c01-4b79-a34d-523f694c9026",
+      "author": "Implementation author applying direct user feedback",
+      "reason": "Remove the imagined scenario and the repeated three-part recap. Preserve fresh reuse conditions, matching 304/body distinction, changed-content case and reload/freshness limitations.",
+      "proposed": {
+        "lines": [
+          {
+            "text": "If a cached image expires, does the browser delete it? Not necessarily.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Expiry doesn't automatically erase the stored copy. Keeping a copy and being allowed to reuse it are different things.",
+            "claimIds": [
+              "claim-1",
+              "claim-2"
+            ]
+          },
+          {
+            "text": "If the cache rules allow it, a fresh copy may be reused without a network request.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "A stale copy may need validation: asking the server whether the image has changed.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "If it is unchanged, the server can reply with 304 and no new image body. The browser may reuse its copy if the cache rules permit it. A 304 doesn't guarantee renewed freshness; reload policy still matters.",
+            "claimIds": [
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "If the image changed, a new image body may be needed. So expiry doesn't automatically mean another image download.",
+            "claimIds": [
+              "claim-1",
+              "claim-4"
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "sharedOpening": true,
+        "structuralClaimCoverage": true,
+        "factualAuthorReview": "completed against supplied evidence",
+        "modelEditorialForThisText": "not-run",
+        "humanAcceptance": false,
+        "audibleReview": "unassessed"
+      }
+    },
+    {
+      "id": "ai-citation-check",
+      "parentModelArtifactId": "e1d22dcc-7ccf-4b82-9215-857bf344e3d5",
+      "parentModelArtifactSha256": "8014f7a4f4b79782ca546a7c0d4b096cb501bbf2cb7dd19cc8dda5a7a0b558ed",
+      "sourceBriefId": "57e4409d-a0f8-44ef-aff1-d39ccc1e8ac1",
+      "author": "Implementation author applying direct user feedback",
+      "reason": "Remove the unnecessary hypothetical example and repeated checklist. Keep the direct verification sequence and finish with the requested real-source/support distinction.",
+      "proposed": {
+        "lines": [
+          {
+            "text": "AI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.",
+            "claimIds": [
+              "claim-1",
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Open the cited item and check its author, title, date, and publication details.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Find the passage behind the specific claim. Read it in context and check whether it actually supports that claim.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "If you can't find the source or confirm the supporting evidence, leave the claim unverified. Don't invent a source to fill the gap.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "A real source doesn't automatically support a claim.",
+            "claimIds": [
+              "claim-1",
+              "claim-2"
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "sharedOpening": true,
+        "structuralClaimCoverage": true,
+        "factualAuthorReview": "completed against supplied evidence",
+        "modelEditorialForThisText": "not-run",
+        "humanAcceptance": false,
+        "audibleReview": "unassessed"
+      }
+    },
+    {
+      "id": "ai-invoice-check",
+      "parentModelArtifactId": "eda65525-6576-4d7c-a20a-a5519962f985",
+      "parentModelArtifactSha256": "643de21d6d9db93c5fd03a4d536ae734a6396cdcb4a182b970e17b405c30399d",
+      "sourceBriefId": "34538c21-3315-4e1a-b29d-35d60bb3360c",
+      "author": "Implementation author applying direct user feedback",
+      "reason": "Keep the source comparison and 100 + 5 demonstration. Cover missing source or extracted fields, then end with the arithmetic/extraction distinction without repeating instructions.",
+      "proposed": {
+        "lines": [
+          {
+            "text": "Before using extracted invoice fields, match them back to the source—not just to each other.",
+            "claimIds": [
+              "claim-2",
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Use a synthetic or permissioned invoice. In this fictional example, the source shows a subtotal of 100, a fee of 5, and a total of 105.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Put the source beside the extracted fields. Compare each subtotal, fee, and total with the original.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Then check the sum: 100 plus 5 equals 105.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "If a field is missing from either the source or the extraction, leave it marked missing and flag it for review. Don't guess a value.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "Correct arithmetic doesn't guarantee correct extraction—or verify the invoice.",
+            "claimIds": [
+              "claim-1",
+              "claim-2"
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "sharedOpening": true,
+        "structuralClaimCoverage": true,
+        "factualAuthorReview": "completed against supplied evidence",
+        "modelEditorialForThisText": "not-run",
+        "humanAcceptance": false,
+        "audibleReview": "unassessed"
+      }
+    },
+    {
+      "id": "ai-newsletter-costs",
+      "parentModelArtifactId": "f32edadf-f8c6-4ab0-8609-9c98789f2f4e",
+      "parentModelArtifactSha256": "686b1ba69b133628007e75e00fbc7bb13c2d3fc4a16b82c9dfa22989c3e7f13a",
+      "sourceBriefId": "f07c799b-5cf5-4872-8e5f-9bb8c6df76f5",
+      "author": "Implementation author applying direct user feedback",
+      "reason": "Use the existing hypothetical opening once, retain agreed-and-paid gross revenue and all omitted costs, qualify permission as applicable, and end with the money-left/profit insight.",
+      "proposed": {
+        "lines": [
+          {
+            "text": "In this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "The 200 is gross revenue only if a client agrees to the job and pays.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Subtract the illustrative payment fee of 10 and tool allocation of 20. That leaves 170 after those two costs.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Labor, taxes, revisions, refunds, and other costs still haven't been counted.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "Using AI doesn't remove any applicable permission requirements, fact checking, or human editing.",
+            "claimIds": [
+              "claim-4"
+            ]
+          },
+          {
+            "text": "Money left after a few selected expenses isn't necessarily profit.",
+            "claimIds": [
+              "claim-2",
+              "claim-3"
+            ]
+          }
+        ]
+      },
+      "checks": {
+        "sharedOpening": true,
+        "structuralClaimCoverage": true,
+        "factualAuthorReview": "completed against supplied evidence",
+        "modelEditorialForThisText": "not-run",
+        "humanAcceptance": false,
+        "audibleReview": "unassessed"
+      }
+    }
+  ],
+  "proposedDraftsSha256": "84f97aa37c0bf4ba54f4c64abc03ba8756668dc6b11c60d79f71a69fc358b927",
+  "exactRevisionAcceptance": false,
+  "productionApproval": false
+}

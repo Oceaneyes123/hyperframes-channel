@@ -60,6 +60,13 @@ specific weak lines and preference/tie with reasons. Preserve disagreements.
 Use multiple independent people when available; one author's critique is labeled
 as such. AI ratings are diagnostic notes, never proof of human preference.
 
-The [five-brief packet](scripting-briefs.json) is ready. Draft generation, blinded
-human review and efficacy results are **not performed**. Do not report a winning
-skill, retention uplift or more human-sounding output until that evidence exists.
+The original [five-brief packet](scripting-briefs.json) remains the frozen input.
+On 2026-10-22, the [matched-input comparison](../writing-evaluation/README.md)
+generated both conditions for all five briefs, checked factual support, and
+packaged [blind review](../writing-evaluation/2026-10-22/blind-review.md).
+The baseline reconstructs the v2 guide; it is not complete v2 workflow execution
+or an isolated single-skill test. Blinded human/read-aloud review and efficacy
+results remain **pending**. One user's text preferences and requested revisions
+have since been [recorded and applied](../writing-evaluation/feedback-applied.md);
+spoken review and full blinding were not attested. Do not report a winning skill, retention uplift or
+more human-sounding output until that evidence exists.

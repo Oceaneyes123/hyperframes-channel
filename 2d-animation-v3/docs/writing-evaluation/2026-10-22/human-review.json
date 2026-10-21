@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "receivedOn": "2026-10-22",
+  "reviewer": "User in this chat",
+  "source": "Direct answer to the five-pair review question",
+  "packetSha256": "96fc6c48afa2e5504dc99a115c0f5c7c9a3bd94e7fa04fefde3c043effb84cc6",
+  "provenanceSha256": "3bcd83715c6fd5875b833426774b4e9bddb2dacbbf6da084e6ed477c3b57a00d",
+  "narrationHashFormat": "UTF-8 spoken lines joined with LF, without trailing newline",
+  "selections": [
+    {
+      "id": "finance-recovery",
+      "label": "A",
+      "condition": "trial",
+      "preferredNarrationSha256": "137ac8a3e3a4089a921a8f7c7dd47c7378f6b1e018764d0d1656874336ee34bb",
+      "instructions": [
+        "Keep the progressive numerical explanation.",
+        "Avoid revealing the entire answer too early.",
+        "Reduce repeated explanations of the changing percentage base.",
+        "End with the surprising takeaway: recovering from a 50% loss requires a 100% gain."
+      ]
+    },
+    {
+      "id": "http-cache-image",
+      "label": "A",
+      "condition": "baseline",
+      "preferredNarrationSha256": "09346327085d560a2f1663202256d58e2e564d8e665072ba7379ab28ce798d24",
+      "instructions": [
+        "Keep the clear explanation of stored copy → freshness → validation.",
+        "Avoid unnecessary hypothetical scenarios.",
+        "Simplify technical wording for natural narration.",
+        "Preserve important caching conditions without overexplaining them."
+      ]
+    },
+    {
+      "id": "ai-citation-check",
+      "label": "B",
+      "condition": "baseline",
+      "preferredNarrationSha256": "30abbe2f9da278409ecb8c1e9f95fe0b433b9a46678ca7f56cb426a5e97c672d",
+      "instructions": [
+        "Keep the direct, actionable verification process.",
+        "Avoid unnecessary examples that don't improve understanding.",
+        "Remove repeated reminders to verify the same thing.",
+        "End with one memorable takeaway: a real source doesn't automatically support a claim."
+      ]
+    },
+    {
+      "id": "ai-invoice-check",
+      "label": "B",
+      "condition": "trial",
+      "preferredNarrationSha256": "99a7133f5bf2dd82f250e1a448c0e496c5514678746cfb4b57666002853dd3bd",
+      "instructions": [
+        "Keep the simple numerical demonstration.",
+        "Reduce repetitive explanations and disclaimers.",
+        "Clarify that missing source or extracted fields require review.",
+        "Emphasize that correct arithmetic doesn't guarantee correct extraction."
+      ]
+    },
+    {
+      "id": "ai-newsletter-costs",
+      "label": "B",
+      "condition": "trial",
+      "preferredNarrationSha256": "adbd7608d0b0bda298e71d0540aaaa08916cfb897cda42ac9c61c7130c43d26e",
+      "instructions": [
+        "Keep the logical progression from revenue to expenses.",
+        "Avoid repeating hypothetical disclaimers.",
+        "Explain omitted costs naturally.",
+        "End with the key insight: money remaining after selected expenses isn't necessarily profit."
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "principle": "Clarity",
+      "recommendation": "Explain one concept at a time, building naturally."
+    },
+    {
+      "principle": "Conciseness",
+      "recommendation": "Remove unnecessary examples, repetition, and filler."
+    },
+    {
+      "principle": "Natural narration",
+      "recommendation": "Use conversational language instead of documentation-style writing."
+    },
+    {
+      "principle": "Engagement",
+      "recommendation": "Create curiosity without forcing suspense or storytelling."
+    },
+    {
+      "principle": "Examples",
+      "recommendation": "Include only when they genuinely improve understanding."
+    },
+    {
+      "principle": "Pacing",
+      "recommendation": "Move forward once a point is understood."
+    },
+    {
+      "principle": "Accuracy",
+      "recommendation": "Keep necessary conditions and limitations without excessive disclaimers."
+    },
+    {
+      "principle": "Visual storytelling",
+      "recommendation": "Use animation to demonstrate concepts rather than repeating narration."
+    },
+    {
+      "principle": "Ending",
+      "recommendation": "Deliver a meaningful takeaway connected to the opening."
+    }
+  ],
+  "readAloud": {
+    "status": "not-reported",
+    "spokenNaturalness": "unassessed",
+    "measuredDuration": null
+  },
+  "blinding": {
+    "attestation": "not-provided",
+    "priorChatDiagnosticExposure": "possible",
+    "fullyBlindedPreferenceEstablished": false
+  },
+  "exactRevisionAcceptance": false,
+  "productionApproval": false,
+  "interpretation": "Five text preferences with revision requests from one user; not a general efficacy result or approval of revised outputs."
+}

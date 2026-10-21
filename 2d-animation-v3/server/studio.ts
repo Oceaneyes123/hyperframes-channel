@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { z } from "zod";
 import { openDatabase } from "./database.ts";
 import { applyReplacement, proposalSchema, revisionRequestSchema } from "../workflow/review.ts";
+import { isCurrentWritingBrief, readWritingArtifact, requireCurrentWritingBrief } from "./scriptwriting-store.ts";
 import {
   projectManifestSchema, projectTitleSchema, scriptContentSchema, scriptRevisionSchema,
   type ProjectManifest, type ScriptRevision,
@@ -61,6 +62,15 @@ export function openStudio(dataDirectory: string, videosDirectory: string) {
     return latest ? readRevision(projectId, latest.id)! : null;
   }
 
+  function writingSource(projectId: string, revisionId: string) {
+    // Manual/scoped edits retain their nearest imported research dependency.
+    return database.prepare(`WITH RECURSIVE chain AS (
+      SELECT id, parent_id, revision, writing_run_id FROM script_revisions WHERE project_id = ? AND id = ?
+      UNION ALL SELECT r.id, r.parent_id, r.revision, r.writing_run_id FROM script_revisions r JOIN chain c ON r.id = c.parent_id
+      WHERE r.project_id = ? AND r.revision < c.revision
+    ) SELECT writing_run_id FROM chain WHERE writing_run_id IS NOT NULL ORDER BY revision DESC LIMIT 1`).get(projectId, revisionId, projectId)?.writing_run_id;
+  }
+
   function acceptance(projectId: string) {
     z.uuid().parse(projectId);
     const row = database.prepare("SELECT revision_id AS revisionId, sha256, accepted_at AS acceptedAt FROM script_acceptances WHERE project_id = ?").get(projectId);
@@ -69,10 +79,19 @@ export function openStudio(dataDirectory: string, videosDirectory: string) {
     const revision = readRevision(projectId, receipt.revisionId);
     const index = listRevisions(projectId).find((item) => item.id === receipt.revisionId);
     if (!revision || index?.sha256 !== receipt.sha256) throw new Error("Accepted script integrity check failed");
-    return { ...receipt, stale: listRevisions(projectId)[0]?.id !== receipt.revisionId };
+    const source = writingSource(projectId, receipt.revisionId);
+    const artifact = source ? readWritingArtifact(database, videosDirectory, projectId, z.uuid().parse(source)) : null;
+    if (source && !artifact) throw new Error("Writing source missing.");
+    return { ...receipt, stale: listRevisions(projectId)[0]?.id !== receipt.revisionId || !!artifact && !isCurrentWritingBrief(database, videosDirectory, projectId, artifact) };
   }
 
   function recordAcceptance(projectId: string, revisionId: string) {
+    const source = writingSource(projectId, revisionId);
+    if (source) {
+      const artifact = readWritingArtifact(database, videosDirectory, projectId, z.uuid().parse(source));
+      if (!artifact) throw new Error("Writing source missing.");
+      requireCurrentWritingBrief(database, videosDirectory, projectId, artifact);
+    }
     const index = listRevisions(projectId).find((item) => item.id === revisionId)!;
     database.prepare(`INSERT INTO script_acceptances (project_id, revision_id, sha256, accepted_at) VALUES (?, ?, ?, ?)
       ON CONFLICT(project_id) DO UPDATE SET revision_id = excluded.revision_id, sha256 = excluded.sha256, accepted_at = excluded.accepted_at`)
@@ -104,7 +123,7 @@ export function openStudio(dataDirectory: string, videosDirectory: string) {
   }
 
   // A single transaction owns both filesystem cleanup and all index/state changes.
-  function saveScript(projectId: string, content: unknown, expectedParentId: string | null, acceptProposalId?: string): ScriptRevision {
+  function saveScript(projectId: string, content: unknown, expectedParentId: string | null, acceptProposalId?: string, writingRunId?: string): ScriptRevision {
     z.uuid().parse(projectId);
     z.uuid().nullable().parse(expectedParentId);
     const text = scriptContentSchema.parse(content);
@@ -113,6 +132,12 @@ export function openStudio(dataDirectory: string, videosDirectory: string) {
     let savedPath: string | undefined;
     try {
       const latest = requireLatest(projectId, expectedParentId);
+      if (writingRunId) {
+        const artifact = readWritingArtifact(database, videosDirectory, projectId, writingRunId);
+        if (!artifact || artifact.output.kind !== "draft" || artifact.output.review.verdict !== "ready" || artifact.baseRevisionId !== expectedParentId) throw new ConflictError("Reviewed draft is unavailable or stale.");
+        requireCurrentWritingBrief(database, videosDirectory, projectId, artifact);
+        if (text !== artifact.output.refined.lines.map((line) => line.text).join("\n")) throw new Error("Reviewed draft content mismatch.");
+      }
       if (acceptProposalId) {
         const proposal = readProposal(projectId, acceptProposalId);
         const state = listProposals(projectId).find((item) => item.id === acceptProposalId);
@@ -130,8 +155,8 @@ export function openStudio(dataDirectory: string, videosDirectory: string) {
       writeFileSync(temporaryPath, bytes, { flag: "wx", flush: true });
       renameSync(temporaryPath, destination);
       savedPath = destination;
-      database.prepare("INSERT INTO script_revisions (id, project_id, revision, parent_id, created_at, sha256) VALUES (?, ?, ?, ?, ?, ?)")
-        .run(revision.id, projectId, revision.revision, revision.parentId, revision.createdAt, hash(bytes));
+      database.prepare("INSERT INTO script_revisions (id, project_id, revision, parent_id, created_at, sha256, writing_run_id) VALUES (?, ?, ?, ?, ?, ?, ?)")
+        .run(revision.id, projectId, revision.revision, revision.parentId, revision.createdAt, hash(bytes), writingRunId ?? null);
       if (acceptProposalId) {
         database.prepare("UPDATE script_proposals SET status = 'accepted', result_id = ? WHERE id = ? AND project_id = ?").run(revision.id, acceptProposalId, projectId);
         recordAcceptance(projectId, revision.id);
@@ -155,6 +180,14 @@ export function openStudio(dataDirectory: string, videosDirectory: string) {
     acceptance,
     listProposals,
     readProposal,
+    importReviewedDraft(projectId: string, runId: string) {
+      z.uuid().parse(projectId); z.uuid().parse(runId);
+      const prior = database.prepare("SELECT id FROM script_revisions WHERE project_id = ? AND writing_run_id = ?").get(projectId, runId);
+      if (prior) return readRevision(projectId, z.uuid().parse(prior.id))!;
+      const artifact = readWritingArtifact(database, videosDirectory, projectId, runId);
+      if (!artifact || artifact.output.kind !== "draft") throw new Error("Reviewed draft not found.");
+      return saveScript(projectId, artifact.output.refined.lines.map((line) => line.text).join("\n"), artifact.baseRevisionId, undefined, runId);
+    },
     acceptScript(projectId: string, revisionId: string) {
       z.uuid().parse(revisionId);
       database.exec("BEGIN IMMEDIATE");

@@ -1,0 +1,69 @@
+{
+  "verifiedOn": "2026-10-22",
+  "runId": "4cadfc94-8b1d-4da2-92f4-58624d1a2a0d",
+  "configuredModel": "gpt-6-luna",
+  "providerRevisionPinned": false,
+  "pairCount": 5,
+  "completedStages": 20,
+  "failedStagesInFinalRound": 0,
+  "chatCallsFromExecutedStages": 30,
+  "checks": {
+    "frozenSourceHashes": true,
+    "immutableTrialDependencies": true,
+    "allClaimsCoveredStructurally": true,
+    "exactSharedHookAndReferences": true,
+    "alternatingRequestOrder": true,
+    "blindTextMatchesSavedOutputs": true,
+    "noImportedOrAcceptedScripts": true,
+    "tests": 37,
+    "build": "pass"
+  },
+  "hashes": {
+    "blindReview": "96fc6c48afa2e5504dc99a115c0f5c7c9a3bd94e7fa04fefde3c043effb84cc6",
+    "provenance": "3bcd83715c6fd5875b833426774b4e9bddb2dacbbf6da084e6ed477c3b57a00d"
+  },
+  "diagnostics": [
+    {
+      "id": "finance-recovery",
+      "baselineWords": 111,
+      "trialWords": 107,
+      "modelEditorial": "ready",
+      "trialUnlinkedLines": [
+        2
+      ]
+    },
+    {
+      "id": "http-cache-image",
+      "baselineWords": 157,
+      "trialWords": 159,
+      "modelEditorial": "revise",
+      "trialUnlinkedLines": []
+    },
+    {
+      "id": "ai-citation-check",
+      "baselineWords": 122,
+      "trialWords": 124,
+      "modelEditorial": "revise",
+      "trialUnlinkedLines": []
+    },
+    {
+      "id": "ai-invoice-check",
+      "baselineWords": 155,
+      "trialWords": 144,
+      "modelEditorial": "ready",
+      "trialUnlinkedLines": []
+    },
+    {
+      "id": "ai-newsletter-costs",
+      "baselineWords": 96,
+      "trialWords": 135,
+      "modelEditorial": "revise",
+      "trialUnlinkedLines": []
+    }
+  ],
+  "humanPreference": "pending",
+  "audibleReadAloud": "pending",
+  "measuredDuration": null,
+  "editorialSuperiorityEstablished": false,
+  "productionReady": false
+}

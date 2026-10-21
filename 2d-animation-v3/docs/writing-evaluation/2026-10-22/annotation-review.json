@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "reviewedOn": "2026-10-22",
+  "id": "ai-invoice-check",
+  "configuredModel": "gpt-6-luna",
+  "scriptSha256": "e86164974722edb1acf3c7780e9802ad175ba5a8509fa83964148d8da3f45135",
+  "authorRevisionSha256": "200c7021413352a4a26824f2a1032b7826268fb19f533cff96e71f831571e8c7",
+  "requestSha256": "29f29beb89392dd7220081ae158da608db07102d48d89ef88f45dbc7654dd15b",
+  "review": {
+    "verdict": "ready",
+    "summary": "The narration preserves the selected opening, includes the fictional arithmetic example and source comparison, clarifies that missing fields on either side require review, and ends with the requested limitation.",
+    "findings": []
+  },
+  "humanAcceptance": false,
+  "productionApproval": false
+}

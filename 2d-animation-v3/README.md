@@ -27,6 +27,10 @@ then explicitly accept or reject it. A configured, reachable CLIProxyAPI gateway
 is required for AI requests. Saving or completing a job does not accept a script.
 You can also explicitly accept a manually written saved script. Later saves mark
 that acceptance stale. Formal production gates and video creation remain disabled.
+Open **Research, hooks and full scriptwriting** to supply an evidence/payoff brief,
+choose hook options, generate a draft, and inspect separate installed-skill
+refinement and editorial findings. Importing a draft still requires script review
+and explicit acceptance. See [the writing workflow](docs/researched-writing.md).
 Development and production start commands bind only
 to loopback. Do not expose this unauthenticated development shell publicly.
 No telemetry preference or machine-level environment setting is changed by setup.
@@ -41,8 +45,8 @@ npm start
 `check` runs ESLint, TypeScript, and Node tests. `build` verifies the production
 application separately. `GET /api/health` validates server configuration; it does
 not check the database, connect to a gateway, or claim production readiness.
-`db:init` initializes schema version 3 and runs SQLite's quick integrity check;
-rerunning it preserves rows. Schemas 1 and 2 expand additively, preserving projects
+`db:init` initializes schema version 4 and runs SQLite's quick integrity check;
+rerunning it preserves rows. Schemas 1 through 3 expand additively, preserving projects
 and immutable revision files.
 Opening the workspace also initializes/upgrades storage. Future versions fail closed.
 
@@ -72,10 +76,18 @@ Opening the workspace also initializes/upgrades storage. Future versions fail cl
   SQLite owns their hashes and decisions, accepted-script identity, and writing
   sessions/jobs. Acceptance creates a new revision transactionally. A proposal
   based on an older draft cannot be accepted.
-- One AI request runs per project, bounded to 90 seconds and 300,000 response
+- Source/payoff briefs, hooks and reviewed drafts live in immutable
+  `<videos-dir>/<project-id>/writing/<run-id>.json`. Original installed skill files
+  are loaded directly and their hashes recorded. A changed brief makes dependent
+  accepted scripts stale, including subsequent manual/scoped edits to those scripts.
+- Scoped script AI requests run one per project, bounded to 90 seconds and 300,000 response
   bytes. No model tool execution or automatic retry. Interrupted jobs expire
   after two minutes when the store next opens; inspect history before retrying.
   Text instructions typed but not submitted are not persisted.
+- Visual planning has a separate one-active-job boundary, 150-second generation
+  timeout and three-minute interrupted-job expiry. Immutable visual JSON and
+  exact storyboard receipts follow the same storage boundary; see
+  [visual planning](docs/visual-planning.md) for dependency and approval details.
 - Back up the database and project files together before future migrations.
   No reset, deletion, or automatic downgrade command is provided.
 
@@ -102,14 +114,24 @@ Task execution evidence lives in [task_plan.md](task_plan.md),
 
 ## Current limits
 
-This is a local script-review workspace, not a production studio release.
+This is a local writing/review workspace, not a production studio release.
 Scoped gateway revisions, comparison, accept/reject and manual script acceptance
 are implemented. The homeserver gateway was restored and the model setting corrected
 to `gpt-6-luna`. Real streaming passed through both the server smoke check and
 browser proposal/acceptance/reload. This verifies that model's scoped revision path,
-not editorial quality or every advertised model. There is no topic research/full-script pipeline, blinded
-editorial evaluation, visual concepts/storyboard, production approval engine,
-renderer/player, voice synthesis, upload, or analytics integration in the studio.
+not editorial quality or every advertised model. Evidence/payoff briefs, explicit
+hook selection, full drafts, installed-humanizer refinement and role-isolated
+editorial findings are implemented. Source notes are supplied, not automatically
+retrieved or verified. [Visual concept and storyboard planning](docs/visual-planning.md)
+is implemented with static SVG planning images, explicit concept choice, scoped
+shot revisions and exact storyboard acceptance. Blinded human editorial evaluation,
+production approval gates, renderer/player, voice synthesis, upload and analytics
+integration remain unfinished.
+Five real matched-input script pairs and author factual diagnostics are now
+available in the [writing evaluation packet](docs/writing-evaluation/README.md).
+The user's text preferences are applied to [revised proposals](docs/writing-evaluation/2026-10-22/proposed-drafts.md)
+and shared generation guidance. Exact revised-text acceptance, fully blinded
+evaluation and human read-aloud observations remain pending.
 Remotion and Motion Canvas exist only in separately locked benchmark packages;
 their experiment is not an implemented production-generation workflow.
 

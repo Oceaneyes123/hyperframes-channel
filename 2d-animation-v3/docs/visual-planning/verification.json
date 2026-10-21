@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-22",
+  "scope": "Concept and storyboard software; synthetic narration only",
+  "checks": { "testsPassed": 45, "lint": "pass", "typecheck": "pass", "productionBuild": "pass", "schema4Preservation": "pass" },
+  "browser": {
+    "fixtureProjectId": "3259025d-e041-4155-9833-2778da89f739",
+    "verified": ["unaccepted script blocked", "explicit concept selection", "three shot drawings", "narration to shot navigation", "selected shot revision", "exact storyboard acceptance", "receipt survives reload", "changed concept invalidates board and receipt"],
+    "responsiveWidths": [320, 768, 1024, 1440],
+    "horizontalOverflow": false,
+    "consoleWarningsOrErrors": 0,
+    "keyboard": "Tab from revision notes reaches concept generation",
+    "automatedAccessibilityAudit": "not run"
+  },
+  "liveGateway": {
+    "modelAlias": "gpt-6-luna",
+    "projectId": "7cc5993c-28d7-452a-9ad6-f21efa6ad00f",
+    "conceptsId": "b7677be5-5a75-41b1-b36c-32bad9c2be61",
+    "storyboardId": "85464d4b-c722-40d9-801c-bc196456ec55",
+    "conceptCount": 3,
+    "shotCount": 3,
+    "earlierFailedRequestsRetained": 3,
+    "storyboardAccepted": false,
+    "humanQualityOrProductionApproval": false,
+    "syntheticScriptAcceptance": "Test operator accepted synthetic narration to exercise the software boundary"
+  },
+  "preservation": { "v2FilesMatched": 731, "benchmarkFilesMatched": 22, "siblingAndSourcePlanTrackedDiff": "empty" },
+  "remaining": ["Human acceptance of real revised scripts", "Remotion Player and timeline", "Moving transition inspection", "Voice and synchronization", "Formal Gate 1 and Gate 2", "Rendering and verified export", "Publishing and analytics"]
+}
