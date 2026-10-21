@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "source_project": "",
+  "channel_id": "",
+  "format": "shorts",
+  "audience": "",
+  "promise": "",
+  "hypothesis": "",
+  "prior_lessons": [],
+  "titles": [
+    {"text": "", "angle": ""},
+    {"text": "", "angle": ""},
+    {"text": "", "angle": ""}
+  ],
+  "selected_title": 0,
+  "thumbnail_concepts": ["", ""],
+  "thumbnail": "packaging/thumbnail.png",
+  "thumbnail_method": "api",
+  "description": "packaging/description.txt",
+  "category_id": "27",
+  "language": "en",
+  "made_for_kids": null,
+  "contains_synthetic_media": null,
+  "rights_confirmed": false,
+  "tags": [],
+  "visibility": "private",
+  "publish_at": null,
+  "notify_subscribers": true
+}

@@ -13,6 +13,38 @@ The same Scriptwriter develops with storytelling-hooks, then refines the
 completed narration with humanizer and preserves before/audit/final evidence.
 OneTake alone implements animation and rendering. No previous video is required.
 
+## Planning, publishing and feedback
+
+The sibling [video workflow](../video-workflow/README.md) connects V2 planning
+to YouTube packaging, authorized release and analytics. During Research, Director
+records the audience, promised payoff and one measurable learning hypothesis in
+BRIEF.md. Read relevant prior analytics lessons when available; record their
+evidence and whether they apply to this lesson.
+
+After the guarded render and export verification, hand off the existing MP4 and
+source documents. The publishing adapter expects current Gate 1/Gate 2 receipts
+and `output/render-verification.json` matching the export. Keep packaging,
+release receipts and analytics in `../video-workflow/videos/<slug>/`, outside the
+production folder: adding them inside it can invalidate Gate 2 hashes.
+
+Reuse existing owners: Scriptwriter drafts three truthful title angles and the
+description; Art Director proposes two thumbnail concepts and makes the selected
+image; Reviewer checks the finished export, packaging promise and phone-size
+readability; Director selects the package and exact release settings.
+
+The publishing CLI prepares a local review and records separate, explicit user
+authorization before upload or release. Gate 1, Gate 2 and implementation/setup
+requests never authorize a release. Uploads start private; processing, thumbnail
+application and actual Studio restriction checks precede scheduling/publication.
+Live OAuth, upload, Shorts thumbnail support, scheduling and analytics still need
+authorized tests with the actual account; local validation does not prove them.
+
+Analytics reviews cover 1-, 7- and 28-day milestones, with delayed/missing data
+identified. Director can record an evidence-linked `analytics/LESSON.md` for the
+next brief. Treat it as a proposed experiment, not a causal finding or permission
+to change production rules or published assets. See the sibling README for
+commands, account setup, release checks and current limitations.
+
 ## Skills and validation
 
 ```powershell
