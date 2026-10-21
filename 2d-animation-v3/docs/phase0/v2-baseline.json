@@ -1,0 +1,3664 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-10-21",
+  "gitHead": "24cf2ad1e00422b99ad60566a9c1960220f779bb",
+  "scope": "Tracked v2 files plus explicitly listed baseline evidence; no production folder mutation",
+  "trackedV2Files": 730,
+  "files": [
+    {
+      "path": "2d-animation-v2/AGENTS.md",
+      "bytes": 5891,
+      "sha256": "3d7f5430f5e2549559a92a9bf63a0d4c602ce0dea6c6eebe35529fa8cfe3e303"
+    },
+    {
+      "path": "2d-animation-v2/PROMPT_TEMPLATE.md",
+      "bytes": 3845,
+      "sha256": "9fea13ca172b61eed1063a578b1b158fef518a05e4b0cb7c06878607ce10b5d4"
+    },
+    {
+      "path": "2d-animation-v2/README.md",
+      "bytes": 11474,
+      "sha256": "2078ee988d805f463ee0ae92ab6500c4bdd82e4d66c4f3039f69ec41f1070caa"
+    },
+    {
+      "path": "2d-animation-v2/SCRIPT_GUIDE.md",
+      "bytes": 27158,
+      "sha256": "5ba7941cffef34a5768f850778df201c69c53d7762418f6fb658fe7f9be614b1"
+    },
+    {
+      "path": "2d-animation-v2/SCRIPT_TESTS.md",
+      "bytes": 48409,
+      "sha256": "938d736e61b22b18d29fb415f5c6fea1e865e9ac55f838dd98000a27e0dde545"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-1.wav",
+      "bytes": 411692,
+      "sha256": "b72df8e27c9724a278893b5bd8bec55e19185dfe2186ceb5c4ef5909e809585c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-10.wav",
+      "bytes": 786476,
+      "sha256": "d39b9eb3a009d4eb12114db76df0402afba10c9c9dde5aa6ed6280b22043f36f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-2.wav",
+      "bytes": 811052,
+      "sha256": "fe3d94697740883ae34e64c338675523539160cdaf314400f3f3bfd823e9b0f3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-3.wav",
+      "bytes": 774188,
+      "sha256": "10ef9feebeb689cbacadb8f7fd7df5fd3ab74153de3e92ef395422b626317053"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-4.wav",
+      "bytes": 663596,
+      "sha256": "bb81cfdd1c275616d376280d7ecc08a7fcd89d02d6c02ac2decc8533a6d3d29b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-5.wav",
+      "bytes": 933932,
+      "sha256": "9a10d27d2c22fc9937ab289a91e1274477e67f0490748904d25764352b170abd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-6.wav",
+      "bytes": 811052,
+      "sha256": "fade79aae95ed9df44b1f24fc0ee12a9d082106aa636e161b9d5c4973a376d5e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-7.wav",
+      "bytes": 1056812,
+      "sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-8.wav",
+      "bytes": 970796,
+      "sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/.media/audio/voice/line-9.wav",
+      "bytes": 872492,
+      "sha256": "52de64fb954fa68132d9f2a0830b078e48928ac5e258dd8eb481c1756875bf8f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/ANIMATOR.md",
+      "bytes": 7587,
+      "sha256": "fbdae37c58c5d0ff32df1bd5130c4b4618deb5fa463e30af82c06f0d90fb0f03"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/BRIEF.md",
+      "bytes": 1252,
+      "sha256": "7ed72845ee3ae411ca286c663948dc186ef8df375bf914b8b7fde1c2d2fbc059"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/FACTS.md",
+      "bytes": 1545,
+      "sha256": "9455c3dfaaa6e4e3127207c36d36523ae970d0d2ac12a4d3060ae39566e91fa5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/ICON_PLAN.json",
+      "bytes": 2097,
+      "sha256": "4047f1ca99f92b86f89d4ebb5042fae3fe3c3e15fc5ad41d1c40a57855165bd6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/MOTION_OPTIONS.md",
+      "bytes": 18034,
+      "sha256": "12fd1fa6ecc6ec2f3614a437fe11dead5d801898c625bc12b8c4bd7efd8f7de8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/ONETAKE_LICENSE",
+      "bytes": 4653,
+      "sha256": "1f7a4f2449fb543769568a4f0e6e2c622bf28e841fde09a4b6819dcaa4567412"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/SCRIPT.md",
+      "bytes": 11334,
+      "sha256": "0daf295caaa35f8197c7dad4abc42e4fd4366dd5feaf7c15159da6c405f26d23"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/STORYBOARD.md",
+      "bytes": 19923,
+      "sha256": "0d0b1ec91db63d3c7f11c25134dd5da2d255686fdd45cfed36bd07f8f312ac93"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/VISUAL.md",
+      "bytes": 12932,
+      "sha256": "da672a17c77e3e6d3e9814530aa2f448a4668039cb24df080efe0459aedea3c1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/first-check-0.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/first-check-1.png",
+      "bytes": 61544,
+      "sha256": "692ac0165763a5f7cfcb8b98f3b07761317afb6f284f095d2d783a887f869e09"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/first-check-2.png",
+      "bytes": 55469,
+      "sha256": "631f86d3ebd33edd187ade406f9e01fa0f2f8719e4d6a27038def1f5db12db92"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/first-check-3.png",
+      "bytes": 75105,
+      "sha256": "07870b21901b06fb3fa836005fd3c084b82653807bad1dd7fe40c2695c0db8c2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/first-check-4.png",
+      "bytes": 66848,
+      "sha256": "baa48db37247cd6c94b22677cfc29e31a6ff597f83c417cd836eff350efa420d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/first-check-5.png",
+      "bytes": 63965,
+      "sha256": "8347af410b57bc52018e25395a344a393336b35158bafbd25808776d04816b0e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/first-check-6.png",
+      "bytes": 67057,
+      "sha256": "82ddaeaadeb9e93b2bcc724b9eaec49611fe4038e189226549ddb61281b0b867"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-01-action.png",
+      "bytes": 56812,
+      "sha256": "0579d49431b187335d16c67909893267eb4a96c3e7603c08d1678eda28176f5b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-01-before.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-01-contact.png",
+      "bytes": 42315,
+      "sha256": "39e2cd6302a7413e7034fa004fac3b213f51f124d66a99684a62ad4d38ac447b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-01-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-01-result.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-02-action.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-02-before.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-02-contact.png",
+      "bytes": 36314,
+      "sha256": "c9db74e59afd4167e2c449c2034d9c1f87d3c198635058136d4d66a344c51394"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-02-result.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-03-action.png",
+      "bytes": 58095,
+      "sha256": "7f80ce9a13831c52a24864fdab68a167a2f31a3e1745595d5c825d2f603bfcdb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-03-before.png",
+      "bytes": 51787,
+      "sha256": "fd2e0dbfb598b06c29035e8b1783817311abad1e986b12d79b7f93dea9dbd107"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-03-contact.png",
+      "bytes": 44715,
+      "sha256": "5bec54eebc696e823c76bffc65eecba853eb9355a9b9698271c04e17c489efcd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-03-phone.png",
+      "bytes": 15650,
+      "sha256": "fcf41bc739ca6b9c63bfbf368502ef4653efd7967241a95bd6671938cc860069"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-03-result.png",
+      "bytes": 57302,
+      "sha256": "30add2654ddbcb58ef3887b1fb273793538f9ca401d3b3d9ad40f0c50e05399e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-04-action.png",
+      "bytes": 49131,
+      "sha256": "1766b77331d811787a32d4be800807a748b6a6d9cb40d888117db8b1a2c9b75f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-04-before.png",
+      "bytes": 43801,
+      "sha256": "a47287f83d39e950f64d1e3484d214f8c0a63bd3807e97309618580ff3d210ba"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-04-contact.png",
+      "bytes": 39075,
+      "sha256": "30c69234842847e475a208e4f52c79bfef244e398ac18e247a58d7e9990a6972"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-04-result.png",
+      "bytes": 49024,
+      "sha256": "cb1d49ff49dd4d41c2334ba3d9119a5d3d153510ee8d845cb00f8b9ffa253e90"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-05-action.png",
+      "bytes": 53786,
+      "sha256": "1f68d0ed41b813a31213d96f2fccea13a508d454d51637123d92c570b413b5f2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-05-before.png",
+      "bytes": 48293,
+      "sha256": "2216224108997cd8329493ebd21dde7454a43fb99606c0efa5cd273c3c8390dd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-05-contact.png",
+      "bytes": 36149,
+      "sha256": "017119e0b535fc4f6c3bcce0c489d4d226f8459e5ce25a526d0b6b1711584e3d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-05-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-05-result.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-06-action.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-06-before.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-06-contact.png",
+      "bytes": 25312,
+      "sha256": "870ba043adf0fce48d761f521189c565c97a61c5197e61235d03cdfe25a66c9f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-06-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-06-result.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-07-action.png",
+      "bytes": 66012,
+      "sha256": "57bb9cae88b1a37fb2b5536373e2fb666169af0d349b7827407770f7c72f583b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-07-before.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-07-contact.png",
+      "bytes": 37611,
+      "sha256": "e106697c72e2a0b1ed5a2edf53a109931e6d14ff68f080e267d6c1bd9d1b1de8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-07-phone.png",
+      "bytes": 21088,
+      "sha256": "031d18bf98ca7f4ec4ea4c84cee1e3370cd90b31f00801e0ae954f1f1614e9d7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-07-result.png",
+      "bytes": 72734,
+      "sha256": "323b0313e51a794055222b7cfc6176f9490194bde2593c6456797e08493c008f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-08-action.png",
+      "bytes": 60035,
+      "sha256": "36e2e93dac2db5a054873f66a53259ef803e72dbde0d910df0e962743fc9a641"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-08-before.png",
+      "bytes": 75650,
+      "sha256": "a17b9ceb4dc6f095dfcc21505565839b4de22e23b95027e87a64866808de7b5a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-08-contact.png",
+      "bytes": 49255,
+      "sha256": "737e4ab29eeda301d3e6f1183174580d02a328cc835297bbfd098ef5a38d7d90"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-08-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-08-result.png",
+      "bytes": 61163,
+      "sha256": "b486d5ebdbbe6a2e1128790eac9fbe02e5298f05d177f0ad920c98294b4d3aee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-09-action.png",
+      "bytes": 51012,
+      "sha256": "d2ba43dd8bc6dd158e35fdfa45240a5ff1cdc71891e14d16bc3678fa1dabddf2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-09-before.png",
+      "bytes": 52435,
+      "sha256": "3773bfb56115f144e9a641b45d06410132b629362fc353351fdeafe9fbb3ccb9"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-09-contact.png",
+      "bytes": 35499,
+      "sha256": "f20d522e49df32c42c9dcda71ad7aca110a883f7b873dc2d0515fe409d6c6a0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-09-phone.png",
+      "bytes": 14147,
+      "sha256": "cd51ef0437a79fd8a6d960fc2db94c7526d59e30689a09dacbba9657e5d7906f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-09-result.png",
+      "bytes": 51012,
+      "sha256": "d2ba43dd8bc6dd158e35fdfa45240a5ff1cdc71891e14d16bc3678fa1dabddf2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-10-action.png",
+      "bytes": 54825,
+      "sha256": "43443e5866caedd2ca5877e6f359a83030629390ce43c55a8a003d4a2ff463d6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-10-before.png",
+      "bytes": 44803,
+      "sha256": "d9457d3decbd7f22658729dd499e29f4cfce181eee3f2bf063b3a87e92fc193b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-10-contact.png",
+      "bytes": 38964,
+      "sha256": "c20cae0fa860bed285ea1b9d8b5c9080540d2e7a0479133c5a8d7576443aa318"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-10-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-captures/line-10-result.png",
+      "bytes": 67134,
+      "sha256": "afe140a51ad5a224fa4602dcb139e55a036c1a5fd1c970e63f400edefa55bdb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-probe/curves.png",
+      "bytes": 53303,
+      "sha256": "9bd06a50adfe6a0371e983eb00ecb90dc255d2ff495d0ae9beda8a28f57d6b9a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/animator-probe/tracks.json",
+      "bytes": 1592532,
+      "sha256": "16d17ba4acc46780ca67bd58f75f4cf46ff16f484a1daf5ca1a0ea08409a086e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/comp.html",
+      "bytes": 15061,
+      "sha256": "1e8c1b20629df25aa8a4b53067f8a337059fdccc4d90a2e95870a4e79257565b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/tool-evidence/portrait-probe.txt",
+      "bytes": 1546,
+      "sha256": "303d5a8e7c2e0082b53d593a218867452df9dbd9f3c13a1e0fc56dfdea35cc7d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/tool-evidence/preview-check.json",
+      "bytes": 5318,
+      "sha256": "0cf26e21c715552ef4570cc914c99d2f8799ac101f76a4a868cebea40a7d70b7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-before-film-fixes/tool-evidence/production-execution.json",
+      "bytes": 3843,
+      "sha256": "27286992e1a35b238f048df1227c97fa11bba0215e9972d063515690e58da5e2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/first-check-0.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/first-check-1.png",
+      "bytes": 61544,
+      "sha256": "692ac0165763a5f7cfcb8b98f3b07761317afb6f284f095d2d783a887f869e09"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/first-check-2.png",
+      "bytes": 55469,
+      "sha256": "631f86d3ebd33edd187ade406f9e01fa0f2f8719e4d6a27038def1f5db12db92"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/first-check-3.png",
+      "bytes": 75105,
+      "sha256": "07870b21901b06fb3fa836005fd3c084b82653807bad1dd7fe40c2695c0db8c2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/first-check-4.png",
+      "bytes": 66848,
+      "sha256": "baa48db37247cd6c94b22677cfc29e31a6ff597f83c417cd836eff350efa420d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/first-check-5.png",
+      "bytes": 63965,
+      "sha256": "8347af410b57bc52018e25395a344a393336b35158bafbd25808776d04816b0e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/first-check-6.png",
+      "bytes": 67057,
+      "sha256": "82ddaeaadeb9e93b2bcc724b9eaec49611fe4038e189226549ddb61281b0b867"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-01-action.png",
+      "bytes": 56812,
+      "sha256": "0579d49431b187335d16c67909893267eb4a96c3e7603c08d1678eda28176f5b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-01-before.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-01-contact.png",
+      "bytes": 42315,
+      "sha256": "39e2cd6302a7413e7034fa004fac3b213f51f124d66a99684a62ad4d38ac447b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-01-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-01-result.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-02-action.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-02-before.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-02-contact.png",
+      "bytes": 36314,
+      "sha256": "c9db74e59afd4167e2c449c2034d9c1f87d3c198635058136d4d66a344c51394"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-02-result.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-03-action.png",
+      "bytes": 58095,
+      "sha256": "7f80ce9a13831c52a24864fdab68a167a2f31a3e1745595d5c825d2f603bfcdb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-03-before.png",
+      "bytes": 39514,
+      "sha256": "589915fd58e6063b0100035e512db1d887571db6895d81de9945df61c5c629bf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-03-contact.png",
+      "bytes": 33098,
+      "sha256": "0575bfdada8a500448555746a2d484b0d86f5213d887a955c93cc3a511921bbf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-03-phone.png",
+      "bytes": 12359,
+      "sha256": "e40f54b339308f57f120ad44dad56efdc5acc9644b5a4bd34bbb6a3b80defec8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-03-result.png",
+      "bytes": 45706,
+      "sha256": "6881677465bc443f79eca14670a68bcb37f58a3b2c1b278562fafa10aa9cb094"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-04-action.png",
+      "bytes": 49131,
+      "sha256": "1766b77331d811787a32d4be800807a748b6a6d9cb40d888117db8b1a2c9b75f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-04-before.png",
+      "bytes": 40520,
+      "sha256": "48ce9ea252bfe7f395738fb3eb28d3c6d3f8bfdcb10dcba40c5431c3957f3461"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-04-contact.png",
+      "bytes": 37785,
+      "sha256": "cac69ac5e466835cc9a742308209f398a810ec789be1a3b7146e7077dedbce17"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-04-result.png",
+      "bytes": 49024,
+      "sha256": "cb1d49ff49dd4d41c2334ba3d9119a5d3d153510ee8d845cb00f8b9ffa253e90"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-05-action.png",
+      "bytes": 53786,
+      "sha256": "1f68d0ed41b813a31213d96f2fccea13a508d454d51637123d92c570b413b5f2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-05-before.png",
+      "bytes": 47490,
+      "sha256": "ebaa1507520cdf6074a5b9ecc8e0c8aec9207b8f76fee1a149b2f17ef7ecf63f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-05-contact.png",
+      "bytes": 36454,
+      "sha256": "08bf55b9d89d47a30e54fdcf41820079df80c0949e6d32080a7b9c4b511b4d9c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-05-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-05-result.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-06-action.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-06-before.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-06-contact.png",
+      "bytes": 25312,
+      "sha256": "870ba043adf0fce48d761f521189c565c97a61c5197e61235d03cdfe25a66c9f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-06-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-06-result.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-07-action.png",
+      "bytes": 66012,
+      "sha256": "57bb9cae88b1a37fb2b5536373e2fb666169af0d349b7827407770f7c72f583b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-07-before.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-07-contact.png",
+      "bytes": 37611,
+      "sha256": "e106697c72e2a0b1ed5a2edf53a109931e6d14ff68f080e267d6c1bd9d1b1de8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-07-phone.png",
+      "bytes": 21088,
+      "sha256": "031d18bf98ca7f4ec4ea4c84cee1e3370cd90b31f00801e0ae954f1f1614e9d7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-07-result.png",
+      "bytes": 72734,
+      "sha256": "323b0313e51a794055222b7cfc6176f9490194bde2593c6456797e08493c008f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-08-action.png",
+      "bytes": 60035,
+      "sha256": "36e2e93dac2db5a054873f66a53259ef803e72dbde0d910df0e962743fc9a641"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-08-before.png",
+      "bytes": 55537,
+      "sha256": "bdb67dc9911929c63b37dae6b1b98154a536574e37f2a29abbf1655e44843c2c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-08-contact.png",
+      "bytes": 42494,
+      "sha256": "0b115f54b3727ab2f84724a2a287e7e1e15c1aad3f30d6dad7cbb1a5e43bea2d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-08-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-08-result.png",
+      "bytes": 61163,
+      "sha256": "b486d5ebdbbe6a2e1128790eac9fbe02e5298f05d177f0ad920c98294b4d3aee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-09-action.png",
+      "bytes": 51012,
+      "sha256": "d2ba43dd8bc6dd158e35fdfa45240a5ff1cdc71891e14d16bc3678fa1dabddf2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-09-before.png",
+      "bytes": 46753,
+      "sha256": "9a42c2ffef4bd0354118069f29589471fb8f926d1b0291068bdb4044eeb7fab3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-09-contact.png",
+      "bytes": 32882,
+      "sha256": "e52040931ff8319f07f24b48e1f7f5039a94071e1aad72a0dd786dbdaac3ea55"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-09-phone.png",
+      "bytes": 14147,
+      "sha256": "cd51ef0437a79fd8a6d960fc2db94c7526d59e30689a09dacbba9657e5d7906f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-09-result.png",
+      "bytes": 51012,
+      "sha256": "d2ba43dd8bc6dd158e35fdfa45240a5ff1cdc71891e14d16bc3678fa1dabddf2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-10-action.png",
+      "bytes": 54825,
+      "sha256": "43443e5866caedd2ca5877e6f359a83030629390ce43c55a8a003d4a2ff463d6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-10-before.png",
+      "bytes": 37936,
+      "sha256": "967e6c5c8fe5a6d3e2bbe4797b948e5c6943abfd728b02830f95d06950f1146c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-10-contact.png",
+      "bytes": 31159,
+      "sha256": "0d4ea07505c32bd5e5020a0d0abf1b784ba8c27469376c57f9c794260f7a36ca"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-10-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/line-10-result.png",
+      "bytes": 67134,
+      "sha256": "afe140a51ad5a224fa4602dcb139e55a036c1a5fd1c970e63f400edefa55bdb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/revision-15.162-phone.png",
+      "bytes": 10652,
+      "sha256": "d3f359fffcd5699287683d16a90ff186451c6184c3d263ec39d6a3a1b29b56fa"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/revision-24.389-phone.png",
+      "bytes": 10869,
+      "sha256": "2dc8867cd606d31b7220d7affab82ae2814d87aacfb56e8a4ae25dec335c5ae7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/revision-7.627-phone.png",
+      "bytes": 15500,
+      "sha256": "b818f36fffb444120fb41713db1d8c3e7c25436d9a3d25d0ef17dd2b7f9ff6da"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/revision-77.734-phone.png",
+      "bytes": 12797,
+      "sha256": "a600e019787db37f87361379b171ae0d1213f68cf626d3cb1c3fb92a4f5f4e30"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-captures/revision-88.076-phone.png",
+      "bytes": 10638,
+      "sha256": "12f186bbc73c810a6a6cbef39e4044d7b30068a7d34d886507a53712d4931df3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-evidence.json",
+      "bytes": 12732,
+      "sha256": "ee41136712de67780975a47ec3d6976efeb752a9603712f104689a675986c907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-probe/curves.png",
+      "bytes": 55106,
+      "sha256": "e1695d55cabad4501452222faf523978c2874c8647068ff6dbf2b6efad5e8537"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/animator-probe/tracks.json",
+      "bytes": 1551026,
+      "sha256": "6852771373759adb7f5c0d18d1eabd7c86f1a213c005cbd87eae997ff5de97fb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/art-evidence.json",
+      "bytes": 9698,
+      "sha256": "882fe753d419fd68ba81bd13bf615345c68f9ca0e1e56d60f45b090ac16c4ce7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/assets/LICENSE.txt",
+      "bytes": 164,
+      "sha256": "456baf52648e10be19c982b18f79a3b16bdba1eeb01d3c0bd386cdc3640cee46"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/assets/body-v7.svg",
+      "bytes": 482,
+      "sha256": "c31be6a66117a6574e2d4025fd3df2a30bd166945c92ca071f2a485848268fbb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/assets/body-v8.svg",
+      "bytes": 444,
+      "sha256": "7f55c442412050dfcfb10c792e348e60a6b16b0b168f5c719e71027cc29e4fea"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/lines.txt",
+      "bytes": 1266,
+      "sha256": "705982e798e4b8413dfc00b283248e64e396a7dd23b3b386d0ba835abf560dd5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t1.wav",
+      "bytes": 411692,
+      "sha256": "b72df8e27c9724a278893b5bd8bec55e19185dfe2186ceb5c4ef5909e809585c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t10.wav",
+      "bytes": 786476,
+      "sha256": "d39b9eb3a009d4eb12114db76df0402afba10c9c9dde5aa6ed6280b22043f36f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t2.wav",
+      "bytes": 811052,
+      "sha256": "fe3d94697740883ae34e64c338675523539160cdaf314400f3f3bfd823e9b0f3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t3.wav",
+      "bytes": 774188,
+      "sha256": "10ef9feebeb689cbacadb8f7fd7df5fd3ab74153de3e92ef395422b626317053"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t4.wav",
+      "bytes": 663596,
+      "sha256": "bb81cfdd1c275616d376280d7ecc08a7fcd89d02d6c02ac2decc8533a6d3d29b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t5.wav",
+      "bytes": 933932,
+      "sha256": "9a10d27d2c22fc9937ab289a91e1274477e67f0490748904d25764352b170abd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t6.wav",
+      "bytes": 811052,
+      "sha256": "fade79aae95ed9df44b1f24fc0ee12a9d082106aa636e161b9d5c4973a376d5e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t7.wav",
+      "bytes": 1056812,
+      "sha256": "1303bd41ab4ab91df68662549dd728f765278bc0d463e97aa4755af4bc2e7e18"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t8.wav",
+      "bytes": 970796,
+      "sha256": "9b1e7a8c79eee430cc1544286fbba2346b2cc9b8e590c4f03dd04ca6da79bc97"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/t9.wav",
+      "bytes": 872492,
+      "sha256": "52de64fb954fa68132d9f2a0830b078e48928ac5e258dd8eb481c1756875bf8f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/words-original-cp1252.txt",
+      "bytes": 4946,
+      "sha256": "d18eb2ea477e9c1449066798f181f26cba2314cc7b56f69e6610d58a76c7380d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/alignment/words.json",
+      "bytes": 12266,
+      "sha256": "c30bbe8b48f43276e6c8a363921b2c87575512b625e336ed89c514ab6b727030"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio/narration.wav",
+      "bytes": 8817104,
+      "sha256": "f8f3437d3763070bf30b4dfe167f913a5fe5ca283a3af64dafddbfb2073e9f5b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio_meta.json",
+      "bytes": 10032,
+      "sha256": "87d83eab663ee7b9d93fe5b674703791c67965d21eb573eb5cbc2b354cab812d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/audio_timeline.html",
+      "bytes": 1222,
+      "sha256": "333d8feb6ee973c542553b0a9ddeef4eb7c8ccd8697a04019f9552fa310be84d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/comp.html",
+      "bytes": 16480,
+      "sha256": "203375b8c979b297c6d2627c1886965a30cb40eb6f900983b701c5dc9365ceb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/motion-evidence.json",
+      "bytes": 20491,
+      "sha256": "a625953186cb1dc501f9074f98601a55f60cd7173220cc46086e88068ad31aa4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/motion.js",
+      "bytes": 33868,
+      "sha256": "64697ab4df78496ea95999135fe098a9b24bff10d687273fbec193b6cfd1d27e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/motion_beats.json",
+      "bytes": 12792,
+      "sha256": "33078ac408ece562f420e11eb7786b5c4044539fb9850030bbff4c8aa1d845fa"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/RENDER_REPORT.md",
+      "bytes": 4111,
+      "sha256": "1c6c05f9b429d7c38868b9240755361132fbc59fd1ea036e542f5bd5fa9e2298"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/decoded-narration.wav",
+      "bytes": 8818766,
+      "sha256": "d91b63e116ffb213885b2843d95f36f8bd180ad31c8467aba9e7f8e564131ce6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-contact.png",
+      "bytes": 163103,
+      "sha256": "1eedbb621a8bcef7b023ce896c08e3665192dd6f2efbe470b09248e80788810f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/approved-01.png",
+      "bytes": 54201,
+      "sha256": "097f202260894b2551f963c7306bc453604ba5e39ca5bf9a00faea522017808c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/approved-02.png",
+      "bytes": 39510,
+      "sha256": "4d20f39a20091b95c51ede1a21fa29543d1b7f73ec5a438258ba84834fc9b737"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/approved-03.png",
+      "bytes": 40565,
+      "sha256": "9b38c285558b39851a513cc36939c3bd7dbf053aca2fe049906c8844c3031b97"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/approved-04.png",
+      "bytes": 46955,
+      "sha256": "0dbffa99e5da770dfe16fa5d3a98a909ce255f0513faa7814f78dda0c6dce014"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/approved-05.png",
+      "bytes": 37945,
+      "sha256": "56e8c09292b9922d3eafd4537ea29b185e7f58ba64f68c6fba2c1f1cc89b4cc6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/approved-06.png",
+      "bytes": 67134,
+      "sha256": "afe140a51ad5a224fa4602dcb139e55a036c1a5fd1c970e63f400edefa55bdb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/encoded-01.png",
+      "bytes": 132463,
+      "sha256": "379ffb98c19a1177ab3d3e76de4e70ca8a4dfbd3a7cab494976a0c53d75f5484"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/encoded-02.png",
+      "bytes": 104323,
+      "sha256": "fde3b4bc9cfca502315163d25fecfaed24280e33b590cbd84d79402154036112"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/encoded-03.png",
+      "bytes": 102024,
+      "sha256": "526315493cda5304428e3b2aa6cb83ce42e593fc6e427b8ea30ed6fd44dc0a64"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/encoded-04.png",
+      "bytes": 95905,
+      "sha256": "7ea763fe78faf461a4924197d667380cec0ba6cc4438d9d42a19c71ba60b0166"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/encoded-05.png",
+      "bytes": 94200,
+      "sha256": "87fa0e00648bce67ce115ed2d4fe9a9bb792d5bc95d2230aeb648337287b3872"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/encoded-frames/encoded-06.png",
+      "bytes": 152267,
+      "sha256": "343326e889d0622ae5bf9441164a357d67f09185388572ca1a45f943cd4f82ad"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/ffprobe.json",
+      "bytes": 3723,
+      "sha256": "6905537d137a80cce0762342ffc6625ed11bb04cf0e95c38eee353777ac67981"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/full-decode.txt",
+      "bytes": 62,
+      "sha256": "e64301b24a8c3dc1be3434205298076a1420bf4d009dfc6eb03b7a66b9ef7a6c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review.json",
+      "bytes": 11840,
+      "sha256": "0e5c271115af6c9fb6105fc4a15e7b3419da83cc3b4c55735053d1f28f7c170b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review.py",
+      "bytes": 5692,
+      "sha256": "143ab1ba452aabc5aad10ecc42b9949f03be0b9ec86afbc000bdbaeb797f40b0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-01.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-02.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-03.png",
+      "bytes": 54201,
+      "sha256": "097f202260894b2551f963c7306bc453604ba5e39ca5bf9a00faea522017808c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-04.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-05.png",
+      "bytes": 39510,
+      "sha256": "4d20f39a20091b95c51ede1a21fa29543d1b7f73ec5a438258ba84834fc9b737"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-06.png",
+      "bytes": 62324,
+      "sha256": "836ea4de97538ce25ffd8e417671a6b81cc25cbcdd635f77b3053932409f20c7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-07.png",
+      "bytes": 40565,
+      "sha256": "9b38c285558b39851a513cc36939c3bd7dbf053aca2fe049906c8844c3031b97"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-08.png",
+      "bytes": 48836,
+      "sha256": "024540b7472d3d83b0f1b9e42e7d11504760a25ee18dffd911f1c26529f36b4d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-09.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-10.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-11.png",
+      "bytes": 72734,
+      "sha256": "323b0313e51a794055222b7cfc6176f9490194bde2593c6456797e08493c008f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-12.png",
+      "bytes": 61163,
+      "sha256": "b486d5ebdbbe6a2e1128790eac9fbe02e5298f05d177f0ad920c98294b4d3aee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-13.png",
+      "bytes": 46955,
+      "sha256": "0dbffa99e5da770dfe16fa5d3a98a909ce255f0513faa7814f78dda0c6dce014"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-14.png",
+      "bytes": 51012,
+      "sha256": "d2ba43dd8bc6dd158e35fdfa45240a5ff1cdc71891e14d16bc3678fa1dabddf2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-15.png",
+      "bytes": 37945,
+      "sha256": "56e8c09292b9922d3eafd4537ea29b185e7f58ba64f68c6fba2c1f1cc89b4cc6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-16.png",
+      "bytes": 67134,
+      "sha256": "afe140a51ad5a224fa4602dcb139e55a036c1a5fd1c970e63f400edefa55bdb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/approved-17.png",
+      "bytes": 67134,
+      "sha256": "afe140a51ad5a224fa4602dcb139e55a036c1a5fd1c970e63f400edefa55bdb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-01.png",
+      "bytes": 123179,
+      "sha256": "c5ff59b42db771712600b0f06c94bdc72e18a783678c9c618a2921e6873864ab"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-02.png",
+      "bytes": 132481,
+      "sha256": "e3db8ae3fc4700ca11470f87d51c4a418d9dd26548090c872a91fcd53a0dbed4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-03.png",
+      "bytes": 132463,
+      "sha256": "379ffb98c19a1177ab3d3e76de4e70ca8a4dfbd3a7cab494976a0c53d75f5484"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-04.png",
+      "bytes": 122960,
+      "sha256": "66dbf6f9555111ac8a437511315f821c2b090e23b78837de589fbe1a58f33fed"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-05.png",
+      "bytes": 104323,
+      "sha256": "fde3b4bc9cfca502315163d25fecfaed24280e33b590cbd84d79402154036112"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-06.png",
+      "bytes": 136943,
+      "sha256": "69cb93c5c3de5892e4d3aa242468a3c62178b9e9f982b186ab2954857daab065"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-07.png",
+      "bytes": 102024,
+      "sha256": "526315493cda5304428e3b2aa6cb83ce42e593fc6e427b8ea30ed6fd44dc0a64"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-08.png",
+      "bytes": 122704,
+      "sha256": "ceb2d30a1c6b3961bcd0dd59423e858659ed3d561ef3cde4b9fde74b5c245f70"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-09.png",
+      "bytes": 125690,
+      "sha256": "9ea3e5828e85a3ed87fcfa6cec0cf5a6e34e0d798cdfd83f635cf785fcbdc039"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-10.png",
+      "bytes": 125692,
+      "sha256": "69ca91881d503f91ab6771755df2771c75a1f2cc322f33531199d6dbc59d010f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-11.png",
+      "bytes": 168809,
+      "sha256": "0f4d4f9baf0a5bf9d733fdb8d4d34e051a686418a3cde6bce87b36a3be70186a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-12.png",
+      "bytes": 131470,
+      "sha256": "9caf8927c02514809f58aa145200d18570c22016464d591b5339b72ee4be3f9b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-13.png",
+      "bytes": 95905,
+      "sha256": "7ea763fe78faf461a4924197d667380cec0ba6cc4438d9d42a19c71ba60b0166"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-14.png",
+      "bytes": 109139,
+      "sha256": "eecf42413abfe92c1fc86fe4cb9b53d0c592450f9d06ca25cae956b92a26865b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-15.png",
+      "bytes": 94200,
+      "sha256": "87fa0e00648bce67ce115ed2d4fe9a9bb792d5bc95d2230aeb648337287b3872"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-16.png",
+      "bytes": 152165,
+      "sha256": "708b050c0dcd828b919f2e11cb21310274c86e4d91f008b673303707862db2ab"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/encoded-17.png",
+      "bytes": 152267,
+      "sha256": "343326e889d0622ae5bf9441164a357d67f09185388572ca1a45f943cd4f82ad"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-01.png",
+      "bytes": 59570,
+      "sha256": "8ffcdbe7ba00335b6e6e4af2bfc45ba3d760cc122a49dc8a41c7ce1b65ed9ae9"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-02.png",
+      "bytes": 61186,
+      "sha256": "4bd3bf3a78dc2a554bee0d5aabb583f064f7868b49277f986611b598cdee83ca"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-03.png",
+      "bytes": 61172,
+      "sha256": "ec3a65abcda766662a5f25fbdc52bb843ecd3ad7f96c362e31ca87f6bdc9e173"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-04.png",
+      "bytes": 59267,
+      "sha256": "90e14d838efa5e55f210f32d038e2f651bd996081690c41c9dd9b07edf6813a3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-05.png",
+      "bytes": 41102,
+      "sha256": "9cb575d37e5e109ed7434a7c4323b3f33646292481401695663ab487950cb33d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-06.png",
+      "bytes": 63867,
+      "sha256": "9ec22cef8755671017cfcb44ac8fa015257fbc9d51473168847f420b77231d34"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-07.png",
+      "bytes": 41930,
+      "sha256": "ec96afe2ceb76f743b28f2dab5ae259b1c4070665173c7375876816b3d3d7ab2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-08.png",
+      "bytes": 51241,
+      "sha256": "015b5c0018c6da028452567b0b2367855fbc7c086af78c21e6c034861caaa4a3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-09.png",
+      "bytes": 58736,
+      "sha256": "d935ef5cf89305b3f7edadf9b64db03fd765d4c80e0bcd1e4c348eeee4d4a763"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-10.png",
+      "bytes": 58706,
+      "sha256": "54d054e99716aad0b3579803d2f68629b5852297b1b614941de38aab26cb24c0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-11.png",
+      "bytes": 77623,
+      "sha256": "460c80bec9e1766b466d2e19ed5a098918530c433dd168cebc260d41c0ec70fb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-12.png",
+      "bytes": 63238,
+      "sha256": "35ffaa8fba2ec6f277ece3f7a934b2de89f08e8423a971cb293876bc31fee9c5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-13.png",
+      "bytes": 46715,
+      "sha256": "3e1ea58daf2b11180fd7599408dc2151e3e571f976d86a9235580bdc2c2317cb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-14.png",
+      "bytes": 52661,
+      "sha256": "cdb952e39b6183ab1e4ea33de3d141b1bcfe5af00f5b7def2eb89f2472451095"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-15.png",
+      "bytes": 40826,
+      "sha256": "e8efcceaa79d23de256969e652ce3ca3cf87474ce19b54770373638525eb2fb4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-16.png",
+      "bytes": 70986,
+      "sha256": "43c2df2a4733d3b8e96a5ef89369915df89ffecee144e4af0f64357d5beae7b3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/independent-encoded-review/pair-17.png",
+      "bytes": 70570,
+      "sha256": "f6075bca45a9e1eff5dc61ebd51e62ace20857b4242749e85f11a8298325e82d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/original-oracle.log",
+      "bytes": 2368,
+      "sha256": "721df13b68f6e814c087488f7f6003ea6cd96a0963efe916c7d95e7ee1104145"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/render-verification.json",
+      "bytes": 5654,
+      "sha256": "85f5821e338e6fd452671e315e5bfa0f9620f7436f7c548c845101a701f864ab"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/render.log",
+      "bytes": 580,
+      "sha256": "c0f9f280cac3a39c360f934423b7ee9c5f9b3dcf2556fc346220d21aad798e1b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/tmp/tmpr1lgtj42/a.wav",
+      "bytes": 19197222,
+      "sha256": "22991428073e784bcb66b9d8e8d1944848e785e72a5cf88fd0ab1806229cd53d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/verification.log",
+      "bytes": 5654,
+      "sha256": "85f5821e338e6fd452671e315e5bfa0f9620f7436f7c548c845101a701f864ab"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/verify_render.py",
+      "bytes": 6798,
+      "sha256": "b8858d92ec35404a60093c72f185ff81b50b2827b5f896aeeee5df93156a2bb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/video.mp4",
+      "bytes": 4680067,
+      "sha256": "658a5459ae7bad0872f4e2ca3927060ae05a0618a74358507675b9604fb05e01"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/output/video.render.json",
+      "bytes": 444,
+      "sha256": "cc7eebb1ae6abd464ef99f2deb3e0fae417c5a8319d2e94765885f9a027d0cfd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/prepare_preview.py",
+      "bytes": 6449,
+      "sha256": "956fe56bc5082eafb7a0ddeb95c00fa8f3378f6346a696e4f81f41134515035e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/production.json",
+      "bytes": 4112,
+      "sha256": "c95025d4d462472508985c0fa375d292d5ec198108d0b32c9c5f7929899d304e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L01-action-native.png",
+      "bytes": 54125,
+      "sha256": "20f2f4ef1a7d4d2aea8047ddc5f67ca70dbddf162ebef3d3fcdc0d5a4e7f567d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L01-action-phone.png",
+      "bytes": 15121,
+      "sha256": "a6dd4724571ab0d119043de340f1ced07e440f5224b71719f60c288e70d0df8e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L01-before-native.png",
+      "bytes": 49212,
+      "sha256": "a0dc4344a8354c3153313228fdc104e84273036620895e175f8fa994ce776cce"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L01-before-phone.png",
+      "bytes": 13943,
+      "sha256": "9ab602b27d5c651dcab4df3d5bf2ab245d77b2657d04ce0d7e012cf82519684e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L01-result-native.png",
+      "bytes": 58790,
+      "sha256": "8a51a491b7c9243cfe0ba2d9072f157a5137bb73727ed7bf1e2b01866a64d131"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L01-result-phone.png",
+      "bytes": 16258,
+      "sha256": "63e168a6ad8ad9628adc6f2f7e0af499da3a13d9af19f58b72822cd780f4246d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L02-action-native.png",
+      "bytes": 58793,
+      "sha256": "7f27ca0309ef447e49fd9eb15e61df362d29da1a8367d2f103de046521f19fc6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L02-action-phone.png",
+      "bytes": 16800,
+      "sha256": "d71ca660084d8c79235c7bd13f1a11586b1d868c23fb6966d25db4917dc856f1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L02-before-native.png",
+      "bytes": 51839,
+      "sha256": "1dd277b2d58bb5643780a9f80b5a2e6251df7d9d488f4c197cb4280c04dcf085"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L02-before-phone.png",
+      "bytes": 14464,
+      "sha256": "eb9e4057ed94b43f3d40413e597f9ba1ebba00cb31dd94389001303b13c58bc3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L02-result-native.png",
+      "bytes": 58155,
+      "sha256": "29c7c54db53fddd936400691703d8f45ebcf51d091b76c36d59065a633b700ad"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L02-result-phone.png",
+      "bytes": 15976,
+      "sha256": "28f494a91dce7a7de26e7f8aabe58212421cd7d585d261b140d341304a89e8a1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L03-action-native.png",
+      "bytes": 67023,
+      "sha256": "deaa130922f4a4dfb1c8b2d9177fa02df3327778af1d551b36866d29eb27440a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L03-action-phone.png",
+      "bytes": 19877,
+      "sha256": "69259fb7986a0323f5a246422b014087f8c9006600c095e7957ee0456ced080b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L03-before-native.png",
+      "bytes": 50166,
+      "sha256": "84e55343d7cf67e3c74feec65d78ee98f0c38b041a494f61e35b682ba0301eef"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L03-before-phone.png",
+      "bytes": 14930,
+      "sha256": "2826a1b0173b3fcd1e5467194f5e1ad3c99d610e9b7961b90aa25426582ee331"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L03-result-native.png",
+      "bytes": 68378,
+      "sha256": "4d9b593ed1e9bd23bc7b594544c11cb364b1b3b0746342dec4d09fca1cef1a90"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L03-result-phone.png",
+      "bytes": 20390,
+      "sha256": "98ac509f5f40e985e97d7fd884ea9ace49954413fea52e9c07d3b58fcb974cd8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L04-action-native.png",
+      "bytes": 47070,
+      "sha256": "30915655cf43d337619d405742e7e1174558141249e911c1790727522de2c1d1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L04-action-phone.png",
+      "bytes": 13076,
+      "sha256": "700c0b6c169a63294b72b598232f71346ab90eb354e83c661f49cb4d55942135"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L04-before-native.png",
+      "bytes": 48871,
+      "sha256": "1c675e5391e328b732f0c5b64897423eee516d92527c5d035382ffe630debba3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L04-before-phone.png",
+      "bytes": 13912,
+      "sha256": "8aec2250f894ebe565f76730ab4f62c4f9b280e58bc22c1a9fa70847d815df36"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L04-result-native.png",
+      "bytes": 60332,
+      "sha256": "95369aba930cc72d9f6f3ca03eb2549806eed35e5ccdc71a01b37f4bf1da739b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L04-result-phone.png",
+      "bytes": 16108,
+      "sha256": "4bb1b419a2d87c3ae6eab1eebcd6acae3180778770569875a7f2998f1ff1222d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L05-action-native.png",
+      "bytes": 56857,
+      "sha256": "0ba384a3af020180e4061975474d80906c45f04682ea9f68cfcf3a68fcf9cd19"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L05-action-phone.png",
+      "bytes": 16216,
+      "sha256": "9739f563147b58698edac05de02d2e4b5ced85aea16700e7365b91b4f2f6c475"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L05-before-native.png",
+      "bytes": 52608,
+      "sha256": "3538c96886490cd016214b4507c320a71232a41fd83d1cc879ad88cfba4c767c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L05-before-phone.png",
+      "bytes": 15015,
+      "sha256": "5bcdb0a6b7a22d5621d69146ff4f76e7433d4d4b4b7464d449a526418628b303"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L05-result-native.png",
+      "bytes": 53584,
+      "sha256": "88ec42fff0154e6810e45a6a906d15e0ebbfc55912222c3d202e6f195bb4d00c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L05-result-phone.png",
+      "bytes": 14864,
+      "sha256": "059ce4e3ff0b20e8cdcbfa52dd389c837811336cc3fca75cc33c51fbfa09aa7e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L06-action-native.png",
+      "bytes": 55833,
+      "sha256": "8e873ccfb96b2ace07258257c8690c792ee2c164695715b130d09d7f045b5b74"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L06-action-phone.png",
+      "bytes": 15642,
+      "sha256": "055bcf0231e739e28f1e244ab534c846961a82b3ed7b7073c3ce237a9cd1aa22"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L06-before-native.png",
+      "bytes": 53124,
+      "sha256": "43f5befb02a921d3da7a26af5c8183f88fd065af30811fae257aabed5e5e23a3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L06-before-phone.png",
+      "bytes": 15067,
+      "sha256": "2136db5f5fda5fae2938c53e891772b73a9cd98d3a089130df366ac3c1887cdd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L06-result-native.png",
+      "bytes": 63181,
+      "sha256": "d3004ce79625e5088d99fcf3b8b4a19c0208dd1c9b8a90f91c32f1ec7a137ec1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L06-result-phone.png",
+      "bytes": 17850,
+      "sha256": "4fc7f15fde77f3848020bbc6dd4d3e573cb4a4612bb37b2b91cccd8067fbad25"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L07-action-native.png",
+      "bytes": 57730,
+      "sha256": "530227c8852cc552d4e5ee63ad8ba7cf0264ab803afd8e0c4a8001d741be3a5f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L07-action-phone.png",
+      "bytes": 16390,
+      "sha256": "37b0cf3b440948570378c7a2cf2d7173e57958d968cd6515f926b303d8c733be"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L07-before-native.png",
+      "bytes": 53938,
+      "sha256": "5440f2aa09aa6a47d69ec9ff56ec73e0455e58ef3229397bdb8712facce3f505"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L07-before-phone.png",
+      "bytes": 15632,
+      "sha256": "e71fbc54dfd2f368cdc13e4972c61c75a68c49a249c41322bde0baeb2017109d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L07-result-native.png",
+      "bytes": 70436,
+      "sha256": "67f82af46b4972a69338f95c9b245754a97dc59f73f991353719a815d321a009"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L07-result-phone.png",
+      "bytes": 20434,
+      "sha256": "d519db21fca2f6136211c458d67d9849ef1c244f5f4ceec8a4b3cf03481f668d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L08-action-native.png",
+      "bytes": 69457,
+      "sha256": "36dff7078da23d489bd2a26a9a1ab77eb339ce298700265526e510cb68496653"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L08-action-phone.png",
+      "bytes": 20030,
+      "sha256": "f4a47248f1c0880dc9a47f4a78c428e79824dd5f4eb7bfd19f263a2807cf3c98"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L08-before-native.png",
+      "bytes": 62490,
+      "sha256": "0db192f8a30cdc7980dd0e0c3ef9c459fd3e2db6b0eac86c9435a876c76efd4a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L08-before-phone.png",
+      "bytes": 17463,
+      "sha256": "1fd9f61b0b5eb8fd43d1fc38aca0b95ca6492c199b1176284bce9e3c27173832"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L08-result-native.png",
+      "bytes": 64584,
+      "sha256": "02ee74e864ca1f5d59c2aa218587fd36a0185b360e7940b6cfeaff5def0ccebd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L08-result-phone.png",
+      "bytes": 18112,
+      "sha256": "bc590a1bdb88cfda7643a37aa46538660e251bd1a098b0e5a2306cbcbc6d9fa5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L09-action-native.png",
+      "bytes": 63546,
+      "sha256": "3efdee891549a000a683ca7ed1938ae9c4bef4e968cc38833caf86a82c523d8b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L09-action-phone.png",
+      "bytes": 17420,
+      "sha256": "fae1219eaad7b521aa404c50c190524cceabfd423cbbd4667e63165bcffe887c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L09-before-native.png",
+      "bytes": 54737,
+      "sha256": "6046925c08f38ad8a6cf45e36d8ed3b376e2eaf74d910f889223b733396fd0d6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L09-before-phone.png",
+      "bytes": 14750,
+      "sha256": "44951253027a5997e64e70a61aacb97681e27bc683cfb37f6d7a15f50cce1d36"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L09-result-native.png",
+      "bytes": 63346,
+      "sha256": "37f073459b0c229f111542941cbf15179e4fc92e6514783580b0d8f99d083407"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L09-result-phone.png",
+      "bytes": 17456,
+      "sha256": "7fff1221cbde51d7d59562996a83ed4ba201a29f646d2fc0fe1eb12b971c8bff"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L10-action-native.png",
+      "bytes": 72949,
+      "sha256": "888fee6eb50607cc71ef760bbd3572de9ab4d646f4fa15be289445623f315904"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L10-action-phone.png",
+      "bytes": 21670,
+      "sha256": "92d87c6df805fe3b1a5c7dee2c4fcff7c478b855a09075b53a80beab82131245"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L10-before-native.png",
+      "bytes": 61624,
+      "sha256": "8474b5671638a9b11a3f610768c65f68effd1423aa9b9da31f7bf7ed28ffbaa9"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L10-before-phone.png",
+      "bytes": 17404,
+      "sha256": "93f8d3cd728f2033911d0b93cd1acd5c14ab9c91a5b54499038fcea055fc7057"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L10-result-native.png",
+      "bytes": 65104,
+      "sha256": "b4cdbe3ecc7a8d9b0aa462ceb0197731dd09e3c725046013097174790509064a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/L10-result-phone.png",
+      "bytes": 17285,
+      "sha256": "35495349bcfd32c0619a083ac6eedb3db5f9d044a330433dc8318e6f7b9232e5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/a-native.png",
+      "bytes": 92695,
+      "sha256": "631494eecfa5d015ee838d1585f96601ef34ed67e40bd9a7d7e75c5a63660470"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/a-phone.png",
+      "bytes": 22975,
+      "sha256": "edf3009c4d8b883b852ecee566aecb3437037385132fa3aafca6b19298f4aa76"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/b-native.png",
+      "bytes": 102890,
+      "sha256": "a1bddeacd6345cdb665e6ef44ea9e0e9bd8d0c41a72de91d57ef64f5fbb6d798"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/b-phone.png",
+      "bytes": 25644,
+      "sha256": "7385415f79ea658c2337e9924781fc22372ce7915d41468d2278614894c63a01"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/board-check.json",
+      "bytes": 95893,
+      "sha256": "4a522ada4240089bf134d3dc5eb88697b2b3a200937337cd05cc06a399127acc"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/board-phone.png",
+      "bytes": 122452,
+      "sha256": "9d7326c57dbe68bf1190e9df8db088acfa7c01bca876313b03b49cf2c6a2c662"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/board_check.py",
+      "bytes": 4191,
+      "sha256": "65381c389d3043e7cff1bdaa0ab4862f771c6a36191f61378e48544b68bfc3c4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/c-native.png",
+      "bytes": 73256,
+      "sha256": "7bec8bc240e28b85c6bc686c168a5b9d7bed7bcda6ae5017a8408288ea4ea24e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/c-phone.png",
+      "bytes": 23505,
+      "sha256": "0567785707b27bc6a528cc9beab7e1741230bba0660a4e3bf00c18ad51c52ebf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-audit-2026-10-16.html",
+      "bytes": 1442252,
+      "sha256": "aae7b5a16e0ff31f192460642a3f8bf064670a463dcdaf5b916e97c7785569a3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-audit.py",
+      "bytes": 11452,
+      "sha256": "f05fe5cdc8d218edc6b7633ecc28f4a63d806dc1c8c1ba2205b91f9677c2b2df"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-capture-check.json",
+      "bytes": 67269,
+      "sha256": "91fff6aa65bcd76aa871abda0a75a42a16cd7c6bdbb18fb1a604afd1b3a409cf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-capture-check.json",
+      "bytes": 71253,
+      "sha256": "17152f4d0f4b4b3d1ba77d493c3f03d3023140ba9136eabdf7edae26dfdd2cb1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-l2-after-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-l2-before-phone.png",
+      "bytes": 15470,
+      "sha256": "5463b66ce2c866358158089856f33bae725f5a7ddd9f19b43d8ab0eefadf0eec"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-l2-peak-phone.png",
+      "bytes": 15490,
+      "sha256": "ced99cae58ad599c7471cae0ba8bddcce0b4f36a587b8b3a72f4c33c471daf38"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-01-action-native.png",
+      "bytes": 54459,
+      "sha256": "e37d06e5f333c93d253e56e6d1213adbed56d926ba054c537b2d4afae9d710df"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-01-action-phone.png",
+      "bytes": 15490,
+      "sha256": "ced99cae58ad599c7471cae0ba8bddcce0b4f36a587b8b3a72f4c33c471daf38"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-01-before-native.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-01-before-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-01-phone-contact.png",
+      "bytes": 33996,
+      "sha256": "74a20bc0420353e65f0ccbf64d067a8b7a5c92a6c40f950b19a041669233e1fb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-01-result-native.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-01-result-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-02-action-native.png",
+      "bytes": 54459,
+      "sha256": "e37d06e5f333c93d253e56e6d1213adbed56d926ba054c537b2d4afae9d710df"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-02-action-phone.png",
+      "bytes": 15490,
+      "sha256": "ced99cae58ad599c7471cae0ba8bddcce0b4f36a587b8b3a72f4c33c471daf38"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-02-before-native.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-02-before-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-02-phone-contact.png",
+      "bytes": 34210,
+      "sha256": "be2a612a42e71b34b7ea1335bc5f1c212dee643ebe238adfa0c92335d808c70b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-02-result-native.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-02-result-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-03-action-native.png",
+      "bytes": 58349,
+      "sha256": "4986067d6b4c40540bbccac7473477d2491fab2b4d08ba580e7c21fa7dab5a4a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-03-action-phone.png",
+      "bytes": 15965,
+      "sha256": "a1ad2f06212b9021fee048ad68e07eaf81466c86bc32a1553e9accf4cf80a29e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-03-before-native.png",
+      "bytes": 51787,
+      "sha256": "fd2e0dbfb598b06c29035e8b1783817311abad1e986b12d79b7f93dea9dbd107"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-03-before-phone.png",
+      "bytes": 14376,
+      "sha256": "e42fe2aeab8f9052da300c5a0ba13e9782fdd16e43d05a853405067f1d2fd837"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-03-phone-contact.png",
+      "bytes": 34947,
+      "sha256": "b2bfe87104100c643576171cc18c3b66b3d93601503f43ead94004d2c1d54adb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-03-result-native.png",
+      "bytes": 62324,
+      "sha256": "836ea4de97538ce25ffd8e417671a6b81cc25cbcdd635f77b3053932409f20c7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-03-result-phone.png",
+      "bytes": 17192,
+      "sha256": "73b8330555ac52efd10ba2d4c38c1f502c92f6b2992abf8ad710e5785be30541"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-04-action-native.png",
+      "bytes": 48089,
+      "sha256": "78c451ac540dc274ad575f7ef43376db56560aa7913ca57e472adad72fd5dbaf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-04-action-phone.png",
+      "bytes": 13429,
+      "sha256": "b2b2fcedb2481b4097f543f1f8c8384a2c1c0259afe204ba0b7f4c90aa61bd73"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-04-before-native.png",
+      "bytes": 43801,
+      "sha256": "a47287f83d39e950f64d1e3484d214f8c0a63bd3807e97309618580ff3d210ba"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-04-before-phone.png",
+      "bytes": 12355,
+      "sha256": "2e8e9d48a222879fd48d5ddbb235129002716b7644a5118363bc7063c4914c6e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-04-phone-contact.png",
+      "bytes": 36559,
+      "sha256": "7a7e9eed3f341396e43e9ed1423da6639d4f49846f0b1e6908af1a40dcf19afa"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-04-result-native.png",
+      "bytes": 48584,
+      "sha256": "07e59450bfd83e2d1e39d88b53303fafbe6e84325afd98fcd7d59bccbd037de3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-04-result-phone.png",
+      "bytes": 13261,
+      "sha256": "82135ada01b923dae2195008fa216e2697f52707ff5ed4c1805f7395472270a5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-05-action-native.png",
+      "bytes": 56350,
+      "sha256": "2a498dfb675e5e3a8f50e9a052af9b4d3b121ce21b313fb8668a0b8252f90e81"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-05-action-phone.png",
+      "bytes": 15601,
+      "sha256": "ee65b8c327dd2336470f68bdf400e80cc4e149b1fb5911f2de00fcc3a8fbeaf4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-05-before-native.png",
+      "bytes": 48293,
+      "sha256": "2216224108997cd8329493ebd21dde7454a43fb99606c0efa5cd273c3c8390dd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-05-before-phone.png",
+      "bytes": 13471,
+      "sha256": "9bdaff258b2db960554760305faf75ac7ef3babbacd4f7c91ed12c2f547030b3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-05-phone-contact.png",
+      "bytes": 33919,
+      "sha256": "7f82285f7b41e38e4a5606eb68a240378b4c61d77bc87927e053cdd05bb303db"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-05-result-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-05-result-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-06-action-native.png",
+      "bytes": 57400,
+      "sha256": "7d214c25aa8f05bf3469535b2a358275909182274afaae3082cdf21da4270e96"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-06-action-phone.png",
+      "bytes": 16429,
+      "sha256": "32dc86cb560149a2715ece8a9a0cd5fac1e10185f73b0a24a89c4d88af73c3ab"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-06-before-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-06-before-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-06-phone-contact.png",
+      "bytes": 25020,
+      "sha256": "ead192ef96d909fcad2c3e5e0a9cba73fd559abb5828acfe1894c872734c13ee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-06-result-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-06-result-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-07-action-native.png",
+      "bytes": 66070,
+      "sha256": "85a2f9cd8c6a8d9d4657c3528a4bbd516280c127ab3f1af2d6ec3bb0791e2a5e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-07-action-phone.png",
+      "bytes": 18991,
+      "sha256": "bacb7f3327bafb37580d752cca265f77ccacbb14264058d1bc3a2f1b667d4528"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-07-before-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-07-before-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-07-phone-contact.png",
+      "bytes": 36544,
+      "sha256": "e79385b93db30a120641cf4ca4cb2c9296670d2f668bb652a80ce217fd9cfd7e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-07-result-native.png",
+      "bytes": 72734,
+      "sha256": "323b0313e51a794055222b7cfc6176f9490194bde2593c6456797e08493c008f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-07-result-phone.png",
+      "bytes": 21088,
+      "sha256": "031d18bf98ca7f4ec4ea4c84cee1e3370cd90b31f00801e0ae954f1f1614e9d7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-08-action-native.png",
+      "bytes": 64265,
+      "sha256": "ace2515714242cd538f3eabc24878492218c6e97d6ea0ccbcb1548aba8485c74"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-08-action-phone.png",
+      "bytes": 17547,
+      "sha256": "df91d6447185d34a38baf19aba0900762a998821b32a79a1a6d9e64c35be8811"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-08-before-native.png",
+      "bytes": 75650,
+      "sha256": "a17b9ceb4dc6f095dfcc21505565839b4de22e23b95027e87a64866808de7b5a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-08-before-phone.png",
+      "bytes": 21729,
+      "sha256": "2267880b83f83c6c4e3c06bc557c29b89d4983690b097be19c419d8a59de3b41"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-08-phone-contact.png",
+      "bytes": 45641,
+      "sha256": "4a7716f53266f0368928fe1667afcd6fd4ebe50abfe14ef18f98032c255372e8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-08-result-native.png",
+      "bytes": 61163,
+      "sha256": "b486d5ebdbbe6a2e1128790eac9fbe02e5298f05d177f0ad920c98294b4d3aee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-08-result-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-09-action-native.png",
+      "bytes": 46347,
+      "sha256": "ae9ed2318ee59ed1f6d129aa60333921151c2034b455db1878d5f0064bca6f57"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-09-action-phone.png",
+      "bytes": 13100,
+      "sha256": "d03c54b500b53cfa41988ecdeef51a2767fbf6d869399cedbd125688f1afbfe4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-09-before-native.png",
+      "bytes": 52435,
+      "sha256": "3773bfb56115f144e9a641b45d06410132b629362fc353351fdeafe9fbb3ccb9"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-09-before-phone.png",
+      "bytes": 14879,
+      "sha256": "9a00ff54d4db7a8a6b9ccc38cefdafa25d792e1d97ab47bbb54d026fce50097d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-09-phone-contact.png",
+      "bytes": 31997,
+      "sha256": "367a16fda097ed0a88afdc62a3379d718f0d0c5f545e1d4cbc7637874ccc610f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-09-result-native.png",
+      "bytes": 51012,
+      "sha256": "d2ba43dd8bc6dd158e35fdfa45240a5ff1cdc71891e14d16bc3678fa1dabddf2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-09-result-phone.png",
+      "bytes": 14147,
+      "sha256": "cd51ef0437a79fd8a6d960fc2db94c7526d59e30689a09dacbba9657e5d7906f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-10-action-native.png",
+      "bytes": 62851,
+      "sha256": "92cc430cb5bc8276763f94d85ba3eb9e44da9ac0038fd5a55990843d1b3b2da7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-10-action-phone.png",
+      "bytes": 18034,
+      "sha256": "97d6dee7ec6fbe44d7154495c38f661f70537860bfdff70f962e2a00a19ea48f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-10-before-native.png",
+      "bytes": 44803,
+      "sha256": "d9457d3decbd7f22658729dd499e29f4cfce181eee3f2bf063b3a87e92fc193b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-10-before-phone.png",
+      "bytes": 12868,
+      "sha256": "3b2455c522de434a65bc538e92741aa66104c2ceab07c4ef71d9c6e38379737f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-10-phone-contact.png",
+      "bytes": 37027,
+      "sha256": "872d0be397cfc21a7ab92364707ce9a9b713a326af6980cdc309dc2edbb2ef45"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-10-result-native.png",
+      "bytes": 67134,
+      "sha256": "afe140a51ad5a224fa4602dcb139e55a036c1a5fd1c970e63f400edefa55bdb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-line-10-result-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-long-rest-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-initial/film-timing-check.json",
+      "bytes": 4006,
+      "sha256": "fffdbf93e8b12a246e40c95b51421100b421fb54675e67e0f80596e792997887"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-l2-after-phone.png",
+      "bytes": 15397,
+      "sha256": "21869c8e46fe7dafdf20dab726988b1fce1cf42d165b3069f958579efcc8d19d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-l2-before-phone.png",
+      "bytes": 15470,
+      "sha256": "5463b66ce2c866358158089856f33bae725f5a7ddd9f19b43d8ab0eefadf0eec"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-l2-peak-phone.png",
+      "bytes": 15414,
+      "sha256": "81faa772b1f122c211ed236a6a262253f95673313453818a5eb8e53a88babf10"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-01-action-native.png",
+      "bytes": 54459,
+      "sha256": "e37d06e5f333c93d253e56e6d1213adbed56d926ba054c537b2d4afae9d710df"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-01-action-phone.png",
+      "bytes": 15490,
+      "sha256": "ced99cae58ad599c7471cae0ba8bddcce0b4f36a587b8b3a72f4c33c471daf38"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-01-before-native.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-01-before-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-01-phone-contact.png",
+      "bytes": 33996,
+      "sha256": "74a20bc0420353e65f0ccbf64d067a8b7a5c92a6c40f950b19a041669233e1fb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-01-result-native.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-01-result-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-02-action-native.png",
+      "bytes": 54232,
+      "sha256": "54ba5b6a51b70e119dba6e4db5b4443b3222351870f6d873a37c4f23c740347f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-02-action-phone.png",
+      "bytes": 15502,
+      "sha256": "a24bbc1b705f33de7458dc19927d9c34f0c2b60bb54e1303e9e7c7754ca51ab6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-02-before-native.png",
+      "bytes": 56238,
+      "sha256": "0cbc738f0b94c0f766b986140ee6195440d12a6d2b9eaf7eb0ada7cfa9b6511c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-02-before-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-02-phone-contact.png",
+      "bytes": 34267,
+      "sha256": "2c60fb84636f347847bd29cac9bab2eaea0605b802e2a1aec72a0218f20ff8ff"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-02-result-native.png",
+      "bytes": 54436,
+      "sha256": "1f022bd91b4336caf7ce41b983247c756f9102f7d5e668823fc5cad0f1eddc0d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-02-result-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-03-action-native.png",
+      "bytes": 58349,
+      "sha256": "4986067d6b4c40540bbccac7473477d2491fab2b4d08ba580e7c21fa7dab5a4a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-03-action-phone.png",
+      "bytes": 15965,
+      "sha256": "a1ad2f06212b9021fee048ad68e07eaf81466c86bc32a1553e9accf4cf80a29e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-03-before-native.png",
+      "bytes": 39514,
+      "sha256": "589915fd58e6063b0100035e512db1d887571db6895d81de9945df61c5c629bf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-03-before-phone.png",
+      "bytes": 10859,
+      "sha256": "0b64dbb9d50795dc5c3f9ae96f760bc798158c9f0477a8bd006eb22fb8af81fd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-03-phone-contact.png",
+      "bytes": 29844,
+      "sha256": "0b43b6fbc43b3b4a00b6691227aadb2b91a0fef88e8e955207912e964bffa48c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-03-result-native.png",
+      "bytes": 62324,
+      "sha256": "836ea4de97538ce25ffd8e417671a6b81cc25cbcdd635f77b3053932409f20c7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-03-result-phone.png",
+      "bytes": 17192,
+      "sha256": "73b8330555ac52efd10ba2d4c38c1f502c92f6b2992abf8ad710e5785be30541"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-04-action-native.png",
+      "bytes": 48089,
+      "sha256": "78c451ac540dc274ad575f7ef43376db56560aa7913ca57e472adad72fd5dbaf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-04-action-phone.png",
+      "bytes": 13429,
+      "sha256": "b2b2fcedb2481b4097f543f1f8c8384a2c1c0259afe204ba0b7f4c90aa61bd73"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-04-before-native.png",
+      "bytes": 40520,
+      "sha256": "48ce9ea252bfe7f395738fb3eb28d3c6d3f8bfdcb10dcba40c5431c3957f3461"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-04-before-phone.png",
+      "bytes": 10818,
+      "sha256": "e4ec35cb6937bf01038c9c43f0e058c60d1bbf26c410d397d0af1e3c721c335a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-04-phone-contact.png",
+      "bytes": 34829,
+      "sha256": "260305f79fca8ad2d9dcb5e47983d6cc4de37b7c6a11217b722df439988e9211"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-04-result-native.png",
+      "bytes": 48584,
+      "sha256": "07e59450bfd83e2d1e39d88b53303fafbe6e84325afd98fcd7d59bccbd037de3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-04-result-phone.png",
+      "bytes": 13261,
+      "sha256": "82135ada01b923dae2195008fa216e2697f52707ff5ed4c1805f7395472270a5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-05-action-native.png",
+      "bytes": 56350,
+      "sha256": "2a498dfb675e5e3a8f50e9a052af9b4d3b121ce21b313fb8668a0b8252f90e81"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-05-action-phone.png",
+      "bytes": 15601,
+      "sha256": "ee65b8c327dd2336470f68bdf400e80cc4e149b1fb5911f2de00fcc3a8fbeaf4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-05-before-native.png",
+      "bytes": 47490,
+      "sha256": "ebaa1507520cdf6074a5b9ecc8e0c8aec9207b8f76fee1a149b2f17ef7ecf63f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-05-before-phone.png",
+      "bytes": 13237,
+      "sha256": "78b04e03cefe09984b46c0aac00299c0964e1f5b519ae3b15461a524b7502fe3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-05-phone-contact.png",
+      "bytes": 33741,
+      "sha256": "13e280019b5cc4e3d27704b1e550995788641490f56a4728bb6e9a8c8208ca8a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-05-result-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-05-result-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-06-action-native.png",
+      "bytes": 57400,
+      "sha256": "7d214c25aa8f05bf3469535b2a358275909182274afaae3082cdf21da4270e96"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-06-action-phone.png",
+      "bytes": 16429,
+      "sha256": "32dc86cb560149a2715ece8a9a0cd5fac1e10185f73b0a24a89c4d88af73c3ab"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-06-before-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-06-before-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-06-phone-contact.png",
+      "bytes": 25020,
+      "sha256": "ead192ef96d909fcad2c3e5e0a9cba73fd559abb5828acfe1894c872734c13ee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-06-result-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-06-result-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-07-action-native.png",
+      "bytes": 66070,
+      "sha256": "85a2f9cd8c6a8d9d4657c3528a4bbd516280c127ab3f1af2d6ec3bb0791e2a5e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-07-action-phone.png",
+      "bytes": 18991,
+      "sha256": "bacb7f3327bafb37580d752cca265f77ccacbb14264058d1bc3a2f1b667d4528"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-07-before-native.png",
+      "bytes": 59598,
+      "sha256": "4158bf4dfe1e27dfde31b80c3aa6324070e2afb01429329ae48f56717b55d527"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-07-before-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-07-phone-contact.png",
+      "bytes": 36544,
+      "sha256": "e79385b93db30a120641cf4ca4cb2c9296670d2f668bb652a80ce217fd9cfd7e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-07-result-native.png",
+      "bytes": 72734,
+      "sha256": "323b0313e51a794055222b7cfc6176f9490194bde2593c6456797e08493c008f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-07-result-phone.png",
+      "bytes": 21088,
+      "sha256": "031d18bf98ca7f4ec4ea4c84cee1e3370cd90b31f00801e0ae954f1f1614e9d7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-08-action-native.png",
+      "bytes": 64265,
+      "sha256": "ace2515714242cd538f3eabc24878492218c6e97d6ea0ccbcb1548aba8485c74"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-08-action-phone.png",
+      "bytes": 17547,
+      "sha256": "df91d6447185d34a38baf19aba0900762a998821b32a79a1a6d9e64c35be8811"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-08-before-native.png",
+      "bytes": 55537,
+      "sha256": "bdb67dc9911929c63b37dae6b1b98154a536574e37f2a29abbf1655e44843c2c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-08-before-phone.png",
+      "bytes": 15445,
+      "sha256": "54169d7d7fd94e15396816fb5092ef3450718c3a7881721e03e7848570e935b0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-08-phone-contact.png",
+      "bytes": 38353,
+      "sha256": "4213117e0290f52d86aa2ffa6f853c396bcc91c02b96516a4e84d5503b35e81c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-08-result-native.png",
+      "bytes": 61163,
+      "sha256": "b486d5ebdbbe6a2e1128790eac9fbe02e5298f05d177f0ad920c98294b4d3aee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-08-result-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-09-action-native.png",
+      "bytes": 46347,
+      "sha256": "ae9ed2318ee59ed1f6d129aa60333921151c2034b455db1878d5f0064bca6f57"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-09-action-phone.png",
+      "bytes": 13100,
+      "sha256": "d03c54b500b53cfa41988ecdeef51a2767fbf6d869399cedbd125688f1afbfe4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-09-before-native.png",
+      "bytes": 46753,
+      "sha256": "9a42c2ffef4bd0354118069f29589471fb8f926d1b0291068bdb4044eeb7fab3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-09-before-phone.png",
+      "bytes": 12826,
+      "sha256": "2cfc914bec5981d812bf0f345a3c8b05fdf019e5c6de5d50a6f32ad04c5ccf87"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-09-phone-contact.png",
+      "bytes": 29901,
+      "sha256": "56cacb57091f71ad9ab91de725c08a856f427ed9fe73619bad4b53ca23b6103b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-09-result-native.png",
+      "bytes": 51012,
+      "sha256": "d2ba43dd8bc6dd158e35fdfa45240a5ff1cdc71891e14d16bc3678fa1dabddf2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-09-result-phone.png",
+      "bytes": 14147,
+      "sha256": "cd51ef0437a79fd8a6d960fc2db94c7526d59e30689a09dacbba9657e5d7906f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-10-action-native.png",
+      "bytes": 62851,
+      "sha256": "92cc430cb5bc8276763f94d85ba3eb9e44da9ac0038fd5a55990843d1b3b2da7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-10-action-phone.png",
+      "bytes": 18034,
+      "sha256": "97d6dee7ec6fbe44d7154495c38f661f70537860bfdff70f962e2a00a19ea48f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-10-before-native.png",
+      "bytes": 37936,
+      "sha256": "967e6c5c8fe5a6d3e2bbe4797b948e5c6943abfd728b02830f95d06950f1146c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-10-before-phone.png",
+      "bytes": 10540,
+      "sha256": "88850f6fd33443073eb2683862e0b463a4c6ccab7a90418927661169270c04b2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-10-phone-contact.png",
+      "bytes": 31185,
+      "sha256": "6fc554e8167490f90b40d9b7de2b8aeb5ab09416a09efd7db52ae53a058b5a0f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-10-result-native.png",
+      "bytes": 67134,
+      "sha256": "afe140a51ad5a224fa4602dcb139e55a036c1a5fd1c970e63f400edefa55bdb6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-line-10-result-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-long-rest-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-playback-audio-state.json",
+      "bytes": 98407,
+      "sha256": "13f2069e14025c8caae56cb4f3f2b136b5560407aa4522eac72ba3923e511a8e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-playback-muted.json",
+      "bytes": 99910,
+      "sha256": "546f9030f81a62fe96b1ce35792ef86edb9bf2b73a796adac1b52b174e88d1ab"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-00-contact.png",
+      "bytes": 82651,
+      "sha256": "42d5eede97a9f5c4e439b0155b22cabe81d4cb62f20e5a8795c001bda090ce1e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-000-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-001-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-002-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-003-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-004-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-005-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-006-phone.png",
+      "bytes": 15610,
+      "sha256": "89f1333ecabd7ce0f71ccc833465b18e2f257fec378ed1bff6926fa60865b907"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-007-phone.png",
+      "bytes": 15549,
+      "sha256": "4c491b784269bd79d80034ddb7b0813390aac58db4256f997eeb6401be47222a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-008-phone.png",
+      "bytes": 15397,
+      "sha256": "21869c8e46fe7dafdf20dab726988b1fce1cf42d165b3069f958579efcc8d19d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-009-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-01-contact.png",
+      "bytes": 71424,
+      "sha256": "196c58f16814c6ec53e3087830ad49b2de1cc3906a70a2af2d81a96c2e4fb43d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-010-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-011-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-012-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-013-phone.png",
+      "bytes": 15461,
+      "sha256": "21a20ee2c87c044c11c076452627fa6d78e76c3d8cf22678dca30c2cfc60f357"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-014-phone.png",
+      "bytes": 15376,
+      "sha256": "ae1625a1172d7ac90d80c2ba7167bd12e4a35233a3f49603103114f4561acc05"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-015-phone.png",
+      "bytes": 10629,
+      "sha256": "0fc75b79436765ad344119eb5e5c4645463fa141c6d7df2ee258b442ca7cbda7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-016-phone.png",
+      "bytes": 13781,
+      "sha256": "8fa7995c0bf0047892eb5943bda9ec9e087b5d951cdfc5255954d85866435424"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-017-phone.png",
+      "bytes": 13667,
+      "sha256": "45288f0b58159eb6ae8518b5f0567da53365ece6fd8633e4278dbe8d437dad5e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-018-phone.png",
+      "bytes": 15916,
+      "sha256": "e0b7888bd5742fa9335700faf07c43db2e39c881d4acb8a573d120a49e0df42a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-019-phone.png",
+      "bytes": 17198,
+      "sha256": "cb153269a9aa3380836d2efc09c7a24a50017cc8ac2042775aac51f97edc5e4e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-02-contact.png",
+      "bytes": 87252,
+      "sha256": "0b09b004bd8b4c955adbea13f1f3aa6b8d6d1f61065dc6594a1ac76653a64327"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-020-phone.png",
+      "bytes": 17192,
+      "sha256": "73b8330555ac52efd10ba2d4c38c1f502c92f6b2992abf8ad710e5785be30541"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-021-phone.png",
+      "bytes": 17192,
+      "sha256": "73b8330555ac52efd10ba2d4c38c1f502c92f6b2992abf8ad710e5785be30541"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-022-phone.png",
+      "bytes": 17192,
+      "sha256": "73b8330555ac52efd10ba2d4c38c1f502c92f6b2992abf8ad710e5785be30541"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-023-phone.png",
+      "bytes": 17192,
+      "sha256": "73b8330555ac52efd10ba2d4c38c1f502c92f6b2992abf8ad710e5785be30541"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-024-phone.png",
+      "bytes": 10830,
+      "sha256": "7de75a72d6638546d615dd7e690032aa0cbe2ed236fdf98f9c822580981ae4b3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-025-phone.png",
+      "bytes": 13156,
+      "sha256": "6c4c412e6b586f9404bf80d3f5d3b2082cfcd76373439e5a185d1eb42be6e3d7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-026-phone.png",
+      "bytes": 13354,
+      "sha256": "7864a02baf3db295ba2063976574197405073a9e4fcdcd4c8137d38163ea0803"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-027-phone.png",
+      "bytes": 13240,
+      "sha256": "5e3197d05b7e7c8fa1b36066b8eef5e19fd1d85459a863dd746d56e4141b78e2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-028-phone.png",
+      "bytes": 13251,
+      "sha256": "15cf2b74ac10b735110e430fd425cead00aa2c4ebcad5fe2bb2b41db35b938da"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-029-phone.png",
+      "bytes": 13544,
+      "sha256": "d5acac61ba74445b0125a52cdac2a755a5981f778185906cdc09091e523ee404"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-03-contact.png",
+      "bytes": 78385,
+      "sha256": "a05f5a3fd67fc0083704a377dc3ed65cb11f872ed8c28bc2417c31685ea13aee"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-030-phone.png",
+      "bytes": 13257,
+      "sha256": "9d6a719afccb2b19876ebbc74f94fbf6595f0a346a1df3c3739e759e806b3a2f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-031-phone.png",
+      "bytes": 13623,
+      "sha256": "7bdc29292566fc0ca24f3b28fda56e701b6133b145a183af24ea1bdf54e10f61"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-032-phone.png",
+      "bytes": 13392,
+      "sha256": "bc199be1db9583436af1bc308795c038f68ce1c729b00a39e14fb6c12567aa01"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-033-phone.png",
+      "bytes": 10985,
+      "sha256": "a26300770c3fae00195eb438fe2f13f3f16b5a18ca38d7f7f22afde0dd7d9552"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-034-phone.png",
+      "bytes": 13572,
+      "sha256": "99a44588aabd654e754a48d1538b464012b80ab4a102530d3f90dd7ff53f8236"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-035-phone.png",
+      "bytes": 14199,
+      "sha256": "779e4aeb20dc158377a923b0a351584ba4b50c0f23e27b097682afab5af565a1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-036-phone.png",
+      "bytes": 14654,
+      "sha256": "31e68a75874c71e18706bab6bf0286f84f660c65736fb8bc7abedefc863de7e6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-037-phone.png",
+      "bytes": 14654,
+      "sha256": "31e68a75874c71e18706bab6bf0286f84f660c65736fb8bc7abedefc863de7e6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-038-phone.png",
+      "bytes": 14654,
+      "sha256": "31e68a75874c71e18706bab6bf0286f84f660c65736fb8bc7abedefc863de7e6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-039-phone.png",
+      "bytes": 15548,
+      "sha256": "9c53f71ed76d80420575a0036c8de06498ce19252ef97fd900adf81827d946c0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-04-contact.png",
+      "bytes": 55297,
+      "sha256": "49c16f3885bcf486329ac53216b858ff3df6d942fc5f31f4dca4c0035058b5b7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-040-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-041-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-042-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-043-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-044-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-045-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-046-phone.png",
+      "bytes": 16533,
+      "sha256": "ce7e123d025ead50166058e4f2a08315e703f51fb9da509c3a1277d889efc15b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-047-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-048-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-049-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-05-contact.png",
+      "bytes": 61676,
+      "sha256": "382af5e38090c89143dd4feb198d1fa04d246ba4d382fa4e334dfee794e5ee06"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-050-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-051-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-052-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-053-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-054-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-055-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-056-phone.png",
+      "bytes": 16404,
+      "sha256": "8e877c49773ebf0d1abcedbc9f8cfadf955aa0dc9a6bd2906c843ffcffe9cec5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-057-phone.png",
+      "bytes": 18879,
+      "sha256": "127fe6e641618d70998bfe1a68af7cd4187deb0a7599a15a12fd6583cb7dac02"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-058-phone.png",
+      "bytes": 18886,
+      "sha256": "07db398cce9b38ef2877d80e3336234468b9ea9e8206d4383e5a5e1794bd1a10"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-059-phone.png",
+      "bytes": 18886,
+      "sha256": "07db398cce9b38ef2877d80e3336234468b9ea9e8206d4383e5a5e1794bd1a10"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-06-contact.png",
+      "bytes": 102482,
+      "sha256": "8c866d617496d6456b9b9f3e78b86370504b1570b50b91d2f926b45f11c54116"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-060-phone.png",
+      "bytes": 18886,
+      "sha256": "07db398cce9b38ef2877d80e3336234468b9ea9e8206d4383e5a5e1794bd1a10"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-061-phone.png",
+      "bytes": 18886,
+      "sha256": "07db398cce9b38ef2877d80e3336234468b9ea9e8206d4383e5a5e1794bd1a10"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-062-phone.png",
+      "bytes": 18886,
+      "sha256": "07db398cce9b38ef2877d80e3336234468b9ea9e8206d4383e5a5e1794bd1a10"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-063-phone.png",
+      "bytes": 19974,
+      "sha256": "818986d58cc234c52d0191ddd9831dfb2dce4bbb27651dba749e28e2655f3474"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-064-phone.png",
+      "bytes": 21088,
+      "sha256": "031d18bf98ca7f4ec4ea4c84cee1e3370cd90b31f00801e0ae954f1f1614e9d7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-065-phone.png",
+      "bytes": 21088,
+      "sha256": "031d18bf98ca7f4ec4ea4c84cee1e3370cd90b31f00801e0ae954f1f1614e9d7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-066-phone.png",
+      "bytes": 12033,
+      "sha256": "756d00523eb3fa1f16656d46b4a40ec5a821a352dbd8076c93b182a46679ce0c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-067-phone.png",
+      "bytes": 11735,
+      "sha256": "ea9082aca53ceba9fb22b9271e7b581f1cc21beb5003518caeba9dbde80d2c80"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-068-phone.png",
+      "bytes": 16874,
+      "sha256": "47f622f9f85a06fd8e3acc735a7b1800fe3c1f12bcd43c165e0b6d078890e784"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-069-phone.png",
+      "bytes": 16958,
+      "sha256": "84d8b241027b7e4eb7a73c36afdf287974c22dfcdaf0c6725e57ce089ac7c639"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-07-contact.png",
+      "bytes": 82557,
+      "sha256": "2b9885b599037f1e55f49cd6582c38c53fe10b28a8461997e2a24b28f9672396"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-070-phone.png",
+      "bytes": 17410,
+      "sha256": "df2d17081789a20fa24a5c83793b44a9c6abfd57b19947766418f560c8b02102"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-071-phone.png",
+      "bytes": 17954,
+      "sha256": "101b65527204ad4fc45b1eb796a3d1389bbae3c67f8f0de242571ccf71f0c363"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-072-phone.png",
+      "bytes": 16453,
+      "sha256": "68d6bd917534821487323e8ddbd4f748ed865c91730bb7ae0114cafc564a8c97"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-073-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-074-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-075-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-076-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-077-phone.png",
+      "bytes": 16479,
+      "sha256": "d72d29821e9ed76b4229e8abb26dd198f658245fd4f2a1eb392791371c2f6942"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-078-phone.png",
+      "bytes": 11214,
+      "sha256": "e82613e4602048613765a4ae48a279508470398022ec53f300de2947d5335f66"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-079-phone.png",
+      "bytes": 13020,
+      "sha256": "0ca39c57649a6c1ce20568d562b2752e27e5562ad6368e38bc003b68d6041cb0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-08-contact.png",
+      "bytes": 61545,
+      "sha256": "cbc10862f9bf6adbdc8e380a78b556f8d8324b0532b4f6441fdb2c21688a5de7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-080-phone.png",
+      "bytes": 13020,
+      "sha256": "0ca39c57649a6c1ce20568d562b2752e27e5562ad6368e38bc003b68d6041cb0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-081-phone.png",
+      "bytes": 13020,
+      "sha256": "0ca39c57649a6c1ce20568d562b2752e27e5562ad6368e38bc003b68d6041cb0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-082-phone.png",
+      "bytes": 13020,
+      "sha256": "0ca39c57649a6c1ce20568d562b2752e27e5562ad6368e38bc003b68d6041cb0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-083-phone.png",
+      "bytes": 13020,
+      "sha256": "0ca39c57649a6c1ce20568d562b2752e27e5562ad6368e38bc003b68d6041cb0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-084-phone.png",
+      "bytes": 13100,
+      "sha256": "d03c54b500b53cfa41988ecdeef51a2767fbf6d869399cedbd125688f1afbfe4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-085-phone.png",
+      "bytes": 13020,
+      "sha256": "0ca39c57649a6c1ce20568d562b2752e27e5562ad6368e38bc003b68d6041cb0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-086-phone.png",
+      "bytes": 14147,
+      "sha256": "cd51ef0437a79fd8a6d960fc2db94c7526d59e30689a09dacbba9657e5d7906f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-087-phone.png",
+      "bytes": 14147,
+      "sha256": "cd51ef0437a79fd8a6d960fc2db94c7526d59e30689a09dacbba9657e5d7906f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-088-phone.png",
+      "bytes": 10523,
+      "sha256": "d71b5e3cf3319e75c41ffd8af0183d7f8fdd2842dfbbb3e097882e30f1c401aa"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-089-phone.png",
+      "bytes": 15667,
+      "sha256": "8f0009253bfa9f8626f00e20c689cba5c64e537560926d8c59d454908d11e834"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-09-contact.png",
+      "bytes": 61881,
+      "sha256": "949702bb38c8980ad4200f8319c9d3f7be128207c4cfed32104e4d755aa66e93"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-090-phone.png",
+      "bytes": 15667,
+      "sha256": "8f0009253bfa9f8626f00e20c689cba5c64e537560926d8c59d454908d11e834"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-091-phone.png",
+      "bytes": 15667,
+      "sha256": "8f0009253bfa9f8626f00e20c689cba5c64e537560926d8c59d454908d11e834"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-092-phone.png",
+      "bytes": 15667,
+      "sha256": "8f0009253bfa9f8626f00e20c689cba5c64e537560926d8c59d454908d11e834"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-093-phone.png",
+      "bytes": 15667,
+      "sha256": "8f0009253bfa9f8626f00e20c689cba5c64e537560926d8c59d454908d11e834"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-094-phone.png",
+      "bytes": 19359,
+      "sha256": "25dbdcd7d108859abd5aa12c3bbac1680d08edc9c0152d443baea10bac02a176"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-095-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-096-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-097-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-098-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-realtime-099-phone.png",
+      "bytes": 19288,
+      "sha256": "3fbc70045ed112a4e53b6266291341f5e60034e0bffa60d861e271b463084165"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-recheck.json",
+      "bytes": 1099,
+      "sha256": "387ffbd3ac6671c6dc642707f35388aca42ee4e05f4c8b57b60dcbd4e47f9632"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-recheck.py",
+      "bytes": 3014,
+      "sha256": "71bd463e655193ececd4ba308559dc35f3b0c9e4c920799e50068d43e1dd4d33"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-report-check.json",
+      "bytes": 301,
+      "sha256": "4eb7b81f50d0155f09a5e55597923a63b2a761eb0f1021989c95290316f25ef2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-report-check.py",
+      "bytes": 2336,
+      "sha256": "375790f8fbef123497e03844614ea40e8f996433d5e74ce97a5e646db3da9843"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-report-phone.png",
+      "bytes": 44772,
+      "sha256": "96aa6569bd01c0bec51170be2c6809542109477eed7e7de3e7535a46a7c18f98"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-report-wide.png",
+      "bytes": 82025,
+      "sha256": "4441bb3a71f0c5040d7afa86486177b8f28a0504fbb8aed33bf37916c2bb8847"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-report.py",
+      "bytes": 13520,
+      "sha256": "5b29f5e80bffd4cd706b0f1c3568168f7ebc25916fd527cd1dee11c460c3a12d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-timing-check.json",
+      "bytes": 4006,
+      "sha256": "fffdbf93e8b12a246e40c95b51421100b421fb54675e67e0f80596e792997887"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/film-timing-check.py",
+      "bytes": 4130,
+      "sha256": "c29e67795f532389394428e68f3b5f8626ffa1f3b77147917ec10529dcee4c27"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/guard-check.json",
+      "bytes": 309,
+      "sha256": "d005c182b1dfbfb8d0e05afa59d3653d40ff96d6dbba7fc8984567974b73647a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/guard-fixture/audio/narration.wav",
+      "bytes": 32044,
+      "sha256": "78f82cd49af869013e8ec414a15d71f5f4f2ec8d006b6a0c50527c91eaa7a85f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/guard-fixture/audio_meta.json",
+      "bytes": 184,
+      "sha256": "24c93df25d189be290dc04ddb10363bfadedae2879313d173430851d68a28690"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/guard-fixture/cue-evidence.txt",
+      "bytes": 51,
+      "sha256": "f918efd545bae9d18a8c1ff5c06ae970f2f692cd39afbe8b37cb8a3f1882d2fd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/guard-fixture/motion_beats.json",
+      "bytes": 222,
+      "sha256": "8fe3e3691842b91f3139c55eab9db824a011c7649f3d0e8e32bbf9bc2f11a93a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/guard-fixture/source.wav",
+      "bytes": 16044,
+      "sha256": "d27c67f6aeb75c2267b5923f582248ac18628edfc2c3135a03b6a4f0aa50ef21"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/guard_check.py",
+      "bytes": 2929,
+      "sha256": "1ddfc9320c8b493c923bb60e3e9247fcd12ad6f7d4bb3b304e560c1bfa49fc7f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/a-native.png",
+      "bytes": 95267,
+      "sha256": "6a210fc36b2d483133af6ec7596a5f2d9f9c45bddf2ce94ce6e905640c6e0997"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/a-phone.png",
+      "bytes": 24143,
+      "sha256": "7c6b4a898566a3e88440489e161b612dbbbfc22819d428e6ff244db36a288444"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/b-native.png",
+      "bytes": 111989,
+      "sha256": "114cbf6b0db97a88126af6b51ab14bbb6837181bff4b60e0a6846e9bb3135193"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/b-phone.png",
+      "bytes": 26739,
+      "sha256": "115fe22b9cea17621c8d4131136d720a0a20653a8aa3a243765576eb812ed657"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/board-phone.png",
+      "bytes": 123123,
+      "sha256": "12b4bd6ce324e5b8891eb2423d275874dbc1f7ae22a56185036f0b034e0fa774"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/c-native.png",
+      "bytes": 85178,
+      "sha256": "1b35736f3220217d195586ed6d7e8985010eaa31792614fbc64c8b2ac534236c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/c-phone.png",
+      "bytes": 25166,
+      "sha256": "068e4b1b3a7d062ee0fdd9dabb86cb2f2319da9b9bcc53592cd0021e0b1a2bbe"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/guard-check.json",
+      "bytes": 104,
+      "sha256": "0442b633950ff221e3748955fa49961322bff844df4513535bd3a554f1c114c6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/motion-audit-initial.html",
+      "bytes": 110266,
+      "sha256": "c198af0de72cc6ebfcc2009d1b196f04a9734b42713d7e5b0964b3bcd4e4bf80"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/reviewer-evidence.json",
+      "bytes": 11792,
+      "sha256": "b6c08370a57be70c73c8e69cd9fac42634a6f8c2a9c04341ce9bdbf0a93c48a5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/initial/static-check.json",
+      "bytes": 7376,
+      "sha256": "b7ff581d20da7e70f8549df3c53cafc61a27fb8bec383805630ecd71febfc5f8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-01-phone-contact.png",
+      "bytes": 46133,
+      "sha256": "afe80a3c2b84926f5ce787c94397e3ecf2ad610584a2862126cd928125df3c34"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-02-phone-contact.png",
+      "bytes": 46589,
+      "sha256": "9212fdd43d59942d8ac636fc6a4a53959ef63e2729f9802c7c14579693e6d852"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-03-phone-contact.png",
+      "bytes": 46609,
+      "sha256": "0138cb16ea91dbc4d479b8cfadc1d1dc3673877501f16da1cb2e14d4bda4c5f1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-04-phone-contact.png",
+      "bytes": 46310,
+      "sha256": "bf74d1d3edf9a83de65a56112ed856747d53d321350732c7461ab77aca9d22f6"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-05-phone-contact.png",
+      "bytes": 43545,
+      "sha256": "99720d92133a059d1ae58b04db65e1eaa73147138dd42ab3e793f593a439bd25"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-06-phone-contact.png",
+      "bytes": 43206,
+      "sha256": "2cdeca59d6997fb109db1918335040b57682003161c9370ab353a623aed0dcf7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-07-phone-contact.png",
+      "bytes": 53629,
+      "sha256": "866447eff8b1e09d2c4f9d126bc8bb1948968d432341e0be0a1d4609c0880ecf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-08-phone-contact.png",
+      "bytes": 59386,
+      "sha256": "c8ff15d4ba9523552625ac943eae2d92e004b43fbbca78f5fa7e993405bca251"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-09-phone-contact.png",
+      "bytes": 49968,
+      "sha256": "c1cd270016ba99b3a06e43e99ff332ace5006f6476555fbaf3d9f684679e1264"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/line-10-phone-contact.png",
+      "bytes": 63688,
+      "sha256": "5d80fa83116b9e5397041ba2283a166eab2c6d28f2aeab08abd93bb5858379d5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/motion-audit-2026-10-15.html",
+      "bytes": 774014,
+      "sha256": "a5a06511145af4c8a92f33665d34fe77d52c67873cd9c64d3592acb021ee19f0"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/report-check.json",
+      "bytes": 188,
+      "sha256": "ac21e2eb877ae826dfa6a22730babdde128acac7580aa718e12d871e97ad4715"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/report-phone.png",
+      "bytes": 42652,
+      "sha256": "412b0981a84f771913d582687048e6f52660057998d9052b10bc4092d220595b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/report-wide.png",
+      "bytes": 83310,
+      "sha256": "a8592b4aed15840e38e7a3152ac9e7e835d3641b1344ad05efc061a7c11c3b03"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/report_check.py",
+      "bytes": 2120,
+      "sha256": "bfdd08be4806bf7c0e39ef95ffe21b8dbf067d34dbf6ff02359ba3008e0ffdf8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/required-reference-retry-2026-10-16.json",
+      "bytes": 940,
+      "sha256": "bdd36960890b0cfa86d945753f1d110e9824bd6b8fc208456b1965c94498c45f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/safe-area.json",
+      "bytes": 4,
+      "sha256": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/static-check.json",
+      "bytes": 7092,
+      "sha256": "4ba4a176587fdfcde50d615c1ee5ef431b6b13ee4faf7438d85293b33eeb13cc"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/static_check.py",
+      "bytes": 3613,
+      "sha256": "8e39a5181600275b7cb66ecf30d1a883b864f6c81212dca83cb2771f6464904e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/quality/write_report.py",
+      "bytes": 19472,
+      "sha256": "542854aee7eb9db66fa8a47f1f6f146e5c0c58ed46690705837c7990d7f43924"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/reviewer-evidence.json",
+      "bytes": 9816,
+      "sha256": "4433023db8b945a0fe2f753945dd416905bc5c6f9ce9bccb3f26e7f28fd46b94"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/reviewer-film-evidence.json",
+      "bytes": 11010,
+      "sha256": "390c538031370d3c32c738a50b37fe1d33f6b60977295791fc461669b0eb4fe2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/script-evidence.json",
+      "bytes": 5889,
+      "sha256": "f158326730e73aeae648c2a6853fbc905ac6e9c26047639229aa665b2734c8a4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/before-revision/art-evidence.json",
+      "bytes": 4360,
+      "sha256": "0b67ca8920da97e6b7c8f8da957647f24fcdc3b815760b67f3792c23502142b7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/before-revision/concept-a-phone.png",
+      "bytes": 24143,
+      "sha256": "7c6b4a898566a3e88440489e161b612dbbbfc22819d428e6ff244db36a288444"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/before-revision/concept-b-phone.png",
+      "bytes": 26739,
+      "sha256": "115fe22b9cea17621c8d4131136d720a0a20653a8aa3a243765576eb812ed657"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/before-revision/concept-c-phone.png",
+      "bytes": 25166,
+      "sha256": "068e4b1b3a7d062ee0fdd9dabb86cb2f2319da9b9bcc53592cd0021e0b1a2bbe"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/before-revision/concepts-phone.png",
+      "bytes": 123123,
+      "sha256": "12b4bd6ce324e5b8891eb2423d275874dbc1f7ae22a56185036f0b034e0fa774"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/before-revision/concepts-wide.png",
+      "bytes": 159023,
+      "sha256": "1a0a6b4a81c8091850ac94e28aacac86affe98875625fb4a8d6d0165ae74c953"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/before-revision/concepts.html",
+      "bytes": 9166,
+      "sha256": "11aa2e2bf797079a6ad53a2583e7d21a4e9528f3c6c2cc669298f4242514d648"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L01-action-phone.png",
+      "bytes": 15121,
+      "sha256": "a6dd4724571ab0d119043de340f1ced07e440f5224b71719f60c288e70d0df8e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L01-before-phone.png",
+      "bytes": 13943,
+      "sha256": "9ab602b27d5c651dcab4df3d5bf2ab245d77b2657d04ce0d7e012cf82519684e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L01-result-phone.png",
+      "bytes": 16258,
+      "sha256": "63e168a6ad8ad9628adc6f2f7e0af499da3a13d9af19f58b72822cd780f4246d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L02-action-phone.png",
+      "bytes": 16800,
+      "sha256": "d71ca660084d8c79235c7bd13f1a11586b1d868c23fb6966d25db4917dc856f1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L02-before-phone.png",
+      "bytes": 14464,
+      "sha256": "eb9e4057ed94b43f3d40413e597f9ba1ebba00cb31dd94389001303b13c58bc3"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L02-result-phone.png",
+      "bytes": 15976,
+      "sha256": "28f494a91dce7a7de26e7f8aabe58212421cd7d585d261b140d341304a89e8a1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L03-action-phone.png",
+      "bytes": 19877,
+      "sha256": "69259fb7986a0323f5a246422b014087f8c9006600c095e7957ee0456ced080b"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L03-before-phone.png",
+      "bytes": 14930,
+      "sha256": "2826a1b0173b3fcd1e5467194f5e1ad3c99d610e9b7961b90aa25426582ee331"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L03-result-phone.png",
+      "bytes": 20390,
+      "sha256": "98ac509f5f40e985e97d7fd884ea9ace49954413fea52e9c07d3b58fcb974cd8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L04-action-phone.png",
+      "bytes": 13076,
+      "sha256": "700c0b6c169a63294b72b598232f71346ab90eb354e83c661f49cb4d55942135"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L04-before-phone.png",
+      "bytes": 13912,
+      "sha256": "8aec2250f894ebe565f76730ab4f62c4f9b280e58bc22c1a9fa70847d815df36"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L04-result-phone.png",
+      "bytes": 16108,
+      "sha256": "4bb1b419a2d87c3ae6eab1eebcd6acae3180778770569875a7f2998f1ff1222d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L05-action-phone.png",
+      "bytes": 16216,
+      "sha256": "9739f563147b58698edac05de02d2e4b5ced85aea16700e7365b91b4f2f6c475"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L05-before-phone.png",
+      "bytes": 15015,
+      "sha256": "5bcdb0a6b7a22d5621d69146ff4f76e7433d4d4b4b7464d449a526418628b303"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L05-result-phone.png",
+      "bytes": 14864,
+      "sha256": "059ce4e3ff0b20e8cdcbfa52dd389c837811336cc3fca75cc33c51fbfa09aa7e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L06-action-phone.png",
+      "bytes": 15642,
+      "sha256": "055bcf0231e739e28f1e244ab534c846961a82b3ed7b7073c3ce237a9cd1aa22"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L06-before-phone.png",
+      "bytes": 15067,
+      "sha256": "2136db5f5fda5fae2938c53e891772b73a9cd98d3a089130df366ac3c1887cdd"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L06-result-phone.png",
+      "bytes": 17850,
+      "sha256": "4fc7f15fde77f3848020bbc6dd4d3e573cb4a4612bb37b2b91cccd8067fbad25"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L07-action-phone.png",
+      "bytes": 16390,
+      "sha256": "37b0cf3b440948570378c7a2cf2d7173e57958d968cd6515f926b303d8c733be"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L07-before-phone.png",
+      "bytes": 15632,
+      "sha256": "e71fbc54dfd2f368cdc13e4972c61c75a68c49a249c41322bde0baeb2017109d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L07-result-phone.png",
+      "bytes": 20434,
+      "sha256": "d519db21fca2f6136211c458d67d9849ef1c244f5f4ceec8a4b3cf03481f668d"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L08-action-phone.png",
+      "bytes": 20030,
+      "sha256": "f4a47248f1c0880dc9a47f4a78c428e79824dd5f4eb7bfd19f263a2807cf3c98"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L08-before-phone.png",
+      "bytes": 17463,
+      "sha256": "1fd9f61b0b5eb8fd43d1fc38aca0b95ca6492c199b1176284bce9e3c27173832"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L08-result-phone.png",
+      "bytes": 18112,
+      "sha256": "bc590a1bdb88cfda7643a37aa46538660e251bd1a098b0e5a2306cbcbc6d9fa5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L09-action-phone.png",
+      "bytes": 17420,
+      "sha256": "fae1219eaad7b521aa404c50c190524cceabfd423cbbd4667e63165bcffe887c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L09-before-phone.png",
+      "bytes": 14750,
+      "sha256": "44951253027a5997e64e70a61aacb97681e27bc683cfb37f6d7a15f50cce1d36"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L09-result-phone.png",
+      "bytes": 17456,
+      "sha256": "7fff1221cbde51d7d59562996a83ed4ba201a29f646d2fc0fe1eb12b971c8bff"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L10-action-phone.png",
+      "bytes": 21670,
+      "sha256": "92d87c6df805fe3b1a5c7dee2c4fcff7c478b855a09075b53a80beab82131245"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L10-before-phone.png",
+      "bytes": 17404,
+      "sha256": "93f8d3cd728f2033911d0b93cd1acd5c14ab9c91a5b54499038fcea055fc7057"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-L10-result-phone.png",
+      "bytes": 17285,
+      "sha256": "35495349bcfd32c0619a083ac6eedb3db5f9d044a330433dc8318e6f7b9232e5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-01.png",
+      "bytes": 55765,
+      "sha256": "8d5113767cd4ce0026b7273fb809e6c8b56b62ec6037ac59e9e89ca850ad9f50"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-02.png",
+      "bytes": 59546,
+      "sha256": "0633937db4bc9bab92b5a7f3ffb0f3a6fc7c4b6691b95b08346829e4b6c283a5"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-03.png",
+      "bytes": 59608,
+      "sha256": "f62b2eed9398698e137907b64d312571c180b8d9bb45b0c166045f7d849861bf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-04.png",
+      "bytes": 56695,
+      "sha256": "35fdeb5ec9f38bc53f31c7bd602d3afe2e791bd2cd6f13aa1c3eefbdf6818e31"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-05.png",
+      "bytes": 54661,
+      "sha256": "d1f86d58d246ccef2069d29a3b3f88804462855e2da764f79cd9ebc6fdc0f2e2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-06.png",
+      "bytes": 55422,
+      "sha256": "b2f2f50fd3781542303147af3a73cdc13732298db3c38079219ae5ceecbfbf73"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-07.png",
+      "bytes": 65215,
+      "sha256": "cf4200dba4f6ec43aa34b394ff98c875a5dfad2a34e2f51154e6527c7f5e6ba2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-08.png",
+      "bytes": 72814,
+      "sha256": "41e84975e5e4e5e73f305aee74137e9bd4bd5cc2a1e80a22a5972f7e0bc383b4"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-09.png",
+      "bytes": 63963,
+      "sha256": "8898ff09d6c25a991da51575b6a46933138e01e5e32d446d834eafcac271dd63"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board-line-10.png",
+      "bytes": 76689,
+      "sha256": "38817130776f07cb00a7142067f650c90af0666803935f24a0a50c47f303aba2"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/board.html",
+      "bytes": 71472,
+      "sha256": "bb68e2ed36463f29458c4a83570f8bae4742e1b2bb6ae3ae7ee2438439353d52"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/concept-a-phone.png",
+      "bytes": 22975,
+      "sha256": "edf3009c4d8b883b852ecee566aecb3437037385132fa3aafca6b19298f4aa76"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/concept-b-phone.png",
+      "bytes": 25644,
+      "sha256": "7385415f79ea658c2337e9924781fc22372ce7915d41468d2278614894c63a01"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/concept-c-phone.png",
+      "bytes": 23505,
+      "sha256": "0567785707b27bc6a528cc9beab7e1741230bba0660a4e3bf00c18ad51c52ebf"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/concepts-phone.png",
+      "bytes": 122452,
+      "sha256": "9d7326c57dbe68bf1190e9df8db088acfa7c01bca876313b03b49cf2c6a2c662"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/concepts-wide.png",
+      "bytes": 154039,
+      "sha256": "c8efb6aa470b1898b17cf99247fcc82f1f6f78ba80242f92783544215227cfed"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/concepts.html",
+      "bytes": 9535,
+      "sha256": "91fcdfab173f9077a6628ceba19dee60aab8dd89d291d5e311fbc6968429cedc"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/sketches/framing-check.json",
+      "bytes": 202531,
+      "sha256": "4396b3822d10888e49a34ba26b0c74fd3d4a0551bc6d0f2f632a50a9e225b234"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/timeline.js",
+      "bytes": 9454,
+      "sha256": "9f203cd73915ce5a335c6a805e165b64352a554953db611f633006b7374734ca"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/animator-tool-execution.json",
+      "bytes": 6519,
+      "sha256": "7dcd3eac7d4c996e071c46ee457febf0b5e22728af391f83635d57368863281e"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/approved-narration-dry-run.txt",
+      "bytes": 4106,
+      "sha256": "54522c2c6b10d188f9fd0705583e371a1559457861e5377932f0282866db2412"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/approved-synthesis.txt",
+      "bytes": 9,
+      "sha256": "5d648058c33331e6a31802ccb7d4967543eef37385c417640e64567066409a9f"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/film-fix-check.json",
+      "bytes": 2292,
+      "sha256": "48d0c2c96f3f81da30e91cda95e3b4050bfff566e3a36a73e32461c5c49cd4ac"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/guarded-animation-check.txt",
+      "bytes": 11,
+      "sha256": "12156a0e12001bba1c2d303e8c1bd8b7abc7c140dcdc8fbf60d65de8dfcf8e7a"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/measured-timeline.txt",
+      "bytes": 162,
+      "sha256": "9c98e425e3d12991394773ee590aa00faef8bc12b2ca6077a995b88dc363ed59"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/motion-library.txt",
+      "bytes": 2944,
+      "sha256": "2609b7c2b24e592f35f699118899e1effae325a4840a545212535070b302bbd8"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/narration-dry-run.txt",
+      "bytes": 4106,
+      "sha256": "54522c2c6b10d188f9fd0705583e371a1559457861e5377932f0282866db2412"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/phrase-alignment.txt",
+      "bytes": 2463,
+      "sha256": "28f2d36fea4f86b0e6d7b066dd8e9d517cc6c5a92e7d4523ec340584b95abab9"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/portrait-library.txt",
+      "bytes": 116,
+      "sha256": "3951b04fc5fafea3a4ed66b1760793e1c66d9024e9e4a303244784cd70100afb"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/portrait-probe.txt",
+      "bytes": 1553,
+      "sha256": "42ffbaddc749fb81b689acc6a9178e1b1e713479b2d991bb7d95e747df18fe24"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/preview-check.json",
+      "bytes": 6700,
+      "sha256": "30a9e27a24b1c9cda4416b79f577a1902f1608be67e6bedd757712a17a582d81"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/preview-check.txt",
+      "bytes": 1603,
+      "sha256": "f1f48c6f7846386e0e5ab738a357e8f71d36cdbaddbd3d55d2b1a9a2ebd2b8e1"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/probe-help.txt",
+      "bytes": 324,
+      "sha256": "509d1cdc1fa0890d589ec66cf53a4059b5e5190a2bfa0630e0c6e9646119ae60"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/production-execution.json",
+      "bytes": 3953,
+      "sha256": "b66e8b5ab972150f9fd00aaf83843f3fd0d2e57b194349bb6ce4011c8af87333"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/render-help.txt",
+      "bytes": 1498,
+      "sha256": "7a28c19f2e41809b0333f88a46511339a6f6e7ebf58c2e2388f8e3ae0336ade7"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/runtime-paths.txt",
+      "bytes": 163,
+      "sha256": "29d16bdbc071c161cb8376fbe4558570a599d84e0135a9290cfe89cd4233dc73"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/runtime.txt",
+      "bytes": 525,
+      "sha256": "01c713c188c8cb7daccea5bad7e77561035dfa3bc94728b41ecf5241bdb0dc95"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/skill-discovery.txt",
+      "bytes": 347,
+      "sha256": "a8bbfd781988bffebd128c527aeaa2a5f10b8cbb188150de3e02ec41ffface3c"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/tool-evidence/stills-help.txt",
+      "bytes": 316,
+      "sha256": "fb9d5fa2878c92416c0eaf41efccc90908c6888dc8d443d96ffc3000b5645525"
+    },
+    {
+      "path": "2d-animation-v2/examples/http-cache/verify_preview.py",
+      "bytes": 8788,
+      "sha256": "3d8e96bcc248b9fbc773d6afe26fbf602369b30966a0f54d0448f6d8944e3102"
+    },
+    {
+      "path": "2d-animation-v2/requirements.txt",
+      "bytes": 158,
+      "sha256": "8f4d670714a0ff457d8f2f236a320973f8627911af62e4a55d6f4098bff71378"
+    },
+    {
+      "path": "2d-animation-v2/scripts/studio.py",
+      "bytes": 24515,
+      "sha256": "0a8dc5c3d2c29bed0266a54db1eab618560c379ae42c665801f19c841c83f014"
+    },
+    {
+      "path": "2d-animation-v2/templates/REFERENCES.json",
+      "bytes": 525,
+      "sha256": "91fbc444fbc847bcd130e4a313d5c063298ba1e23f0e7e4b2c818f4e24e3f1fa"
+    },
+    {
+      "path": "2d-animation-v2/templates/handoff.json",
+      "bytes": 254,
+      "sha256": "6b45c18425ada5153f7ba771d1bfc91c8de2f36f50518151f0c1c59d4421946a"
+    },
+    {
+      "path": "2d-animation-v2/templates/motion_beats.json",
+      "bytes": 262,
+      "sha256": "ed120d35a5bd562878a2f865b2c53942ad351bfb1a2774bc26033ff94e9738fd"
+    },
+    {
+      "path": "2d-animation-v2/templates/production.json",
+      "bytes": 227,
+      "sha256": "db3267b3ca620bb137c9a18a09b7eb3887318f877b724c12effe5259a3226d90"
+    },
+    {
+      "path": "2d-animation-v2/tests/test_studio.py",
+      "bytes": 32513,
+      "sha256": "bdf706f4aab622e059bf4be1b672b22c27458a8fe8b1bc0b01c336f00a15036e"
+    },
+    {
+      "path": "2d-animation-v2/workflow/DIRECTOR.md",
+      "bytes": 9817,
+      "sha256": "86531f981c4088ebf22f987b73f2034d89e1acd7c3424bf6089af428ea04b680"
+    },
+    {
+      "path": "2d-animation-v2/workflow/HTTP_CACHE_STORYTELLING.md",
+      "bytes": 23141,
+      "sha256": "aaa24db7dca813cc56212d349c44e6a870cb1e48949fe6602e1d0e99c4accd2e"
+    },
+    {
+      "path": "2d-animation-v2/workflow/PRODUCTION_VALIDATION.md",
+      "bytes": 10518,
+      "sha256": "ba06f524f5ff55e434863bad2c0d1f0aecc5b83caef242979663962c8d623424"
+    },
+    {
+      "path": "2d-animation-v2/workflow/REFERENCE_STUDY.md",
+      "bytes": 6495,
+      "sha256": "1dd30de9b330ed40a9843e2de829da181a13d9b4338bab28390bc999a65e50cf"
+    },
+    {
+      "path": "2d-animation-v2/workflow/ROLES.md",
+      "bytes": 10565,
+      "sha256": "a742fd4ed823c2f258f6e453961cd84c378a379fda5a838cba3405d021cea7f7"
+    },
+    {
+      "path": "2d-animation-v2/workflow/VALIDATION.md",
+      "bytes": 12538,
+      "sha256": "ec05fa2e39559a06f8c1ede7749913fe135c6da3afd7410a2f6e721f7cc79fd7"
+    },
+    {
+      "path": "2d-animation-v2/workflow/references/INITIAL_STUDY.md",
+      "bytes": 8841,
+      "sha256": "6c5785430d30a9c42dce29554503bb526ad782b738b9004706a2905904022226"
+    },
+    {
+      "path": "2d-animation-v2/workflow/references/REFERENCES.json",
+      "bytes": 5397,
+      "sha256": "90241d2c51b7d0c00bdd35e7ae2b8856f418de45309d70d0861548daca58efcb"
+    },
+    {
+      "path": "2d-animation-v2/workflow/references/VIEWING_LOG.md",
+      "bytes": 5193,
+      "sha256": "416672179ff3018236ae184afdd2de8efd8c6cfc8ff4be752ccb6319a224edb7"
+    },
+    {
+      "path": "2d-animation-v2/workflow/skills.json",
+      "bytes": 9081,
+      "sha256": "f9b90ccbec09b17cddef6c458f6e6278d64c0f8719503a58dbdea41751954201"
+    },
+    {
+      "path": "motion-audits/hyperframes-channel-2d-animation-v2-2026-10-19.html",
+      "bytes": 11931,
+      "sha256": "c310999f07142811daa1ab3a15b5c086b45871230df45aa6a993e5a6da7e0cce"
+    }
+  ]
+}

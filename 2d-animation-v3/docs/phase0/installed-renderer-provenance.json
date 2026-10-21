@@ -1,0 +1,123 @@
+{
+  "checkedOn": "2026-10-21",
+  "scope": "Actual installed release metadata and preserved license files; commercial eligibility not assumed",
+  "packages": [
+    {
+      "engine": "remotion",
+      "package": "remotion",
+      "version": "4.0.537",
+      "declaredLicense": "SEE LICENSE IN LICENSE.md",
+      "gitHead": null,
+      "licenseFiles": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "bd65083b940f61904f6ef298aade918a7cad72a3e35bc406e36fab365844b673"
+        }
+      ]
+    },
+    {
+      "engine": "remotion",
+      "package": "@remotion/player",
+      "version": "4.0.537",
+      "declaredLicense": "SEE LICENSE IN LICENSE.md",
+      "gitHead": null,
+      "licenseFiles": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "bd65083b940f61904f6ef298aade918a7cad72a3e35bc406e36fab365844b673"
+        }
+      ]
+    },
+    {
+      "engine": "remotion",
+      "package": "@remotion/renderer",
+      "version": "4.0.537",
+      "declaredLicense": "SEE LICENSE IN LICENSE.md",
+      "gitHead": null,
+      "licenseFiles": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "bd65083b940f61904f6ef298aade918a7cad72a3e35bc406e36fab365844b673"
+        }
+      ]
+    },
+    {
+      "engine": "remotion",
+      "package": "@remotion/bundler",
+      "version": "4.0.537",
+      "declaredLicense": "SEE LICENSE IN LICENSE.md",
+      "gitHead": null,
+      "licenseFiles": [
+        {
+          "name": "LICENSE.md",
+          "sha256": "bd65083b940f61904f6ef298aade918a7cad72a3e35bc406e36fab365844b673"
+        }
+      ]
+    },
+    {
+      "engine": "motion-canvas",
+      "package": "@motion-canvas/core",
+      "version": "3.17.2",
+      "declaredLicense": "MIT",
+      "gitHead": "e735a995aa738ca682feb4204a39ee7db7b5d279",
+      "licenseFiles": [
+        {
+          "name": "LICENSE",
+          "sha256": "b3f12201916c5d478263cd210cf17f3d0c007d03bd574e0b77cac6307953068e"
+        }
+      ]
+    },
+    {
+      "engine": "motion-canvas",
+      "package": "@motion-canvas/2d",
+      "version": "3.17.2",
+      "declaredLicense": "MIT",
+      "gitHead": "e735a995aa738ca682feb4204a39ee7db7b5d279",
+      "licenseFiles": [
+        {
+          "name": "LICENSE",
+          "sha256": "b3f12201916c5d478263cd210cf17f3d0c007d03bd574e0b77cac6307953068e"
+        }
+      ]
+    },
+    {
+      "engine": "motion-canvas",
+      "package": "@motion-canvas/player",
+      "version": "3.17.2",
+      "declaredLicense": "MIT",
+      "gitHead": "e735a995aa738ca682feb4204a39ee7db7b5d279",
+      "licenseFiles": [
+        {
+          "name": "LICENSE",
+          "sha256": "b3f12201916c5d478263cd210cf17f3d0c007d03bd574e0b77cac6307953068e"
+        }
+      ]
+    },
+    {
+      "engine": "motion-canvas",
+      "package": "@motion-canvas/vite-plugin",
+      "version": "3.17.2",
+      "declaredLicense": "MIT",
+      "gitHead": "e735a995aa738ca682feb4204a39ee7db7b5d279",
+      "licenseFiles": [
+        {
+          "name": "LICENSE",
+          "sha256": "b3f12201916c5d478263cd210cf17f3d0c007d03bd574e0b77cac6307953068e"
+        }
+      ]
+    },
+    {
+      "engine": "motion-canvas",
+      "package": "@motion-canvas/ffmpeg",
+      "version": "3.17.2",
+      "declaredLicense": "MIT",
+      "gitHead": "e735a995aa738ca682feb4204a39ee7db7b5d279",
+      "licenseFiles": [
+        {
+          "name": "LICENSE",
+          "sha256": "b3f12201916c5d478263cd210cf17f3d0c007d03bd574e0b77cac6307953068e"
+        }
+      ]
+    }
+  ]
+}

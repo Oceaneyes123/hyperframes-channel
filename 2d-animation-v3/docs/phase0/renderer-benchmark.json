@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "status": "complete-technical-benchmark",
+  "engines": [
+    "remotion",
+    "motion-canvas"
+  ],
+  "isolation": "Separate benchmark workspace and dependency lockfiles; no studio integration, source-plan changes, sibling project writes or production assets",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "durationFrames": 360,
+  "audio": "none",
+  "assets": "Synthetic shapes and locally available system text only; no model calls or downloads of media",
+  "shots": [
+    {
+      "id": "recording",
+      "startFrame": 0,
+      "durationFrames": 90,
+      "subject": "A synthetic voice-note waveform becomes transcript lines",
+      "incoming": "start",
+      "transitionWindow": [
+        60,
+        89
+      ],
+      "outgoing": "continuous-transformation"
+    },
+    {
+      "id": "transcript",
+      "startFrame": 90,
+      "durationFrames": 90,
+      "subject": "The same transcript remains visible while a selection is clarified",
+      "incoming": "continuous-transformation",
+      "outgoing": "hard-cut"
+    },
+    {
+      "id": "newsletter",
+      "startFrame": 180,
+      "durationFrames": 90,
+      "subject": "An intentionally different newsletter composition with a recognizable rectangular subject",
+      "incoming": "hard-cut",
+      "outgoing": "match-cut"
+    },
+    {
+      "id": "review",
+      "startFrame": 270,
+      "durationFrames": 90,
+      "subject": "A matching rectangular review panel receives a simple comparison and settles",
+      "incoming": "match-cut",
+      "outgoing": "end"
+    }
+  ],
+  "inspectionFrames": [
+    0,
+    59,
+    60,
+    89,
+    90,
+    179,
+    180,
+    269,
+    270,
+    359
+  ],
+  "inspectionIntervals": [
+    [
+      84,
+      96
+    ],
+    [
+      174,
+      186
+    ],
+    [
+      264,
+      276
+    ]
+  ],
+  "seekOrder": [
+    359,
+    0,
+    180,
+    89,
+    270,
+    90,
+    179,
+    0
+  ],
+  "procedure": [
+    "Pin actual compatible package versions and inspect their distributed license files; preserve notices.",
+    "Implement the identical shot timing, visual brief and holds in separate engine-native prototypes.",
+    "Typecheck/build both prototypes before playback or export.",
+    "Record local preview URL and review the full 12-second interval at natural speed.",
+    "Inspect every boundary interval and specified frame; a still alone is not a motion pass.",
+    "Seek nonsequentially, checking that repeated target frames reproduce the same state.",
+    "Compare a change limited to shot 3, checking that other shot states remain unchanged.",
+    "Produce silent local exports only within the approved experiment scope, then verify dimensions, fps, duration, frame count, hashes and full decode.",
+    "Record cold/warm render time and memory with actual hardware, Node, browser, codec and package versions. Preserve failures; do not estimate missing results.",
+    "Repeat three measured warm runs per engine if the benchmark budget allows; report sample count and medians only for actual completed runs.",
+    "Compare same-engine repeated output/frame hashes under controlled encoding; do not require equal hashes between different renderers.",
+    "Record human playback findings separately from machine checks and licensing/integration evidence."
+  ],
+  "selectionRules": [
+    "Both intentional cuts and continuous transformation must work and be reviewed.",
+    "The player must support reproducible stable project URLs and reliable frame inspection.",
+    "Preview/export correctness and permitted intended use are gates; convenience alone cannot override a failure.",
+    "When both pass, prefer simpler verified React-studio integration and targeted revisions; diagram authoring benefits may favor Motion Canvas if evidenced.",
+    "Record the selected package/version, tradeoffs, unresolved limits, evidence and explicit decision. No selection is recorded before execution."
+  ],
+  "notEstablishedByThisTest": [
+    "Narration quality or synchronization",
+    "Real project rendering performance",
+    "Long-form scalability",
+    "Human script quality",
+    "Production approval",
+    "Publishing authorization"
+  ],
+  "results": {
+    "remotion": {
+      "build": "PASS",
+      "verifiedExports": 4,
+      "fullDecode": "PASS",
+      "seek": "PASS",
+      "targetedEditSamples": "PASS",
+      "inspectedBoundaryFrames": 39,
+      "evidence": "renderer-export-verification.json",
+      "metrics": "renderer-metrics.json"
+    },
+    "motion-canvas": {
+      "build": "PASS",
+      "verifiedExports": 4,
+      "fullDecode": "PASS",
+      "seek": "PASS",
+      "targetedEditSamples": "PASS",
+      "inspectedBoundaryFrames": 39,
+      "evidence": "renderer-export-verification.json",
+      "metrics": "renderer-metrics.json"
+    }
+  },
+  "selectedEngine": "remotion"
+}

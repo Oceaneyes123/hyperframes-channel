@@ -1,0 +1,38 @@
+{
+  "checkedOn": "2026-10-21",
+  "installed": false,
+  "packages": [
+    {
+      "package": "remotion",
+      "registryMetadata": {
+        "version": "4.0.537",
+        "peerDependencies": {
+          "react": ">=16.8.0",
+          "react-dom": ">=16.8.0"
+        }
+      }
+    },
+    {
+      "package": "@remotion/player",
+      "registryMetadata": {
+        "version": "4.0.537",
+        "peerDependencies": {
+          "react": ">=16.8.0",
+          "react-dom": ">=16.8.0"
+        }
+      }
+    },
+    {
+      "package": "@motion-canvas/core",
+      "registryMetadata": "3.17.2"
+    },
+    {
+      "package": "@motion-canvas/2d",
+      "registryMetadata": "3.17.2"
+    },
+    {
+      "package": "@motion-canvas/player",
+      "registryMetadata": "3.17.2"
+    }
+  ]
+}

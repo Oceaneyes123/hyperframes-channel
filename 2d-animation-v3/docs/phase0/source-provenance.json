@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "name": "storytelling-hooks",
+      "repository": "yaxeen/storytelling-skills",
+      "ref": "24ef3c1e3d7fde66cc5f1c5953cd6c1d7afc0b4f",
+      "checkedOn": "2026-10-21",
+      "files": [
+        {
+          "kind": "skill",
+          "path": "skills/storytelling-hooks/SKILL.md",
+          "url": "https://raw.githubusercontent.com/yaxeen/storytelling-skills/24ef3c1e3d7fde66cc5f1c5953cd6c1d7afc0b4f/skills/storytelling-hooks/SKILL.md",
+          "bytes": 10763,
+          "sha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264",
+          "installed": true,
+          "installedSha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264",
+          "installedMatchesPinnedSource": true
+        },
+        {
+          "kind": "license",
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/yaxeen/storytelling-skills/24ef3c1e3d7fde66cc5f1c5953cd6c1d7afc0b4f/LICENSE",
+          "bytes": 1071,
+          "sha256": "642d687551c97106ee19d18d2e6403ddf8e03a95d99e946c8ecd7ced73fd582f",
+          "licenseHeading": "MIT License"
+        }
+      ]
+    },
+    {
+      "name": "humanizer",
+      "repository": "blader/humanizer",
+      "ref": "8c307f367c91bd974002f10f2be2965d642c13df",
+      "checkedOn": "2026-10-21",
+      "files": [
+        {
+          "kind": "skill",
+          "path": "SKILL.md",
+          "url": "https://raw.githubusercontent.com/blader/humanizer/8c307f367c91bd974002f10f2be2965d642c13df/SKILL.md",
+          "bytes": 32348,
+          "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+          "installed": true,
+          "installedSha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad",
+          "installedMatchesPinnedSource": true
+        },
+        {
+          "kind": "license",
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/blader/humanizer/8c307f367c91bd974002f10f2be2965d642c13df/LICENSE",
+          "bytes": 1066,
+          "sha256": "4ac4810254ab36d45419141aeb8e69bf50652cfafe5b2dab947d06d44e5cbf96",
+          "licenseHeading": "MIT License"
+        }
+      ]
+    },
+    {
+      "name": "copy-editing",
+      "repository": "coreyhaines31/marketingskills",
+      "ref": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+      "checkedOn": "2026-10-21",
+      "files": [
+        {
+          "kind": "skill",
+          "path": "skills/copy-editing/SKILL.md",
+          "url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b/skills/copy-editing/SKILL.md",
+          "bytes": 18459,
+          "sha256": "2a072606d9d5662509ea6ef62c65719487dcb68876acab9286bde4d1af5c030f",
+          "installed": false
+        },
+        {
+          "kind": "license",
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b/LICENSE",
+          "bytes": 1069,
+          "sha256": "b70d71e24e40fce5da8f4b6f9cd862096a048e433db7f3c8cac5e348e6d34591",
+          "licenseHeading": "MIT License"
+        }
+      ]
+    },
+    {
+      "name": "video-hook-writer",
+      "repository": "SkillMedev/creator-studio",
+      "ref": "21980fd85666053f4385fbf254bf960f03d34279",
+      "checkedOn": "2026-10-21",
+      "files": [
+        {
+          "kind": "skill",
+          "path": "skills/video-hook-writer/SKILL.md",
+          "url": "https://raw.githubusercontent.com/SkillMedev/creator-studio/21980fd85666053f4385fbf254bf960f03d34279/skills/video-hook-writer/SKILL.md",
+          "bytes": 6932,
+          "sha256": "45b08365a48433242d64557c0aa4f378af3cfb41d3b386b6994760278c2e4836",
+          "installed": false
+        },
+        {
+          "kind": "license",
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/SkillMedev/creator-studio/21980fd85666053f4385fbf254bf960f03d34279/LICENSE",
+          "bytes": 1074,
+          "sha256": "e55c0849226f9059d1b291000940bda5f88121f12a90c0d8c899fcccdb292292",
+          "licenseHeading": "MIT License"
+        }
+      ]
+    },
+    {
+      "name": "onetake",
+      "repository": "feitangyuan/onetake",
+      "ref": "415758128aa45cc54340df40d8109363447f582e",
+      "checkedOn": "2026-10-21",
+      "files": [
+        {
+          "kind": "skill",
+          "path": "SKILL.md",
+          "url": "https://raw.githubusercontent.com/feitangyuan/onetake/415758128aa45cc54340df40d8109363447f582e/SKILL.md",
+          "bytes": 22900,
+          "sha256": "b604fabedf15c868e7bee00ce93d946e7862d9bb2acfad936f2edc901a3a0d7e",
+          "installed": true,
+          "installedSha256": "b604fabedf15c868e7bee00ce93d946e7862d9bb2acfad936f2edc901a3a0d7e",
+          "installedMatchesPinnedSource": true
+        },
+        {
+          "kind": "license",
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/feitangyuan/onetake/415758128aa45cc54340df40d8109363447f582e/LICENSE",
+          "bytes": 4653,
+          "sha256": "1f7a4f2449fb543769568a4f0e6e2c622bf28e841fde09a4b6819dcaa4567412",
+          "licenseHeading": "Required Notice: Copyright (c) 2026 Patrick. onetake is free for noncommercial use only."
+        }
+      ]
+    },
+    {
+      "name": "remotion",
+      "repository": "remotion-dev/remotion",
+      "ref": "62f2069e82073b2a19d1ea22a21e25df2a98acf2",
+      "checkedOn": "2026-10-21",
+      "files": [
+        {
+          "kind": "license",
+          "path": "LICENSE.md",
+          "url": "https://raw.githubusercontent.com/remotion-dev/remotion/62f2069e82073b2a19d1ea22a21e25df2a98acf2/LICENSE.md",
+          "bytes": 2823,
+          "sha256": "bd65083b940f61904f6ef298aade918a7cad72a3e35bc406e36fab365844b673",
+          "licenseHeading": "# Remotion License"
+        }
+      ]
+    },
+    {
+      "name": "motion-canvas",
+      "repository": "motion-canvas/motion-canvas",
+      "ref": "7b91435c301d530351dcf5ebb91dd139c002e405",
+      "checkedOn": "2026-10-21",
+      "files": [
+        {
+          "kind": "license",
+          "path": "LICENSE",
+          "url": "https://raw.githubusercontent.com/motion-canvas/motion-canvas/7b91435c301d530351dcf5ebb91dd139c002e405/LICENSE",
+          "bytes": 1070,
+          "sha256": "b3f12201916c5d478263cd210cf17f3d0c007d03bd574e0b77cac6307953068e",
+          "licenseHeading": "MIT License"
+        }
+      ]
+    }
+  ]
+}

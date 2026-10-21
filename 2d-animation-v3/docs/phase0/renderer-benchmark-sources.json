@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "capturedOn": "2026-10-21",
+  "files": [
+    {
+      "path": "benchmarks/inspect.py",
+      "bytes": 3093,
+      "sha256": "856e0d8377a4187ba274ada037004c0a170fedcc114d1c3b83fa77bac519c03d"
+    },
+    {
+      "path": "benchmarks/motion-canvas/package-lock.json",
+      "bytes": 66413,
+      "sha256": "00f10d3dbcc3e50743ea0bf226006dafc3e2e21bc10d0c3a926b1ab9e9d73e90"
+    },
+    {
+      "path": "benchmarks/motion-canvas/package.json",
+      "bytes": 536,
+      "sha256": "c3738b606e927f32d4e9ee996dda6baed29775b322cf83779503df949ad194d4"
+    },
+    {
+      "path": "benchmarks/motion-canvas/preview.html",
+      "bytes": 838,
+      "sha256": "aba59740c04aab29598e6216ffa28c346013243ed4af2b90d924d92f277b4cc5"
+    },
+    {
+      "path": "benchmarks/motion-canvas/src/env.d.ts",
+      "bytes": 159,
+      "sha256": "f8b30db311c0fad98e175d0c8e9ddd2e5567415aa201935bb53cdf450b81d111"
+    },
+    {
+      "path": "benchmarks/motion-canvas/src/film.meta",
+      "bytes": 59,
+      "sha256": "e3235292192b60c7a7162b57b879306d73b5a9e5e852a224fa26971d8eefd641"
+    },
+    {
+      "path": "benchmarks/motion-canvas/src/film.tsx",
+      "bytes": 2858,
+      "sha256": "b6d32f9ba0eaf1c383101f1b82bd74d2fd4a76bce3c08e0b34803a676c521a06"
+    },
+    {
+      "path": "benchmarks/motion-canvas/src/preview.ts",
+      "bytes": 4488,
+      "sha256": "adbb4e76d22b21f310978e18c6be84195f02c93f29562e4fb8355bae5268ef41"
+    },
+    {
+      "path": "benchmarks/motion-canvas/src/project.meta",
+      "bytes": 517,
+      "sha256": "fed469d7bd3aae39499497ed7c57d77713ba3f0415ae43d522ab30bb6685a666"
+    },
+    {
+      "path": "benchmarks/motion-canvas/src/project.ts",
+      "bytes": 132,
+      "sha256": "5e302f6f1507a2896a0c95a3c0ee0bd60711ca6629ddbd2fa4af2449cec2a653"
+    },
+    {
+      "path": "benchmarks/motion-canvas/tsconfig.json",
+      "bytes": 223,
+      "sha256": "36a147021c4d63bb393baa72f5aeab3f04a31fa68c838ef0e90f3ff7450bde10"
+    },
+    {
+      "path": "benchmarks/motion-canvas/vite.config.ts",
+      "bytes": 287,
+      "sha256": "0c003ccbf4a851c646d1aa5c2915e9e6e7e2051b114e3fde49e5c4c0b6090a0a"
+    },
+    {
+      "path": "benchmarks/README.md",
+      "bytes": 3757,
+      "sha256": "46397f5dab37f756bc99c2a86c0981ca5eb7f279682db28df9be954486a2f40c"
+    },
+    {
+      "path": "benchmarks/remotion/index.html",
+      "bytes": 261,
+      "sha256": "1cb12f69415e2a7f2f4ef246e615b832365470a6dd55d3187f34830a66b7e60a"
+    },
+    {
+      "path": "benchmarks/remotion/package-lock.json",
+      "bytes": 131030,
+      "sha256": "63274493a7cdaac7d0f8f0cce7f9900955d6ae6f3318fc4cac3ad27bb3201403"
+    },
+    {
+      "path": "benchmarks/remotion/package.json",
+      "bytes": 472,
+      "sha256": "ac4ef6c184ef442eb9a44a68d8832de7a1213b299b6e19d848ce309bd271af6c"
+    },
+    {
+      "path": "benchmarks/remotion/render.mjs",
+      "bytes": 2512,
+      "sha256": "87d82d51f2d7bf1e94f741a5f8d087b29f576879df41b251ea4f595c961836f8"
+    },
+    {
+      "path": "benchmarks/remotion/src/Film.tsx",
+      "bytes": 2279,
+      "sha256": "3fb59cbda679ff3afae3c7708546b35e60c4af9685e484b9e04812c6ebce834f"
+    },
+    {
+      "path": "benchmarks/remotion/src/preview.tsx",
+      "bytes": 2605,
+      "sha256": "3c9378cfa3fc352bb3526fdc85bd6fb29ad1cee0c0e8ba7fc09216d2db202eb7"
+    },
+    {
+      "path": "benchmarks/remotion/src/register.tsx",
+      "bytes": 249,
+      "sha256": "ff95c60531a493b5bede31ba1b06e076adfbfd204f39fc4596176cfca2982c35"
+    },
+    {
+      "path": "benchmarks/remotion/tsconfig.json",
+      "bytes": 228,
+      "sha256": "0c6c945c4098e2282be629b466a1a41c6de1cb2b58ac561a3ca26018a7026dbb"
+    },
+    {
+      "path": "benchmarks/verify.py",
+      "bytes": 3638,
+      "sha256": "c679eeb05949ae49f33ab8b23d5b8a87a463d2d526b69886c170c6104fd75631"
+    }
+  ]
+}

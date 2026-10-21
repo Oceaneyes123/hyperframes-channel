@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "status": "prepared-not-run",
+  "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+  "sharedRules": [
+    "Use only supplied facts and explicitly hypothetical examples.",
+    "Connect the opening promise to a useful ending.",
+    "No invented demand, clients, sales, personal experience or income promises.",
+    "Sparse overlay text only when it teaches.",
+    "No forced CTA or generic motivational ending.",
+    "Preserve uncertainty and permission requirements.",
+    "Record actual model/version/settings and skill/source hashes before generating matched drafts."
+  ],
+  "briefs": [
+    {
+      "id": "finance-recovery",
+      "type": "explainer",
+      "topic": "Why losing 50% and gaining 50% do not cancel",
+      "payoff": "Understand that percentages use a changing starting amount.",
+      "facts": ["Hypothetical 100 becomes 50 after a 50% loss.", "A 50% gain on 50 adds 25, reaching 75.", "Returning from 50 to 100 requires a 100% gain."],
+      "boundaries": ["Ignore fees and deposits explicitly.", "No predictions, recommendations or promised returns."],
+      "existingV2Evidence": "2d-animation-v2/SCRIPT_TESTS.md: finance pairs and payoff-first trial"
+    },
+    {
+      "id": "http-cache-image",
+      "type": "explainer",
+      "topic": "How a cached image can avoid another download",
+      "payoff": "Distinguish a local stored copy, freshness permission and validation.",
+      "facts": ["Expiry does not itself delete the stored image.", "Under applicable cache rules, a fresh copy may be reused without a network request.", "For an unchanged validated representation, a 304 response has no new image body.", "Changed content can require a new response body."],
+      "boundaries": ["Do not generalize to every page or reload policy.", "No promise of renewed freshness after every 304."],
+      "sources": ["https://www.rfc-editor.org/rfc/rfc9111"],
+      "existingV2Evidence": "2d-animation-v2/examples/http-cache/FACTS.md and SCRIPT.md"
+    },
+    {
+      "id": "ai-citation-check",
+      "type": "quick-tutorial",
+      "topic": "Check a plausible AI-generated citation",
+      "payoff": "Verify both that a source exists and that it supports the claim.",
+      "facts": ["A plausible citation format is not evidence of existence or support.", "Open the source and inspect the passage behind the claim.", "If evidence is unavailable, keep the claim unverified rather than invent a source."],
+      "boundaries": ["No universal model failure rate or invented live demonstration.", "Do not attribute deceptive intent."],
+      "existingV2Evidence": "2d-animation-v2/SCRIPT_TESTS.md: AI citation pairs"
+    },
+    {
+      "id": "ai-invoice-check",
+      "type": "quick-tutorial",
+      "topic": "Review an AI-assisted extraction of a fictional invoice",
+      "payoff": "Compare extracted fields to the source and check the total before using them.",
+      "facts": ["Fictional example: subtotal 100 plus a listed fee of 5 gives a total of 105.", "Compare the source subtotal, fee and total to the extracted values.", "A missing field stays missing and requires review; do not infer it as a fact."],
+      "boundaries": ["Use synthetic or permissioned documents only.", "No claim that arithmetic alone verifies the document or an AI tool's accuracy.", "No real tax rule, currency, account data or live tool result is implied."],
+      "existingV2Evidence": null
+    },
+    {
+      "id": "ai-newsletter-costs",
+      "type": "explainer",
+      "topic": "Separate a hypothetical AI-assisted newsletter fee from earnings",
+      "payoff": "Distinguish conditional gross revenue, listed costs and actual profit.",
+      "facts": ["Only if a client agrees and pays a hypothetical 200 is gross revenue 200.", "With an illustrative payment fee of 10 and a tool allocation of 20, 170 remains after those two costs.", "Labor, taxes, revisions, refunds and other costs are omitted, so 170 is not established net profit.", "AI assistance does not remove permission, fact checking or human editing."],
+      "boundaries": ["No existing client, sale, market demand or earnings is claimed.", "Do not label 170 as take-home pay or passive income."],
+      "existingV2Evidence": null
+    }
+  ]
+}
