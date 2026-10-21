@@ -7,6 +7,9 @@ record genuine older approvals only after checking their messages and files.
 1. Research primary sources into FACTS.md. Record type, outcome, complete coverage,
    factual limits and runtime in BRIEF.md. A task is tutorial; a mechanism is
    explainer. Reuse local licensed assets where useful.
+   Include the audience, promised payoff and one measurable learning hypothesis.
+   Read relevant prior publishing analytics lessons, if available; cite their
+   evidence and record applicability or the reason for rejecting the proposal.
    Complete [reference deconstruction](REFERENCE_STUDY.md) alongside factual
    research: select actual clips from the initial channels and supplied videos,
    inspect moving frames, record REFERENCES.json and local timestamped evidence.
@@ -73,6 +76,39 @@ record genuine older approvals only after checking their messages and files.
 9. Present Gate 2 after blocking findings close and every beat has actual playback
    evidence. Record user approval, guarded render, export verification. Changed
    preview inputs require re-audit and renewed Gate 2.
+
+## Publishing and learning handoff
+
+Follow the sibling [video workflow](../../video-workflow/README.md) after a
+verified export. OneTake retains all animation/render ownership, and both
+production gates remain unchanged. Publishing records live in
+`video-workflow/videos/<slug>/` at the workspace root, never inside the production
+project: those additions can invalidate Gate 2. The adapter reads source hashes,
+current gate receipts and `output/render-verification.json`; it references the
+MP4 without copying or modifying the production project.
+
+Reuse existing specialists for packaging. Scriptwriter owns three truthful title
+angles and the description; Art Director owns two thumbnail concepts and the
+selected image; Reviewer checks accuracy, the promised payoff and phone-size
+readability against the actual export. Director owns package selection, channel,
+audience/disclosure settings, rights confirmation and exact visibility/time.
+Prepare and inspect the local package review before requesting release approval.
+
+Verify the actual user message before recording separate release authorization
+against the package hashes and release settings. Gate 1/Gate 2, tool checks and
+implementation/setup approval do not authorize upload, scheduling or publication.
+One explicit instruction may authorize the complete release; do not ask twice
+when it already does. Keep the upload private until processing, thumbnail
+application and actual Studio copyright/restriction review are complete. Confirm
+remote state after release; elapsed schedule time is not publication evidence.
+Account connection, Shorts thumbnails, scheduling and analytics remain unverified
+until authorized live account tests establish their capabilities.
+
+Collect available analytics, review comparable ages with coverage and limitations,
+and record at most one proposed next experiment in `analytics/LESSON.md`. The next
+brief can cite that lesson; workflow initialization can also bind its hash with
+`--prior-lesson`. Do not infer causation, auto-edit published assets, rewrite
+production rules or activate recurring collection from a review alone.
 
 ## Handoff record
 
