@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "scope": "Different native pipelines; not a controlled cross-engine speed/memory ranking",
+  "engines": {
+    "remotion": {
+      "runs": [
+        {
+          "label": "cold",
+          "elapsedMs": 37127.024,
+          "parentPeakRssBytes": 1086717952,
+          "memoryScope": "Node parent only; excludes browser/encoder children"
+        },
+        {
+          "label": "warm-1",
+          "elapsedMs": 35752.4553,
+          "parentPeakRssBytes": 157605888,
+          "memoryScope": "Node parent only; excludes browser/encoder children"
+        },
+        {
+          "label": "warm-2",
+          "elapsedMs": 35151.73319999999,
+          "parentPeakRssBytes": 175448064,
+          "memoryScope": "Node parent only; excludes browser/encoder children"
+        },
+        {
+          "label": "warm-3",
+          "elapsedMs": 35030.475099999996,
+          "parentPeakRssBytes": 177541120,
+          "memoryScope": "Node parent only; excludes browser/encoder children"
+        }
+      ],
+      "warmMedianMs": 35151.73319999999,
+      "dependencyAudit": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "nativePreviewUrl": "http://127.0.0.1:3103/"
+    },
+    "motion-canvas": {
+      "runs": [
+        {
+          "label": "cold",
+          "elapsedMs": 6772.60000000149,
+          "memoryScope": "unavailable; browser/encoder memory not attributed"
+        },
+        {
+          "label": "warm-1",
+          "elapsedMs": 6291.79999999702,
+          "memoryScope": "unavailable; browser/encoder memory not attributed"
+        },
+        {
+          "label": "warm-2",
+          "elapsedMs": 6259.60000000149,
+          "memoryScope": "unavailable; browser/encoder memory not attributed"
+        },
+        {
+          "label": "warm-3",
+          "elapsedMs": 6552.9000000059605,
+          "memoryScope": "unavailable; browser/encoder memory not attributed"
+        }
+      ],
+      "warmMedianMs": 6291.79999999702,
+      "dependencyAudit": {
+        "info": 0,
+        "low": 0,
+        "moderate": 3,
+        "high": 6,
+        "critical": 0,
+        "total": 9
+      },
+      "nativePreviewUrl": "http://127.0.0.1:3104/preview.html"
+    }
+  }
+}

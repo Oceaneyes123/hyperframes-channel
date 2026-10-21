@@ -1,0 +1,11 @@
+.next/
+out/
+.data/
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+npm-debug.log*
+benchmarks/**/output/
+benchmarks/**/dist/
+benchmarks/**/.vite/

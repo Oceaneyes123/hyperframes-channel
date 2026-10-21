@@ -1,0 +1,19 @@
+{
+  "name": "v3-motion-canvas-benchmark",
+  "private": true,
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 3104 --strictPort",
+    "build": "tsc --noEmit && vite build"
+  },
+  "dependencies": {
+    "@motion-canvas/2d": "3.17.2",
+    "@motion-canvas/core": "3.17.2",
+    "@motion-canvas/ffmpeg": "3.17.2",
+    "@motion-canvas/player": "3.17.2",
+    "@motion-canvas/ui": "3.17.2",
+    "@motion-canvas/vite-plugin": "3.17.2",
+    "@types/node": "24.19.2",
+    "typescript": "6.0.3",
+    "vite": "5.4.21"
+  }
+}

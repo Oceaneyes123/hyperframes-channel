@@ -1,0 +1,11 @@
+{
+  "observedOn": "2026-10-21",
+  "os": "Microsoft Windows NT 10.0.26200.0",
+  "cpu": "AMD Ryzen 7 3700X 8-Core Processor",
+  "logicalCpuCount": 16,
+  "physicalMemoryBytes": 51482046464,
+  "node": "v24.6.0",
+  "remotionChromeVersion": "149.0.7827.55",
+  "motionCanvasBrowser": "Codex in-app browser; version unavailable through observed UI",
+  "verificationFfmpeg": "ffmpeg version N-119856-gbe46370941-20250608 Copyright (c) 2000-2025 the FFmpeg developers"
+}

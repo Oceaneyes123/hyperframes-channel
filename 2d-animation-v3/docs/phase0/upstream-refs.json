@@ -1,0 +1,26 @@
+[
+  {
+    "repository": "coreyhaines31/marketingskills",
+    "ref": "e85f3cbc2e4a79bf33b2a12e9bdd9087d414735b",
+    "branch": "main",
+    "license": "MIT"
+  },
+  {
+    "repository": "SkillMedev/creator-studio",
+    "ref": "21980fd85666053f4385fbf254bf960f03d34279",
+    "branch": "main",
+    "license": "MIT"
+  },
+  {
+    "repository": "remotion-dev/remotion",
+    "ref": "62f2069e82073b2a19d1ea22a21e25df2a98acf2",
+    "branch": "main",
+    "license": "NOASSERTION"
+  },
+  {
+    "repository": "motion-canvas/motion-canvas",
+    "ref": "7b91435c301d530351dcf5ebb91dd139c002e405",
+    "branch": "main",
+    "license": "MIT"
+  }
+]
