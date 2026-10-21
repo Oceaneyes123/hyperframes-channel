@@ -8,6 +8,12 @@ requests, immutable proposals, comparison, explicit accept/reject, exact script
 acceptance, stale-state detection and persisted sessions/jobs. See
 [script review evidence](script-review.md).
 
+The [evidence-grounded writing workflow](researched-writing.md) is now implemented:
+source/payoff briefs, linked claims, distinct hook proposals, explicit hook choice,
+full writing, installed humanizer refinement, separate model editorial findings,
+and safe draft import. A real gpt-6-luna browser run passed. This is a technical
+milestone; it does not establish writing quality or independently verify sources.
+
 The real gateway at `http://100.98.184.97:8317/v1` was restored on 2026-10-21.
 Authenticated model discovery and actual `gpt-6-luna` streaming passed, including
 browser proposal/acceptance/reload. See [gateway evidence](gateway-verification.md).
@@ -15,13 +21,21 @@ No editorial quality or general model-capability conclusion follows from that ch
 
 ## Next steps in order
 
-1. Implement PLAN.md's researched writing pipeline: evidence/payoff brief, distinct
-   hook options, full draft, skill-backed refinement and separate editorial review.
-   Run the prepared five-brief factual/read-aloud evaluation with blinded human
-   preference. Scoped script revision is not that full pipeline.
-2. Add three distinct visual concepts and concept selection, then shot-based
-   storyboards with purpose, transition type and explicit dependency identities.
-   Require a current accepted script and invalidate affected artifacts after edits.
+1. Review the [five revised proposals](writing-evaluation/2026-10-22/proposed-drafts.md).
+   The user's text preferences and requested corrections are recorded and applied;
+   exact revised-text acceptance and actual read-aloud observations remain pending.
+   A separate fully blinded review is not established by this chat response.
+   Original comparison outputs and all model/editorial receipts are preserved;
+   no general v3 superiority is established.
+   The baseline is a v2-guide reconstruction, not complete v2 workflow execution.
+   Automated research retrieval
+   and reuse of approved example scripts remain separate future enhancements;
+   current research notes are supplied explicitly.
+2. Review three pictured visual concepts and select one, then review the shot
+   sequence, narration links and transitions. This planning workflow is now
+   implemented; see [visual planning](visual-planning.md). Images are static
+   drawings, not screenshots from a renderer. Current script acceptance is
+   required, edits invalidate dependencies, and storyboard acceptance is explicit.
 3. Integrate selected Remotion 4.0.537 into a Next client Player and shot timeline.
    Verify saved identity, reload, seeking and failure behavior before render jobs.
 4. Add voice adaptation, synchronized preview and independent moving/audio review,

@@ -37,11 +37,13 @@ Exact package versions and integrity records live in package-lock.json.
 
 ### SQLite ownership
 
-Schema 3 keeps projects and script revision indexes and adds proposal indexes and
-decisions, accepted script identity/hash, per-project writing sessions and jobs.
+Schema 5 preserves projects, script/proposal indexes and decisions, accepted script
+identity/hash and scoped-writing sessions/jobs. It adds evidence-grounded writing
+runs and their dependency/index/import references, plus visual jobs, concept selection
+events and storyboard acceptance. Source content remains immutable JSON.
 Initialization uses an
 immediate transaction, enables foreign keys and a bounded busy timeout, and
-records `PRAGMA user_version`. Schemas 1/2 expand transactionally without rewriting
+records `PRAGMA user_version`. Schemas 1/2/3/4 expand transactionally without rewriting
 projects or revision files; version 0 initializes all tables. Future versions fail closed. Tests
 cover migration retries, failed expansion rollback, and data preservation.
 Native SQLite avoids adding an ORM or compiled addon. Its experimental status
@@ -73,7 +75,7 @@ durability; back up both stores together.
 
 ### Upgrade and rollback
 
-Stop the old app and back up database and videos before upgrading. Schema 3 is
+Stop the old app and back up database and videos before upgrading. Schema 5 is
 additive/idempotent, with no destructive contraction or downgrade. Old foundation
 code rejects newer schemas, so mixed versions must not share storage. Rollback requires
 a coordinated pre-upgrade snapshot restored to separate paths. Preserve current
@@ -97,9 +99,11 @@ proposal accepted and stores an exact revision/hash receipt in one transaction.
 Rejecting a pending proposal changes only its decision. Repeated/stale decisions
 fail closed. Manual acceptance also checks the exact latest revision and hash.
 
-An accepted script is eligible for future concept work only while its revision is
+An accepted script is eligible for visual planning only while its revision is
 still latest and its file/hash verifies. Later edits make it stale. This is the
-first dependency boundary; no downstream artifacts or formal gates exist yet.
+first dependency boundary. [Concept and storyboard planning](visual-planning.md)
+now enforces it for generation, selection and artifact acceptance. Formal
+production gates remain future work.
 Synthetic test acceptance is never evidence of human production approval.
 
 Writing jobs have one active request per project. Successful job/proposal visibility
@@ -117,6 +121,15 @@ invisible under the same manual-recovery rules as scripts. Request rows and subm
 instructions persist; unsent prompt drafts do not. There is no autonomous agent loop.
 
 ## Production boundaries
+
+The [evidence-grounded writing workflow](researched-writing.md) adds immutable
+research briefs, hook options, original/refined draft lines and editorial findings.
+Parent hashes, selected hook, claim coverage and line references are validated.
+Reviewed-draft import creates an ordinary new script revision transactionally,
+with a unique source reference for idempotence. It never supplies acceptance.
+Acceptance follows the nearest imported research dependency through subsequent
+manual/scoped edits; changing the brief makes those receipts stale as well.
+No new topic or altered source can silently reuse an old acceptance.
 
 | Area | Responsibility | Constraint |
 | --- | --- | --- |

@@ -42,9 +42,11 @@ export default async function ProjectPage({ params, searchParams }: {
       {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
       <nav aria-label="Workspace" className="mb-8 text-sm"><a href="/">All projects</a></nav>
       <header className="mb-10 border-b border-white/15 pb-8">
+        <p className="mb-5"><a href={`/projects/${id}/writing`}>Research, hooks and full scriptwriting</a></p>
+        <p className="mb-5"><a href={`/projects/${id}/visuals`}>Visual concepts and storyboard</a></p>
         <p className="mb-3 text-sm uppercase tracking-widest text-[#b9d8c2]">V3 / Script review</p>
         <h1 className="break-words text-3xl font-semibold sm:text-4xl">{data.project.title}</h1>
-        <p className="mt-4 text-sm text-[#aeb4b0]">{data.acceptance ? data.acceptance.stale ? "Script acceptance is stale after a newer edit. Review and accept again." : "Exact saved script accepted. Visual concepts are eligible; their workflow is not implemented yet." : "Script awaiting your editorial acceptance."} Production gates and video generation remain disabled.</p>
+        <p className="mt-4 text-sm text-[#aeb4b0]">{data.acceptance ? data.acceptance.stale ? "Script acceptance is stale. Review current research and script before accepting again." : "Exact saved script accepted. Visual concepts and storyboard planning are available." : "Script awaiting your editorial acceptance."} Production gates and video generation remain disabled.</p>
       </header>
       <div className="grid items-start gap-12 lg:grid-cols-[1fr_15rem]">
         <section aria-label="Script workspace" className="min-w-0">

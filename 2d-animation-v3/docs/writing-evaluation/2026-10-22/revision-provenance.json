@@ -1,0 +1,1919 @@
+{
+  "runId": "f267786c-4336-4fa0-917b-da39993675ad",
+  "manifest": {
+    "schemaVersion": 1,
+    "createdAt": "2026-10-21T22:06:51.795Z",
+    "model": "gpt-6-luna",
+    "providerRevision": "not exposed/pinned",
+    "sampling": "provider defaults; temperature/top_p/seed omitted",
+    "stream": true,
+    "max_tokens": 8192,
+    "node": "v24.6.0",
+    "sourceHashes": [
+      {
+        "path": "server/scriptwriting.ts",
+        "sha256": "7ec2b03d1e6a85c06c90df08c2fabcb2615ce438bb8472e2bc81365496e7514f"
+      },
+      {
+        "path": "server/gateway.ts",
+        "sha256": "0d4d91e56dcc5d39b35316d4b2ccc46d49fc1aadc8f678508cc8c4acd15f0125"
+      },
+      {
+        "path": "server/writing-guidance.ts",
+        "sha256": "da64fab1f8d5fd2a65169682e10c1beea5889753b6b58efa34898d61f1ca0047"
+      },
+      {
+        "path": "server/writing-skills.ts",
+        "sha256": "5fa662152970ddff8c019c4ba93aa843c0ea1dc1bcb230787e3a701470dfd8a7"
+      },
+      {
+        "path": "server/scriptwriting-store.ts",
+        "sha256": "6003b781fdc60880dde87acea07455bb74a6363952d3ff8220df3ee418686039"
+      },
+      {
+        "path": "server/database.ts",
+        "sha256": "7abddfc28ff66f3492468e03fe7c5ba9fee3cd324cd36fb5d584d12bed2ac795"
+      },
+      {
+        "path": "workflow/scriptwriting.ts",
+        "sha256": "c2f632c103b1e6d8740ecb6c81649ddd0e25e87f6ad10a96d6a5c43082cec389"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "332d2dc3969c93fb88be25edbdb22b539140182e6072464660eee9703796bc93"
+      },
+      {
+        "path": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\docs\\writing-evaluation\\2026-10-22\\human-review.json",
+        "sha256": "1f572784a0b1979f86f9d377306ba5ff555172205e4b75c32f537ec45008d24a"
+      },
+      {
+        "path": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\docs\\writing-evaluation\\2026-10-22\\provenance.json",
+        "sha256": "3bcd83715c6fd5875b833426774b4e9bddb2dacbbf6da084e6ed477c3b57a00d"
+      },
+      {
+        "path": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\.data\\writing-feedback\\f267786c-4336-4fa0-917b-da39993675ad\\run-feedback.mjs",
+        "sha256": "6f4f2e18f437223b5eb9717f34b698451dcfbd7ed6af3e6145cf7b6c1c59ea2a"
+      },
+      {
+        "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\SKILL.md",
+        "sha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
+      },
+      {
+        "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\patterns.md",
+        "sha256": "c62489b929e7382cccdf464b62e7889b55a4e6a064b1d926a519005e18f4c86f"
+      },
+      {
+        "path": "C:\\Users\\Dave\\.codex\\skills\\humanizer\\SKILL.md",
+        "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+      }
+    ],
+    "entries": [
+      {
+        "id": "finance-recovery",
+        "projectId": "4e95bd18-6a0c-44f9-92b6-f1d381ffdf0a",
+        "baseRevisionId": "7f32bc49-7676-4841-b30e-63623a8f9f2b",
+        "briefId": "c2b30f4d-13a2-4a90-a605-d19b1dfc2410",
+        "hooksId": "61a76670-6301-4eb9-85bd-8aa318db458b",
+        "request": {
+          "kind": "draft",
+          "parentId": "61a76670-6301-4eb9-85bd-8aa318db458b",
+          "hookId": "hook-1",
+          "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the progressive numerical explanation.\nAvoid revealing the entire answer too early.\nReduce repeated explanations of the changing percentage base.\nEnd with the surprising takeaway: recovering from a 50% loss requires a 100% gain.\nEnd with the 100% recovery gain, after showing 100 to 50 to 75. Link factual changing-base explanations to supplied claims. Do not repeat the base explanation.\nPreferred narration:\nIf a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?\nThe reason is that each percentage is calculated from the amount you have at that point.\nIgnoring fees and deposits, a 50% loss on 100 takes away 50, leaving 50.\nNow the starting amount is 50. A 50% gain on 50 adds 25, bringing the total to 75.\nTo get from 50 back to 100, the increase needs to be 50. Since 50 is the full starting amount, that increase is 100%.\nSo the percentages don’t cancel: the loss is measured from 100, and the gain is measured from the smaller amount, 50."
+        },
+        "preferred": {
+          "lines": [
+            {
+              "text": "If a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3"
+              ]
+            },
+            {
+              "text": "The reason is that each percentage is calculated from the amount you have at that point.",
+              "claimIds": []
+            },
+            {
+              "text": "Ignoring fees and deposits, a 50% loss on 100 takes away 50, leaving 50.",
+              "claimIds": [
+                "claim-1"
+              ]
+            },
+            {
+              "text": "Now the starting amount is 50. A 50% gain on 50 adds 25, bringing the total to 75.",
+              "claimIds": [
+                "claim-2"
+              ]
+            },
+            {
+              "text": "To get from 50 back to 100, the increase needs to be 50. Since 50 is the full starting amount, that increase is 100%.",
+              "claimIds": [
+                "claim-3"
+              ]
+            },
+            {
+              "text": "So the percentages don’t cancel: the loss is measured from 100, and the gain is measured from the smaller amount, 50.",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3"
+              ]
+            }
+          ]
+        },
+        "brief": {
+          "topic": "Why losing 50% and gaining 50% do not cancel",
+          "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+          "viewerProblem": "A beginner needs a concrete example to understand that percentages use a changing starting amount.",
+          "payoff": "Understand that percentages use a changing starting amount.",
+          "format": "explainer",
+          "targetSeconds": 55,
+          "boundaries": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+          "sources": [
+            {
+              "id": "source-1",
+              "title": "Explicitly synthetic arithmetic and teaching assumptions",
+              "url": "https://example.invalid/synthetic-evaluation",
+              "notes": "This is supplied fictional test data, not an external source or live result. Hypothetical 100 becomes 50 after a 50% loss. A 50% gain on 50 adds 25, reaching 75. Returning from 50 to 100 requires a 100% gain."
+            }
+          ],
+          "claims": [
+            {
+              "id": "claim-1",
+              "statement": "Hypothetical 100 becomes 50 after a 50% loss.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns."
+            },
+            {
+              "id": "claim-2",
+              "statement": "A 50% gain on 50 adds 25, reaching 75.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns."
+            },
+            {
+              "id": "claim-3",
+              "statement": "Returning from 50 to 100 requires a 100% gain.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns."
+            }
+          ]
+        },
+        "hook": {
+          "id": "hook-1",
+          "angle": "Follow the numbers",
+          "spoken": "If a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?",
+          "openingVisual": "Write 100 on a card, then flip it to show 50.",
+          "overlay": "Same percentage, new base",
+          "payoffConnection": "Show that losing 50% takes 100 to 50, then gaining 50% of 50 adds 25, reaching 75—not 100.",
+          "claimIds": [
+            "claim-1",
+            "claim-2",
+            "claim-3"
+          ]
+        }
+      },
+      {
+        "id": "http-cache-image",
+        "projectId": "1e0c05b0-505f-48d2-8c7b-2fa0b627129d",
+        "baseRevisionId": "d149ea0c-0c50-43f9-a0b6-589d1857db82",
+        "briefId": "083434d8-3c01-4b79-a34d-523f694c9026",
+        "hooksId": "a1d7f0f5-81b3-4885-8a98-b36f7ea9a6b2",
+        "request": {
+          "kind": "draft",
+          "parentId": "a1d7f0f5-81b3-4885-8a98-b36f7ea9a6b2",
+          "hookId": "hook-1",
+          "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the clear explanation of stored copy → freshness → validation.\nAvoid unnecessary hypothetical scenarios.\nSimplify technical wording for natural narration.\nPreserve important caching conditions without overexplaining them.\nDo not add a product-image scenario. At the 304 step, explicitly qualify any reuse by applicable cache rules. Keep the no-guaranteed-renewed-freshness and reload conditions concise and near the relevant explanation.\nPreferred narration:\nIf a cached image expires, does the browser delete it? Not necessarily.\nExpiry alone doesn’t erase the stored copy. It affects whether that copy can be reused without checking.\nUnder applicable cache rules, a fresh copy may be reused without a network request. If it’s stale, the browser may need to validate it before reuse.\nThink of the stored image as the copy, freshness as permission to use it without checking, and validation as checking whether it still matches.\nIf the representation is unchanged, the server can respond with a 304, which has no new image body. The browser may keep using its stored copy, subject to the applicable cache rules.\nIf the content has changed, the response may include a new image body. Expiry doesn’t mean deletion, and validation doesn’t always mean another image download.\nThe exact behavior depends on the page’s cache rules and reload policy. A 304 doesn’t guarantee the copy is fresh again."
+        },
+        "preferred": {
+          "lines": [
+            {
+              "text": "If a cached image expires, does the browser delete it? Not necessarily.",
+              "claimIds": [
+                "claim-1"
+              ]
+            },
+            {
+              "text": "Expiry alone doesn’t erase the stored copy. It affects whether that copy can be reused without checking.",
+              "claimIds": [
+                "claim-1"
+              ]
+            },
+            {
+              "text": "Under applicable cache rules, a fresh copy may be reused without a network request. If it’s stale, the browser may need to validate it before reuse.",
+              "claimIds": [
+                "claim-2"
+              ]
+            },
+            {
+              "text": "Think of the stored image as the copy, freshness as permission to use it without checking, and validation as checking whether it still matches.",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3"
+              ]
+            },
+            {
+              "text": "If the representation is unchanged, the server can respond with a 304, which has no new image body. The browser may keep using its stored copy, subject to the applicable cache rules.",
+              "claimIds": [
+                "claim-3"
+              ]
+            },
+            {
+              "text": "If the content has changed, the response may include a new image body. Expiry doesn’t mean deletion, and validation doesn’t always mean another image download.",
+              "claimIds": [
+                "claim-1",
+                "claim-4"
+              ]
+            },
+            {
+              "text": "The exact behavior depends on the page’s cache rules and reload policy. A 304 doesn’t guarantee the copy is fresh again.",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3",
+                "claim-4"
+              ]
+            }
+          ]
+        },
+        "brief": {
+          "topic": "How a cached image can avoid another download",
+          "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+          "viewerProblem": "A beginner needs a concrete example to distinguish a local stored copy, freshness permission and validation.",
+          "payoff": "Distinguish a local stored copy, freshness permission and validation.",
+          "format": "explainer",
+          "targetSeconds": 55,
+          "boundaries": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+          "sources": [
+            {
+              "id": "source-1",
+              "title": "RFC 9111 §§4–4.3 and RFC 9110 §15.4.5",
+              "url": "https://www.rfc-editor.org/rfc/rfc9111",
+              "notes": "Fresh stored responses may satisfy a request without validation when applicable cache rules allow. Stale responses can be retained and validated. A matching 304 has no response content (RFC 9110 §15.4.5); changed content can need a new body. Reload directives, storage and reuse conditions matter. Expiry alone does not require deletion; a 304 does not guarantee renewed freshness in every case."
+            }
+          ],
+          "claims": [
+            {
+              "id": "claim-1",
+              "statement": "Expiry does not itself delete the stored image.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+            },
+            {
+              "id": "claim-2",
+              "statement": "Under applicable cache rules, a fresh copy may be reused without a network request.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+            },
+            {
+              "id": "claim-3",
+              "statement": "For an unchanged validated representation, a 304 response has no new image body.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+            },
+            {
+              "id": "claim-4",
+              "statement": "Changed content can require a new response body.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+            }
+          ]
+        },
+        "hook": {
+          "id": "hook-1",
+          "angle": "Stored copy vs deletion",
+          "spoken": "If a cached image expires, does the browser delete it? Not necessarily.",
+          "openingVisual": "Show a saved image thumbnail beside a calendar marked “expired.”",
+          "overlay": "Expired ≠ deleted",
+          "payoffConnection": "Explain that expiry alone does not delete the stored image, then distinguish keeping a copy from permission to reuse it.",
+          "claimIds": [
+            "claim-1"
+          ]
+        }
+      },
+      {
+        "id": "ai-citation-check",
+        "projectId": "c35c3553-7805-45f3-8012-cdaf89828c03",
+        "baseRevisionId": "30f6605d-f87b-47a4-9c23-884228b1570d",
+        "briefId": "57e4409d-a0f8-44ef-aff1-d39ccc1e8ac1",
+        "hooksId": "e40222ba-ae2e-4a52-981f-03e77d0bb3d1",
+        "request": {
+          "kind": "draft",
+          "parentId": "e40222ba-ae2e-4a52-981f-03e77d0bb3d1",
+          "hookId": "hook-1",
+          "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the direct, actionable verification process.\nAvoid unnecessary examples that don't improve understanding.\nRemove repeated reminders to verify the same thing.\nEnd with one memorable takeaway: a real source doesn't automatically support a claim.\nNo invented study or unnecessary illustrative tool claim. Teach opening the cited item and checking the supporting passage directly, then the unavailable-evidence stop. End with: A real source does not automatically support a claim.\nPreferred narration:\nAI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.\nTake this clearly hypothetical citation. Its polished format is no proof. Open the cited item and check that it exists, then verify its publication details.\nNext, find the passage behind the specific claim and read it. A source can exist without supporting what the AI says it supports.\nA real-looking title isn’t enough. Check whether the actual passage provides evidence for the claim you’re checking. If the source or relevant evidence is unavailable, leave the claim unverified. Don’t fill the gap by inventing a source.\nVerify that the source exists, then check that its passage supports the claim. If you can’t verify either, keep the claim unverified."
+        },
+        "preferred": {
+          "lines": [
+            {
+              "text": "AI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.",
+              "claimIds": [
+                "claim-1",
+                "claim-2"
+              ]
+            },
+            {
+              "text": "Take this clearly hypothetical citation. Its polished format is no proof. Open the cited item and check that it exists, then verify its publication details.",
+              "claimIds": [
+                "claim-1"
+              ]
+            },
+            {
+              "text": "Next, find the passage behind the specific claim and read it. A source can exist without supporting what the AI says it supports.",
+              "claimIds": [
+                "claim-2"
+              ]
+            },
+            {
+              "text": "A real-looking title isn’t enough. Check whether the actual passage provides evidence for the claim you’re checking. If the source or relevant evidence is unavailable, leave the claim unverified. Don’t fill the gap by inventing a source.",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3"
+              ]
+            },
+            {
+              "text": "Verify that the source exists, then check that its passage supports the claim. If you can’t verify either, keep the claim unverified.",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3"
+              ]
+            }
+          ]
+        },
+        "brief": {
+          "topic": "Check a plausible AI-generated citation",
+          "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+          "viewerProblem": "A beginner needs a concrete example to verify both that a source exists and that it supports the claim.",
+          "payoff": "Verify both that a source exists and that it supports the claim.",
+          "format": "tutorial",
+          "targetSeconds": 55,
+          "boundaries": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+          "sources": [
+            {
+              "id": "source-1",
+              "title": "University of Arizona Libraries: checking AI citations",
+              "url": "https://ask.library.arizona.edu/faq/387173",
+              "notes": "Open the cited item, verify publication details and check the actual supporting passage. A source can exist without supporting the generated claim. If unavailable, leave the claim unverified. This tutorial makes no empirical model failure-rate claim."
+            }
+          ],
+          "claims": [
+            {
+              "id": "claim-1",
+              "statement": "A plausible citation format is not evidence of existence or support.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent."
+            },
+            {
+              "id": "claim-2",
+              "statement": "Open the source and inspect the passage behind the claim.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent."
+            },
+            {
+              "id": "claim-3",
+              "statement": "If evidence is unavailable, keep the claim unverified rather than invent a source.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent."
+            }
+          ]
+        },
+        "hook": {
+          "id": "hook-1",
+          "angle": "Plausible formatting",
+          "spoken": "AI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.",
+          "openingVisual": "Hold up a printed, clearly labeled hypothetical citation; point first to its polished format, then to a blank space where the supporting passage should be.",
+          "overlay": "Format ≠ evidence",
+          "payoffConnection": "Sets up checking the source’s existence and the passage supporting the claim.",
+          "claimIds": [
+            "claim-1",
+            "claim-2"
+          ]
+        }
+      },
+      {
+        "id": "ai-invoice-check",
+        "projectId": "2f5f5cf7-a67e-41a6-b16b-4e09e89ef93b",
+        "baseRevisionId": "b7de0803-dcb6-4ef7-a5b9-ac7b08f1002c",
+        "briefId": "34538c21-3315-4e1a-b29d-35d60bb3360c",
+        "hooksId": "082ba65c-74cd-43e5-9daa-230ca44de1f9",
+        "request": {
+          "kind": "draft",
+          "parentId": "082ba65c-74cd-43e5-9daa-230ca44de1f9",
+          "hookId": "hook-2",
+          "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the simple numerical demonstration.\nReduce repetitive explanations and disclaimers.\nClarify that missing source or extracted fields require review.\nEmphasize that correct arithmetic doesn't guarantee correct extraction.\nThe missing-field stop must cover BOTH source and extracted fields. Keep the fictional 100 plus 5 equals 105 demonstration. End that correct arithmetic does not guarantee correct extraction or verify the document.\nPreferred narration:\nBefore using extracted invoice fields, match them back to the source—not just to each other.\nUse only a synthetic or permissioned invoice. In this fictional example, the source lists a subtotal of 100, a fee of 5, and a total of 105.\nPlace the source beside the extracted fields. Compare the extracted subtotal with the source subtotal, the extracted fee with the listed fee, and the extracted total with the source total.\nThen check the arithmetic in this example: 100 plus 5 equals 105. This checks the sum, not whether the document itself is verified.\nIf a field is missing from the source, leave it missing and send it for review. Don’t fill it in as a fact.\nA matching sum does not by itself verify the document or the AI tool’s accuracy. Compare each value to the source before using the extracted fields."
+        },
+        "preferred": {
+          "lines": [
+            {
+              "text": "Before using extracted invoice fields, match them back to the source—not just to each other.",
+              "claimIds": [
+                "claim-2",
+                "claim-1"
+              ]
+            },
+            {
+              "text": "Use only a synthetic or permissioned invoice. In this fictional example, the source lists a subtotal of 100, a fee of 5, and a total of 105.",
+              "claimIds": [
+                "claim-1"
+              ]
+            },
+            {
+              "text": "Place the source beside the extracted fields. Compare the extracted subtotal with the source subtotal, the extracted fee with the listed fee, and the extracted total with the source total.",
+              "claimIds": [
+                "claim-2"
+              ]
+            },
+            {
+              "text": "Then check the arithmetic in this example: 100 plus 5 equals 105. This checks the sum, not whether the document itself is verified.",
+              "claimIds": [
+                "claim-1"
+              ]
+            },
+            {
+              "text": "If a field is missing from the source, leave it missing and send it for review. Don’t fill it in as a fact.",
+              "claimIds": [
+                "claim-3"
+              ]
+            },
+            {
+              "text": "A matching sum does not by itself verify the document or the AI tool’s accuracy. Compare each value to the source before using the extracted fields.",
+              "claimIds": [
+                "claim-1",
+                "claim-2"
+              ]
+            }
+          ]
+        },
+        "brief": {
+          "topic": "Review an AI-assisted extraction of a fictional invoice",
+          "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+          "viewerProblem": "A beginner needs a concrete example to compare extracted fields to the source and check the total before using them.",
+          "payoff": "Compare extracted fields to the source and check the total before using them.",
+          "format": "tutorial",
+          "targetSeconds": 55,
+          "boundaries": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+          "sources": [
+            {
+              "id": "source-1",
+              "title": "Explicitly synthetic arithmetic and teaching assumptions",
+              "url": "https://example.invalid/synthetic-evaluation",
+              "notes": "This is supplied fictional test data, not an external source or live result. Fictional example: subtotal 100 plus a listed fee of 5 gives a total of 105. Compare the source subtotal, fee and total to the extracted values. A missing field stays missing and requires review; do not infer it as a fact."
+            }
+          ],
+          "claims": [
+            {
+              "id": "claim-1",
+              "statement": "Fictional example: subtotal 100 plus a listed fee of 5 gives a total of 105.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied."
+            },
+            {
+              "id": "claim-2",
+              "statement": "Compare the source subtotal, fee and total to the extracted values.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied."
+            },
+            {
+              "id": "claim-3",
+              "statement": "A missing field stays missing and requires review; do not infer it as a fact.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied."
+            }
+          ]
+        },
+        "hook": {
+          "id": "hook-2",
+          "angle": "Source-to-extraction comparison",
+          "spoken": "Before using extracted invoice fields, match them back to the source—not just to each other.",
+          "openingVisual": "Show a fictional invoice and an extracted-fields list side by side, with one field highlighted on each.",
+          "overlay": "Match each value to the source",
+          "payoffConnection": "Compare the source subtotal, listed fee, and total with their extracted counterparts, then check that the numbers add up.",
+          "claimIds": [
+            "claim-2",
+            "claim-1"
+          ]
+        }
+      },
+      {
+        "id": "ai-newsletter-costs",
+        "projectId": "b4ca2e15-2ff1-4969-9d28-f333c8878d73",
+        "baseRevisionId": "214524bc-d316-4f52-b28c-39595db41a12",
+        "briefId": "f07c799b-5cf5-4872-8e5f-9bb8c6df76f5",
+        "hooksId": "6dcd715b-4f1e-4a1e-9cd1-3d8db866c064",
+        "request": {
+          "kind": "draft",
+          "parentId": "6dcd715b-4f1e-4a1e-9cd1-3d8db866c064",
+          "hookId": "hook-1",
+          "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the logical progression from revenue to expenses.\nAvoid repeating hypothetical disclaimers.\nExplain omitted costs naturally.\nEnd with the key insight: money remaining after selected expenses isn't necessarily profit.\nSay hypothetical once clearly and keep the conditional agreed-and-paid qualification. Preserve all omitted costs and any applicable permission requirements, fact checking and human editing. Put those responsibilities before the final money-left-is-not-necessarily-profit takeaway.\nPreferred narration:\nIn this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?\nThe 200 counts as gross revenue only if a client agrees to the hypothetical job and pays. This example does not claim there is a client, a sale, market demand, or actual earnings.\nNow subtract the illustrative payment fee of 10 and tool allocation of 20. That leaves 170 after those two costs.\nBut the example leaves out labor, taxes, revisions, refunds, and other costs, so 170 is not established net profit. It is not take-home pay or passive income.\nKeep the terms separate: 200 is conditional gross revenue, 10 and 20 are the listed costs, and 170 is what remains after only those costs.\nIf AI helps draft the newsletter, permission, fact checking, and human editing are still needed."
+        },
+        "preferred": {
+          "lines": [
+            {
+              "text": "In this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3"
+              ]
+            },
+            {
+              "text": "The 200 counts as gross revenue only if a client agrees to the hypothetical job and pays. This example does not claim there is a client, a sale, market demand, or actual earnings.",
+              "claimIds": [
+                "claim-1"
+              ]
+            },
+            {
+              "text": "Now subtract the illustrative payment fee of 10 and tool allocation of 20. That leaves 170 after those two costs.",
+              "claimIds": [
+                "claim-2"
+              ]
+            },
+            {
+              "text": "But the example leaves out labor, taxes, revisions, refunds, and other costs, so 170 is not established net profit. It is not take-home pay or passive income.",
+              "claimIds": [
+                "claim-3"
+              ]
+            },
+            {
+              "text": "Keep the terms separate: 200 is conditional gross revenue, 10 and 20 are the listed costs, and 170 is what remains after only those costs.",
+              "claimIds": [
+                "claim-1",
+                "claim-2",
+                "claim-3"
+              ]
+            },
+            {
+              "text": "If AI helps draft the newsletter, permission, fact checking, and human editing are still needed.",
+              "claimIds": [
+                "claim-4"
+              ]
+            }
+          ]
+        },
+        "brief": {
+          "topic": "Separate a hypothetical AI-assisted newsletter fee from earnings",
+          "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+          "viewerProblem": "A beginner needs a concrete example to distinguish conditional gross revenue, listed costs and actual profit.",
+          "payoff": "Distinguish conditional gross revenue, listed costs and actual profit.",
+          "format": "explainer",
+          "targetSeconds": 55,
+          "boundaries": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+          "sources": [
+            {
+              "id": "source-1",
+              "title": "Explicitly synthetic arithmetic and teaching assumptions",
+              "url": "https://example.invalid/synthetic-evaluation",
+              "notes": "This is supplied fictional test data, not an external source or live result. Only if a client agrees and pays a hypothetical 200 is gross revenue 200. With an illustrative payment fee of 10 and a tool allocation of 20, 170 remains after those two costs. Labor, taxes, revisions, refunds and other costs are omitted, so 170 is not established net profit. AI assistance does not remove permission, fact checking or human editing."
+            }
+          ],
+          "claims": [
+            {
+              "id": "claim-1",
+              "statement": "Only if a client agrees and pays a hypothetical 200 is gross revenue 200.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+            },
+            {
+              "id": "claim-2",
+              "statement": "With an illustrative payment fee of 10 and a tool allocation of 20, 170 remains after those two costs.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+            },
+            {
+              "id": "claim-3",
+              "statement": "Labor, taxes, revisions, refunds and other costs are omitted, so 170 is not established net profit.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+            },
+            {
+              "id": "claim-4",
+              "statement": "AI assistance does not remove permission, fact checking or human editing.",
+              "sourceIds": [
+                "source-1"
+              ],
+              "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+            }
+          ]
+        },
+        "hook": {
+          "id": "hook-1",
+          "angle": "Separate the three money terms",
+          "spoken": "In this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?",
+          "openingVisual": "Write “200” on a blank page, then draw two cost lines beneath it; label the page “hypothetical.”",
+          "overlay": "Revenue → costs → profit",
+          "payoffConnection": "Explain that revenue is conditional on a client agreeing and paying; subtract the illustrative 10 fee and 20 tool allocation to get 170 after those costs, then clarify why that is not established net profit.",
+          "claimIds": [
+            "claim-1",
+            "claim-2",
+            "claim-3"
+          ]
+        }
+      }
+    ],
+    "readAloud": "unassessed",
+    "exactRevisionAcceptance": false,
+    "productionApproval": false
+  },
+  "results": [
+    {
+      "id": "finance-recovery",
+      "projectId": "4e95bd18-6a0c-44f9-92b6-f1d381ffdf0a",
+      "baseRevisionId": "7f32bc49-7676-4841-b30e-63623a8f9f2b",
+      "briefId": "c2b30f4d-13a2-4a90-a605-d19b1dfc2410",
+      "hooksId": "61a76670-6301-4eb9-85bd-8aa318db458b",
+      "request": {
+        "kind": "draft",
+        "parentId": "61a76670-6301-4eb9-85bd-8aa318db458b",
+        "hookId": "hook-1",
+        "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the progressive numerical explanation.\nAvoid revealing the entire answer too early.\nReduce repeated explanations of the changing percentage base.\nEnd with the surprising takeaway: recovering from a 50% loss requires a 100% gain.\nEnd with the 100% recovery gain, after showing 100 to 50 to 75. Link factual changing-base explanations to supplied claims. Do not repeat the base explanation.\nPreferred narration:\nIf a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?\nThe reason is that each percentage is calculated from the amount you have at that point.\nIgnoring fees and deposits, a 50% loss on 100 takes away 50, leaving 50.\nNow the starting amount is 50. A 50% gain on 50 adds 25, bringing the total to 75.\nTo get from 50 back to 100, the increase needs to be 50. Since 50 is the full starting amount, that increase is 100%.\nSo the percentages don’t cancel: the loss is measured from 100, and the gain is measured from the smaller amount, 50."
+      },
+      "preferred": {
+        "lines": [
+          {
+            "text": "If a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "The reason is that each percentage is calculated from the amount you have at that point.",
+            "claimIds": []
+          },
+          {
+            "text": "Ignoring fees and deposits, a 50% loss on 100 takes away 50, leaving 50.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Now the starting amount is 50. A 50% gain on 50 adds 25, bringing the total to 75.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "To get from 50 back to 100, the increase needs to be 50. Since 50 is the full starting amount, that increase is 100%.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "So the percentages don’t cancel: the loss is measured from 100, and the gain is measured from the smaller amount, 50.",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          }
+        ]
+      },
+      "brief": {
+        "topic": "Why losing 50% and gaining 50% do not cancel",
+        "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+        "viewerProblem": "A beginner needs a concrete example to understand that percentages use a changing starting amount.",
+        "payoff": "Understand that percentages use a changing starting amount.",
+        "format": "explainer",
+        "targetSeconds": 55,
+        "boundaries": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+        "sources": [
+          {
+            "id": "source-1",
+            "title": "Explicitly synthetic arithmetic and teaching assumptions",
+            "url": "https://example.invalid/synthetic-evaluation",
+            "notes": "This is supplied fictional test data, not an external source or live result. Hypothetical 100 becomes 50 after a 50% loss. A 50% gain on 50 adds 25, reaching 75. Returning from 50 to 100 requires a 100% gain."
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "statement": "Hypothetical 100 becomes 50 after a 50% loss.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns."
+          },
+          {
+            "id": "claim-2",
+            "statement": "A 50% gain on 50 adds 25, reaching 75.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns."
+          },
+          {
+            "id": "claim-3",
+            "statement": "Returning from 50 to 100 requires a 100% gain.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Ignore fees and deposits explicitly. No predictions, recommendations or promised returns."
+          }
+        ]
+      },
+      "hook": {
+        "id": "hook-1",
+        "angle": "Follow the numbers",
+        "spoken": "If a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?",
+        "openingVisual": "Write 100 on a card, then flip it to show 50.",
+        "overlay": "Same percentage, new base",
+        "payoffConnection": "Show that losing 50% takes 100 to 50, then gaining 50% of 50 adds 25, reaching 75—not 100.",
+        "claimIds": [
+          "claim-1",
+          "claim-2",
+          "claim-3"
+        ]
+      },
+      "artifact": {
+        "schemaVersion": 1,
+        "id": "655794d7-09e3-4e7e-b3be-fd065b13cb35",
+        "projectId": "4e95bd18-6a0c-44f9-92b6-f1d381ffdf0a",
+        "createdAt": "2026-10-21T22:06:51.802Z",
+        "parentId": "61a76670-6301-4eb9-85bd-8aa318db458b",
+        "parentHash": "67d9462a512bfb9e702a95222de6c51c9f0b04830c4ec8efc6b77f7cf5dd4a72",
+        "baseRevisionId": "7f32bc49-7676-4841-b30e-63623a8f9f2b",
+        "output": {
+          "kind": "draft",
+          "hookId": "hook-1",
+          "original": {
+            "lines": [
+              {
+                "text": "If a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2",
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "Ignoring fees and deposits, losing 50% of 100 takes away 50, leaving 50.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Now a 50% gain is calculated on 50: it adds 25, bringing the total to 75.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "So the two percentages act on different amounts, and 75 is still short of 100.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "To go from 50 back to 100, you need to gain 50—which is 100% of 50. Recovering from a 50% loss requires a 100% gain.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              }
+            ]
+          },
+          "refined": {
+            "lines": [
+              {
+                "text": "If a hypothetical 100 loses 50%, why doesn’t a 50% gain bring it back?",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2",
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "Ignoring fees and deposits, a 50% loss takes 50 away from 100, leaving 50.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Then the 50% gain is calculated on the new amount, 50. Half of 50 is 25, so the total rises to 75.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "The percentages use different starting amounts, which is why they don’t cancel each other out.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "To return from 50 to 100, the amount has to gain 50. Since 50 is the whole starting amount, that increase is 100%.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "So after a 50% loss, getting back to the original amount requires a 100% gain. This is a hypothetical arithmetic example, not a prediction or promised return.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              }
+            ]
+          },
+          "review": {
+            "verdict": "revise",
+            "summary": "The arithmetic and explanation are clear, but the ending repeats the recovery calculation and adds a disclaimer that interrupts the takeaway.",
+            "findings": [
+              {
+                "line": 6,
+                "reason": "This repeats line 5’s conclusion, and the prediction/return disclaimer is unnecessary for a clearly hypothetical arithmetic example.",
+                "change": "Remove this line and let line 5 deliver the ending."
+              }
+            ]
+          },
+          "skills": [
+            {
+              "name": "storytelling-hooks/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\SKILL.md",
+              "sha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
+            },
+            {
+              "name": "storytelling-hooks/patterns.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\patterns.md",
+              "sha256": "c62489b929e7382cccdf464b62e7889b55a4e6a064b1d926a519005e18f4c86f"
+            },
+            {
+              "name": "humanizer/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\humanizer\\SKILL.md",
+              "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "http-cache-image",
+      "projectId": "1e0c05b0-505f-48d2-8c7b-2fa0b627129d",
+      "baseRevisionId": "d149ea0c-0c50-43f9-a0b6-589d1857db82",
+      "briefId": "083434d8-3c01-4b79-a34d-523f694c9026",
+      "hooksId": "a1d7f0f5-81b3-4885-8a98-b36f7ea9a6b2",
+      "request": {
+        "kind": "draft",
+        "parentId": "a1d7f0f5-81b3-4885-8a98-b36f7ea9a6b2",
+        "hookId": "hook-1",
+        "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the clear explanation of stored copy → freshness → validation.\nAvoid unnecessary hypothetical scenarios.\nSimplify technical wording for natural narration.\nPreserve important caching conditions without overexplaining them.\nDo not add a product-image scenario. At the 304 step, explicitly qualify any reuse by applicable cache rules. Keep the no-guaranteed-renewed-freshness and reload conditions concise and near the relevant explanation.\nPreferred narration:\nIf a cached image expires, does the browser delete it? Not necessarily.\nExpiry alone doesn’t erase the stored copy. It affects whether that copy can be reused without checking.\nUnder applicable cache rules, a fresh copy may be reused without a network request. If it’s stale, the browser may need to validate it before reuse.\nThink of the stored image as the copy, freshness as permission to use it without checking, and validation as checking whether it still matches.\nIf the representation is unchanged, the server can respond with a 304, which has no new image body. The browser may keep using its stored copy, subject to the applicable cache rules.\nIf the content has changed, the response may include a new image body. Expiry doesn’t mean deletion, and validation doesn’t always mean another image download.\nThe exact behavior depends on the page’s cache rules and reload policy. A 304 doesn’t guarantee the copy is fresh again."
+      },
+      "preferred": {
+        "lines": [
+          {
+            "text": "If a cached image expires, does the browser delete it? Not necessarily.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Expiry alone doesn’t erase the stored copy. It affects whether that copy can be reused without checking.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Under applicable cache rules, a fresh copy may be reused without a network request. If it’s stale, the browser may need to validate it before reuse.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Think of the stored image as the copy, freshness as permission to use it without checking, and validation as checking whether it still matches.",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "If the representation is unchanged, the server can respond with a 304, which has no new image body. The browser may keep using its stored copy, subject to the applicable cache rules.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "If the content has changed, the response may include a new image body. Expiry doesn’t mean deletion, and validation doesn’t always mean another image download.",
+            "claimIds": [
+              "claim-1",
+              "claim-4"
+            ]
+          },
+          {
+            "text": "The exact behavior depends on the page’s cache rules and reload policy. A 304 doesn’t guarantee the copy is fresh again.",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3",
+              "claim-4"
+            ]
+          }
+        ]
+      },
+      "brief": {
+        "topic": "How a cached image can avoid another download",
+        "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+        "viewerProblem": "A beginner needs a concrete example to distinguish a local stored copy, freshness permission and validation.",
+        "payoff": "Distinguish a local stored copy, freshness permission and validation.",
+        "format": "explainer",
+        "targetSeconds": 55,
+        "boundaries": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+        "sources": [
+          {
+            "id": "source-1",
+            "title": "RFC 9111 §§4–4.3 and RFC 9110 §15.4.5",
+            "url": "https://www.rfc-editor.org/rfc/rfc9111",
+            "notes": "Fresh stored responses may satisfy a request without validation when applicable cache rules allow. Stale responses can be retained and validated. A matching 304 has no response content (RFC 9110 §15.4.5); changed content can need a new body. Reload directives, storage and reuse conditions matter. Expiry alone does not require deletion; a 304 does not guarantee renewed freshness in every case."
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "statement": "Expiry does not itself delete the stored image.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+          },
+          {
+            "id": "claim-2",
+            "statement": "Under applicable cache rules, a fresh copy may be reused without a network request.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+          },
+          {
+            "id": "claim-3",
+            "statement": "For an unchanged validated representation, a 304 response has no new image body.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+          },
+          {
+            "id": "claim-4",
+            "statement": "Changed content can require a new response body.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Do not generalize to every page or reload policy. No promise of renewed freshness after every 304."
+          }
+        ]
+      },
+      "hook": {
+        "id": "hook-1",
+        "angle": "Stored copy vs deletion",
+        "spoken": "If a cached image expires, does the browser delete it? Not necessarily.",
+        "openingVisual": "Show a saved image thumbnail beside a calendar marked “expired.”",
+        "overlay": "Expired ≠ deleted",
+        "payoffConnection": "Explain that expiry alone does not delete the stored image, then distinguish keeping a copy from permission to reuse it.",
+        "claimIds": [
+          "claim-1"
+        ]
+      },
+      "artifact": {
+        "schemaVersion": 1,
+        "id": "4a8fe829-5714-4ceb-be81-2ff79cf8bf24",
+        "projectId": "1e0c05b0-505f-48d2-8c7b-2fa0b627129d",
+        "createdAt": "2026-10-21T22:07:13.477Z",
+        "parentId": "a1d7f0f5-81b3-4885-8a98-b36f7ea9a6b2",
+        "parentHash": "47d097bce964d6e8e9e5f6d5ecd95592de316a9ef555f87f2efd1bcca14674f2",
+        "baseRevisionId": "d149ea0c-0c50-43f9-a0b6-589d1857db82",
+        "output": {
+          "kind": "draft",
+          "hookId": "hook-1",
+          "original": {
+            "lines": [
+              {
+                "text": "If a cached image expires, does the browser delete it? Not necessarily.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Expiry alone doesn’t erase the stored copy. It changes whether that copy can be reused without checking.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Under applicable cache rules, a fresh copy may be reused without a network request. A stale copy can stay stored, but may need validation before reuse.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "So think of three separate things: the stored image is the copy, freshness can allow reuse without checking, and validation checks whether the copy still matches.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "If it matches, the server can send a 304 with no new image body. The browser may reuse its stored copy if the cache rules allow; a 304 doesn’t guarantee that the copy becomes fresh again.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "If the content has changed, the response can include a new image body.",
+                "claimIds": [
+                  "claim-4"
+                ]
+              },
+              {
+                "text": "So expiry doesn’t mean deletion, and validation doesn’t always mean downloading the image again. What happens depends on the cache rules and reload policy.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2",
+                  "claim-3",
+                  "claim-4"
+                ]
+              }
+            ]
+          },
+          "refined": {
+            "lines": [
+              {
+                "text": "If a cached image expires, does the browser delete it? Not necessarily.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Imagine a browser has already stored a copy of an image. Expiry alone does not erase that copy; it affects whether the copy can be reused without checking.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Under applicable cache rules, a fresh copy may be reused without a network request. A stale copy can remain stored, but it may need validation before reuse.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Keep three ideas separate: the stored copy is the image on hand, freshness permission determines whether it can be reused without checking, and validation checks whether it still matches.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "If validation finds the representation unchanged, the server can reply with a 304, which has no new image body. The browser may reuse its stored copy if the cache rules allow.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "A 304 does not guarantee that the copy becomes fresh again. If the content has changed, a response can include a new image body.",
+                "claimIds": [
+                  "claim-3",
+                  "claim-4"
+                ]
+              },
+              {
+                "text": "So an expired image can still be stored, and validation can avoid sending the image body again when it is unchanged. Whether the copy can be reused depends on the applicable cache rules and reload policy.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2",
+                  "claim-3"
+                ]
+              }
+            ]
+          },
+          "review": {
+            "verdict": "ready",
+            "summary": "The script answers the opening question and clearly distinguishes the stored image, permission to reuse it without checking, and validation. Its caveats about cache rules, reload policy, and 304 responses are preserved.",
+            "findings": []
+          },
+          "skills": [
+            {
+              "name": "storytelling-hooks/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\SKILL.md",
+              "sha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
+            },
+            {
+              "name": "storytelling-hooks/patterns.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\patterns.md",
+              "sha256": "c62489b929e7382cccdf464b62e7889b55a4e6a064b1d926a519005e18f4c86f"
+            },
+            {
+              "name": "humanizer/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\humanizer\\SKILL.md",
+              "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ai-citation-check",
+      "projectId": "c35c3553-7805-45f3-8012-cdaf89828c03",
+      "baseRevisionId": "30f6605d-f87b-47a4-9c23-884228b1570d",
+      "briefId": "57e4409d-a0f8-44ef-aff1-d39ccc1e8ac1",
+      "hooksId": "e40222ba-ae2e-4a52-981f-03e77d0bb3d1",
+      "request": {
+        "kind": "draft",
+        "parentId": "e40222ba-ae2e-4a52-981f-03e77d0bb3d1",
+        "hookId": "hook-1",
+        "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the direct, actionable verification process.\nAvoid unnecessary examples that don't improve understanding.\nRemove repeated reminders to verify the same thing.\nEnd with one memorable takeaway: a real source doesn't automatically support a claim.\nNo invented study or unnecessary illustrative tool claim. Teach opening the cited item and checking the supporting passage directly, then the unavailable-evidence stop. End with: A real source does not automatically support a claim.\nPreferred narration:\nAI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.\nTake this clearly hypothetical citation. Its polished format is no proof. Open the cited item and check that it exists, then verify its publication details.\nNext, find the passage behind the specific claim and read it. A source can exist without supporting what the AI says it supports.\nA real-looking title isn’t enough. Check whether the actual passage provides evidence for the claim you’re checking. If the source or relevant evidence is unavailable, leave the claim unverified. Don’t fill the gap by inventing a source.\nVerify that the source exists, then check that its passage supports the claim. If you can’t verify either, keep the claim unverified."
+      },
+      "preferred": {
+        "lines": [
+          {
+            "text": "AI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.",
+            "claimIds": [
+              "claim-1",
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Take this clearly hypothetical citation. Its polished format is no proof. Open the cited item and check that it exists, then verify its publication details.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Next, find the passage behind the specific claim and read it. A source can exist without supporting what the AI says it supports.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "A real-looking title isn’t enough. Check whether the actual passage provides evidence for the claim you’re checking. If the source or relevant evidence is unavailable, leave the claim unverified. Don’t fill the gap by inventing a source.",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "Verify that the source exists, then check that its passage supports the claim. If you can’t verify either, keep the claim unverified.",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          }
+        ]
+      },
+      "brief": {
+        "topic": "Check a plausible AI-generated citation",
+        "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+        "viewerProblem": "A beginner needs a concrete example to verify both that a source exists and that it supports the claim.",
+        "payoff": "Verify both that a source exists and that it supports the claim.",
+        "format": "tutorial",
+        "targetSeconds": 55,
+        "boundaries": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+        "sources": [
+          {
+            "id": "source-1",
+            "title": "University of Arizona Libraries: checking AI citations",
+            "url": "https://ask.library.arizona.edu/faq/387173",
+            "notes": "Open the cited item, verify publication details and check the actual supporting passage. A source can exist without supporting the generated claim. If unavailable, leave the claim unverified. This tutorial makes no empirical model failure-rate claim."
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "statement": "A plausible citation format is not evidence of existence or support.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent."
+          },
+          {
+            "id": "claim-2",
+            "statement": "Open the source and inspect the passage behind the claim.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent."
+          },
+          {
+            "id": "claim-3",
+            "statement": "If evidence is unavailable, keep the claim unverified rather than invent a source.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "No universal model failure rate or invented live demonstration. Do not attribute deceptive intent."
+          }
+        ]
+      },
+      "hook": {
+        "id": "hook-1",
+        "angle": "Plausible formatting",
+        "spoken": "AI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.",
+        "openingVisual": "Hold up a printed, clearly labeled hypothetical citation; point first to its polished format, then to a blank space where the supporting passage should be.",
+        "overlay": "Format ≠ evidence",
+        "payoffConnection": "Sets up checking the source’s existence and the passage supporting the claim.",
+        "claimIds": [
+          "claim-1",
+          "claim-2"
+        ]
+      },
+      "artifact": {
+        "schemaVersion": 1,
+        "id": "e1d22dcc-7ccf-4b82-9215-857bf344e3d5",
+        "projectId": "c35c3553-7805-45f3-8012-cdaf89828c03",
+        "createdAt": "2026-10-21T22:07:40.371Z",
+        "parentId": "e40222ba-ae2e-4a52-981f-03e77d0bb3d1",
+        "parentHash": "b2287906745714c0d42551150539163d29818b90c1b644874150030f2e3e3255",
+        "baseRevisionId": "30f6605d-f87b-47a4-9c23-884228b1570d",
+        "output": {
+          "kind": "draft",
+          "hookId": "hook-1",
+          "original": {
+            "lines": [
+              {
+                "text": "AI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Treat the citation as a lead, not proof: open the cited item and check that it exists and its publication details match.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Then find and read the passage behind the specific claim. A source can exist without supporting what the claim says.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "If the source or supporting passage is unavailable, leave the claim unverified; don’t invent a source to fill the gap.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "A real source does not automatically support a claim.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              }
+            ]
+          },
+          "refined": {
+            "lines": [
+              {
+                "text": "AI citation looks real? That still doesn’t tell you whether it exists—or supports the claim.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Use the citation as a lead. Open the cited item and check whether you can find it.",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Next, compare its publication details with the citation. Finding an item with a similar-looking reference is not enough to establish that the details match.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Then locate the passage the claim relies on and read it. Check whether that passage actually supports the specific claim you are verifying.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "For a hypothetical example, suppose a citation leads to a real publication, but you cannot find support for the claim in its text. The publication exists; the claim remains unverified.",
+                "claimIds": [
+                  "claim-2",
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "If the source or supporting passage is unavailable, leave the claim unverified. Don’t fill the gap by inventing a source.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              }
+            ]
+          },
+          "review": {
+            "verdict": "ready",
+            "summary": "The tutorial gives a concrete sequence for checking whether a citation exists and whether its text supports a claim, then explains what to do if the evidence is unavailable.",
+            "findings": []
+          },
+          "skills": [
+            {
+              "name": "storytelling-hooks/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\SKILL.md",
+              "sha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
+            },
+            {
+              "name": "storytelling-hooks/patterns.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\patterns.md",
+              "sha256": "c62489b929e7382cccdf464b62e7889b55a4e6a064b1d926a519005e18f4c86f"
+            },
+            {
+              "name": "humanizer/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\humanizer\\SKILL.md",
+              "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ai-invoice-check",
+      "projectId": "2f5f5cf7-a67e-41a6-b16b-4e09e89ef93b",
+      "baseRevisionId": "b7de0803-dcb6-4ef7-a5b9-ac7b08f1002c",
+      "briefId": "34538c21-3315-4e1a-b29d-35d60bb3360c",
+      "hooksId": "082ba65c-74cd-43e5-9daa-230ca44de1f9",
+      "request": {
+        "kind": "draft",
+        "parentId": "082ba65c-74cd-43e5-9daa-230ca44de1f9",
+        "hookId": "hook-2",
+        "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the simple numerical demonstration.\nReduce repetitive explanations and disclaimers.\nClarify that missing source or extracted fields require review.\nEmphasize that correct arithmetic doesn't guarantee correct extraction.\nThe missing-field stop must cover BOTH source and extracted fields. Keep the fictional 100 plus 5 equals 105 demonstration. End that correct arithmetic does not guarantee correct extraction or verify the document.\nPreferred narration:\nBefore using extracted invoice fields, match them back to the source—not just to each other.\nUse only a synthetic or permissioned invoice. In this fictional example, the source lists a subtotal of 100, a fee of 5, and a total of 105.\nPlace the source beside the extracted fields. Compare the extracted subtotal with the source subtotal, the extracted fee with the listed fee, and the extracted total with the source total.\nThen check the arithmetic in this example: 100 plus 5 equals 105. This checks the sum, not whether the document itself is verified.\nIf a field is missing from the source, leave it missing and send it for review. Don’t fill it in as a fact.\nA matching sum does not by itself verify the document or the AI tool’s accuracy. Compare each value to the source before using the extracted fields."
+      },
+      "preferred": {
+        "lines": [
+          {
+            "text": "Before using extracted invoice fields, match them back to the source—not just to each other.",
+            "claimIds": [
+              "claim-2",
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Use only a synthetic or permissioned invoice. In this fictional example, the source lists a subtotal of 100, a fee of 5, and a total of 105.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Place the source beside the extracted fields. Compare the extracted subtotal with the source subtotal, the extracted fee with the listed fee, and the extracted total with the source total.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "Then check the arithmetic in this example: 100 plus 5 equals 105. This checks the sum, not whether the document itself is verified.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "If a field is missing from the source, leave it missing and send it for review. Don’t fill it in as a fact.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "A matching sum does not by itself verify the document or the AI tool’s accuracy. Compare each value to the source before using the extracted fields.",
+            "claimIds": [
+              "claim-1",
+              "claim-2"
+            ]
+          }
+        ]
+      },
+      "brief": {
+        "topic": "Review an AI-assisted extraction of a fictional invoice",
+        "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+        "viewerProblem": "A beginner needs a concrete example to compare extracted fields to the source and check the total before using them.",
+        "payoff": "Compare extracted fields to the source and check the total before using them.",
+        "format": "tutorial",
+        "targetSeconds": 55,
+        "boundaries": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+        "sources": [
+          {
+            "id": "source-1",
+            "title": "Explicitly synthetic arithmetic and teaching assumptions",
+            "url": "https://example.invalid/synthetic-evaluation",
+            "notes": "This is supplied fictional test data, not an external source or live result. Fictional example: subtotal 100 plus a listed fee of 5 gives a total of 105. Compare the source subtotal, fee and total to the extracted values. A missing field stays missing and requires review; do not infer it as a fact."
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "statement": "Fictional example: subtotal 100 plus a listed fee of 5 gives a total of 105.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied."
+          },
+          {
+            "id": "claim-2",
+            "statement": "Compare the source subtotal, fee and total to the extracted values.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied."
+          },
+          {
+            "id": "claim-3",
+            "statement": "A missing field stays missing and requires review; do not infer it as a fact.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "Use synthetic or permissioned documents only. No claim that arithmetic alone verifies the document or an AI tool's accuracy. No real tax rule, currency, account data or live tool result is implied."
+          }
+        ]
+      },
+      "hook": {
+        "id": "hook-2",
+        "angle": "Source-to-extraction comparison",
+        "spoken": "Before using extracted invoice fields, match them back to the source—not just to each other.",
+        "openingVisual": "Show a fictional invoice and an extracted-fields list side by side, with one field highlighted on each.",
+        "overlay": "Match each value to the source",
+        "payoffConnection": "Compare the source subtotal, listed fee, and total with their extracted counterparts, then check that the numbers add up.",
+        "claimIds": [
+          "claim-2",
+          "claim-1"
+        ]
+      },
+      "artifact": {
+        "schemaVersion": 1,
+        "id": "eda65525-6576-4d7c-a20a-a5519962f985",
+        "projectId": "2f5f5cf7-a67e-41a6-b16b-4e09e89ef93b",
+        "createdAt": "2026-10-21T22:08:00.766Z",
+        "parentId": "082ba65c-74cd-43e5-9daa-230ca44de1f9",
+        "parentHash": "e72f6b82d1b7e59e116f3d7d3fb74db649424c25971e582fbcc95ef9cf3286f2",
+        "baseRevisionId": "b7de0803-dcb6-4ef7-a5b9-ac7b08f1002c",
+        "output": {
+          "kind": "draft",
+          "hookId": "hook-2",
+          "original": {
+            "lines": [
+              {
+                "text": "Before using extracted invoice fields, match them back to the source—not just to each other.",
+                "claimIds": [
+                  "claim-2",
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Use a synthetic or permissioned invoice. In this fictional example, the source shows a subtotal of 100, a listed fee of 5, and a total of 105.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Put the source beside the extracted fields. Compare the subtotal to the source subtotal, the fee to the listed fee, and the total to the source total.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Then check the example’s arithmetic: 100 plus 5 equals 105.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "If a field is missing from either the source or the extracted fields, stop and send it for review. Don’t fill in a missing value as a fact.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "Correct arithmetic does not guarantee correct extraction or verify the document; check each extracted value against the source before using it.",
+                "claimIds": [
+                  "claim-2",
+                  "claim-1"
+                ]
+              }
+            ]
+          },
+          "refined": {
+            "lines": [
+              {
+                "text": "Before using extracted invoice fields, match them back to the source—not just to each other.",
+                "claimIds": [
+                  "claim-2",
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Use a synthetic or permissioned invoice. In this fictional example, the source shows a subtotal of 100, a listed fee of 5, and a total of 105.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Place the source beside the extracted fields, then compare the subtotal, fee, and total one by one.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "Check the arithmetic too: 100 plus 5 equals 105.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "If a field is missing from the source or the extraction, leave it missing and send it for review. Don’t infer a value as fact.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "Even when the numbers add up, that alone doesn’t verify the document or prove the extraction is accurate. Match every value to the source before using it.",
+                "claimIds": [
+                  "claim-2",
+                  "claim-1"
+                ]
+              }
+            ]
+          },
+          "review": {
+            "verdict": "ready",
+            "summary": "The script gives a clear, concrete source-to-extraction check, uses only the supplied fictional numbers, and preserves the key caveats about missing fields and arithmetic.",
+            "findings": []
+          },
+          "skills": [
+            {
+              "name": "storytelling-hooks/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\SKILL.md",
+              "sha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
+            },
+            {
+              "name": "storytelling-hooks/patterns.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\patterns.md",
+              "sha256": "c62489b929e7382cccdf464b62e7889b55a4e6a064b1d926a519005e18f4c86f"
+            },
+            {
+              "name": "humanizer/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\humanizer\\SKILL.md",
+              "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "ai-newsletter-costs",
+      "projectId": "b4ca2e15-2ff1-4969-9d28-f333c8878d73",
+      "baseRevisionId": "214524bc-d316-4f52-b28c-39595db41a12",
+      "briefId": "f07c799b-5cf5-4872-8e5f-9bb8c6df76f5",
+      "hooksId": "6dcd715b-4f1e-4a1e-9cd1-3d8db866c064",
+      "request": {
+        "kind": "draft",
+        "parentId": "6dcd715b-4f1e-4a1e-9cd1-3d8db866c064",
+        "hookId": "hook-1",
+        "instruction": "Revise the preferred narration below using the user feedback. Preserve the exact selected opening and factual coverage; the rest may change. Do not narrate these instructions.\nKeep the logical progression from revenue to expenses.\nAvoid repeating hypothetical disclaimers.\nExplain omitted costs naturally.\nEnd with the key insight: money remaining after selected expenses isn't necessarily profit.\nSay hypothetical once clearly and keep the conditional agreed-and-paid qualification. Preserve all omitted costs and any applicable permission requirements, fact checking and human editing. Put those responsibilities before the final money-left-is-not-necessarily-profit takeaway.\nPreferred narration:\nIn this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?\nThe 200 counts as gross revenue only if a client agrees to the hypothetical job and pays. This example does not claim there is a client, a sale, market demand, or actual earnings.\nNow subtract the illustrative payment fee of 10 and tool allocation of 20. That leaves 170 after those two costs.\nBut the example leaves out labor, taxes, revisions, refunds, and other costs, so 170 is not established net profit. It is not take-home pay or passive income.\nKeep the terms separate: 200 is conditional gross revenue, 10 and 20 are the listed costs, and 170 is what remains after only those costs.\nIf AI helps draft the newsletter, permission, fact checking, and human editing are still needed."
+      },
+      "preferred": {
+        "lines": [
+          {
+            "text": "In this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "The 200 counts as gross revenue only if a client agrees to the hypothetical job and pays. This example does not claim there is a client, a sale, market demand, or actual earnings.",
+            "claimIds": [
+              "claim-1"
+            ]
+          },
+          {
+            "text": "Now subtract the illustrative payment fee of 10 and tool allocation of 20. That leaves 170 after those two costs.",
+            "claimIds": [
+              "claim-2"
+            ]
+          },
+          {
+            "text": "But the example leaves out labor, taxes, revisions, refunds, and other costs, so 170 is not established net profit. It is not take-home pay or passive income.",
+            "claimIds": [
+              "claim-3"
+            ]
+          },
+          {
+            "text": "Keep the terms separate: 200 is conditional gross revenue, 10 and 20 are the listed costs, and 170 is what remains after only those costs.",
+            "claimIds": [
+              "claim-1",
+              "claim-2",
+              "claim-3"
+            ]
+          },
+          {
+            "text": "If AI helps draft the newsletter, permission, fact checking, and human editing are still needed.",
+            "claimIds": [
+              "claim-4"
+            ]
+          }
+        ]
+      },
+      "brief": {
+        "topic": "Separate a hypothetical AI-assisted newsletter fee from earnings",
+        "audience": "English-speaking beginners in finance, technology and practical AI workflows",
+        "viewerProblem": "A beginner needs a concrete example to distinguish conditional gross revenue, listed costs and actual profit.",
+        "payoff": "Distinguish conditional gross revenue, listed costs and actual profit.",
+        "format": "explainer",
+        "targetSeconds": 55,
+        "boundaries": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income. Use only supplied facts and explicitly hypothetical examples. Connect the opening promise to a useful ending. No invented demand, clients, sales, personal experience or income promises. Sparse overlay text only when it teaches. No forced CTA or generic motivational ending. Preserve uncertainty and permission requirements.",
+        "sources": [
+          {
+            "id": "source-1",
+            "title": "Explicitly synthetic arithmetic and teaching assumptions",
+            "url": "https://example.invalid/synthetic-evaluation",
+            "notes": "This is supplied fictional test data, not an external source or live result. Only if a client agrees and pays a hypothetical 200 is gross revenue 200. With an illustrative payment fee of 10 and a tool allocation of 20, 170 remains after those two costs. Labor, taxes, revisions, refunds and other costs are omitted, so 170 is not established net profit. AI assistance does not remove permission, fact checking or human editing."
+          }
+        ],
+        "claims": [
+          {
+            "id": "claim-1",
+            "statement": "Only if a client agrees and pays a hypothetical 200 is gross revenue 200.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+          },
+          {
+            "id": "claim-2",
+            "statement": "With an illustrative payment fee of 10 and a tool allocation of 20, 170 remains after those two costs.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+          },
+          {
+            "id": "claim-3",
+            "statement": "Labor, taxes, revisions, refunds and other costs are omitted, so 170 is not established net profit.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+          },
+          {
+            "id": "claim-4",
+            "statement": "AI assistance does not remove permission, fact checking or human editing.",
+            "sourceIds": [
+              "source-1"
+            ],
+            "caveat": "No existing client, sale, market demand or earnings is claimed. Do not label 170 as take-home pay or passive income."
+          }
+        ]
+      },
+      "hook": {
+        "id": "hook-1",
+        "angle": "Separate the three money terms",
+        "spoken": "In this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?",
+        "openingVisual": "Write “200” on a blank page, then draw two cost lines beneath it; label the page “hypothetical.”",
+        "overlay": "Revenue → costs → profit",
+        "payoffConnection": "Explain that revenue is conditional on a client agreeing and paying; subtract the illustrative 10 fee and 20 tool allocation to get 170 after those costs, then clarify why that is not established net profit.",
+        "claimIds": [
+          "claim-1",
+          "claim-2",
+          "claim-3"
+        ]
+      },
+      "artifact": {
+        "schemaVersion": 1,
+        "id": "f32edadf-f8c6-4ab0-8609-9c98789f2f4e",
+        "projectId": "b4ca2e15-2ff1-4969-9d28-f333c8878d73",
+        "createdAt": "2026-10-21T22:08:21.091Z",
+        "parentId": "6dcd715b-4f1e-4a1e-9cd1-3d8db866c064",
+        "parentHash": "2cfa9c25cbd04edcf77984c51f706483afcfe22f75624f7b2f966d7de316c947",
+        "baseRevisionId": "214524bc-d316-4f52-b28c-39595db41a12",
+        "output": {
+          "kind": "draft",
+          "hookId": "hook-1",
+          "original": {
+            "lines": [
+              {
+                "text": "In this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2",
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "The 200 counts as gross revenue only if a client agrees to the job and pays; this example doesn’t claim a client, a sale, market demand, or actual earnings.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "From that 200, subtract the illustrative payment fee of 10 and tool allocation of 20, leaving 170 after those two costs.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "But labor, taxes, revisions, refunds, and other costs are omitted, so 170 isn’t established net profit, take-home pay, or passive income.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "And if AI helps draft the newsletter, permission, fact checking, and human editing are still needed.",
+                "claimIds": [
+                  "claim-4"
+                ]
+              },
+              {
+                "text": "The key distinction: money left after selected expenses isn’t necessarily profit.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              }
+            ]
+          },
+          "refined": {
+            "lines": [
+              {
+                "text": "In this hypothetical newsletter job, when does 200 become revenue—and why isn’t 170 automatically profit?",
+                "claimIds": [
+                  "claim-1",
+                  "claim-2",
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "Treat the 200 as conditional: it counts as gross revenue only if a client agrees to the job and pays.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "This is an example for understanding the arithmetic. It does not claim there is a client, a sale, market demand, or actual earnings.",
+                "claimIds": [
+                  "claim-1"
+                ]
+              },
+              {
+                "text": "Now subtract the illustrative payment fee of 10 and tool allocation of 20. In this calculation, 170 remains after those two costs.",
+                "claimIds": [
+                  "claim-2"
+                ]
+              },
+              {
+                "text": "That 170 is not established net profit. The calculation leaves out labor, taxes, revisions, refunds, and other costs, so it also does not establish take-home pay or passive income.",
+                "claimIds": [
+                  "claim-3"
+                ]
+              },
+              {
+                "text": "If AI helps draft the newsletter, permission, fact checking, and human editing are still needed.",
+                "claimIds": [
+                  "claim-4"
+                ]
+              },
+              {
+                "text": "So read the 170 as money left after two selected costs, with other costs still uncounted, not as proven profit.",
+                "claimIds": [
+                  "claim-2",
+                  "claim-3"
+                ]
+              }
+            ]
+          },
+          "review": {
+            "verdict": "revise",
+            "summary": "The hypothetical calculation and its caveat are clear, but the ending repeats an earlier point and one phrase groups unlike financial terms together.",
+            "findings": [
+              {
+                "line": 5,
+                "reason": "“Take-home pay” and “passive income” are not parallel measures of whether this calculation establishes profit; naming both here makes the explanation less precise.",
+                "change": "Keep the point that omitted costs mean 170 is not established net profit. Avoid grouping it with passive income; if you retain the take-home-pay caveat, state it separately and plainly."
+              },
+              {
+                "line": 7,
+                "reason": "This restates line 5’s conclusion that 170 is not proven profit, so the ending adds little after the caveat has already been explained.",
+                "change": "Replace the restatement with a concise takeaway that connects the opening terms: 200 is conditional gross revenue, and 170 is only what remains after the two listed costs."
+              },
+              {
+                "line": 6,
+                "reason": "“Permission” is vague without context, and “are still needed” may sound like a broader claim than the supplied note.",
+                "change": "Keep the supplied point narrowly: AI assistance does not remove permission requirements, fact checking, or human editing."
+              }
+            ]
+          },
+          "skills": [
+            {
+              "name": "storytelling-hooks/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\SKILL.md",
+              "sha256": "5a2fae7641373f485a92e69638846aeb1c567dd83f14af9f17a5deb45829a264"
+            },
+            {
+              "name": "storytelling-hooks/patterns.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\storytelling-hooks\\patterns.md",
+              "sha256": "c62489b929e7382cccdf464b62e7889b55a4e6a064b1d926a519005e18f4c86f"
+            },
+            {
+              "name": "humanizer/SKILL.md",
+              "path": "C:\\Users\\Dave\\.codex\\skills\\humanizer\\SKILL.md",
+              "sha256": "0612f1dfb1672b0ea9b97e139bf1f06cabe98d8b27424fe8ff01e1fb4cc99cad"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "at": "2026-10-21T22:06:51.799Z",
+      "id": "finance-recovery",
+      "status": "started"
+    },
+    {
+      "at": "2026-10-21T22:07:13.468Z",
+      "id": "finance-recovery",
+      "status": "complete",
+      "artifactId": "655794d7-09e3-4e7e-b3be-fd065b13cb35"
+    },
+    {
+      "at": "2026-10-21T22:07:13.475Z",
+      "id": "http-cache-image",
+      "status": "started"
+    },
+    {
+      "at": "2026-10-21T22:07:40.362Z",
+      "id": "http-cache-image",
+      "status": "complete",
+      "artifactId": "4a8fe829-5714-4ceb-be81-2ff79cf8bf24"
+    },
+    {
+      "at": "2026-10-21T22:07:40.369Z",
+      "id": "ai-citation-check",
+      "status": "started"
+    },
+    {
+      "at": "2026-10-21T22:08:00.758Z",
+      "id": "ai-citation-check",
+      "status": "complete",
+      "artifactId": "e1d22dcc-7ccf-4b82-9215-857bf344e3d5"
+    },
+    {
+      "at": "2026-10-21T22:08:00.763Z",
+      "id": "ai-invoice-check",
+      "status": "started"
+    },
+    {
+      "at": "2026-10-21T22:08:21.079Z",
+      "id": "ai-invoice-check",
+      "status": "complete",
+      "artifactId": "eda65525-6576-4d7c-a20a-a5519962f985"
+    },
+    {
+      "at": "2026-10-21T22:08:21.089Z",
+      "id": "ai-newsletter-costs",
+      "status": "started"
+    },
+    {
+      "at": "2026-10-21T22:08:50.378Z",
+      "id": "ai-newsletter-costs",
+      "status": "complete",
+      "artifactId": "f32edadf-f8c6-4ab0-8609-9c98789f2f4e"
+    }
+  ],
+  "revisedDraftsSha256": "7c808319089eacfbd34060b1f55809d22b23fce67d9306e6a4b844ad9092bcc2",
+  "humanRevisionAcceptance": false,
+  "productionApproval": false
+}

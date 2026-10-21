@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
-import { mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { DatabaseSync } from "node:sqlite";
@@ -92,15 +93,23 @@ test("proposal corruption fails closed and acceptance transaction rollback prese
 });
 
 test("schema 2 upgrade preserves exact revisions and is repeatable", (t) => {
-  const { data, videos, studio, project, base } = fixture(t);
+  const { root, videos, project, base } = fixture(t);
+  const data = join(root, "legacy"); mkdirSync(data);
   const database = new DatabaseSync(join(data, "studio.sqlite"));
-  database.exec("DROP TABLE writing_jobs; DROP TABLE writing_sessions; DROP TABLE script_acceptances; DROP TABLE script_proposals; PRAGMA user_version = 2;");
+  database.exec(`CREATE TABLE projects (id TEXT PRIMARY KEY NOT NULL, title TEXT NOT NULL, created_at TEXT NOT NULL) STRICT;
+    CREATE TABLE script_revisions (id TEXT PRIMARY KEY NOT NULL, project_id TEXT NOT NULL REFERENCES projects(id), revision INTEGER NOT NULL,
+      parent_id TEXT REFERENCES script_revisions(id), created_at TEXT NOT NULL, sha256 TEXT NOT NULL, UNIQUE(project_id, revision)) STRICT;
+    PRAGMA user_version = 2;`);
+  database.prepare("INSERT INTO projects VALUES (?, ?, ?)").run(project.id, project.title, project.createdAt);
+  const payload = readFileSync(join(videos, project.id, "scripts", `${base.id}.json`));
+  database.prepare("INSERT INTO script_revisions VALUES (?, ?, ?, ?, ?, ?)").run(base.id, project.id, base.revision, base.parentId, base.createdAt, createHash("sha256").update(payload).digest("hex"));
   database.close();
   for (let attempt = 0; attempt < 2; attempt++) {
     const migrated = openDatabase(data);
     assert.equal(migrated.prepare("PRAGMA user_version").get()?.user_version, DATABASE_VERSION);
     migrated.close();
   }
-  assert.deepEqual(studio.readRevision(project.id, base.id), base);
+  const reopened = openStudio(data, videos);
+  try { assert.deepEqual(reopened.readRevision(project.id, base.id), base); } finally { reopened.close(); }
   assert.ok(readFileSync(join(videos, project.id, "scripts", `${base.id}.json`)).length);
 });

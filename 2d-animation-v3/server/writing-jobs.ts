@@ -31,6 +31,7 @@ export function openWritingJobs(directory: string) {
       database.exec("BEGIN IMMEDIATE");
       try {
         if (database.prepare("SELECT id FROM writing_jobs WHERE project_id = ? AND status = 'running'").get(projectId)) throw new ConflictError("A writing request is already running for this project.");
+        if (database.prepare("SELECT id FROM scriptwriting_runs WHERE project_id = ? AND status = 'running' AND deadline >= ?").get(projectId, new Date().toISOString())) throw new ConflictError("A writing request is already running for this project.");
         const now = new Date().toISOString();
         database.prepare("INSERT INTO writing_sessions (id, project_id, created_at) VALUES (?, ?, ?) ON CONFLICT(project_id) DO NOTHING").run(randomUUID(), projectId, now);
         const session = database.prepare("SELECT id FROM writing_sessions WHERE project_id = ?").get(projectId)!;

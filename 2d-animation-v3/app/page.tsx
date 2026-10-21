@@ -33,7 +33,7 @@ export default function Home() {
         )}
       </section>
       <footer className="border-t border-white/15 pt-6 text-sm leading-relaxed text-[#aeb4b0]">
-        <p>Save scripts, review scoped revision proposals, and accept an exact script version. Production gates and video rendering remain disabled.</p>
+        <p>Save and review scripts, compare visual concepts, and plan shots from an accepted script. Production gates and video rendering remain disabled.</p>
         <p className="mt-3"><a href="/api/health">Application health</a> · Local development · V1 and V2 remain independent</p>
       </footer>
     </main>
