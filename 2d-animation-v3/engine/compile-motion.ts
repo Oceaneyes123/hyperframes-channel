@@ -30,7 +30,7 @@ export function compileMotion(input: unknown, source: unknown) {
       if (id !== "camera" && !targets[id]) throw new Error("Unknown preview target.");
       const object = shot.objects.find((object) => object.id === id);
       // shortcut: text size changes use explicit replacement objects until coupled font/layout interpolation is supported.
-      if (object?.type === "text" && (action.to.width !== undefined || action.to.height !== undefined)) throw new Error("Text width/height motion is not supported. Use position, scale, opacity or explicit replacement text.");
+      if (object && ["text", "heading", "caption", "code"].includes(object.type) && (action.to.width !== undefined || action.to.height !== undefined)) throw new Error("Text width/height motion is not supported. Use position, scale, opacity or explicit replacement text.");
     }
   }
   return { plan, groups, ...schedule };

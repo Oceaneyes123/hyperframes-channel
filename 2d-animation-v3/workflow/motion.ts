@@ -1,7 +1,11 @@
 import { z } from "zod";
-import type { VisualArtifact } from "./visuals.ts";
+import { primitiveSchema, type VisualArtifact } from "./visuals.ts";
 
 const key = z.string().regex(/^[a-z][a-z0-9-]{0,39}$/);
+export function splitPanel(progress: number, entering: boolean) {
+  const departing = progress < .4 ? 1 - progress / .8 : progress <= .8 ? .5 : (1 - progress) * 2.5;
+  return { width: entering ? 1 - departing : departing, left: entering ? departing : 0 };
+}
 const frame = z.number().int().min(0).max(5400);
 const stateFields = {
   x: z.number().min(-100).max(200), y: z.number().min(-100).max(200), width: z.number().positive().max(100), height: z.number().positive().max(100),
@@ -13,7 +17,7 @@ const cameraSchema = motionStateSchema.pick({ x: true, y: true, rotation: true, 
 export const motionObjectSchema = z.strictObject({
   id: key.refine((id) => id !== "camera", "camera is a reserved target"),
   startIndex: z.number().int().min(0).max(15).nullable(), endIndex: z.number().int().min(0).max(15).nullable(),
-  type: z.enum(["rect", "ellipse", "text", "line"]), label: z.string().max(60), initial: motionStateSchema,
+  type: primitiveSchema, label: z.string().max(60), initial: motionStateSchema,
 });
 export const motionActionSchema = z.strictObject({
   behavior: z.enum(["transform", "fade", "hold"]), targetIds: z.array(key).min(1).max(16),
@@ -27,13 +31,13 @@ export const motionShotSchema = z.strictObject({
   camera: cameraSchema,
   incoming: z.strictObject({
     type: z.enum(["start", "hard-cut", "match-cut", "continuous", "camera", "reveal", "split-screen", "motion-match"]),
-    overlapFrames: z.number().int().min(0).max(1799), presentation: z.enum(["cut", "fade", "wipe", "shared"]),
+    overlapFrames: z.number().int().min(0).max(1799), presentation: z.enum(["cut", "fade", "wipe", "shared", "slide", "split"]),
     anchor: z.strictObject({ previousObjectId: key, objectId: key }).nullable(),
   }),
 });
 export const motionPlanSchema = z.strictObject({
   schemaVersion: z.literal(1), width: z.literal(1080), height: z.literal(1920), fps: z.literal(30),
-  interpreterVersion: z.literal("1"), shots: z.array(motionShotSchema).min(1).max(40),
+  interpreterVersion: z.enum(["1", "2"]), shots: z.array(motionShotSchema).min(1).max(40),
 });
 export type MotionPlan = z.infer<typeof motionPlanSchema>;
 export type MotionShot = z.infer<typeof motionShotSchema>;
@@ -53,7 +57,7 @@ export function hydrateMotion(input: unknown, board: VisualArtifact, hashShot: (
   const proposal = generatedMotionSchema.parse(input);
   if (board.output.kind !== "storyboard" || proposal.shots.length !== board.output.shots.length) throw new Error("Motion proposal must cover the complete storyboard.");
   const source = board.output.shots;
-  return motionPlanSchema.parse({ schemaVersion: 1, width: 1080, height: 1920, fps: 30, interpreterVersion: "1", shots: proposal.shots.map((shot, index) => ({
+  return motionPlanSchema.parse({ schemaVersion: 1, width: 1080, height: 1920, fps: 30, interpreterVersion: "2", shots: proposal.shots.map((shot, index) => ({
     ...shot, id: base?.shots[index]?.sourceHash === hashShot(source[index]) ? base.shots[index].id : `shot-${index + 1}`,
     sourceIndex: index, sourceHash: hashShot(source[index]), lineNumbers: source[index].lineNumbers,
     objects: shot.objects.map((object) => {
@@ -71,7 +75,12 @@ export function scheduleMotion(input: unknown) {
     if ((index === 0) !== (shot.incoming.type === "start") || !previous && overlap) throw new Error("Invalid first-shot boundary.");
     if (previous && (overlap >= previous.durationFrames || overlap >= shot.durationFrames || previous.incoming.overlapFrames + overlap > previous.durationFrames)) throw new Error("Invalid transition overlap.");
     if (["start", "hard-cut", "match-cut", "continuous", "motion-match"].includes(shot.incoming.type) && overlap) throw new Error("This boundary requires zero overlap.");
-    if (overlap ? !["fade", "wipe"].includes(shot.incoming.presentation) : ["fade", "wipe"].includes(shot.incoming.presentation)) throw new Error("Transition presentation does not match its interval.");
+    if (overlap ? !["fade", "wipe", "slide", "split"].includes(shot.incoming.presentation) : ["fade", "wipe", "slide", "split"].includes(shot.incoming.presentation)) throw new Error("Transition presentation does not match its interval.");
+    if (plan.interpreterVersion === "2") {
+      const presentations: Record<string, string[]> = { start: ["cut"], "hard-cut": ["cut"], "match-cut": ["cut"], continuous: ["shared"], camera: ["slide"], reveal: ["wipe"], "split-screen": ["split"] };
+      if (!presentations[shot.incoming.type]?.includes(shot.incoming.presentation)) throw new Error(`Unsupported ${shot.incoming.type} presentation. No fallback is permitted.`);
+      if (shot.incoming.type === "split-screen" && overlap < 15) throw new Error("Split-screen needs at least 15 comparison frames.");
+    }
     if (["continuous", "motion-match"].includes(shot.incoming.type) !== (shot.incoming.presentation === "shared")) throw new Error("Continuous handoffs require a shared presentation.");
     const start = end - overlap; end = start + shot.durationFrames;
     return { shotId: shot.id, startFrame: start, endFrame: end, durationFrames: shot.durationFrames };

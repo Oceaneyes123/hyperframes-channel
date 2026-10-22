@@ -82,7 +82,7 @@ export function openMotion(directory: string, videosDirectory: string) {
             const original = base.plan.shots.find((item) => item.id === request.shotId);
             if (!original || shot.id !== original.id || shot.sourceHash !== original.sourceHash || shot.sourceIndex !== original.sourceIndex || JSON.stringify(shot.lineNumbers) !== JSON.stringify(original.lineNumbers)) throw new Error("Selected shot identity must remain unchanged.");
             if (JSON.stringify(shot.objects) !== JSON.stringify(original.objects)) throw new Error("Scoped motion edits must preserve object identity and source correspondence.");
-            plan = { ...base.plan, shots: base.plan.shots.map((item) => item.id === request.shotId ? shot : item) };
+            plan = { ...base.plan, interpreterVersion: "2", shots: base.plan.shots.map((item) => item.id === request.shotId ? shot : item) };
           } else plan = input;
           const board = visuals.read(projectId, request.storyboardId)!;
           const artifact = artifactSchema.parse({ schemaVersion: 1, id, projectId, createdAt: row.created_at, parentId: request.baseId, source: dependency, plan: validateMotion(plan, board, hashMotionSource) });

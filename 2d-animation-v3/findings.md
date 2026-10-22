@@ -1,5 +1,22 @@
 # Findings and decisions
 
+## Audience presentation preference
+- User explicitly rejects routine fictional/demo/illustrative labels on videos. Recorded for narration, storyboard and overlays; retain provenance in internal notes and never invent real transactions, results or earnings. This is a reference-document update, not a runtime prompt change.
+
+## Current continuation
+- Final visual proof f8c7477e-78f7-4a68-8d1e-a46aae2e562f fixes the blank opening; exact settled frame-0/frame-1 assertion passes. Current receipt/contact sheet copied under docs/gsap. Previous diagnostic rounds remain preserved.
+- Live Studio full/scoped requests to gpt-6-luna both succeeded after service recovery. Compared immutable plans: shots 1/3 unchanged and selected shot 2 easing becomes linear. Both remain pending; accepted fixture preserved. Saved docs/gsap/live-motion-verification.json.
+- Real browser now seeks narration to exactly 4 seconds at shot 2. A coherent moving observation showed frame 348 (11.6s) with audio 11.634946s; paused seeking is exact. This is technical test-tone synchronization, not human audible narration review.
+- Fresh synthetic guarded render passed 350 sequential/reference frames, exact boundary seeks, full decode, minimum SSIM 0.998518, audio correlation 0.999999584 and zero lag. Receipt: .data/production-proof-3b086c9a-1cff-4a87-b6eb-ea547e5878e7/verification.json. Synthetic gate records are not real human approval.
+- Live CLIProxyAPI refuses connections. Previously authorized SSH inspection confirms homeserver reachable and cli-proxy-api exited after a reboot ~51 minutes ago. No server change yet.
+- G5 persistence/gate test passes: malformed/silent audio, duration mismatch, line alignment, gate order, missing authorization, concurrent jobs, restart persistence and stale narration/script all fail closed. Required 58 tests passed before export-comparison additions. Production dependency audit remains zero after promoting existing renderer/bundler packages to runtime dependencies.
+- Synthetic production worker proof is running with all seven supported arrival types, reusable document/cloud/server SVGs, measured test audio and explicit fixture-only gate receipts. Real media and approvals remain untouched.
+- Actual Studio browser generated synthetic motion, selected shot 2, stepped to frame 121 and explicitly accepted the fixture. Scoped revision/comparison verification underway. Required 55 tests and production build passed before transition changes.
+- Interpreter 2 defines camera=slide, reveal=wipe, split-screen=explicit side-by-side comparison overlap; interpreter 1 stays readable for existing artifacts. Uses official Remotion presentations and its documented custom-presentation contract: https://www.remotion.dev/docs/transitions/presentations/custom.
+- G4 now mounts on the actual visuals route with strict motion query IDs, historical source boards, exact narration and accepted comparison. Backend fixture coverage exercises full/scoped generation, rejection and failure preservation; verification in progress.
+- Clean baseline 16b205f includes G1–G3 and unconnected G4. VisualPage still claims playback is unavailable. Source-bound motion and comparison must be wired before extending production foundations.
+- New authorization covers transitions, visuals and G5 software, never real production rendering or assumed human approval.
+
 ## GSAP implementation — G1
 - G1 receipt and documentation saved under docs/gsap. Eight verified silent exports; warm medians 34.656s native / 34.305s GSAP (no speed-superiority claim). All app 45 checks and production build pass; isolated build passes with documented Vite warnings. G1 promoted only after actual results and transition-window image inspection.
 

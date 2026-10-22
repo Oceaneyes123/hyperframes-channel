@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-10-22T06:15:32.112Z",
+  "syntheticOnly": true,
+  "realHumanApproval": false,
+  "projectId": "f47c2de5-778f-4df0-8d22-d7abe21f61ad",
+  "jobId": "1233cc04-0c00-4571-9702-caf6e496a334",
+  "checks": {
+    "browserUpload": true,
+    "browserTestGateForms": true,
+    "actualHttpRender": true,
+    "verifiedDownload": true,
+    "rangeDownload": true
+  },
+  "verification": {
+    "sha256": "aad5a2bae19adf63abe9f4570f61888363c3ffaecab9a34992375cbc9474e59b",
+    "durationFrames": 45,
+    "audio": true,
+    "fullDecode": true,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "engineHash": "1767c6a6dbaf365155e20319935fc45d48fe16abbd032f798906a50429f845a2",
+    "preview": {
+      "comparedFrames": 45,
+      "minimumSsim": 0.999118,
+      "threshold": 0.98
+    },
+    "audioSync": {
+      "correlation": 0.999999521364571,
+      "lagSeconds": 0,
+      "toleranceSeconds": 0.03333333333333333
+    },
+    "checkedSeekFrames": [
+      0,
+      15,
+      30
+    ]
+  }
+}

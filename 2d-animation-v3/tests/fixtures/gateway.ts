@@ -1,10 +1,12 @@
 import { createServer } from "node:http";
 import { once } from "node:events";
 import { fixtureVisuals } from "./visuals.ts";
+import { fixtureMotion } from "./motion.ts";
 
 type Body = { messages: { content: string }[] };
 
 export function fixtureWriting(body: Body) {
+  if (body.messages[0].content.includes("Motion proposal contract")) return fixtureMotion(body);
   if (body.messages[0].content.includes("static planning drawings")) return fixtureVisuals(body);
   const context = JSON.parse(body.messages[1].content);
   if (context.script) return { verdict: "ready", summary: "Deterministic editorial fixture, not human review.", findings: [] };

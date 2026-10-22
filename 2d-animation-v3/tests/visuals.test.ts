@@ -122,7 +122,7 @@ test("schema 4 migration preserves all prior tables and project files", (t) => {
   // Rebuild the prior schema from its exact original DDL, excluding only the new visual tables/index.
   const source = openDatabase(f.config.dataDirectory); const oldDirectory = join(f.root, "schema4"); mkdirSync(oldDirectory);
   const old = new DatabaseSync(join(oldDirectory, "studio.sqlite"));
-  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('visual_runs', 'concept_selections', 'storyboard_acceptances', 'motion_runs', 'motion_acceptances') ORDER BY rowid").all();
+  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('visual_runs', 'concept_selections', 'storyboard_acceptances', 'motion_runs', 'motion_acceptances', 'production_records') ORDER BY rowid").all();
   const snapshots = new Map<string, unknown>();
   for (const table of tables) old.exec(String(table.sql));
   for (const table of tables) {

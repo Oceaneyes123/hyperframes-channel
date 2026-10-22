@@ -1,7 +1,9 @@
 # GSAP implementation roadmap
 
-Status: **G1 verified; G2 implementation under verification**. Prepared 2026-10-22
-against local HEAD `3b2c71d`. Primary integration reference:
+Status: **G1–G4, transition improvements and G5 software foundations verified**.
+Actual human production approval and real export acceptance remain pending.
+Original planning baseline: `3b2c71d`; current implementation continues from `16b205f`.
+Primary integration reference:
 [GSAP-INTEGRATION.md](GSAP-INTEGRATION.md). Product requirements remain
 [PLAN.md](PLAN.md) and [PLAN2.md](PLAN2.md); persistence and approval authority
 remain in [architecture.md](architecture.md).
@@ -14,9 +16,10 @@ motion acceptance. Remotion owns composition time, shots and transitions. GSAP
 provides selected DOM/SVG choreography through the official adapter. Both preview
 and future export use the same composition and immutable inputs.
 
-This document authorizes no execution. No packages, schemas or runtime code were
-changed while preparing it. Voice, production rendering and publishing are later
-milestones; a successful synthetic benchmark does not approve a real video.
+The original document authorized no execution. The user subsequently authorized
+implementation, including measured narration, production safeguards and synthetic
+export tests. Actual human gates and real production render authorization remain
+separate. See [current animation workflow](animation-workflow.md).
 
 The user subsequently requested step-by-step implementation. Execution evidence
 is tracked in task_plan.md, findings.md and progress.md; the

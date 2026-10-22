@@ -1,0 +1,17 @@
+{
+  "verifiedAt": "2026-10-22T06:00:34.911Z",
+  "syntheticOnly": true,
+  "model": "gpt-6-luna",
+  "projectId": "39345b55-61b2-4861-8547-c7b42208c447",
+  "fullId": "2caac821-33b0-4434-b1fa-25b03dfbf574",
+  "scopedId": "3913a923-1132-4cfa-91de-c05e59321390",
+  "checks": {
+    "realStudioRequests": true,
+    "strictStructuredOutputs": true,
+    "unselectedShotsUnchanged": true,
+    "onlySelectedShotChanged": true,
+    "acceptedMotionPreserved": true,
+    "noAutomaticApproval": true
+  },
+  "productionApproval": false
+}

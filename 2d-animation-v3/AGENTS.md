@@ -1,12 +1,20 @@
 # V3 development boundaries
 
+Current user authorization supersedes earlier setup-only limits below: implement
+connected G4 motion review, corrected transitions/richer safe visuals and G5 measured
+narration, explicit gates and guarded export foundations. Use isolated synthetic
+media for verification. Never create real production media, infer actual human
+approval, publish, use subagents, commit or push without explicit authorization.
+Current implementation and limits: docs/animation-workflow.md. Source plans are
+docs/PLAN.md and docs/PLAN2.md. Earlier scope entries below are historical.
+
 The next 2026-10-22 increment authorizes concept selection and shot storyboard
 software, including static declarative SVG planning images and model requests.
 Use only clearly synthetic accepted scripts for verification; real evaluation
 scripts remain unaccepted. Storyboard acceptance is an artifact decision, not
 Gate 1 or Gate 2. No production media generation is authorized by this increment.
 
-Read PLAN.md first, then PLAN2.md and docs/architecture.md. Use installed
+Read docs/PLAN.md first, then docs/PLAN2.md and docs/architecture.md. Use installed
 planning-with-files with task_plan.md, findings.md, and progress.md in this
 directory. Preserve the source plans and all sibling projects.
 
