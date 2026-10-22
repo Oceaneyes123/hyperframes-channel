@@ -3,11 +3,12 @@ import { z } from "zod";
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 const position = z.number().min(0).max(100);
+export const primitiveSchema = z.enum(["rect", "ellipse", "text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin"]);
 // Only declarative shapes cross the model boundary; markup, URLs and code never do.
 export const frameSchema = z.strictObject({
   background: color,
   shapes: z.array(z.strictObject({
-    type: z.enum(["rect", "ellipse", "text", "line"]),
+    type: primitiveSchema,
     x: position, y: position, width: z.number().positive().max(100), height: z.number().positive().max(100),
     color, label: z.string().max(60),
   }).superRefine((shape, context) => {

@@ -4,6 +4,9 @@ import { compileMotion } from "../engine/compile-motion.ts";
 import { validateMotion } from "../workflow/motion.ts";
 import { hashMotionSource } from "../server/motion-store.ts";
 import { motionEngineFixture } from "./fixtures/motion-engine.ts";
+import { scheduleMotion } from "../workflow/motion.ts";
+import { splitPanel } from "../workflow/motion.ts";
+import { frameSchema } from "../workflow/visuals.ts";
 
 test("compiler retains a shared actor across continuous shots and schedules overlap once", () => {
   const { plan, board } = motionEngineFixture(); validateMotion(plan, board, hashMotionSource);
@@ -28,4 +31,23 @@ test("continuous appearance/camera discontinuities are rejected by the source va
   plan.shots[1].camera.x = 0; assert.throws(() => validateMotion(plan, board, hashMotionSource), /camera/);
   plan.shots[1].camera.x = -4; plan.shots[1].incoming.presentation = "cut";
   assert.throws(() => validateMotion(plan, board, hashMotionSource), /shared/);
+});
+
+test("interpreter 2 gives every boundary an explicit presentation and rejects substitutes", () => {
+  for (const [type, presentation, overlapFrames] of [["hard-cut", "cut", 0], ["match-cut", "cut", 0], ["continuous", "shared", 0], ["camera", "slide", 20], ["reveal", "wipe", 20], ["split-screen", "split", 30]] as const) {
+    const { plan } = motionEngineFixture(); plan.interpreterVersion = "2"; plan.shots = plan.shots.slice(0, 2);
+    Object.assign(plan.shots[1].incoming, { type, presentation, overlapFrames });
+    assert.equal(scheduleMotion(plan).durationFrames, 240 - overlapFrames);
+    plan.shots[1].incoming.presentation = presentation === "cut" ? "fade" : "cut";
+    assert.throws(() => scheduleMotion(plan));
+  }
+  assert.deepEqual(splitPanel(.6, false), { width: .5, left: 0 }); assert.deepEqual(splitPanel(.6, true), { width: .5, left: .5 });
+  for (const progress of [0, .2, .4, .6, .8, 1]) assert.ok(Math.abs(splitPanel(progress, true).width + splitPanel(progress, false).width - 1) < 1e-10);
+});
+
+test("safe visual symbols remain bounded declarative data", () => {
+  for (const type of ["document", "browser", "database", "server", "cloud", "person", "chip", "coin"]) {
+    assert.equal(frameSchema.parse({ background: "#000000", shapes: [{ type, x: 10, y: 10, width: 70, height: 70, color: "#ffffff", label: "" }] }).shapes[0].type, type);
+  }
+  assert.throws(() => frameSchema.parse({ background: "#000000", shapes: [{ type: "svg", markup: "<script/>" }] }));
 });

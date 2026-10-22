@@ -2,7 +2,7 @@ import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 
-export const DATABASE_VERSION = 6;
+export const DATABASE_VERSION = 7;
 
 export function openDatabase(dataDirectory: string) {
   mkdirSync(dataDirectory, { recursive: true });
@@ -142,6 +142,14 @@ export function openDatabase(dataDirectory: string) {
         PRAGMA user_version = 6;
       `);
     }
+    if (version < 7) database.exec(`
+      CREATE TABLE production_records (
+        id TEXT PRIMARY KEY NOT NULL, project_id TEXT NOT NULL REFERENCES projects(id),
+        kind TEXT NOT NULL CHECK(kind IN ('narration', 'gate1', 'gate2', 'rendering', 'rendered', 'failed')),
+        payload TEXT NOT NULL, sha256 TEXT NOT NULL, created_at TEXT NOT NULL
+      ) STRICT;
+      PRAGMA user_version = 7;
+    `);
     database.exec("COMMIT");
     return database;
   } catch (error) {

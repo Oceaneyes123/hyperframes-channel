@@ -11,6 +11,7 @@ import { readConfig } from "../server/config.ts";
 import { openScriptwriting, WritingConflictError } from "../server/scriptwriting-store.ts";
 import { openVisuals } from "../server/visual-store.ts";
 import { openMotion } from "../server/motion-store.ts";
+import { openProduction } from "../server/production-store.ts";
 
 export type CreateState = { error: string };
 export type ScriptState = { parentId: string | null; savedContent: string; error: string; message: string };
@@ -112,6 +113,14 @@ export async function decideMotion(projectId: string, _previous: CreateState, fo
   try {
     await requireLocalRequest(); const config = readConfig(); const store = openMotion(config.dataDirectory, config.videosDirectory);
     try { store.decide(projectId, z.uuid().parse(form.get("runId")), z.enum(["accept", "reject"]).parse(form.get("decision"))); } finally { store.close(); }
+  } catch (error) { return { error: publicError(error) }; }
+  revalidatePath(`/projects/${projectId}/visuals`); return { error: "" };
+}
+
+export async function approveProduction(projectId: string, _previous: CreateState, form: FormData): Promise<CreateState> {
+  try {
+    await requireLocalRequest(); const config = readConfig(), store = openProduction(config.dataDirectory, config.videosDirectory);
+    try { store.approve(projectId, { binding: form.get("binding"), gate: form.get("gate"), reviewed: form.get("reviewed") === "on", notes: form.get("notes") }); } finally { store.close(); }
   } catch (error) { return { error: publicError(error) }; }
   revalidatePath(`/projects/${projectId}/visuals`); return { error: "" };
 }

@@ -30,6 +30,21 @@ concrete examples, no unsupported financial claims, invented personal experience
 forced CTA or generic motivational ending. Tutorials teach a complete narrow task;
 explainers teach a mechanism. Duration is a writing target, not measured narration.
 
+## Audience-facing example labels — user preference
+
+Do not add routine on-screen or spoken labels such as "fictional", "demo",
+"illustrative", "illustration only", "for illustration purposes" or similar
+disclaimers merely because a teaching example is constructed. Present everyday
+examples naturally and keep overlays for information that teaches. This applies
+to scripts, storyboards, motion overlays and final videos.
+
+Keep example provenance and verification limits in internal briefs/review notes.
+Do not turn constructed examples into claimed real customers, transactions,
+testimonials, actual AI-tool results or established earnings. Include a specific
+condition in the narration only when it materially changes the explanation;
+avoid generic or repeated disclaimers. Preserve the frozen evaluation packet as
+historical evidence rather than rewriting its labels.
+
 ## Installed skills
 
 Read original `storytelling-hooks/SKILL.md` plus `patterns.md` and

@@ -2,7 +2,7 @@ import { createServer } from "node:http";
 import next from "next";
 
 // Real gateway access requires the explicit flag; storage remains isolated in both modes.
-const fixtureDirectory = process.argv.includes("--visuals") ? process.argv.includes("--live-gateway") ? ".data/visual-live" : ".data/visual-browser" : ".data/review-browser";
+const fixtureDirectory = process.argv.includes("--motion") ? ".data/motion-browser" : process.argv.includes("--visuals") ? process.argv.includes("--live-gateway") ? ".data/visual-live" : ".data/visual-browser" : ".data/review-browser";
 Object.assign(process.env, {
   V3_DATA_DIR: `${fixtureDirectory}/database`,
   V3_VIDEOS_DIR: `${fixtureDirectory}/videos`,

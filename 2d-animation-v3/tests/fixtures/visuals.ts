@@ -20,7 +20,7 @@ export function boardFixture(lines = [1, 2, 3]) {
   })) };
 }
 export function fixtureVisuals(body: { messages: { content: string }[] }) {
-  const context = JSON.parse(body.messages[1].content);
+  const context = JSON.parse(body.messages.at(-1)!.content);
   if (context.board) {
     const index = Number(body.messages[0].content.match(/shotIndex (\d+)/)?.[1]);
     return { ...context.board.shots[index], action: "Revised fixture action: hold the reference marker while the amount changes." };

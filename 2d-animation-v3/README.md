@@ -1,7 +1,7 @@
 # HyperFrames Studio V3
 
-Independent, local studio based on [PLAN.md](PLAN.md), with the agent
-revision direction in [PLAN2.md](PLAN2.md). Both original plans remain unchanged.
+Independent, local studio based on [PLAN.md](docs/PLAN.md), with the agent
+revision direction in [PLAN2.md](docs/PLAN2.md). Both original plans remain unchanged.
 V1, V2, and `video-workflow` remain independent.
 
 ## Development
@@ -26,7 +26,7 @@ draft. Select saved text and request a scoped revision, compare the proposal,
 then explicitly accept or reject it. A configured, reachable CLIProxyAPI gateway
 is required for AI requests. Saving or completing a job does not accept a script.
 You can also explicitly accept a manually written saved script. Later saves mark
-that acceptance stale. Formal production gates and video creation remain disabled.
+that acceptance stale. The visual workspace now connects storyboard, motion and production review; see [the animation workflow](docs/animation-workflow.md).
 Open **Research, hooks and full scriptwriting** to supply an evidence/payoff brief,
 choose hook options, generate a draft, and inspect separate installed-skill
 refinement and editorial findings. Importing a draft still requires script review
@@ -45,7 +45,7 @@ npm start
 `check` runs ESLint, TypeScript, and Node tests. `build` verifies the production
 application separately. `GET /api/health` validates server configuration; it does
 not check the database, connect to a gateway, or claim production readiness.
-`db:init` initializes schema version 4 and runs SQLite's quick integrity check;
+`db:init` initializes schema version 7 and runs SQLite's quick integrity check;
 rerunning it preserves rows. Schemas 1 through 3 expand additively, preserving projects
 and immutable revision files.
 Opening the workspace also initializes/upgrades storage. Future versions fail closed.
@@ -124,16 +124,17 @@ hook selection, full drafts, installed-humanizer refinement and role-isolated
 editorial findings are implemented. Source notes are supplied, not automatically
 retrieved or verified. [Visual concept and storyboard planning](docs/visual-planning.md)
 is implemented with static SVG planning images, explicit concept choice, scoped
-shot revisions and exact storyboard acceptance. Blinded human editorial evaluation,
-production approval gates, renderer/player, voice synthesis, upload and analytics
-integration remain unfinished.
+shot revisions and exact storyboard acceptance. Motion preview, scoped AI revisions,
+measured WAV import, explicit production gates and guarded local export foundations
+are implemented. Voice synthesis, publishing and analytics remain separate work.
 Five real matched-input script pairs and author factual diagnostics are now
 available in the [writing evaluation packet](docs/writing-evaluation/README.md).
 The user's text preferences are applied to [revised proposals](docs/writing-evaluation/2026-10-22/proposed-drafts.md)
 and shared generation guidance. Exact revised-text acceptance, fully blinded
 evaluation and human read-aloud observations remain pending.
-Remotion and Motion Canvas exist only in separately locked benchmark packages;
-their experiment is not an implemented production-generation workflow.
+Remotion and its official GSAP adapter now power the Studio Player and guarded local
+renderer. Original benchmark packages remain unchanged. Export requires installed
+Chrome, FFmpeg and ffprobe; tools are never downloaded automatically.
 
 Dependency audit at setup: production packages have zero reported vulnerabilities.
 The full audit reports five high-severity development-tool findings through

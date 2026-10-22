@@ -1,15 +1,19 @@
 # V3 foundation and interactive script review
 
 ## Goal
-Initialize isolated, runnable v3 foundation from PLAN.md and PLAN2.md, then complete the authorized script-review, evidence-grounded writing and matched-input evaluation preparation increments. No production video features, commits, pushes, subagents, or changes to v1/v2.
+Complete the authorized v3 writing, storyboard and connected GSAP animation workflow, including measured narration and guarded production foundations, following docs/PLAN.md and docs/PLAN2.md. No real production render, publishing, commits, pushes, subagents or changes to v1/v2.
 
 ## Current Phase
-G1 verified and documented, including eight exports and explicit intermediate precision differences. G2 motion v1 contracts, schema 6 and immutable proposal storage are implemented; full validation is running before G3. Preserve existing static boards and all source/sibling artifacts.
+Authorized implementation complete and verified: connected G4, interpreter-2 transitions, bundled SVG/typography and G5 software foundations. Required 60 tests/lint/TypeScript and production build pass. Real gateway full/scoped UI requests, 350-frame mixed-transition export and 45-frame actual UI export pass. Real human production gates remain pending.
 
 ## Next Step
-Complete G2 checks/build, then implement the trusted composition interpreter and manual fixture preview. No production gates or human approvals are inferred from synthetic evidence. Continue incrementally without subagents, commits or pushes.
+Review a real project's motion/narration, supply actual Gate 1/Gate 2 findings and explicitly authorize any real render. Future software increments: voice synthesis/automatic alignment, durable background render worker and separate homeserver startup ordering. Publishing remains separate.
 
 ## Phases
+### Phase 39: Example presentation preference
+**Status:** complete
+- User requests reference-document updates only: omit routine fictional/demo/illustrative disclaimers from audience-facing scripts and visuals. Record canonical guidance in researched-writing.md and link from feedback-applied.md; preserve historical evaluation artifacts and runtime code.
+
 ### Phase 32: G1 isolated GSAP adapter proof
 **Status:** complete
 - Separate pinned benchmark, matched frame/GSAP fixtures, determinism/cleanup/pixel checks, silent exports and measured performance. Record real failures before deciding promotion.
@@ -27,11 +31,18 @@ Complete G2 checks/build, then implement the trusted composition interpreter and
 - TypeScript rejected a union of fade/wipe generic presentations; use separately typed transition branches instead of unsafe casts.
 - npm completed with an optional rspack WASM cleanup EPERM warning; preserve the files. Production audit remains zero; full audit retains five development findings. Verify actual bundling rather than deleting dependency directories.
 ### Phase 35: G4 Player and motion review
-**Status:** in_progress
+**Status:** complete
 - Advance only after G3; manual preview then scoped gateway proposals, comparison and explicit decisions.
-### Phase 36: G5 production timing and gates
-**Status:** pending
-- Separately scoped production work after preview, measured voice and independent human approval. No automatic production media or assumed gate receipts.
+### Phase 36: G5 software foundations (real production approval remains pending)
+**Status:** complete
+- Authorized foundations: narration timing, synchronized preview, independent checks, exact-artifact gates and guarded export verification. Real production media still requires explicit authorization.
+### Phase 37: Transition semantics and visual vocabulary
+**Status:** complete
+- Implement declared transition semantics or reject unsupported combinations. Add reusable safe SVG visuals without generated executable markup.
+### Phase 38: Integrated workflow verification
+**Status:** complete
+- UI/gateway/revision/compare/decision, recovery, deterministic seeking and synthetic export consistency; update documentation and preserve siblings.
+- 60 tests, required lint/TypeScript/build, real gpt-6-luna full/scoped Studio requests, 350-frame mixed-transition proof plus nine out-of-order seeks, and 45-frame browser upload/gate/render/download test pass. SHA/range download checks pass. Source plans, frozen benchmarks and sibling tracked files unchanged; no commit/push/publishing/real production render.
 ### Phase 29: Verify GSAP reference and current boundaries
 **Status:** complete
 - Read supplied reference, current contracts and official adapter documentation; verify pinned package availability without installation. Preserve existing source-plan relocation.

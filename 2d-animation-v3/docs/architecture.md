@@ -3,13 +3,12 @@
 ## Authority and scope
 
 The [GSAP implementation roadmap](GSAP-IMPLEMENTATION-PLAN.md), based on the
-supplied [GSAP reference](GSAP-INTEGRATION.md), plans the next motion increment.
-It is not implemented: Remotion will own frame time, shot placement and overlaps;
-the official GSAP adapter will interpret trusted DOM/SVG choreography. Motion
-will use a separately versioned validated JSON contract and exact upstream
-acceptance dependencies. No model-generated executable animation code is planned.
-The current static storyboard format and schema 5 remain unchanged. Start with a
-separate synthetic benchmark, preserving the frozen renderer comparison.
+supplied [GSAP reference](GSAP-INTEGRATION.md), is implemented through the connected
+motion workspace and production foundations. Remotion owns frame time and overlaps;
+the official GSAP adapter interprets validated declarative instructions. Models never
+provide executable animation code. Schema 7 adds motion and production records
+without rewriting existing scripts, boards or benchmark artifacts. See
+[animation workflow](animation-workflow.md) for current limits and verification.
 
 PLAN.md is the primary roadmap. PLAN2.md extends it with interactive agent
 revisions. Foundation, project/script persistence and scoped script review are implemented.
@@ -46,13 +45,14 @@ Exact package versions and integrity records live in package-lock.json.
 
 ### SQLite ownership
 
-Schema 5 preserves projects, script/proposal indexes and decisions, accepted script
+Schema 7 preserves projects, script/proposal indexes and decisions, accepted script
 identity/hash and scoped-writing sessions/jobs. It adds evidence-grounded writing
 runs and their dependency/index/import references, plus visual jobs, concept selection
-events and storyboard acceptance. Source content remains immutable JSON.
+events and storyboard acceptance, motion proposals/decisions and append-only narration,
+gate and render records. Source content remains immutable JSON; audio is hash-bound WAV.
 Initialization uses an
 immediate transaction, enables foreign keys and a bounded busy timeout, and
-records `PRAGMA user_version`. Schemas 1/2/3/4 expand transactionally without rewriting
+records `PRAGMA user_version`. Schemas 1–6 expand transactionally without rewriting
 projects or revision files; version 0 initializes all tables. Future versions fail closed. Tests
 cover migration retries, failed expansion rollback, and data preservation.
 Native SQLite avoids adding an ORM or compiled addon. Its experimental status
@@ -111,8 +111,8 @@ fail closed. Manual acceptance also checks the exact latest revision and hash.
 An accepted script is eligible for visual planning only while its revision is
 still latest and its file/hash verifies. Later edits make it stale. This is the
 first dependency boundary. [Concept and storyboard planning](visual-planning.md)
-now enforces it for generation, selection and artifact acceptance. Formal
-production gates remain future work.
+now enforces it for generation, selection and artifact acceptance. Formal production
+gate foundations additionally bind the exact reviewed motion, voice and engine inputs.
 Synthetic test acceptance is never evidence of human production approval.
 
 Writing jobs have one active request per project. Successful job/proposal visibility
@@ -146,8 +146,8 @@ No new topic or altered source can silently reuse an old acceptance.
 | Workflow (script slice implemented) | Persistent script jobs, sessions, scoped proposals | Model completion never means acceptance |
 | Server gateway adapter | CLIProxyAPI access and streaming | Credentials stay server-side; validate actual account capabilities |
 | Revision store (scripts/proposals implemented) | Immutable JSON under videos; SQLite identity/hash index | Never overwrite prior revisions |
-| Acceptance (script implemented) / future production gates | Exact script acceptance; formal Gate 1/Gate 2 remain future | Bind approval to exact revisions and dependency hashes |
-| Engine | Shot timeline, cuts, transformations, preview/export | Remotion selected by isolated benchmark; production integration remains future work |
+| Acceptance and production gates | Exact script/board/motion acceptance; explicit Gate 1/Gate 2 attestations | Bind gates to exact dependencies, narration bytes/timings, assets and engine configuration |
+| Engine | Remotion time/transitions, official GSAP adapter, Player and guarded export | Structured instructions only; synthetic checks never supply real human approval |
 | Skills | Reference original installed skills through verified manifests | No copied or silently installed skills |
 | Voice adapter | Invoke existing Supertonic via a defined contract | No writes to sibling source or shared voice assets |
 | Publishing adapter | Hand verified exports to video-workflow | Existing workflow assumes v2 receipts; v3 support requires explicit adaptation |
@@ -155,8 +155,8 @@ No new topic or altered source can silently reuse an old acceptance.
 Scoped script edits create proposals. Acceptance commits a revision; it is
 distinct from complete creative-plan approval. Track dependencies between script
 lines, shots, narration and previews so changed inputs make affected outputs and
-approvals stale. Script acceptance staleness is implemented; full production
-approval/invalidation remains future work.
+approvals stale. Exact production bindings invalidate gates when accepted inputs,
+narration timing/bytes, bundled assets or renderer configuration change.
 
 JSON manifests own immutable revision/proposal content; dependency manifests will follow
 the same boundary. SQLite owns script acceptance, decisions, jobs and sessions; later stages will add their own state. Write files to
@@ -166,8 +166,9 @@ reconciliation is deferred. Markdown is review/export material, not another edit
 
 ## Deliberate exclusions
 
-No AI SDK, job framework, production renderer, render queue, animation abstraction, FFmpeg
-installation, model download, cloud service, authentication flow, or publishing
-activation in the studio. Remotion and Motion Canvas packages are isolated under
-benchmarks/ and excluded from app build/lint. See docs/phase0/renderer-decision.md
-for measured selection evidence. Do not impose v2's OneTake-only policy on v3.
+No cloud rendering, automatic voice synthesis/alignment, external asset downloading,
+authentication, publishing activation or automatic human approval. Local rendering
+uses installed Chrome/FFmpeg/ffprobe and requires both current gates plus explicit
+authorization. Jobs are local and request-bound; interrupted jobs require an explicit
+retry after expiry. Benchmark packages remain isolated. V2's OneTake-only policy does
+not apply to v3.

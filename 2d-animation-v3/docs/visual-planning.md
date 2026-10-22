@@ -8,6 +8,10 @@ framing, subject, action, arrival transition, continuity and start/end drawings.
 Add revision notes and choose **Revise shot N only** for a scoped proposal.
 Accept the exact storyboard separately after reviewing it.
 
+Continue in the [connected motion and narration workflow](animation-workflow.md).
+Static planning drawings remain available alongside the Remotion/GSAP Player;
+accepting a storyboard alone never supplies production approval.
+
 ## Implemented boundary
 
 - Images are real SVG planning drawings rendered from a strict declarative shape

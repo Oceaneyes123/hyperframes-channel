@@ -6,9 +6,11 @@ import type { PlayerRef } from "@remotion/player";
 import { decideMotion } from "../../../actions.ts";
 import { scheduleMotion, type MotionArtifact } from "../../../../workflow/motion.ts";
 import type { VisualArtifact } from "../../../../workflow/visuals.ts";
+import type { ProductionView } from "../../../../workflow/production.ts";
 
 const MotionPlayer = dynamic(() => import("./motion-player"), { ssr: false, loading: () => <p role="status">Loading motion preview…</p> });
 type Props = {
+  production: ProductionView;
   projectId: string; storyboardId: string | null; eligible: boolean; latestId: string | null; current: boolean;
   motion: MotionArtifact | null; sourceBoard: VisualArtifact | null; original: MotionArtifact | null; originalBoard: VisualArtifact | null;
   acceptance: { runId: string; stale: boolean } | null; narration: { number: number; text: string }[];
@@ -29,8 +31,10 @@ export default function MotionWorkspace(props: Props) {
   const router = useRouter(); const primary = useRef<PlayerRef>(null); const controller = useRef<AbortController | null>(null);
   const [busy, setBusy] = useState(false), [instruction, setInstruction] = useState(""), [message, setMessage] = useState(""), [error, setError] = useState("");
   const [frameState, setFrame] = useState(0), [selectedId, setSelectedId] = useState(""), [loop, setLoop] = useState(false);
+  const [readyId, setReadyId] = useState("");
   useEffect(() => () => controller.current?.abort(), []);
   const { motion, sourceBoard } = props;
+  const ready = !!motion && readyId === motion.id;
   const schedule = motion ? scheduleMotion(motion.plan) : null; const duration = schedule?.durationFrames ?? 1; const frame = Math.min(frameState, duration - 1);
   const selected = motion?.plan.shots.find((shot) => shot.id === selectedId) ?? motion?.plan.shots[0];
   const selectedTime = schedule?.shots.find((shot) => shot.shotId === selected?.id);
@@ -68,10 +72,11 @@ export default function MotionWorkspace(props: Props) {
   }
   return <section id="motion-review" aria-labelledby="motion-heading" className="mt-12 border-t border-white/15 pt-8">
     <h2 id="motion-heading" className="text-2xl font-semibold">3. Motion preview and review</h2>
-    <p className="mt-3 text-sm text-[#aeb4b0]">Remotion controls time; GSAP animates validated objects. Preview is silent and timing is estimated. Artifact acceptance does not approve production.</p>
+    <p className="mt-3 text-sm text-[#aeb4b0]">Remotion controls time; GSAP animates validated objects. {props.production.narration?.motionId === motion?.id ? "Measured narration follows the main preview clock." : "Preview is silent and timing is estimated."} Artifact acceptance does not approve production.</p>
     {!props.eligible && <p className="mt-4 text-[#e1ba77]">Accept the exact current storyboard to unlock motion proposals.</p>}
     {historical && <p className="mt-4 text-[#e1ba77]">Historical motion. <a href={`/projects/${props.projectId}/visuals#motion-review`}>Return to latest motion</a> before editing.</p>}
     {motion && !props.current && <p className="mt-4 text-[#e1ba77]">This motion is stale or rejected. Earlier previews remain readable; generate from the current accepted storyboard.</p>}
+    {motion?.plan.interpreterVersion === "1" && <p className="mt-4 text-sm text-[#e1ba77]">Legacy transition interpretation. New revisions use interpreter 2; request a full plan if old camera, reveal or split-screen presentations need upgrading.</p>}
     <fieldset disabled={busy} className="mt-6 min-w-0">
       <legend className="sr-only">Motion proposal controls</legend>
       <label htmlFor="motion-instruction" className="block text-sm font-semibold">Motion direction</label>
@@ -87,14 +92,14 @@ export default function MotionWorkspace(props: Props) {
       {motion && sourceBoard && schedule && <>
         <div className="mt-7 grid items-start gap-8 md:grid-cols-2">
           <figure><figcaption className="mb-3 font-semibold">{decision === "accepted" ? "Accepted motion" : decision === "rejected" ? "Rejected proposal" : "Proposed motion"}</figcaption>
-            <div className="max-w-[300px] border border-white/15"><MotionPlayer artifact={motion} board={sourceBoard} frame={frame} playerRef={primary} onFrame={changedFrame} /></div>
+            <div className="max-w-[300px] border border-white/15"><MotionPlayer artifact={motion} board={sourceBoard} frame={frame} playerRef={primary} onFrame={changedFrame} onReady={setReadyId} narrationUrl={props.production.narration?.motionId === motion.id ? `/api/projects/${props.projectId}/narration/${props.production.narration.id}` : undefined} /></div>
           </figure>
           {props.original && props.originalBoard && props.original.id !== motion.id && <figure><figcaption className="mb-3 font-semibold">Previously accepted · same global frame</figcaption>
             <div className="max-w-[300px] border border-white/15"><MotionPlayer artifact={props.original} board={props.originalBoard} frame={frame} /></div>
             <p className="mt-2 text-xs text-[#aeb4b0]">A shorter version holds its last frame. Changed durations shift downstream timing.</p>
           </figure>}
         </div>
-        <div className="mt-6 flex flex-wrap gap-3">
+        <fieldset disabled={!ready} className="mt-6 min-w-0"><legend className="sr-only">Motion playback controls</legend><div className="flex flex-wrap gap-3">
           <button onClick={() => primary.current?.play()}>Play motion</button><button onClick={() => { primary.current?.pause(); setLoop(false); }}>Pause motion</button>
           <button onClick={() => seek(frame - 1)}>Previous frame</button><button onClick={() => seek(frame + 1)}>Next frame</button>
           <button onClick={() => { setFrame(windowStart); primary.current?.seekTo(windowStart); setLoop(true); primary.current?.play(); }}>Review selected boundary</button>
@@ -102,7 +107,8 @@ export default function MotionWorkspace(props: Props) {
         <label htmlFor="motion-frame" className="mt-5 block text-sm">Timeline frame {frame} / {duration - 1} · {(frame / 30).toFixed(2)}s</label>
         <input id="motion-frame" type="range" min="0" max={duration - 1} step="1" value={frame} onChange={(event) => seek(Number(event.target.value))} className="mt-2 w-full" />
         <p role="status" className="text-sm">{loop ? `Looping boundary frames ${windowStart}–${windowEnd}` : "Boundary loop off"} · {duration} frames total</p>
-        <div className="mt-5 flex flex-wrap gap-3">{motion.plan.shots.map((shot, index) => <button key={shot.id} aria-pressed={selected?.id === shot.id} onClick={() => { setSelectedId(shot.id); seek(schedule.shots[index].startFrame); }}>Motion shot {index + 1}</button>)}</div>
+        {props.production.narration?.motionId === motion.id && <p className="mt-3 text-sm">Measured narration: {(() => { const line = props.production.narration.timing.find((line) => frame >= line.startFrame && frame < line.endFrame); return line ? `line ${line.number} · ${props.narration.find((item) => item.number === line.number)?.text}` : "pause"; })()}</p>}
+        <div className="mt-5 flex flex-wrap gap-3">{motion.plan.shots.map((shot, index) => <button key={shot.id} aria-pressed={selected?.id === shot.id} onClick={() => { setSelectedId(shot.id); seek(schedule.shots[index].startFrame); }}>Motion shot {index + 1}</button>)}</div></fieldset>
         <details className="mt-6"><summary className="cursor-pointer">Narration links</summary><ol className="mt-3 space-y-2">{props.narration.map((line) => {
           const index = motion.plan.shots.findIndex((shot) => shot.lineNumbers.includes(line.number));
           return <li key={line.number}><button className="text-left text-sm" onClick={() => { setSelectedId(motion.plan.shots[index].id); seek(schedule.shots[index].startFrame); }}>{line.number}. {line.text}</button></li>;

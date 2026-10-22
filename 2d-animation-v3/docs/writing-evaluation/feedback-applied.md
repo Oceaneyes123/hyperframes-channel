@@ -1,5 +1,11 @@
 # User feedback applied — 2026-10-22
 
+Later presentation preference: omit routine "fictional", "demo", "illustrative"
+and equivalent labels from narration and video overlays. Keep provenance internal
+and retain only conditions that affect understanding. See the current
+[example presentation guidance](../researched-writing.md#audience-facing-example-labels--user-preference).
+This updates future creative direction; frozen evaluation scripts remain unchanged.
+
 The user preferred A/A/B/B/B and supplied concrete revision directions for all
 five topics. [The receipt](2026-10-22/human-review.json) binds those labels to the
 original packet, provenance and exact preferred narration hashes. The preferences

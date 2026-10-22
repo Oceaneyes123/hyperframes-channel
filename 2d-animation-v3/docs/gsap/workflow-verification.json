@@ -1,0 +1,45 @@
+{
+  "syntheticOnly": true,
+  "realProductionApproval": false,
+  "projectId": "b57b2273-1e37-40ab-b6b7-39bde3644141",
+  "jobId": "a1fce02e-f3b6-4e1c-a0cb-488d0f17ba58",
+  "root": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\.data\\production-proof-f8c7477e-78f7-4a68-8d1e-a46aae2e562f",
+  "receipt": {
+    "id": "309fbdf2-218d-4d17-963a-87c696625a9e",
+    "kind": "rendered",
+    "createdAt": "2026-10-22T05:57:55.815Z",
+    "payload": {
+      "jobId": "a1fce02e-f3b6-4e1c-a0cb-488d0f17ba58",
+      "binding": "c192a1d92cef87cba4923de78a9d24fc6d287f9ecb24b6a1c12317a4d8683242",
+      "verification": {
+        "sha256": "362ea7c89b21fded429f8e03a8dc8f247faa412f6aa9a517a8ef2d5629690371",
+        "durationFrames": 350,
+        "audio": true,
+        "fullDecode": true,
+        "width": 1080,
+        "height": 1920,
+        "fps": 30,
+        "engineHash": "1767c6a6dbaf365155e20319935fc45d48fe16abbd032f798906a50429f845a2",
+        "preview": {
+          "comparedFrames": 350,
+          "minimumSsim": 0.998518,
+          "threshold": 0.98
+        },
+        "audioSync": {
+          "correlation": 0.999999584421459,
+          "lagSeconds": 0,
+          "toleranceSeconds": 0.03333333333333333
+        },
+        "checkedSeekFrames": [
+          0,
+          60,
+          120,
+          180,
+          220,
+          260,
+          290
+        ]
+      }
+    }
+  }
+}

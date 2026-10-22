@@ -39,5 +39,8 @@ must be tested separately. Adapter metadata says MIT; GSAP uses its own standard
 license referenced by installed README/source headers. The Player's license
 notice remains visible; organizational eligibility was not determined here.
 
-Next: [G2 motion contracts and persistence](../GSAP-IMPLEMENTATION-PLAN.md), using
-accepted synthetic boards first. Production gates, voice and export remain later.
+G2–G4 and G5 software foundations now extend this historical benchmark. See the
+[connected animation workflow](../animation-workflow.md),
+[synthetic export receipt](workflow-verification.json) and
+[live Studio gateway receipt](live-motion-verification.json). Actual human
+production approvals remain pending; synthetic receipts never approve real media.

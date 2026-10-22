@@ -12,6 +12,10 @@ import { openMotion, hashMotionSource } from "../server/motion-store.ts";
 import { scheduleMotion, validateMotion } from "../workflow/motion.ts";
 import { conceptFixture, boardFixture } from "./fixtures/visuals.ts";
 import { motionFixture } from "./fixtures/motion.ts";
+import { fixtureMotion } from "./fixtures/motion.ts";
+import { fakeGateway } from "./fixtures/gateway.ts";
+import { generateMotion } from "../server/motion.ts";
+import { readConfig } from "../server/config.ts";
 
 function fixture(t: TestContext) {
   const root = mkdtempSync(join(tmpdir(), "v3-motion-")); const directory = join(root, "database"), videos = join(root, "videos");
@@ -28,6 +32,28 @@ function fixture(t: TestContext) {
   function save() { visuals.accept(project.id, boardId); const id = store.begin(project.id, input); store.complete(project.id, id, plan); return id; }
   return { root, directory, videos, studio, visuals, store, project, script, concepts, selectionId, boardId, board, plan, input, save };
 }
+
+test("motion gateway hydrates full proposals, scopes revisions and preserves acceptance on failure", async (t) => {
+  const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
+  const gateway = await fakeGateway("writing", 0, fixtureMotion); t.after(() => gateway.close());
+  const config = readConfig({ V3_DATA_DIR: f.directory, V3_VIDEOS_DIR: f.videos });
+  config.gateway = { baseUrl: gateway.baseUrl, model: "fixture-model", apiKey: "fixture-only" };
+  const id = await generateMotion(f.project.id, f.input, new AbortController().signal, () => {}, config);
+  assert.equal(f.store.acceptance(f.project.id), null); f.store.decide(f.project.id, id, "accept");
+  const original = f.store.read(f.project.id, id)!;
+  const request = { ...f.input, baseId: id, shotId: original.plan.shots[1].id, instruction: "Change only this easing." };
+  const revised = await generateMotion(f.project.id, request, new AbortController().signal, () => {}, config);
+  const proposal = f.store.read(f.project.id, revised)!;
+  assert.deepEqual(proposal.plan.shots[0], original.plan.shots[0]); assert.deepEqual(proposal.plan.shots[2], original.plan.shots[2]);
+  assert.equal(proposal.plan.shots[1].actions[0].ease, "linear");
+  f.store.decide(f.project.id, revised, "reject"); assert.equal(f.store.acceptance(f.project.id)?.runId, id);
+  const invalid = await fakeGateway("invalid"); t.after(() => invalid.close()); config.gateway.baseUrl = invalid.baseUrl;
+  await assert.rejects(generateMotion(f.project.id, request, new AbortController().signal, () => {}, config));
+  assert.equal(f.store.list(f.project.id)[0].status, "failed"); assert.equal(f.store.acceptance(f.project.id)?.stale, false);
+  config.gateway.baseUrl = gateway.baseUrl; const controller = new AbortController(); controller.abort();
+  await assert.rejects(generateMotion(f.project.id, request, controller.signal, () => {}, config));
+  assert.equal(f.store.latest(f.project.id), id);
+});
 
 test("motion requires explicit accepted-board correspondence, finite safe values and complete end states", (t) => {
   const f = fixture(t); assert.equal(validateMotion(f.plan, f.board, hashMotionSource).shots.length, 3);
@@ -63,6 +89,7 @@ test("motion proposals require acceptance, preserve unselected shots and survive
   const request = { ...f.input, baseId: id, shotId: "shot-2" }; const revision = f.store.begin(f.project.id, request);
   const shot = structuredClone(f.plan.shots[1]); shot.actions[0].ease = "power3.out"; f.store.complete(f.project.id, revision, shot);
   const proposed = f.store.read(f.project.id, revision)!;
+  assert.equal(proposed.plan.interpreterVersion, "2"); assert.equal(f.store.read(f.project.id, id)!.plan.interpreterVersion, "1");
   assert.deepEqual(proposed.plan.shots[0], f.plan.shots[0]); assert.deepEqual(proposed.plan.shots[2], f.plan.shots[2]);
   assert.equal(f.store.acceptance(f.project.id)?.runId, id); assert.equal(f.store.acceptance(f.project.id)?.stale, false);
   f.store.decide(f.project.id, revision, "reject"); assert.equal(f.store.latest(f.project.id), id); assert.equal(f.store.acceptance(f.project.id)?.runId, id);
@@ -97,7 +124,7 @@ test("motion integrity, orphan preservation, index rollback and deadline expirat
 test("additive schema 5 migration preserves every prior table and immutable artifact", (t) => {
   const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
   const source = openDatabase(f.directory); const oldDirectory = join(f.root, "schema5"); mkdirSync(oldDirectory); const old = new DatabaseSync(join(oldDirectory, "studio.sqlite"));
-  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('motion_runs', 'motion_acceptances') ORDER BY rowid").all();
+  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('motion_runs', 'motion_acceptances', 'production_records') ORDER BY rowid").all();
   for (const table of tables) old.exec(String(table.sql)); const snapshots = new Map();
   for (const table of tables) { const name = String(table.name); const rows = source.prepare(`SELECT * FROM ${name}`).all(); snapshots.set(name, rows);
     for (const row of rows) { const values = Object.values(row); old.prepare(`INSERT INTO ${name} VALUES (${values.map(() => "?").join(",")})`).run(...values); }

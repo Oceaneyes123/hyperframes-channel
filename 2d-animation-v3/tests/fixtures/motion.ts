@@ -19,3 +19,14 @@ export function motionFixture(board: VisualArtifact) {
     })),
   });
 }
+
+export function fixtureMotion(body: { messages: { content: string }[] }) {
+  const context = JSON.parse(body.messages.at(-1)!.content);
+  if (context.selectedShot) {
+    const { actions, camera, durationFrames, incoming } = context.selectedShot;
+    return { actions: actions.map((action: object) => ({ ...action, ease: "linear" })), camera, durationFrames, incoming };
+  }
+  return { shots: motionFixture(context.storyboard).shots.map(({ durationFrames, camera, actions, incoming, objects }) => ({
+    durationFrames, camera, actions, incoming, objects: objects.map(({ id, startIndex, endIndex }) => ({ id, startIndex, endIndex })),
+  })) };
+}

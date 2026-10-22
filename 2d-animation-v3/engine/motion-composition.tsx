@@ -1,14 +1,18 @@
 import { useMemo } from "react";
-import { useCurrentFrame, interpolateColors } from "remotion";
+import { useCurrentFrame, interpolateColors, Html5Audio } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
 import { fade } from "@remotion/transitions/fade";
 import { wipe } from "@remotion/transitions/wipe";
+import { slide } from "@remotion/transitions/slide";
+import { SplitScreen } from "./split-screen.tsx";
+import VisualSymbol, { isSymbol } from "./visual-symbol.tsx";
+import { VisualText } from "./visual-text.tsx";
 import { useGsapTimeline } from "@remotion/gsap";
 import { compileMotion, type MotionGroup } from "./compile-motion.ts";
 import type { MotionPlan, MotionState, MotionShot } from "../workflow/motion.ts";
 import type { VisualArtifact } from "../workflow/visuals.ts";
 
-export type MotionCompositionProps = { plan: MotionPlan; board: VisualArtifact };
+export type MotionCompositionProps = { plan: MotionPlan; board: VisualArtifact; narrationUrl?: string };
 const ease = (t: number) => t * t * (3 - 2 * t);
 const groupVars = (state: Partial<MotionState>) => ({
   ...(state.x === undefined ? {} : { x: state.x * 10.8 }), ...(state.y === undefined ? {} : { y: state.y * 19.2 }),
@@ -25,12 +29,14 @@ function shapeVars(type: string, state: Partial<MotionState>) {
     const height = state.height * 19.2;
     Object.assign(result, type === "ellipse" ? { ry: height / 2, cy: height / 2 } : type === "line" ? { y2: height } : { height });
   }
-  if (state.color !== undefined) result[type === "line" ? "stroke" : "fill"] = state.color;
+  if (state.color !== undefined) result[isSymbol(type) ? "color" : type === "line" ? "stroke" : "fill"] = state.color;
   return result;
 }
 
 function Primitive({ object }: { object: MotionShot["objects"][number] }) {
   const state = object.initial, width = state.width * 10.8, height = state.height * 19.2;
+  if (isSymbol(object.type)) return <VisualSymbol type={object.type} width={width} height={height} color={state.color} />;
+  if (["heading", "caption", "code"].includes(object.type)) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} />;
   if (object.type === "ellipse") return <ellipse data-shape cx={width / 2} cy={height / 2} rx={width / 2} ry={height / 2} fill={state.color} />;
   if (object.type === "line") return <line data-shape x1="0" y1="0" x2={width} y2={height} stroke={state.color} strokeWidth="3" />;
   if (object.type === "text") {
@@ -45,7 +51,7 @@ function GroupScene({ group }: { group: MotionGroup }) {
   const scope = useGsapTimeline<SVGSVGElement>(({ timeline, selector }) => {
     for (const actor of group.actors) {
       const target = selector(`[data-actor="${actor.id}"]`);
-      timeline.set(target, { ...groupVars(actor.object.initial), opacity: 0, svgOrigin: "0 0" }, 0);
+      timeline.set(target, { ...groupVars(actor.object.initial), opacity: actor.startFrame === 0 ? actor.object.initial.opacity : 0, svgOrigin: "0 0" }, 0);
       timeline.set(target, { opacity: actor.object.initial.opacity }, actor.startFrame / 30);
       timeline.set(target, { opacity: 0 }, actor.endFrame / 30);
     }
@@ -75,13 +81,17 @@ function GroupScene({ group }: { group: MotionGroup }) {
   </svg>;
 }
 
-export default function MotionComposition({ plan, board }: MotionCompositionProps) {
+export default function MotionComposition({ plan, board, narrationUrl }: MotionCompositionProps) {
   const compiled = useMemo(() => compileMotion(plan, board), [plan, board]);
-  return <TransitionSeries>{compiled.groups.flatMap((group) => {
+  return <>{narrationUrl && <Html5Audio src={narrationUrl} />}<TransitionSeries>{compiled.groups.flatMap((group) => {
     const timing = linearTiming({ durationInFrames: Math.max(1, group.incoming.overlapFrames) });
-    const transition = group.incoming.overlapFrames > 0 ? group.incoming.presentation === "wipe"
+    const transition = group.incoming.overlapFrames > 0 ? group.incoming.presentation === "split"
+      ? <TransitionSeries.Transition key={`${group.id}-arrival`} timing={timing} presentation={{ component: SplitScreen, props: {} }} />
+      : group.incoming.presentation === "slide"
+      ? <TransitionSeries.Transition key={`${group.id}-arrival`} timing={timing} presentation={slide({ direction: "from-right" })} />
+      : group.incoming.presentation === "wipe"
       ? <TransitionSeries.Transition key={`${group.id}-arrival`} timing={timing} presentation={wipe({ direction: "from-left" })} />
       : <TransitionSeries.Transition key={`${group.id}-arrival`} timing={timing} presentation={fade()} /> : null;
     return [transition, <TransitionSeries.Sequence key={group.id} durationInFrames={group.durationFrames}><GroupScene group={group} /></TransitionSeries.Sequence>];
-  })}</TransitionSeries>;
+  })}</TransitionSeries></>;
 }
