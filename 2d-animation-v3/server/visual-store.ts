@@ -151,7 +151,7 @@ export function openVisuals(directory: string, videosDirectory: string) {
       if (!row) return null;
       const id = z.uuid().parse(row.run_id); const artifact = read(projectId, id);
       if (artifact?.output.kind !== "storyboard" || rows(projectId).find((item) => item.id === id)?.sha256 !== row.sha256) throw new Error("Storyboard acceptance integrity failed.");
-      return { runId: id, acceptedAt: z.iso.datetime().parse(row.accepted_at), stale: !current(projectId, id) };
+      return { runId: id, sha256: z.string().regex(/^[a-f0-9]{64}$/).parse(row.sha256), acceptedAt: z.iso.datetime().parse(row.accepted_at), stale: !current(projectId, id) };
     },
   };
 }

@@ -10,6 +10,7 @@ import { withStudio } from "../server/workspace.ts";
 import { readConfig } from "../server/config.ts";
 import { openScriptwriting, WritingConflictError } from "../server/scriptwriting-store.ts";
 import { openVisuals } from "../server/visual-store.ts";
+import { openMotion } from "../server/motion-store.ts";
 
 export type CreateState = { error: string };
 export type ScriptState = { parentId: string | null; savedContent: string; error: string; message: string };
@@ -105,4 +106,12 @@ export async function decideVisual(projectId: string, _previous: CreateState, fo
   } catch (error) { return { error: publicError(error) }; }
   revalidatePath(`/projects/${projectId}/visuals`);
   return { error: "" };
+}
+
+export async function decideMotion(projectId: string, _previous: CreateState, form: FormData): Promise<CreateState> {
+  try {
+    await requireLocalRequest(); const config = readConfig(); const store = openMotion(config.dataDirectory, config.videosDirectory);
+    try { store.decide(projectId, z.uuid().parse(form.get("runId")), z.enum(["accept", "reject"]).parse(form.get("decision"))); } finally { store.close(); }
+  } catch (error) { return { error: publicError(error) }; }
+  revalidatePath(`/projects/${projectId}/visuals`); return { error: "" };
 }

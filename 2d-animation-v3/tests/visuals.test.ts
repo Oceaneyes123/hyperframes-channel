@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { tmpdir } from "node:os";
 import { DatabaseSync } from "node:sqlite";
 import { test, type TestContext } from "node:test";
-import { openDatabase } from "../server/database.ts";
+import { openDatabase, DATABASE_VERSION } from "../server/database.ts";
 import { readConfig } from "../server/config.ts";
 import { openStudio } from "../server/studio.ts";
 import { openVisuals } from "../server/visual-store.ts";
@@ -122,17 +122,17 @@ test("schema 4 migration preserves all prior tables and project files", (t) => {
   // Rebuild the prior schema from its exact original DDL, excluding only the new visual tables/index.
   const source = openDatabase(f.config.dataDirectory); const oldDirectory = join(f.root, "schema4"); mkdirSync(oldDirectory);
   const old = new DatabaseSync(join(oldDirectory, "studio.sqlite"));
-  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('visual_runs', 'concept_selections', 'storyboard_acceptances') ORDER BY rowid").all();
+  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('visual_runs', 'concept_selections', 'storyboard_acceptances', 'motion_runs', 'motion_acceptances') ORDER BY rowid").all();
   const snapshots = new Map<string, unknown>();
   for (const table of tables) old.exec(String(table.sql));
   for (const table of tables) {
     const name = String(table.name); const rows = source.prepare(`SELECT * FROM ${name}`).all(); snapshots.set(name, rows);
     for (const row of rows) { const values = Object.values(row); old.prepare(`INSERT INTO ${name} VALUES (${values.map(() => "?").join(",")})`).run(...values); }
   }
-  for (const index of source.prepare("SELECT sql FROM sqlite_master WHERE type = 'index' AND sql IS NOT NULL AND tbl_name != 'visual_runs'").all()) old.exec(String(index.sql));
+  for (const index of source.prepare("SELECT sql FROM sqlite_master WHERE type = 'index' AND sql IS NOT NULL AND tbl_name NOT IN ('visual_runs', 'motion_runs')").all()) old.exec(String(index.sql));
   old.exec("PRAGMA user_version = 4"); old.close(); source.close();
   const upgraded = openDatabase(oldDirectory);
-  try { assert.equal(upgraded.prepare("PRAGMA user_version").get()?.user_version, 5); for (const [name, rows] of snapshots) assert.deepEqual(upgraded.prepare(`SELECT * FROM ${name}`).all(), rows); }
+  try { assert.equal(upgraded.prepare("PRAGMA user_version").get()?.user_version, DATABASE_VERSION); for (const [name, rows] of snapshots) assert.deepEqual(upgraded.prepare(`SELECT * FROM ${name}`).all(), rows); }
   finally { upgraded.close(); }
   const reopened = openStudio(oldDirectory, f.config.videosDirectory);
   try { assert.deepEqual(reopened.readRevision(f.project.id, f.script.id), f.script); assert.equal(reopened.acceptance(f.project.id)?.stale, false); }

@@ -2,7 +2,7 @@ import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 
-export const DATABASE_VERSION = 5;
+export const DATABASE_VERSION = 6;
 
 export function openDatabase(dataDirectory: string) {
   mkdirSync(dataDirectory, { recursive: true });
@@ -121,6 +121,25 @@ export function openDatabase(dataDirectory: string) {
           sha256 TEXT NOT NULL, accepted_at TEXT NOT NULL
         ) STRICT;
         PRAGMA user_version = 5;
+      `);
+    }
+    if (version < 6) {
+      database.exec(`
+        CREATE TABLE motion_runs (
+          id TEXT PRIMARY KEY NOT NULL, project_id TEXT NOT NULL REFERENCES projects(id),
+          request_json TEXT NOT NULL, source_json TEXT NOT NULL, model TEXT NOT NULL,
+          created_at TEXT NOT NULL, deadline TEXT NOT NULL,
+          status TEXT NOT NULL CHECK(status IN ('running', 'complete', 'failed')),
+          sha256 TEXT, error TEXT,
+          decision TEXT CHECK(decision IN ('pending', 'accepted', 'rejected')),
+          CHECK((status = 'complete' AND sha256 IS NOT NULL AND decision IS NOT NULL) OR (status != 'complete' AND sha256 IS NULL AND decision IS NULL))
+        ) STRICT;
+        CREATE UNIQUE INDEX one_active_motion_run ON motion_runs(project_id) WHERE status = 'running';
+        CREATE TABLE motion_acceptances (
+          project_id TEXT PRIMARY KEY NOT NULL REFERENCES projects(id), run_id TEXT NOT NULL REFERENCES motion_runs(id),
+          sha256 TEXT NOT NULL, accepted_at TEXT NOT NULL
+        ) STRICT;
+        PRAGMA user_version = 6;
       `);
     }
     database.exec("COMMIT");
