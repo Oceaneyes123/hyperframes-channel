@@ -4,12 +4,44 @@
 Initialize isolated, runnable v3 foundation from PLAN.md and PLAN2.md, then complete the authorized script-review, evidence-grounded writing and matched-input evaluation preparation increments. No production video features, commits, pushes, subagents, or changes to v1/v2.
 
 ## Current Phase
-Concept and storyboard planning is implemented and verified: immutable dependencies, safe static planning images, explicit concept selection, shot narration navigation, scoped shot revisions and exact storyboard acceptance. Lint/typecheck, 45 tests, production build, fixture browser flow and live synthetic model generation pass. Human acceptance of the real revised evaluation scripts and full production remain unfinished.
+G1 verified and documented, including eight exports and explicit intermediate precision differences. G2 motion v1 contracts, schema 6 and immutable proposal storage are implemented; full validation is running before G3. Preserve existing static boards and all source/sibling artifacts.
 
 ## Next Step
-Review real revised scripts and accept exact text before creative production. The next software increment is Remotion Player and shot timeline, followed by voice synchronization, moving/audio review, formal gates and guarded export. Static boards do not establish animation quality. No subagents, commits, pushes or production media were used.
+Complete G2 checks/build, then implement the trusted composition interpreter and manual fixture preview. No production gates or human approvals are inferred from synthetic evidence. Continue incrementally without subagents, commits or pushes.
 
 ## Phases
+### Phase 32: G1 isolated GSAP adapter proof
+**Status:** complete
+- Separate pinned benchmark, matched frame/GSAP fixtures, determinism/cleanup/pixel checks, silent exports and measured performance. Record real failures before deciding promotion.
+- Errors: guessed original main.tsx/vite.config.ts files do not exist; actual entry is preview.tsx. GSAP package read occurred while installation was still running; wait for completion before dependency inventory.
+- Browser proof errors: initial screenshots preceded the final paint; added a benchmark-only readiness marker and rejected those captures. Exact Engine label locator did not match the select; inspect current UI and target its observed select element.
+- G1 comparison failed camera parity; stopped the incomplete timing round rather than promoting it. One browser wait also found no ready marker after hot reload; observe current engine/mount state before diagnosing the transform.
+- Screenshot diagnostics confirmed clipped captures reflowed the page and returned JPEG; all clipped hashes rejected. Lossless native PNG checks replace them. An early directory listing found the GSAP output was not yet created; wait for render phase completion.
+### Phase 33: G2 motion contracts and persistence
+**Status:** complete
+- Advance only after G1 passes; validated immutable motion proposals, additive schema and exact dependencies.
+- Full lint/typecheck, 51 tests and production build pass. Schema-5 compatibility, explicit decisions, stale dependencies, scoped object/shot preservation, corruption and rollback are verified.
+### Phase 34: G3 composition interpreter
+**Status:** complete
+- Advance only after G2; trusted frame schedule, scoped GSAP choreography and tested transitions.
+- TypeScript rejected a union of fade/wipe generic presentations; use separately typed transition branches instead of unsafe casts.
+- npm completed with an optional rspack WASM cleanup EPERM warning; preserve the files. Production audit remains zero; full audit retains five development findings. Verify actual bundling rather than deleting dependency directories.
+### Phase 35: G4 Player and motion review
+**Status:** in_progress
+- Advance only after G3; manual preview then scoped gateway proposals, comparison and explicit decisions.
+### Phase 36: G5 production timing and gates
+**Status:** pending
+- Separately scoped production work after preview, measured voice and independent human approval. No automatic production media or assumed gate receipts.
+### Phase 29: Verify GSAP reference and current boundaries
+**Status:** complete
+- Read supplied reference, current contracts and official adapter documentation; verify pinned package availability without installation. Preserve existing source-plan relocation.
+### Phase 30: Write executable GSAP integration roadmap
+**Status:** complete
+- Define ownership, identity/timing contracts, dependency invalidation, benchmark isolation, migration, UI review, validation and production boundaries; map affected files and exit criteria.
+### Phase 31: Verify planning handoff
+**Status:** complete
+- Check local links, documentation consistency and diff scope. Do not install dependencies, change code, render or claim implementation tests were rerun.
+- All 15 local links pass; both relocated source plans match HEAD content after line-ending normalization. Documentation-only diff scope confirmed; existing relocations preserved. No application tests/build or GSAP execution claimed.
 ### Phase 23: Record human text feedback
 **Status:** complete
 - Preserve the original packet/provenance. Bind A/A/B/B/B choices to packet labels and exact preferred text hashes; record missing read-aloud/blinding attestations without inference.

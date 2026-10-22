@@ -1,0 +1,33 @@
+import assert from "node:assert/strict";
+import { bundle } from "@remotion/bundler";
+import { selectComposition, renderFrames, renderStill, renderMedia } from "@remotion/renderer";
+import { execFileSync } from "node:child_process";
+import { createHash } from "node:crypto";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { resolve, join } from "node:path";
+import { motionEngineFixture } from "../tests/fixtures/motion-engine.ts";
+import { validateMotion } from "../workflow/motion.ts";
+import { hashMotionSource } from "../server/motion-store.ts";
+const props = motionEngineFixture(); validateMotion(props.plan, props.board, hashMotionSource);
+const output = resolve(".data/motion-engine-proof"); assert.ok(!existsSync(output), "Preserve prior proof output"); mkdirSync(output, { recursive: true });
+const browserExecutable = process.env.BENCHMARK_CHROME ?? "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const entry = join(output, "register.tsx");
+writeFileSync(entry, `import {Composition,registerRoot} from 'remotion';import Motion from '../../engine/motion-composition.tsx';registerRoot(()=> <Composition id="MotionProof" component={Motion} width={1080} height={1920} fps={30} durationInFrames={345} defaultProps={${JSON.stringify(props)}}/>);`);
+const serveUrl = await bundle({ entryPoint: entry }); const composition = await selectComposition({ serveUrl, id: "MotionProof", browserExecutable });
+await renderFrames({ serveUrl, composition, browserExecutable, outputDir: join(output, "frames"), imageFormat: "png", concurrency: 1 });
+const sha = (path) => createHash("sha256").update(readFileSync(path)).digest("hex");
+const results = [];
+for (const frame of [344, 0, 240, 120, 119, 121, 239, 232, 225, 224, 80, 10, 200, 0]) {
+  const path = join(output, `seek-${results.length}.png`);
+  await renderStill({ serveUrl, composition, browserExecutable, frame, imageFormat: "png", output: path });
+  const hash = sha(path); assert.equal(hash, sha(join(output, "frames", `element-${String(frame).padStart(3, "0")}.png`)), `Frame ${frame} is not deterministic`); results.push({ frame, sha256: hash });
+}
+assert.equal(sha(join(output, "frames", "element-119.png")), sha(join(output, "frames", "element-120.png")), "Continuous handoff changed a settled frame");
+const video = join(output, "synthetic-proof.mp4");
+await renderMedia({ serveUrl, composition, browserExecutable, codec: "h264", crf: 18, pixelFormat: "yuv420p", concurrency: 1, outputLocation: video });
+const metadata = JSON.parse(execFileSync("ffprobe", ["-v", "error", "-show_streams", "-of", "json", video], { encoding: "utf8" }));
+assert.equal(metadata.streams.length, 1); assert.equal(Number(metadata.streams[0].nb_frames), 345); assert.equal(metadata.streams[0].r_frame_rate, "30/1");
+assert.equal(metadata.streams[0].width, 1080); assert.equal(metadata.streams[0].height, 1920); assert.equal(Number(metadata.streams[0].duration), 11.5);
+execFileSync("ffmpeg", ["-v", "error", "-i", video, "-f", "null", "-"], { stdio: "pipe" });
+writeFileSync(join(output, "verification.json"), JSON.stringify({ schemaVersion: 1, syntheticOnly: true, sequentialFrames: 345, freshStills: results, continuousSeam: "119/120 identical", fullDecode: "pass", silent: true, productionApproval: false }, null, 2) + "\n");
+console.log("Motion interpreter: 345 sequential frames, 14 fresh stills, continuous seam and silent full decode pass.");

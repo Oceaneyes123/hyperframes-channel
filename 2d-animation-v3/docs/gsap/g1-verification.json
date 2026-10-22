@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-22",
+  "scope": "G1 synthetic adapter proof only",
+  "result": "pass with documented intermediate rounding differences",
+  "versions": {
+    "remotion": "4.0.537",
+    "gsap": "3.15.0",
+    "node": "v24.6.0",
+    "nativeChrome": "154.0.8037.100"
+  },
+  "runs": [
+    {
+      "engine": "native",
+      "label": "cold",
+      "elapsedMs": 35340.7145,
+      "parentPeakRssBytes": 221167616,
+      "decodedFrameHash": "ea3086d4d898cb2790150004bbe60574cd92896d8756dade178e99f1beffbb4e",
+      "frameCount": 360,
+      "silent": true
+    },
+    {
+      "engine": "gsap",
+      "label": "cold",
+      "elapsedMs": 34879.63249999998,
+      "parentPeakRssBytes": 206405632,
+      "decodedFrameHash": "19772ed67b9a31ee75f9de649e1d45f9c2940fb6e9d3be3ad5943ecc8994c2bd",
+      "frameCount": 360,
+      "silent": true
+    },
+    {
+      "engine": "native",
+      "label": "warm-1",
+      "elapsedMs": 34516.19959999999,
+      "parentPeakRssBytes": 198266880,
+      "decodedFrameHash": "ea3086d4d898cb2790150004bbe60574cd92896d8756dade178e99f1beffbb4e",
+      "frameCount": 360,
+      "silent": true
+    },
+    {
+      "engine": "gsap",
+      "label": "warm-1",
+      "elapsedMs": 34190.82860000001,
+      "parentPeakRssBytes": 209219584,
+      "decodedFrameHash": "19772ed67b9a31ee75f9de649e1d45f9c2940fb6e9d3be3ad5943ecc8994c2bd",
+      "frameCount": 360,
+      "silent": true
+    },
+    {
+      "engine": "native",
+      "label": "warm-2",
+      "elapsedMs": 34656.23570000002,
+      "parentPeakRssBytes": 198619136,
+      "decodedFrameHash": "ea3086d4d898cb2790150004bbe60574cd92896d8756dade178e99f1beffbb4e",
+      "frameCount": 360,
+      "silent": true
+    },
+    {
+      "engine": "gsap",
+      "label": "warm-2",
+      "elapsedMs": 34304.536300000036,
+      "parentPeakRssBytes": 210337792,
+      "decodedFrameHash": "19772ed67b9a31ee75f9de649e1d45f9c2940fb6e9d3be3ad5943ecc8994c2bd",
+      "frameCount": 360,
+      "silent": true
+    },
+    {
+      "engine": "native",
+      "label": "warm-3",
+      "elapsedMs": 34778.68030000001,
+      "parentPeakRssBytes": 201535488,
+      "decodedFrameHash": "ea3086d4d898cb2790150004bbe60574cd92896d8756dade178e99f1beffbb4e",
+      "frameCount": 360,
+      "silent": true
+    },
+    {
+      "engine": "gsap",
+      "label": "warm-3",
+      "elapsedMs": 35149.5919,
+      "parentPeakRssBytes": 211501056,
+      "decodedFrameHash": "19772ed67b9a31ee75f9de649e1d45f9c2940fb6e9d3be3ad5943ecc8994c2bd",
+      "frameCount": 360,
+      "silent": true
+    }
+  ],
+  "sequentialFramesPerEngine": 360,
+  "freshStillComparisons": 40,
+  "pixelComparison": {
+    "framesCompared": 360,
+    "identicalFrames": 326,
+    "differences": [
+      {
+        "frame": 65,
+        "changedPixels": 136,
+        "maxChannelDelta": 1,
+        "meanAbsoluteChannelDelta": 6.140689300411522e-05
+      },
+      {
+        "frame": 70,
+        "changedPixels": 38,
+        "maxChannelDelta": 28,
+        "meanAbsoluteChannelDelta": 0.00016525205761316872
+      },
+      {
+        "frame": 71,
+        "changedPixels": 35,
+        "maxChannelDelta": 26,
+        "meanAbsoluteChannelDelta": 0.0001892039609053498
+      },
+      {
+        "frame": 78,
+        "changedPixels": 47,
+        "maxChannelDelta": 25,
+        "meanAbsoluteChannelDelta": 0.0001356738683127572
+      },
+      {
+        "frame": 82,
+        "changedPixels": 66,
+        "maxChannelDelta": 26,
+        "meanAbsoluteChannelDelta": 0.00031282150205761317
+      },
+      {
+        "frame": 87,
+        "changedPixels": 24,
+        "maxChannelDelta": 1,
+        "meanAbsoluteChannelDelta": 7.2337962962962966e-06
+      },
+      {
+        "frame": 181,
+        "changedPixels": 8156,
+        "maxChannelDelta": 13,
+        "meanAbsoluteChannelDelta": 0.0168725887345679
+      },
+      {
+        "frame": 182,
+        "changedPixels": 9589,
+        "maxChannelDelta": 16,
+        "meanAbsoluteChannelDelta": 0.019275655864197532
+      },
+      {
+        "frame": 183,
+        "changedPixels": 6079,
+        "maxChannelDelta": 2,
+        "meanAbsoluteChannelDelta": 0.0022000385802469135
+      },
+      {
+        "frame": 184,
+        "changedPixels": 9320,
+        "maxChannelDelta": 9,
+        "meanAbsoluteChannelDelta": 0.0118603716563786
+      },
+      {
+        "frame": 185,
+        "changedPixels": 9378,
+        "maxChannelDelta": 14,
+        "meanAbsoluteChannelDelta": 0.017494695216049384
+      },
+      {
+        "frame": 186,
+        "changedPixels": 9210,
+        "maxChannelDelta": 10,
+        "meanAbsoluteChannelDelta": 0.011887860082304526
+      },
+      {
+        "frame": 187,
+        "changedPixels": 9398,
+        "maxChannelDelta": 12,
+        "meanAbsoluteChannelDelta": 0.014958365483539095
+      },
+      {
+        "frame": 188,
+        "changedPixels": 9982,
+        "maxChannelDelta": 16,
+        "meanAbsoluteChannelDelta": 0.021199845679012345
+      },
+      {
+        "frame": 189,
+        "changedPixels": 9437,
+        "maxChannelDelta": 12,
+        "meanAbsoluteChannelDelta": 0.01548852237654321
+      },
+      {
+        "frame": 190,
+        "changedPixels": 8077,
+        "maxChannelDelta": 5,
+        "meanAbsoluteChannelDelta": 0.005509098508230453
+      },
+      {
+        "frame": 191,
+        "changedPixels": 3351,
+        "maxChannelDelta": 1,
+        "meanAbsoluteChannelDelta": 0.0007032857510288066
+      },
+      {
+        "frame": 192,
+        "changedPixels": 10596,
+        "maxChannelDelta": 7,
+        "meanAbsoluteChannelDelta": 0.010386284722222222
+      },
+      {
+        "frame": 193,
+        "changedPixels": 7406,
+        "maxChannelDelta": 3,
+        "meanAbsoluteChannelDelta": 0.003399884259259259
+      },
+      {
+        "frame": 194,
+        "changedPixels": 10662,
+        "maxChannelDelta": 11,
+        "meanAbsoluteChannelDelta": 0.015921264146090536
+      },
+      {
+        "frame": 195,
+        "changedPixels": 11203,
+        "maxChannelDelta": 12,
+        "meanAbsoluteChannelDelta": 0.01782053755144033
+      },
+      {
+        "frame": 196,
+        "changedPixels": 10479,
+        "maxChannelDelta": 3,
+        "meanAbsoluteChannelDelta": 0.004172935956790124
+      },
+      {
+        "frame": 197,
+        "changedPixels": 9526,
+        "maxChannelDelta": 7,
+        "meanAbsoluteChannelDelta": 0.010520833333333333
+      },
+      {
+        "frame": 198,
+        "changedPixels": 2790,
+        "maxChannelDelta": 1,
+        "meanAbsoluteChannelDelta": 0.0005520190329218107
+      },
+      {
+        "frame": 199,
+        "changedPixels": 9510,
+        "maxChannelDelta": 5,
+        "meanAbsoluteChannelDelta": 0.005796842849794238
+      },
+      {
+        "frame": 200,
+        "changedPixels": 11868,
+        "maxChannelDelta": 11,
+        "meanAbsoluteChannelDelta": 0.01850517618312757
+      },
+      {
+        "frame": 201,
+        "changedPixels": 12485,
+        "maxChannelDelta": 15,
+        "meanAbsoluteChannelDelta": 0.0276392103909465
+      },
+      {
+        "frame": 202,
+        "changedPixels": 12649,
+        "maxChannelDelta": 11,
+        "meanAbsoluteChannelDelta": 0.020815329218106995
+      },
+      {
+        "frame": 203,
+        "changedPixels": 12428,
+        "maxChannelDelta": 10,
+        "meanAbsoluteChannelDelta": 0.017158564814814814
+      },
+      {
+        "frame": 204,
+        "changedPixels": 13496,
+        "maxChannelDelta": 13,
+        "meanAbsoluteChannelDelta": 0.027527166923868314
+      },
+      {
+        "frame": 205,
+        "changedPixels": 12472,
+        "maxChannelDelta": 9,
+        "meanAbsoluteChannelDelta": 0.017128504372427984
+      },
+      {
+        "frame": 206,
+        "changedPixels": 9959,
+        "maxChannelDelta": 3,
+        "meanAbsoluteChannelDelta": 0.0034079218106995886
+      },
+      {
+        "frame": 207,
+        "changedPixels": 13028,
+        "maxChannelDelta": 14,
+        "meanAbsoluteChannelDelta": 0.02869775591563786
+      },
+      {
+        "frame": 208,
+        "changedPixels": 13031,
+        "maxChannelDelta": 13,
+        "meanAbsoluteChannelDelta": 0.026859567901234567
+      }
+    ]
+  },
+  "warmMedianMs": {
+    "native": 34656.23570000002,
+    "gsap": 34304.536300000036
+  },
+  "gsapToNativeWarmRatio": 0.9898517714663401,
+  "previewSeekToTwoPaintMedianMs": {
+    "native": 40.59999999962747,
+    "gsap": 40.14999999944121
+  },
+  "previewEnvironment": "IAB browser version unavailable; measurements include two paint waits, not isolated GSAP execution time",
+  "resources": [
+    {
+      "action": "Unmount Player",
+      "timelines": 0,
+      "tweens": 0,
+      "transforms": [],
+      "frame": null
+    },
+    {
+      "action": "Mount Player",
+      "timelines": 0,
+      "tweens": 0,
+      "transforms": [],
+      "frame": 0
+    },
+    {
+      "action": "Remount then seek",
+      "timelines": 1,
+      "tweens": 2,
+      "transforms": [
+        "matrix(1.04,0,0,1.04,-16,-20)"
+      ],
+      "frame": 209
+    },
+    {
+      "action": "Switch to native",
+      "timelines": 0,
+      "tweens": 0,
+      "transforms": [],
+      "frame": 209
+    }
+  ],
+  "selectedShotVariant": [
+    {
+      "frame": 74,
+      "outsideSelectedShot": true,
+      "hashes": [
+        "ac222887e3451223da93c618720fed87ee6bd50b72574de21f77b982e578b602",
+        "ac222887e3451223da93c618720fed87ee6bd50b72574de21f77b982e578b602"
+      ]
+    },
+    {
+      "frame": 209,
+      "outsideSelectedShot": false,
+      "hashes": [
+        "ac0f76a0cbc270d27f27ef26f4eb2462611e99fb16070af3a0b763a8ecc40518",
+        "ad95ef7619a47bade63e40a04ebc672e496906d0c9adbc51c56362804f96bb13"
+      ]
+    },
+    {
+      "frame": 359,
+      "outsideSelectedShot": true,
+      "hashes": [
+        "142d32ad3a7e26b292975526efd608a61799732d485b299c817f60e77b2da1bd",
+        "142d32ad3a7e26b292975526efd608a61799732d485b299c817f60e77b2da1bd"
+      ]
+    }
+  ],
+  "auditVulnerabilities": 0,
+  "rejectedEvidence": [
+    "Initial wrong-origin output/measured (partial timings retained)",
+    "All clipped browser screenshot hashes; backend reflowed the page and returned JPEG"
+  ],
+  "licensing": {
+    "adapter": "MIT (installed package metadata)",
+    "gsap": "Standard no charge license; https://gsap.com/standard-license; installed README and source headers reference terms, no separate license file shipped",
+    "remotion": "Player license notice retained; no organizational eligibility determination made"
+  },
+  "sourceFiles": [
+    {
+      "path": "benchmarks/remotion-gsap/src/Film.tsx",
+      "sha256": "1c65dcaa010b6dc3199bebbd22e9d51263a2d1a830e3413a5c01ad6a0177f060"
+    },
+    {
+      "path": "benchmarks/remotion-gsap/src/preview.tsx",
+      "sha256": "837ca9bb13143cf098af88dad21335a42c4461373c34585d9df6ee55a9ad136d"
+    },
+    {
+      "path": "benchmarks/remotion-gsap/src/register.tsx",
+      "sha256": "e5d05b023ea42984061ffb78a1b0cdaafc6c63e95639aa3001488a7fdddddb3a"
+    },
+    {
+      "path": "benchmarks/remotion-gsap/package.json",
+      "sha256": "a7c5052dc40c4ddde21b152780f58bc8caf3fe0e02a9ec27d4cd9c9ce8fcc9e0"
+    },
+    {
+      "path": "benchmarks/remotion-gsap/package-lock.json",
+      "sha256": "5cdcc626955bf5dda57819109d2f1d5df5b6ad4b39a9695757812ccf86cb0e59"
+    },
+    {
+      "path": "benchmarks/remotion-gsap/render.mjs",
+      "sha256": "3e1ac48c25f31bce314e0b5f3f269455e74fcfef9cc9d67695a7714dcbc23fd5"
+    },
+    {
+      "path": "benchmarks/remotion-gsap/inspect.py",
+      "sha256": "89c7c6e677dd7b615579649f45372334889365a3dbaac95603f637c4ed3fc6ee"
+    },
+    {
+      "path": "benchmarks/remotion-gsap/verify-variants.mjs",
+      "sha256": "e66bf06d31c8b560ae8ad6f9c92409c31cee5fa1f36f3eef715158a8769039e6"
+    }
+  ],
+  "preservation": {
+    "v2HashesMatched": 731,
+    "originalBenchmarkHashesMatched": 22
+  },
+  "productionApproval": false
+}

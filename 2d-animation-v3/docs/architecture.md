@@ -2,6 +2,15 @@
 
 ## Authority and scope
 
+The [GSAP implementation roadmap](GSAP-IMPLEMENTATION-PLAN.md), based on the
+supplied [GSAP reference](GSAP-INTEGRATION.md), plans the next motion increment.
+It is not implemented: Remotion will own frame time, shot placement and overlaps;
+the official GSAP adapter will interpret trusted DOM/SVG choreography. Motion
+will use a separately versioned validated JSON contract and exact upstream
+acceptance dependencies. No model-generated executable animation code is planned.
+The current static storyboard format and schema 5 remain unchanged. Start with a
+separate synthetic benchmark, preserving the frozen renderer comparison.
+
 PLAN.md is the primary roadmap. PLAN2.md extends it with interactive agent
 revisions. Foundation, project/script persistence and scoped script review are implemented.
 The user approved architecture direction and a separately isolated renderer

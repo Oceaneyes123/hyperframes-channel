@@ -17,13 +17,20 @@
     "check": "npm run lint && npm run typecheck && npm test"
   },
   "dependencies": {
+    "@remotion/gsap": "4.0.537",
+    "@remotion/player": "4.0.537",
+    "@remotion/transitions": "4.0.537",
+    "gsap": "3.15.0",
     "next": "16.4.2",
     "react": "19.3.1",
     "react-dom": "19.3.1",
+    "remotion": "4.0.537",
     "server-only": "0.0.1",
     "zod": "4.6.7"
   },
   "devDependencies": {
+    "@remotion/bundler": "4.0.537",
+    "@remotion/renderer": "4.0.537",
     "@tailwindcss/postcss": "4.3.3",
     "@types/node": "24.19.2",
     "@types/react": "19.3.0",

@@ -1,5 +1,23 @@
 # Progress
 
+## 2026-10-22 — GSAP implementation
+- G3 complete: 54 tests, lint/typecheck and production build pass; 345-frame/14-still native proof and silent decode pass. Shared handoff and full fade-window contact sheet inspected. Starting G4 integration with the existing local request/action boundary; no production rendering UI.
+- G3 pure compiler checks pass: continuous shots reuse the same actor, overlap scheduling is counted once, unsupported operations reject, and camera/appearance seams validate. The store now also checks renderer support before committing/accepting motion. Native interpreter frame/still/export proof is next.
+- G2 complete: 51/51 tests, lint, TypeScript and production build pass. Starting G3 with the now-proven official adapter and exact root dependencies. G1/G2 proof does not supply real script/storyboard or production acceptance.
+- G1 complete; proceeded to G2 after pixel/performance/resource/export checks. Added motion contracts/store and schema 6. Focused 14/14 motion/visual tests pass; full check/build next before G3. No production runtime renderer dependencies yet.
+- Diagnosed camera-origin mismatch and corrected the fixture with explicit svgOrigin 0 0. Preserved the failed/partial measured round and began corrected-camera as separate evidence. Both corrected variants again pass sequential/fresh-still PNG determinism. Scoped variant PNG checks and corrected full-frame parity analysis are running.
+- Browser clipped screenshots were found to reflow/crop the page incorrectly and return JPEG. Rejected every clipped hash as engine pixel evidence; use native renderer PNGs and full viewport UI observations. Live playback visibly advanced through transcript morph and newsletter/camera scene.
+- Baseline all 360 sequential lossless frames match 20 fresh nonsequential stills. Browser verification needed a two-paint readiness marker; after that, duplicate frames 0/74/180 have identical screenshot hashes across backward/random seeks. Unready captures are retained as a rejected diagnostic, not used as evidence.
+- Separate dependencies installed with no audit findings. New matched fixture and preview compile. Native lossless-frame rendering is running; browser successfully sought directly into the GSAP morph at frame 74 and displayed transformed SVG objects. Original benchmark files remain untouched.
+- Read the invoked Ponytail skill and restored the existing plan. Added G1–G5 execution phases; G1 active. Existing plan-document changes and source-plan relocation are preserved. No subagents or Git publication.
+
+## 2026-10-22 — GSAP integration planning only
+- Completed planning phases 29–31. Checked all 15 local links, unchanged relocated source-plan contents, whitespace and documentation-only change scope. No implementation checks were represented as newly passing. Next executable step is G1 upon implementation request.
+- Confirmed adapter 4.0.537 exists and accepts GSAP 3.x; candidate exact GSAP pin is 3.15.0. No package installation. Official API/plugin limitations and transition overlap behavior verified against primary documentation.
+- Created docs/GSAP-IMPLEMENTATION-PLAN.md with five dependency-ordered implementation phases, contract/timing decisions, validation exits, file map and stop conditions. Linked it from architecture.md and next-steps.md. Original supplied reference and source plans remain unchanged.
+- Restored the installed planning workflow, read the supplied reference and current v3 state, and added planning phases 29–31. Flagged and preserved the existing source-plan relocation.
+- Verified the official adapter exists and identified stable object identity and overlap timing as concrete gaps in the current static-board schema. No implementation, installation or media work started.
+
 ## 2026-10-21 — Foundation setup
 - Read installed planning-with-files, Ponytail, Caveman skills.
 - Ran resolver and initializer in v3; selected v3 root via documented legacy fallback. Metadata catchup emitted no recovery information.

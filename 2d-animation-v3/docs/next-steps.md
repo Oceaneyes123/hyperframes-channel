@@ -36,8 +36,12 @@ No editorial quality or general model-capability conclusion follows from that ch
    implemented; see [visual planning](visual-planning.md). Images are static
    drawings, not screenshots from a renderer. Current script acceptance is
    required, edits invalidate dependencies, and storyboard acceptance is explicit.
-3. Integrate selected Remotion 4.0.537 into a Next client Player and shot timeline.
-   Verify saved identity, reload, seeking and failure behavior before render jobs.
+3. Follow the [GSAP implementation roadmap](GSAP-IMPLEMENTATION-PLAN.md), based on
+   [GSAP-INTEGRATION.md](GSAP-INTEGRATION.md): isolated GSAP adapter proof first,
+   versioned motion contracts/persistence second, trusted composition third, then
+   Remotion Player/timeline and scoped AI review. Preserve the frozen benchmark
+   in a separate new experiment. Verify identity, seeking, transitions and reload
+   before advancing. The roadmap is documented; implementation has not started.
 4. Add voice adaptation, synchronized preview and independent moving/audio review,
    formal Gate 1/Gate 2 receipts, guarded rendering and exact export verification.
 5. Adapt v3 verified artifacts to the separate publishing workflow. Publishing and
