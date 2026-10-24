@@ -1,16 +1,18 @@
+import { graphicReference, isGraphicAsset } from "../../workflow/graphic-assets.ts";
 import { componentParts, componentRegistry, type ComponentType } from "../../workflow/components.ts";
 import { motionBeatSchema } from "../../workflow/motion.ts";
 import { hashMotionSource } from "../../server/motion-store.ts";
 import { presetScene } from "./motion-presets.ts";
 
 export function motionComponentFixture(type: ComponentType = "inbox-panel@1") {
-  const shape = { type, x: 15, y: 30, width: 70, height: 40, color: "#9BA7FF", label: type === "kinetic-phrase@1" ? "Repeated problems" : "", ...(type === "cost-chart@1" ? { values: [20, 40] as [number, number] } : {}) };
+  const shape = { type, x: 15, y: 30, width: 70, height: isGraphicAsset(type) ? 52.5 : 40, ...(isGraphicAsset(type) ? { asset: graphicReference(type) } : {}), color: "#9BA7FF", label: type === "kinetic-phrase@1" ? "Repeated problems" : "", ...(type === "cost-chart@1" ? { values: [20, 40] as [number, number] } : {}) };
   const initial = componentParts(shape.type, shape.color);
   if (type === "kinetic-phrase@1") initial.keyword.reveal = 0;
   const final = Object.fromEntries(Object.entries(initial).map(([part, state]) => [part, { ...state, opacity: 1, reveal: 1 }]));
   const fixture = presetScene([{ ...shape, parts: initial }], [{ ...shape, parts: final }], [[0, 0]], { presetId: "snap-overshoot@1", parameters: { to: {}, anticipation: .9, overshoot: 1.08 }, targetIds: ["object-1"] });
   const shot = fixture.plan.shots[0]; shot.objects[0].initialParts = initial;
   if (shape.values) shot.objects[0].values = shape.values;
+  if (isGraphicAsset(type)) { shot.objects[0].asset = graphicReference(type); fixture.board.schemaVersion = 2; }
   shot.beats = Object.keys(initial).map((part, index) => motionBeatSchema.parse({
     id: `part-${index + 1}`, purpose: `Reveal the ${part} state of the ${type} mechanism.`,
     type: "transformation", presetId: "snap-overshoot@1", parameters: { to: { opacity: 1 }, anticipation: .9, overshoot: 1.08 },
@@ -35,6 +37,7 @@ export function motionComponentSequence() {
     if (scene.board.output.kind !== "storyboard") throw new Error("Expected storyboard.");
     const drawing = structuredClone(scene.board.output.shots[0]); drawing.lineNumbers = [index + 1]; drawing.seconds = 100 / 30; drawing.transition = index ? "hard-cut" : "start"; return drawing;
   });
+  board.schemaVersion = scenes.some((scene) => scene.board.schemaVersion === 2) ? 2 : 1;
   const drawings = board.output.shots;
   plan.shots = scenes.map((scene, index) => {
     const shot = structuredClone(scene.plan.shots[0]); Object.assign(shot, { id: `shot-${index + 1}`, sourceIndex: index, sourceHash: hashMotionSource(drawings[index]), lineNumbers: [index + 1], durationFrames: 100 });

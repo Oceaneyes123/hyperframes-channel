@@ -1,0 +1,146 @@
+[
+  {
+    "shot": 1,
+    "state": "endFrame",
+    "label": "Owner review",
+    "pixels": 64
+  },
+  {
+    "shot": 2,
+    "state": "startFrame",
+    "label": "Salon questions",
+    "pixels": 67.2
+  },
+  {
+    "shot": 2,
+    "state": "endFrame",
+    "label": "Questions",
+    "pixels": 56.25
+  },
+  {
+    "shot": 2,
+    "state": "endFrame",
+    "label": "FAQ",
+    "pixels": 64
+  },
+  {
+    "shot": 3,
+    "state": "startFrame",
+    "label": "Inquiry form",
+    "pixels": 59.06250000000001
+  },
+  {
+    "shot": 3,
+    "state": "endFrame",
+    "label": "Google Sheets",
+    "pixels": 58.41346153846154
+  },
+  {
+    "shot": 3,
+    "state": "endFrame",
+    "label": "n8n",
+    "pixels": 64
+  },
+  {
+    "shot": 4,
+    "state": "startFrame",
+    "label": "Google Sheets",
+    "pixels": 58.41346153846154
+  },
+  {
+    "shot": 4,
+    "state": "startFrame",
+    "label": "n8n",
+    "pixels": 64
+  },
+  {
+    "shot": 4,
+    "state": "endFrame",
+    "label": "Question",
+    "pixels": 59.06250000000001
+  },
+  {
+    "shot": 4,
+    "state": "endFrame",
+    "label": "FAQ",
+    "pixels": 64
+  },
+  {
+    "shot": 4,
+    "state": "endFrame",
+    "label": "deepseek-flash",
+    "pixels": 56.65178571428571
+  },
+  {
+    "shot": 4,
+    "state": "endFrame",
+    "label": "JSON fields",
+    "pixels": 64
+  },
+  {
+    "shot": 5,
+    "state": "startFrame",
+    "label": "Question",
+    "pixels": 59.06250000000001
+  },
+  {
+    "shot": 5,
+    "state": "startFrame",
+    "label": "FAQ",
+    "pixels": 64
+  },
+  {
+    "shot": 5,
+    "state": "startFrame",
+    "label": "deepseek-flash",
+    "pixels": 56.65178571428571
+  },
+  {
+    "shot": 5,
+    "state": "startFrame",
+    "label": "JSON fields",
+    "pixels": 64
+  },
+  {
+    "shot": 5,
+    "state": "endFrame",
+    "label": "Google Sheets",
+    "pixels": 58.41346153846154
+  },
+  {
+    "shot": 5,
+    "state": "endFrame",
+    "label": "Approve",
+    "pixels": 64
+  },
+  {
+    "shot": 6,
+    "state": "endFrame",
+    "label": "Draft",
+    "pixels": 64
+  },
+  {
+    "shot": 6,
+    "state": "endFrame",
+    "label": "Ask owner",
+    "pixels": 58.12500000000001
+  },
+  {
+    "shot": 7,
+    "state": "startFrame",
+    "label": "Setup",
+    "pixels": 64
+  },
+  {
+    "shot": 7,
+    "state": "startFrame",
+    "label": "Support?",
+    "pixels": 64
+  },
+  {
+    "shot": 7,
+    "state": "endFrame",
+    "label": "Owner control",
+    "pixels": 64
+  }
+]

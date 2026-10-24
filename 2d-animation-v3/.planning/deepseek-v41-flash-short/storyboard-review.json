@@ -1,0 +1,558 @@
+[
+  {
+    "shot": 1,
+    "lines": [
+      1
+    ],
+    "seconds": 8,
+    "purpose": "Promise a useful inquiry service without an app; establish the owner's release boundary.",
+    "action": "Move the inquiry from intake into a draft beneath the closed gate. Stop there; imply neither approval nor delivery.",
+    "transition": "start",
+    "continuity": "Keep owner and gate fixed throughout. Next, discover what information this service needs.",
+    "start": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "browser",
+        "label": "",
+        "x": 30,
+        "y": 65,
+        "w": 40,
+        "h": 23
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 44,
+        "y": 71,
+        "w": 12,
+        "h": 14
+      }
+    ],
+    "end": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 40,
+        "y": 46,
+        "w": 20,
+        "h": 23
+      },
+      {
+        "type": "text",
+        "label": "Pending draft",
+        "x": 25,
+        "y": 73,
+        "w": 50,
+        "h": 6
+      }
+    ]
+  },
+  {
+    "shot": 2,
+    "lines": [
+      2,
+      3
+    ],
+    "seconds": 10,
+    "purpose": "Ground the salon demo in repeated questions, reply bottlenecks and an owner-approved FAQ.",
+    "action": "First move a question toward the gate and stop at the bottleneck. Replace it with made-up inquiries; bring the approved FAQ alongside. No approval gesture.",
+    "transition": "hard-cut",
+    "continuity": "This is a proposed demo, not a customer result. The paired sources feed the intake build next.",
+    "start": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 40,
+        "y": 58,
+        "w": 20,
+        "h": 23
+      },
+      {
+        "type": "text",
+        "label": "Salon questions",
+        "x": 22,
+        "y": 82,
+        "w": 56,
+        "h": 6
+      }
+    ],
+    "end": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 18,
+        "y": 59,
+        "w": 25,
+        "h": 29
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 57,
+        "y": 59,
+        "w": 25,
+        "h": 29
+      }
+    ]
+  },
+  {
+    "shot": 3,
+    "lines": [
+      4
+    ],
+    "seconds": 7,
+    "purpose": "Expose the intake mechanism: form submission becomes a sheet row, then triggers n8n.",
+    "action": "Transfer the form's question into a new Google Sheets row. Highlight that row, then replace the storage station with n8n picking up its packet. Hold.",
+    "transition": "reveal",
+    "continuity": "The demo sources become a concrete intake path. n8n carries the question into the next shot.",
+    "start": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "browser",
+        "label": "",
+        "x": 28,
+        "y": 51,
+        "w": 44,
+        "h": 29
+      },
+      {
+        "type": "text",
+        "label": "Inquiry form",
+        "x": 28,
+        "y": 83,
+        "w": 44,
+        "h": 6
+      }
+    ],
+    "end": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "server",
+        "label": "",
+        "x": 32,
+        "y": 51,
+        "w": 36,
+        "h": 29
+      },
+      {
+        "type": "text",
+        "label": "n8n",
+        "x": 28,
+        "y": 83,
+        "w": 44,
+        "h": 6
+      }
+    ]
+  },
+  {
+    "shot": 4,
+    "lines": [
+      5
+    ],
+    "seconds": 11,
+    "purpose": "Explain question-plus-FAQ model input and machine-readable category and reply-draft output.",
+    "action": "Replace n8n with question and approved-FAQ documents; converge both into a chip labeled deepseek-flash. Request JSON; unpack its response into category and reply-draft fields. Hold beneath the gate.",
+    "transition": "continuous",
+    "continuity": "Owner and gate retain exact geometry. Structured output is still only an unvalidated draft.",
+    "start": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "server",
+        "label": "",
+        "x": 32,
+        "y": 51,
+        "w": 36,
+        "h": 29
+      },
+      {
+        "type": "text",
+        "label": "n8n",
+        "x": 28,
+        "y": 83,
+        "w": 44,
+        "h": 6
+      }
+    ],
+    "end": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 37,
+        "y": 48,
+        "w": 26,
+        "h": 30
+      },
+      {
+        "type": "text",
+        "label": "category · reply draft",
+        "x": 18,
+        "y": 82,
+        "w": 64,
+        "h": 6
+      }
+    ]
+  },
+  {
+    "shot": 5,
+    "lines": [
+      6
+    ],
+    "seconds": 10,
+    "purpose": "Separate field validation from owner fact-checking, editing and explicit release.",
+    "action": "Check both fields; update Google Sheets, then notify the owner. Route missing information to that owner too. Explain fact-check, edit and approval in sequence; manual send is possible only afterward. Keep this example pending.",
+    "transition": "continuous",
+    "continuity": "Match the previous frame exactly on arrival. No approved state or actual delivery is depicted.",
+    "start": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 37,
+        "y": 48,
+        "w": 26,
+        "h": 30
+      },
+      {
+        "type": "text",
+        "label": "category · reply draft",
+        "x": 18,
+        "y": 82,
+        "w": 64,
+        "h": 6
+      }
+    ],
+    "end": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 40,
+        "y": 45,
+        "w": 20,
+        "h": 23
+      },
+      {
+        "type": "text",
+        "label": "Owner review",
+        "x": 22,
+        "y": 75,
+        "w": 56,
+        "h": 6
+      }
+    ]
+  },
+  {
+    "shot": 6,
+    "lines": [
+      7
+    ],
+    "seconds": 6,
+    "purpose": "Test both an answerable booking inquiry and an inquiry outside the FAQ.",
+    "action": "Pair each invented test inquiry with the FAQ in turn. The booking test yields a draft; the unsupported test yields a missing-information route. Move both toward the owner and stop below the gate.",
+    "transition": "hard-cut",
+    "continuity": "Tests demonstrate routing, not verified accuracy or approval. Next, pitch the tested process.",
+    "start": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 18,
+        "y": 61,
+        "w": 25,
+        "h": 28
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 57,
+        "y": 61,
+        "w": 25,
+        "h": 28
+      }
+    ],
+    "end": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 24,
+        "y": 45,
+        "w": 20,
+        "h": 23
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 56,
+        "y": 45,
+        "w": 20,
+        "h": 23
+      }
+    ]
+  },
+  {
+    "shot": 7,
+    "lines": [
+      8,
+      9,
+      10
+    ],
+    "seconds": 18,
+    "purpose": "Pitch process fit and service scope, assign running-cost responsibility, and restate owner control.",
+    "action": "Present the workflow for a fit discussion. Stage setup, testing and handover; branch maintenance as optional. Replace these with API and hosting bills and leave payer assignment open for agreement. Show usage packets accumulating against the API bill: DeepSeek charges by usage. Restore a pending draft at the owner's closed gate.",
+    "transition": "hard-cut",
+    "continuity": "No sale, payer agreement, approval or outcome is implied. End on the same service promise as shot one.",
+    "start": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "browser",
+        "label": "",
+        "x": 27,
+        "y": 51,
+        "w": 46,
+        "h": 29
+      },
+      {
+        "type": "text",
+        "label": "Process fit",
+        "x": 22,
+        "y": 83,
+        "w": 56,
+        "h": 6
+      }
+    ],
+    "end": [
+      {
+        "type": "person",
+        "label": "",
+        "x": 40,
+        "y": 10,
+        "w": 20,
+        "h": 16
+      },
+      {
+        "type": "rect",
+        "label": "",
+        "x": 12,
+        "y": 35,
+        "w": 76,
+        "h": 5
+      },
+      {
+        "type": "document",
+        "label": "",
+        "x": 40,
+        "y": 46,
+        "w": 20,
+        "h": 23
+      },
+      {
+        "type": "text",
+        "label": "Owner control",
+        "x": 25,
+        "y": 73,
+        "w": 50,
+        "h": 6
+      }
+    ]
+  }
+]

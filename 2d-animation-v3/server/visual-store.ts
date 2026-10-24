@@ -4,7 +4,7 @@ import { join } from "node:path";
 import { z } from "zod";
 import { openDatabase } from "./database.ts";
 import { ConflictError, openStudio } from "./studio.ts";
-import { conceptsSchema, replaceShot, validateStoryboard, visualArtifactSchema, visualOutputSchema, visualRequestSchema, type VisualOutput } from "../workflow/visuals.ts";
+import { conceptsSchema, replaceShot, validateStoryboard, visualSchemaVersion, visualArtifactSchema, visualOutputSchema, visualRequestSchema, type VisualOutput } from "../workflow/visuals.ts";
 
 const digest = (bytes: string) => createHash("sha256").update(bytes).digest("hex");
 const selectionSchema = z.strictObject({ id: z.uuid(), projectId: z.uuid(), runId: z.uuid(), optionIndex: z.number().int().min(0).max(2) });
@@ -109,7 +109,7 @@ export function openVisuals(directory: string, videosDirectory: string) {
             if (!base || base.output.kind !== "storyboard" || base.selectionId !== request.selectionId || base.scriptId !== request.scriptId) throw new ConflictError("Shot base changed.");
             output = { kind: "storyboard", ...replaceShot(base.output, request.shotIndex!, input, content) };
           } else output = { kind: "storyboard", ...validateStoryboard(input, content) };
-          const artifact = visualArtifactSchema.parse({ schemaVersion: 1, id, projectId, createdAt: row.created_at, scriptId: request.scriptId, scriptHash: row.script_hash,
+          const artifact = visualArtifactSchema.parse({ schemaVersion: visualSchemaVersion(output), id, projectId, createdAt: row.created_at, scriptId: request.scriptId, scriptHash: row.script_hash,
             selectionId: request.selectionId, baseId: request.baseId, instruction: request.instruction, output: visualOutputSchema.parse(output) });
           const bytes = JSON.stringify(artifact, null, 2) + "\n";
           if (existsSync(destination)) throw new Error("Existing artifact preserved for recovery.");

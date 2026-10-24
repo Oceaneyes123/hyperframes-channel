@@ -1,6 +1,8 @@
 import { z } from "zod";
+import { graphicAssetRegistry } from "./graphic-assets.ts";
 
 export const componentRegistry = {
+  "complaint-workflow@1": graphicAssetRegistry["complaint-workflow@1"].layers,
   "inbox-panel@1": ["message", "highlight", "extracted", "packet"],
   "approval-flow@1": ["request", "approved", "handoff"],
   "api-flow@1": ["request", "response", "cache"],
