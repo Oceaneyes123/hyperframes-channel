@@ -7,6 +7,7 @@ import { motionEngineFixture } from "./fixtures/motion-engine.ts";
 import { scheduleMotion } from "../workflow/motion.ts";
 import { splitPanel } from "../workflow/motion.ts";
 import { frameSchema } from "../workflow/visuals.ts";
+import { inspectMotion } from "../workflow/production.ts";
 
 test("compiler retains a shared actor across continuous shots and schedules overlap once", () => {
   const { plan, board } = motionEngineFixture(); validateMotion(plan, board, hashMotionSource);
@@ -46,8 +47,19 @@ test("interpreter 2 gives every boundary an explicit presentation and rejects su
 });
 
 test("safe visual symbols remain bounded declarative data", () => {
-  for (const type of ["document", "browser", "database", "server", "cloud", "person", "chip", "coin"]) {
+  for (const type of ["document", "browser", "database", "server", "cloud", "person", "chip", "coin", "centered-text"]) {
     assert.equal(frameSchema.parse({ background: "#000000", shapes: [{ type, x: 10, y: 10, width: 70, height: 70, color: "#ffffff", label: "" }] }).shapes[0].type, type);
   }
   assert.throws(() => frameSchema.parse({ background: "#000000", shapes: [{ type: "svg", markup: "<script/>" }] }));
+});
+
+test("centered labels retain text motion restrictions", () => {
+  const { plan, board } = motionEngineFixture();
+  const object = plan.shots[0].objects.find((item) => item.type === "text")!;
+  object.type = "centered-text";
+  assert.doesNotThrow(() => compileMotion(plan, board));
+  object.label = "A long centered label still needs a phone readability review";
+  assert.ok(inspectMotion(plan).warnings.some((warning) => warning.includes("inspect long text")));
+  plan.shots[0].actions.push({ ...plan.shots[0].actions[0], targetIds: [object.id], to: { width: 20 } });
+  assert.throws(() => compileMotion(plan, board), /Text width/);
 });

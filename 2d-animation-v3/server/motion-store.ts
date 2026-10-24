@@ -6,7 +6,10 @@ import { openDatabase } from "./database.ts";
 import { openVisuals } from "./visual-store.ts";
 import { ConflictError } from "./studio.ts";
 import { compileMotion } from "../engine/compile-motion.ts";
-import { motionShotSchema, motionSourceSchema as sourceSchema, motionRequestSchema, motionArtifactSchema as artifactSchema, validateMotion, type MotionArtifact } from "../workflow/motion.ts";
+import { motionShotSchema, motionSourceSchema as sourceSchema, motionRequestSchema, motionArtifactSchema as artifactSchema, validateMotion, scheduleMotion, type MotionArtifact } from "../workflow/motion.ts";
+import { openTiming } from "./timing-store.ts";
+import { validateTiming } from "../workflow/production.ts";
+import { resolveBeatTiming } from "../workflow/timing.ts";
 
 const sha = (bytes: string) => createHash("sha256").update(bytes).digest("hex");
 export const hashMotionSource = (value: unknown) => sha(JSON.stringify(value));
@@ -16,7 +19,7 @@ const rowSchema = z.object({ id: z.uuid(), project_id: z.uuid(), request_json: z
   decision: z.enum(["pending", "accepted", "rejected"]).nullable(), sha256: hashSchema.nullable(), error: z.string().nullable() });
 
 export function openMotion(directory: string, videosDirectory: string) {
-  const database = openDatabase(directory); const visuals = openVisuals(directory, videosDirectory);
+  const database = openDatabase(directory); const visuals = openVisuals(directory, videosDirectory), timings = openTiming(directory, videosDirectory);
   database.prepare("UPDATE motion_runs SET status = 'failed', error = 'Request interrupted or timed out. Retry explicitly.' WHERE status = 'running' AND deadline < ?").run(new Date().toISOString());
   const pathFor = (projectId: string, id: string) => join(videosDirectory, z.uuid().parse(projectId), "motion", `${z.uuid().parse(id)}.json`);
   const rows = (projectId: string) => database.prepare("SELECT * FROM motion_runs WHERE project_id = ? ORDER BY rowid DESC").all(z.uuid().parse(projectId)).map((row) => rowSchema.parse(row));
@@ -24,7 +27,8 @@ export function openMotion(directory: string, videosDirectory: string) {
   function source(projectId: string, storyboardId: string) {
     const receipt = visuals.acceptance(projectId); const board = visuals.read(projectId, storyboardId);
     if (!receipt || receipt.stale || receipt.runId !== storyboardId || board?.output.kind !== "storyboard" || !board.selectionId) throw new ConflictError("Accept the exact current storyboard, script and research before motion planning.");
-    return sourceSchema.parse({ storyboardId, storyboardHash: receipt.sha256, scriptId: board.scriptId, scriptHash: board.scriptHash, selectionId: board.selectionId });
+    const timing = timings.latest(projectId);
+    return sourceSchema.parse({ storyboardId, storyboardHash: receipt.sha256, scriptId: board.scriptId, scriptHash: board.scriptHash, selectionId: board.selectionId, ...(timing && !timing.stale ? { timingId: timing.artifact.id, timingHash: timing.sha256 } : {}) });
   }
   function read(projectId: string, id: string): MotionArtifact | null {
     const row = rows(projectId).find((row) => row.id === z.uuid().parse(id) && row.status === "complete"); if (!row) return null;
@@ -35,6 +39,13 @@ export function openMotion(directory: string, videosDirectory: string) {
     // The visual store verifies bytes against its own index before we bind this hash.
     const boardPath = join(videosDirectory, projectId, "visuals", `${board.id}.json`);
     if (sha(readFileSync(boardPath, "utf8")) !== artifact.source.storyboardHash || board.scriptId !== artifact.source.scriptId || board.scriptHash !== artifact.source.scriptHash || board.selectionId !== artifact.source.selectionId) throw new Error("Motion storyboard dependency mismatch.");
+    if (artifact.source.timingId) {
+      const timing = timings.read(projectId, artifact.source.timingId);
+      if (!timing || timing.sha256 !== artifact.source.timingHash || timing.artifact.scriptId !== artifact.source.scriptId || timing.artifact.scriptHash !== artifact.source.scriptHash) throw new Error("Motion timing dependency mismatch.");
+      validateTiming(timing.artifact.timing, artifact.plan, timing.artifact.timing);
+      if (Math.abs(timing.artifact.measured.durationSeconds * 30 - scheduleMotion(artifact.plan).durationFrames) > 1) throw new Error("Motion duration differs from planning narration.");
+      if (JSON.stringify(resolveBeatTiming(artifact.plan, timing.artifact).plan) !== JSON.stringify(artifact.plan)) throw new Error("Motion beats do not match their measured narration anchors.");
+    }
     validateMotion(artifact.plan, board, hashMotionSource); compileMotion(artifact.plan, board); return artifact;
   }
   function current(projectId: string, id: string) {
@@ -47,11 +58,12 @@ export function openMotion(directory: string, videosDirectory: string) {
     catch (error) { database.exec("ROLLBACK"); throw error; }
   }
   return {
-    close() { visuals.close(); database.close(); }, read, latest, current,
+    close() { timings.close(); visuals.close(); database.close(); }, read, latest, current,
     list: (projectId: string) => rows(projectId).map((row) => ({ id: row.id, status: row.status, decision: row.decision, createdAt: row.created_at, model: row.model, error: row.error })),
     context(projectId: string, input: unknown) {
-      const request = motionRequestSchema.parse(input); source(projectId, request.storyboardId);
-      return { board: visuals.read(projectId, request.storyboardId)!, base: request.baseId ? read(projectId, request.baseId) : null };
+      const request = motionRequestSchema.parse(input);
+      const dependency = source(projectId, request.storyboardId);
+      return { board: visuals.read(projectId, request.storyboardId)!, base: request.baseId ? read(projectId, request.baseId) : null, timing: dependency.timingId ? timings.read(projectId, dependency.timingId)!.artifact : null };
     },
     begin(projectId: string, input: unknown, model = "manual-fixture") {
       const request = motionRequestSchema.parse(input);
@@ -82,7 +94,7 @@ export function openMotion(directory: string, videosDirectory: string) {
             const original = base.plan.shots.find((item) => item.id === request.shotId);
             if (!original || shot.id !== original.id || shot.sourceHash !== original.sourceHash || shot.sourceIndex !== original.sourceIndex || JSON.stringify(shot.lineNumbers) !== JSON.stringify(original.lineNumbers)) throw new Error("Selected shot identity must remain unchanged.");
             if (JSON.stringify(shot.objects) !== JSON.stringify(original.objects)) throw new Error("Scoped motion edits must preserve object identity and source correspondence.");
-            plan = { ...base.plan, interpreterVersion: "2", shots: base.plan.shots.map((item) => item.id === request.shotId ? shot : item) };
+            plan = { ...base.plan, interpreterVersion: base.plan.interpreterVersion === "3" ? "3" : "2", shots: base.plan.shots.map((item) => item.id === request.shotId ? shot : item) };
           } else plan = input;
           const board = visuals.read(projectId, request.storyboardId)!;
           const artifact = artifactSchema.parse({ schemaVersion: 1, id, projectId, createdAt: row.created_at, parentId: request.baseId, source: dependency, plan: validateMotion(plan, board, hashMotionSource) });

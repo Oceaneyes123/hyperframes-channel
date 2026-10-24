@@ -1,5 +1,7 @@
 import { z } from "zod";
 import { scheduleMotion, type MotionPlan } from "./motion.ts";
+import { inspectCreativeMotion } from "../engine/quality/inspect-motion.ts";
+import type { VisualArtifact } from "./visuals.ts";
 
 export const lineTimingSchema = z.array(z.strictObject({ number: z.number().int().positive(), startFrame: z.number().int().nonnegative(), endFrame: z.number().int().positive() })).min(1).max(200);
 export type LineTiming = z.infer<typeof lineTimingSchema>;
@@ -20,12 +22,6 @@ export function validateTiming(input: unknown, plan: MotionPlan, lines: { number
 }
 
 // Separate deterministic diagnostics never replace an independent human moving/audio review.
-export function inspectMotion(plan: MotionPlan) {
-  const schedule = scheduleMotion(plan); const warnings: string[] = [];
-  for (const [index, shot] of plan.shots.entries()) {
-    if (!shot.actions.some((action) => action.behavior === "hold" && action.endFrame - action.startFrame >= 15)) warnings.push(`Shot ${index + 1}: no explicit half-second reading hold.`);
-    if (shot.actions.some((action) => action.targetIds.includes("camera") && (Math.abs(action.to.rotation ?? 0) > 15 || (action.to.scale ?? 1) > 1.5))) warnings.push(`Shot ${index + 1}: inspect strong camera motion for readability.`);
-    if (shot.objects.some((object) => object.type === "text" && object.label.length > 45)) warnings.push(`Shot ${index + 1}: inspect long text at phone size.`);
-  }
-  return { version: 1, durationFrames: schedule.durationFrames, warnings, requiresHumanReview: true };
+export function inspectMotion(plan: MotionPlan, board?: VisualArtifact | null) {
+  return inspectCreativeMotion(plan, board);
 }

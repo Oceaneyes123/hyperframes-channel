@@ -10,6 +10,7 @@ const environmentSchema = z.object({
   }, "Expected an HTTP(S) URL without embedded credentials").optional(),
   CLIPROXYAPI_API_KEY: z.string().trim().min(1).optional(),
   CLIPROXYAPI_MODEL: z.string().trim().min(1).optional(),
+  CLIPROXYAPI_VISUAL_MODEL: z.string().trim().min(1).optional(),
 });
 
 export function readConfig(environment: Record<string, string | undefined> = process.env) {
@@ -17,6 +18,7 @@ export function readConfig(environment: Record<string, string | undefined> = pro
   return {
     dataDirectory: resolve(values.V3_DATA_DIR),
     videosDirectory: resolve(values.V3_VIDEOS_DIR),
+    visualModel: values.CLIPROXYAPI_VISUAL_MODEL,
     gateway: {
       baseUrl: values.CLIPROXYAPI_BASE_URL,
       apiKey: values.CLIPROXYAPI_API_KEY,

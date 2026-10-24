@@ -23,14 +23,14 @@ function Decision({ projectId, runId, optionIndex, selectionId, disabled, childr
     <input type="hidden" name="runId" value={runId} /><input type="hidden" name="decision" value={optionIndex === undefined ? "accept" : "choose"} />
     <input type="hidden" name="optionIndex" value={optionIndex ?? ""} /><input type="hidden" name="selectionId" value={selectionId ?? ""} />
     <button disabled={disabled || pending}>{pending ? "Saving…" : children}</button>
-    {state.error && <p role="alert" className="mt-3 text-sm text-[#f5b5a6]">{state.error}</p>}
+    {state.error && <p role="alert" className="mt-3 text-sm text-[var(--error)]">{state.error}</p>}
   </form>;
 }
 
 export default function VisualWorkspace(props: Props) {
   const { projectId, script, eligible, concepts, board, chosen } = props; const router = useRouter();
   const [instruction, setInstruction] = useState(""); const [busy, setBusy] = useState(false); const [message, setMessage] = useState("");
-  const [error, setError] = useState(""); const [selectedLine, setSelectedLine] = useState<number | null>(null);
+  const [error, setError] = useState(""); const [selectedShot, setSelectedShot] = useState(0);
   const running = props.history.some((item) => item.status === "running");
   const hasConcept = props.conceptsCurrent && !!chosen && chosen.runId === props.latestConceptId;
   async function generate(kind: "concepts" | "storyboard" | "shot", shotIndex: number | null = null) {
@@ -58,76 +58,92 @@ export default function VisualWorkspace(props: Props) {
     finally { setBusy(false); }
   }
   const shots = board?.output.kind === "storyboard" ? board.output.shots : [];
+  const shotIndex = Math.min(selectedShot, shots.length - 1);
+  const shot = shots[shotIndex];
   return <>
-    {!eligible && <p role="status" className="mb-6 border border-[#e1ba77] p-4">Accept the current script and research in script review to unlock visual planning. Earlier visual artifacts remain readable.</p>}
+    {!eligible && <p role="status" className="mb-6 border border-[var(--warning)] p-4">Accept the current script to unlock visual planning.</p>}
     <fieldset disabled={busy || running} className="min-w-0">
       <legend className="sr-only">Visual planning controls</legend>
-      <label htmlFor="visual-instruction" className="block text-sm font-semibold">Direction or revision notes</label>
-      <textarea id="visual-instruction" maxLength={2000} rows={2} value={instruction} onChange={(event) => setInstruction(event.target.value)} className="mt-2 w-full" placeholder="Optional direction. For a shot revision, describe only the selected shot’s change." />
+      <details open={!board}>
+      <summary>Create or revise</summary>
+      <label htmlFor="visual-instruction" className="block text-sm font-semibold">Direction (optional)</label>
+      <textarea id="visual-instruction" maxLength={2000} rows={2} value={instruction} onChange={(event) => setInstruction(event.target.value)} className="mt-2 w-full" placeholder="Describe a direction or a change…" />
       <div className="my-5 flex flex-wrap gap-3">
-        <button disabled={!eligible} onClick={() => generate("concepts")}>{props.latestConceptId ? "Propose three new concepts" : "Generate three concepts"}</button>
-        <button disabled={!eligible || !hasConcept} onClick={() => generate("storyboard")}>{props.latestBoardId ? "Propose new storyboard" : "Generate storyboard"}</button>
+        <button disabled={!eligible} onClick={() => generate("concepts")}>{props.latestConceptId ? "New concepts" : "Generate concepts"}</button>
+        <button className="secondary" disabled={!eligible || !hasConcept} onClick={() => generate("storyboard")}>{props.latestBoardId ? "New storyboard" : "Create storyboard"}</button>
       </div>
+      </details>
       {(busy || message) && <p role="status" className="my-4 text-sm">{message}</p>}
-      {running && <p role="status" className="my-4">A saved request is running. <a href={`/projects/${projectId}/visuals`}>Refresh its status</a>. Interrupted requests expire after three minutes; retries are explicit.</p>}
-      {error && <p role="alert" className="my-4 text-[#f5b5a6]">{error}</p>}
-      <section aria-labelledby="concept-heading" className="mt-10">
-        <h2 id="concept-heading" className="text-2xl font-semibold">1. Choose a visual concept</h2>
-        {concepts && !props.conceptsCurrent && <p className="mt-3 text-[#e1ba77]">Historical or stale concepts. Generate from the current accepted script.</p>}
+      {running && <p role="status" className="my-4">Request running. <a href={`/projects/${projectId}/visuals`}>Refresh its status</a>.</p>}
+      {error && <p role="alert" className="my-4 text-[var(--error)]">{error}</p>}
+      <details className="mt-8" open={!board}>
+        <summary id="concept-heading" className="font-semibold">Concepts{chosen && concepts?.output.kind === "concepts" && chosen.runId === concepts.id ? ` · ${concepts.output.concepts[chosen.optionIndex].title}` : ""}</summary>
+        {concepts && !props.conceptsCurrent && <p className="mt-3 text-[var(--warning)]">Historical or stale concepts. Generate from the current accepted script.</p>}
         <div className="mt-6 grid gap-6 md:grid-cols-3">
-          {concepts?.output.kind === "concepts" && concepts.output.concepts.map((concept, index) => <article key={`${concepts.id}:${index}`} className="min-w-0 rounded border border-white/15 p-5">
+          {concepts?.output.kind === "concepts" && concepts.output.concepts.map((concept, index) => <article key={`${concepts.id}:${index}`} className="min-w-0 rounded border border-[var(--line)] p-5">
             <h3 className="mb-4 text-xl font-semibold">{index + 1}. {concept.title}</h3>
             <div className="mx-auto max-w-[220px]"><PlanningFrame frame={concept.frame} label={`${concept.title}: representative planning image`} /></div>
-            <p className="mt-4 font-semibold">{concept.metaphor}</p><p className="mt-3 text-sm leading-relaxed">{concept.teachingApproach}</p>
-            <p className="mt-3 text-sm text-[#aeb4b0]">{concept.visualLanguage}</p>
+            <details className="mt-4 text-sm">
+              <summary className="cursor-pointer">Concept details</summary>
+              <p className="mt-3">{concept.metaphor}</p><p className="mt-3 leading-relaxed">{concept.teachingApproach}</p>
+              <p className="mt-3 text-[var(--muted)]">{concept.visualLanguage}</p>
+            </details>
             <Decision projectId={projectId} runId={concepts.id} optionIndex={index} selectionId={chosen?.id} disabled={!eligible || !props.conceptsCurrent || chosen?.runId === concepts.id && chosen.optionIndex === index}>
-              {chosen?.runId === concepts.id && chosen.optionIndex === index ? "Selected concept" : `Choose concept ${index + 1}`}
+              {chosen?.runId === concepts.id && chosen.optionIndex === index ? "Selected" : "Choose concept"}
             </Decision>
           </article>)}
         </div>
-        {!concepts && <p className="mt-4 text-[#aeb4b0]">No visual concepts yet.</p>}
-      </section>
+        {!concepts && <p className="mt-4 text-[var(--muted)]">No visual concepts yet.</p>}
+      </details>
       <section aria-labelledby="board-heading" className="mt-12">
-        <h2 id="board-heading" className="text-2xl font-semibold">2. Review the storyboard</h2>
+        <h2 id="board-heading" className="text-xl font-semibold">Storyboard</h2>
         {board && <>
           <p className="mt-3 text-sm">{shots.length} shots · {shots.reduce((total, shot) => total + shot.seconds, 0).toFixed(1)} seconds estimated</p>
-          {!props.boardCurrent && <p className="mt-3 text-[#e1ba77]">Historical or stale storyboard. Script, research, concept choice or latest proposal has changed.</p>}
-          <div className="mt-6 grid items-start gap-8 lg:grid-cols-[16rem_1fr]">
-            <aside className="lg:sticky lg:top-6"><h3 className="font-semibold">Narration → shot</h3>
-              <p className="mt-2 text-xs text-[#aeb4b0]">Click a line to find its shot. Historical boards retain their original narration references.</p>
-              {board.scriptId === script?.id ? <ol className="mt-4 space-y-2">{scriptLines(script.content).map((line) => {
-                const index = shots.findIndex((shot) => shot.lineNumbers.includes(line.number));
-                return <li key={line.number}><a href={`#shot-${index}`} onClick={() => setSelectedLine(line.number)} className="block border-l border-white/20 py-2 pl-3 text-sm leading-relaxed">{line.number}. {line.text}</a></li>;
-              })}</ol> : <p className="mt-4 text-sm">This board belongs to an earlier script. <a href={`/projects/${projectId}?revision=${board.scriptId}`}>Read that revision</a>.</p>}
-            </aside>
-            <div className="space-y-8">{shots.map((shot, index) => <article id={`shot-${index}`} key={`${board.id}:${index}`} className={`scroll-mt-6 rounded border p-5 ${selectedLine !== null && shot.lineNumbers.includes(selectedLine) ? "border-[#b9d8c2]" : "border-white/15"}`}>
-              <h3 className="text-xl font-semibold">Shot {index + 1} · {shot.seconds}s</h3>
-              <p className="mt-2 text-sm text-[#aeb4b0]">Narration lines {shot.lineNumbers.join(", ")} · {shot.transition}</p>
-              <p className="mt-4 font-semibold">{shot.purpose}</p>
-              <div className="mt-5 grid grid-cols-2 gap-4">{[shot.startFrame, shot.endFrame].map((frame, frameIndex) => <figure key={frameIndex} className="mx-auto w-full max-w-[210px]">
-                <PlanningFrame frame={frame} label={`Shot ${index + 1}, ${frameIndex ? "end" : "start"} planning state`} /><figcaption className="mt-2 text-center text-xs">{frameIndex ? "End state" : "Start state"}</figcaption>
-              </figure>)}</div>
-              <dl className="mt-5 space-y-3 text-sm leading-relaxed">
+          {!props.boardCurrent && <p className="mt-3 text-[var(--warning)]">Historical or stale storyboard. Script, research, concept choice or latest proposal has changed.</p>}
+          <nav aria-label="Storyboard shots" className="shot-strip mt-5">
+            {shots.map((shot, index) => <button key={`${board.id}:${index}`} aria-label={`View shot ${index + 1}`} aria-pressed={shotIndex === index} onClick={() => setSelectedShot(index)}>
+              <PlanningFrame frame={shot.startFrame} label={`Shot ${index + 1} thumbnail`} />
+              <span className="mt-1 block">{String(index + 1).padStart(2, "0")}</span>
+            </button>)}
+          </nav>
+          {shot && <article id={`shot-${shotIndex}`} key={board.id} className="shot-viewer mt-3">
+            <div className="section-toolbar">
+              <h3 className="text-base font-semibold">Shot {shotIndex + 1} <span className="ml-2 text-xs font-normal text-[var(--muted)]">{shot.seconds.toFixed(1)}s · {shot.transition}</span></h3>
+              <div className="flex gap-2">
+                <button className="secondary" aria-label="Previous shot" disabled={shotIndex === 0} onClick={() => setSelectedShot(shotIndex - 1)}>Previous</button>
+                <button className="secondary" aria-label="Next shot" disabled={shotIndex === shots.length - 1} onClick={() => setSelectedShot(shotIndex + 1)}>Next</button>
+              </div>
+            </div>
+            <div className="shot-frames">{[shot.startFrame, shot.endFrame].map((frame, frameIndex) => <figure key={frameIndex}>
+              <PlanningFrame frame={frame} label={`Shot ${shotIndex + 1}, ${frameIndex ? "end" : "start"} planning state`} /><figcaption>{frameIndex ? "End" : "Start"}</figcaption>
+            </figure>)}</div>
+            <div className="shot-caption">
+              {board.scriptId === script?.id ? <p>{scriptLines(script.content).filter((line) => shot.lineNumbers.includes(line.number)).map((line) => line.text).join(" ")}</p> : <a href={`/projects/${projectId}?revision=${board.scriptId}`}>Read original narration</a>}
+            </div>
+            <details className="border-t border-[var(--line)] pt-4">
+              <summary className="text-sm">Shot details</summary>
+              <dl className="space-y-3 text-sm leading-relaxed">
+                <div><dt className="font-semibold">Purpose</dt><dd>{shot.purpose}</dd></div>
                 <div><dt className="font-semibold">Framing / subject</dt><dd>{shot.framing} · {shot.subject}</dd></div>
                 <div><dt className="font-semibold">Action</dt><dd>{shot.action}</dd></div>
-                <div><dt className="font-semibold">Connection from previous shot</dt><dd>{shot.continuity}</dd></div>
+                <div><dt className="font-semibold">Continuity</dt><dd>{shot.continuity}</dd></div>
               </dl>
-              <button className="mt-5" disabled={!eligible || !props.boardCurrent} onClick={() => generate("shot", index)}>Revise shot {index + 1} only</button>
-            </article>)}</div>
-          </div>
+            </details>
+            <button className="secondary mt-5" disabled={!eligible || !props.boardCurrent} onClick={() => generate("shot", shotIndex)}>Revise shot {shotIndex + 1}</button>
+          </article>}
           <Decision projectId={projectId} runId={board.id} disabled={!eligible || !props.boardCurrent || props.acceptance?.runId === board.id && !props.acceptance.stale}>
-            {props.acceptance?.runId === board.id && !props.acceptance.stale ? "Exact storyboard accepted" : "Accept this exact storyboard"}
+            {props.acceptance?.runId === board.id && !props.acceptance.stale ? "Storyboard accepted" : "Accept storyboard"}
           </Decision>
-          {props.acceptance?.stale && <p className="mt-3 text-[#e1ba77]">Earlier storyboard acceptance is stale. Review the current proposal before accepting again.</p>}
+          {props.acceptance?.stale && <p className="mt-3 text-[var(--warning)]">Storyboard changed. Review and accept again.</p>}
         </>}
-        {!board && <p className="mt-4 text-[#aeb4b0]">Choose a concept before requesting the shot sequence.</p>}
+        {!board && <p className="mt-4 text-[var(--muted)]">Choose a concept to create a storyboard.</p>}
       </section>
     </fieldset>
-    <details className="mt-10 border-t border-white/15 pt-5"><summary className="cursor-pointer font-semibold">Visual request history ({props.history.length})</summary>
+    <details className="mt-10 border-t border-[var(--line)] pt-5"><summary className="cursor-pointer font-semibold">History ({props.history.length})</summary>
       <ol className="mt-5 space-y-4 text-sm">{props.history.map((item) => <li key={item.id}>
         <p>{item.kind} · {item.status} · <time dateTime={item.createdAt}>{item.createdAt}</time> · {item.model}</p>
         {item.status === "complete" && <a href={`/projects/${projectId}/visuals?run=${item.id}`}>Review saved proposal</a>}
-        {item.error && <p className="mt-2 text-[#f5b5a6]">{item.error}</p>}
+        {item.error && <p className="mt-2 text-[var(--error)]">{item.error}</p>}
       </li>)}</ol>
     </details>
   </>;

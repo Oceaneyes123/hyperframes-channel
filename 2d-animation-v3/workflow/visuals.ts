@@ -1,9 +1,10 @@
 import { z } from "zod";
+import { componentPartsSchema, componentRegistry, isComponent, chartValuesSchema } from "./components.ts";
 
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 const position = z.number().min(0).max(100);
-export const primitiveSchema = z.enum(["rect", "ellipse", "text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin"]);
+export const primitiveSchema = z.enum(["rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1"]);
 // Only declarative shapes cross the model boundary; markup, URLs and code never do.
 export const frameSchema = z.strictObject({
   background: color,
@@ -11,8 +12,13 @@ export const frameSchema = z.strictObject({
     type: primitiveSchema,
     x: position, y: position, width: z.number().positive().max(100), height: z.number().positive().max(100),
     color, label: z.string().max(60),
+    parts: componentPartsSchema.optional(),
+    values: chartValuesSchema.optional(),
   }).superRefine((shape, context) => {
     if (shape.x + shape.width > 100 || shape.y + shape.height > 100) context.addIssue({ code: "custom", message: "Shape exceeds the frame." });
+    if (shape.parts && (!isComponent(shape.type) || Object.keys(shape.parts).some((part) => !(componentRegistry[shape.type as keyof typeof componentRegistry] as readonly string[]).includes(part)))) context.addIssue({ code: "custom", message: "Only registered component parts are allowed." });
+    if ((shape.type === "cost-chart@1") !== (shape.values !== undefined)) context.addIssue({ code: "custom", message: "Only charts require supplied integer values." });
+    if (shape.type === "kinetic-phrase@1" && (!shape.label.trim() || shape.label.trim().split(/\s+/).length > 5)) context.addIssue({ code: "custom", message: "Kinetic phrases require one to five words." });
   })).min(1).max(16),
 });
 export const conceptsSchema = z.strictObject({ concepts: z.array(z.strictObject({

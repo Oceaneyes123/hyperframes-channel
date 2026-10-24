@@ -1,0 +1,3794 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-23T12:22:58.489Z",
+  "syntheticOnly": false,
+  "projectId": "f5727810-b452-40b6-8464-b72c363007d4",
+  "script": {
+    "path": "videos/f5727810-b452-40b6-8464-b72c363007d4/scripts/ededc7f6-70bd-4db3-98ce-e18e26dbae5f.json",
+    "sha256": "ed4b6da581cd274c0e61ac624b87b3501a62ed5e19faf128520dc1d3dd22dcf0",
+    "id": "ededc7f6-70bd-4db3-98ce-e18e26dbae5f"
+  },
+  "motion": {
+    "id": "60883a14-0ab1-4b4d-918e-888528d9ae20",
+    "hash": "16dc601f376fc59caf1f0264824c6bc696bc971e22c0c64e276d8f1ec0068c15",
+    "plan": {
+      "schemaVersion": 1,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "interpreterVersion": "2",
+      "shots": [
+        {
+          "id": "shot-1",
+          "sourceIndex": 0,
+          "sourceHash": "dfff5491e350d58a74a261866a49ffb28065e22fc23e1fd1e722d25cf2c0cd36",
+          "lineNumbers": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "durationFrames": 690,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#202D4A"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": null,
+              "type": "centered-text",
+              "label": "doing this manually",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "browser",
+              "label": "",
+              "initial": {
+                "x": 35,
+                "y": 29,
+                "width": 30,
+                "height": 16.8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-4",
+              "startIndex": 3,
+              "endIndex": 3,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 16,
+                "y": 50,
+                "width": 31,
+                "height": 23,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#2C3B60"
+              }
+            },
+            {
+              "id": "object-5",
+              "startIndex": 4,
+              "endIndex": 4,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 53,
+                "y": 50,
+                "width": 31,
+                "height": 23,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#2C3B60"
+              }
+            },
+            {
+              "id": "object-6",
+              "startIndex": 5,
+              "endIndex": 5,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 21,
+                "y": 54,
+                "width": 21,
+                "height": 11.76,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-7",
+              "startIndex": 6,
+              "endIndex": 6,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 54,
+                "width": 21,
+                "height": 11.76,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-8",
+              "startIndex": 7,
+              "endIndex": 7,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 21,
+                "y": 68,
+                "width": 21,
+                "height": 2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-9",
+              "startIndex": 8,
+              "endIndex": 8,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 68,
+                "width": 21,
+                "height": 2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-10",
+              "startIndex": null,
+              "endIndex": 1,
+              "type": "centered-text",
+              "label": "I'm tired of",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10"
+              ],
+              "startFrame": 0,
+              "endFrame": 90,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-2"
+              ],
+              "startFrame": 90,
+              "endFrame": 96,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 0
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-4"
+              ],
+              "startFrame": 90,
+              "endFrame": 570,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 19,
+                "y": 49,
+                "width": 29,
+                "height": 25
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-5"
+              ],
+              "startFrame": 90,
+              "endFrame": 570,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 52,
+                "y": 49,
+                "width": 29,
+                "height": 25
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-6"
+              ],
+              "startFrame": 90,
+              "endFrame": 570,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 23
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-7"
+              ],
+              "startFrame": 90,
+              "endFrame": 570,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 56
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-8"
+              ],
+              "startFrame": 90,
+              "endFrame": 570,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 23,
+                "color": "#FF7969"
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-9"
+              ],
+              "startFrame": 90,
+              "endFrame": 570,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 56,
+                "color": "#FF7969"
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-10"
+              ],
+              "startFrame": 96,
+              "endFrame": 102,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10"
+              ],
+              "startFrame": 570,
+              "endFrame": 689,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "start",
+            "overlapFrames": 0,
+            "presentation": "cut",
+            "anchor": null
+          }
+        },
+        {
+          "id": "shot-2",
+          "sourceIndex": 1,
+          "sourceHash": "327b4c1b6fcc02915e02fa16d295d11b4e78a53203a7886f437a978f6e54d6ca",
+          "lineNumbers": [
+            9,
+            11,
+            13
+          ],
+          "durationFrames": 540,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#202D4A"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": null,
+              "type": "centered-text",
+              "label": "Same complaint",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 15,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-4",
+              "startIndex": 3,
+              "endIndex": 3,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 40,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-5",
+              "startIndex": 4,
+              "endIndex": 4,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 65,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-6",
+              "startIndex": 5,
+              "endIndex": 5,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 15,
+                "y": 44,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-7",
+              "startIndex": 6,
+              "endIndex": 6,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 40,
+                "y": 44,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-8",
+              "startIndex": 7,
+              "endIndex": 7,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 65,
+                "y": 44,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-9",
+              "startIndex": 8,
+              "endIndex": 8,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 32,
+                "y": 65,
+                "width": 36,
+                "height": 8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#FF7969"
+              }
+            },
+            {
+              "id": "object-10",
+              "startIndex": null,
+              "endIndex": 1,
+              "type": "centered-text",
+              "label": "Approval pending",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-11",
+              "startIndex": null,
+              "endIndex": 9,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 25,
+                "y": 41,
+                "width": 50,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 0,
+              "endFrame": 90,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-2"
+              ],
+              "startFrame": 90,
+              "endFrame": 96,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 0
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-6"
+              ],
+              "startFrame": 90,
+              "endFrame": 430,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 29,
+                "y": 46
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-7"
+              ],
+              "startFrame": 90,
+              "endFrame": 430,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "y": 51
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-8"
+              ],
+              "startFrame": 90,
+              "endFrame": 430,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 51,
+                "y": 56
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-9"
+              ],
+              "startFrame": 90,
+              "endFrame": 430,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 28,
+                "y": 69,
+                "width": 44,
+                "height": 4
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-11"
+              ],
+              "startFrame": 90,
+              "endFrame": 430,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-10"
+              ],
+              "startFrame": 96,
+              "endFrame": 102,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 430,
+              "endFrame": 539,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "hard-cut",
+            "overlapFrames": 0,
+            "presentation": "cut",
+            "anchor": null
+          }
+        },
+        {
+          "id": "shot-3",
+          "sourceIndex": 2,
+          "sourceHash": "e809587aa0e51ef4c9c9773173cbece69f37a758c1314a5b8c99564b9995e394",
+          "lineNumbers": [
+            15,
+            17
+          ],
+          "durationFrames": 390,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#202D4A"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": null,
+              "type": "centered-text",
+              "label": "Inspect first",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 15,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-4",
+              "startIndex": 3,
+              "endIndex": 3,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 39,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-5",
+              "startIndex": 4,
+              "endIndex": null,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 63,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-6",
+              "startIndex": 5,
+              "endIndex": 5,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 25,
+                "y": 53,
+                "width": 50,
+                "height": 1,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-7",
+              "startIndex": 6,
+              "endIndex": 4,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 59,
+                "y": 48,
+                "width": 3,
+                "height": 12,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#FF7969"
+              }
+            },
+            {
+              "id": "object-8",
+              "startIndex": 7,
+              "endIndex": 7,
+              "type": "ellipse",
+              "label": "",
+              "initial": {
+                "x": 39,
+                "y": 64,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#2C3B60"
+              }
+            },
+            {
+              "id": "object-9",
+              "startIndex": null,
+              "endIndex": 1,
+              "type": "centered-text",
+              "label": "Trace the workflow",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-10",
+              "startIndex": null,
+              "endIndex": 6,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 26,
+                "y": 49,
+                "width": 1,
+                "height": 12,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-11",
+              "startIndex": null,
+              "endIndex": 8,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 50,
+                "y": 67,
+                "width": 1,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#121A30"
+              }
+            },
+            {
+              "id": "object-12",
+              "startIndex": null,
+              "endIndex": 9,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 50,
+                "y": 72,
+                "width": 6,
+                "height": 1,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#121A30"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11",
+                "object-12"
+              ],
+              "startFrame": 0,
+              "endFrame": 55,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-2"
+              ],
+              "startFrame": 55,
+              "endFrame": 61,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "opacity": 0
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-5"
+              ],
+              "startFrame": 55,
+              "endFrame": 315,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "opacity": 0
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-6"
+              ],
+              "startFrame": 55,
+              "endFrame": 315,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "x": 26,
+                "y": 51,
+                "width": 39,
+                "height": 10
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-7"
+              ],
+              "startFrame": 55,
+              "endFrame": 315,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "x": 63,
+                "y": 35,
+                "width": 4,
+                "height": 22
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-8"
+              ],
+              "startFrame": 55,
+              "endFrame": 315,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "y": 65,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-10"
+              ],
+              "startFrame": 55,
+              "endFrame": 315,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-11"
+              ],
+              "startFrame": 55,
+              "endFrame": 315,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-12"
+              ],
+              "startFrame": 55,
+              "endFrame": 315,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-9"
+              ],
+              "startFrame": 61,
+              "endFrame": 67,
+              "staggerFrames": 0,
+              "ease": "power3.out",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11",
+                "object-12"
+              ],
+              "startFrame": 315,
+              "endFrame": 389,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "hard-cut",
+            "overlapFrames": 0,
+            "presentation": "cut",
+            "anchor": null
+          }
+        },
+        {
+          "id": "shot-4",
+          "sourceIndex": 3,
+          "sourceHash": "fdc82ee457a08a4be4af8da1320dc715e139506a0219a31f4e46ad183bc391f7",
+          "lineNumbers": [
+            19,
+            21
+          ],
+          "durationFrames": 450,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#202D4A"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": null,
+              "type": "centered-text",
+              "label": "Five workflow interviews",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 15,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-4",
+              "startIndex": 3,
+              "endIndex": 3,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 40,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-5",
+              "startIndex": 4,
+              "endIndex": 4,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 65,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-6",
+              "startIndex": 5,
+              "endIndex": 5,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 27,
+                "y": 45,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-7",
+              "startIndex": 6,
+              "endIndex": 6,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 53,
+                "y": 45,
+                "width": 20,
+                "height": 11.2,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-8",
+              "startIndex": 7,
+              "endIndex": 7,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 18,
+                "y": 65,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-9",
+              "startIndex": 8,
+              "endIndex": 8,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 60,
+                "y": 65,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-10",
+              "startIndex": null,
+              "endIndex": 1,
+              "type": "centered-text",
+              "label": "Show the workflow",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-11",
+              "startIndex": null,
+              "endIndex": 9,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 48,
+                "y": 62,
+                "width": 4,
+                "height": 18,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#FF7969"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 0,
+              "endFrame": 75,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-2"
+              ],
+              "startFrame": 75,
+              "endFrame": 81,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 0
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-8"
+              ],
+              "startFrame": 75,
+              "endFrame": 365,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 25
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-9"
+              ],
+              "startFrame": 75,
+              "endFrame": 365,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 53
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-11"
+              ],
+              "startFrame": 75,
+              "endFrame": 365,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-10"
+              ],
+              "startFrame": 81,
+              "endFrame": 87,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 365,
+              "endFrame": 449,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "hard-cut",
+            "overlapFrames": 0,
+            "presentation": "cut",
+            "anchor": null
+          }
+        },
+        {
+          "id": "shot-5",
+          "sourceIndex": 4,
+          "sourceHash": "deef6370d1216a55c15da033399ff7b7a2e1e18605f585d836ca03173bdee373",
+          "lineNumbers": [
+            23,
+            25
+          ],
+          "durationFrames": 480,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#202D4A"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": null,
+              "type": "centered-text",
+              "label": "Paid manual offer",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "person",
+              "label": "",
+              "initial": {
+                "x": 16,
+                "y": 32,
+                "width": 24,
+                "height": 13.44,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-4",
+              "startIndex": 3,
+              "endIndex": 3,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 40,
+                "y": 47,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-5",
+              "startIndex": 4,
+              "endIndex": 4,
+              "type": "coin",
+              "label": "",
+              "initial": {
+                "x": 65,
+                "y": 32,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-6",
+              "startIndex": 5,
+              "endIndex": 5,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 62,
+                "y": 46,
+                "width": 4,
+                "height": 15,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#FF7969"
+              }
+            },
+            {
+              "id": "object-7",
+              "startIndex": 6,
+              "endIndex": 6,
+              "type": "browser",
+              "label": "",
+              "initial": {
+                "x": 16,
+                "y": 62,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "id": "object-8",
+              "startIndex": 7,
+              "endIndex": 7,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 38,
+                "y": 69,
+                "width": 38,
+                "height": 1,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#2C3B60"
+              }
+            },
+            {
+              "id": "object-9",
+              "startIndex": 8,
+              "endIndex": 8,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 75,
+                "y": 51,
+                "width": 1,
+                "height": 18,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#2C3B60"
+              }
+            },
+            {
+              "id": "object-10",
+              "startIndex": null,
+              "endIndex": 1,
+              "type": "centered-text",
+              "label": "If nobody pays",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-11",
+              "startIndex": null,
+              "endIndex": 9,
+              "type": "centered-text",
+              "label": "Keep looking",
+              "initial": {
+                "x": 12,
+                "y": 77,
+                "width": 76,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 0,
+              "endFrame": 70,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-2"
+              ],
+              "startFrame": 70,
+              "endFrame": 76,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 0
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-4"
+              ],
+              "startFrame": 70,
+              "endFrame": 390,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 39,
+                "y": 60
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-6"
+              ],
+              "startFrame": 70,
+              "endFrame": 390,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "height": 12
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-7"
+              ],
+              "startFrame": 70,
+              "endFrame": 390,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "y": 60
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-8"
+              ],
+              "startFrame": 70,
+              "endFrame": 390,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "y": 73,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-9"
+              ],
+              "startFrame": 70,
+              "endFrame": 390,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "height": 22,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-10"
+              ],
+              "startFrame": 76,
+              "endFrame": 82,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-11"
+              ],
+              "startFrame": 76,
+              "endFrame": 82,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 390,
+              "endFrame": 479,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "hard-cut",
+            "overlapFrames": 0,
+            "presentation": "cut",
+            "anchor": null
+          }
+        },
+        {
+          "id": "shot-6",
+          "sourceIndex": 5,
+          "sourceHash": "b561546d6a8af1bd7ec438c3c6acdb84b524c0bc70bcd1b0d368f7912535f7d7",
+          "lineNumbers": [
+            27,
+            29
+          ],
+          "durationFrames": 720,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#202D4A"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": 1,
+              "type": "centered-text",
+              "label": "If someone pays",
+              "initial": {
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 15,
+                "y": 31,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-4",
+              "startIndex": 3,
+              "endIndex": 3,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 39,
+                "y": 31,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-5",
+              "startIndex": 4,
+              "endIndex": 4,
+              "type": "document",
+              "label": "",
+              "initial": {
+                "x": 63,
+                "y": 31,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-6",
+              "startIndex": 5,
+              "endIndex": 5,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 24,
+                "y": 49,
+                "width": 52,
+                "height": 4,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#FF7969"
+              }
+            },
+            {
+              "id": "object-7",
+              "startIndex": 6,
+              "endIndex": 6,
+              "type": "coin",
+              "label": "",
+              "initial": {
+                "x": 17,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            },
+            {
+              "id": "object-8",
+              "startIndex": 7,
+              "endIndex": null,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 43,
+                "y": 58,
+                "width": 4,
+                "height": 16,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#FF7969"
+              }
+            },
+            {
+              "id": "object-9",
+              "startIndex": 8,
+              "endIndex": 8,
+              "type": "chip",
+              "label": "",
+              "initial": {
+                "x": 60,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#2C3B60"
+              }
+            },
+            {
+              "id": "object-10",
+              "startIndex": null,
+              "endIndex": 7,
+              "type": "line",
+              "label": "",
+              "initial": {
+                "x": 49,
+                "y": 56,
+                "width": 22,
+                "height": 4,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#54D5AD"
+              }
+            },
+            {
+              "id": "object-11",
+              "startIndex": null,
+              "endIndex": 9,
+              "type": "centered-text",
+              "label": "Smallest tool",
+              "initial": {
+                "x": 12,
+                "y": 77,
+                "width": 76,
+                "height": 5,
+                "opacity": 0,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#F8FAFF"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 0,
+              "endFrame": 100,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-3"
+              ],
+              "startFrame": 100,
+              "endFrame": 640,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 27,
+                "y": 29,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-4"
+              ],
+              "startFrame": 100,
+              "endFrame": 640,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "y": 33,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-5"
+              ],
+              "startFrame": 100,
+              "endFrame": 640,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": 51,
+                "y": 37,
+                "color": "#A497FF"
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-6"
+              ],
+              "startFrame": 100,
+              "endFrame": 640,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "y": 50
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-8"
+              ],
+              "startFrame": 100,
+              "endFrame": 640,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 0
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-9"
+              ],
+              "startFrame": 100,
+              "endFrame": 640,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "color": "#54D5AD"
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-10"
+              ],
+              "startFrame": 100,
+              "endFrame": 640,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "fade",
+              "targetIds": [
+                "object-11"
+              ],
+              "startFrame": 100,
+              "endFrame": 106,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "opacity": 1
+              }
+            },
+            {
+              "behavior": "hold",
+              "targetIds": [
+                "object-1",
+                "object-2",
+                "object-3",
+                "object-4",
+                "object-5",
+                "object-6",
+                "object-7",
+                "object-8",
+                "object-9",
+                "object-10",
+                "object-11"
+              ],
+              "startFrame": 640,
+              "endFrame": 719,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {}
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "hard-cut",
+            "overlapFrames": 0,
+            "presentation": "cut",
+            "anchor": null
+          }
+        }
+      ]
+    }
+  },
+  "storyboard": {
+    "schemaVersion": 1,
+    "id": "86bd7cdf-a1d0-4c27-aa72-2120dd6e019a",
+    "projectId": "f5727810-b452-40b6-8464-b72c363007d4",
+    "createdAt": "2026-10-23T07:21:08.961Z",
+    "scriptId": "ededc7f6-70bd-4db3-98ce-e18e26dbae5f",
+    "scriptHash": "ed4b6da581cd274c0e61ac624b87b3501a62ed5e19faf128520dc1d3dd22dcf0",
+    "selectionId": "f6c1d6ec-511e-4c63-8cce-f2c5dec60aa6",
+    "baseId": "c31e1d27-3f4a-428f-9618-55576f613c00",
+    "instruction": "Redesign the COMPLETE six-shot storyboard: centered text, richer meaningful elements, coherent arrangement. Retain every narration line and its conditions; keep six shots and the same groupings/durations (23,18,13,15,16,24 seconds). Compact JSON and brief notes. NEW supported primitive centered-text centers a single-line label inside its box. ALL labels must use centered-text with x:12,width:76,height:5, so every label sits on canvas center x=50. Use one short label at y:17 and an optional outcome at y:77. No tiny internal labels or left/right scattered captions. Max 2 labels/frame, each 1-3 words except exact source search phrases. Never Hypothetical/Demo/Illustrative. Fill central 70% with a designed group, not isolated clipart in white space. Background deep navy #121A30; layered panels #202D4A and #2C3B60; main ink #F8FAFF; activity violet #A497FF; bottleneck coral #FF7969; progress mint #54D5AD. Vary active colors with cause/effect, not random recoloring. Use 8-10 meaningful shapes per frame: main panel, search/message/approval cards, avatar or document symbols, status/progress marks and connectors where useful. Keep foreground icons >=20% width and square proportions (height about .56*width). Six scenes: search with two result cards; three independent people and same blocked document; workflow inspection with recurrence/time cues; five interviews shown as five distinct people plus shared workflow; manual offer with an explicit unpaid return path; conditional tool and retained evidence. Never show invented successful payment, testimonials, measurements or demand. Draw real start/end changes: rearrange cards, expose a blockage, connect separate reports, trace a workflow and pass or return at a checkpoint. No static decorative filler. Use start then hard-cut arrivals. Shapes only: supported primitives, positive bounds, string label always (empty for nontext). No code/URLs/assets/new fields. Preserve narration; save as a proposal, not approval.",
+    "output": {
+      "shots": [
+        {
+          "lineNumbers": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "seconds": 23,
+          "purpose": "Proposal: narrow a broad pool of Reddit ideas to work-related complaints using the accepted search phrases.",
+          "framing": "Centered search panel with two large result cards; search phrases appear sequentially rather than together.",
+          "subject": "A work-community search feeding two candidate complaint cards.",
+          "action": "Present a mixed result pool. Cycle the centered heading through “doing this manually,” “is there a tool,” and “I'm tired of.” Rearrange matching cards beneath the search area while unmatched activity recedes. Hold on two candidates, without treating them as validated opportunities.",
+          "transition": "start",
+          "continuity": "Establish the document cards and coral unresolved-action marker that persist into the approval-queue example. Durations are planning estimates.",
+          "startFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "doing this manually"
+              },
+              {
+                "type": "browser",
+                "x": 35,
+                "y": 29,
+                "width": 30,
+                "height": 16.8,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 16,
+                "y": 50,
+                "width": 31,
+                "height": 23,
+                "color": "#2C3B60",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 53,
+                "y": 50,
+                "width": 31,
+                "height": 23,
+                "color": "#2C3B60",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 21,
+                "y": 54,
+                "width": 21,
+                "height": 11.76,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 58,
+                "y": 54,
+                "width": 21,
+                "height": 11.76,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 21,
+                "y": 68,
+                "width": 21,
+                "height": 2,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 58,
+                "y": 68,
+                "width": 21,
+                "height": 2,
+                "color": "#A497FF",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "I'm tired of"
+              },
+              {
+                "type": "browser",
+                "x": 35,
+                "y": 29,
+                "width": 30,
+                "height": 16.8,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 19,
+                "y": 49,
+                "width": 29,
+                "height": 25,
+                "color": "#2C3B60",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 52,
+                "y": 49,
+                "width": 29,
+                "height": 25,
+                "color": "#2C3B60",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 23,
+                "y": 54,
+                "width": 21,
+                "height": 11.76,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 56,
+                "y": 54,
+                "width": 21,
+                "height": 11.76,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 23,
+                "y": 68,
+                "width": 21,
+                "height": 2,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 56,
+                "y": 68,
+                "width": 21,
+                "height": 2,
+                "color": "#FF7969",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            9,
+            11,
+            13
+          ],
+          "seconds": 18,
+          "purpose": "Distinguish independent reports from repeated messages by one person, then make the narrated imagined approval bottleneck concrete.",
+          "framing": "Three distinct people above a converging document queue and a large coral pending-action panel.",
+          "subject": "The narrated imagined freelancers and their shared approval problem.",
+          "action": "Begin with three separate reports. Move the outer documents inward along converging connectors until all three accumulate behind the coral pending action. Hold on the blockage; do not show approval or payment.",
+          "transition": "hard-cut",
+          "continuity": "Repeat the prior cards' coral unresolved marker. This scene belongs to the narration's imagined example, not observed demand; the next shot inspects its mechanism.",
+          "startFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Same complaint"
+              },
+              {
+                "type": "person",
+                "x": 15,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 40,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 65,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 15,
+                "y": 44,
+                "width": 20,
+                "height": 11.2,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 40,
+                "y": 44,
+                "width": 20,
+                "height": 11.2,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 65,
+                "y": 44,
+                "width": 20,
+                "height": 11.2,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 32,
+                "y": 65,
+                "width": 36,
+                "height": 8,
+                "color": "#FF7969",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Approval pending"
+              },
+              {
+                "type": "person",
+                "x": 15,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 40,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 65,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 29,
+                "y": 46,
+                "width": 20,
+                "height": 11.2,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 40,
+                "y": 51,
+                "width": 20,
+                "height": 11.2,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 51,
+                "y": 56,
+                "width": 20,
+                "height": 11.2,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 28,
+                "y": 69,
+                "width": 44,
+                "height": 4,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 25,
+                "y": 41,
+                "width": 50,
+                "height": 5,
+                "color": "#A497FF",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            15,
+            17
+          ],
+          "seconds": 13,
+          "purpose": "Replace premature coding with investigation of the existing workaround, recurrence, and time cost, without inventing measurements.",
+          "framing": "A large three-stage workflow with a blocked handoff, a return loop, and an unlabeled clock cue.",
+          "subject": "Inspection of the existing approval workflow.",
+          "action": "Trace the documents toward the coral checkpoint. Stop there, expose the lower return route, and trace one deliberate loop back to the first document. Reveal clock hands as a question to investigate, not an elapsed-time result.",
+          "transition": "hard-cut",
+          "continuity": "Carry the same queue into a process view. The return route explains why repeated chasing could consume time; the following interviews test that possibility.",
+          "startFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Inspect first"
+              },
+              {
+                "type": "document",
+                "x": 15,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 39,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 63,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 25,
+                "y": 53,
+                "width": 50,
+                "height": 1,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 59,
+                "y": 48,
+                "width": 3,
+                "height": 12,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 39,
+                "y": 64,
+                "width": 22,
+                "height": 12.32,
+                "color": "#2C3B60",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Trace the workflow"
+              },
+              {
+                "type": "document",
+                "x": 15,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 39,
+                "y": 36,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 63,
+                "y": 35,
+                "width": 4,
+                "height": 22,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 26,
+                "y": 51,
+                "width": 39,
+                "height": 10,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 26,
+                "y": 49,
+                "width": 1,
+                "height": 12,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 39,
+                "y": 65,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 50,
+                "y": 67,
+                "width": 1,
+                "height": 5,
+                "color": "#121A30",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 50,
+                "y": 72,
+                "width": 6,
+                "height": 1,
+                "color": "#121A30",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            19,
+            21
+          ],
+          "seconds": 15,
+          "purpose": "Specify five interviews and direct observation of workflows rather than requests for approval of an app idea.",
+          "framing": "Five distinct people in two balanced rows above a shared workflow inspection area.",
+          "subject": "Five interview targets and the workflow they would be asked to demonstrate.",
+          "action": "Keep all five people separate and visible. Bring the two workflow documents into a connected sequence beneath them, then expose the coral handoff between those documents. This plans interviews; it does not depict completed research or endorsements.",
+          "transition": "hard-cut",
+          "continuity": "The prior workflow becomes the interview subject. Preserve the blockage rather than replacing it with approval badges or positive reactions.",
+          "startFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Five workflow interviews"
+              },
+              {
+                "type": "person",
+                "x": 15,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 40,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 65,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 27,
+                "y": 45,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 53,
+                "y": 45,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 18,
+                "y": 65,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 60,
+                "y": 65,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Show the workflow"
+              },
+              {
+                "type": "person",
+                "x": 15,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 40,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 65,
+                "y": 29,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 27,
+                "y": 45,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 53,
+                "y": 45,
+                "width": 20,
+                "height": 11.2,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 25,
+                "y": 65,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 53,
+                "y": 65,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 48,
+                "y": 62,
+                "width": 4,
+                "height": 18,
+                "color": "#FF7969",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            23,
+            25
+          ],
+          "seconds": 16,
+          "purpose": "Offer a simple paid service with manual steps, and explicitly return to searching when nobody is willing to pay.",
+          "framing": "Manual service and payment checkpoint above a clearly connected lower return route.",
+          "subject": "An unaccepted paid offer, not a completed transaction.",
+          "action": "Move the service document from the person toward the payment checkpoint, but stop before the coin. Under the unpaid condition, move the document down and left along the return route into the search browser. Hold on the renewed search; show no money transfer.",
+          "transition": "hard-cut",
+          "continuity": "The inspected workflow informs the offer. The return route makes failure to obtain willingness to pay consequential; the next shot separately presents the conditional paying branch.",
+          "startFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Paid manual offer"
+              },
+              {
+                "type": "person",
+                "x": 16,
+                "y": 32,
+                "width": 24,
+                "height": 13.44,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 40,
+                "y": 47,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "coin",
+                "x": 65,
+                "y": 32,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 62,
+                "y": 46,
+                "width": 4,
+                "height": 15,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "browser",
+                "x": 16,
+                "y": 62,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 38,
+                "y": 69,
+                "width": 38,
+                "height": 1,
+                "color": "#2C3B60",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 75,
+                "y": 51,
+                "width": 1,
+                "height": 18,
+                "color": "#2C3B60",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "If nobody pays"
+              },
+              {
+                "type": "person",
+                "x": 16,
+                "y": 32,
+                "width": 24,
+                "height": 13.44,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 39,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "coin",
+                "x": 65,
+                "y": 32,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 62,
+                "y": 46,
+                "width": 4,
+                "height": 12,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "browser",
+                "x": 16,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 38,
+                "y": 73,
+                "width": 38,
+                "height": 1,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 75,
+                "y": 51,
+                "width": 1,
+                "height": 22,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 77,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Keep looking"
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            27,
+            29
+          ],
+          "seconds": 24,
+          "purpose": "Keep payment explicitly conditional, then connect complaints, repeated problems, and paying customers to distinct levels of evidence without implying a successful sale.",
+          "framing": "Persistent complaint queue above a conditional payment checkpoint and a compact bottleneck-specific tool.",
+          "subject": "The conditional build decision and the evidence hierarchy.",
+          "action": "Keep the heading “If someone pays” throughout. Converge separate complaint documents into the familiar queue. Preview the conditional branch by placing a small tool at the blocked handoff and opening a narrow mint route around it. Keep the coin stationary and separate: no customer payment is enacted. Finish with the queue, checkpoint, and tool all visible as the narration distinguishes complaints, opportunities, and business evidence.",
+          "transition": "hard-cut",
+          "continuity": "This is the alternative to the preceding unpaid return path, not its successful outcome. Mint marks only the proposed tool's bottleneck-removal route; payment and business viability remain conditional.",
+          "startFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "If someone pays"
+              },
+              {
+                "type": "document",
+                "x": 15,
+                "y": 31,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 39,
+                "y": 31,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 63,
+                "y": 31,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 24,
+                "y": 49,
+                "width": 52,
+                "height": 4,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "coin",
+                "x": 17,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 43,
+                "y": 58,
+                "width": 4,
+                "height": 16,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 60,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "color": "#2C3B60",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#121A30",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 10,
+                "y": 25,
+                "width": 80,
+                "height": 61,
+                "color": "#202D4A",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 17,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "If someone pays"
+              },
+              {
+                "type": "document",
+                "x": 27,
+                "y": 29,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 39,
+                "y": 33,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "document",
+                "x": 51,
+                "y": 37,
+                "width": 22,
+                "height": 12.32,
+                "color": "#A497FF",
+                "label": ""
+              },
+              {
+                "type": "rect",
+                "x": 24,
+                "y": 50,
+                "width": 52,
+                "height": 4,
+                "color": "#FF7969",
+                "label": ""
+              },
+              {
+                "type": "coin",
+                "x": 17,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "color": "#F8FAFF",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 49,
+                "y": 56,
+                "width": 22,
+                "height": 4,
+                "color": "#54D5AD",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 60,
+                "y": 60,
+                "width": 22,
+                "height": 12.32,
+                "color": "#54D5AD",
+                "label": ""
+              },
+              {
+                "type": "centered-text",
+                "x": 12,
+                "y": 77,
+                "width": 76,
+                "height": 5,
+                "color": "#F8FAFF",
+                "label": "Smallest tool"
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "storyboard"
+    }
+  },
+  "narration": {
+    "id": "c899c462-de23-4f67-90ac-1e7dab2c96c2",
+    "path": "videos/f5727810-b452-40b6-8464-b72c363007d4/production/c899c462-de23-4f67-90ac-1e7dab2c96c2.wav",
+    "audioHash": "b03aecc4c785a1f52428f929f67def5e527e6b1e09bba30175756f617bb96499",
+    "timing": [
+      {
+        "number": 1,
+        "startFrame": 12,
+        "endFrame": 148
+      },
+      {
+        "number": 3,
+        "startFrame": 160,
+        "endFrame": 244
+      },
+      {
+        "number": 5,
+        "startFrame": 256,
+        "endFrame": 476
+      },
+      {
+        "number": 7,
+        "startFrame": 488,
+        "endFrame": 679
+      },
+      {
+        "number": 9,
+        "startFrame": 716,
+        "endFrame": 836
+      },
+      {
+        "number": 11,
+        "startFrame": 861,
+        "endFrame": 1077
+      },
+      {
+        "number": 13,
+        "startFrame": 1102,
+        "endFrame": 1205
+      },
+      {
+        "number": 15,
+        "startFrame": 1282,
+        "endFrame": 1339
+      },
+      {
+        "number": 17,
+        "startFrame": 1391,
+        "endFrame": 1569
+      },
+      {
+        "number": 19,
+        "startFrame": 1684,
+        "endFrame": 1797
+      },
+      {
+        "number": 21,
+        "startFrame": 1860,
+        "endFrame": 2007
+      },
+      {
+        "number": 23,
+        "startFrame": 2147,
+        "endFrame": 2304
+      },
+      {
+        "number": 25,
+        "startFrame": 2381,
+        "endFrame": 2473
+      },
+      {
+        "number": 27,
+        "startFrame": 2649,
+        "endFrame": 2802
+      },
+      {
+        "number": 29,
+        "startFrame": 2900,
+        "endFrame": 3172
+      }
+    ],
+    "measured": {
+      "durationSeconds": 109,
+      "durationFrames": 3270,
+      "sampleRate": 44100,
+      "channels": 1,
+      "waveform": [
+        0.331,
+        0.569,
+        0.479,
+        0.417,
+        0.001,
+        0.503,
+        0.386,
+        0,
+        0.758,
+        0.559,
+        0.699,
+        0.381,
+        0.54,
+        0.451,
+        0,
+        0.607,
+        0.652,
+        0.341,
+        0.558,
+        0.681,
+        0.012,
+        0,
+        0.574,
+        0.482,
+        0.472,
+        0.001,
+        0.384,
+        0.461,
+        0.601,
+        0.693,
+        0.571,
+        0.617,
+        0.25,
+        0,
+        0.55,
+        0.496,
+        0.096,
+        0,
+        0,
+        0.382,
+        0.37,
+        0,
+        0,
+        0.7,
+        0.474,
+        0.322,
+        0.45,
+        0.168,
+        0,
+        0,
+        0,
+        0.352,
+        0.48,
+        0.492,
+        0.404,
+        0,
+        0,
+        0.418,
+        0.665,
+        0.484,
+        0.271,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.478,
+        0.439,
+        0.393,
+        0.51,
+        0,
+        0,
+        0,
+        0.491,
+        0.404,
+        0.001,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.577,
+        0.67,
+        0.401,
+        0.476,
+        0.025,
+        0,
+        0,
+        0,
+        0.396,
+        0.421,
+        0.691,
+        0.535,
+        0.338,
+        0.41,
+        0.452,
+        0.184,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "segment": {
+    "startFrame": 0,
+    "endFrame": 600,
+    "fps": 30,
+    "note": "First 20 seconds, exact shared source audio. Compare same frames in later variants; no new narration authorized or generated."
+  },
+  "currentSourceEngineHash": "be4d0915f964f39d35bb0beb5b32b0acf1330136c6e6b45e3e101b55b9c9c8fb",
+  "existingExport": {
+    "path": "videos/f5727810-b452-40b6-8464-b72c363007d4/production/c779ad19-c429-48eb-be09-782b5095f981/export.mp4",
+    "exists": true,
+    "sha256": "addb8c85c67767212832d74edd0af4cfd47fff8991ca7a35655c5db7b80f371c",
+    "note": "Historical rendered output, not proof it matches the current dirty source snapshot."
+  },
+  "clippingReference": {
+    "path": "videos/483022fc-0641-4d52-ba05-8316f9d6b1c7/production/f255a5a5-f4b8-46a6-a2d1-2408e0439ce5/export.mp4",
+    "exists": true,
+    "sha256": "280ee571c5eec80c5b87e3a1a27d0ed672b24d399cd889578d8d41f581042f6b"
+  },
+  "productionStatus": {
+    "ready": true,
+    "reason": "",
+    "binding": "3f9728afda4557925af88e8da8b3feb918a83c9fe5220baac633d804fdc543b2",
+    "narration": {
+      "id": "c899c462-de23-4f67-90ac-1e7dab2c96c2",
+      "timing": [
+        {
+          "number": 1,
+          "startFrame": 12,
+          "endFrame": 148
+        },
+        {
+          "number": 3,
+          "startFrame": 160,
+          "endFrame": 244
+        },
+        {
+          "number": 5,
+          "startFrame": 256,
+          "endFrame": 476
+        },
+        {
+          "number": 7,
+          "startFrame": 488,
+          "endFrame": 679
+        },
+        {
+          "number": 9,
+          "startFrame": 716,
+          "endFrame": 836
+        },
+        {
+          "number": 11,
+          "startFrame": 861,
+          "endFrame": 1077
+        },
+        {
+          "number": 13,
+          "startFrame": 1102,
+          "endFrame": 1205
+        },
+        {
+          "number": 15,
+          "startFrame": 1282,
+          "endFrame": 1339
+        },
+        {
+          "number": 17,
+          "startFrame": 1391,
+          "endFrame": 1569
+        },
+        {
+          "number": 19,
+          "startFrame": 1684,
+          "endFrame": 1797
+        },
+        {
+          "number": 21,
+          "startFrame": 1860,
+          "endFrame": 2007
+        },
+        {
+          "number": 23,
+          "startFrame": 2147,
+          "endFrame": 2304
+        },
+        {
+          "number": 25,
+          "startFrame": 2381,
+          "endFrame": 2473
+        },
+        {
+          "number": 27,
+          "startFrame": 2649,
+          "endFrame": 2802
+        },
+        {
+          "number": 29,
+          "startFrame": 2900,
+          "endFrame": 3172
+        }
+      ],
+      "measured": {
+        "durationSeconds": 109,
+        "durationFrames": 3270,
+        "sampleRate": 44100,
+        "channels": 1,
+        "waveform": [
+          0.331,
+          0.569,
+          0.479,
+          0.417,
+          0.001,
+          0.503,
+          0.386,
+          0,
+          0.758,
+          0.559,
+          0.699,
+          0.381,
+          0.54,
+          0.451,
+          0,
+          0.607,
+          0.652,
+          0.341,
+          0.558,
+          0.681,
+          0.012,
+          0,
+          0.574,
+          0.482,
+          0.472,
+          0.001,
+          0.384,
+          0.461,
+          0.601,
+          0.693,
+          0.571,
+          0.617,
+          0.25,
+          0,
+          0.55,
+          0.496,
+          0.096,
+          0,
+          0,
+          0.382,
+          0.37,
+          0,
+          0,
+          0.7,
+          0.474,
+          0.322,
+          0.45,
+          0.168,
+          0,
+          0,
+          0,
+          0.352,
+          0.48,
+          0.492,
+          0.404,
+          0,
+          0,
+          0.418,
+          0.665,
+          0.484,
+          0.271,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.478,
+          0.439,
+          0.393,
+          0.51,
+          0,
+          0,
+          0,
+          0.491,
+          0.404,
+          0.001,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.577,
+          0.67,
+          0.401,
+          0.476,
+          0.025,
+          0,
+          0,
+          0,
+          0.396,
+          0.421,
+          0.691,
+          0.535,
+          0.338,
+          0.41,
+          0.452,
+          0.184,
+          0,
+          0,
+          0
+        ]
+      },
+      "motionId": "60883a14-0ab1-4b4d-918e-888528d9ae20"
+    },
+    "quality": {
+      "version": 1,
+      "durationFrames": 3270,
+      "warnings": [],
+      "requiresHumanReview": true
+    },
+    "gate1": "d0e9a43d-22ef-4864-8c5d-4de26369bcdd",
+    "gate2": "6ea2ca06-e9b5-41f0-9308-a45d1471360d",
+    "history": [
+      {
+        "id": "6bf0ff6c-e00a-4ceb-9e36-73ebd4210e0f",
+        "kind": "rendered",
+        "createdAt": "2026-10-23T08:42:06.144Z",
+        "payload": {
+          "jobId": "c779ad19-c429-48eb-be09-782b5095f981",
+          "binding": "3f9728afda4557925af88e8da8b3feb918a83c9fe5220baac633d804fdc543b2",
+          "verification": {
+            "sha256": "addb8c85c67767212832d74edd0af4cfd47fff8991ca7a35655c5db7b80f371c",
+            "durationFrames": 3270,
+            "audio": true,
+            "fullDecode": true,
+            "width": 1080,
+            "height": 1920,
+            "fps": 30,
+            "engineHash": "be4d0915f964f39d35bb0beb5b32b0acf1330136c6e6b45e3e101b55b9c9c8fb",
+            "preview": {
+              "comparedFrames": 3270,
+              "minimumSsim": 0.997093,
+              "threshold": 0.98
+            },
+            "audioSync": {
+              "correlation": 0.9999661586272587,
+              "lagSeconds": 0,
+              "toleranceSeconds": 0.03333333333333333
+            },
+            "checkedSeekFrames": [
+              0,
+              690,
+              1230,
+              1620,
+              2070,
+              2550
+            ]
+          }
+        }
+      },
+      {
+        "id": "c779ad19-c429-48eb-be09-782b5095f981",
+        "kind": "rendering",
+        "createdAt": "2026-10-23T08:08:59.473Z",
+        "payload": {
+          "binding": "3f9728afda4557925af88e8da8b3feb918a83c9fe5220baac633d804fdc543b2",
+          "gate2": "6ea2ca06-e9b5-41f0-9308-a45d1471360d"
+        }
+      }
+    ]
+  },
+  "note": "Read current source inputs and existing artifacts only; no acceptance or production gates written."
+}

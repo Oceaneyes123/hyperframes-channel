@@ -172,3 +172,7 @@ uses installed Chrome/FFmpeg/ffprobe and requires both current gates plus explic
 authorization. Jobs are local and request-bound; interrupted jobs require an explicit
 retry after expiry. Benchmark packages remain isolated. V2's OneTake-only policy does
 not apply to v3.
+
+## Motion graphics and narration planning (schema 8)
+
+The motion graphics extension retains the existing renderer and immutable decisions. Interpreter 3 expands versioned beats through the official GSAP adapter; interpreters 1/2 retain their rendering behavior. Authored components expose only validated named parts, and production engine hashing includes the new render/quality dependencies. Schema 8 adds planning_timing and immutable script/audio-bound JSON/WAV inputs; existing production records remain intact. Planning timing is independent of motion acceptance, while final narration binds to accepted motion and its exact planned audio/timing when present. Corrections invalidate dependencies rather than rewriting approved artifacts. See [motion graphics workflow](motion-graphics/README.md) for review and rollback details. Independent creative evaluation remains a release gate.

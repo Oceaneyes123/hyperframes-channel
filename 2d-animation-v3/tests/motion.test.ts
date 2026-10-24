@@ -12,10 +12,13 @@ import { openMotion, hashMotionSource } from "../server/motion-store.ts";
 import { scheduleMotion, validateMotion } from "../workflow/motion.ts";
 import { conceptFixture, boardFixture } from "./fixtures/visuals.ts";
 import { motionFixture } from "./fixtures/motion.ts";
-import { fixtureMotion } from "./fixtures/motion.ts";
+import { fixtureMotion, fixtureBeatMotion } from "./fixtures/motion.ts";
 import { fakeGateway } from "./fixtures/gateway.ts";
 import { generateMotion } from "../server/motion.ts";
 import { readConfig } from "../server/config.ts";
+import { motionBeatFixture } from "./fixtures/motion-beats.ts";
+import { openTiming } from "../server/timing-store.ts";
+import { wavFixture } from "./fixtures/wav.ts";
 
 function fixture(t: TestContext) {
   const root = mkdtempSync(join(tmpdir(), "v3-motion-")); const directory = join(root, "database"), videos = join(root, "videos");
@@ -33,9 +36,66 @@ function fixture(t: TestContext) {
   return { root, directory, videos, studio, visuals, store, project, script, concepts, selectionId, boardId, board, plan, input, save };
 }
 
+test("manual beat proposals persist immutably and scoped edits retain interpreter 3", (t) => {
+  const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
+  const plan = structuredClone(f.plan); plan.interpreterVersion = "3";
+  const beats = motionBeatFixture().plan.shots[0].beats!;
+  for (const shot of plan.shots) {
+    shot.beats = structuredClone(beats); shot.beats[0].narrationAnchor = null; shot.beats[1].narrationAnchor = null;
+    shot.beats[0].endFrame = 80; shot.beats[1].startFrame = 82; shot.beats[1].endFrame = 118;
+    shot.actions = [];
+  }
+  const id = f.store.begin(f.project.id, f.input); f.store.complete(f.project.id, id, plan); f.store.decide(f.project.id, id, "accept");
+  const original = f.store.read(f.project.id, id)!;
+  const request = { ...f.input, baseId: id, shotId: original.plan.shots[1].id };
+  const proposalId = f.store.begin(f.project.id, request); const shot = structuredClone(original.plan.shots[1]);
+  const beat = shot.beats![0]; if (beat.presetId === "snap-overshoot@1") beat.parameters.overshoot = 1.08;
+  f.store.complete(f.project.id, proposalId, shot);
+  const proposed = f.store.read(f.project.id, proposalId)!;
+  assert.equal(proposed.plan.interpreterVersion, "3");
+  assert.deepEqual(proposed.plan.shots[0], original.plan.shots[0]);
+  assert.deepEqual(proposed.plan.shots[2], original.plan.shots[2]);
+  assert.deepEqual(f.store.read(f.project.id, id), original);
+  f.store.decide(f.project.id, proposalId, "reject");
+  assert.equal(f.store.acceptance(f.project.id)?.runId, id);
+});
+
+test("beat gateway uses measured timing and energy, preserves scoped shots and invalidates acceptance after timing corrections", async (t) => {
+  const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
+  const timing = openTiming(f.directory, f.videos);
+  try {
+    const input = { scriptId: f.script.id, baseId: null, provenance: "manual", anchors: [], timing: [{ number: 1, startFrame: 0, endFrame: 110 }, { number: 2, startFrame: 120, endFrame: 230 }, { number: 3, startFrame: 240, endFrame: 350 }] };
+    const timingId = timing.import(f.project.id, input, wavFixture());
+    const gateway = await fakeGateway("writing", 0, (body) => {
+      const context = JSON.parse(body.messages.at(-1)!.content);
+      assert.equal(context.interpreterVersion, "3"); assert.equal(context.energyProfile, "calm"); assert.equal(context.timing.id, timingId);
+      assert.match(body.messages.map((message) => message.content).join("\n"), /never blanket speed multipliers/);
+      return fixtureBeatMotion(body);
+    }); t.after(() => gateway.close());
+    const config = readConfig({ V3_DATA_DIR: f.directory, V3_VIDEOS_DIR: f.videos }); config.gateway = { baseUrl: gateway.baseUrl, model: "fixture-model", apiKey: undefined };
+    const request = { ...f.input, interpreterVersion: "3", energyProfile: "calm" };
+    const id = await generateMotion(f.project.id, request, new AbortController().signal, () => {}, config); const original = f.store.read(f.project.id, id)!;
+    assert.equal(original.source.timingId, timingId); assert.equal(original.plan.energyProfile, "calm"); f.store.decide(f.project.id, id, "accept");
+    const scoped = { ...request, baseId: id, shotId: original.plan.shots[1].id };
+    const child = await generateMotion(f.project.id, scoped, new AbortController().signal, () => {}, config), candidate = f.store.read(f.project.id, child)!;
+    assert.deepEqual(candidate.plan.shots[0], original.plan.shots[0]); assert.deepEqual(candidate.plan.shots[2], original.plan.shots[2]);
+    assert.equal(candidate.plan.interpreterVersion, "3"); f.store.decide(f.project.id, child, "reject");
+    timing.import(f.project.id, { ...input, baseId: timingId }, wavFixture());
+    assert.equal(f.store.acceptance(f.project.id)!.stale, true); assert.deepEqual(f.store.read(f.project.id, id), original);
+    await assert.rejects(generateMotion(f.project.id, scoped, new AbortController().signal, () => {}, config));
+  } finally { timing.close(); }
+});
+
 test("motion gateway hydrates full proposals, scopes revisions and preserves acceptance on failure", async (t) => {
   const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
-  const gateway = await fakeGateway("writing", 0, fixtureMotion); t.after(() => gateway.close());
+  let guidanceRequests = 0;
+  const gateway = await fakeGateway("writing", 0, (body) => {
+    const guidance = body.messages.slice(0, -1).map((message) => message.content).join("\n");
+    assert.match(guidance, /Default to no on-canvas text/);
+    assert.match(guidance, /native, seek-safe action sequences/);
+    guidanceRequests++;
+    return fixtureMotion(body);
+  }); t.after(() => gateway.close());
   const config = readConfig({ V3_DATA_DIR: f.directory, V3_VIDEOS_DIR: f.videos });
   config.gateway = { baseUrl: gateway.baseUrl, model: "fixture-model", apiKey: "fixture-only" };
   const id = await generateMotion(f.project.id, f.input, new AbortController().signal, () => {}, config);
@@ -46,6 +106,7 @@ test("motion gateway hydrates full proposals, scopes revisions and preserves acc
   const proposal = f.store.read(f.project.id, revised)!;
   assert.deepEqual(proposal.plan.shots[0], original.plan.shots[0]); assert.deepEqual(proposal.plan.shots[2], original.plan.shots[2]);
   assert.equal(proposal.plan.shots[1].actions[0].ease, "linear");
+  assert.equal(guidanceRequests, 2); // Full motion and scoped revisions share the default.
   f.store.decide(f.project.id, revised, "reject"); assert.equal(f.store.acceptance(f.project.id)?.runId, id);
   const invalid = await fakeGateway("invalid"); t.after(() => invalid.close()); config.gateway.baseUrl = invalid.baseUrl;
   await assert.rejects(generateMotion(f.project.id, request, new AbortController().signal, () => {}, config));
@@ -124,7 +185,7 @@ test("motion integrity, orphan preservation, index rollback and deadline expirat
 test("additive schema 5 migration preserves every prior table and immutable artifact", (t) => {
   const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
   const source = openDatabase(f.directory); const oldDirectory = join(f.root, "schema5"); mkdirSync(oldDirectory); const old = new DatabaseSync(join(oldDirectory, "studio.sqlite"));
-  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('motion_runs', 'motion_acceptances', 'production_records') ORDER BY rowid").all();
+  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('motion_runs', 'motion_acceptances', 'production_records', 'planning_timing') ORDER BY rowid").all();
   for (const table of tables) old.exec(String(table.sql)); const snapshots = new Map();
   for (const table of tables) { const name = String(table.name); const rows = source.prepare(`SELECT * FROM ${name}`).all(); snapshots.set(name, rows);
     for (const row of rows) { const values = Object.values(row); old.prepare(`INSERT INTO ${name} VALUES (${values.map(() => "?").join(",")})`).run(...values); }

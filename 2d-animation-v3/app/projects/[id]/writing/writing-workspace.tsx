@@ -58,11 +58,11 @@ export default function WritingWorkspace({ projectId, briefId, brief: saved, sel
   }
   const output = selected?.output;
   return <div className="space-y-10">
-    <section aria-labelledby="brief-heading" className="border-b border-white/15 pb-8">
-      <h2 id="brief-heading" className="mb-4 text-2xl font-semibold">Research and payoff brief</h2>
-      <p className="mb-6 text-sm text-[#aeb4b0]">Supply source notes you have checked. The model does not open these links or independently verify them. Include the exact example, its limits and the point viewers should understand.</p>
+    <section aria-labelledby="brief-heading" className="border-b border-[var(--line)] pb-8">
+      <h2 id="brief-heading" className="mb-4 text-2xl font-semibold">Brief</h2>
+
       {saved && <p className="mb-4">{saved.topic} · {saved.payoff}</p>}
-      <details open={!briefId}><summary className="mb-5 cursor-pointer text-[#b9d8c2]">{briefId ? "Review or edit saved brief" : "Enter source notes and payoff"}</summary>
+      <details open={!briefId}><summary className="mb-5 cursor-pointer text-[var(--ink)]">{briefId ? "Edit brief" : "Add brief"}</summary>
       <form action={save} className="space-y-5">
         <input type="hidden" name="brief" value={JSON.stringify(brief)} />
         <input type="hidden" name="expectedBriefId" value={briefId ?? ""} />
@@ -75,8 +75,8 @@ export default function WritingWorkspace({ projectId, briefId, brief: saved, sel
           </label>)}
           <div className="flex flex-wrap gap-6">
             <label className="space-y-2"><span className="block font-semibold">Video format</span>
-              <select value={brief.format} onChange={(event) => setBrief({ ...brief, format: event.target.value as WritingBrief["format"] })} className="border border-white/30 bg-[#1c201e] p-3">
-                <option value="explainer">Explainer: teach a mechanism</option><option value="tutorial">Tutorial: teach a repeatable task</option>
+              <select value={brief.format} onChange={(event) => setBrief({ ...brief, format: event.target.value as WritingBrief["format"] })} className="border border-[var(--line)] bg-[var(--surface)] p-3">
+                <option value="explainer">Explainer</option><option value="tutorial">Tutorial</option>
               </select>
             </label>
             <label className="space-y-2"><span className="block font-semibold">Target seconds</span>
@@ -84,15 +84,15 @@ export default function WritingWorkspace({ projectId, briefId, brief: saved, sel
             </label>
           </div>
           <h3 className="pt-4 text-xl font-semibold">Sources</h3>
-          {brief.sources.map((source, index) => <fieldset key={source.id} className="space-y-3 border border-white/15 p-5"><legend className="px-2">Source {index + 1}</legend>
-            {([ ["title", "Title", 200], ["url", "URL", 2_000], ["notes", "Supporting notes", 4_000] ] as const).map(([field, label, maxLength]) => <label key={field} className="block space-y-2"><span className="block">{label} · Source {index + 1}</span>
+          {brief.sources.map((source, index) => <fieldset key={source.id} className="space-y-3 border border-[var(--line)] p-5"><legend className="px-2">Source {index + 1}</legend>
+            {([ ["title", "Title", 200], ["url", "URL", 2_000], ["notes", "Checked source notes", 4_000] ] as const).map(([field, label, maxLength]) => <label key={field} className="block space-y-2"><span className="block">{label} · Source {index + 1}</span>
               <textarea rows={field === "notes" ? 4 : 1} required maxLength={maxLength} value={source[field]} onChange={(event) => setBrief({ ...brief, sources: brief.sources.map((item) => item.id === source.id ? { ...item, [field]: event.target.value } : item) })} className="w-full" />
             </label>)}
             <button type="button" disabled={brief.sources.length === 1} onClick={() => setBrief({ ...brief, sources: brief.sources.filter((item) => item.id !== source.id), claims: brief.claims.map((claim) => ({ ...claim, sourceIds: claim.sourceIds.filter((id) => id !== source.id) })) })}>Remove source {index + 1}</button>
           </fieldset>)}
           <button type="button" disabled={brief.sources.length >= 12} onClick={() => setBrief({ ...brief, sources: [...brief.sources, { id: `source-${crypto.randomUUID().slice(0, 8)}`, title: "", url: "", notes: "" }] })}>Add source</button>
           <h3 className="pt-4 text-xl font-semibold">Supported claims</h3>
-          {brief.claims.map((claim, index) => <fieldset key={claim.id} className="space-y-3 border border-white/15 p-5"><legend className="px-2">Claim {index + 1} · {claim.id}</legend>
+          {brief.claims.map((claim, index) => <fieldset key={claim.id} className="space-y-3 border border-[var(--line)] p-5"><legend className="px-2">Claim {index + 1} · {claim.id}</legend>
             <label className="block space-y-2"><span className="block">Statement · Claim {index + 1}</span>
               <textarea required rows={2} maxLength={1_000} value={claim.statement} onChange={(event) => setBrief({ ...brief, claims: brief.claims.map((item) => item.id === claim.id ? { ...item, statement: event.target.value } : item) })} className="w-full" />
             </label>
@@ -114,48 +114,48 @@ export default function WritingWorkspace({ projectId, briefId, brief: saved, sel
       </details>
     </section>
     <section aria-labelledby="generate-heading" className="space-y-4">
-      <h2 id="generate-heading" className="text-2xl font-semibold">Develop the script</h2>
-      <label className="block space-y-2"><span className="block">Additional writing direction</span>
+      <h2 id="generate-heading" className="text-2xl font-semibold">Writing</h2>
+      <label className="block space-y-2"><span className="block">Direction (optional)</span>
         <textarea rows={3} maxLength={2_000} value={instruction} disabled={busy} onChange={(event) => setInstruction(event.target.value)} className="w-full" />
       </label>
-      <p className="text-sm text-[#aeb4b0]">The gateway receives your saved brief. Draft writing, humanizer refinement and editorial review use separate calls. Results remain proposed; editorial advice is not human approval.</p>
-      <button disabled={!briefId || dirty || busy} onClick={() => briefId && generate("hooks", briefId)}>Generate hook options</button>
+
+      <button disabled={!briefId || dirty || busy} onClick={() => briefId && generate("hooks", briefId)}>Generate hooks</button>
       <p role="status">{dirty ? "Save brief changes before generating or importing results." : message}</p>
     </section>
-    {selected && <section aria-labelledby="result-heading" className="space-y-5 border-t border-white/15 pt-8">
+    {selected && <section aria-labelledby="result-heading" className="space-y-5 border-t border-[var(--line)] pt-8">
       <h2 id="result-heading" className="text-2xl font-semibold">Saved {output?.kind} result</h2>
       {!current && <p role="status">A newer research brief exists. This result is read-only.</p>}
       {output?.kind === "brief" && <div className="space-y-3"><h3 className="text-xl font-semibold">{output.brief.topic}</h3><p>{output.brief.payoff}</p>
         {output.brief.sources.map((source) => <p key={source.id}><a href={source.url} target="_blank" rel="noreferrer">{source.title}</a>: {source.notes}</p>)}
       </div>}
-      {output?.kind === "hooks" && <div className="grid gap-5 lg:grid-cols-2">{output.hooks.map((hook, index) => <article key={hook.id} className="space-y-3 border border-white/15 p-5">
+      {output?.kind === "hooks" && <div className="grid gap-5 lg:grid-cols-2">{output.hooks.map((hook, index) => <article key={hook.id} className="space-y-3 border border-[var(--line)] p-5">
         <h3 className="text-xl font-semibold">Hook {index + 1}: {hook.angle}</h3><p className="text-lg">{hook.spoken}</p>
-        <p><strong>Opening visual:</strong> {hook.openingVisual}</p>{hook.overlay && <p><strong>Suggested overlay:</strong> {hook.overlay}</p>}
-        <p><strong>Payoff connection:</strong> {hook.payoffConnection}</p><p className="text-sm text-[#aeb4b0]">Evidence: {hook.claimIds.join(", ")}</p>
+        <details><summary>Hook details</summary><p className="mt-3"><strong>Opening visual:</strong> {hook.openingVisual}</p>{hook.overlay && <p><strong>Suggested overlay:</strong> {hook.overlay}</p>}
+        <p><strong>Payoff connection:</strong> {hook.payoffConnection}</p><p className="text-sm text-[var(--muted)]">Evidence: {hook.claimIds.join(", ")}</p></details>
         <button disabled={busy || dirty || !current} onClick={() => generate("draft", selected.id, hook.id)}>Choose hook {index + 1} and write draft</button>
       </article>)}</div>}
       {output?.kind === "draft" && <>
         <div className="grid gap-6 lg:grid-cols-2">{([["Writer draft", output.original], ["Refined narration", output.refined]] as const).map(([label, script]) => <section key={label} aria-label={label}>
-          <h3 className="mb-4 text-xl font-semibold">{label}</h3><ol className="list-inside list-decimal space-y-3 border border-white/15 p-5">{script.lines.map((line, index) => <li key={index}><span>{line.text}</span><span className="mt-1 block text-xs text-[#aeb4b0]">Evidence: {line.claimIds.join(", ") || "connective line"}</span></li>)}</ol>
+          <h3 className="mb-4 text-xl font-semibold">{label}</h3><ol className="list-inside list-decimal space-y-3 border border-[var(--line)] p-5">{script.lines.map((line, index) => <li key={index}><span>{line.text}</span><span className="mt-1 block text-xs text-[var(--muted)]">Evidence: {line.claimIds.join(", ") || "connective line"}</span></li>)}</ol>
         </section>)}</div>
         <h3 className="text-xl font-semibold">Editorial review · {output.review.verdict === "ready" ? "Ready for your review" : "Revision needed"}</h3>
         <p>{output.review.summary}</p><ul className="space-y-4">{output.review.findings.map((finding, index) => <li key={index}><strong>{finding.line ? `Line ${finding.line}` : "Whole script"}:</strong> {finding.reason}<p>Suggested change: {finding.change}</p></li>)}</ul>
         {output.review.verdict === "ready" && <form action={importDraft} className="space-y-3">
           <input type="hidden" name="runId" value={selected.id} />
-          <button disabled={busy || dirty || !current || !!runs.find((run) => run.id === selected.id)?.importedRevisionId}>Use reviewed draft in script workspace</button>
-          <p className="text-sm text-[#aeb4b0]">This saves a new script revision and preserves earlier drafts. Inspect the exact script there before explicit acceptance.</p>
+          <button disabled={busy || dirty || !current || !!runs.find((run) => run.id === selected.id)?.importedRevisionId}>Use reviewed draft</button>
+
           {importState.error && <p role="alert">{importState.error}</p>}
         </form>}
         {output.review.verdict === "revise" && <p>Address the findings in your brief or writing direction, then choose the hook again to request a new draft.</p>}
         <details><summary>Installed skill evidence</summary><ul className="mt-3 space-y-2 break-all text-xs">{output.skills.map((skill) => <li key={skill.name}>{skill.name}: {skill.sha256}</li>)}</ul></details>
       </>}
     </section>}
-    <aside aria-labelledby="runs-heading" className="border-t border-white/15 pt-8"><h2 id="runs-heading" className="mb-4 text-2xl font-semibold">Writing history</h2>
-      <p className="mb-4 text-sm text-[#aeb4b0]">Interrupted generation expires after six minutes on the next page load. Requests are never retried automatically.</p>
+    <details className="border-t border-[var(--line)] pt-6"><summary>Writing history ({runs.length})</summary>
+
       <ol className="space-y-4">{runs.map((run) => <li key={run.id}>{run.status === "complete" ? <a href={`/projects/${projectId}/writing?run=${run.id}`}>{run.kind} · {run.status}</a> : <span>{run.kind} · {run.status}</span>}
-        {run.model && <span className="ml-3 text-sm text-[#aeb4b0]">{run.model}</span>}{run.error && <p className="mt-2">{run.error}</p>}
+        {run.model && <span className="ml-3 text-sm text-[var(--muted)]">{run.model}</span>}{run.error && <p className="mt-2">{run.error}</p>}
         {run.importedRevisionId && <p><a href={`/projects/${projectId}?revision=${run.importedRevisionId}`}>Imported script revision</a></p>}
       </li>)}</ol>
-    </aside>
+    </details>
   </div>;
 }

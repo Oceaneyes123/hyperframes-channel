@@ -12,6 +12,7 @@ test("default configuration needs no credentials", () => {
   const config = readConfig({});
   assert.equal(config.dataDirectory, resolve(".data"));
   assert.equal(config.gateway.apiKey, undefined);
+  assert.equal(config.visualModel, undefined);
 });
 
 test("optional gateway configuration accepts HTTP without connecting", () => {
@@ -26,7 +27,14 @@ test("invalid configuration fails validation", () => {
     { CLIPROXYAPI_BASE_URL: "file:///tmp/proxy" },
     { CLIPROXYAPI_BASE_URL: "https://user:secret@example.com/v1" },
     { CLIPROXYAPI_API_KEY: " " },
+    { CLIPROXYAPI_VISUAL_MODEL: " " },
   ]) assert.throws(() => readConfig(environment));
+});
+
+test("visual model configuration keeps the default workflow model separate", () => {
+  const config = readConfig({ CLIPROXYAPI_MODEL: "gpt-6-luna", CLIPROXYAPI_VISUAL_MODEL: "gpt-6.1-sol" });
+  assert.equal(config.visualModel, "gpt-6.1-sol");
+  assert.equal(config.gateway.model, "gpt-6-luna");
 });
 
 const manifest = {
