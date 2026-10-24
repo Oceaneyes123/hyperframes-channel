@@ -122,7 +122,7 @@ test("schema 4 migration preserves all prior tables and project files", (t) => {
   // Rebuild the prior schema from its exact original DDL, excluding only the new visual tables/index.
   const source = openDatabase(f.config.dataDirectory); const oldDirectory = join(f.root, "schema4"); mkdirSync(oldDirectory);
   const old = new DatabaseSync(join(oldDirectory, "studio.sqlite"));
-  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('visual_runs', 'concept_selections', 'storyboard_acceptances', 'motion_runs', 'motion_acceptances', 'production_records') ORDER BY rowid").all();
+  const tables = source.prepare("SELECT name, sql FROM sqlite_master WHERE type = 'table' AND name NOT IN ('visual_runs', 'concept_selections', 'storyboard_acceptances', 'motion_runs', 'motion_acceptances', 'production_records', 'planning_timing') ORDER BY rowid").all();
   const snapshots = new Map<string, unknown>();
   for (const table of tables) old.exec(String(table.sql));
   for (const table of tables) {
@@ -140,8 +140,17 @@ test("schema 4 migration preserves all prior tables and project files", (t) => {
 });
 
 test("gateway path saves proposals without accepting, rejects invalid outputs and supports cancellation", async (t) => {
-  const f = fixture(t); const gateway = await fakeGateway("writing", 0, fixtureVisuals); t.after(() => gateway.close());
-  f.config.gateway = { baseUrl: gateway.baseUrl, apiKey: "fixture-only", model: "fixture-model" }; f.studio.acceptScript(f.project.id, f.script.id);
+  const f = fixture(t); const guidanceRequests: string[] = [];
+  const gateway = await fakeGateway("writing", 0, (body) => {
+    const guidance = body.messages.slice(0, -1).map((message) => message.content).join("\n");
+    assert.match(guidance, /Default to no on-canvas text/);
+    assert.match(guidance, /large animated diagrams/);
+    assert.match(guidance, /GIF-like moments/);
+    guidanceRequests.push(guidance);
+    return fixtureVisuals(body);
+  }); t.after(() => gateway.close());
+  f.config.gateway = { baseUrl: gateway.baseUrl, apiKey: "fixture-only", model: "other-workflow-model" };
+  f.config.visualModel = "fixture-model"; f.studio.acceptScript(f.project.id, f.script.id);
   const id = await generateVisuals(f.project.id, f.request, new AbortController().signal, () => {}, f.config);
   assert.equal(f.store.read(f.project.id, id)?.output.kind, "concepts"); assert.equal(f.store.selection(f.project.id), null);
   const selectionId = f.store.choose(f.project.id, id, 1, null); const request = { ...f.request, kind: "storyboard", selectionId };
@@ -149,6 +158,9 @@ test("gateway path saves proposals without accepting, rejects invalid outputs an
   assert.equal(f.store.acceptance(f.project.id), null);
   const shotId = await generateVisuals(f.project.id, { ...request, kind: "shot", baseId: boardId, shotIndex: 1 }, new AbortController().signal, () => {}, f.config);
   assert.equal(f.store.read(f.project.id, shotId)?.output.kind, "storyboard");
+  assert.equal(guidanceRequests.length, 3); // Concepts, full board and scoped shot revisions.
+  assert.ok(f.store.list(f.project.id).every((run) => run.model === "fixture-model"));
+  assert.equal(f.config.gateway.model, "other-workflow-model");
   const invalid = await fakeGateway("invalid"); t.after(() => invalid.close()); f.config.gateway.baseUrl = invalid.baseUrl;
   await assert.rejects(generateVisuals(f.project.id, { ...f.request, baseId: id }, new AbortController().signal, () => {}, f.config));
   assert.equal(f.store.list(f.project.id)[0].status, "failed");
@@ -160,4 +172,7 @@ test("gateway path saves proposals without accepting, rejects invalid outputs an
   f.config.gateway.baseUrl = gateway.baseUrl; const controller = new AbortController(); controller.abort();
   await assert.rejects(generateVisuals(f.project.id, { ...f.request, baseId: id }, controller.signal, () => {}, f.config));
   assert.equal(f.store.latest(f.project.id, "concepts"), id);
+  f.config.visualModel = undefined; f.config.gateway.model = "fixture-model";
+  const fallbackId = await generateVisuals(f.project.id, { ...f.request, baseId: id }, new AbortController().signal, () => {}, f.config);
+  assert.equal(f.store.list(f.project.id).find((run) => run.id === fallbackId)?.model, "fixture-model");
 });

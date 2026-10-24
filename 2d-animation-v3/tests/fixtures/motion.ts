@@ -30,3 +30,17 @@ export function fixtureMotion(body: { messages: { content: string }[] }) {
     durationFrames, camera, actions, incoming, objects: objects.map(({ id, startIndex, endIndex }) => ({ id, startIndex, endIndex })),
   })) };
 }
+
+export function fixtureBeatMotion(body: { messages: { content: string }[] }) {
+  const context = JSON.parse(body.messages.at(-1)!.content);
+  if (context.selectedShot) {
+    const { beats, camera, durationFrames, incoming } = structuredClone(context.selectedShot);
+    if (beats[0].presetId === "snap-overshoot@1") beats[0].parameters.overshoot = 1.07;
+    return { beats, camera, durationFrames, incoming };
+  }
+  return { shots: motionFixture(context.storyboard).shots.map(({ durationFrames, camera, actions, incoming, objects }) => ({
+    durationFrames, camera, incoming, objects: objects.map(({ id, startIndex, endIndex }) => ({ id, startIndex, endIndex })),
+    beats: [{ id: "change", purpose: "Explain the changed quantity, then settle.", type: "transformation", presetId: "snap-overshoot@1", targetIds: actions[0].targetIds, startFrame: 10, endFrame: 40, parameters: { to: actions[0].to, anticipation: .9, overshoot: 1.1 }, importance: "primary", narrationAnchor: null, continuity: null },
+      { id: "read", purpose: "Read the settled quantity.", type: "hold", presetId: "hold@1", parameters: {}, targetIds: objects.map((object) => object.id), startFrame: 42, endFrame: durationFrames - 2, importance: "primary", narrationAnchor: null, continuity: null }],
+  })) };
+}

@@ -9,14 +9,18 @@ import { openStudio, ConflictError } from "./studio.ts";
 import { scriptLines } from "../workflow/visuals.ts";
 import { inspectMotion, validateTiming, type LineTiming } from "../workflow/production.ts";
 import { inspectWav } from "./wav.ts";
+import { openTiming } from "./timing-store.ts";
 
 const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
-const engineFiles = ["engine/register.tsx", "engine/motion-composition.tsx", "engine/compile-motion.ts", "engine/visual-symbol.tsx", "engine/visual-text.tsx", "engine/split-screen.tsx", "workflow/motion.ts", "workflow/visuals.ts", "workflow/production.ts", "server/render.ts", "server/wav.ts", "next.config.ts", "package-lock.json"];
+const engineFiles = ["engine/text-metrics.ts", "engine/quality/inspect-motion.ts", "workflow/timing.ts", "engine/components/visual-component.tsx", "workflow/components.ts", "engine/motion-presets/index.ts", "engine/register.tsx", "engine/motion-composition.tsx", "engine/compile-motion.ts", "engine/visual-symbol.tsx", "engine/visual-text.tsx", "engine/split-screen.tsx", "workflow/motion.ts", "workflow/visuals.ts", "workflow/production.ts", "server/render.ts", "server/wav.ts", "next.config.ts", "package-lock.json"];
 const narrationSchema = z.object({ motionId: z.uuid(), motionHash: z.string(), audioHash: z.string(), timing: z.array(z.object({ number: z.number(), startFrame: z.number(), endFrame: z.number() })), measured: z.object({ durationSeconds: z.number(), durationFrames: z.number(), sampleRate: z.number(), channels: z.number(), waveform: z.array(z.number()) }) });
+export function hashEngine(root = process.cwd()) {
+  return hash(engineFiles.map((file) => hash(readFileSync(/* turbopackIgnore: true */ resolve(/* turbopackIgnore: true */ root, file)))).join(""));
+}
 type Kind = "narration" | "gate1" | "gate2" | "rendering" | "rendered" | "failed";
 
 export function openProduction(directory: string, videos: string) {
-  const database = openDatabase(directory), motion = openMotion(directory, videos), visuals = openVisuals(directory, videos), studio = openStudio(directory, videos);
+  const database = openDatabase(directory), motion = openMotion(directory, videos), visuals = openVisuals(directory, videos), studio = openStudio(directory, videos), timings = openTiming(directory, videos);
   function rows(projectId: string) {
     return database.prepare("SELECT * FROM production_records WHERE project_id = ? ORDER BY rowid DESC").all(z.uuid().parse(projectId)).map((row) => {
       if (hash(String(row.payload)) !== row.sha256) throw new Error("Production record integrity failed.");
@@ -44,7 +48,7 @@ export function openProduction(directory: string, videos: string) {
     if (voice.motionId !== artifact.id || voice.motionHash !== receipt.sha256) throw new ConflictError("Narration is stale. Re-align it to the accepted motion.");
     validateTiming(voice.timing, artifact.plan, scriptLines(studio.readRevision(projectId, artifact.source.scriptId)!.content));
     // Local export requires the source checkout; never trace generated media into the Next build.
-    const quality = inspectMotion(artifact.plan), engineHash = hash(engineFiles.map((file) => hash(readFileSync(/* turbopackIgnore: true */ resolve(/* turbopackIgnore: true */ file)))).join(""));
+    const quality = inspectMotion(artifact.plan, board), engineHash = hashEngine();
     const binding = hash(JSON.stringify({ motion: receipt.sha256, source: artifact.source, voice: voice.id, audio: voice.audioHash, timing: voice.timing, engineHash, quality, width: 1080, height: 1920, fps: 30 }));
     return { binding, artifact, board, voice, quality, engineHash };
   }
@@ -54,7 +58,7 @@ export function openProduction(directory: string, videos: string) {
     return { gate1: first?.id ?? null, gate2: first && gate2?.payload.binding === binding && gate2.payload.gate1 === first.id ? gate2.id : null };
   }
   return {
-    close() { motion.close(); visuals.close(); studio.close(); database.close(); }, audio, snapshot,
+    close() { timings.close(); motion.close(); visuals.close(); studio.close(); database.close(); }, audio, snapshot,
     status(projectId: string) {
       const history = rows(projectId); let current;
       try { current = snapshot(projectId); } catch (error) { if (!(error instanceof ConflictError)) throw error; return { ready: false as const, reason: error.message, binding: null, narration: null, quality: null, gate1: null, gate2: null, history: history.filter((row) => ["rendering", "rendered", "failed"].includes(row.kind)) }; }
@@ -67,6 +71,10 @@ export function openProduction(directory: string, videos: string) {
         const artifact = motion.read(projectId, motionId)!, measured = inspectWav(bytes), quality = inspectMotion(artifact.plan);
         if (Math.abs(measured.durationSeconds * 30 - quality.durationFrames) > 1) throw new Error("Audio duration must match accepted motion within one frame. Revise motion timing first.");
         const aligned = validateTiming(timing, artifact.plan, scriptLines(studio.readRevision(projectId, artifact.source.scriptId)!.content));
+        if (artifact.source.timingId) {
+          const planned = timings.read(projectId, artifact.source.timingId);
+          if (!planned || planned.artifact.audioHash !== hash(bytes) || JSON.stringify(planned.artifact.timing) !== JSON.stringify(aligned)) throw new Error("Final narration must match the planning audio and measured timing. Import a correction and revise motion first.");
+        }
         mkdirSync(join(videos, projectId, "production"), { recursive: true }); writeFileSync(path, bytes, { flag: "wx", flush: true }); owned = true;
         append(projectId, "narration", { motionId, motionHash: receipt.sha256, audioHash: hash(bytes), timing: aligned, measured }, id); return id;
       }); } catch (error) { if (owned) rmSync(path); throw error; }

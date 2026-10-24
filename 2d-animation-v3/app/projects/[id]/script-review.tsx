@@ -13,10 +13,9 @@ export function ScriptAcceptance({ projectId, revisionId, disabled, accepted, on
     onBusyChange(true);
     try { return await acceptScript(projectId, previous, form); } finally { onBusyChange(false); }
   }, { error: "" });
-  return <form action={action} className="space-y-3 border-t border-white/15 pt-5">
+  return <form action={action} className="space-y-3 border-t border-[var(--line)] pt-5">
     <input type="hidden" name="revisionId" value={revisionId} />
     <button disabled={disabled || pending || accepted}>{accepted ? "Script accepted" : pending ? "Accepting…" : "Accept saved script"}</button>
-    <p className="text-sm text-[#aeb4b0]">Accept only after editorial and factual review. Acceptance is separate from production gates.</p>
     {state.error && <p role="alert">{state.error}</p>}
   </form>;
 }
@@ -31,16 +30,16 @@ export function ProposalReview({ projectId, review, latestId, disabled, onBusyCh
   }, { error: "" });
   const { start, end } = proposal.request;
   const stale = proposal.request.baseId !== latestId;
-  return <section aria-labelledby="proposal-heading" className="space-y-5 border-t border-white/15 pt-6">
+  return <section aria-labelledby="proposal-heading" className="space-y-5 border-t border-[var(--line)] pt-6">
     <h2 id="proposal-heading" className="text-xl font-semibold">Proposed revision · {review.status}</h2>
-    <p className="text-sm text-[#aeb4b0]">Instruction: {proposal.request.instruction}</p>
-    <p className="text-sm text-[#aeb4b0]">{proposal.notes}</p>
+    <p className="text-sm text-[var(--muted)]">Instruction: {proposal.request.instruction}</p>
+    <p className="text-sm text-[var(--muted)]">{proposal.notes}</p>
     <div className="grid gap-5 xl:grid-cols-2">
       <section aria-label="Original script"><h3 className="mb-3 font-semibold">Original</h3>
-        <pre className="whitespace-pre-wrap break-words border border-white/15 p-4 font-sans leading-relaxed">{base.slice(0, start)}<del className="bg-[#633a34] no-underline">{base.slice(start, end)}</del>{base.slice(end)}</pre>
+        <pre className="whitespace-pre-wrap break-words border border-[var(--line)] p-4 font-sans leading-relaxed">{base.slice(0, start)}<del className="bg-[var(--error)]/15 no-underline">{base.slice(start, end)}</del>{base.slice(end)}</pre>
       </section>
       <section aria-label="Proposed script"><h3 className="mb-3 font-semibold">Proposed</h3>
-        <pre className="whitespace-pre-wrap break-words border border-white/15 p-4 font-sans leading-relaxed">{base.slice(0, start)}<ins className="bg-[#304d38] no-underline">{proposal.replacement}</ins>{base.slice(end)}</pre>
+        <pre className="whitespace-pre-wrap break-words border border-[var(--line)] p-4 font-sans leading-relaxed">{base.slice(0, start)}<ins className="bg-[var(--selected)] no-underline">{proposal.replacement}</ins>{base.slice(end)}</pre>
       </section>
     </div>
     {stale && review.status === "pending" && <p role="status">A newer script exists. This proposal cannot be accepted; request a revision from the latest script.</p>}

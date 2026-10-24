@@ -1,3 +1,4 @@
+import WorkspaceHeader from "../../../workspace-header";
 import { notFound } from "next/navigation";
 import { z } from "zod";
 import { readConfig } from "../../../../server/config.ts";
@@ -29,11 +30,7 @@ export default async function WritingPage({ params, searchParams }: {
       current: root === briefId };
   } finally { store.close(); }
   return <main className="mx-auto max-w-6xl space-y-8 px-6 py-10 sm:px-12">
-    <nav aria-label="Workspace"><a href={`/projects/${id}`}>Return to script review</a></nav>
-    <header className="border-b border-white/15 pb-8"><p className="mb-3 text-sm uppercase tracking-widest text-[#b9d8c2]">V3 / Research and writing</p>
-      <h1 className="text-3xl font-semibold">{project.title}</h1>
-      <p className="mt-4 text-[#aeb4b0]">Start with source notes and the lesson worth teaching. Choose a hook, inspect the draft and editorial findings, then decide whether to use it.</p>
-    </header>
+      <WorkspaceHeader projectId={id} title={project.title} stage="writing" />
     <WritingWorkspace key={data.briefId ?? id} projectId={id} {...data} />
   </main>;
 }

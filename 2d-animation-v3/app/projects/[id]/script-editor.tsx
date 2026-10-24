@@ -63,30 +63,29 @@ export default function ScriptEditor({ projectId, revision, accepted, review }: 
     <div className="space-y-8">
     <form action={action} className="space-y-4">
       <label htmlFor="content" className="block font-semibold">Script draft</label>
-      <p id="script-help" className="text-sm text-[#aeb4b0]">Write or paste narration. Each save keeps a new revision. Saving does not approve the script.</p>
       <textarea id="content" name="content" value={content} onChange={(event) => setContent(event.target.value)}
         onSelect={(event) => setSelection({ start: event.currentTarget.selectionStart, end: event.currentTarget.selectionEnd })}
-        rows={14} required maxLength={50_000} readOnly={pending || working || reviewBusy} aria-describedby="script-help script-status"
+        rows={14} required maxLength={50_000} readOnly={pending || working || reviewBusy} aria-describedby="script-status"
         className="w-full resize-y leading-relaxed" />
       <div className="flex flex-wrap items-center gap-4">
         <button type="submit" disabled={pending || working || reviewBusy || !dirty || !content.trim()}>{pending ? "Saving…" : "Save revision"}</button>
-        <p id="script-status" role="status" className="text-sm text-[#aeb4b0]">
-          {dirty ? "Unsaved changes" : state.message || "No unsaved changes"}
+        <p id="script-status" role="status" className="text-sm text-[var(--muted)]">
+          {dirty ? "Unsaved changes" : state.message || "Saved"}
         </p>
       </div>
-      {state.error && <p role="alert" className="text-[#f5b5a6]">{state.error}</p>}
+      {state.error && <p role="alert" className="text-[var(--error)]">{state.error}</p>}
     </form>
     {revision && <>
       <ScriptAcceptance projectId={projectId} revisionId={revision.id} disabled={dirty || pending || working || reviewBusy} accepted={accepted} onBusyChange={setReviewBusy} />
-      <form onSubmit={requestChanges} className="space-y-4 border-t border-white/15 pt-6">
-        <h2 className="text-xl font-semibold">Request a scoped revision</h2>
-        <p className="text-sm text-[#aeb4b0]">Select text in the saved draft above, then describe the change. The gateway receives the full script for context; only the selected section can be replaced.</p>
+      <form onSubmit={requestChanges} className="space-y-4 border-t border-[var(--line)] pt-6">
+        <h2 className="text-xl font-semibold">Revise selection</h2>
+        <p className="text-sm text-[var(--muted)]">Select saved text to revise.</p>
         <p className="text-sm" role="status">{dirty ? "Save your draft before requesting or accepting changes." : selection.end > selection.start ? `Selected ${selection.end - selection.start} characters.` : "No text selected."}</p>
-        {selection.end > selection.start && <blockquote className="max-h-40 overflow-y-auto whitespace-pre-wrap border-l-2 border-[#b9d8c2] pl-4">{content.slice(selection.start, selection.end)}</blockquote>}
+        {selection.end > selection.start && <blockquote className="max-h-40 overflow-y-auto whitespace-pre-wrap border-l-2 border-[var(--ink)] pl-4">{content.slice(selection.start, selection.end)}</blockquote>}
         <label htmlFor="instruction" className="block font-semibold">Revision instruction</label>
         <textarea id="instruction" rows={3} required maxLength={2_000} value={instruction} onChange={(event) => setInstruction(event.target.value)} readOnly={working} className="w-full" />
         <button disabled={dirty || pending || working || reviewBusy || selection.end <= selection.start || !instruction.trim()}>{working ? "Writing…" : "Request AI revision"}</button>
-        <p role="status" className="text-sm text-[#aeb4b0]">{progress}</p>
+        <p role="status" className="text-sm text-[var(--muted)]">{progress}</p>
       </form>
       {review && <ProposalReview key={review.proposal.id} projectId={projectId} review={review} latestId={revision.id} disabled={dirty || pending || working || reviewBusy} onBusyChange={setReviewBusy} />}
     </>}

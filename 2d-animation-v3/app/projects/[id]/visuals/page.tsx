@@ -1,3 +1,4 @@
+import WorkspaceHeader from "../../../workspace-header";
 import { notFound } from "next/navigation";
 import { z } from "zod";
 import { readConfig } from "../../../../server/config.ts";
@@ -9,6 +10,9 @@ import { openMotion } from "../../../../server/motion-store.ts";
 import { scriptLines } from "../../../../workflow/visuals.ts";
 import { openProduction } from "../../../../server/production-store.ts";
 import ProductionWorkspace from "./production-workspace";
+import { openTiming } from "../../../../server/timing-store.ts";
+import TimingWorkspace from "./timing-workspace";
+import { resolveBeatTiming } from "../../../../workflow/timing.ts";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -21,6 +25,7 @@ export default async function VisualPage({ params, searchParams }: {
   const store = openVisuals(config.dataDirectory, config.videosDirectory);
   const motions = openMotion(config.dataDirectory, config.videosDirectory);
   const production = openProduction(config.dataDirectory, config.videosDirectory);
+  const timings = openTiming(config.dataDirectory, config.videosDirectory);
   try {
     const project = studio.getProject(id); if (!project) notFound();
     const accepted = studio.acceptance(id); const script = accepted ? studio.readRevision(id, accepted.revisionId) : null;
@@ -34,23 +39,24 @@ export default async function VisualPage({ params, searchParams }: {
     const receipt = motions.acceptance(id); const original = receipt && receipt.runId !== motion?.id ? motions.read(id, receipt.runId) : null;
     const boardReceipt = store.acceptance(id);
     const productionStatus = production.status(id);
+    const motionTiming = motion?.source.timingId ? timings.read(id, motion.source.timingId)?.artifact : null;
     return <main className="mx-auto max-w-7xl px-6 py-10 sm:px-12">
-      <nav aria-label="Workspace" className="mb-8 text-sm"><a href={`/projects/${id}`}>Back to script review</a></nav>
-      <header className="mb-8 border-b border-white/15 pb-6">
-        <p className="mb-3 text-sm uppercase tracking-widest text-[#b9d8c2]">V3 / Visual planning</p>
-        <h1 className="text-3xl font-semibold">{project.title}</h1>
-        <p className="mt-4 max-w-3xl text-sm text-[#aeb4b0]">Compare three visual directions, choose one, then review the teaching sequence shot by shot. Images are static planning drawings. Durations are estimates.</p>
-      </header>
+      <WorkspaceHeader projectId={id} title={project.title} stage="visuals" />
+      <details className="workspace-stage"><summary>Narration timing</summary><TimingWorkspace projectId={id} scriptId={accepted && !accepted.stale ? accepted.revisionId : null} timing={timings.latest(id)} /></details>
       <VisualWorkspace projectId={id} script={script} eligible={!!accepted && !accepted.stale} concepts={concepts} board={board}
         conceptsCurrent={!!concepts && store.current(id, concepts.id)} boardCurrent={!!board && store.current(id, board.id)}
         latestConceptId={latestConcept} latestBoardId={latestBoard} chosen={chosen} acceptance={store.acceptance(id)} history={store.list(id)} />
+      <details className="workspace-stage" open={!!motionId}><summary>Motion</summary>
       <MotionWorkspace projectId={id} storyboardId={board?.id ?? null} eligible={!!board && boardReceipt?.runId === board.id && !boardReceipt.stale}
         latestId={latestMotion} current={!!motion && motions.current(id, motion.id)} motion={motion}
         sourceBoard={motion ? store.read(id, motion.source.storyboardId) : null} original={original}
         originalBoard={original ? store.read(id, original.source.storyboardId) : null} acceptance={receipt}
-        narration={motion ? scriptLines(studio.readRevision(id, motion.source.scriptId)!.content) : []} history={motions.list(id)} production={productionStatus} />
+        narration={motion ? scriptLines(studio.readRevision(id, motion.source.scriptId)!.content) : []} history={motions.list(id)} production={productionStatus}
+        timingWarnings={motion && motionTiming ? resolveBeatTiming(motion.plan, motionTiming).warnings : []} />
+      </details>
+      <details className="workspace-stage"><summary>Export</summary>
       <ProductionWorkspace projectId={id} motionId={receipt && !receipt.stale ? receipt.runId : null} status={productionStatus} reviewingAccepted={!!motion && motion.id === receipt?.runId && !receipt.stale} />
-      <p className="mt-10 border-t border-white/15 pt-5 text-sm text-[#aeb4b0]">Motion acceptance records the exact reviewed artifact. Production authorization remains a separate gate.</p>
+      </details>
     </main>;
-  } finally { production.close(); motions.close(); store.close(); studio.close(); }
+  } finally { timings.close(); production.close(); motions.close(); store.close(); studio.close(); }
 }

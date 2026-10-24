@@ -1,0 +1,1387 @@
+{
+  "board": {
+    "schemaVersion": 1,
+    "id": "11111111-1111-4111-8111-111111111111",
+    "projectId": "22222222-2222-4222-8222-222222222222",
+    "createdAt": "2026-10-23T00:00:00.000Z",
+    "scriptId": "33333333-3333-4333-8333-333333333333",
+    "scriptHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "selectionId": "44444444-4444-4444-8444-444444444444",
+    "baseId": null,
+    "instruction": "Synthetic engine fixture",
+    "output": {
+      "shots": [
+        {
+          "lineNumbers": [
+            1
+          ],
+          "seconds": 4,
+          "purpose": "Explain narration line 1.",
+          "framing": "Centered portrait close view",
+          "subject": "An amount and its comparison state",
+          "action": "The container changes width to demonstrate the narrated change.",
+          "transition": "start",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#172020",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 12,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#b9d8c2",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#e1ba77",
+                "label": ""
+              },
+              {
+                "type": "text",
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "color": "#ffffff",
+                "label": "Compare the states"
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#172020",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 12,
+                "y": 35,
+                "width": 42,
+                "height": 25,
+                "color": "#b9d8c2",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#e1ba77",
+                "label": ""
+              },
+              {
+                "type": "text",
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "color": "#ffffff",
+                "label": "Compare the states"
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            2
+          ],
+          "seconds": 4,
+          "purpose": "Explain narration line 2.",
+          "framing": "Centered portrait close view",
+          "subject": "An amount and its comparison state",
+          "action": "The container changes width to demonstrate the narrated change.",
+          "transition": "continuous",
+          "continuity": "Carry the same container forward, retaining its reference marker.",
+          "startFrame": {
+            "background": "#172020",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 12,
+                "y": 35,
+                "width": 42,
+                "height": 25,
+                "color": "#b9d8c2",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#e1ba77",
+                "label": ""
+              },
+              {
+                "type": "text",
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "color": "#ffffff",
+                "label": "Compare the states"
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#172020",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 12,
+                "y": 55,
+                "width": 42,
+                "height": 25,
+                "color": "#b9d8c2",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#e1ba77",
+                "label": ""
+              },
+              {
+                "type": "text",
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "color": "#ffffff",
+                "label": "Compare the states"
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            3
+          ],
+          "seconds": 4,
+          "purpose": "Explain narration line 3.",
+          "framing": "Centered portrait close view",
+          "subject": "An amount and its comparison state",
+          "action": "The container changes width to demonstrate the narrated change.",
+          "transition": "reveal",
+          "continuity": "Carry the same container forward, retaining its reference marker.",
+          "startFrame": {
+            "background": "#172020",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 12,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#b9d8c2",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#e1ba77",
+                "label": ""
+              },
+              {
+                "type": "text",
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "color": "#ffffff",
+                "label": "Compare the states"
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#172020",
+            "shapes": [
+              {
+                "type": "rect",
+                "x": 12,
+                "y": 35,
+                "width": 42,
+                "height": 25,
+                "color": "#b9d8c2",
+                "label": ""
+              },
+              {
+                "type": "ellipse",
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "color": "#e1ba77",
+                "label": ""
+              },
+              {
+                "type": "text",
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "color": "#ffffff",
+                "label": "Compare the states"
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "storyboard"
+    }
+  },
+  "plan": {
+    "schemaVersion": 1,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "interpreterVersion": "1",
+    "shots": [
+      {
+        "id": "shot-1",
+        "sourceIndex": 0,
+        "sourceHash": "7ff12c76b59b107868971f4665b1f55ef64f58d0d0786465b198ebeb1a097719",
+        "lineNumbers": [
+          1
+        ],
+        "durationFrames": 120,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "rect",
+            "label": "",
+            "initial": {
+              "x": 12,
+              "y": 35,
+              "width": 30,
+              "height": 25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#b9d8c2"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "ellipse",
+            "label": "",
+            "initial": {
+              "x": 58,
+              "y": 35,
+              "width": 30,
+              "height": 25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#e1ba77"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "text",
+            "label": "Compare the states",
+            "initial": {
+              "x": 12,
+              "y": 18,
+              "width": 76,
+              "height": 8,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#ffffff"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "transform",
+            "targetIds": [
+              "object-1"
+            ],
+            "startFrame": 10,
+            "endFrame": 80,
+            "staggerFrames": 0,
+            "ease": "smooth",
+            "to": {
+              "width": 42
+            }
+          },
+          {
+            "behavior": "transform",
+            "targetIds": [
+              "camera"
+            ],
+            "startFrame": 10,
+            "endFrame": 80,
+            "staggerFrames": 0,
+            "ease": "smooth",
+            "to": {
+              "x": -4,
+              "scale": 1.02
+            }
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "start",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-2",
+        "sourceIndex": 1,
+        "sourceHash": "500a238782080ba007b8a41a56984f0148b20273150159fd934a1a64a781eb5e",
+        "lineNumbers": [
+          2
+        ],
+        "durationFrames": 120,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "rect",
+            "label": "",
+            "initial": {
+              "x": 12,
+              "y": 35,
+              "width": 42,
+              "height": 25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#b9d8c2"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "ellipse",
+            "label": "",
+            "initial": {
+              "x": 58,
+              "y": 35,
+              "width": 30,
+              "height": 25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#e1ba77"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "text",
+            "label": "Compare the states",
+            "initial": {
+              "x": 12,
+              "y": 18,
+              "width": 76,
+              "height": 8,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#ffffff"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "transform",
+            "targetIds": [
+              "object-1"
+            ],
+            "startFrame": 10,
+            "endFrame": 80,
+            "staggerFrames": 0,
+            "ease": "smooth",
+            "to": {
+              "width": 42,
+              "y": 55
+            }
+          }
+        ],
+        "camera": {
+          "x": -4,
+          "y": 0,
+          "scale": 1.02,
+          "rotation": 0
+        },
+        "incoming": {
+          "type": "continuous",
+          "overlapFrames": 0,
+          "presentation": "shared",
+          "anchor": {
+            "previousObjectId": "object-1",
+            "objectId": "object-1"
+          }
+        }
+      },
+      {
+        "id": "shot-3",
+        "sourceIndex": 2,
+        "sourceHash": "a040ee129e79b119193734b42ec277ea212187a50647af25c59c5cd5638793f7",
+        "lineNumbers": [
+          3
+        ],
+        "durationFrames": 120,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "rect",
+            "label": "",
+            "initial": {
+              "x": 12,
+              "y": 35,
+              "width": 30,
+              "height": 25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#b9d8c2"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "ellipse",
+            "label": "",
+            "initial": {
+              "x": 58,
+              "y": 35,
+              "width": 30,
+              "height": 25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#e1ba77"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "text",
+            "label": "Compare the states",
+            "initial": {
+              "x": 12,
+              "y": 18,
+              "width": 76,
+              "height": 8,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#ffffff"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "transform",
+            "targetIds": [
+              "object-1"
+            ],
+            "startFrame": 10,
+            "endFrame": 80,
+            "staggerFrames": 0,
+            "ease": "smooth",
+            "to": {
+              "width": 42
+            }
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "reveal",
+          "overlapFrames": 15,
+          "presentation": "fade",
+          "anchor": null
+        }
+      }
+    ]
+  },
+  "compiled": {
+    "plan": {
+      "schemaVersion": 1,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "interpreterVersion": "1",
+      "shots": [
+        {
+          "id": "shot-1",
+          "sourceIndex": 0,
+          "sourceHash": "7ff12c76b59b107868971f4665b1f55ef64f58d0d0786465b198ebeb1a097719",
+          "lineNumbers": [
+            1
+          ],
+          "durationFrames": 120,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 12,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#b9d8c2"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": 1,
+              "type": "ellipse",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#e1ba77"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "text",
+              "label": "Compare the states",
+              "initial": {
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#ffffff"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-1"
+              ],
+              "startFrame": 10,
+              "endFrame": 80,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "width": 42
+              }
+            },
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "camera"
+              ],
+              "startFrame": 10,
+              "endFrame": 80,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "x": -4,
+                "scale": 1.02
+              }
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "start",
+            "overlapFrames": 0,
+            "presentation": "cut",
+            "anchor": null
+          }
+        },
+        {
+          "id": "shot-2",
+          "sourceIndex": 1,
+          "sourceHash": "500a238782080ba007b8a41a56984f0148b20273150159fd934a1a64a781eb5e",
+          "lineNumbers": [
+            2
+          ],
+          "durationFrames": 120,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 12,
+                "y": 35,
+                "width": 42,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#b9d8c2"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": 1,
+              "type": "ellipse",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#e1ba77"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "text",
+              "label": "Compare the states",
+              "initial": {
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#ffffff"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-1"
+              ],
+              "startFrame": 10,
+              "endFrame": 80,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "y": 55,
+                "width": 42
+              }
+            }
+          ],
+          "camera": {
+            "x": -4,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1.02
+          },
+          "incoming": {
+            "type": "continuous",
+            "overlapFrames": 0,
+            "presentation": "shared",
+            "anchor": {
+              "previousObjectId": "object-1",
+              "objectId": "object-1"
+            }
+          }
+        },
+        {
+          "id": "shot-3",
+          "sourceIndex": 2,
+          "sourceHash": "a040ee129e79b119193734b42ec277ea212187a50647af25c59c5cd5638793f7",
+          "lineNumbers": [
+            3
+          ],
+          "durationFrames": 120,
+          "objects": [
+            {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 12,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#b9d8c2"
+              }
+            },
+            {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": 1,
+              "type": "ellipse",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#e1ba77"
+              }
+            },
+            {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "text",
+              "label": "Compare the states",
+              "initial": {
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#ffffff"
+              }
+            }
+          ],
+          "actions": [
+            {
+              "behavior": "transform",
+              "targetIds": [
+                "object-1"
+              ],
+              "startFrame": 10,
+              "endFrame": 80,
+              "staggerFrames": 0,
+              "ease": "smooth",
+              "to": {
+                "width": 42
+              }
+            }
+          ],
+          "camera": {
+            "x": 0,
+            "y": 0,
+            "rotation": 0,
+            "scale": 1
+          },
+          "incoming": {
+            "type": "reveal",
+            "overlapFrames": 15,
+            "presentation": "fade",
+            "anchor": null
+          }
+        }
+      ]
+    },
+    "groups": [
+      {
+        "id": "shot-1",
+        "durationFrames": 240,
+        "incoming": {
+          "type": "start",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        },
+        "actors": [
+          {
+            "id": "actor-0",
+            "object": {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 12,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#b9d8c2"
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 240
+          },
+          {
+            "id": "actor-1",
+            "object": {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": 1,
+              "type": "ellipse",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#e1ba77"
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 120
+          },
+          {
+            "id": "actor-2",
+            "object": {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "text",
+              "label": "Compare the states",
+              "initial": {
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#ffffff"
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 120
+          },
+          {
+            "id": "actor-3",
+            "object": {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": 1,
+              "type": "ellipse",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#e1ba77"
+              }
+            },
+            "startFrame": 120,
+            "endFrame": 240
+          },
+          {
+            "id": "actor-4",
+            "object": {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "text",
+              "label": "Compare the states",
+              "initial": {
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#ffffff"
+              }
+            },
+            "startFrame": 120,
+            "endFrame": 240
+          }
+        ],
+        "shots": [
+          {
+            "shot": {
+              "id": "shot-1",
+              "sourceIndex": 0,
+              "sourceHash": "7ff12c76b59b107868971f4665b1f55ef64f58d0d0786465b198ebeb1a097719",
+              "lineNumbers": [
+                1
+              ],
+              "durationFrames": 120,
+              "objects": [
+                {
+                  "id": "object-1",
+                  "startIndex": 0,
+                  "endIndex": 0,
+                  "type": "rect",
+                  "label": "",
+                  "initial": {
+                    "x": 12,
+                    "y": 35,
+                    "width": 30,
+                    "height": 25,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#b9d8c2"
+                  }
+                },
+                {
+                  "id": "object-2",
+                  "startIndex": 1,
+                  "endIndex": 1,
+                  "type": "ellipse",
+                  "label": "",
+                  "initial": {
+                    "x": 58,
+                    "y": 35,
+                    "width": 30,
+                    "height": 25,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#e1ba77"
+                  }
+                },
+                {
+                  "id": "object-3",
+                  "startIndex": 2,
+                  "endIndex": 2,
+                  "type": "text",
+                  "label": "Compare the states",
+                  "initial": {
+                    "x": 12,
+                    "y": 18,
+                    "width": 76,
+                    "height": 8,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#ffffff"
+                  }
+                }
+              ],
+              "actions": [
+                {
+                  "behavior": "transform",
+                  "targetIds": [
+                    "object-1"
+                  ],
+                  "startFrame": 10,
+                  "endFrame": 80,
+                  "staggerFrames": 0,
+                  "ease": "smooth",
+                  "to": {
+                    "width": 42
+                  }
+                },
+                {
+                  "behavior": "transform",
+                  "targetIds": [
+                    "camera"
+                  ],
+                  "startFrame": 10,
+                  "endFrame": 80,
+                  "staggerFrames": 0,
+                  "ease": "smooth",
+                  "to": {
+                    "x": -4,
+                    "scale": 1.02
+                  }
+                }
+              ],
+              "camera": {
+                "x": 0,
+                "y": 0,
+                "rotation": 0,
+                "scale": 1
+              },
+              "incoming": {
+                "type": "start",
+                "overlapFrames": 0,
+                "presentation": "cut",
+                "anchor": null
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 120,
+            "targets": {
+              "object-1": "actor-0",
+              "object-2": "actor-1",
+              "object-3": "actor-2"
+            },
+            "background": {
+              "start": "#172020",
+              "end": "#172020"
+            }
+          },
+          {
+            "shot": {
+              "id": "shot-2",
+              "sourceIndex": 1,
+              "sourceHash": "500a238782080ba007b8a41a56984f0148b20273150159fd934a1a64a781eb5e",
+              "lineNumbers": [
+                2
+              ],
+              "durationFrames": 120,
+              "objects": [
+                {
+                  "id": "object-1",
+                  "startIndex": 0,
+                  "endIndex": 0,
+                  "type": "rect",
+                  "label": "",
+                  "initial": {
+                    "x": 12,
+                    "y": 35,
+                    "width": 42,
+                    "height": 25,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#b9d8c2"
+                  }
+                },
+                {
+                  "id": "object-2",
+                  "startIndex": 1,
+                  "endIndex": 1,
+                  "type": "ellipse",
+                  "label": "",
+                  "initial": {
+                    "x": 58,
+                    "y": 35,
+                    "width": 30,
+                    "height": 25,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#e1ba77"
+                  }
+                },
+                {
+                  "id": "object-3",
+                  "startIndex": 2,
+                  "endIndex": 2,
+                  "type": "text",
+                  "label": "Compare the states",
+                  "initial": {
+                    "x": 12,
+                    "y": 18,
+                    "width": 76,
+                    "height": 8,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#ffffff"
+                  }
+                }
+              ],
+              "actions": [
+                {
+                  "behavior": "transform",
+                  "targetIds": [
+                    "object-1"
+                  ],
+                  "startFrame": 10,
+                  "endFrame": 80,
+                  "staggerFrames": 0,
+                  "ease": "smooth",
+                  "to": {
+                    "y": 55,
+                    "width": 42
+                  }
+                }
+              ],
+              "camera": {
+                "x": -4,
+                "y": 0,
+                "rotation": 0,
+                "scale": 1.02
+              },
+              "incoming": {
+                "type": "continuous",
+                "overlapFrames": 0,
+                "presentation": "shared",
+                "anchor": {
+                  "previousObjectId": "object-1",
+                  "objectId": "object-1"
+                }
+              }
+            },
+            "startFrame": 120,
+            "endFrame": 240,
+            "targets": {
+              "object-1": "actor-0",
+              "object-2": "actor-3",
+              "object-3": "actor-4"
+            },
+            "background": {
+              "start": "#172020",
+              "end": "#172020"
+            }
+          }
+        ]
+      },
+      {
+        "id": "shot-3",
+        "durationFrames": 120,
+        "incoming": {
+          "type": "reveal",
+          "overlapFrames": 15,
+          "presentation": "fade",
+          "anchor": null
+        },
+        "actors": [
+          {
+            "id": "actor-0",
+            "object": {
+              "id": "object-1",
+              "startIndex": 0,
+              "endIndex": 0,
+              "type": "rect",
+              "label": "",
+              "initial": {
+                "x": 12,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#b9d8c2"
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 120
+          },
+          {
+            "id": "actor-1",
+            "object": {
+              "id": "object-2",
+              "startIndex": 1,
+              "endIndex": 1,
+              "type": "ellipse",
+              "label": "",
+              "initial": {
+                "x": 58,
+                "y": 35,
+                "width": 30,
+                "height": 25,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#e1ba77"
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 120
+          },
+          {
+            "id": "actor-2",
+            "object": {
+              "id": "object-3",
+              "startIndex": 2,
+              "endIndex": 2,
+              "type": "text",
+              "label": "Compare the states",
+              "initial": {
+                "x": 12,
+                "y": 18,
+                "width": 76,
+                "height": 8,
+                "opacity": 1,
+                "rotation": 0,
+                "scale": 1,
+                "color": "#ffffff"
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 120
+          }
+        ],
+        "shots": [
+          {
+            "shot": {
+              "id": "shot-3",
+              "sourceIndex": 2,
+              "sourceHash": "a040ee129e79b119193734b42ec277ea212187a50647af25c59c5cd5638793f7",
+              "lineNumbers": [
+                3
+              ],
+              "durationFrames": 120,
+              "objects": [
+                {
+                  "id": "object-1",
+                  "startIndex": 0,
+                  "endIndex": 0,
+                  "type": "rect",
+                  "label": "",
+                  "initial": {
+                    "x": 12,
+                    "y": 35,
+                    "width": 30,
+                    "height": 25,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#b9d8c2"
+                  }
+                },
+                {
+                  "id": "object-2",
+                  "startIndex": 1,
+                  "endIndex": 1,
+                  "type": "ellipse",
+                  "label": "",
+                  "initial": {
+                    "x": 58,
+                    "y": 35,
+                    "width": 30,
+                    "height": 25,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#e1ba77"
+                  }
+                },
+                {
+                  "id": "object-3",
+                  "startIndex": 2,
+                  "endIndex": 2,
+                  "type": "text",
+                  "label": "Compare the states",
+                  "initial": {
+                    "x": 12,
+                    "y": 18,
+                    "width": 76,
+                    "height": 8,
+                    "opacity": 1,
+                    "rotation": 0,
+                    "scale": 1,
+                    "color": "#ffffff"
+                  }
+                }
+              ],
+              "actions": [
+                {
+                  "behavior": "transform",
+                  "targetIds": [
+                    "object-1"
+                  ],
+                  "startFrame": 10,
+                  "endFrame": 80,
+                  "staggerFrames": 0,
+                  "ease": "smooth",
+                  "to": {
+                    "width": 42
+                  }
+                }
+              ],
+              "camera": {
+                "x": 0,
+                "y": 0,
+                "rotation": 0,
+                "scale": 1
+              },
+              "incoming": {
+                "type": "reveal",
+                "overlapFrames": 15,
+                "presentation": "fade",
+                "anchor": null
+              }
+            },
+            "startFrame": 0,
+            "endFrame": 120,
+            "targets": {
+              "object-1": "actor-0",
+              "object-2": "actor-1",
+              "object-3": "actor-2"
+            },
+            "background": {
+              "start": "#172020",
+              "end": "#172020"
+            }
+          }
+        ]
+      }
+    ],
+    "shots": [
+      {
+        "shotId": "shot-1",
+        "startFrame": 0,
+        "endFrame": 120,
+        "durationFrames": 120
+      },
+      {
+        "shotId": "shot-2",
+        "startFrame": 120,
+        "endFrame": 240,
+        "durationFrames": 120
+      },
+      {
+        "shotId": "shot-3",
+        "startFrame": 225,
+        "endFrame": 345,
+        "durationFrames": 120
+      }
+    ],
+    "durationFrames": 345
+  }
+}
