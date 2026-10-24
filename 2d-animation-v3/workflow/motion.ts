@@ -3,6 +3,8 @@ import { primitiveSchema, type VisualArtifact } from "./visuals.ts";
 import { expandBeats } from "../engine/motion-presets/index.ts";
 import { componentPartsSchema, componentParts, isComponent, partStateSchema, chartValuesSchema } from "./components.ts";
 
+import { graphicReferenceSchema, validGraphicReference } from "./graphic-assets.ts";
+
 const key = z.string().regex(/^[a-z][a-z0-9-]{0,39}$/);
 const target = z.string().regex(/^[a-z][a-z0-9-]{0,39}(?:\.[a-z][a-z0-9-]{0,19})?$/);
 export function splitPanel(progress: number, entering: boolean) {
@@ -22,9 +24,10 @@ export const motionObjectSchema = z.strictObject({
   id: key.refine((id) => id !== "camera", "camera is a reserved target"),
   startIndex: z.number().int().min(0).max(15).nullable(), endIndex: z.number().int().min(0).max(15).nullable(),
   type: primitiveSchema, label: z.string().max(60), initial: motionStateSchema,
+  asset: graphicReferenceSchema.optional(),
   initialParts: componentPartsSchema.optional(),
   values: chartValuesSchema.optional(),
-});
+}).refine((object) => validGraphicReference(object.type, object.asset), "Graphic asset identity or hash is invalid.");
 export const motionActionSchema = z.strictObject({
   behavior: z.enum(["transform", "fade", "hold"]), targetIds: z.array(target).min(1).max(16),
   startFrame: frame, endFrame: frame, staggerFrames: z.number().int().min(0).max(1800),
@@ -99,7 +102,7 @@ export const motionRequestSchema = z.strictObject({ storyboardId: z.uuid(), base
 export const motionArtifactSchema = z.strictObject({ schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(), parentId: z.uuid().nullable(), source: motionSourceSchema, plan: motionPlanSchema });
 export type MotionArtifact = z.infer<typeof motionArtifactSchema>;
 export const generatedMotionShotSchema = motionShotSchema.omit({ id: true, sourceIndex: true, sourceHash: true, lineNumbers: true, objects: true, beats: true }).extend({
-  objects: z.array(motionObjectSchema.pick({ id: true, startIndex: true, endIndex: true })).min(1).max(16),
+  objects: z.array(z.strictObject({ id: motionObjectSchema.shape.id, startIndex: motionObjectSchema.shape.startIndex, endIndex: motionObjectSchema.shape.endIndex })).min(1).max(16),
 });
 export const generatedMotionSchema = z.strictObject({ shots: z.array(generatedMotionShotSchema).min(1).max(40) });
 export const scopedMotionSchema = motionShotSchema.pick({ actions: true, camera: true, durationFrames: true, incoming: true });
@@ -123,7 +126,7 @@ export function hydrateMotion(input: unknown, board: VisualArtifact, hashShot: (
     objects: shot.objects.map((object) => {
       const shape = object.startIndex === null ? object.endIndex === null ? null : source[index].endFrame.shapes[object.endIndex] : source[index].startFrame.shapes[object.startIndex];
       if (!shape) throw new Error("Object correspondence references a missing shape.");
-      return { ...object, type: shape.type, label: shape.label, initial: { x: shape.x, y: shape.y, width: shape.width, height: shape.height, color: shape.color, opacity: object.startIndex === null ? 0 : 1, scale: 1, rotation: 0 }, ...(isComponent(shape.type) ? { initialParts: componentParts(shape.type, shape.color, shape.parts) } : {}), ...(shape.values ? { values: shape.values } : {}) };
+      return { ...object, type: shape.type, label: shape.label, ...(shape.asset ? { asset: shape.asset } : {}), initial: { x: shape.x, y: shape.y, width: shape.width, height: shape.height, color: shape.color, opacity: object.startIndex === null ? 0 : 1, scale: 1, rotation: 0 }, ...(isComponent(shape.type) ? { initialParts: componentParts(shape.type, shape.color, shape.parts) } : {}), ...(shape.values ? { values: shape.values } : {}) };
     }),
   })) });
 }
@@ -171,6 +174,7 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       if (!initial || [from, to].some((shape) => shape && (shape.type !== object.type || shape.label !== object.label))) throw new Error("Unsupported primitive or label correspondence.");
       if (["x", "y", "width", "height", "color"].some((field) => object.initial[field as keyof MotionState] !== initial[field as keyof typeof initial]) || object.initial.opacity !== (from ? 1 : 0) || object.initial.scale !== 1 || object.initial.rotation !== 0) throw new Error("Initial object state must match its drawing.");
       finalStates.set(object.id, { ...object.initial });
+      if (JSON.stringify(object.asset) !== JSON.stringify(initial.asset) || to && JSON.stringify(to.asset) !== JSON.stringify(initial.asset)) throw new Error("Graphic asset references must match both approved drawings.");
       if (object.initial.reveal !== undefined) throw new Error("Reveal masks belong to component parts only.");
       if (JSON.stringify(object.values) !== JSON.stringify(initial.values) || to && JSON.stringify(to.values) !== JSON.stringify(initial.values)) throw new Error("Chart values must match both source drawings; use replacement actors to change supplied values.");
       if (isComponent(object.type)) {
@@ -223,7 +227,7 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       if (!from || !to || from.type !== to.type || from.endIndex === null || to.startIndex === null) throw new Error("Invalid shared anchor.");
       const before = sourceShots[index - 1].endFrame.shapes[from.endIndex]; const after = source.startFrame.shapes[to.startIndex];
       if (["x", "y", "width", "height"].some((field) => before[field as keyof typeof before] !== after[field as keyof typeof after])) throw new Error("Shared anchor geometry is discontinuous.");
-      if (["continuous", "motion-match"].includes(shot.incoming.type) && (before.color !== after.color || from.label !== to.label)) throw new Error("Continuous anchor appearance must remain unchanged.");
+      if (["continuous", "motion-match"].includes(shot.incoming.type) && (before.color !== after.color || from.label !== to.label || JSON.stringify(before.asset) !== JSON.stringify(after.asset))) throw new Error("Continuous anchor appearance must remain unchanged.");
       if (["continuous", "motion-match"].includes(shot.incoming.type) && isComponent(from.type) && JSON.stringify(componentParts(from.type, before.color, before.parts)) !== JSON.stringify(componentParts(from.type, after.color, after.parts))) throw new Error("Continuous component parts must remain unchanged at the boundary.");
       const camera = { ...previous.camera };
       for (const action of previous.actions) if (action.targetIds.includes("camera")) Object.assign(camera, action.to);

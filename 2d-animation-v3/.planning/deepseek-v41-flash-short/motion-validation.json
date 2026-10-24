@@ -1,0 +1,65 @@
+{
+  "frames": 2100,
+  "seconds": 70,
+  "objects": [
+    5,
+    7,
+    8,
+    16,
+    16,
+    6,
+    9
+  ],
+  "expandedActions": [
+    19,
+    24,
+    27,
+    49,
+    41,
+    19,
+    29
+  ],
+  "groups": [
+    {
+      "actors": 5,
+      "expandedTargets": 19
+    },
+    {
+      "actors": 7,
+      "expandedTargets": 24
+    },
+    {
+      "actors": 38,
+      "expandedTargets": 117
+    },
+    {
+      "actors": 6,
+      "expandedTargets": 19
+    },
+    {
+      "actors": 9,
+      "expandedTargets": 29
+    }
+  ],
+  "findings": [
+    {
+      "id": "text-crowding:shot-4:object-9/object-11",
+      "ruleId": "text-crowding",
+      "shotId": "shot-4",
+      "targetId": "object-9/object-11",
+      "startFrame": 1078,
+      "endFrame": 1079,
+      "severity": "review",
+      "message": "Shot 4: settled text boxes overlap.",
+      "evidence": "object-9 and object-11 have intersecting world bounds.",
+      "suggestion": "Separate the labels or reveal them sequentially.",
+      "heuristic": true
+    }
+  ],
+  "reviewedFindings": [
+    {
+      "id": "text-crowding:shot-4:object-9/object-11",
+      "conclusion": "Source label boxes only touch at an edge; floating-point world bounds trigger the overlap heuristic."
+    }
+  ]
+}

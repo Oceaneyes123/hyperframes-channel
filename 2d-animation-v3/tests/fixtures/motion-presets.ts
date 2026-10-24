@@ -13,7 +13,7 @@ export function presetScene(start: Frame["shapes"], end: Frame["shapes"], mappin
   const shot = plan.shots[0]; plan.shots = [shot]; shot.durationFrames = 120; shot.sourceHash = hashMotionSource(drawing);
   shot.objects = mappings.map(([startIndex, endIndex], index) => {
     const shape = (startIndex === null ? end[endIndex!] : start[startIndex]);
-    return { id: `object-${index + 1}`, startIndex, endIndex, type: shape.type, label: shape.label,
+    return { id: `object-${index + 1}`, startIndex, endIndex, type: shape.type, label: shape.label, ...(shape.asset ? { asset: shape.asset } : {}),
       initial: { x: shape.x, y: shape.y, width: shape.width, height: shape.height, color: shape.color, opacity: startIndex === null ? 0 : 1, scale: 1, rotation: 0 } };
   });
   shot.beats = [motionBeatSchema.parse({ id: "beat-1", purpose: "Synthetic semantic preset verification.", type: "transformation", startFrame: 5, endFrame: 35, importance: "primary", narrationAnchor: null, continuity: null, ...preset })];

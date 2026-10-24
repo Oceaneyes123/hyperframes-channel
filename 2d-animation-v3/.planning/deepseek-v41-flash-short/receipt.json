@@ -1,0 +1,92 @@
+{
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "revisionId": "8fcf2dcc-7523-4e69-b02b-946f05ea0d5e",
+  "briefId": "6486f371-ed1e-4d88-b299-509e076b61da",
+  "words": 189,
+  "estimatedSecondsAt160To175Wpm": [
+    65,
+    71
+  ],
+  "scriptAccepted": true,
+  "hookSelected": true,
+  "storyboardAccepted": true,
+  "motionAccepted": true,
+  "productionGates": true,
+  "renderAuthorized": true,
+  "published": false,
+  "sourceReview": "docs/projects/deepseek-v41-flash/FACTS.md",
+  "review": "docs/projects/deepseek-v41-flash/REVIEW.md",
+  "manualDraft": true,
+  "independentEditorialReview": false,
+  "previousProjectMetadataPreserved": 3,
+  "hooksId": "2d60884a-aacc-4950-bf0e-22e71a1a12a5",
+  "previousRevisionId": "d5a6f0b2-61a5-4de4-818b-36569b7a8549",
+  "scriptApprovalEvidence": "User: That is better, please continue. Approval applies to revision 8fcf2dcc-7523-4e69-b02b-946f05ea0d5e",
+  "conceptsId": "fd9a69e1-d9b1-4aa5-b8ec-5096ddd04884",
+  "selectionId": "2c741195-edeb-4285-bc73-f0672ba4cd6e",
+  "conceptNumber": 2,
+  "conceptTitle": "The Owner's Control Desk",
+  "storyboardId": "d33279c0-0171-4f6f-9414-9a1e54970c0d",
+  "previousStoryboardId": "acd1a72f-40e6-4a1d-9695-0da095d99fc8",
+  "storyboardAuthorship": "Gateway base with Codex-authored refinement through existing visual store",
+  "approvedStoryboardId": "d33279c0-0171-4f6f-9414-9a1e54970c0d",
+  "storyboardApprovalEvidence": "User: I am good with it, approving readability revision d33279c0-0171-4f6f-9414-9a1e54970c0d.",
+  "storyboardApprovalPending": false,
+  "motionCompatibility": [
+    {
+      "shot": 1,
+      "minActors": 5
+    },
+    {
+      "shot": 2,
+      "minActors": 7
+    },
+    {
+      "shot": 3,
+      "minActors": 8
+    },
+    {
+      "shot": 4,
+      "minActors": 16
+    },
+    {
+      "shot": 5,
+      "minActors": 16
+    },
+    {
+      "shot": 6,
+      "minActors": 6
+    },
+    {
+      "shot": 7,
+      "minActors": 9
+    }
+  ],
+  "motionId": "9344b2b9-0167-4fd3-bec5-036b6e2f7d2b",
+  "motionModel": "codex-authored-motion-correction",
+  "motionAuthorship": "Directly authored using the installed interpreter and presets after two rejected gateway outputs.",
+  "readabilityRevisionPending": false,
+  "readabilityCheck": {
+    "minimumPixels": 56,
+    "allStatesChecked": true,
+    "labelOverlapCount": 0
+  },
+  "previousMotionId": "22b2fd53-c777-4544-9e8e-cf0bc2646e13",
+  "motionPreviewReview": {
+    "playbackObserved": true,
+    "finalFrameSeekVerified": 2099,
+    "outputStateInspected": 1060,
+    "narrationPresent": false,
+    "requiresHumanMotionApproval": true
+  },
+  "motionApprovalEvidence": "User: That is great, please continue, following updated motion preview9344b2b9-0167-4fd3-bec5-036b6e2f7d2b.",
+  "narrationId": "de9a1322-afd4-4911-93a0-03e942d264e3",
+  "narrationSeconds": 70,
+  "narrationReviewPending": false,
+  "narrationPath": ".data/deepseek-short-eec7f710/narration.wav",
+  "renderApprovalEvidence": "Ok it's better, now render",
+  "productionBinding": "64781f319b51b19e431dfc6e430558f23e79d9bf30f60f8b237aa59f91c96ee2",
+  "renderJobId": "96ac9df4-b590-48c5-9377-2d18768da8fc",
+  "exportPath": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\videos\\eec7f710-650b-43f5-a93d-9757ee3000c2\\production\\96ac9df4-b590-48c5-9377-2d18768da8fc\\export.mp4",
+  "exportVerified": true
+}

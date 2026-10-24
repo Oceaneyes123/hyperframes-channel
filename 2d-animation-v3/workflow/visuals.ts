@@ -1,10 +1,12 @@
 import { z } from "zod";
 import { componentPartsSchema, componentRegistry, isComponent, chartValuesSchema } from "./components.ts";
 
+import { graphicReferenceSchema, validGraphicReference, isGraphicAsset } from "./graphic-assets.ts";
+
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 const position = z.number().min(0).max(100);
-export const primitiveSchema = z.enum(["rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1"]);
+export const primitiveSchema = z.enum(["rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1"]);
 // Only declarative shapes cross the model boundary; markup, URLs and code never do.
 export const frameSchema = z.strictObject({
   background: color,
@@ -12,9 +14,12 @@ export const frameSchema = z.strictObject({
     type: primitiveSchema,
     x: position, y: position, width: z.number().positive().max(100), height: z.number().positive().max(100),
     color, label: z.string().max(60),
+    asset: graphicReferenceSchema.optional(),
     parts: componentPartsSchema.optional(),
     values: chartValuesSchema.optional(),
   }).superRefine((shape, context) => {
+    if (!validGraphicReference(shape.type, shape.asset)) context.addIssue({ code: "custom", message: "Graphic asset identity or hash is invalid." });
+    if (isGraphicAsset(shape.type) && Math.abs(shape.width * 1080 / (shape.height * 1920) - .75) > .001) context.addIssue({ code: "custom", message: "Graphic artwork requires its registered 3:4 aspect ratio." });
     if (shape.x + shape.width > 100 || shape.y + shape.height > 100) context.addIssue({ code: "custom", message: "Shape exceeds the frame." });
     if (shape.parts && (!isComponent(shape.type) || Object.keys(shape.parts).some((part) => !(componentRegistry[shape.type as keyof typeof componentRegistry] as readonly string[]).includes(part)))) context.addIssue({ code: "custom", message: "Only registered component parts are allowed." });
     if ((shape.type === "cost-chart@1") !== (shape.values !== undefined)) context.addIssue({ code: "custom", message: "Only charts require supplied integer values." });
@@ -50,10 +55,16 @@ export const visualRequestSchema = z.strictObject({
   }
 });
 export const visualArtifactSchema = z.strictObject({
-  schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(),
+  schemaVersion: z.union([z.literal(1), z.literal(2)]), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(),
   scriptId: z.uuid(), scriptHash: z.string().regex(/^[a-f0-9]{64}$/), selectionId: z.uuid().nullable(),
   baseId: z.uuid().nullable(), instruction: z.string().max(2000), output: visualOutputSchema,
+}).superRefine((artifact, context) => {
+  if (artifact.schemaVersion === 1 && visualSchemaVersion(artifact.output) === 2) context.addIssue({ code: "custom", message: "Graphic assets require visual artifact version 2." });
 });
+export function visualSchemaVersion(output: z.infer<typeof visualOutputSchema>) {
+  const frames = output.kind === "concepts" ? output.concepts.map((concept) => concept.frame) : output.shots.flatMap((shot) => [shot.startFrame, shot.endFrame]);
+  return frames.some((frame) => frame.shapes.some((shape) => isGraphicAsset(shape.type))) ? 2 : 1;
+}
 export type VisualArtifact = z.infer<typeof visualArtifactSchema>;
 export type VisualRequest = z.infer<typeof visualRequestSchema>;
 export type VisualOutput = z.infer<typeof visualOutputSchema>;
