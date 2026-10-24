@@ -44,7 +44,9 @@ export async function requestReplacement(config: Gateway, context: {
   ], signal, progress));
 }
 
-export async function requestJson(config: Gateway, messages: { role: "system" | "user"; content: string }[], signal: AbortSignal, progress: (characters: number) => void) {
+export type GatewayMessage = { role: "system" | "user"; content: string | ({ type: "text"; text: string } | { type: "image_url"; image_url: { url: string; detail: "low" } })[] };
+
+export async function requestJson(config: Gateway, messages: GatewayMessage[], signal: AbortSignal, progress: (characters: number) => void) {
   await verifyModel(config, signal);
   const response = await fetch(endpoint(config, "chat/completions"), {
     method: "POST", headers: { ...authorization(config), "Content-Type": "application/json" }, signal, redirect: "error",

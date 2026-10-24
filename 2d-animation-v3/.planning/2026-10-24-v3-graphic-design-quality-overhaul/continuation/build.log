@@ -1,0 +1,242 @@
+
+> hyperframes-studio-v3@0.0.0 build
+> next build
+
+▲ Next.js 16.4.2 (Turbopack)
+- Environments: .env
+✓ Running next.config.ts took 70ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 7.0s
+  Running TypeScript ...
+  Finished TypeScript in 6.5s ...
+  Collecting page data using 15 workers ...
+(node:34120) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:39120) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:840) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42740) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:42312) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:41920) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:28624) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:10796) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:29268) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:41296) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:38352) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48264) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45904) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+  Generating static pages using 15 workers (0/2) ...
+✓ Generating static pages using 15 workers (2/2) in 276ms
+Turbopack build encountered 9 warnings:
+./server/production-store.ts:78:19
+Warning: The file pattern (<dynamic> '/' <dynamic> '/production' | <dynamic> '/production' | <dynamic> '/' <dynamic> 'production' | <dynamic> 'production') matches 12048 files in [project]/
+  76 |           if (!planned || planned.artifact.audioHash !== hash(bytes) || JSON.stringify(pla...
+  77 |         }
+> 78 |         mkdirSync(join(videos, projectId, "production"), { recursive: true }); writeFileSy...
+     |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  79 |         append(projectId, "narration", { motionId, motionHash: receipt.sha256, audioHash: ...
+  80 |       }); } catch (error) { if (owned) rmSync(path); throw error; }
+  81 |     },
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import traces:
+  #1 [App Route]:
+    ./server/production-store.ts
+    ./app/api/projects/[id]/production/route.ts
+
+  #2 [Server Component]:
+    ./server/production-store.ts
+    ./app/actions.ts
+
+  #3 [Server Component]:
+    ./server/production-store.ts
+    ./app/projects/[id]/visuals/page.tsx
+
+  #4 [App Route]:
+    ./server/production-store.ts
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:59:93
+Warning: The file pattern (<dynamic> '/' <dynamic> '/production/' <dynamic> '/frames' | <dynamic> '/production/' <dynamic> '/frames' | <dynamic> '/' <dynamic> 'production/' <dynamic> '/frames' | <dynamic> 'production/' <dynamic> '/frames' | <dynamic> '/' <dynamic> '/production' <dynamic> '/frames' | <dynamic> '/production' <dynamic> '/frames' | <dynamic> '/' <dynamic> 'production' <dynamic> '/frames' | <dynamic> 'production' <dynamic> '/frames' | <dynamic> '/' <dynamic> '/production/' <dynamic> 'frames' | <dynamic> '/production/' <dynamic> 'frames' | <dynamic> '/' <dynamic> 'production/' <dynamic> 'frames' | <dynamic> 'production/' <dynamic> 'frames' | <dynamic> '/' <dynamic> '/production' <dynamic> 'frames' | <dynamic> '/production' <dynamic> 'frames' | <dynamic> '/' <dynamic> 'production' <dynamic> 'frames' | <dynamic> 'production' <dynamic> 'frames') matches 11994 files in [project]/
+  57 | ...
+  58 | ... browserExecutable, outputLocation: join(output, "export.mp4"), codec: "h264", pixelFor...
+> 59 | ..., browserExecutable, outputDir: join(output, "frames"), imageFormat: "png", concurrency...
+     |                                    ^^^^^^^^^^^^^^^^^^^^^^
+  60 | ...();
+  61 | ...Frames - 1, ...boundariesFor(job.artifact.plan)])) {
+  62 | ...seek-${frame}.png`);
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:60:21
+Warning: The file pattern (<dynamic> '/' <dynamic> '/production/' <dynamic> '/frames' | <dynamic> '/production/' <dynamic> '/frames' | <dynamic> '/' <dynamic> 'production/' <dynamic> '/frames' | <dynamic> 'production/' <dynamic> '/frames' | <dynamic> '/' <dynamic> '/production' <dynamic> '/frames' | <dynamic> '/production' <dynamic> '/frames' | <dynamic> '/' <dynamic> 'production' <dynamic> '/frames' | <dynamic> 'production' <dynamic> '/frames' | <dynamic> '/' <dynamic> '/production/' <dynamic> 'frames' | <dynamic> '/production/' <dynamic> 'frames' | <dynamic> '/' <dynamic> 'production/' <dynamic> 'frames' | <dynamic> 'production/' <dynamic> 'frames' | <dynamic> '/' <dynamic> '/production' <dynamic> 'frames' | <dynamic> '/production' <dynamic> 'frames' | <dynamic> '/' <dynamic> 'production' <dynamic> 'frames' | <dynamic> 'production' <dynamic> 'frames') matches 11994 files in [project]/
+  58 |       await renderMedia({ serveUrl, composition, inputProps, browserExecutable, outputLoca...
+  59 |       await renderFrames({ serveUrl, composition, inputProps, browserExecutable, outputDir...
+> 60 |       const files = readdirSync(join(output, "frames")).sort();
+     |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  61 |       for (const frame of new Set([0, composition.durationInFrames - 1, ...boundariesFor(j...
+  62 |         signal.throwIfAborted(); const path = join(output, `seek-${frame}.png`);
+  63 |         await renderStill({ serveUrl, composition, inputProps, browserExecutable, frame, o...
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:60:33
+Warning: The file pattern (<dynamic> '/' <dynamic> '/production/' <dynamic> '/frames' | <dynamic> '/production/' <dynamic> '/frames' | <dynamic> '/' <dynamic> 'production/' <dynamic> '/frames' | <dynamic> 'production/' <dynamic> '/frames' | <dynamic> '/' <dynamic> '/production' <dynamic> '/frames' | <dynamic> '/production' <dynamic> '/frames' | <dynamic> '/' <dynamic> 'production' <dynamic> '/frames' | <dynamic> 'production' <dynamic> '/frames' | <dynamic> '/' <dynamic> '/production/' <dynamic> 'frames' | <dynamic> '/production/' <dynamic> 'frames' | <dynamic> '/' <dynamic> 'production/' <dynamic> 'frames' | <dynamic> 'production/' <dynamic> 'frames' | <dynamic> '/' <dynamic> '/production' <dynamic> 'frames' | <dynamic> '/production' <dynamic> 'frames' | <dynamic> '/' <dynamic> 'production' <dynamic> 'frames' | <dynamic> 'production' <dynamic> 'frames') matches 11994 files in [project]/
+  58 |       await renderMedia({ serveUrl, composition, inputProps, browserExecutable, outputLoca...
+  59 |       await renderFrames({ serveUrl, composition, inputProps, browserExecutable, outputDir...
+> 60 |       const files = readdirSync(join(output, "frames")).sort();
+     |                                 ^^^^^^^^^^^^^^^^^^^^^^
+  61 |       for (const frame of new Set([0, composition.durationInFrames - 1, ...boundariesFor(j...
+  62 |         signal.throwIfAborted(); const path = join(output, `seek-${frame}.png`);
+  63 |         await renderStill({ serveUrl, composition, inputProps, browserExecutable, frame, o...
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:64:40
+Warning: The file pattern (<dynamic> '/' <dynamic> '/production/' <dynamic> '/frames/' <dynamic> | <dynamic> '/production/' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> '/frames/' <dynamic> | <dynamic> 'production/' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> '/frames/' <dynamic> | <dynamic> '/production' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> '/frames/' <dynamic> | <dynamic> 'production' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> '/production/' <dynamic> 'frames/' <dynamic> | <dynamic> '/production/' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> 'frames/' <dynamic> | <dynamic> 'production/' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> 'frames/' <dynamic> | <dynamic> '/production' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> 'frames/' <dynamic> | <dynamic> 'production' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> '/production/' <dynamic> '/frames' <dynamic> | <dynamic> '/production/' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> '/frames' <dynamic> | <dynamic> 'production/' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> '/frames' <dynamic> | <dynamic> '/production' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> '/frames' <dynamic> | <dynamic> 'production' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> '/production/' <dynamic> 'frames' <dynamic> | <dynamic> '/production/' <dynamic> 'frames' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> 'frames' <dynamic> | <dynamic> 'production/' <dynamic> 'frames' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> 'frames' <dynamic> | <dynamic> '/production' <dynamic> 'frames' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> 'frames' <dynamic> | <dynamic> 'production' <dynamic> 'frames' <dynamic>) matches 11994 files in [project]/
+  62 | ...fAborted(); const path = join(output, `seek-${frame}.png`);
+  63 | ...till({ serveUrl, composition, inputProps, browserExecutable, frame, output: path, image...
+> 64 | ...Sync(path).equals(readFileSync(join(output, "frames", files[frame])))) throw new Error(...
+     |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  65 | ...
+  66 | ...l.removeEventListener("abort", cancel); }
+  67 | ...rted(); const verification = await verifyExport(join(output, "export.mp4"), composition...
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:64:53
+Warning: The file pattern (<dynamic> '/' <dynamic> '/production/' <dynamic> '/frames/' <dynamic> | <dynamic> '/production/' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> '/frames/' <dynamic> | <dynamic> 'production/' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> '/frames/' <dynamic> | <dynamic> '/production' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> '/frames/' <dynamic> | <dynamic> 'production' <dynamic> '/frames/' <dynamic> | <dynamic> '/' <dynamic> '/production/' <dynamic> 'frames/' <dynamic> | <dynamic> '/production/' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> 'frames/' <dynamic> | <dynamic> 'production/' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> 'frames/' <dynamic> | <dynamic> '/production' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> 'frames/' <dynamic> | <dynamic> 'production' <dynamic> 'frames/' <dynamic> | <dynamic> '/' <dynamic> '/production/' <dynamic> '/frames' <dynamic> | <dynamic> '/production/' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> '/frames' <dynamic> | <dynamic> 'production/' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> '/frames' <dynamic> | <dynamic> '/production' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> '/frames' <dynamic> | <dynamic> 'production' <dynamic> '/frames' <dynamic> | <dynamic> '/' <dynamic> '/production/' <dynamic> 'frames' <dynamic> | <dynamic> '/production/' <dynamic> 'frames' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> 'frames' <dynamic> | <dynamic> 'production/' <dynamic> 'frames' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> 'frames' <dynamic> | <dynamic> '/production' <dynamic> 'frames' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> 'frames' <dynamic> | <dynamic> 'production' <dynamic> 'frames' <dynamic>) matches 23988 files in [project]/
+  62 | ...ed(); const path = join(output, `seek-${frame}.png`);
+  63 | ... serveUrl, composition, inputProps, browserExecutable, frame, output: path, imageFormat...
+> 64 | ...ath).equals(readFileSync(join(output, "frames", files[frame])))) throw new Error("Fresh...
+     |                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  65 | ...
+  66 | ...veEventListener("abort", cancel); }
+  67 | ...; const verification = await verifyExport(join(output, "export.mp4"), composition.durat...
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:50:20
+Warning: The file pattern (<dynamic> '/' <dynamic> '/production/' <dynamic> | <dynamic> '/production/' <dynamic> | <dynamic> '/' <dynamic> 'production/' <dynamic> | <dynamic> 'production/' <dynamic> | <dynamic> '/' <dynamic> '/production' <dynamic> | <dynamic> '/production' <dynamic> | <dynamic> '/' <dynamic> 'production' <dynamic> | <dynamic> 'production' <dynamic>) matches 24099 files in [project]/
+  48 | ...{
+  49 | ...gnal.throwIfAborted(); const job = store.beginRender(projectId, binding, authorize); jo...
+> 50 | ...nst output = join(config.videosDirectory, projectId, "production", job.id); mkdirSync(o...
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  51 | ...nst serveUrl = await bundle({ entryPoint: resolve("engine/register.tsx") }); signal.thr...
+  52 | ...nst inputProps = { plan: job.artifact.plan, board: job.board, narrationUrl: `data:audio...
+  53 | ...nst browserExecutable = process.env.V3_CHROME_PATH ?? "C:/Program Files/Google/Chrome/A...
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:21:17
+Warning: The file pattern (<dynamic> '/frames' | <dynamic> 'frames') matches 13434 files in [project]/
+  19 |
+  20 | export async function verifyPreviewFrames(output: string, durationFrames: number) {
+> 21 |   const files = readdirSync(join(output, "frames")).filter((name) => /^element-\d+\.png$/....
+     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  22 |   if (files.length !== durationFrames) throw new Error("Preview reference frame count mism...
+  23 |   const digits = files[0].match(/\d+/)![0].length;
+  24 |   const { stdout } = await run("ffmpeg", ["-v", "error", "-reinit_filter", "0", "-i", "exp...
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+./server/render.ts:21:29
+Warning: The file pattern (<dynamic> '/frames' | <dynamic> 'frames') matches 13434 files in [project]/
+  19 |
+  20 | export async function verifyPreviewFrames(output: string, durationFrames: number) {
+> 21 |   const files = readdirSync(join(output, "frames")).filter((name) => /^element-\d+\.png$/....
+     |                             ^^^^^^^^^^^^^^^^^^^^^^
+  22 |   if (files.length !== durationFrames) throw new Error("Preview reference frame count mism...
+  23 |   const digits = files[0].match(/\d+/)![0].length;
+  24 |   const { stdout } = await run("ffmpeg", ["-v", "error", "-reinit_filter", "0", "-i", "exp...
+
+Overly broad patterns can lead to build performance issues and over bundling.
+
+Import trace:
+  App Route:
+    ./server/render.ts
+    ./app/api/projects/[id]/render/route.ts
+
+
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ƒ /api/health
+├ ƒ /api/projects/[id]/export/[jobId]
+├ ƒ /api/projects/[id]/graphics-review
+├ ƒ /api/projects/[id]/motion
+├ ƒ /api/projects/[id]/narration/[audioId]
+├ ƒ /api/projects/[id]/production
+├ ƒ /api/projects/[id]/render
+├ ƒ /api/projects/[id]/revise
+├ ƒ /api/projects/[id]/timing
+├ ƒ /api/projects/[id]/timing/[timingId]
+├ ƒ /api/projects/[id]/visuals
+├ ƒ /api/projects/[id]/writing
+├ ƒ /projects/[id]
+├ ƒ /projects/[id]/visuals
+└ ƒ /projects/[id]/writing
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

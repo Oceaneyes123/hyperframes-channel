@@ -28,7 +28,7 @@ test("registered artwork source hash and layer metadata match the reviewed asset
 test("production dependencies change when the artwork source or its registry changes", (t) => {
   const root = mkdtempSync(join(tmpdir(), "v3-graphic-binding-"));
   t.after(() => rmSync(root, { recursive: true, force: true }));
-  for (const path of ["engine", "workflow", "server", "next.config.ts", "package-lock.json"]) cpSync(path, join(root, path), { recursive: true });
+  for (const path of ["engine", "workflow", "server", "app", "next.config.ts", "package-lock.json"]) cpSync(path, join(root, path), { recursive: true });
   let before = hashEngine(root); assert.equal(before, hashEngine());
   for (const source of ["engine/graphics/complaint-workflow.tsx", "workflow/graphic-assets.ts"]) {
     appendFileSync(join(root, source), "\n// Synthetic isolated dependency change.\n");

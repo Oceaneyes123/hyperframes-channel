@@ -1,0 +1,163 @@
+
+> hyperframes-studio-v3@0.0.0 check
+> npm run lint && npm run typecheck && npm test
+
+
+> hyperframes-studio-v3@0.0.0 lint
+> eslint .
+
+
+D:\Project\Javascript\hyperframes-channel\2d-animation-v3\.planning\deepseek-v41-flash-short\author-motion.mjs
+  71:13  warning  'sheet' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+> hyperframes-studio-v3@0.0.0 typecheck
+> tsc --noEmit
+
+
+> hyperframes-studio-v3@0.0.0 test
+> node --test tests/*.test.ts
+
+(node:47232) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ registered component parts animate independently and retain approved endpoints (86.0557ms)
+✔ approval and API components reuse the same validated part and actor contracts (121.8374ms)
+✔ mask reveal is bounded to known parts and reaches its exact approved final mask (7.2806ms)
+✔ charts require supplied integer units and phrases reject excessive text (9.3007ms)
+✔ component part markup, unknown selectors, invalid properties and holds fail closed (9.9415ms)
+(node:21548) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ compiler retains a shared actor across continuous shots and schedules overlap once (57.5844ms)
+✔ unsupported motion is rejected instead of silently falling back to a cut (9.3759ms)
+✔ continuous appearance/camera discontinuities are rejected by the source validator (4.6703ms)
+✔ interpreter 2 gives every boundary an explicit presentation and rejects substitutes (14.8632ms)
+✔ safe visual symbols remain bounded declarative data (2.3918ms)
+✔ centered labels retain text motion restrictions (50.841ms)
+(node:41956) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ default configuration needs no credentials (8.1478ms)
+✔ optional gateway configuration accepts HTTP without connecting (1.3395ms)
+✔ invalid configuration fails validation (2.2133ms)
+✔ visual model configuration keeps the default workflow model separate (0.304ms)
+✔ project interchange validates identity and rejects unsupported contracts (11.3399ms)
+✔ SQLite initializes, enforces constraints, and preserves rows on reopen (38.7124ms)
+✔ newer database schema is rejected without altering existing data (29.501ms)
+(node:39348) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ registered artwork source hash and layer metadata match the reviewed asset (20.1522ms)
+✔ production dependencies change when the artwork source or its registry changes (532.5918ms)
+✔ graphic references fail closed on unregistered assets, hashes, markup and incompatible geometry (52.5924ms)
+✔ artwork uses one root and four stable part actors through hydration, validation and compilation (29.6245ms)
+✔ Studio persists graphic proposals as v2 and preserves legacy v1 artifacts and explicit acceptance (248.4859ms)
+(node:34120) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ curated vectors have exact content hashes and reject executable/imported payloads and deep trees (5.5797ms)
+✔ semantic layout preserves branching, groups and feedback edges deterministically (21.8755ms)
+✔ eight compositions hydrate exact assets, graph layers and backgrounds without mutating source (150.2702ms)
+✔ graphic quality reports mobile defects and intentional continuity exempts repeated layouts (55.9977ms)
+✔ asset import validates input and refuses an existing version without changing registry bytes (1627.5422ms)
+(node:37284) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ preset source participates in the exact production engine binding (553.7874ms)
+✔ legacy interpreter plans retain exact compiled output (67.7877ms)
+✔ versioned beats expand deterministically into anticipation, impact, settling and hold (104.3767ms)
+✔ beat validation rejects unsafe versions, targets, intervals, holds and final states (53.8922ms)
+(node:49344) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ fifteen-second sequence exercises all six semantic presets with intentional holds (98.6981ms)
+✔ cascade introduces hidden actors in a bounded stagger and settles each approved endpoint (24.2437ms)
+✔ convergence consumes known source actors and reveals a distinct result without changing identities (6.0078ms)
+✔ punch zoom keeps the focal point stable, restores its camera and rejects competing ownership (6.3739ms)
+✔ geometric presets reject concurrent motion of a focal actor instead of using its future state (4.8845ms)
+✔ flow hands an exiting packet to a known destination and visibly reacts there (10.4122ms)
+✔ split replaces its source with explicit children and settles their approved geometry (3.3327ms)
+(node:47160) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ intentional reading holds are excluded from stillness diagnostics (49.726ms)
+✔ weak choreography produces stable, frame-linked evidence rather than a universal quality score (39.5354ms)
+✔ renderer text metrics, contrast, clipping and crowding detect weak settled layouts (9.4472ms)
+(node:8384) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ manual beat proposals persist immutably and scoped edits retain interpreter 3 (720.9988ms)
+✔ beat gateway uses measured timing and energy, preserves scoped shots and invalidates acceptance after timing corrections (1072.4622ms)
+✔ motion gateway hydrates full proposals, scopes revisions and preserves acceptance on failure (656.8576ms)
+✔ motion requires explicit accepted-board correspondence, finite safe values and complete end states (136.9122ms)
+✔ frame schedule preserves integer duration and rejects invalid/triple overlaps (118.7799ms)
+✔ motion proposals require acceptance, preserve unselected shots and survive reload/rejection (407.8132ms)
+✔ script/concept changes and stale bases cannot complete or accept motion (355.2037ms)
+✔ motion integrity, orphan preservation, index rollback and deadline expiration fail closed (365.3883ms)
+✔ additive schema 5 migration preserves every prior table and immutable artifact (293.5028ms)
+(node:46772) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ render route rejects foreign origins, oversized bodies and missing explicit authorization before creating jobs (16.69ms)
+(node:5668) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ media responses support precise range seeking, suffix ranges and HEAD (65.2187ms)
+✔ measured narration rejects malformed, silent, mismatched and unaligned inputs; exact gates guard rendering (1893.1049ms)
+(node:42804) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ scoped proposals preserve outside text and acceptance survives reopen; later edits become stale (242.4678ms)
+✔ stale and rejected proposals cannot change current draft; other project cannot decide (145.7838ms)
+✔ selection validation rejects out of range, split Unicode, oversized and blank output (48.2715ms)
+✔ proposal corruption fails closed and acceptance transaction rollback preserves files/state (138.0127ms)
+✔ schema 2 upgrade preserves exact revisions and is repeatable (95.9552ms)
+(node:31992) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ research validation rejects ungrounded references, duplicate IDs and credential-bearing URLs (31.7875ms)
+✔ full pipeline isolates roles, preserves history and imports once without acceptance (624.8853ms)
+✔ editor rejection is persisted as successful work but cannot be imported (196.8246ms)
+✔ stale briefs, concurrent scripts and cross-project dependencies cannot overwrite work (145.6253ms)
+✔ corrupt files and failed completion preserve existing artifacts and rollback indexes (68.4352ms)
+✔ interrupted requests expire without replay and foreign references fail closed (78.677ms)
+✔ unindexed orphan artifacts are preserved rather than overwritten or deleted (70.3781ms)
+✔ installed skill loader preserves actual file content and records hashes; missing references fail (7.1632ms)
+✔ shared HTTP writing boundary preserves scope endpoint behavior and limits untrusted input (4.702ms)
+(node:36360) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ schema v1 project data survives additive migration and reopen (63.0765ms)
+✔ failed schema expansion rolls back without changing project data or version (36.3422ms)
+✔ projects and exact script revisions survive independent connections (89.4488ms)
+✔ stale saves from another connection fail without extra files or lost revisions (87.3471ms)
+✔ browser form line endings normalize before validation and persistence (49.9782ms)
+✔ invalid, cross-project, and missing-project inputs do not alter saved data (63.4652ms)
+✔ corrupted or missing indexed manifests fail closed; unindexed files stay invisible (72.0683ms)
+✔ filesystem write failure leaves no revision index and permits retry (39.6285ms)
+✔ mutation requests require exact loopback host and matching origin (0.4055ms)
+✔ failed index insertion removes the new manifest and preserves the previous revision (85.0019ms)
+(node:7032) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ planning timing binds script and audio before motion, preserves corrections and becomes stale after script edits (334.6301ms)
+✔ schema 8 expansion preserves schema 7 records, retries safely and rolls back failed DDL (83.3334ms)
+✔ measured anchors resolve with frame offsets, explicit line fallback and shot-boundary rejection (49.4359ms)
+✔ timing upload rejects foreign origins and oversized bodies before opening project storage (45.3916ms)
+(node:48632) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ fragmented SSE accepts small JSON despite framing overhead while content remains bounded (1697.2839ms)
+✔ visual contracts reject unsafe shapes, duplicate concepts, missing/reordered narration and invalid transitions (14.8467ms)
+✔ explicit accepted script and concept choice unlock boards; scoped revisions preserve every other shot and survive reopen (237.7369ms)
+✔ selection changes, ABA choices, new scripts and cross-project requests fail closed (223.4361ms)
+✔ research changes during generation prevent completion, including inherited manual scripts (98.806ms)
+✔ write failures, preexisting orphans, corruption and expired jobs preserve earlier artifacts (236.6088ms)
+✔ schema 4 migration preserves all prior tables and project files (151.1742ms)
+✔ gateway path saves proposals without accepting, rejects invalid outputs and supports cancellation (386.6344ms)
+(node:35876) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ gateway adapter handles split SSE and rejects unsupported/unsafe/incomplete output (436.8532ms)
+✔ writing session persists proposals and decisions as follow-up context without applying drafts (173.4157ms)
+✔ concurrent edits during generation fail with no proposal, duplicate active jobs are blocked, interrupted jobs expire (161.0333ms)
+✔ failed or cancelled writing persists safe errors without creating proposals or changing drafts (207.174ms)
+✔ failed job completion rolls back proposal visibility and files; explicit retry works (118.8846ms)
+(node:44064) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ evaluation briefs retain all five topics, supplied claims and synthetic boundaries (16.3421ms)
+✔ blind packet follows its private key, preserves exact text, and omits condition metadata (6.6034ms)
+ℹ tests 97
+ℹ suites 0
+ℹ pass 97
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5631.2068

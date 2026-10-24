@@ -1,0 +1,133 @@
+{
+  "syntheticOnly": true,
+  "globalFrame": 288,
+  "exactDomStateMatch": true,
+  "first": {
+    "actors": [
+      [
+        "actor-0",
+        "matrix(1,0,0,1,64.8,364.8)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "0"
+      ],
+      [
+        "actor-0.request",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.save",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.sender",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.service",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.storage",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ]
+    ],
+    "frame": "108",
+    "group": "shot-2",
+    "masks": [
+      [
+        "actor-0.request",
+        "950.4"
+      ],
+      [
+        "actor-0.save",
+        "950.4"
+      ],
+      [
+        "actor-0.sender",
+        "950.4"
+      ],
+      [
+        "actor-0.service",
+        "950.4"
+      ],
+      [
+        "actor-0.storage",
+        "950.4"
+      ]
+    ]
+  },
+  "repeated": {
+    "actors": [
+      [
+        "actor-0",
+        "matrix(1,0,0,1,64.8,364.8)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "0"
+      ],
+      [
+        "actor-0.request",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.save",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.sender",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.service",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ],
+      [
+        "actor-0.storage",
+        "matrix(1,0,0,1,0,0)",
+        "translate: none; rotate: none; scale: none; transform-origin: 0px 0px; opacity: 1;",
+        "1"
+      ]
+    ],
+    "frame": "108",
+    "group": "shot-2",
+    "masks": [
+      [
+        "actor-0.request",
+        "950.4"
+      ],
+      [
+        "actor-0.save",
+        "950.4"
+      ],
+      [
+        "actor-0.sender",
+        "950.4"
+      ],
+      [
+        "actor-0.service",
+        "950.4"
+      ],
+      [
+        "actor-0.storage",
+        "950.4"
+      ]
+    ]
+  }
+}

@@ -12,7 +12,7 @@ import { hashEngine } from "../server/production-store.ts";
 test("preset source participates in the exact production engine binding", (t) => {
   const root = mkdtempSync(join(tmpdir(), "v3-beat-engine-"));
   t.after(() => rmSync(root, { recursive: true, force: true }));
-  for (const path of ["engine", "workflow", "server", "next.config.ts", "package-lock.json"]) cpSync(path, join(root, path), { recursive: true });
+  for (const path of ["engine", "workflow", "server", "app", "next.config.ts", "package-lock.json"]) cpSync(path, join(root, path), { recursive: true });
   assert.equal(hashEngine(root), hashEngine());
   const before = hashEngine(root);
   appendFileSync(join(root, "engine/motion-presets/index.ts"), "\n// Synthetic isolated change.\n");

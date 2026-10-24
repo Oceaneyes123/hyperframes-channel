@@ -1,4 +1,6 @@
 import { z } from "zod";
+import { vectorLibrary } from "./graphic-library.ts";
+import { assetKey } from "./vector-assets.ts";
 
 export const graphicTheme = {
   id: "editorial-workflow@1", paper: "#F7F3E9", ink: "#203B3A", muted: "#607570",
@@ -8,6 +10,7 @@ export const graphicTheme = {
 
 // Only reviewed local artwork is registered. New artwork requires a new version and source hash.
 export const graphicAssetRegistry = {
+  ...Object.fromEntries(Object.entries(vectorLibrary).map(([id, { asset, contentHash }]) => [id, { ...asset, contentHash, theme: graphicTheme.id, viewBox: `0 0 ${asset.width} ${asset.height}`, version: Number(id.split("@")[1]), layers: asset.layers.map((layer) => layer.id), customization: { accent: "Accent role only; fixed editorial palette." } }])),
   "complaint-workflow@1": {
     id: "complaint-workflow@1", version: 1, theme: graphicTheme.id,
     source: "engine/graphics/complaint-workflow.tsx", license: "CC0-1.0",
@@ -22,11 +25,15 @@ export const graphicAssetRegistry = {
   },
 } as const;
 
-export type GraphicAssetId = keyof typeof graphicAssetRegistry;
-export function isGraphicAsset(type: string): type is GraphicAssetId { return Object.hasOwn(graphicAssetRegistry, type); }
-export const graphicReferenceSchema = z.strictObject({ id: z.enum(["complaint-workflow@1"]), contentHash: z.string().regex(/^[a-f0-9]{64}$/) });
+export type GraphicAssetId = string;
+export function isGraphicAsset(type: string): type is GraphicAssetId { return type === "graphic-asset@2" || Object.hasOwn(graphicAssetRegistry, type); }
+export const graphicReferenceSchema = z.strictObject({ id: assetKey, contentHash: z.string().regex(/^[a-f0-9]{64}$/) });
 export type GraphicReference = z.infer<typeof graphicReferenceSchema>;
-export function graphicReference(id: GraphicAssetId): GraphicReference { return { id, contentHash: graphicAssetRegistry[id].contentHash }; }
+export function graphicReference(id: GraphicAssetId): GraphicReference { return { id, contentHash: (id === "complaint-workflow@1" ? graphicAssetRegistry[id].contentHash : vectorLibrary[id]?.contentHash) ?? "" }; }
+export function assetMetadata(id: string) {
+  return id === "complaint-workflow@1" ? graphicAssetRegistry[id] : vectorLibrary[id] ? { ...vectorLibrary[id].asset, contentHash: vectorLibrary[id].contentHash, layers: vectorLibrary[id].asset.layers.map((layer) => layer.id) } : undefined;
+}
 export function validGraphicReference(type: string, reference?: GraphicReference) {
-  return isGraphicAsset(type) ? reference?.id === type && reference.contentHash === graphicAssetRegistry[type].contentHash : reference === undefined;
+  if (type === "graphic-asset@2") return !!reference && !!vectorLibrary[reference.id] && vectorLibrary[reference.id].contentHash === reference.contentHash;
+  return type === "complaint-workflow@1" ? reference?.id === type && reference.contentHash === graphicAssetRegistry[type].contentHash : reference === undefined;
 }

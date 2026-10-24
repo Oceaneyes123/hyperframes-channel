@@ -1,0 +1,11 @@
+{
+  "sameDecodedNarration": true,
+  "after": {
+    "decodedPcmHash": "d56b61a14a03cb9bb79ee305ee7618b63bace854ba333b6f664f8d2c0fc25791",
+    "decodedBytes": 9383936
+  },
+  "before": {
+    "decodedPcmHash": "d56b61a14a03cb9bb79ee305ee7618b63bace854ba333b6f664f8d2c0fc25791",
+    "decodedBytes": 9383936
+  }
+}

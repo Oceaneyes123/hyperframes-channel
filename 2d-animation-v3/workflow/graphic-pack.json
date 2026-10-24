@@ -1,0 +1,803 @@
+[
+  {
+    "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "person-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable person object in an educational diagram or workflow.",
+      "tags": [
+        "person",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 150,
+              "cy": 90,
+              "rx": 37,
+              "ry": 37
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M65 255V220C65 140 235 140 235 220V255Z"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "d5229a5eb05135173ebd656c73a8dea36eac8c4d0686776d21775ba6ecf11183",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "computer-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable computer object in an educational diagram or workflow.",
+      "tags": [
+        "computer",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 35,
+              "y": 45,
+              "width": 230,
+              "height": 165,
+              "radius": 16
+            },
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 50,
+              "y": 65,
+              "width": 200,
+              "height": 120,
+              "radius": 7
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M120 210V245H180V210M75 255H225"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "document-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable document object in an educational diagram or workflow.",
+      "tags": [
+        "document",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M70 25H190L240 75V275H70Z"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M190 25V75H240M100 115H205M100 150H205M100 185H185M100 220H165"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "message-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable message object in an educational diagram or workflow.",
+      "tags": [
+        "message",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M35 50H265V210H120L70 260V210H35Z"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M70 95H225M70 130H205M70 165H180"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "460ce9160362a2f55f151070f7f5bfdeb41a8bd387a2143100a88788c59a6177",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "processor-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable processor object in an educational diagram or workflow.",
+      "tags": [
+        "processor",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 60,
+              "y": 60,
+              "width": 180,
+              "height": 180,
+              "radius": 25
+            },
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 105,
+              "y": 105,
+              "width": 90,
+              "height": 90,
+              "radius": 12
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M90 25V60M150 25V60M210 25V60M90 240V275M150 240V275M210 240V275M25 90H60M25 150H60M25 210H60M240 90H275M240 150H275M240 210H275"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "b89eda89de756ce08b2bbad25dca92ce925661fe49e02bd0706badb5e27598ff",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "database-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable database object in an educational diagram or workflow.",
+      "tags": [
+        "database",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M50 70C50 15 250 15 250 70V230C250 285 50 285 50 230Z"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M50 70C50 125 250 125 250 70M50 150C50 205 250 205 250 150M50 230C50 285 250 285 250 230"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "551b6270ca110a6c36ca6c40627cf902ce2761e88338e7777953103996c2e607",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "cloud-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable cloud object in an educational diagram or workflow.",
+      "tags": [
+        "cloud",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M75 225C10 225 10 125 75 125C75 30 225 30 225 125C290 125 290 225 225 225Z"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "8f525615aeac91e416cd98b8eeab67fc58b4140bf70c47a020f9803cd3ab2758",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "payment-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable payment object in an educational diagram or workflow.",
+      "tags": [
+        "payment",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 35,
+              "y": 65,
+              "width": 230,
+              "height": 170,
+              "radius": 16
+            },
+            {
+              "fill": "ink",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 35,
+              "y": 105,
+              "width": 230,
+              "height": 30,
+              "radius": 0
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M65 195H125"
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 225,
+              "cy": 195,
+              "rx": 15,
+              "ry": 15
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "028aef183172437d1171d5886986937ea5f468f861be114b507f9c8ddeaca0e5",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "product-editorial@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 300,
+      "height": 300,
+      "purpose": "Recognizable product object in an educational diagram or workflow.",
+      "tags": [
+        "product",
+        "editorial",
+        "object"
+      ],
+      "compositions": [
+        "illustrated-workflow",
+        "technical-cutaway",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M50 85L150 30 250 85V220L150 275 50 220Z"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M50 85L150 140 250 85M150 140V275M100 58L200 113"
+            }
+          ]
+        },
+        {
+          "id": "signal",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 245,
+              "cy": 45,
+              "rx": 24,
+              "ry": 24
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "research-interface@1",
+      "source": "Original HyperFrames editorial vector pack",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 900,
+      "height": 700,
+      "purpose": "Inspect repeated complaint excerpts and extract a candidate problem without implying verified demand.",
+      "tags": [
+        "interface",
+        "research",
+        "complaints"
+      ],
+      "compositions": [
+        "interface-demonstration",
+        "editorial-illustration"
+      ],
+      "layers": [
+        {
+          "id": "window",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 35,
+              "y": 45,
+              "width": 830,
+              "height": 610,
+              "radius": 28
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M35 120H865"
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 73,
+              "cy": 82,
+              "rx": 7,
+              "ry": 7
+            },
+            {
+              "fill": "line",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 180,
+              "y": 68,
+              "width": 490,
+              "height": 26,
+              "radius": 13
+            }
+          ]
+        },
+        {
+          "id": "excerpts",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 85,
+              "y": 165,
+              "width": 730,
+              "height": 115,
+              "radius": 18
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 85,
+              "y": 310,
+              "width": 730,
+              "height": 115,
+              "radius": 18
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 85,
+              "y": 455,
+              "width": 730,
+              "height": 115,
+              "radius": 18
+            },
+            {
+              "fill": "none",
+              "stroke": "muted",
+              "strokeWidth": 8,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M130 205H700M130 245H520"
+            },
+            {
+              "fill": "none",
+              "stroke": "muted",
+              "strokeWidth": 8,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M130 350H700M130 390H520"
+            },
+            {
+              "fill": "none",
+              "stroke": "muted",
+              "strokeWidth": 8,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M130 495H700M130 535H520"
+            }
+          ]
+        },
+        {
+          "id": "highlight",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 115,
+              "y": 365,
+              "width": 430,
+              "height": 22,
+              "radius": 11
+            }
+          ]
+        },
+        {
+          "id": "cursor",
+          "role": "packet",
+          "nodes": [
+            {
+              "fill": "ink",
+              "stroke": "surface",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M615 405L605 500 635 477 658 522 680 510 655 467 692 464Z"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

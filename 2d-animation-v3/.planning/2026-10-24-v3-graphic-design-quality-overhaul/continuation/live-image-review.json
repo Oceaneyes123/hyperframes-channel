@@ -1,0 +1,24 @@
+{
+  "version": "graphic-review@1",
+  "id": "884905dd-a0ec-45de-b92b-e91d824c9f1a",
+  "projectId": "e472ded0-0e6b-45b9-af3a-4b256aceac06",
+  "runId": "e5e0c6b4-4df6-405c-8852-f070f5baae75",
+  "shotIndex": 1,
+  "sourceHash": "9fc26005930c9ab603732ba9837ce09d3b3cbedb81ca3a4456ccfd832512eb11",
+  "engineHash": "1bbc4a3bc74bb27a7409df8206d78a0d27a02ffd8a614ee80e59fd2112b823d1",
+  "frameHashes": [
+    "7da0099968247b7d27ce2d849b5b0f3c4701fe2652bfcb36874585a0b45e9913",
+    "5400a38dc17039c6b489b4188e1e18d5cccde56f2e77c9e9566835b1f5123be4"
+  ],
+  "model": "gpt-6.1-sol",
+  "createdAt": "2026-10-24T14:49:34.706Z",
+  "findings": [
+    {
+      "shotIndex": 1,
+      "dimension": "readability",
+      "evidence": "In both frames, the Sender–Service–Storage diagram occupies a narrow central area, with small labels and substantial unused space above and below. The chip and storage symbols contain fine details that are difficult to distinguish at this size.",
+      "suggestion": "Enlarge the diagram and its labels together, increasing icon stroke widths proportionally while preserving the vertical order, service emphasis, and existing arrow relationships."
+    }
+  ],
+  "requiresHumanReview": true
+}

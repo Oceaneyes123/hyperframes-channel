@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import { decideVisual } from "../../../actions.ts";
 import { scriptLines, type VisualArtifact } from "../../../../workflow/visuals.ts";
 import type { ScriptRevision } from "../../../../workflow/project.ts";
+import GraphicReview from "./graphic-review";
 import PlanningFrame from "./frame";
 
 type Props = {
   projectId: string; script: ScriptRevision | null; eligible: boolean; concepts: VisualArtifact | null; board: VisualArtifact | null;
+  originalBoard?: VisualArtifact | null;
   conceptsCurrent: boolean; boardCurrent: boolean; latestConceptId: string | null; latestBoardId: string | null;
   chosen: { id: string; runId: string; optionIndex: number } | null;
   acceptance: { runId: string; acceptedAt: string; stale: boolean } | null;
@@ -129,6 +131,7 @@ export default function VisualWorkspace(props: Props) {
                 <div><dt className="font-semibold">Continuity</dt><dd>{shot.continuity}</dd></div>
               </dl>
             </details>
+            <GraphicReview key={`${board.id}-${shotIndex}`} projectId={projectId} board={board} original={props.originalBoard ?? null} shotIndex={shotIndex} current={eligible && props.boardCurrent} onInstruction={(value) => { setInstruction(value); setMessage(`Direction set for shot ${shotIndex + 1}. Review it, then use Revise shot.`); }} />
             <button className="secondary mt-5" disabled={!eligible || !props.boardCurrent} onClick={() => generate("shot", shotIndex)}>Revise shot {shotIndex + 1}</button>
           </article>}
           <Decision projectId={projectId} runId={board.id} disabled={!eligible || !props.boardCurrent || props.acceptance?.runId === board.id && !props.acceptance.stale}>

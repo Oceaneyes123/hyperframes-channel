@@ -1,0 +1,47 @@
+{
+  "syntheticOnly": true,
+  "humanApproval": false,
+  "engineHash": "03aa9989cfa24212762ccbda92ae1243fe838cd865b1475a3e9c050dafe34838",
+  "narrationHash": "da27fedc84314fabb94b090fcb6c3fd07aac32ea52d463b3fa533cdc93d68a3e",
+  "totalFrames": 1466,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "exactFreshSeeks": [
+    {
+      "frame": 1465,
+      "hash": "0a0e3aee03bd0c12eb55e8d9e05bd62d9418b7a758a8f4a57a2a87b8cb88ba58"
+    },
+    {
+      "frame": 0,
+      "hash": "fb77d25eee106b8ddba559c1c1feddaca82c26ceb59d392295773d9de3455948"
+    },
+    {
+      "frame": 35,
+      "hash": "adcb7efdc554616b52b3b1fa2e31d1eeeb0d01e22f733ee9b615b9c7591d84b4"
+    },
+    {
+      "frame": 210,
+      "hash": "9b049118acd9e3b63b0e01ee9cdfaa1906fcbb6fc66a8eb99df635bf77a39c12"
+    },
+    {
+      "frame": 570,
+      "hash": "bf90369163f627e0d0376e8d41a2176affcc59940235903c1959a52d92e05574"
+    },
+    {
+      "frame": 76,
+      "hash": "257d120f372dfef2968eab2f120d2e62855dd43ab0a369329edd0186031492bf"
+    },
+    {
+      "frame": 1465,
+      "hash": "0a0e3aee03bd0c12eb55e8d9e05bd62d9418b7a758a8f4a57a2a87b8cb88ba58"
+    }
+  ],
+  "fullDecode": "pass",
+  "sameScriptAndNarration": true,
+  "quality": {
+    "version": "graphic-quality@1",
+    "findings": [],
+    "requiresHumanReview": true
+  }
+}

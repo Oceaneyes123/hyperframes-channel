@@ -1,27 +1,35 @@
 import { z } from "zod";
-import { componentPartsSchema, componentRegistry, isComponent, chartValuesSchema } from "./components.ts";
+import { componentPartsSchema, componentLayerIds, isComponent, chartValuesSchema } from "./components.ts";
 
-import { graphicReferenceSchema, validGraphicReference, isGraphicAsset } from "./graphic-assets.ts";
+import { graphicReferenceSchema, validGraphicReference, isGraphicAsset, assetMetadata } from "./graphic-assets.ts";
+
+import { diagramSchema } from "./diagram.ts";
+import { artDirectionSchema, backgroundSchema } from "./art-direction.ts";
 
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 const position = z.number().min(0).max(100);
-export const primitiveSchema = z.enum(["rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1"]);
+export const primitiveSchema = z.enum(["rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1", "graphic-asset@2", "semantic-diagram@1"]);
 // Only declarative shapes cross the model boundary; markup, URLs and code never do.
 export const frameSchema = z.strictObject({
   background: color,
+  environment: backgroundSchema.optional(),
   shapes: z.array(z.strictObject({
     type: primitiveSchema,
     x: position, y: position, width: z.number().positive().max(100), height: z.number().positive().max(100),
     color, label: z.string().max(60),
     asset: graphicReferenceSchema.optional(),
+    diagram: diagramSchema.optional(),
     parts: componentPartsSchema.optional(),
     values: chartValuesSchema.optional(),
   }).superRefine((shape, context) => {
     if (!validGraphicReference(shape.type, shape.asset)) context.addIssue({ code: "custom", message: "Graphic asset identity or hash is invalid." });
-    if (isGraphicAsset(shape.type) && Math.abs(shape.width * 1080 / (shape.height * 1920) - .75) > .001) context.addIssue({ code: "custom", message: "Graphic artwork requires its registered 3:4 aspect ratio." });
+    const metadata = shape.asset && assetMetadata(shape.asset.id);
+    if (metadata && Math.abs(shape.width * 1080 / (shape.height * 1920) - metadata.width / metadata.height) > .001) context.addIssue({ code: "custom", message: "Graphic artwork requires its registered aspect ratio." });
+    if ((shape.type === "semantic-diagram@1") !== (shape.diagram !== undefined)) context.addIssue({ code: "custom", message: "Only semantic diagrams require graph data." });
+    if (shape.diagram && Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1)) context.addIssue({ code: "custom", message: "Diagram layer geometry is fixed to preserve semantic connections." });
     if (shape.x + shape.width > 100 || shape.y + shape.height > 100) context.addIssue({ code: "custom", message: "Shape exceeds the frame." });
-    if (shape.parts && (!isComponent(shape.type) || Object.keys(shape.parts).some((part) => !(componentRegistry[shape.type as keyof typeof componentRegistry] as readonly string[]).includes(part)))) context.addIssue({ code: "custom", message: "Only registered component parts are allowed." });
+    if (shape.parts && (!isComponent(shape.type) || Object.keys(shape.parts).some((part) => !componentLayerIds(shape.type as import("./components.ts").ComponentType, shape).includes(part)))) context.addIssue({ code: "custom", message: "Only registered component parts are allowed." });
     if ((shape.type === "cost-chart@1") !== (shape.values !== undefined)) context.addIssue({ code: "custom", message: "Only charts require supplied integer values." });
     if (shape.type === "kinetic-phrase@1" && (!shape.label.trim() || shape.label.trim().split(/\s+/).length > 5)) context.addIssue({ code: "custom", message: "Kinetic phrases require one to five words." });
   })).min(1).max(16),
@@ -34,6 +42,7 @@ export const conceptsSchema = z.strictObject({ concepts: z.array(z.strictObject(
   }
 });
 export const shotSchema = z.strictObject({
+  design: artDirectionSchema.optional(),
   lineNumbers: z.array(z.number().int().positive()).min(1).max(200),
   seconds: z.number().min(0.5).max(60), purpose: text, framing: text, subject: text, action: text,
   transition: z.enum(["start", "hard-cut", "match-cut", "continuous", "camera", "reveal", "split-screen", "motion-match"]),
@@ -63,7 +72,7 @@ export const visualArtifactSchema = z.strictObject({
 });
 export function visualSchemaVersion(output: z.infer<typeof visualOutputSchema>) {
   const frames = output.kind === "concepts" ? output.concepts.map((concept) => concept.frame) : output.shots.flatMap((shot) => [shot.startFrame, shot.endFrame]);
-  return frames.some((frame) => frame.shapes.some((shape) => isGraphicAsset(shape.type))) ? 2 : 1;
+  return frames.some((frame) => frame.environment || frame.shapes.some((shape) => isGraphicAsset(shape.type) || shape.diagram)) || output.kind === "storyboard" && output.shots.some((shot) => shot.design) ? 2 : 1;
 }
 export type VisualArtifact = z.infer<typeof visualArtifactSchema>;
 export type VisualRequest = z.infer<typeof visualRequestSchema>;
@@ -78,6 +87,7 @@ export function validateStoryboard(input: unknown, content: string) {
   const parsed = storyboardSchema.extend({ kind: z.literal("storyboard").optional() }).parse(input);
   const board = { shots: parsed.shots }; const lines = scriptLines(content); const covered: number[] = [];
   board.shots.forEach((shot, index) => {
+    if (JSON.stringify(shot.startFrame.environment) !== JSON.stringify(shot.endFrame.environment)) throw new Error("Background environments must remain fixed within a shot; use a scene boundary for changes.");
     if ((index === 0) !== (shot.transition === "start")) throw new Error("Only the first shot starts without a preceding transition.");
     for (const line of shot.lineNumbers) {
       if (!lines.some((item) => item.number === line)) throw new Error("Shot references a missing narration line.");

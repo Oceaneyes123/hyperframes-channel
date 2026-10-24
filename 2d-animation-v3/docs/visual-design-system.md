@@ -43,3 +43,7 @@ The background remains static. The example reveals grouping, carries one packet,
 Visual artifacts containing this artwork use schema 2. Existing primitive/component artifacts continue to use schema 1. No existing component's authored artwork was changed. New assets or artwork revisions require a new version, hash, focused tests and rendered review. Never replace approved artwork under an existing asset ID.
 
 The other seven composition directions, external asset import/sanitization and a larger icon library are outside this first slice.
+
+## Composition catalog and extended graphics
+
+The executable theme remains `editorial-workflow@1`. The continuation adds nine matching original vector object icons, a layered interface, semantic graph rendering and six supporting background families. The eight composition families and complete gallery fixture are documented in [graphics-overhaul.md](graphics-overhaul.md). These extend the language; they do not replace the original asset version or make historical approved frames editable.
