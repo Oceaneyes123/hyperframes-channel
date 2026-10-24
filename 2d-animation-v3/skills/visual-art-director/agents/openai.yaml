@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Art Director"
+  short_description: "Art-direct safe educational graphics in V3"
+  default_prompt: "Use $visual-art-director to propose varied, meaningful HyperFrames V3 scenes using the supplied narration and asset registry."

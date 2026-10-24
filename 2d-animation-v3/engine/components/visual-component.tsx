@@ -1,13 +1,16 @@
+import { LayeredGraphic } from "../graphics/layered-graphic.tsx";
+import type { ComponentDetails } from "../../workflow/components.ts";
 import { useId } from "react";
 import { ComplaintWorkflow } from "../graphics/complaint-workflow.tsx";
 import { componentParts, type ComponentType, type PartState } from "../../workflow/components.ts";
 import VisualSymbol from "../visual-symbol.tsx";
 import { textFontSize } from "../text-metrics.ts";
 
-export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1 }: {
+export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1, asset, diagram }: ComponentDetails & {
   type: ComponentType; width: number; height: number; color: string; parts?: Record<string, PartState>; values?: [number, number]; label?: string; actorId?: string; coordinateScale?: number;
 }) {
-  const clip = useId(); const states = componentParts(type, color, parts);
+  const clip = useId(); const states = componentParts(type, color, parts, { asset, diagram });
+  if (type === "graphic-asset@2" || type === "semantic-diagram@1") return <LayeredGraphic type={type} width={width} height={height} color={color} parts={parts} asset={asset} diagram={diagram} actorId={actorId} coordinateScale={coordinateScale} />;
   if (type === "complaint-workflow@1") return <ComplaintWorkflow width={width} height={height} color={color} parts={parts} actorId={actorId} coordinateScale={coordinateScale} />;
   const part = (id: string, children: React.ReactNode) => {
     const state = states[id];

@@ -1,3 +1,4 @@
+import { GraphicBackground } from "./graphics/background.tsx";
 import { useMemo } from "react";
 import { useCurrentFrame, interpolateColors, Html5Audio } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
@@ -38,7 +39,7 @@ function shapeVars(type: string, state: Partial<MotionState>) {
 
 function Primitive({ object, actorId }: { object: MotionShot["objects"][number]; actorId: string }) {
   const state = object.initial, width = state.width * 10.8, height = state.height * 19.2;
-  if (isComponent(object.type)) return <VisualComponent type={object.type} width={width} height={height} color={state.color} parts={object.initialParts} values={object.values} label={object.label} actorId={actorId} />;
+  if (isComponent(object.type)) return <VisualComponent type={object.type} width={width} height={height} color={state.color} parts={object.initialParts} asset={object.asset} diagram={object.diagram} values={object.values} label={object.label} actorId={actorId} />;
   if (isSymbol(object.type)) return <VisualSymbol type={object.type} width={width} height={height} color={state.color} />;
   if (["centered-text", "heading", "caption", "code"].includes(object.type)) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} />;
   if (object.type === "ellipse") return <ellipse data-shape cx={width / 2} cy={height / 2} rx={width / 2} ry={height / 2} fill={state.color} />;
@@ -93,6 +94,7 @@ function GroupScene({ group }: { group: MotionGroup }) {
   const background = interpolateColors(frame - active.startFrame, [0, active.shot.durationFrames - 1], [active.background.start, active.background.end]);
   return <svg ref={scope} data-motion-frame={frame} data-motion-group={group.id} viewBox="0 0 1080 1920" width="1080" height="1920" style={{ fontFamily: "Arial" }}>
     <rect width="1080" height="1920" fill={background} />
+    {active.environment && <GraphicBackground environment={active.environment} width={1080} height={1920} progress={(frame - active.startFrame) / Math.max(1, active.shot.durationFrames - 1)} />}
     <g data-camera>{group.actors.map((actor) => <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} /></g>)}</g>
   </svg>;
 }

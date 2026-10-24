@@ -2,8 +2,10 @@ import { motionPlanSchema, scheduleMotion, expandMotionShot, type MotionShot } f
 import { visualArtifactSchema } from "../workflow/visuals.ts";
 import { isComponent } from "../workflow/components.ts";
 
+import type { Background } from "../workflow/art-direction.ts";
+
 type Actor = { id: string; object: MotionShot["objects"][number]; startFrame: number; endFrame: number };
-type GroupShot = { shot: MotionShot; startFrame: number; endFrame: number; targets: Record<string, string>; background: { start: string; end: string } };
+type GroupShot = { shot: MotionShot; startFrame: number; endFrame: number; targets: Record<string, string>; background: { start: string; end: string }; environment?: Background };
 export type MotionGroup = { id: string; durationFrames: number; incoming: MotionShot["incoming"]; actors: Actor[]; shots: GroupShot[] };
 
 // Integrity and full source correspondence are verified by the server store before these props reach the Player.
@@ -27,7 +29,7 @@ export function compileMotion(input: unknown, source: unknown) {
       for (const part of Object.keys(object.initialParts ?? {})) targets[`${object.id}.${part}`] = `${targets[object.id]}.${part}`;
     }
     const drawing = board.output.shots[index];
-    group.shots.push({ shot, startFrame, endFrame, targets, background: { start: drawing.startFrame.background, end: drawing.endFrame.background } }); group.durationFrames = endFrame;
+    group.shots.push({ shot, startFrame, endFrame, targets, ...(drawing.startFrame.environment ? { environment: drawing.startFrame.environment } : {}), background: { start: drawing.startFrame.background, end: drawing.endFrame.background } }); group.durationFrames = endFrame;
     if (group.actors.length > 64 || group.shots.reduce((total, item) => total + item.shot.actions.reduce((count, action) => count + action.targetIds.length, 0), 0) > 128) throw new Error("Continuity group exceeds the initial animation budget. Simplify it or introduce a cut.");
     for (const action of shot.actions) for (const id of action.targetIds) {
       if (id !== "camera" && !targets[id]) throw new Error("Unknown preview target.");

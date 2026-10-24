@@ -47,3 +47,7 @@ Production build passes with nine broad dynamic-file tracing warnings in existin
 No live model request, real project migration, narration generation, human gate action, publish, commit or push was performed. Adding the new engine dependency changes production bindings; stale gates must be reviewed again under existing rules. Existing exported files remain unchanged.
 
 Deferred: general SVG import/sanitization, a larger curated library, seven additional composition families, the Visual Art Director skill, a separate graphic-quality inspector, diagram layout, expanded Studio inspection and a complete narrated benchmark with human review.
+
+## Graphics continuation
+
+The broader asset pack, semantic diagrams, backgrounds, eight composition references and connected review workflow are documented in [graphics-overhaul.md](graphics-overhaul.md). The original first-slice frames and source hashes remain frozen as historical evidence.

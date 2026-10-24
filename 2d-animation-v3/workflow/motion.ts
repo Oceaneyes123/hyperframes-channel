@@ -5,6 +5,8 @@ import { componentPartsSchema, componentParts, isComponent, partStateSchema, cha
 
 import { graphicReferenceSchema, validGraphicReference } from "./graphic-assets.ts";
 
+import { diagramSchema } from "./diagram.ts";
+
 const key = z.string().regex(/^[a-z][a-z0-9-]{0,39}$/);
 const target = z.string().regex(/^[a-z][a-z0-9-]{0,39}(?:\.[a-z][a-z0-9-]{0,19})?$/);
 export function splitPanel(progress: number, entering: boolean) {
@@ -25,9 +27,10 @@ export const motionObjectSchema = z.strictObject({
   startIndex: z.number().int().min(0).max(15).nullable(), endIndex: z.number().int().min(0).max(15).nullable(),
   type: primitiveSchema, label: z.string().max(60), initial: motionStateSchema,
   asset: graphicReferenceSchema.optional(),
+  diagram: diagramSchema.optional(),
   initialParts: componentPartsSchema.optional(),
   values: chartValuesSchema.optional(),
-}).refine((object) => validGraphicReference(object.type, object.asset), "Graphic asset identity or hash is invalid.");
+}).refine((object) => validGraphicReference(object.type, object.asset) && ((object.type === "semantic-diagram@1") === (object.diagram !== undefined)), "Graphic asset identity or hash is invalid.");
 export const motionActionSchema = z.strictObject({
   behavior: z.enum(["transform", "fade", "hold"]), targetIds: z.array(target).min(1).max(16),
   startFrame: frame, endFrame: frame, staggerFrames: z.number().int().min(0).max(1800),
@@ -126,7 +129,7 @@ export function hydrateMotion(input: unknown, board: VisualArtifact, hashShot: (
     objects: shot.objects.map((object) => {
       const shape = object.startIndex === null ? object.endIndex === null ? null : source[index].endFrame.shapes[object.endIndex] : source[index].startFrame.shapes[object.startIndex];
       if (!shape) throw new Error("Object correspondence references a missing shape.");
-      return { ...object, type: shape.type, label: shape.label, ...(shape.asset ? { asset: shape.asset } : {}), initial: { x: shape.x, y: shape.y, width: shape.width, height: shape.height, color: shape.color, opacity: object.startIndex === null ? 0 : 1, scale: 1, rotation: 0 }, ...(isComponent(shape.type) ? { initialParts: componentParts(shape.type, shape.color, shape.parts) } : {}), ...(shape.values ? { values: shape.values } : {}) };
+      return { ...object, type: shape.type, label: shape.label, ...(shape.asset ? { asset: shape.asset } : {}), ...(shape.diagram ? { diagram: shape.diagram } : {}), initial: { x: shape.x, y: shape.y, width: shape.width, height: shape.height, color: shape.color, opacity: object.startIndex === null ? 0 : 1, scale: 1, rotation: 0 }, ...(isComponent(shape.type) ? { initialParts: componentParts(shape.type, shape.color, shape.parts, shape) } : {}), ...(shape.values ? { values: shape.values } : {}) };
     }),
   })) });
 }
@@ -175,12 +178,13 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       if (["x", "y", "width", "height", "color"].some((field) => object.initial[field as keyof MotionState] !== initial[field as keyof typeof initial]) || object.initial.opacity !== (from ? 1 : 0) || object.initial.scale !== 1 || object.initial.rotation !== 0) throw new Error("Initial object state must match its drawing.");
       finalStates.set(object.id, { ...object.initial });
       if (JSON.stringify(object.asset) !== JSON.stringify(initial.asset) || to && JSON.stringify(to.asset) !== JSON.stringify(initial.asset)) throw new Error("Graphic asset references must match both approved drawings.");
+      if (JSON.stringify(object.diagram) !== JSON.stringify(initial.diagram) || to && JSON.stringify(to.diagram) !== JSON.stringify(initial.diagram)) throw new Error("Semantic diagrams must match both approved drawings; use replacement actors for graph changes.");
       if (object.initial.reveal !== undefined) throw new Error("Reveal masks belong to component parts only.");
       if (JSON.stringify(object.values) !== JSON.stringify(initial.values) || to && JSON.stringify(to.values) !== JSON.stringify(initial.values)) throw new Error("Chart values must match both source drawings; use replacement actors to change supplied values.");
       if (isComponent(object.type)) {
         if (plan.interpreterVersion !== "3") throw new Error("Compound components require interpreter 3.");
-        const parts = componentParts(object.type, initial.color, initial.parts);
-        if (!object.initialParts || Object.keys(object.initialParts).length !== Object.keys(parts).length || JSON.stringify(componentParts(object.type, initial.color, object.initialParts)) !== JSON.stringify(parts)) throw new Error("Initial component parts must match the source drawing.");
+        const parts = componentParts(object.type, initial.color, initial.parts, initial);
+        if (!object.initialParts || Object.keys(object.initialParts).length !== Object.keys(parts).length || JSON.stringify(componentParts(object.type, initial.color, object.initialParts, object)) !== JSON.stringify(parts)) throw new Error("Initial component parts must match the source drawing.");
         for (const [part, state] of Object.entries(parts)) { ids.add(`${object.id}.${part}`); finalStates.set(`${object.id}.${part}`, { ...object.initial, ...state }); }
       } else if (object.initialParts) throw new Error("Primitive actors cannot declare component parts.");
     }
@@ -193,6 +197,7 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       if (action.behavior === "hold" ? properties.length !== 0 : properties.length === 0 || action.behavior === "fade" && properties.some((name) => name !== "opacity")) throw new Error("Invalid motion behavior properties.");
       for (const [offset, id] of action.targetIds.entries()) {
         if (!ids.has(id) && id !== "camera") throw new Error("Unknown motion target.");
+        if (id.includes(".") && shot.objects.find((object) => object.id === id.split(".")[0])?.diagram && properties.some((name) => ["x", "y", "scale"].includes(name))) throw new Error("Diagram layer geometry is fixed to preserve semantic connections.");
         if (id.includes(".") && properties.some((name) => !Object.hasOwn(partStateSchema.shape, name))) throw new Error("Component parts support only position, scale, opacity and color.");
         if (!id.includes(".") && properties.includes("reveal")) throw new Error("Reveal masks belong to component parts only.");
         if (id === "camera" && properties.some((name) => !["x", "y", "scale", "rotation"].includes(name))) throw new Error("Unsupported camera property.");
@@ -213,7 +218,7 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       const state = finalStates.get(object.id)!; const end = object.endIndex === null ? null : source.endFrame.shapes[object.endIndex];
       if (end ? ["x", "y", "width", "height", "color"].some((field) => state[field as keyof MotionState] !== end[field as keyof typeof end]) || state.opacity !== 1 || state.scale !== 1 || state.rotation !== 0 : state.opacity !== 0) throw new Error("Final visible state must match the end drawing.");
       if (end && isComponent(object.type)) {
-        for (const [part, expected] of Object.entries(componentParts(object.type, end.color, end.parts))) {
+        for (const [part, expected] of Object.entries(componentParts(object.type, end.color, end.parts, end))) {
           const actual = finalStates.get(`${object.id}.${part}`)!;
           if (Object.entries(expected).some(([field, value]) => actual[field as keyof MotionState] !== value)) throw new Error("Final component parts must match the end drawing.");
         }
@@ -227,8 +232,8 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       if (!from || !to || from.type !== to.type || from.endIndex === null || to.startIndex === null) throw new Error("Invalid shared anchor.");
       const before = sourceShots[index - 1].endFrame.shapes[from.endIndex]; const after = source.startFrame.shapes[to.startIndex];
       if (["x", "y", "width", "height"].some((field) => before[field as keyof typeof before] !== after[field as keyof typeof after])) throw new Error("Shared anchor geometry is discontinuous.");
-      if (["continuous", "motion-match"].includes(shot.incoming.type) && (before.color !== after.color || from.label !== to.label || JSON.stringify(before.asset) !== JSON.stringify(after.asset))) throw new Error("Continuous anchor appearance must remain unchanged.");
-      if (["continuous", "motion-match"].includes(shot.incoming.type) && isComponent(from.type) && JSON.stringify(componentParts(from.type, before.color, before.parts)) !== JSON.stringify(componentParts(from.type, after.color, after.parts))) throw new Error("Continuous component parts must remain unchanged at the boundary.");
+      if (["continuous", "motion-match"].includes(shot.incoming.type) && (before.color !== after.color || from.label !== to.label || JSON.stringify(before.asset) !== JSON.stringify(after.asset) || JSON.stringify(before.diagram) !== JSON.stringify(after.diagram))) throw new Error("Continuous anchor appearance must remain unchanged.");
+      if (["continuous", "motion-match"].includes(shot.incoming.type) && isComponent(from.type) && JSON.stringify(componentParts(from.type, before.color, before.parts, before)) !== JSON.stringify(componentParts(from.type, after.color, after.parts, after))) throw new Error("Continuous component parts must remain unchanged at the boundary.");
       const camera = { ...previous.camera };
       for (const action of previous.actions) if (action.targetIds.includes("camera")) Object.assign(camera, action.to);
       if (Object.keys(camera).some((field) => camera[field as keyof typeof camera] !== shot.camera[field as keyof typeof camera])) throw new Error("Shared anchor camera is discontinuous.");

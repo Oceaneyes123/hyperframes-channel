@@ -1,0 +1,30 @@
+{
+  "version": "graphic-review@1",
+  "id": "b31e5b11-d62b-413b-8335-5789783e6e1d",
+  "projectId": "544adb0f-f29f-420a-ad18-0c5e7db90038",
+  "runId": "847e3ca6-4067-41fc-8043-08d907d58180",
+  "shotIndex": 1,
+  "sourceHash": "b64d7a3f87210e731851b7a3b0a0385e29f2d89b95b176d6e42d44160b364944",
+  "engineHash": "f1ce5b832b1dbe0233116af8cfed8f3a372f092d0d1c178e5de2e7b9f65686fa",
+  "frameHashes": [
+    "7da0099968247b7d27ce2d849b5b0f3c4701fe2652bfcb36874585a0b45e9913",
+    "5400a38dc17039c6b489b4188e1e18d5cccde56f2e77c9e9566835b1f5123be4"
+  ],
+  "model": "gpt-6.1-sol",
+  "createdAt": "2026-10-24T14:59:26.844Z",
+  "findings": [
+    {
+      "shotIndex": 1,
+      "dimension": "clarity",
+      "evidence": "The end frame connects Sender → Service → Storage, but neither arrow is labeled, so the request and the information sent to storage are not explicitly distinguished.",
+      "suggestion": "Label the Sender-to-Service arrow “Request” and the Service-to-Storage arrow “Information,” retaining the existing direction and service emphasis."
+    },
+    {
+      "shotIndex": 1,
+      "dimension": "readability",
+      "evidence": "In both frames, the three-node diagram occupies a small central area with extensive empty space above and below; the labels and internal icon details are correspondingly small.",
+      "suggestion": "Enlarge the diagram and its labels as a single group while preserving the vertical alignment, arrow spacing, and highlighted Service node."
+    }
+  ],
+  "requiresHumanReview": true
+}

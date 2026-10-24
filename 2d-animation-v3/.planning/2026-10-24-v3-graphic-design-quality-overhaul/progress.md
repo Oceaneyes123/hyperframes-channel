@@ -19,3 +19,16 @@
 
 - Final npm run check passed: ESLint (one unrelated existing warning), TypeScript and all 92 tests. Production build passed. git diff --check passed.
 - Selected first slice is complete. Human aesthetics, continuous playback and live model/Studio interaction were not reviewed. No acceptance gates were inferred, and no commit/push occurred.
+
+- Existing component/legacy engine/asset checks pass (16 focused tests). Shared graphics contracts typecheck.
+- Added graphic-quality@1 diagnostics, per-scene design history, real phone-size frame review through the existing gateway, bounded review request concurrency and immutable advisory reports.
+- Added repo-local Visual Art Director skill, loaded by actual visual generation; no separate agent invocation or production approval is inferred.
+
+- Expanded check passed all 96 tests. Import/schema, diagram branching/feedback/grouping, eight-family hydration and graphic diagnostics have focused coverage.
+- Started complete benchmark with measured offline Microsoft Zira narration; both controls use the same script and WAV. Started live image review and isolated scoped model revision. Production build is running.
+- Existing 127.0.0.1:3003 server is preserved; isolated Studio verification will use IPv6 loopback and a separate database.
+
+- Final source build passed. Final check passed all 97 tests; skill validation and git diff --check passed.
+- Full benchmark proof passed: 1,466 frames at 1080x1920/30fps; seven exact fresh seek comparisons; both H.264+audio exports fully decoded. Decoded PCM hashes match across before/after exports.
+- Current mounted diagram preview repeated exact actor and mask states at global frame288 after seeking through the end and backward. Evidence and complete review media are frozen under continuation/.
+- No saved real project, production approval gate, publication, commit or push was performed. Stop the owned isolated IPv6 preview server; preserve the original IPv4 server. Human final review remains outstanding.

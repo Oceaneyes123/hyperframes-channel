@@ -1,0 +1,4330 @@
+{
+  "syntheticOnly": true,
+  "humanApproval": false,
+  "voice": "Microsoft Zira Desktop offline benchmark voice",
+  "narration": [
+    "Imagine finding a useful software idea in complaints about everyday work.",
+    "Trace who sends the request, what processes it, and where the information is stored.",
+    "Collect repeated complaints, then group the same pain before imagining a tool.",
+    "Inspect the original excerpts. Keep the shared problem connected to its source.",
+    "Compare the manual task with a smaller tool that might remove one repeated step.",
+    "In this example, three matching complaints suggest one candidate problem, not three customers.",
+    "Narrow the idea to that problem. More features do not establish demand.",
+    "Talk to the people doing the work. Test demand before building the product."
+  ],
+  "durations": [
+    180,
+    180,
+    180,
+    180,
+    180,
+    206,
+    180,
+    180
+  ],
+  "board": {
+    "schemaVersion": 2,
+    "id": "864b814f-bb27-4690-aee3-0bdb80337c87",
+    "projectId": "637b507b-7b42-4c3e-84be-675196270a9d",
+    "createdAt": "2026-10-24T15:03:46.571Z",
+    "scriptId": "55739885-7c9d-46a4-8d85-06553aff7300",
+    "scriptHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "selectionId": "c18577f2-27a6-4b94-9a44-b87a2d1f6966",
+    "baseId": null,
+    "instruction": "Synthetic transition fixture",
+    "output": {
+      "shots": [
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "editorial-illustration",
+            "meaning": "Imagine finding a useful software idea in complaints about everyday work.",
+            "metaphor": "Evidence on a workbench",
+            "focalPoint": "The largest meaningful object",
+            "layout": "Offset interface with foreground person",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            1
+          ],
+          "seconds": 6,
+          "purpose": "Imagine finding a useful software idea in complaints about everyday work.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "start",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "soft-gradient",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "graphic-asset@2",
+                "x": 8,
+                "y": 23,
+                "width": 84,
+                "height": 36.75,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "research-interface@1",
+                  "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a"
+                },
+                "parts": {
+                  "window": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "excerpts": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "highlight": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "cursor": {
+                    "x": 0,
+                    "y": -2,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 53,
+                "y": 65,
+                "width": 28,
+                "height": 15.75,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "person-editorial@1",
+                  "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "soft-gradient",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "graphic-asset@2",
+                "x": 8,
+                "y": 23,
+                "width": 84,
+                "height": 36.75,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "research-interface@1",
+                  "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a"
+                },
+                "parts": {
+                  "window": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "excerpts": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "highlight": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "cursor": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 53,
+                "y": 65,
+                "width": 28,
+                "height": 15.75,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "person-editorial@1",
+                  "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "technical-cutaway",
+            "meaning": "Trace who sends the request, what processes it, and where the information is stored.",
+            "metaphor": "Request through a system",
+            "focalPoint": "The service between sender and storage",
+            "layout": "Vertical directed system",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            2
+          ],
+          "seconds": 6,
+          "purpose": "Trace who sends the request, what processes it, and where the information is stored.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "technical-grid",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "semantic-diagram@1",
+                "x": 6,
+                "y": 19,
+                "width": 88,
+                "height": 65,
+                "color": "#203B3A",
+                "label": "",
+                "diagram": {
+                  "direction": "down",
+                  "nodes": [
+                    {
+                      "id": "sender",
+                      "icon": "person",
+                      "label": "Sender"
+                    },
+                    {
+                      "id": "service",
+                      "icon": "processor",
+                      "label": "Service",
+                      "emphasis": true
+                    },
+                    {
+                      "id": "storage",
+                      "icon": "database",
+                      "label": "Storage"
+                    }
+                  ],
+                  "edges": [
+                    {
+                      "id": "request",
+                      "from": "sender",
+                      "to": "service",
+                      "label": ""
+                    },
+                    {
+                      "id": "save",
+                      "from": "service",
+                      "to": "storage",
+                      "label": ""
+                    }
+                  ]
+                },
+                "parts": {
+                  "sender": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "service": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "storage": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "request": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "save": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 0
+                  }
+                }
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "technical-grid",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "semantic-diagram@1",
+                "x": 6,
+                "y": 19,
+                "width": 88,
+                "height": 65,
+                "color": "#203B3A",
+                "label": "",
+                "diagram": {
+                  "direction": "down",
+                  "nodes": [
+                    {
+                      "id": "sender",
+                      "icon": "person",
+                      "label": "Sender"
+                    },
+                    {
+                      "id": "service",
+                      "icon": "processor",
+                      "label": "Service",
+                      "emphasis": true
+                    },
+                    {
+                      "id": "storage",
+                      "icon": "database",
+                      "label": "Storage"
+                    }
+                  ],
+                  "edges": [
+                    {
+                      "id": "request",
+                      "from": "sender",
+                      "to": "service",
+                      "label": ""
+                    },
+                    {
+                      "id": "save",
+                      "from": "service",
+                      "to": "storage",
+                      "label": ""
+                    }
+                  ]
+                },
+                "parts": {
+                  "sender": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "service": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "storage": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "request": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "save": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "illustrated-workflow",
+            "meaning": "Collect repeated complaints, then group the same pain before imagining a tool.",
+            "metaphor": "Repeated pain becomes a candidate",
+            "focalPoint": "The largest meaningful object",
+            "layout": "Diagonal illustrated workflow",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            3
+          ],
+          "seconds": 6,
+          "purpose": "Collect repeated complaints, then group the same pain before imagining a tool.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "environment",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "complaint-workflow@1",
+                "x": 8,
+                "y": 14,
+                "width": 84,
+                "height": 63,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "complaint-workflow@1",
+                  "contentHash": "2f95ca0637e8a2daf788bb293978edbf9ee86c83240cf6341d9d8389e3c95e78"
+                },
+                "parts": {
+                  "complaints": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "cluster": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "packet": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "opportunity": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "environment",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "complaint-workflow@1",
+                "x": 8,
+                "y": 14,
+                "width": 84,
+                "height": 63,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "complaint-workflow@1",
+                  "contentHash": "2f95ca0637e8a2daf788bb293978edbf9ee86c83240cf6341d9d8389e3c95e78"
+                },
+                "parts": {
+                  "complaints": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "cluster": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "packet": {
+                    "x": -29,
+                    "y": 8,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "opportunity": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "interface-demonstration",
+            "meaning": "Inspect the original excerpts. Keep the shared problem connected to its source.",
+            "metaphor": "Inspect source evidence",
+            "focalPoint": "The largest meaningful object",
+            "layout": "Large interface close view",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            4
+          ],
+          "seconds": 6,
+          "purpose": "Inspect the original excerpts. Keep the shared problem connected to its source.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "editorial",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "graphic-asset@2",
+                "x": 5,
+                "y": 21,
+                "width": 90,
+                "height": 39.375,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "research-interface@1",
+                  "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a"
+                },
+                "parts": {
+                  "window": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "excerpts": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "highlight": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "cursor": {
+                    "x": 0,
+                    "y": -2,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "editorial",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "graphic-asset@2",
+                "x": 5,
+                "y": 21,
+                "width": 90,
+                "height": 39.375,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "research-interface@1",
+                  "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a"
+                },
+                "parts": {
+                  "window": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "excerpts": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "highlight": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "cursor": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "visual-comparison",
+            "meaning": "Compare the manual task with a smaller tool that might remove one repeated step.",
+            "metaphor": "Compare the same task",
+            "focalPoint": "The largest meaningful object",
+            "layout": "Two equal comparison columns",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            5
+          ],
+          "seconds": 6,
+          "purpose": "Compare the manual task with a smaller tool that might remove one repeated step.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "geometric",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "heading",
+                "x": 8,
+                "y": 24,
+                "width": 38,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "Manual"
+              },
+              {
+                "type": "heading",
+                "x": 51,
+                "y": 24,
+                "width": 42,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "Candidate"
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 10,
+                "y": 38,
+                "width": 36,
+                "height": 20.25,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "document-editorial@1",
+                  "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": -2,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 54,
+                "y": 44,
+                "width": 36,
+                "height": 20.25,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "computer-editorial@1",
+                  "contentHash": "d5229a5eb05135173ebd656c73a8dea36eac8c4d0686776d21775ba6ecf11183"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "geometric",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "heading",
+                "x": 8,
+                "y": 24,
+                "width": 38,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "Manual"
+              },
+              {
+                "type": "heading",
+                "x": 51,
+                "y": 24,
+                "width": 42,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "Candidate"
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 10,
+                "y": 38,
+                "width": 36,
+                "height": 20.25,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "document-editorial@1",
+                  "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 54,
+                "y": 44,
+                "width": 36,
+                "height": 20.25,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "computer-editorial@1",
+                  "contentHash": "d5229a5eb05135173ebd656c73a8dea36eac8c4d0686776d21775ba6ecf11183"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "data-storytelling",
+            "meaning": "In this example, three matching complaints suggest one candidate problem, not three customers.",
+            "metaphor": "Many observations, one hypothesis",
+            "focalPoint": "The largest meaningful object",
+            "layout": "Three observations above one candidate",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            6
+          ],
+          "seconds": 6.866666666666666,
+          "purpose": "In this example, three matching complaints suggest one candidate problem, not three customers.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "technical-grid",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "graphic-asset@2",
+                "x": 7,
+                "y": 22,
+                "width": 24,
+                "height": 13.5,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "message-editorial@1",
+                  "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": -2,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 38,
+                "y": 22,
+                "width": 24,
+                "height": 13.5,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "message-editorial@1",
+                  "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 69,
+                "y": 22,
+                "width": 24,
+                "height": 13.5,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "message-editorial@1",
+                  "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 32,
+                "y": 57,
+                "width": 36,
+                "height": 20.25,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "document-editorial@1",
+                  "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "heading",
+                "x": 14,
+                "y": 42,
+                "width": 72,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "3 complaints"
+              },
+              {
+                "type": "heading",
+                "x": 17,
+                "y": 81,
+                "width": 66,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "1 candidate"
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "technical-grid",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "graphic-asset@2",
+                "x": 7,
+                "y": 22,
+                "width": 24,
+                "height": 13.5,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "message-editorial@1",
+                  "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 38,
+                "y": 22,
+                "width": 24,
+                "height": 13.5,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "message-editorial@1",
+                  "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 69,
+                "y": 22,
+                "width": 24,
+                "height": 13.5,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "message-editorial@1",
+                  "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 32,
+                "y": 57,
+                "width": 36,
+                "height": 20.25,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "document-editorial@1",
+                  "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "heading",
+                "x": 14,
+                "y": 42,
+                "width": 72,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "3 complaints"
+              },
+              {
+                "type": "heading",
+                "x": 17,
+                "y": 81,
+                "width": 66,
+                "height": 6,
+                "color": "#203B3A",
+                "label": "1 candidate"
+              }
+            ]
+          }
+        },
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "visual-metaphor",
+            "meaning": "Narrow the idea to that problem. More features do not establish demand.",
+            "metaphor": "Narrow the feature scope",
+            "focalPoint": "The largest meaningful object",
+            "layout": "Centered narrowing funnel",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            7
+          ],
+          "seconds": 6,
+          "purpose": "Narrow the idea to that problem. More features do not establish demand.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "atmospheric",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "funnel@1",
+                "x": 15,
+                "y": 25,
+                "width": 70,
+                "height": 48,
+                "color": "#203B3A",
+                "label": "",
+                "parts": {
+                  "inputs": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "bottleneck": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "output": {
+                    "x": 0,
+                    "y": -2,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "atmospheric",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "funnel@1",
+                "x": 15,
+                "y": 25,
+                "width": 70,
+                "height": 48,
+                "color": "#203B3A",
+                "label": "",
+                "parts": {
+                  "inputs": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "bottleneck": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "output": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "design": {
+            "theme": "editorial-workflow@1",
+            "family": "typographic-composition",
+            "meaning": "Talk to the people doing the work. Test demand before building the product.",
+            "metaphor": "Demand as the deciding question",
+            "focalPoint": "The largest meaningful object",
+            "layout": "Large type with supporting objects",
+            "density": "balanced",
+            "continuityReason": ""
+          },
+          "lineNumbers": [
+            8
+          ],
+          "seconds": 6,
+          "purpose": "Talk to the people doing the work. Test demand before building the product.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "soft-gradient",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "kinetic-phrase@1",
+                "x": 9,
+                "y": 24,
+                "width": 82,
+                "height": 22,
+                "color": "#203B3A",
+                "label": "Test demand",
+                "parts": {
+                  "lead": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "keyword": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "underline": {
+                    "x": 0,
+                    "y": -2,
+                    "scale": 1,
+                    "opacity": 0,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 16,
+                "y": 56,
+                "width": 30,
+                "height": 16.875,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "person-editorial@1",
+                  "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 57,
+                "y": 60,
+                "width": 27,
+                "height": 15.1875,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "product-editorial@1",
+                  "contentHash": "028aef183172437d1171d5886986937ea5f468f861be114b507f9c8ddeaca0e5"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "environment": {
+              "family": "soft-gradient",
+              "color": "#F7F3E9",
+              "accent": "#C6DED3",
+              "depth": 0.45
+            },
+            "shapes": [
+              {
+                "type": "kinetic-phrase@1",
+                "x": 9,
+                "y": 24,
+                "width": 82,
+                "height": 22,
+                "color": "#203B3A",
+                "label": "Test demand",
+                "parts": {
+                  "lead": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "keyword": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  },
+                  "underline": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#203B3A",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 16,
+                "y": 56,
+                "width": 30,
+                "height": 16.875,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "person-editorial@1",
+                  "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              },
+              {
+                "type": "graphic-asset@2",
+                "x": 57,
+                "y": 60,
+                "width": 27,
+                "height": 15.1875,
+                "color": "#D9633F",
+                "label": "",
+                "asset": {
+                  "id": "product-editorial@1",
+                  "contentHash": "028aef183172437d1171d5886986937ea5f468f861be114b507f9c8ddeaca0e5"
+                },
+                "parts": {
+                  "body": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  },
+                  "signal": {
+                    "x": 0,
+                    "y": 0,
+                    "scale": 1,
+                    "opacity": 1,
+                    "color": "#D9633F",
+                    "reveal": 1
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "storyboard"
+    }
+  },
+  "plan": {
+    "schemaVersion": 1,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "interpreterVersion": "3",
+    "shots": [
+      {
+        "id": "shot-1",
+        "sourceIndex": 0,
+        "sourceHash": "555d14051e9d20cf6fdc626804d8a2b744daedafd786dfb589b59fa58153aaec",
+        "lineNumbers": [
+          1
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 8,
+              "y": 23,
+              "width": 84,
+              "height": 36.75,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "research-interface@1",
+              "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a"
+            },
+            "initialParts": {
+              "window": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "excerpts": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "highlight": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "cursor": {
+                "x": 0,
+                "y": -2,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 53,
+              "y": 65,
+              "width": 28,
+              "height": 15.75,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "person-editorial@1",
+              "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "explain-detail",
+            "purpose": "Imagine finding a useful software idea in complaints about everyday work.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.cursor"
+            ],
+            "startFrame": 12,
+            "endFrame": 48,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "y": 0,
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "inspect-result",
+            "purpose": "Inspect the relationship and source qualifications.",
+            "type": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2"
+            ],
+            "startFrame": 52,
+            "endFrame": 178,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "start",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-2",
+        "sourceIndex": 1,
+        "sourceHash": "b22a95dea4173f7b04f000418f6e83ea334ebb373385c7b8408754f8919dec9f",
+        "lineNumbers": [
+          2
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "semantic-diagram@1",
+            "label": "",
+            "initial": {
+              "x": 6,
+              "y": 19,
+              "width": 88,
+              "height": 65,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            },
+            "diagram": {
+              "direction": "down",
+              "nodes": [
+                {
+                  "id": "sender",
+                  "icon": "person",
+                  "label": "Sender"
+                },
+                {
+                  "id": "service",
+                  "icon": "processor",
+                  "label": "Service",
+                  "emphasis": true
+                },
+                {
+                  "id": "storage",
+                  "icon": "database",
+                  "label": "Storage"
+                }
+              ],
+              "edges": [
+                {
+                  "id": "request",
+                  "from": "sender",
+                  "to": "service",
+                  "label": ""
+                },
+                {
+                  "id": "save",
+                  "from": "service",
+                  "to": "storage",
+                  "label": ""
+                }
+              ]
+            },
+            "initialParts": {
+              "sender": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "service": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "storage": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "request": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "save": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 0
+              }
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "explain-detail",
+            "purpose": "Trace who sends the request, what processes it, and where the information is stored.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.save"
+            ],
+            "startFrame": 12,
+            "endFrame": 48,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "mask-reveal@1",
+            "parameters": {
+              "reveal": 1
+            }
+          },
+          {
+            "id": "inspect-result",
+            "purpose": "Inspect the relationship and source qualifications.",
+            "type": "hold",
+            "targetIds": [
+              "object-1"
+            ],
+            "startFrame": 52,
+            "endFrame": 178,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-3",
+        "sourceIndex": 2,
+        "sourceHash": "0077aaf7be21b93974886e135d97156423d723bb8deb190469f3936a19f72be1",
+        "lineNumbers": [
+          3
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "complaint-workflow@1",
+            "label": "",
+            "initial": {
+              "x": 8,
+              "y": 14,
+              "width": 84,
+              "height": 63,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "complaint-workflow@1",
+              "contentHash": "2f95ca0637e8a2daf788bb293978edbf9ee86c83240cf6341d9d8389e3c95e78"
+            },
+            "initialParts": {
+              "complaints": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "cluster": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "packet": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "opportunity": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "group-pain",
+            "purpose": "Reveal the same pain across several complaints.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.cluster"
+            ],
+            "startFrame": 18,
+            "endFrame": 38,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "extract-pain",
+            "purpose": "Carry the identified pain into a candidate tool, not a validated business.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.packet"
+            ],
+            "startFrame": 48,
+            "endFrame": 58,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "carry-pain",
+            "purpose": "Carry the identified pain into a candidate tool, not a validated business.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.packet"
+            ],
+            "startFrame": 60,
+            "endFrame": 88,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "x": -29,
+                "y": 8
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "candidate-tool",
+            "purpose": "Carry the identified pain into a candidate tool, not a validated business.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.opportunity"
+            ],
+            "startFrame": 88,
+            "endFrame": 108,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "deliver-pain",
+            "purpose": "Carry the identified pain into a candidate tool, not a validated business.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.packet"
+            ],
+            "startFrame": 110,
+            "endFrame": 120,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "opacity": 0
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "read-result",
+            "purpose": "Inspect the candidate tool; no payment or demand is claimed.",
+            "type": "hold",
+            "targetIds": [
+              "object-1"
+            ],
+            "startFrame": 122,
+            "endFrame": 178,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-4",
+        "sourceIndex": 3,
+        "sourceHash": "47f276a527e91262d79240a70b572b792db4cddc042e916546cfb0ebb45762b7",
+        "lineNumbers": [
+          4
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 5,
+              "y": 21,
+              "width": 90,
+              "height": 39.375,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "research-interface@1",
+              "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a"
+            },
+            "initialParts": {
+              "window": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "excerpts": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "highlight": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "cursor": {
+                "x": 0,
+                "y": -2,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "explain-detail",
+            "purpose": "Inspect the original excerpts. Keep the shared problem connected to its source.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.cursor"
+            ],
+            "startFrame": 12,
+            "endFrame": 48,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "y": 0,
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "inspect-result",
+            "purpose": "Inspect the relationship and source qualifications.",
+            "type": "hold",
+            "targetIds": [
+              "object-1"
+            ],
+            "startFrame": 52,
+            "endFrame": 178,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-5",
+        "sourceIndex": 4,
+        "sourceHash": "247896e517ed31acc9345657534020ca47ede07039125703dfbff9037987e56e",
+        "lineNumbers": [
+          5
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "heading",
+            "label": "Manual",
+            "initial": {
+              "x": 8,
+              "y": 24,
+              "width": 38,
+              "height": 6,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "heading",
+            "label": "Candidate",
+            "initial": {
+              "x": 51,
+              "y": 24,
+              "width": 42,
+              "height": 6,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 10,
+              "y": 38,
+              "width": 36,
+              "height": 20.25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "document-editorial@1",
+              "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": -2,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-4",
+            "startIndex": 3,
+            "endIndex": 3,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 54,
+              "y": 44,
+              "width": 36,
+              "height": 20.25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "computer-editorial@1",
+              "contentHash": "d5229a5eb05135173ebd656c73a8dea36eac8c4d0686776d21775ba6ecf11183"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "explain-detail",
+            "purpose": "Compare the manual task with a smaller tool that might remove one repeated step.",
+            "type": "transformation",
+            "targetIds": [
+              "object-3.signal"
+            ],
+            "startFrame": 12,
+            "endFrame": 48,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "y": 0,
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "inspect-result",
+            "purpose": "Inspect the relationship and source qualifications.",
+            "type": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3",
+              "object-4"
+            ],
+            "startFrame": 52,
+            "endFrame": 178,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-6",
+        "sourceIndex": 5,
+        "sourceHash": "f9d2ca4c2176043f079ab824c74348e8d7755e98cf7477cdb0cfdc148dccd3b8",
+        "lineNumbers": [
+          6
+        ],
+        "durationFrames": 206,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 7,
+              "y": 22,
+              "width": 24,
+              "height": 13.5,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "message-editorial@1",
+              "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": -2,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 38,
+              "y": 22,
+              "width": 24,
+              "height": 13.5,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "message-editorial@1",
+              "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 69,
+              "y": 22,
+              "width": 24,
+              "height": 13.5,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "message-editorial@1",
+              "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-4",
+            "startIndex": 3,
+            "endIndex": 3,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 32,
+              "y": 57,
+              "width": 36,
+              "height": 20.25,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "document-editorial@1",
+              "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-5",
+            "startIndex": 4,
+            "endIndex": 4,
+            "type": "heading",
+            "label": "3 complaints",
+            "initial": {
+              "x": 14,
+              "y": 42,
+              "width": 72,
+              "height": 6,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-6",
+            "startIndex": 5,
+            "endIndex": 5,
+            "type": "heading",
+            "label": "1 candidate",
+            "initial": {
+              "x": 17,
+              "y": 81,
+              "width": 66,
+              "height": 6,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "explain-detail",
+            "purpose": "In this example, three matching complaints suggest one candidate problem, not three customers.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.signal"
+            ],
+            "startFrame": 12,
+            "endFrame": 48,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "y": 0,
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "inspect-result",
+            "purpose": "Inspect the relationship and source qualifications.",
+            "type": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3",
+              "object-4",
+              "object-5",
+              "object-6"
+            ],
+            "startFrame": 52,
+            "endFrame": 204,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-7",
+        "sourceIndex": 6,
+        "sourceHash": "0fa84edfa37ec7f78b9773bdc3af8214890535e14617572e9bb629a89d73c97b",
+        "lineNumbers": [
+          7
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "funnel@1",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 25,
+              "width": 70,
+              "height": 48,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            },
+            "initialParts": {
+              "inputs": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "bottleneck": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "output": {
+                "x": 0,
+                "y": -2,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#203B3A",
+                "reveal": 1
+              }
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "explain-detail",
+            "purpose": "Narrow the idea to that problem. More features do not establish demand.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.output"
+            ],
+            "startFrame": 12,
+            "endFrame": 48,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "y": 0,
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "inspect-result",
+            "purpose": "Inspect the relationship and source qualifications.",
+            "type": "hold",
+            "targetIds": [
+              "object-1"
+            ],
+            "startFrame": 52,
+            "endFrame": 178,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-8",
+        "sourceIndex": 7,
+        "sourceHash": "c2b30aa1f7a60b01548aa7446179fbbab6fe8cfc47e37da0ea4e86b9edbb80eb",
+        "lineNumbers": [
+          8
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "kinetic-phrase@1",
+            "label": "Test demand",
+            "initial": {
+              "x": 9,
+              "y": 24,
+              "width": 82,
+              "height": 22,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            },
+            "initialParts": {
+              "lead": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "keyword": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#203B3A",
+                "reveal": 1
+              },
+              "underline": {
+                "x": 0,
+                "y": -2,
+                "scale": 1,
+                "opacity": 0,
+                "color": "#203B3A",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 16,
+              "y": 56,
+              "width": 30,
+              "height": 16.875,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "person-editorial@1",
+              "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "graphic-asset@2",
+            "label": "",
+            "initial": {
+              "x": 57,
+              "y": 60,
+              "width": 27,
+              "height": 15.1875,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            },
+            "asset": {
+              "id": "product-editorial@1",
+              "contentHash": "028aef183172437d1171d5886986937ea5f468f861be114b507f9c8ddeaca0e5"
+            },
+            "initialParts": {
+              "body": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              },
+              "signal": {
+                "x": 0,
+                "y": 0,
+                "scale": 1,
+                "opacity": 1,
+                "color": "#D9633F",
+                "reveal": 1
+              }
+            }
+          }
+        ],
+        "actions": [],
+        "beats": [
+          {
+            "id": "explain-detail",
+            "purpose": "Talk to the people doing the work. Test demand before building the product.",
+            "type": "transformation",
+            "targetIds": [
+              "object-1.underline"
+            ],
+            "startFrame": 12,
+            "endFrame": 48,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "snap-overshoot@1",
+            "parameters": {
+              "to": {
+                "y": 0,
+                "opacity": 1
+              },
+              "anticipation": 0.9,
+              "overshoot": 1.06
+            }
+          },
+          {
+            "id": "inspect-result",
+            "purpose": "Inspect the relationship and source qualifications.",
+            "type": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 52,
+            "endFrame": 178,
+            "importance": "primary",
+            "narrationAnchor": null,
+            "continuity": null,
+            "presetId": "hold@1",
+            "parameters": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      }
+    ],
+    "energyProfile": "energetic"
+  },
+  "baselineBoard": {
+    "schemaVersion": 1,
+    "id": "864b814f-bb27-4690-aee3-0bdb80337c87",
+    "projectId": "637b507b-7b42-4c3e-84be-675196270a9d",
+    "createdAt": "2026-10-24T15:03:46.571Z",
+    "scriptId": "55739885-7c9d-46a4-8d85-06553aff7300",
+    "scriptHash": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "selectionId": "c18577f2-27a6-4b94-9a44-b87a2d1f6966",
+    "baseId": null,
+    "instruction": "Synthetic transition fixture",
+    "output": {
+      "shots": [
+        {
+          "lineNumbers": [
+            1
+          ],
+          "seconds": 6,
+          "purpose": "Imagine finding a useful software idea in complaints about everyday work.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "start",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            2
+          ],
+          "seconds": 6,
+          "purpose": "Trace who sends the request, what processes it, and where the information is stored.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            3
+          ],
+          "seconds": 6,
+          "purpose": "Collect repeated complaints, then group the same pain before imagining a tool.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            4
+          ],
+          "seconds": 6,
+          "purpose": "Inspect the original excerpts. Keep the shared problem connected to its source.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            5
+          ],
+          "seconds": 6,
+          "purpose": "Compare the manual task with a smaller tool that might remove one repeated step.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            6
+          ],
+          "seconds": 6.866666666666666,
+          "purpose": "In this example, three matching complaints suggest one candidate problem, not three customers.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            7
+          ],
+          "seconds": 6,
+          "purpose": "Narrow the idea to that problem. More features do not establish demand.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "browser",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "chip",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        },
+        {
+          "lineNumbers": [
+            8
+          ],
+          "seconds": 6,
+          "purpose": "Talk to the people doing the work. Test demand before building the product.",
+          "framing": "Editorial diagonal: browser above left, repeated pain center right, candidate tool below.",
+          "subject": "Repeated complaints and a candidate tool",
+          "action": "Group matching complaint marks, then carry the shared pain into a candidate tool.",
+          "transition": "hard-cut",
+          "continuity": "Establish the reference quantity before changing it.",
+          "startFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          },
+          "endFrame": {
+            "background": "#F7F3E9",
+            "shapes": [
+              {
+                "type": "document",
+                "x": 15,
+                "y": 30,
+                "width": 30,
+                "height": 20,
+                "color": "#203B3A",
+                "label": ""
+              },
+              {
+                "type": "line",
+                "x": 47,
+                "y": 40,
+                "width": 12,
+                "height": 1,
+                "color": "#607570",
+                "label": ""
+              },
+              {
+                "type": "person",
+                "x": 61,
+                "y": 30,
+                "width": 24,
+                "height": 20,
+                "color": "#D9633F",
+                "label": ""
+              }
+            ]
+          }
+        }
+      ],
+      "kind": "storyboard"
+    }
+  },
+  "baselinePlan": {
+    "schemaVersion": 1,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "interpreterVersion": "2",
+    "shots": [
+      {
+        "id": "shot-1",
+        "sourceIndex": 0,
+        "sourceHash": "4709526c145bd6fb7dcc5a439754ec27a3ccf8d0224067160f32cd82024e2d6b",
+        "lineNumbers": [
+          1
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "browser",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "chip",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 178,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "start",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-2",
+        "sourceIndex": 1,
+        "sourceHash": "0729591cd6c1e78773363551603f9bad5059e3cc0382120b9ed0130aa79e048d",
+        "lineNumbers": [
+          2
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "document",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "person",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 178,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-3",
+        "sourceIndex": 2,
+        "sourceHash": "839dcd4fb3153da4bad7bbc4286244dba6a3985ade77a872eff06811d8c1c3e9",
+        "lineNumbers": [
+          3
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "browser",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "chip",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 178,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-4",
+        "sourceIndex": 3,
+        "sourceHash": "c147d5955b676af0e53d9e51062678a1b545027b277b4ee23db8ded5643e0dce",
+        "lineNumbers": [
+          4
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "document",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "person",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 178,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-5",
+        "sourceIndex": 4,
+        "sourceHash": "a281b7132952a7e8978a17a64e5c2f54b97034da39cb3114d30011de5460c118",
+        "lineNumbers": [
+          5
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "browser",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "chip",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 178,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-6",
+        "sourceIndex": 5,
+        "sourceHash": "e8e0f4ae0246b35a1a2518221213b38354021e5a73e2c0b980df70f521946217",
+        "lineNumbers": [
+          6
+        ],
+        "durationFrames": 206,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "document",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "person",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 204,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-7",
+        "sourceIndex": 6,
+        "sourceHash": "1e66f9ba880910546639fefee550b4cb55f52d3e9fdc5f90b432a9e85b37a438",
+        "lineNumbers": [
+          7
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "browser",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "chip",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 178,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      },
+      {
+        "id": "shot-8",
+        "sourceIndex": 7,
+        "sourceHash": "fcb75ec4027188d1ac89a65ff9779d1491890fc7b396cabd6a7c799de29e7bd9",
+        "lineNumbers": [
+          8
+        ],
+        "durationFrames": 180,
+        "objects": [
+          {
+            "id": "object-1",
+            "startIndex": 0,
+            "endIndex": 0,
+            "type": "document",
+            "label": "",
+            "initial": {
+              "x": 15,
+              "y": 30,
+              "width": 30,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#203B3A"
+            }
+          },
+          {
+            "id": "object-2",
+            "startIndex": 1,
+            "endIndex": 1,
+            "type": "line",
+            "label": "",
+            "initial": {
+              "x": 47,
+              "y": 40,
+              "width": 12,
+              "height": 1,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#607570"
+            }
+          },
+          {
+            "id": "object-3",
+            "startIndex": 2,
+            "endIndex": 2,
+            "type": "person",
+            "label": "",
+            "initial": {
+              "x": 61,
+              "y": 30,
+              "width": 24,
+              "height": 20,
+              "opacity": 1,
+              "rotation": 0,
+              "scale": 1,
+              "color": "#D9633F"
+            }
+          }
+        ],
+        "actions": [
+          {
+            "behavior": "hold",
+            "targetIds": [
+              "object-1",
+              "object-2",
+              "object-3"
+            ],
+            "startFrame": 0,
+            "endFrame": 178,
+            "staggerFrames": 0,
+            "ease": "linear",
+            "to": {}
+          }
+        ],
+        "camera": {
+          "x": 0,
+          "y": 0,
+          "rotation": 0,
+          "scale": 1
+        },
+        "incoming": {
+          "type": "hard-cut",
+          "overlapFrames": 0,
+          "presentation": "cut",
+          "anchor": null
+        }
+      }
+    ]
+  }
+}
