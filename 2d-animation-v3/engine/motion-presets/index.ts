@@ -37,6 +37,12 @@ export function expandBeats(shot: MotionShot): MotionAction[] {
     if (beat.type === "hold") throw new Error("A reading hold requires the hold preset.");
     const duration = beat.endFrame - beat.startFrame;
     if (duration < 6) throw new Error("Choreography needs at least six frames for its phases.");
+    if (beat.presetId === "font-expression@1") {
+      const id = beat.targetIds[0], [root, part] = id.split("."), object = shot.objects.find(object => object.id === root), state = states.get(id);
+      if (beat.targetIds.length !== 1 || !object?.variableType || part !== "glyphs" || state?.axisProgress !== 0 || states.get(root)?.opacity !== 1 || state.opacity !== 1 || (state.reveal ?? 1) !== 1 || duration < 18 || duration > 90) throw new Error("Font expression needs one visible measured glyph run and 18..90 frames.");
+      reservations.push({id:root,start:beat.startFrame,end:beat.endFrame,properties:["opacity","width","height"]},{id,start:beat.startFrame,end:beat.endFrame,properties:["x","y","scale","opacity","reveal"]});
+      tween(id, beat.startFrame, beat.endFrame, {axisProgress:1}, "power2.inOut"); state.axisProgress = 1; continue;
+    }
     if (beat.presetId === "character-look@1" || beat.presetId === "character-react@1" || beat.presetId === "character-point@1" || beat.presetId === "character-type@1" || beat.presetId === "character-hand-off@1") {
       const id = beat.targetIds[0], [rootId, part] = id.split("."), object = shot.objects.find((object) => object.id === rootId), state = states.get(id);
       if (beat.targetIds.length !== 1 || object?.type !== "character-rig@1" || !object.rig || part !== "body" || state?.rigProgress !== 0 || states.get(rootId)?.opacity !== 1 || duration < 48 || duration > 120 || ["body", "document", "laptop"].some((part) => states.get(`${rootId}.${part}`)?.opacity !== 1 || (states.get(`${rootId}.${part}`)?.reveal ?? 1) !== 1)) throw new Error("Character action needs one visible neutral reviewed rig, its props and 48..120 frames.");

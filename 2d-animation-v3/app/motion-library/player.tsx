@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { scheduleMotion } from "../../workflow/motion.ts";
 import { Player, type PlayerRef } from "@remotion/player";
 import MotionComposition from "../../engine/motion-composition.tsx";
 import { kineticExample, kineticExamples, type KineticExampleId } from "../../workflow/examples/kinetic.ts";
 
-export default function MotionLibrary() {
+export default function MotionLibrary({projectId,shotIndex=0}: {projectId?: string;shotIndex?: number}) {
   const [id, setId] = useState<KineticExampleId>("typography"), [frame, setFrame] = useState(0);
   const [rollFrames, setRollFrames] = useState(54);
   const numeric = ["rolling-value", "value-transition", "percent"].includes(id);
@@ -26,9 +27,11 @@ export default function MotionLibrary() {
     <section aria-label="Choose a capability">
       <label htmlFor="capability">Capability</label>
       <select id="capability" value={id} onChange={(event) => { const item = kineticExamples.find((item) => item.id === event.target.value); if (item) { setId(item.id); setFrame(0); } }}>
-        {["Typography", "Data", "UI", "Illustration", "Transformation", "Camera"].map((group) => <optgroup key={group} label={group}>{kineticExamples.filter((item) => (item.id === "perspective" ? "Camera" : ["typography", "text-layout", "keyword-focus", "type-match"].includes(item.id) ? "Typography" : ["comparison", "rolling-value", "value-transition", "percent"].includes(item.id) ? "Data" : ["handoff", "word-to-ui", "ui-workflow"].includes(item.id) ? "UI" : ["depth", "character-rig", "collage"].includes(item.id) ? "Illustration" : "Transformation") === group).map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</optgroup>)}
+        {["Typography", "Data", "UI", "Illustration", "Transformation", "Camera"].map((group) => <optgroup key={group} label={group}>{kineticExamples.filter((item) => (item.id === "perspective" ? "Camera" : ["variable-type", "typography", "text-layout", "keyword-focus", "type-match"].includes(item.id) ? "Typography" : ["comparison", "rolling-value", "value-transition", "percent"].includes(item.id) ? "Data" : ["handoff", "word-to-ui", "ui-workflow"].includes(item.id) ? "UI" : ["depth", "character-rig", "collage"].includes(item.id) ? "Illustration" : "Transformation") === group).map((item) => <option key={item.id} value={item.id}>{item.name}</option>)}</optgroup>)}
       </select>
+      {projectId && <Link className="mt-4 block" href={`/projects/${projectId}/visuals?capability=${id}&shot=${shotIndex}`}>Use in shot {shotIndex + 1}</Link>}
       <p className="mt-5">{kineticExamples.find((item) => item.id === id)!.purpose}</p>
+      {id === "variable-type" && <p className="mt-4 text-sm text-[var(--muted)]">Five authored phrases use actual Inter and OFL Roboto Flex axes. The font-expression preset takes no parameters; use its exact registered label/reference and visible glyphs part for 18–90 frames. Each evaluated axis state has measured outlines and reserved bounds. Example narration: “Weight draws attention; real width compression makes room.” New copy requires a reviewed expression entry.</p>}
       {id === "comparison" && <p className="mt-4 text-sm text-[var(--muted)]">The cost figures are hypothetical supplied fixture values. They are not quotes, actual savings or earnings.</p>}
       {["rolling-value", "value-transition", "percent"].includes(id) && <p className="mt-4 text-sm text-[var(--muted)]">Synthetic source fixture. Rolling characters are decoration. Supported parameters: exact source/record references, optional related previous record, and 18–90 frames. Example narration: “Suppose this is the supplied value.”</p>}
       {["text-layout", "word-to-ui", "keyword-focus", "type-match"].includes(id) && <p className="mt-4 text-sm text-[var(--muted)]">Measured fixed words use authored routes. Layouts require 2–8 visible text actors, 18–90 frames and no overlapping inner entrance or camera move. Example narration: “The same information moves into the next layout.”</p>}

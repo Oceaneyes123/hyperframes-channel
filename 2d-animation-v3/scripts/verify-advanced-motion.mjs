@@ -1,0 +1,44 @@
+import assert from "node:assert/strict";
+import { bundle } from "@remotion/bundler";
+import { selectComposition, renderFrames, renderStill, renderMedia } from "@remotion/renderer";
+import { createHash } from "node:crypto";
+import { execFileSync } from "node:child_process";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { resolve, join } from "node:path";
+import { advancedAuditSequence } from "../tests/fixtures/advanced-motion.ts";
+import { kineticExample } from "../workflow/examples/kinetic.ts";
+import { validateMotion, scheduleMotion } from "../workflow/motion.ts";
+import { hashMotionSource } from "../server/motion-store.ts";
+import { hashEngine } from "../server/production-store.ts";
+
+const audit = process.argv.includes("--audit");
+const props = audit ? advancedAuditSequence() : kineticExample(process.argv[2] ?? "variable-type");
+assert.equal(props.board.output.kind, "storyboard");
+for (const shot of props.plan.shots) shot.sourceHash = hashMotionSource(props.board.output.shots[shot.sourceIndex]);
+validateMotion(props.plan, props.board, hashMotionSource);
+const engineHash = hashEngine(), inputHash = createHash("sha256").update(JSON.stringify(props)).digest("hex");
+const output = resolve(`.data/advanced-motion-proof-${Date.now()}`), frames = join(output, "frames"); mkdirSync(output,{recursive:true});
+const duration = scheduleMotion(props.plan).durationFrames, entry = join(output,"register.tsx");
+writeFileSync(join(output,"input.json"),JSON.stringify(props,null,2));
+writeFileSync(entry,`import{Composition,registerRoot}from'remotion';import Motion from '../../engine/motion-composition.tsx';registerRoot(()=> <Composition id="Proof" component={Motion} width={1080} height={1920} fps={30} durationInFrames={${duration}} defaultProps={${JSON.stringify(props)}}/>);`);
+const serveUrl=await bundle({entryPoint:entry,publicDir:resolve("public"),webpackOverride:config=>({...config,cache:false})});
+const browserExecutable=process.env.V3_CHROME_PATH;assert.ok(browserExecutable,"Set V3_CHROME_PATH to an installed browser");
+const options={serveUrl,browserExecutable,chromiumOptions:{}}, composition=await selectComposition({...options,id:"Proof"});
+await renderFrames({...options,composition,outputDir:frames,imageFormat:"png",concurrency:2,onFrameUpdate:f=>{if(f%120===0)console.log(`Rendered ${f}/${duration}`)}});
+const files=Object.keys((await import("node:fs")).readdirSync(frames)).length;assert.equal(files,duration);
+const digits=String(duration-1).length, seeks=[];
+for(const shot of scheduleMotion(props.plan).shots) for(const f of [shot.durationFrames-1,0,1,12,Math.floor(shot.durationFrames/2),42,shot.durationFrames-2,42]){
+ const frame=shot.startFrame+f,path=join(output,`seek-${seeks.length}.png`);
+ await renderStill({...options,composition,frame,imageFormat:"png",output:path});
+ assert.ok(readFileSync(path).equals(readFileSync(join(frames,`element-${String(frame).padStart(digits,"0")}.png`))),`Fresh seek differs: ${frame}`);seeks.push(frame);
+}
+console.log(`${seeks.length} exact fresh seeks pass`);
+const video=join(output,"synthetic.mp4");
+await renderMedia({...options,composition,codec:"h264",crf:audit?12:18,pixelFormat:"yuv420p",concurrency:2,outputLocation:video});
+const ffmpeg=process.env.V3_FFMPEG_PATH??"ffmpeg";
+execFileSync(ffmpeg,["-v","error","-i",video,"-f","null","-"],{stdio:"pipe"});
+const comparison=execFileSync(ffmpeg,["-v","error","-reinit_filter","0","-i",video,"-framerate","30","-i",join(frames,`element-%0${digits}d.png`),"-filter_complex","[0:v]settb=1/30,setpts=N,format=yuv420p[a];[1:v]settb=1/30,setpts=N,format=yuv420p[b];[a][b]ssim=stats_file=-", "-f","null","/dev/null"],{encoding:"utf8",maxBuffer:8*1024*1024});
+const values=[...comparison.matchAll(/All:([\d.]+)/g)].map(m=>Number(m[1]));assert.equal(values.length,duration);assert.ok(Math.min(...values)>=.98);
+assert.equal(hashEngine(),engineHash,"Engine changed during proof; preserve as diagnostic");
+const evidence={syntheticOnly:true,productionApproval:false,engineHash,inputHash,output,audit,width:1080,height:1920,fps:30,frames:duration,freshSeeks:seeks,fullDecode:true,preview:{comparedFrames:values.length,minimumSsim:Math.min(...values),threshold:.98},exportSha256:createHash("sha256").update(readFileSync(video)).digest("hex")};
+writeFileSync(join(output,"verification.json"),JSON.stringify(evidence,null,2));console.log(JSON.stringify(evidence));

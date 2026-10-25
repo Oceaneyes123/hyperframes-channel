@@ -1,3 +1,4 @@
+import { kineticExamples } from "../../../../workflow/examples/kinetic.ts";
 import WorkspaceHeader from "../../../workspace-header";
 import { notFound } from "next/navigation";
 import { z } from "zod";
@@ -17,9 +18,9 @@ import { resolveBeatTiming } from "../../../../workflow/timing.ts";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export default async function VisualPage({ params, searchParams }: {
-  params: Promise<{ id: string }>; searchParams: Promise<{ run?: string | string[]; motion?: string | string[] }>;
+  params: Promise<{ id: string }>; searchParams: Promise<{ run?: string | string[]; motion?: string | string[]; capability?: string; shot?: string }>;
 }) {
-  const { id } = await params; const { run, motion: motionId } = await searchParams;
+  const { id } = await params; const { run, motion: motionId, capability, shot: selectedShot } = await searchParams;
   if (![id, ...[run, motionId].filter((value) => value !== undefined)].every((value) => z.uuid().safeParse(value).success)) notFound();
   const config = readConfig(); const studio = openStudio(config.dataDirectory, config.videosDirectory);
   const store = openVisuals(config.dataDirectory, config.videosDirectory);
@@ -43,7 +44,7 @@ export default async function VisualPage({ params, searchParams }: {
     return <main className="mx-auto max-w-7xl px-6 py-10 sm:px-12">
       <WorkspaceHeader projectId={id} title={project.title} stage="visuals" />
       <details className="workspace-stage"><summary>Narration timing</summary><TimingWorkspace projectId={id} scriptId={accepted && !accepted.stale ? accepted.revisionId : null} timing={timings.latest(id)} /></details>
-      <VisualWorkspace projectId={id} script={script} eligible={!!accepted && !accepted.stale} concepts={concepts} board={board} originalBoard={board?.baseId ? store.read(id, board.baseId) : null}
+      <VisualWorkspace initialCapability={kineticExamples.find(entry => entry.id === capability)?.id} initialShot={selectedShot && /^\d{1,2}$/.test(selectedShot) ? Math.min(39,Number(selectedShot)) : 0} projectId={id} script={script} eligible={!!accepted && !accepted.stale} concepts={concepts} board={board} originalBoard={board?.baseId ? store.read(id, board.baseId) : null}
         conceptsCurrent={!!concepts && store.current(id, concepts.id)} boardCurrent={!!board && store.current(id, board.id)}
         latestConceptId={latestConcept} latestBoardId={latestBoard} chosen={chosen} acceptance={store.acceptance(id)} history={store.list(id)} />
       <details className="workspace-stage" open={!!motionId}><summary>Motion</summary>

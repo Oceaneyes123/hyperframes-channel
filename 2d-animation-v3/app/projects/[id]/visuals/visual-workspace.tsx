@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { kineticExamples, capabilityDirection, type KineticExampleId } from "../../../../workflow/examples/kinetic.ts";
 import { useActionState, useState } from "react";
 import { useRouter } from "next/navigation";
 import { decideVisual } from "../../../actions.ts";
@@ -9,6 +11,7 @@ import GraphicReview from "./graphic-review";
 import PlanningFrame from "./frame";
 
 type Props = {
+  initialCapability?: KineticExampleId; initialShot?: number;
   projectId: string; script: ScriptRevision | null; eligible: boolean; concepts: VisualArtifact | null; board: VisualArtifact | null;
   originalBoard?: VisualArtifact | null;
   conceptsCurrent: boolean; boardCurrent: boolean; latestConceptId: string | null; latestBoardId: string | null;
@@ -32,15 +35,16 @@ function Decision({ projectId, runId, optionIndex, selectionId, disabled, childr
 export default function VisualWorkspace(props: Props) {
   const { projectId, script, eligible, concepts, board, chosen } = props; const router = useRouter();
   const [instruction, setInstruction] = useState(""); const [busy, setBusy] = useState(false); const [message, setMessage] = useState("");
-  const [error, setError] = useState(""); const [selectedShot, setSelectedShot] = useState(0);
+  const [error, setError] = useState(""); const [selectedShot, setSelectedShot] = useState(props.initialShot ?? 0);
+  const [capability, setCapability] = useState<KineticExampleId | "">(props.initialCapability ?? "");
   const running = props.history.some((item) => item.status === "running");
   const hasConcept = props.conceptsCurrent && !!chosen && chosen.runId === props.latestConceptId;
-  async function generate(kind: "concepts" | "storyboard" | "shot", shotIndex: number | null = null) {
+  async function generate(kind: "concepts" | "storyboard" | "shot", shotIndex: number | null = null, direction = instruction) {
     if (!script) return; setBusy(true); setError(""); setMessage("Starting visual request…");
     try {
       const response = await fetch(`/api/projects/${projectId}/visuals`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({
         kind, scriptId: script.id, selectionId: kind === "concepts" ? null : chosen?.id ?? null,
-        baseId: kind === "concepts" ? props.latestConceptId : props.latestBoardId, shotIndex, instruction,
+        baseId: kind === "concepts" ? props.latestConceptId : props.latestBoardId, shotIndex, instruction: direction,
       }) });
       if (!response.ok || !response.body) throw new Error("Could not start visual request.");
       const reader = response.body.getReader(); const decoder = new TextDecoder(); let buffer = ""; let result: string | null = null;
@@ -132,6 +136,12 @@ export default function VisualWorkspace(props: Props) {
               </dl>
             </details>
             <GraphicReview key={`${board.id}-${shotIndex}`} projectId={projectId} board={board} original={props.originalBoard ?? null} shotIndex={shotIndex} current={eligible && props.boardCurrent} onInstruction={(value) => { setInstruction(value); setMessage(`Direction set for shot ${shotIndex + 1}. Review it, then use Revise shot.`); }} />
+            <div className="mt-5 space-y-3">
+              <label className="block text-sm">Motion library capability<select aria-label="Motion library capability" value={capability} onChange={event => setCapability(kineticExamples.find(entry => entry.id === event.target.value)?.id ?? "")}><option value="">Choose a capability</option>{kineticExamples.map(entry => <option key={entry.id} value={entry.id}>{entry.name}</option>)}</select></label>
+              <Link href={`/motion-library?project=${projectId}&shot=${shotIndex}`}>Inspect gallery and endpoints</Link>
+              <p className="text-sm text-[var(--muted)]">Creates a visual proposal for this shot. Review its drawings before motion planning.</p>
+              <button className="secondary" disabled={!capability || !eligible || !props.boardCurrent} onClick={() => { if (!capability) return; try { void generate("shot",shotIndex,capabilityDirection(capability,instruction)); } catch (failure) { setError(failure instanceof Error ? failure.message : "Capability direction is too long."); } }}>Propose capability in shot {shotIndex + 1}</button>
+            </div>
             <button className="secondary mt-5" disabled={!eligible || !props.boardCurrent} onClick={() => generate("shot", shotIndex)}>Revise shot {shotIndex + 1}</button>
           </article>}
           <Decision projectId={projectId} runId={board.id} disabled={!eligible || !props.boardCurrent || props.acceptance?.runId === board.id && !props.acceptance.stale}>

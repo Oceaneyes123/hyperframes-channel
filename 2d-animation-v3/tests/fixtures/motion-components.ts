@@ -6,11 +6,24 @@ import { hashMotionSource } from "../../server/motion-store.ts";
 import { presetScene } from "./motion-presets.ts";
 
 export function motionComponentFixture(type: ComponentType = "inbox-panel@1") {
-  if (type === "perspective-scene@1" || type === "editorial-collage@1" || type === "morph-chain@1" || type === "data-comparison@1" || type === "morph-shape@1" || type === "numeric-display@1" || type === "ui-workflow@1" || type === "character-rig@1") {
-    const fixture = kineticExample(type === "perspective-scene@1" ? "perspective" : type === "editorial-collage@1" ? "collage" : type === "morph-chain@1" ? "document-checklist" : type === "character-rig@1" ? "character-rig" : type === "ui-workflow@1" ? "ui-workflow" : type === "numeric-display@1" ? "rolling-value" : type === "morph-shape@1" ? "morph" : "comparison");
+  if (type === "variable-type@1" || type === "perspective-scene@1" || type === "editorial-collage@1" || type === "morph-chain@1" || type === "data-comparison@1" || type === "morph-shape@1" || type === "numeric-display@1" || type === "ui-workflow@1" || type === "character-rig@1") {
+    const fixture = kineticExample(type === "variable-type@1" ? "variable-type" : type === "perspective-scene@1" ? "perspective" : type === "editorial-collage@1" ? "collage" : type === "morph-chain@1" ? "document-checklist" : type === "character-rig@1" ? "character-rig" : type === "ui-workflow@1" ? "ui-workflow" : type === "numeric-display@1" ? "rolling-value" : type === "morph-shape@1" ? "morph" : "comparison");
     if (fixture.board.output.kind !== "storyboard") throw new Error("Expected storyboard.");
     for (const shot of fixture.plan.shots) shot.sourceHash = hashMotionSource(fixture.board.output.shots[shot.sourceIndex]);
     return fixture;
+  }
+  if (type === "payment-terminal@1" || type === "banking-balance@1") {
+    const initial = componentParts(type, "#9BA7FF");
+    const active = type === "payment-terminal@1" ? ["declined"] : Object.keys(initial);
+    for (const id of active) { initial[id].opacity = 1; initial[id].reveal = 0; }
+    const final = structuredClone(initial);
+    for (const id of active) final[id].reveal = 1;
+    const shape = {type, x:15, y:20, width:70, height:54.140625, color:"#9BA7FF", label:""};
+    const fixture = presetScene([{...shape,parts:initial}],[{...shape,parts:final}],[[0,0]],{presetId:"mask-reveal@1",parameters:{reveal:1},targetIds:active.map(id=>`object-1.${id}`)});
+    const shot = fixture.plan.shots[0]; shot.objects[0].initialParts = initial;
+    shot.beats = [motionBeatSchema.parse({id:"finance-state",purpose:"Reveal registered finance state.",type:"transformation",presetId:"mask-reveal@1",parameters:{reveal:1},targetIds:active.map(id=>`object-1.${id}`),startFrame:3,endFrame:24,importance:"primary",narrationAnchor:null,continuity:null}),motionBeatSchema.parse({id:"finance-hold",purpose:"Read finance state.",type:"hold",presetId:"hold@1",parameters:{},targetIds:["object-1"],startFrame:30,endFrame:98,importance:"primary",narrationAnchor:null,continuity:null})];
+    if (fixture.board.output.kind !== "storyboard") throw new Error("Expected storyboard.");
+    shot.sourceHash = hashMotionSource(fixture.board.output.shots[0]); return fixture;
   }
   const shape = { type, x: 15, y: 30, width: 70, height: isGraphicAsset(type) ? 52.5 : 40, ...(isGraphicAsset(type) ? { asset: graphicReference(type) } : {}), color: "#9BA7FF", label: type === "kinetic-phrase@1" ? "Repeated problems" : "", ...(type === "cost-chart@1" ? { values: [20, 40] as [number, number] } : {}) };
   const initial = componentParts(shape.type, shape.color);

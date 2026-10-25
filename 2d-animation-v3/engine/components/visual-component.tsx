@@ -1,5 +1,7 @@
+import { FinanceSurface } from "./finance-surface.tsx";
 import { LayeredGraphic } from "../graphics/layered-graphic.tsx";
 import type { ComponentDetails } from "../../workflow/components.ts";
+import { VariableType } from "./variable-type.tsx";
 import { useId } from "react";
 import { ComplaintWorkflow } from "../graphics/complaint-workflow.tsx";
 import { componentParts, type ComponentType, type PartState } from "../../workflow/components.ts";
@@ -14,10 +16,12 @@ import { NumericDisplay } from "./numeric-display.tsx";
 import { UIWorkflow } from "./ui-workflow.tsx";
 import { CharacterRig } from "./character-rig.tsx";
 
-export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1, asset, diagram, comparison, morph, numeric, ui, rig, morphChain, collage, perspective }: ComponentDetails & {
+export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1, asset, diagram, comparison, morph, numeric, ui, rig, morphChain, collage, perspective, variableType }: ComponentDetails & {
   type: ComponentType; width: number; height: number; color: string; parts?: Record<string, PartState>; values?: [number, number]; label?: string; actorId?: string; coordinateScale?: number;
 }) {
   const clip = useId(); const states = componentParts(type, color, parts, { asset, diagram });
+  if (type === "payment-terminal@1" || type === "banking-balance@1") return <FinanceSurface type={type} width={width} height={height} states={states} actorId={actorId} />;
+  if (type === "variable-type@1" && variableType) return <VariableType reference={variableType} width={width} height={height} state={states.glyphs} actorId={actorId} coordinateScale={coordinateScale} />;
   if (type === "perspective-scene@1" && perspective) return <PerspectiveScene width={width} height={height} state={states.camera} actorId={actorId} />;
   if (type === "editorial-collage@1" && collage) return <EditorialCollage width={width} height={height} states={states} actorId={actorId} coordinateScale={coordinateScale} />;
   if (type === "morph-chain@1" && morphChain) return <MorphChain chain={morphChain} width={width} height={height} state={states.outline} actorId={actorId} />;

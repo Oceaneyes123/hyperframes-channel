@@ -227,3 +227,7 @@
 - PLAN.md requires three pictured concepts, shot teaching purposes, narration references and relationships between neighboring shots. Static declarative SVG boards can show intended layouts safely; they are planning images, not screenshots from an animation renderer.
 - Current script acceptance verifies exact immutable revision bytes and inherited research currentness. Reuse that boundary for all creative mutations and completion checks; real revised evaluation scripts remain unaccepted.
 - Existing loopback-only NDJSON request transport and gateway are reusable. Schema 4 needs an additive migration. Existing changes belong to prior v3 work and will be preserved. No root CodeGraph index is present.
+
+
+## Overnight M8–M10 continuation — 2026-10-26
+The selected owner plan is `.planning/2026-10-25-advanced-motion-plan/task_plan.md`; these root records retain earlier project history. M8 is complete. M9 offline implementation/technical gates pass, with live Director audit blocked by authorized gateway configuration. M10 candidate/rubric/paired review are prepared; repeat exact-seek revalidation, original-store/media restoration and actual human/production gates remain pending. See `docs/advanced-motion-progress.md` and `docs/overnight-m8-m10-2026-10-26.md` for evidence and artifact paths.

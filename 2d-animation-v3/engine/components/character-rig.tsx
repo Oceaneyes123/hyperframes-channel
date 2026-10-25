@@ -26,8 +26,9 @@ export function CharacterRig({ width, height, states, actorId, cues = [], frame 
       </g>
     </g>;
   };
-  return <g data-shape data-character-action={pose.action} role="img" aria-label={`Business owner: ${pose.action === "neutral" ? "at rest" : pose.action.replace("character-", "").replace("@1", "")}${documentProgress === 1 ? "; document delivered to review tray" : ""}`}>
-    <svg width={width} height={height} viewBox={`0 0 ${rig.width} ${rig.height}`}>
+  // A single paint surface keeps rotated stroke rasterization stable across backward seeks.
+  return <g style={{ filter: "opacity(1)" }} shapeRendering="geometricPrecision" data-shape data-character-action={pose.action} role="img" aria-label={`Business owner: ${pose.action === "neutral" ? "at rest" : pose.action.replace("character-", "").replace("@1", "")}${documentProgress === 1 ? "; document delivered to review tray" : ""}`}>
+    <svg key={JSON.stringify(pose)} width={width} height={height} viewBox={`0 0 ${rig.width} ${rig.height}`}>
       <g transform={`translate(${rig.offset.join(" ")})`}>
         <ellipse cx="160" cy="485" rx="190" ry="13" fill={paint.ink} opacity=".1" />
         <rect x="52" y="235" width="142" height="190" rx="38" fill={paint.mint} stroke={paint.ink} strokeWidth="3" />

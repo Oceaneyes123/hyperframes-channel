@@ -330,3 +330,7 @@ Pending implementation.
 
 - Restored the installed planning skill and existing project plan. Read current storage, acceptance, actions and route patterns. Implementation scope: concepts, explicit selection, shot boards, selected-shot revisions and storyboard acceptance; production media stays disabled.
 - Added phases 26–28 before implementation. PowerShell route-path read error resolved using LiteralPath.
+
+
+## Overnight M8–M10 continuation — 2026-10-26
+The selected owner plan is `.planning/2026-10-25-advanced-motion-plan/task_plan.md`; these root records retain earlier project history. M8 is complete. M9 offline implementation/technical gates pass, with live Director audit blocked by authorized gateway configuration. M10 candidate/rubric/paired review are prepared; repeat exact-seek revalidation, original-store/media restoration and actual human/production gates remain pending. See `docs/advanced-motion-progress.md` and `docs/overnight-m8-m10-2026-10-26.md` for evidence and artifact paths.

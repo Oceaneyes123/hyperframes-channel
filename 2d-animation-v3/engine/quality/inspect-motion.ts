@@ -1,3 +1,4 @@
+import { variableTypeLayout, variableFonts, variableExpression } from "../../workflow/variable-type.ts";
 import { perspectivePose, perspectiveScene, projectPoint, tokenPoint } from "../../workflow/perspective.ts";
 import { expandMotionShot, scheduleMotion, type MotionPlan, type MotionState } from "../../workflow/motion.ts";
 import type { VisualArtifact } from "../../workflow/visuals.ts";
@@ -74,6 +75,12 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     const crowded = primary.find((beat) => primary.filter((other) => other.startFrame <= beat.startFrame && other.endFrame > beat.startFrame).length >= qualityThresholds.competingPrimary);
     if (crowded) add("competing-effects", crowded.startFrame, crowded.endFrame, "several primary effects compete at once.", `At least ${qualityThresholds.competingPrimary} primary beats overlap.`, "Choose one primary action and make the others supporting or sequential.");
     if (shot.actions.some((action) => action.targetIds.includes("camera") && (Math.abs(action.to.rotation ?? 0) > 15 || (action.to.scale ?? 1) > 1.5))) add("camera-strength", 0, shot.durationFrames - 1, "inspect strong camera motion for readability.", "Camera rotation exceeds 15 degrees or scale exceeds 1.5.", "Use a smaller focused reframe and review it at phone size.");
+    for (const object of shot.objects.filter(object => object.variableType)) {
+      const ref = object.variableType!, final = states.get(object.id) as MotionState;
+      const layout = variableTypeLayout(ref, final.width * 10.8, final.height * 19.2);
+      const pixels = layout.unit * variableFonts[variableExpression(ref).font].unitsPerEm * final.scale * camera.scale;
+      if (pixels < qualityThresholds.minimumFontPixels) add("variable-type-size", 0, shot.durationFrames - 1, "variable typography falls below the phone readability threshold.", `Measured motion envelope reserves ${pixels.toFixed(1)}px type across every axis state.`, "Increase the approved box and review the motion at phone size.", object.id, false, "warning");
+    }
     const texts = shot.objects.filter((object) => isTextType(object.type) || ["kinetic-phrase@1", "cost-chart@1"].includes(object.type));
     for (const object of texts) {
       if (object.typography) add("measured-type-review", 0, shot.durationFrames - 1, "inspect the measured font layout at phone size.", "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.", "Review glyph bounds, decoration length and the authored line breaks in the preview/export.", object.id);

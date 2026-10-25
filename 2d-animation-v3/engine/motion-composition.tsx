@@ -22,6 +22,7 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { semanticPair } from "../workflow/semantic-morphs.ts";
 import { perspectivePose } from "../workflow/perspective.ts";
+import { VariableType } from "./components/variable-type.tsx";
 import { PerspectiveScene } from "./components/perspective-scene.tsx";
 import { MorphChain } from "./components/morph-chain.tsx";
 import { morphPair } from "../workflow/morphs.ts";
@@ -56,8 +57,12 @@ function shapeVars(type: string, state: Partial<MotionState>) {
   return result;
 }
 
-function Primitive({ object, actorId, textMotion, numericAction, uiActions, chainActions, depthActions, characterCues, handoffAction, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; numericAction?: MotionAction; uiActions?: MotionAction[]; chainActions?: MotionAction[]; depthActions?: MotionAction[]; characterCues?: CharacterCue[]; handoffAction?: MotionAction; frame: number }) {
+function Primitive({ object, actorId, textMotion, fontAction, numericAction, uiActions, chainActions, depthActions, characterCues, handoffAction, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; fontAction?: MotionAction; numericAction?: MotionAction; uiActions?: MotionAction[]; chainActions?: MotionAction[]; depthActions?: MotionAction[]; characterCues?: CharacterCue[]; handoffAction?: MotionAction; frame: number }) {
   const state = object.initial, width = state.width * 10.8, height = state.height * 19.2;
+  if (object.variableType) {
+    const t = fontAction ? Math.max(0, Math.min(1, (frame - fontAction.startFrame) / (fontAction.endFrame - fontAction.startFrame))) : object.initialParts!.glyphs.axisProgress ?? 0;
+    return <VariableType reference={object.variableType} width={width} height={height} state={object.initialParts!.glyphs} actorId={actorId} progress={fontAction ? gsap.parseEase(fontAction.ease)(t) : t} />;
+  }
   if (object.perspective) {
     const initial=object.initialParts!.camera,pose=perspectivePose(initial,depthActions??[],frame);
     return <PerspectiveScene width={width} height={height} state={initial} actorId={actorId} camera={pose.camera} progress={pose.progress}/>;
@@ -181,9 +186,10 @@ function GroupScene({ group }: { group: MotionGroup }) {
     <g data-camera>{group.actors.map((actor) => {
       const owner = group.shots.find((item) => item.startFrame === actor.startFrame)!;
       const textMotion = owner.shot.textMotions?.find((motion) => owner.targets[motion.targetId] === actor.id);
-      const semanticActions = actor.object.numeric || actor.object.ui || actor.object.rig || actor.object.morphChain || actor.object.perspective ? group.shots.flatMap((item) => item.shot.actions
+      const semanticActions = actor.object.variableType || actor.object.numeric || actor.object.ui || actor.object.rig || actor.object.morphChain || actor.object.perspective ? group.shots.flatMap((item) => item.shot.actions
         .filter((action) => action.targetIds.some((id) => item.targets[id]?.startsWith(`${actor.id}.`)))
         .map((action) => ({ ...action, startFrame: item.startFrame - actor.startFrame + action.startFrame, endFrame: item.startFrame - actor.startFrame + action.endFrame }))) : [];
+      const fontAction = semanticActions.find(action => action.to.axisProgress !== undefined);
       const numericAction = semanticActions.find((action) => action.to.numericProgress !== undefined);
       const depthActions = semanticActions.filter((action) => ["cameraX","cameraY","cameraZ","depthProgress"].some(field=>action.to[field as keyof MotionState]!==undefined));
       const chainActions = semanticActions.filter((action) => action.to.morphStage !== undefined);
@@ -195,7 +201,7 @@ function GroupScene({ group }: { group: MotionGroup }) {
           characterCues.push({ presetId: beat.presetId, startFrame: item.startFrame - actor.startFrame + beat.startFrame, endFrame: item.startFrame - actor.startFrame + beat.endFrame, ...(beat.presetId === "character-look@1" ? { direction: beat.parameters.direction } : {}) });
         }
       }
-      return <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} textMotion={textMotion} numericAction={numericAction} uiActions={uiActions} chainActions={chainActions} depthActions={depthActions} characterCues={characterCues} handoffAction={handoffAction} frame={frame - actor.startFrame} /></g>;
+      return <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} textMotion={textMotion} fontAction={fontAction} numericAction={numericAction} uiActions={uiActions} chainActions={chainActions} depthActions={depthActions} characterCues={characterCues} handoffAction={handoffAction} frame={frame - actor.startFrame} /></g>;
     })}</g>
   </svg>;
 }

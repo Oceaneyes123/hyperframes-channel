@@ -95,5 +95,50 @@
       ]
     },
     "contentHash": "26e2dfd6319f4da0a4b6cd59c5531c6d7dab407a2e4e9441c68086c67a03eb2e"
+  },
+  {
+    "source": {
+      "id": "card-declined-example@1",
+      "provenance": "supplied",
+      "note": "Fictional USD debit example supplied in the user brief. Proposed script pending human approval. No overdraft or partial approval; no other pending items. Hold reserves funds, it is not a second posted debit.",
+      "unit": {
+        "kind": "currency",
+        "currency": "USD",
+        "minorDigits": 2
+      },
+      "minimum": 0,
+      "maximum": 20500,
+      "records": [
+        {
+          "id": "current",
+          "label": "Current balance",
+          "value": 20500
+        },
+        {
+          "id": "hold",
+          "label": "Pending hold",
+          "value": 20000
+        },
+        {
+          "id": "available",
+          "label": "Available balance",
+          "value": 500
+        },
+        {
+          "id": "purchase",
+          "label": "Purchase",
+          "value": 600
+        }
+      ],
+      "relationships": [
+        {
+          "id": "reserve-hold",
+          "from": "current",
+          "to": "available",
+          "meaning": "20500 current cents minus 20000 held cents leaves 500 available cents; current remains 20500."
+        }
+      ]
+    },
+    "contentHash": "e6033bca80f2b326f0964cf8ea79f9f3f86ca2d1a17a715459506147e088d60c"
   }
 ]

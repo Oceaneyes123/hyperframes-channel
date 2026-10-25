@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { variableTypeReferenceSchema, variableExpression } from "./variable-type.ts";
 import { typographySchema } from "./typography.ts";
 import { comparisonReferenceSchema } from "./comparison.ts";
 import { morphReferenceSchema } from "./morphs.ts";
@@ -18,7 +19,7 @@ import { artDirectionSchema, backgroundSchema } from "./art-direction.ts";
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 const position = z.number().min(0).max(100);
-export const primitiveSchema = z.enum(["perspective-scene@1", "editorial-collage@1", "morph-chain@1", "character-rig@1", "ui-workflow@1", "numeric-display@1", "morph-shape@1", "data-comparison@1", "rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1", "graphic-asset@2", "semantic-diagram@1"]);
+export const primitiveSchema = z.enum(["payment-terminal@1", "banking-balance@1", "variable-type@1", "perspective-scene@1", "editorial-collage@1", "morph-chain@1", "character-rig@1", "ui-workflow@1", "numeric-display@1", "morph-shape@1", "data-comparison@1", "rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1", "graphic-asset@2", "semantic-diagram@1"]);
 // Only declarative shapes cross the model boundary; markup, URLs and code never do.
 export const frameSchema = z.strictObject({
   background: color,
@@ -35,12 +36,17 @@ export const frameSchema = z.strictObject({
     rig: rigReferenceSchema.optional(),
     morphChain: morphChainSchema.optional(),
     collage: collageReferenceSchema.optional(),
+    variableType: variableTypeReferenceSchema.optional(),
     perspective: perspectiveReferenceSchema.optional(),
     asset: graphicReferenceSchema.optional(),
     diagram: diagramSchema.optional(),
     parts: componentPartsSchema.optional(),
     values: chartValuesSchema.optional(),
   }).superRefine((shape, context) => {
+    if (["payment-terminal@1", "banking-balance@1"].includes(shape.type) && Object.values(shape.parts ?? {}).some(state => state.x !== 0 || state.y !== 0 || state.scale !== 1)) context.addIssue({code:"custom",message:"Finance surfaces have fixed part geometry; transform the root."});
+    if (shape.type === "payment-terminal@1" && Object.values(shape.parts ?? {}).filter(state => state.opacity > 0 && (state.reveal ?? 1) > 0).length > 1) context.addIssue({code:"custom",message:"Terminal endpoint must show at most one status."});
+    if ((shape.type === "variable-type@1") !== !!shape.variableType || shape.variableType && (shape.label !== variableExpression(shape.variableType).label || shape.typography || shape.parts?.glyphs?.axisProgress === undefined || shape.parts.glyphs.x !== 0 || shape.parts.glyphs.y !== 0 || shape.parts.glyphs.scale !== 1 || shape.parts.glyphs.opacity !== 1)) context.addIssue({code:"custom",message:"Variable typography requires its exact authored label and fixed visible glyphs with explicit progress."});
+    if (Object.entries(shape.parts ?? {}).some(([id,state]) => state.axisProgress !== undefined && (shape.type !== "variable-type@1" || id !== "glyphs"))) context.addIssue({code:"custom",message:"Axis progress belongs to variable-font glyphs."});
     if ((shape.type === "perspective-scene@1") !== !!shape.perspective || shape.perspective && (shape.label !== "" || Math.abs(shape.width * 1080 / (shape.height * 1920) - 1) > .001 || !shape.parts?.camera || ["cameraX", "cameraY", "cameraZ", "depthProgress"].some((field) => shape.parts!.camera[field as keyof typeof shape.parts.camera] === undefined) || shape.parts.camera.opacity !== 1 || (shape.parts.camera.reveal ?? 1) !== 1 || shape.parts.camera.x !== 0 || shape.parts.camera.y !== 0 || shape.parts.camera.scale !== 1)) context.addIssue({code:"custom",message:"Perspective needs its registered square scene and visible fixed camera part with explicit depth pose."});
     if (Object.entries(shape.parts ?? {}).some(([id,state]) => ["cameraX", "cameraY", "cameraZ", "depthProgress"].some((field) => state[field as keyof typeof state] !== undefined) && (shape.type !== "perspective-scene@1" || id !== "camera"))) context.addIssue({code:"custom",message:"Depth pose belongs to the perspective camera part."});
     if ((shape.type === "editorial-collage@1") !== !!shape.collage || shape.collage && (shape.label !== editorialCollage.label || Math.abs(shape.height - shape.width * .75) > .001)) context.addIssue({ code: "custom", message: "Collage needs its reviewed identity, fixed heading and 3:4 aspect." });

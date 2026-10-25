@@ -248,3 +248,7 @@ Error: use-server.mdx is absent in this installed Next release. Located actual u
 | Invoice narration included evaluation model/hash bookkeeping | Keep the execution recording rule in runner metadata, exclude it from narration boundaries, add regression coverage, preserve the diagnostic round and start a new frozen comparison. |
 | Documentation patch included a nonexistent generic heading context | Reapply only the verified file contexts; no source or data changed. |
 | Combined final log append/check command rejected by automatic review | Apply logs with the file patch tool and run the read-only completion check separately. |
+
+
+## Overnight M8–M10 continuation — 2026-10-26
+The selected owner plan is `.planning/2026-10-25-advanced-motion-plan/task_plan.md`; these root records retain earlier project history. M8 is complete. M9 offline implementation/technical gates pass, with live Director audit blocked by authorized gateway configuration. M10 candidate/rubric/paired review are prepared; repeat exact-seek revalidation, original-store/media restoration and actual human/production gates remain pending. See `docs/advanced-motion-progress.md` and `docs/overnight-m8-m10-2026-10-26.md` for evidence and artifact paths.

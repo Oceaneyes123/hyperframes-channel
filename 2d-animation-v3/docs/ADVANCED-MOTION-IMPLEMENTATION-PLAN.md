@@ -1,6 +1,8 @@
 # Advanced motion graphics: sequential implementation plan
 
-Status: planning complete; implementation not started. Inspected against HEAD
+Status: M0–M8 implemented; M9 offline technical gates pass but live audit remains pending.
+M10 comparison preparation is recorded; strict revalidation and human/production gates remain pending.
+Original plan inspected against HEAD
 `c98ce8f` on 2026-10-25. Input: user-supplied **HyperFrames v3 — Advanced Motion
 Graphics Implementation Plan**, retained in the task's planning directory.
 
@@ -269,6 +271,7 @@ revise the candidate; do not redefine the evidence as a success.
 
 ## Next implementation action
 
-Execute M0, then M1, completing each gate before starting the next milestone.
-This planning pass does not alter accepted projects, request model generation,
-create motion assets or render a candidate video.
+Configure an authorized project gateway and complete the live M9 Director audit.
+Restore the original project store/media and resolve the recorded candidate exact-seek
+revalidation before completing M10 human review and production gates. See
+[the current evidence record](advanced-motion-progress.md). Original exit criteria above remain unchanged.

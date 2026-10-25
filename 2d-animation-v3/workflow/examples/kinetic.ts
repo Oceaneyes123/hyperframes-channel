@@ -3,6 +3,7 @@ import { hydrateMotion, motionBeatSchema, type MotionBeat, type MotionShot } fro
 import { componentParts } from "../components.ts";
 import { comparisonSources } from "../comparison.ts";
 import { graphicReference } from "../graphic-assets.ts";
+import { variableExpressions } from "../variable-type.ts";
 import { perspectiveHash, perspectiveScene } from "../perspective.ts";
 import { collageHash, editorialCollage } from "../raster.ts";
 import { semanticMorphPairs, morphChainSchema } from "../semantic-morphs.ts";
@@ -13,6 +14,7 @@ import { characterRig, characterRigHash, rigReferenceSchema } from "../character
 import { visualArtifactSchema, type Frame } from "../visuals.ts";
 
 export const kineticExamples = [
+  {id:"variable-type",name:"Real variable-font expression",purpose:"Measured weight, optical size, genuine width compression, hierarchy and staggered glyph axes preserve five authored phrases."},
   { id: "perspective", name: "Three-plane support camera", purpose: "A bounded camera reveals one inquiry, pans, pushes, reframes and follows that same token into processing." },
   { id: "collage", name: "Editable mixed-media editorial", purpose: "A fictional generated desk photo, original paper/grain, vector and measured text assemble as five editable layers." },
   { id: "question-answer", name: "Question answer", purpose: "Curated schematic transformation; no real records, measured chart values or automation results are implied." },
@@ -59,6 +61,19 @@ export function exampleBeat(id: string, presetId: MotionBeat["presetId"], target
 
 // Synthetic catalog only. Proof tools bind the actual storyboard hash before source validation.
 export function kineticExample(id: KineticExampleId) {
+  if (id === "variable-type") {
+    const scenes = variableExpressions.map(entry => {
+      const variableType = {id:entry.id,contentHash:entry.contentHash} as import("../variable-type.ts").VariableTypeReference;
+      const parts = componentParts("variable-type@1", "#244E42"); Object.assign(parts.glyphs,{opacity:1,axisProgress:0});
+      const shapes: Frame["shapes"] = [{type:"variable-type@1",variableType,label:entry.label,parts,x:10,y:34,width:80,height:24,color:"#244E42"}];
+      const end = structuredClone(shapes); end[0].parts!.glyphs.axisProgress=1;
+      return example(shapes,end,[exampleBeat("axes","font-expression@1",["object-1.glyphs"],12,72,{}),exampleBeat("read","hold@1",["object-1"],78,118,{})]);
+    });
+    const combined = structuredClone(scenes[0]); if(combined.board.output.kind!=="storyboard")throw Error();
+    combined.board.output.shots = scenes.map((scene,index)=>{if(scene.board.output.kind!=="storyboard")throw Error();return {...scene.board.output.shots[0],lineNumbers:[index+1],transition:index?"hard-cut":"start"};});
+    combined.plan.shots = scenes.map((scene,index)=>({...scene.plan.shots[0],id:`shot-${index+1}`,sourceIndex:index,lineNumbers:[index+1],incoming:{...scene.plan.shots[0].incoming,type:index?"hard-cut":"start"}}));
+    return combined;
+  }
   if (["question-answer", "document-checklist", "complaints-problem", "problem-product", "blocks-chart", "manual-automated", "morph-chain"].includes(id)) {
     const ids = id === "morph-chain" ? ["message-record@1", "document-checklist@1"] : [`${id}@1`];
     const morphChain = morphChainSchema.parse({ pairs: ids.map((id) => { const entry = semanticMorphPairs.find((entry) => entry.pair.id === id)!; return { pairId: id, contentHash: entry.contentHash }; }) });
@@ -215,4 +230,12 @@ export function kineticExample(id: KineticExampleId) {
     return example(shapes, end, [exampleBeat("message-record", "morph-shape@1", ["object-1.outline"], 12, 66, {}), exampleBeat("read", "hold@1", ["object-1"], 72, 118, {})]);
   }
   throw new Error("Unknown kinetic example.");
+}
+
+export function capabilityDirection(id: KineticExampleId, direction = "") {
+  const entry = kineticExamples.find(entry => entry.id === id);
+  if (!entry) throw new Error("Unknown motion library capability.");
+  const purpose = `Propose ${entry.name} for only this selected shot. Teaching purpose: ${entry.purpose} Use current registered source/asset references and supported fields. Preserve narration, factual content, source values and unselected shots. Never copy hypothetical gallery numbers or replace source wording to fit a registered phrase. If incompatible with this source, explain that in the shot action and preserve its drawings. New actor identity/layout belongs in this visual proposal before motion planning. `;
+  if (purpose.length + direction.length > 2000) throw new Error("Shorten the direction to leave room for the selected capability guidance.");
+  return purpose + direction;
 }
