@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { narrationAnchorSchema } from "./narration-anchor.ts";
 
 // Versioned visual semantics; timing is always shot-local at 30fps.
 export const textMotionLibrary = [
@@ -20,6 +21,7 @@ export const textMotionSchema = z.strictObject({
   presetId: textMotionIdSchema,
   startFrame: z.number().int().min(0).max(1800),
   endFrame: z.number().int().min(0).max(1800),
+  narrationAnchor: narrationAnchorSchema.nullable().optional(),
 }).refine((motion) => motion.endFrame - motion.startFrame >= 6, "Text motion needs at least six frames.");
 export type TextMotion = z.infer<typeof textMotionSchema>;
 
@@ -39,4 +41,4 @@ export function textMotionSegments(label: string, presetId: TextMotion["presetId
   return [label];
 }
 
-export const textMotionGuidance = `Optional textMotions:[{targetId,presetId,startFrame,endFrame}] selects one treatment per root text actor (text,centered-text,heading,caption,code). Available treatments: ${textMotionLibrary.map((preset) => `${preset.id}: ${preset.use}`).join("; ")}. Use short labels; preserve supplied text. No arbitrary markup, plugins or claims. Frames are shot-local, not measured word timing. Use 6+ frames and end at least 12 frames before the shot ends. Do not overlap a reading hold or reanimate a continuous anchor. Hidden root entrants must become visible before text motion starts. Do not animate every label: use one focal treatment, then hold. Character effects require simple left-to-right text; use whole-label effects for connected scripts. Never count up money or invent intermediate numbers.`;
+export const textMotionGuidance = `Optional textMotions:[{targetId,presetId,startFrame,endFrame}] selects one treatment per root text actor (text,centered-text,heading,caption,code). Available treatments: ${textMotionLibrary.map((preset) => `${preset.id}: ${preset.use}`).join("; ")}. Use short labels; preserve supplied text. No arbitrary markup, plugins or claims. Frames are shot-local. Optional narrationAnchor uses the same measured line/phrase/word contract as beats; missing precise spans explicitly fall back to the measured line. Use 6+ frames and end at least 12 frames before the shot ends. Do not overlap a reading hold or reanimate a continuous anchor. Hidden root entrants must become visible before text motion starts. Do not animate every label: use one focal treatment, then hold. Character effects require simple left-to-right text; use whole-label effects for connected scripts. Never count up money or invent intermediate numbers.`;

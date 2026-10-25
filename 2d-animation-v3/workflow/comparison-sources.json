@@ -1,0 +1,29 @@
+[
+  {
+    "source": {
+      "id": "synthetic-costs@1",
+      "provenance": "synthetic",
+      "note": "Hypothetical cost comparison supplied for the isolated gallery fixture; not a quote, earnings result or verified saving.",
+      "unit": {
+        "kind": "currency",
+        "currency": "USD",
+        "minorDigits": 2
+      },
+      "minimum": 0,
+      "maximum": 20000,
+      "records": [
+        {
+          "id": "baseline",
+          "label": "Baseline cost",
+          "value": 18000
+        },
+        {
+          "id": "candidate",
+          "label": "Candidate cost",
+          "value": 12000
+        }
+      ]
+    },
+    "contentHash": "129f818ba82a670fa0d081282488675a8cd51bb36b5b6d41615278f0ef769cc5"
+  }
+]

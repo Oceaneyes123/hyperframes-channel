@@ -39,12 +39,12 @@ export function validatePlanningTiming(input: z.infer<typeof planningTimingInput
 export function resolveBeatTiming(input: MotionPlan, timing: PlanningTiming) {
   const plan = structuredClone(input), schedule = scheduleMotion(plan), warnings: string[] = [];
   for (const [index, shot] of plan.shots.entries()) {
-    for (const beat of shot.beats ?? []) {
+    for (const beat of [...shot.beats ?? [], ...shot.textMotions ?? []]) {
       const reference = beat.narrationAnchor; if (!reference) continue;
       const line = timing.timing.find((line) => line.number === reference.lineNumber);
       if (!line || !shot.lineNumbers.includes(reference.lineNumber)) throw new Error("Narration anchor is outside its assigned shot.");
       const precise = reference.kind === "line" ? null : timing.anchors.find((anchor) => anchor.id === reference.anchorId && anchor.lineNumber === reference.lineNumber && anchor.kind === reference.kind);
-      if (reference.kind !== "line" && !precise) warnings.push(`${shot.id}/${beat.id}: ${reference.kind} span unavailable; using measured line ${line.number}.`);
+      if (reference.kind !== "line" && !precise) warnings.push(`${shot.id}/${"id" in beat ? beat.id : beat.targetId}: ${reference.kind} span unavailable; using measured line ${line.number}.`);
       const start = (precise ?? line).startFrame - schedule.shots[index].startFrame + (reference.offsetFrames ?? 0), duration = beat.endFrame - beat.startFrame;
       if (start < 0 || start + duration >= shot.durationFrames) throw new Error("Anchored action does not fit its shot. Revise the motion schedule.");
       beat.startFrame = start; beat.endFrame = start + duration;

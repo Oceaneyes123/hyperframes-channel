@@ -1,0 +1,37 @@
+{
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "a59af609cc53dbdb10cd077c4410afc647ea9d2ec7a485c38d87a83f295bcf86",
+  "results": [
+    {
+      "id": "typography",
+      "frames": 120,
+      "freshSeeks": 8,
+      "inputHash": "1b5a3f2006fcff395ba43413a110e887d3e4a7a692caa411a3894e3293d96b43"
+    },
+    {
+      "id": "handoff",
+      "frames": 120,
+      "freshSeeks": 8,
+      "inputHash": "38c52d8a71587d4e236f17d94f8bebc69bac0556805891e02652468a4befb286"
+    },
+    {
+      "id": "comparison",
+      "frames": 120,
+      "freshSeeks": 8,
+      "inputHash": "41187652198e353126000f9e4d600c3098d9e56aad7c9ccb5f9b5c949ad2d530"
+    },
+    {
+      "id": "depth",
+      "frames": 120,
+      "freshSeeks": 8,
+      "inputHash": "cea998f6fa8f10c6a734fb7a5f28009d94468648b459b3cfc0b431f52dff0a0a"
+    },
+    {
+      "id": "morph",
+      "frames": 120,
+      "freshSeeks": 8,
+      "inputHash": "ff1d312d316bab9d819e8f8fdd9df94a11ac3a1db70370b9055419d7f32a8bf3"
+    }
+  ]
+}

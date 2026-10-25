@@ -7,5 +7,7 @@ export default function TextMotionPage() {
     <h1 className="mt-8 text-3xl font-semibold">Text motion library</h1>
     <p className="mb-8 text-[var(--muted)]">Ten treatments for upcoming videos. Choose a purpose, preview the motion, then leave time to read.</p>
     <TextMotionGallery />
+    <p className="mt-8"><Link href="/connected-process">Explore connected process animation →</Link></p>
+    <p className="mt-4"><Link href="/motion-library">Explore typography, handoffs, comparisons, depth and morphs →</Link></p>
   </main>;
 }

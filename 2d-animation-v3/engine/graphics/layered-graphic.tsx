@@ -47,9 +47,18 @@ export function LayeredGraphic({ type, width, height, color, parts, asset, diagr
       const children = graph.nodes.filter((node) => node.parent === parent.id), xs = [parent.x, ...children.map((node) => node.x)], ys = [parent.y, ...children.map((node) => node.y)];
       return <svg key={`group-${parent.id}`} width={width} height={height} viewBox="0 0 1000 1000"><rect x={Math.min(...xs) - 100} y={Math.min(...ys) - 100} width={Math.max(...xs) - Math.min(...xs) + 200} height={Math.max(...ys) - Math.min(...ys) + 200} rx="32" fill={graphicTheme.mint} opacity=".3" /></svg>;
     })}
-    {graph?.edges.map((edge) => layer(edge.id, <><path d={edge.d} fill="none" stroke="currentColor" strokeWidth="5" markerEnd={`url(#${uid}-arrow)`} />{edge.label && <text x={edge.labelX} y={edge.labelY} textAnchor="middle" fontSize="32" fill={graphicTheme.ink}>{edge.label}</text>}</>, "0 0 1000 1000"))}
+    {graph?.edges.map((edge) => {
+      const progress = states[edge.id].strokeProgress, target = actorId ? `${actorId}.${edge.id}` : undefined;
+      return layer(edge.id, <>
+        <path data-edge-path={target} d={edge.d} fill="none" stroke="currentColor" strokeWidth="5" {...(progress === undefined ? { markerEnd: `url(#${uid}-arrow)` } : { pathLength: 1, strokeDasharray: 1, strokeDashoffset: 1 - progress })} />
+        {progress !== undefined && <path data-edge-arrow={target} d={edge.d} fill="none" stroke="none" markerEnd={`url(#${uid}-arrow)`} opacity={progress === 1 ? 1 : 0} />}
+        {edge.label && <text x={edge.labelX} y={edge.labelY} textAnchor="middle" fontSize="32" fill={graphicTheme.ink}>{edge.label}</text>}
+        <circle data-edge-signal={target} r="14" fill={graphicTheme.accent} stroke={graphicTheme.paper} strokeWidth="3" opacity="0" />
+      </>, "0 0 1000 1000");
+    })}
     {graph?.nodes.map((node) => layer(node.id, <>
       <circle cx={node.x} cy={node.y} r="80" fill={node.emphasis ? graphicTheme.mint : graphicTheme.light} stroke={node.emphasis ? graphicTheme.ink : graphicTheme.line} strokeWidth={node.emphasis ? 6 : 3} />
+      <circle data-arrival={actorId ? `${actorId}.${node.id}` : undefined} cx={node.x} cy={node.y} r="92" fill="none" stroke={graphicTheme.accent} strokeWidth="8" opacity="0" />
       <svg x={node.x - 64} y={node.y - 64} width="128" height="128" viewBox="0 0 300 300"><VectorNodes nodes={vectorLibrary[`${node.icon}-editorial@1`].asset.layers[0].nodes} prefix={uid} strokeScale={2.5} /></svg>
       {node.label && <text x={diagram?.direction === "down" ? node.x + 108 : node.x} y={diagram?.direction === "down" ? node.y + 12 : node.y + 125} textAnchor={diagram?.direction === "down" ? "start" : "middle"} fontFamily="Arial" fontSize="60" fill={graphicTheme.ink}
         {...(node.label.length * 36 > (diagram?.direction === "down" ? 980 - node.x - 108 : Math.min(node.x, 1000 - node.x) * 2 - 20) ? { textLength: Math.max(40, diagram?.direction === "down" ? 980 - node.x - 108 : Math.min(node.x, 1000 - node.x) * 2 - 20), lengthAdjust: "spacingAndGlyphs" as const } : {})}>{node.label}</text>}

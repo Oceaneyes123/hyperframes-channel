@@ -1,0 +1,17 @@
+# Progress
+- Resumed actual checkout. Only prior planning files and source idea/roadmap are dirty/untracked; runtime files clean.
+- Read increment 1, diagram renderer, component state and GSAP interpreter callers. No CodeGraph index present.
+- Spike correction: fresh/sequential equality passed but mid-route visual inspection showed align:path with alignOrigin drifting inside nested SVG. Since path and circle share local SVG coordinates, removed cross-container alignment. Re-run required; initial result is diagnostic, not acceptance.
+- Fixed MotionPath alignment by keeping path and signal in the same local SVG coordinates; repeat spike passes and inspected frame places the signal on the stroke.
+- Initial typecheck found componentParts inferred a closed legacy state and GSAP selector inferred HTML. Declared the existing PartState record and added an SVGPathElement runtime guard.
+- Added edge-draw@1 / edge-trace@1, strict diagram-only progress fields, destination-derived transient pulses, SVG rendering, planner guidance and a paused portrait /connected-process example.
+- Focused regression suite: 14 tests passed including legacy masks, unsafe targets, overlapping dependencies/holds and forward/branch/feedback graphs.
+- Preserved the existing invalid-part error prefix after a regression test caught an unnecessary message change.
+- Full lint rejected useMemo with a function identifier under the installed React rule; changed to its required inline initializer. Runtime behavior unchanged.
+- Full npm run check PASS: 107 tests, typecheck, lint (one pre-existing author-motion.mjs unused-variable warning).
+- Engine proof PASS: 540 full-resolution sequential frames, 28 exact fresh stills, synthetic silent H.264 and full FFmpeg decode. Output .data/connected-process-proof-1792914449915. Verification record copied into this plan directory.
+- Mounted browser PASS: frames 45,60,179,0,45,115; exact returned SVG, route distance under one CSS pixel, correct destination pulse, effects hidden before start/after completion. Desktop/mobile and full-resolution branch/feedback frames inspected.
+- npm run build PASS: new /connected-process static route built. Existing broad-filesystem tracing warnings remain in production/render sources; no new build error.
+- Final engine fingerprint matches the successful synthetic render proof. Documentation links and git diff --check pass.
+- Mounted screenshot comparison PASS: travel.png and reverse-travel.png are byte-identical in addition to exact SVG state.
+- No production media/project/approval changes, dependency additions, commits or pushes. Only increment 1 implemented; all later roadmap increments remain proposed.

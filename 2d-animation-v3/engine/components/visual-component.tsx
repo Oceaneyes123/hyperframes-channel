@@ -5,11 +5,15 @@ import { ComplaintWorkflow } from "../graphics/complaint-workflow.tsx";
 import { componentParts, type ComponentType, type PartState } from "../../workflow/components.ts";
 import VisualSymbol from "../visual-symbol.tsx";
 import { textFontSize } from "../text-metrics.ts";
+import { DataComparison } from "./data-comparison.tsx";
+import { MorphShape } from "./morph-shape.tsx";
 
-export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1, asset, diagram }: ComponentDetails & {
+export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1, asset, diagram, comparison, morph }: ComponentDetails & {
   type: ComponentType; width: number; height: number; color: string; parts?: Record<string, PartState>; values?: [number, number]; label?: string; actorId?: string; coordinateScale?: number;
 }) {
   const clip = useId(); const states = componentParts(type, color, parts, { asset, diagram });
+  if (type === "morph-shape@1" && morph) return <MorphShape reference={morph} width={width} height={height} state={states.outline} actorId={actorId} />;
+  if (type === "data-comparison@1" && comparison) return <DataComparison reference={comparison} width={width} height={height} states={states} actorId={actorId} />;
   if (type === "graphic-asset@2" || type === "semantic-diagram@1") return <LayeredGraphic type={type} width={width} height={height} color={color} parts={parts} asset={asset} diagram={diagram} actorId={actorId} coordinateScale={coordinateScale} />;
   if (type === "complaint-workflow@1") return <ComplaintWorkflow width={width} height={height} color={color} parts={parts} actorId={actorId} coordinateScale={coordinateScale} />;
   const part = (id: string, children: React.ReactNode) => {

@@ -1,4 +1,7 @@
 import { z } from "zod";
+import { typographySchema } from "./typography.ts";
+import { comparisonReferenceSchema } from "./comparison.ts";
+import { morphReferenceSchema } from "./morphs.ts";
 import { componentPartsSchema, componentLayerIds, isComponent, chartValuesSchema } from "./components.ts";
 
 import { graphicReferenceSchema, validGraphicReference, isGraphicAsset, assetMetadata } from "./graphic-assets.ts";
@@ -9,7 +12,7 @@ import { artDirectionSchema, backgroundSchema } from "./art-direction.ts";
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 const position = z.number().min(0).max(100);
-export const primitiveSchema = z.enum(["rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1", "graphic-asset@2", "semantic-diagram@1"]);
+export const primitiveSchema = z.enum(["morph-shape@1", "data-comparison@1", "rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1", "graphic-asset@2", "semantic-diagram@1"]);
 // Only declarative shapes cross the model boundary; markup, URLs and code never do.
 export const frameSchema = z.strictObject({
   background: color,
@@ -18,16 +21,26 @@ export const frameSchema = z.strictObject({
     type: primitiveSchema,
     x: position, y: position, width: z.number().positive().max(100), height: z.number().positive().max(100),
     color, label: z.string().max(60),
+    typography: typographySchema.optional(),
+    comparison: comparisonReferenceSchema.optional(),
+    morph: morphReferenceSchema.optional(),
     asset: graphicReferenceSchema.optional(),
     diagram: diagramSchema.optional(),
     parts: componentPartsSchema.optional(),
     values: chartValuesSchema.optional(),
   }).superRefine((shape, context) => {
+    if ((shape.type === "morph-shape@1") !== !!shape.morph) context.addIssue({ code: "custom", message: "Morph shape requires a curated pair reference." });
+    if (shape.type === "morph-shape@1" && Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1)) context.addIssue({ code: "custom", message: "Morph outline geometry is fixed; transform its root." });
+    if (Object.entries(shape.parts ?? {}).some(([id, state]) => state.morphProgress !== undefined && (shape.type !== "morph-shape@1" || id !== "outline"))) context.addIssue({ code: "custom", message: "Morph progress requires a curated outline." });
+    if ((shape.type === "data-comparison@1") !== !!shape.comparison) context.addIssue({ code: "custom", message: "Data comparison requires a supplied source reference." });
+    if (shape.type === "data-comparison@1" && Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1)) context.addIssue({ code: "custom", message: "Comparison bar geometry is fixed to its common scale." });
+    if (shape.typography && (!["text", "heading", "caption", "centered-text"].includes(shape.type) || shape.label.split(/\r?\n/).length > 2 || shape.label.split(/\r?\n/).some((line) => !line.trim()))) context.addIssue({ code: "custom", message: "Typography requires one or two authored text lines." });
     if (!validGraphicReference(shape.type, shape.asset)) context.addIssue({ code: "custom", message: "Graphic asset identity or hash is invalid." });
     const metadata = shape.asset && assetMetadata(shape.asset.id);
     if (metadata && Math.abs(shape.width * 1080 / (shape.height * 1920) - metadata.width / metadata.height) > .001) context.addIssue({ code: "custom", message: "Graphic artwork requires its registered aspect ratio." });
     if ((shape.type === "semantic-diagram@1") !== (shape.diagram !== undefined)) context.addIssue({ code: "custom", message: "Only semantic diagrams require graph data." });
     if (shape.diagram && Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1)) context.addIssue({ code: "custom", message: "Diagram layer geometry is fixed to preserve semantic connections." });
+    if (Object.entries(shape.parts ?? {}).some(([id, state]) => state.strokeProgress !== undefined && !shape.diagram?.edges.some((edge) => edge.id === id))) context.addIssue({ code: "custom", message: "Stroke progress requires a diagram edge." });
     if (shape.x + shape.width > 100 || shape.y + shape.height > 100) context.addIssue({ code: "custom", message: "Shape exceeds the frame." });
     if (shape.parts && (!isComponent(shape.type) || Object.keys(shape.parts).some((part) => !componentLayerIds(shape.type as import("./components.ts").ComponentType, shape).includes(part)))) context.addIssue({ code: "custom", message: "Only registered component parts are allowed." });
     if ((shape.type === "cost-chart@1") !== (shape.values !== undefined)) context.addIssue({ code: "custom", message: "Only charts require supplied integer values." });

@@ -1,0 +1,1 @@
+async(page)=>{const result=[];for(const p of page.context().pages()){if(p.url().includes('/motion-library')) result.push({url:p.url(),text:(await p.locator('body').innerText()).slice(-1500),svg:await p.locator('svg[data-motion-frame]').count()});}return result;}

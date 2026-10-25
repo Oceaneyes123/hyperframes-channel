@@ -1,0 +1,42 @@
+async (page) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  const svg = page.locator('svg[data-motion-frame]');
+  const slider = page.getByRole('slider', {name:'Inspect frame'});
+  const seek = async (frame) => {
+    await slider.press('Home');
+    for(let i=0;i<frame;i++) await slider.press('ArrowRight');
+    await page.waitForFunction(frame => document.querySelector('svg[data-motion-frame]')?.getAttribute('data-motion-frame') === String(frame), frame);
+  };
+  const state = () => svg.evaluate(el => {
+    const signals = [...el.querySelectorAll('[data-edge-signal]')].map(signal => {
+      const path = el.querySelector('[data-edge-path="'+signal.getAttribute('data-edge-signal')+'"]');
+      const world = new DOMPoint(0,0).matrixTransform(signal.getScreenCTM());
+      const distance = Math.min(...Array.from({length:501}, (_,i)=>{
+        const p=path.getPointAtLength(path.getTotalLength()*i/500), point=new DOMPoint(p.x,p.y).matrixTransform(path.getScreenCTM());
+        return Math.hypot(point.x-world.x,point.y-world.y);
+      }));
+      return {id:signal.getAttribute('data-edge-signal'),opacity:Number(getComputedStyle(signal).opacity),distance};
+    });
+    const pulses=[...el.querySelectorAll('[data-arrival]')].map(node=>({id:node.getAttribute('data-arrival'),opacity:Number(getComputedStyle(node).opacity)}));
+    return {signals,pulses};
+  });
+  await seek(45); const first=await svg.evaluate(el=>el.outerHTML); const travel=await state();
+  if(!travel.signals.some(x=>x.opacity===1 && x.distance<1)) throw new Error('Signal off route');
+  await svg.screenshot({path:'.planning/2026-10-25-connected-process/travel.png'});
+  await seek(60); const arrival=await state();
+  if(!arrival.pulses.some(x=>x.id.endsWith('.classify') && x.opacity>0)) throw new Error('Destination did not react');
+  await seek(179); const hold=await state();
+  if(hold.signals.some(x=>x.opacity!==0)||hold.pulses.some(x=>x.opacity!==0)) throw new Error('Transient effects leak into hold');
+  await seek(0); const initial=await state();
+  if(initial.signals.some(x=>x.opacity!==0)||initial.pulses.some(x=>x.opacity!==0)) throw new Error('Effects leak before start');
+  await seek(45); if(first!==await svg.evaluate(el=>el.outerHTML)) throw new Error('Mounted reverse seek changed SVG state');
+  await svg.screenshot({path:'.planning/2026-10-25-connected-process/reverse-travel.png'});
+  await seek(115); const second=await state();
+  if(!second.signals.some(x=>x.id.endsWith('.result')&&x.opacity===1&&x.distance<1)) throw new Error('Second route misaligned');
+  await page.screenshot({path:'.planning/2026-10-25-connected-process/desktop.png',fullPage:true});
+  await page.setViewportSize({width:390,height:844});
+  await page.screenshot({path:'.planning/2026-10-25-connected-process/mobile.png',fullPage:true});
+  if(errors.length) throw new Error(errors.join('; '));
+  console.log(JSON.stringify({mountedSeeks:[45,60,179,0,45,115],exactSVG:true,travel,arrival,hold,second,errors}));
+}

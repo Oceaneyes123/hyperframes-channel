@@ -1,0 +1,25 @@
+{
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "a59af609cc53dbdb10cd077c4410afc647ea9d2ec7a485c38d87a83f295bcf86",
+  "cases": [
+    "typography",
+    "handoff",
+    "comparison",
+    "depth",
+    "morph"
+  ],
+  "mountedFrames": [
+    36,
+    119,
+    0,
+    36,
+    90
+  ],
+  "exactReturnedSVG": true,
+  "exactReturnedPng": true,
+  "staticComparisonLabels": true,
+  "morphEndpointsDistinct": true,
+  "fontCorruptionFailsClosed": true,
+  "pageErrors": 0
+}

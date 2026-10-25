@@ -10,7 +10,7 @@ export default function Home() {
   return <main className="mx-auto max-w-5xl px-6 py-10 sm:px-12 sm:py-14">
     <header className="section-toolbar mb-12">
       <p className="studio-brand">HyperFrames <span>Studio</span></p>
-      <Link href="/text-motion" className="text-xs text-[var(--muted)]">Text motion library</Link>
+      <Link href="/motion-library" className="text-xs text-[var(--muted)]">Motion library</Link>
     </header>
     <section aria-labelledby="projects-heading">
       <div className="section-toolbar mb-8">

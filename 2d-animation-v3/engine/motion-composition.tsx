@@ -17,6 +17,12 @@ import { useGsapTimeline } from "@remotion/gsap";
 import { compileMotion, type MotionGroup } from "./compile-motion.ts";
 import type { MotionPlan, MotionState, MotionShot } from "../workflow/motion.ts";
 import type { VisualArtifact } from "../workflow/visuals.ts";
+import { gsap } from "gsap";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { morphPair } from "../workflow/morphs.ts";
+
+gsap.registerPlugin(MotionPathPlugin, MorphSVGPlugin);
 
 export type MotionCompositionProps = { plan: MotionPlan; board: VisualArtifact; narrationUrl?: string };
 const ease = (t: number) => t * t * (3 - 2 * t);
@@ -44,8 +50,8 @@ function shapeVars(type: string, state: Partial<MotionState>) {
 
 function Primitive({ object, actorId, textMotion, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; frame: number }) {
   const state = object.initial, width = state.width * 10.8, height = state.height * 19.2;
-  if (textMotion) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} motion={textMotion} frame={frame} />;
-  if (isComponent(object.type)) return <VisualComponent type={object.type} width={width} height={height} color={state.color} parts={object.initialParts} asset={object.asset} diagram={object.diagram} values={object.values} label={object.label} actorId={actorId} />;
+  if (textMotion || object.typography) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} motion={textMotion} frame={frame} typography={object.typography} />;
+  if (isComponent(object.type)) return <VisualComponent type={object.type} width={width} height={height} color={state.color} parts={object.initialParts} asset={object.asset} diagram={object.diagram} comparison={object.comparison} morph={object.morph} values={object.values} label={object.label} actorId={actorId} />;
   if (isSymbol(object.type)) return <VisualSymbol type={object.type} width={width} height={height} color={state.color} />;
   if (["centered-text", "heading", "caption", "code"].includes(object.type)) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} />;
   if (object.type === "ellipse") return <ellipse data-shape cx={width / 2} cy={height / 2} rx={width / 2} ry={height / 2} fill={state.color} />;
@@ -66,8 +72,14 @@ function GroupScene({ group }: { group: MotionGroup }) {
       timeline.set(target, { opacity: actor.object.initial.opacity }, actor.startFrame / 30);
       timeline.set(target, { opacity: 0 }, actor.endFrame / 30);
       for (const [part, state] of Object.entries(actor.object.initialParts ?? {})) {
+        if (actor.object.morph && part === "outline") {
+          const pair = morphPair(actor.object.morph);
+          timeline.set(selector(`[data-morph="${actor.id}.${part}"]`), { attr: { d: state.morphProgress === 1 ? pair.to : pair.from } }, 0);
+        }
         timeline.set(selector(`[data-actor="${actor.id}.${part}"]`), { ...groupVars(state), svgOrigin: "0 0", attr: { color: state.color } }, 0);
         timeline.set(selector(`[data-reveal="${actor.id}.${part}"]`), { attr: { width: actor.object.initial.width * 10.8 * (state.reveal ?? 1) } }, 0);
+        const effects = selector(`[data-edge-signal="${actor.id}.${part}"], [data-arrival="${actor.id}.${part}"]`);
+        if (effects.length) timeline.set(effects, { opacity: 0 }, 0);
       }
     }
     for (const item of group.shots) {
@@ -82,6 +94,25 @@ function GroupScene({ group }: { group: MotionGroup }) {
           if (Object.keys(vars).length) timeline.to(target, { ...vars, ...options }, start);
           if (id !== "camera") {
             if (id.includes(".")) {
+              if (action.to.morphProgress !== undefined) {
+                const object = item.shot.objects.find((object) => object.id === id.split(".")[0])!;
+                const pair = morphPair(object.morph!), path = selector(`[data-morph="${item.targets[id]}"]`);
+                timeline.fromTo(path, { attr: { d: pair.from } }, { morphSVG: { shape: pair.to, shapeIndex: 0 }, ...options, immediateRender: false }, start);
+                timeline.set(path, { attr: { d: pair.to } }, start + options.duration);
+              }
+              if (action.to.strokeProgress !== undefined) {
+                timeline.to(selector(`[data-edge-path="${item.targets[id]}"]`), { attr: { "stroke-dashoffset": 1 - action.to.strokeProgress }, ...options }, start);
+                timeline.set(selector(`[data-edge-arrow="${item.targets[id]}"]`), { opacity: action.to.strokeProgress === 1 ? 1 : 0 }, start + options.duration);
+              }
+              if (action.to.traceProgress !== undefined) {
+                const path = selector(`[data-edge-path="${item.targets[id]}"]`)[0], signal = selector(`[data-edge-signal="${item.targets[id]}"]`);
+                if (!(path instanceof SVGPathElement)) throw new Error("Trace requires a rendered diagram path.");
+                // Path and signal share SVG coordinates; cross-container align drifts in nested viewBoxes.
+                timeline.fromTo(signal, { x: 0, y: 0 }, { motionPath: { path, end: action.to.traceProgress }, ...options, immediateRender: false }, start);
+                timeline.set(signal, { opacity: 1 }, start);
+                timeline.set(signal, { opacity: 0 }, start + options.duration);
+              }
+              if (action.to.arrivalPulse !== undefined) timeline.to(selector(`[data-arrival="${item.targets[id]}"]`), { opacity: action.to.arrivalPulse, ...options }, start);
               if (action.to.color !== undefined) timeline.to(target, { attr: { color: action.to.color }, ...options }, start);
               if (action.to.reveal !== undefined) {
                 const object = item.shot.objects.find((object) => object.id === id.split(".")[0])!;

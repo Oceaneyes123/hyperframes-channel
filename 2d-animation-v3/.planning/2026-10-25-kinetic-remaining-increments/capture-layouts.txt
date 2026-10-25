@@ -1,0 +1,13 @@
+async(page)=>{
+ await page.setViewportSize({width:1280,height:1000});
+ for(const id of ['typography','handoff','comparison','depth','morph']){
+  await page.getByRole('combobox',{name:'Capability'}).selectOption(id);
+  if(id==='typography'||id==='handoff')await page.locator('[data-typography]').first().waitFor();
+  await page.getByRole('slider',{name:'Inspect frame'}).press('End');
+  await page.waitForFunction(()=>document.querySelector('svg[data-motion-frame]')?.getAttribute('data-motion-frame')==='119');
+  await page.screenshot({path:'.planning/2026-10-25-kinetic-remaining-increments/'+id+'-desktop.png',fullPage:true});
+ }
+ await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:'.planning/2026-10-25-kinetic-remaining-increments/mobile.png',fullPage:true});
+ return {desktop:[1280,1000],mobile:[390,844],captured:5};
+}

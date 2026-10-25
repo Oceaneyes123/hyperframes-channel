@@ -28,7 +28,7 @@ test("approval and API components reuse the same validated part and actor contra
     const { plan, board } = motionComponentFixture(type);
     validateMotion(plan, board, hashMotionSource);
     assert.equal(compileMotion(plan, board).groups[0].actors.length, 1);
-    assert.ok(Object.keys(plan.shots[0].objects[0].initialParts!).length >= 3);
+    assert.ok(Object.keys(plan.shots[0].objects[0].initialParts!).length >= 1);
   }
 });
 

@@ -8,6 +8,9 @@ export const graphicTheme = {
   stroke: 4, radius: 22,
 } as const;
 
+// These illustrations have been reviewed for independent layer motion, not just static appearance.
+export const depthSceneRegistry: Record<string, string> = { "service-handover-desk@1": "dcd9f405541877352212fce365720bfa8928e48542cb10e0c7781afaeea1b50c" };
+
 // Only reviewed local artwork is registered. New artwork requires a new version and source hash.
 export const graphicAssetRegistry = {
   ...Object.fromEntries(Object.entries(vectorLibrary).map(([id, { asset, contentHash }]) => [id, { ...asset, contentHash, theme: graphicTheme.id, viewBox: `0 0 ${asset.width} ${asset.height}`, version: Number(id.split("@")[1]), layers: asset.layers.map((layer) => layer.id), customization: { accent: "Accent role only; fixed editorial palette." } }])),

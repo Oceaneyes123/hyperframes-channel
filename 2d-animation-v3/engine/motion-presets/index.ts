@@ -1,4 +1,7 @@
 import type { MotionAction, MotionShot, MotionState } from "../../workflow/motion.ts";
+import { vectorLibrary } from "../../workflow/graphic-library.ts";
+import { depthSceneRegistry } from "../../workflow/graphic-assets.ts";
+import { morphPair } from "../../workflow/morphs.ts";
 
 // Preset IDs are immutable: changes to motion semantics require a new version.
 export function expandBeats(shot: MotionShot): MotionAction[] {
@@ -30,6 +33,56 @@ export function expandBeats(shot: MotionShot): MotionAction[] {
     if (beat.type === "hold") throw new Error("A reading hold requires the hold preset.");
     const duration = beat.endFrame - beat.startFrame;
     if (duration < 6) throw new Error("Choreography needs at least six frames for its phases.");
+    if (beat.presetId === "morph-shape@1") {
+      const id = beat.targetIds[0], [rootId, part] = id.split("."), object = shot.objects.find((object) => object.id === rootId), state = states.get(id);
+      if (beat.targetIds.length !== 1 || object?.type !== "morph-shape@1" || !object.morph || part !== "outline" || !state || state.opacity !== 1 || (state.reveal ?? 1) !== 1 || state.morphProgress !== 0 || states.get(rootId)?.opacity !== 1 || duration < 12) throw new Error("Morph requires one visible curated outline, explicit progress 0 and twelve frames.");
+      morphPair(object.morph);
+      reservations.push({ id: rootId, start: beat.startFrame, end: beat.endFrame, properties: ["opacity"] }, { id, start: beat.startFrame, end: beat.endFrame, properties: ["opacity", "reveal"] });
+      tween(id, beat.startFrame, beat.endFrame, { morphProgress: 1 }, "power2.inOut");
+      state.morphProgress = 1;
+      continue;
+    }
+    if (beat.presetId === "layer-depth@1" || beat.presetId === "explode-assemble@1") {
+      const object = shot.objects.find((object) => object.id === beat.targetIds[0]), artwork = object?.asset && vectorLibrary[object.asset.id]?.asset;
+      if (beat.targetIds.length !== 1 || object?.type !== "graphic-asset@2" || !artwork || object.asset?.contentHash !== depthSceneRegistry[artwork.id] || states.get(object.id)?.opacity !== 1 || duration < 12) throw new Error("Layer choreography needs one visible depth-approved vector actor and twelve frames.");
+      const layers = artwork.layers.filter((layer) => states.get(`${object.id}.${layer.id}`)?.opacity === 1 && (states.get(`${object.id}.${layer.id}`)?.reveal ?? 1) === 1);
+      if (layers.length < 3 || new Set(layers.map((layer) => layer.role)).size < 3) throw new Error("Layer depth requires three visible authored depth roles.");
+      if (beat.presetId === "explode-assemble@1" && (Object.keys(beat.parameters.offsets).length < 2 || Object.keys(beat.parameters.offsets).some((id) => !layers.some((layer) => layer.id === id)))) throw new Error("Exploded offsets require at least two known visible layers.");
+      const weights = { background: .15, subject: .5, detail: .75, packet: 1 };
+      const middle = beat.startFrame + Math.floor(duration / 2);
+      for (const layer of layers) {
+        const id = `${object.id}.${layer.id}`, state = states.get(id)!;
+        const offset = beat.presetId === "layer-depth@1" ? { x: beat.parameters.offsetX * weights[layer.role], y: beat.parameters.offsetY * weights[layer.role] } : beat.parameters.offsets[layer.id];
+        if (!offset) continue;
+        tween(id, beat.startFrame, middle, { x: state.x + offset.x, y: state.y + offset.y }, "smooth");
+        tween(id, middle, beat.endFrame, { x: state.x, y: state.y }, "smooth");
+      }
+      continue;
+    }
+    if (beat.presetId === "edge-draw@1" || beat.presetId === "edge-trace@1") {
+      if (beat.targetIds.length !== 1) throw new Error("Edge presets require one diagram edge target.");
+      const id = beat.targetIds[0], [rootId, edgeId] = id.split(".");
+      const object = shot.objects.find((object) => object.id === rootId), edge = object?.diagram?.edges.find((edge) => edge.id === edgeId), state = states.get(id);
+      if (!edge || !state || states.get(rootId)?.opacity !== 1 || state.opacity !== 1 || (state.reveal ?? 1) !== 1) throw new Error("Edge presets require a visible, unmasked diagram edge.");
+      if (beat.presetId === "edge-draw@1") {
+        if (state.strokeProgress !== 0) throw new Error("Edge draw requires explicit initial strokeProgress 0.");
+        tween(id, beat.startFrame, beat.endFrame, { strokeProgress: 1 }, "linear");
+        state.strokeProgress = 1;
+      } else {
+        if (duration < 12 || (state.strokeProgress ?? 1) !== 1) throw new Error("Edge trace needs a fully drawn edge and twelve frames.");
+        const arrival = beat.startFrame + Math.floor(duration * .7), peak = arrival + Math.floor((beat.endFrame - arrival) / 2);
+        for (const part of [edge.id, edge.from, edge.to]) {
+          const target = `${rootId}.${part}`, dependency = states.get(target);
+          if (!dependency || dependency.opacity !== 1 || (dependency.reveal ?? 1) !== 1) throw new Error("Edge trace endpoints must be visible and unmasked.");
+          reservations.push({ id: target, start: beat.startFrame, end: arrival, properties: ["opacity", "reveal", "strokeProgress"] });
+        }
+        reservations.push({ id: rootId, start: beat.startFrame, end: arrival, properties: ["opacity"] });
+        tween(id, beat.startFrame, arrival, { traceProgress: 1 }, "linear");
+        tween(`${rootId}.${edge.to}`, arrival, peak, { arrivalPulse: 1 });
+        tween(`${rootId}.${edge.to}`, peak, beat.endFrame, { arrivalPulse: 0 }, "smooth");
+      }
+      continue;
+    }
     if (beat.presetId === "mask-reveal@1") {
       if (beat.targetIds.some((id) => !id.includes("."))) throw new Error("Mask reveals require registered component parts.");
       for (const id of beat.targetIds) { tween(id, beat.startFrame, beat.endFrame, { reveal: beat.parameters.reveal }); states.get(id)!.reveal = beat.parameters.reveal; }

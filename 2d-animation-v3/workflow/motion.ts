@@ -8,6 +8,10 @@ import { graphicReferenceSchema, validGraphicReference } from "./graphic-assets.
 import { diagramSchema } from "./diagram.ts";
 import { textMotionSchema } from "./text-motion.ts";
 import { isTextType } from "../engine/text-metrics.ts";
+import { narrationAnchorSchema } from "./narration-anchor.ts";
+import { typographySchema } from "./typography.ts";
+import { comparisonReferenceSchema } from "./comparison.ts";
+import { morphReferenceSchema } from "./morphs.ts";
 
 const key = z.string().regex(/^[a-z][a-z0-9-]{0,39}$/);
 const target = z.string().regex(/^[a-z][a-z0-9-]{0,39}(?:\.[a-z][a-z0-9-]{0,19})?$/);
@@ -21,6 +25,10 @@ const stateFields = {
   opacity: z.number().min(0).max(1), rotation: z.number().min(-360).max(360), scale: z.number().min(.1).max(4),
   color: z.string().regex(/^#[a-fA-F0-9]{6}$/),
   reveal: z.number().min(0).max(1).optional(),
+  strokeProgress: z.number().min(0).max(1).optional(),
+  traceProgress: z.number().min(0).max(1).optional(),
+  arrivalPulse: z.number().min(0).max(1).optional(),
+  morphProgress: z.number().min(0).max(1).optional(),
 };
 export const motionStateSchema = z.strictObject(stateFields);
 const cameraSchema = motionStateSchema.pick({ x: true, y: true, rotation: true, scale: true });
@@ -28,11 +36,14 @@ export const motionObjectSchema = z.strictObject({
   id: key.refine((id) => id !== "camera", "camera is a reserved target"),
   startIndex: z.number().int().min(0).max(15).nullable(), endIndex: z.number().int().min(0).max(15).nullable(),
   type: primitiveSchema, label: z.string().max(60), initial: motionStateSchema,
+  typography: typographySchema.optional(),
+  comparison: comparisonReferenceSchema.optional(),
+  morph: morphReferenceSchema.optional(),
   asset: graphicReferenceSchema.optional(),
   diagram: diagramSchema.optional(),
   initialParts: componentPartsSchema.optional(),
   values: chartValuesSchema.optional(),
-}).refine((object) => validGraphicReference(object.type, object.asset) && ((object.type === "semantic-diagram@1") === (object.diagram !== undefined)), "Graphic asset identity or hash is invalid.");
+}).refine((object) => validGraphicReference(object.type, object.asset) && ((object.type === "semantic-diagram@1") === (object.diagram !== undefined)) && ((object.type === "data-comparison@1") === !!object.comparison) && ((object.type === "morph-shape@1") === !!object.morph), "Graphic asset identity or hash is invalid.");
 export const motionActionSchema = z.strictObject({
   behavior: z.enum(["transform", "fade", "hold"]), targetIds: z.array(target).min(1).max(16),
   startFrame: frame, endFrame: frame, staggerFrames: z.number().int().min(0).max(1800),
@@ -44,10 +55,7 @@ const beatFields = {
   type: z.enum(["entry", "anticipation", "transformation", "impact", "emphasis", "hold", "exit"]),
   targetIds: z.array(target).min(1).max(16), startFrame: frame, endFrame: frame,
   importance: z.enum(["primary", "supporting"]),
-  narrationAnchor: z.discriminatedUnion("kind", [
-    z.strictObject({ lineNumber: z.number().int().positive(), kind: z.literal("line"), offsetFrames: z.number().int().min(-30).max(30).optional() }),
-    z.strictObject({ lineNumber: z.number().int().positive(), kind: z.enum(["phrase", "word"]), anchorId: key, offsetFrames: z.number().int().min(-30).max(30).optional() }),
-  ]).nullable(),
+  narrationAnchor: narrationAnchorSchema.nullable(),
   continuity: z.strictObject({ targetId: key, nextShotId: key }).nullable(),
 };
 export const motionBeatSchema = z.discriminatedUnion("presetId", [
@@ -71,8 +79,15 @@ export const motionBeatSchema = z.discriminatedUnion("presetId", [
     childIds: z.array(key).min(2).max(6),
   }) }),
   z.strictObject({ ...beatFields, presetId: z.literal("mask-reveal@1"), parameters: z.strictObject({ reveal: z.number().min(0).max(1) }) }),
+  z.strictObject({ ...beatFields, presetId: z.literal("edge-draw@1"), parameters: z.strictObject({}) }),
+  z.strictObject({ ...beatFields, presetId: z.literal("edge-trace@1"), parameters: z.strictObject({}) }),
+  z.strictObject({ ...beatFields, presetId: z.literal("morph-shape@1"), parameters: z.strictObject({}) }),
+  z.strictObject({ ...beatFields, presetId: z.literal("layer-depth@1"), parameters: z.strictObject({ offsetX: z.number().min(-2).max(2), offsetY: z.number().min(-2).max(2) }) }),
+  z.strictObject({ ...beatFields, presetId: z.literal("explode-assemble@1"), parameters: z.strictObject({ offsets: z.record(z.string().regex(/^[a-z][a-z0-9-]{0,19}$/), z.strictObject({ x: z.number().min(-3).max(3), y: z.number().min(-3).max(3) })) }) }),
 ]);
 export type MotionBeat = z.infer<typeof motionBeatSchema>;
+export const kineticMotionGuidance = "For approved typography profiles, preserve profile identity and authored lines; text effects may have measured narrationAnchor references. layer-depth@1 {offsetX:-2..2,offsetY:-2..2} and explode-assemble@1 {offsets:{layerId:{x:-3..3,y:-3..3}}} target one depth-approved graphic-asset@2 root, require 12+ frames and three visible/unmasked authored depth roles, and restore exact layer positions. Only the registered service-handover-desk@1 scene is depth-approved; never apply these to diagrams or arbitrary UI wiring. morph-shape@1 {} targets one curated morph-shape@1 outline part with explicit morphProgress:0 initially and 1 finally; needs 12+ frames, stays visible and unmasked, and only supports its fixed forward pair. No arbitrary paths, glyphs, URLs, selectors or target overrides. For data-comparison@1 keep static authoritative values and a fixed common source scale; use mask-reveal on bars, never geometric bar scale/position changes. Fixed component-part geometry must not be moved; move the root instead.";
+export const edgeMotionGuidance = "Interpreter 3 edge-draw@1 {} targets exactly one semantic-diagram edge part with explicit strokeProgress:0 in its approved start drawing and strokeProgress:1 in its end drawing. It draws the stroke only; keep that edge opacity/reveal at 1. edge-trace@1 {} targets one fully drawn edge, needs at least 12 frames, travels from the graph's from node to its to node, then pulses the fixed destination. All endpoints and the edge must remain visible/unmasked while the signal travels. Do not move/scale node or edge parts. Root motion is allowed; do not hide the root during travel. End the trace/reaction before a reading hold. Never provide paths, selectors, arbitrary SVG or alternate destination IDs. Trace/pulse are transient effects, not initial drawing fields.";
 export const motionShotSchema = z.strictObject({
   id: key, sourceIndex: z.number().int().min(0).max(39), sourceHash: z.string().regex(/^[a-f0-9]{64}$/),
   lineNumbers: z.array(z.number().int().positive()).min(1).max(200), durationFrames: z.number().int().min(2).max(1800),
@@ -97,6 +112,7 @@ export const motionPlanSchema = z.strictObject({
     const targets = new Set<string>();
     for (const motion of shot.textMotions ?? []) {
       const object = shot.objects.find((object) => object.id === motion.targetId);
+      if (motion.narrationAnchor && !shot.lineNumbers.includes(motion.narrationAnchor.lineNumber)) context.addIssue({ code: "custom", path: ["shots", index, "textMotions"], message: "Text narration anchor is outside its shot." });
       const holds = [...shot.actions.filter((action) => action.behavior === "hold"), ...(shot.beats ?? []).filter((beat) => beat.type === "hold")];
       if (!object || !isTextType(object.type) || !object.label.trim() || targets.has(motion.targetId) || motion.endFrame > shot.durationFrames - 13 ||
         shot.incoming.type === "continuous" && shot.incoming.anchor?.objectId === motion.targetId ||
@@ -138,7 +154,7 @@ export function expandMotionShot(shot: MotionShot): MotionShot {
       if (end <= motion.startFrame && action.to.opacity !== undefined) opacity = action.to.opacity;
       if (action.behavior !== "hold" && start < motion.endFrame && end > motion.startFrame) throw new Error("Text treatment cannot overlap root actor motion; settle its entrance first.");
     }
-    if (opacity !== 1 || /[\r\n]/u.test(object.label)) throw new Error("Text treatment requires a visible single-line actor.");
+    if (opacity !== 1 || !object.typography && /[\r\n]/u.test(object.label)) throw new Error("Text treatment requires a visible single-line actor or an approved typography profile.");
   }
   return { ...shot, actions };
 }
@@ -153,7 +169,7 @@ export function hydrateMotion(input: unknown, board: VisualArtifact, hashShot: (
     objects: shot.objects.map((object) => {
       const shape = object.startIndex === null ? object.endIndex === null ? null : source[index].endFrame.shapes[object.endIndex] : source[index].startFrame.shapes[object.startIndex];
       if (!shape) throw new Error("Object correspondence references a missing shape.");
-      return { ...object, type: shape.type, label: shape.label, ...(shape.asset ? { asset: shape.asset } : {}), ...(shape.diagram ? { diagram: shape.diagram } : {}), initial: { x: shape.x, y: shape.y, width: shape.width, height: shape.height, color: shape.color, opacity: object.startIndex === null ? 0 : 1, scale: 1, rotation: 0 }, ...(isComponent(shape.type) ? { initialParts: componentParts(shape.type, shape.color, shape.parts, shape) } : {}), ...(shape.values ? { values: shape.values } : {}) };
+      return { ...object, type: shape.type, label: shape.label, ...(shape.morph ? { morph: shape.morph } : {}), ...(shape.comparison ? { comparison: shape.comparison } : {}), ...(shape.typography ? { typography: shape.typography } : {}), ...(shape.asset ? { asset: shape.asset } : {}), ...(shape.diagram ? { diagram: shape.diagram } : {}), initial: { x: shape.x, y: shape.y, width: shape.width, height: shape.height, color: shape.color, opacity: object.startIndex === null ? 0 : 1, scale: 1, rotation: 0 }, ...(isComponent(shape.type) ? { initialParts: componentParts(shape.type, shape.color, shape.parts, shape) } : {}), ...(shape.values ? { values: shape.values } : {}) };
     }),
   })) });
 }
@@ -199,11 +215,14 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       const from = object.startIndex === null ? null : source.startFrame.shapes[object.startIndex];
       const to = object.endIndex === null ? null : source.endFrame.shapes[object.endIndex]; const initial = from ?? to;
       if (!initial || [from, to].some((shape) => shape && (shape.type !== object.type || shape.label !== object.label))) throw new Error("Unsupported primitive or label correspondence.");
+      if (object.typography !== initial.typography || to && to.typography !== initial.typography) throw new Error("Typography profile must match both approved drawings.");
+      if (JSON.stringify(object.comparison) !== JSON.stringify(initial.comparison) || to && JSON.stringify(to.comparison) !== JSON.stringify(initial.comparison)) throw new Error("Comparison source must match both approved drawings.");
+      if (JSON.stringify(object.morph) !== JSON.stringify(initial.morph) || to && JSON.stringify(to.morph) !== JSON.stringify(initial.morph)) throw new Error("Morph pair must match both approved drawings.");
       if (["x", "y", "width", "height", "color"].some((field) => object.initial[field as keyof MotionState] !== initial[field as keyof typeof initial]) || object.initial.opacity !== (from ? 1 : 0) || object.initial.scale !== 1 || object.initial.rotation !== 0) throw new Error("Initial object state must match its drawing.");
       finalStates.set(object.id, { ...object.initial });
       if (JSON.stringify(object.asset) !== JSON.stringify(initial.asset) || to && JSON.stringify(to.asset) !== JSON.stringify(initial.asset)) throw new Error("Graphic asset references must match both approved drawings.");
       if (JSON.stringify(object.diagram) !== JSON.stringify(initial.diagram) || to && JSON.stringify(to.diagram) !== JSON.stringify(initial.diagram)) throw new Error("Semantic diagrams must match both approved drawings; use replacement actors for graph changes.");
-      if (object.initial.reveal !== undefined) throw new Error("Reveal masks belong to component parts only.");
+      if (["reveal", "strokeProgress", "traceProgress", "arrivalPulse", "morphProgress"].some((field) => object.initial[field as keyof MotionState] !== undefined)) throw new Error("Reveal masks and edge effects belong to component parts only.");
       if (JSON.stringify(object.values) !== JSON.stringify(initial.values) || to && JSON.stringify(to.values) !== JSON.stringify(initial.values)) throw new Error("Chart values must match both source drawings; use replacement actors to change supplied values.");
       if (isComponent(object.type)) {
         if (plan.interpreterVersion !== "3") throw new Error("Compound components require interpreter 3.");
@@ -222,7 +241,15 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       for (const [offset, id] of action.targetIds.entries()) {
         if (!ids.has(id) && id !== "camera") throw new Error("Unknown motion target.");
         if (id.includes(".") && shot.objects.find((object) => object.id === id.split(".")[0])?.diagram && properties.some((name) => ["x", "y", "scale"].includes(name))) throw new Error("Diagram layer geometry is fixed to preserve semantic connections.");
-        if (id.includes(".") && properties.some((name) => !Object.hasOwn(partStateSchema.shape, name))) throw new Error("Component parts support only position, scale, opacity and color.");
+        const [rootId, partId] = id.split("."), diagram = shot.objects.find((object) => object.id === rootId)?.diagram;
+        if (properties.includes("morphProgress") && (shot.objects.find((object) => object.id === rootId)?.type !== "morph-shape@1" || partId !== "outline")) throw new Error("Morph progress requires a curated outline.");
+        if (action.to.morphProgress !== undefined && action.to.morphProgress !== 1) throw new Error("This morph version supports only its approved forward endpoint.");
+        if (id.includes(".") && shot.objects.find((object) => object.id === rootId)?.morph && properties.some((name) => ["x", "y", "scale"].includes(name))) throw new Error("Morph outline geometry is fixed; transform its root.");
+        if (id.includes(".") && shot.objects.find((object) => object.id === rootId)?.comparison && properties.some((name) => ["x", "y", "scale"].includes(name))) throw new Error("Comparison bar geometry is fixed to its common scale.");
+        if (properties.some((name) => ["strokeProgress", "traceProgress"].includes(name)) && !diagram?.edges.some((edge) => edge.id === partId)) throw new Error("Stroke and trace progress require a diagram edge.");
+        if (properties.includes("arrivalPulse") && !diagram?.nodes.some((node) => node.id === partId)) throw new Error("Arrival pulses require a diagram node.");
+        if (properties.some((name) => ["strokeProgress", "traceProgress", "arrivalPulse"].includes(name)) && plan.interpreterVersion !== "3") throw new Error("Edge effects require interpreter 3.");
+        if (id.includes(".") && properties.some((name) => !Object.hasOwn(partStateSchema.shape, name) && !["traceProgress", "arrivalPulse"].includes(name))) throw new Error("Component parts support registered properties only.");
         if (!id.includes(".") && properties.includes("reveal")) throw new Error("Reveal masks belong to component parts only.");
         if (id === "camera" && properties.some((name) => !["x", "y", "scale", "rotation"].includes(name))) throw new Error("Unsupported camera property.");
         const start = action.startFrame + offset * action.staggerFrames, end = action.endFrame + offset * action.staggerFrames;
@@ -256,7 +283,7 @@ export function validateMotion(input: unknown, board: VisualArtifact, hashShot: 
       if (!from || !to || from.type !== to.type || from.endIndex === null || to.startIndex === null) throw new Error("Invalid shared anchor.");
       const before = sourceShots[index - 1].endFrame.shapes[from.endIndex]; const after = source.startFrame.shapes[to.startIndex];
       if (["x", "y", "width", "height"].some((field) => before[field as keyof typeof before] !== after[field as keyof typeof after])) throw new Error("Shared anchor geometry is discontinuous.");
-      if (["continuous", "motion-match"].includes(shot.incoming.type) && (before.color !== after.color || from.label !== to.label || JSON.stringify(before.asset) !== JSON.stringify(after.asset) || JSON.stringify(before.diagram) !== JSON.stringify(after.diagram))) throw new Error("Continuous anchor appearance must remain unchanged.");
+      if (["continuous", "motion-match"].includes(shot.incoming.type) && (before.color !== after.color || from.label !== to.label || from.typography !== to.typography || JSON.stringify(before.comparison) !== JSON.stringify(after.comparison) || JSON.stringify(before.morph) !== JSON.stringify(after.morph) || JSON.stringify(before.asset) !== JSON.stringify(after.asset) || JSON.stringify(before.diagram) !== JSON.stringify(after.diagram))) throw new Error("Continuous anchor appearance must remain unchanged.");
       if (["continuous", "motion-match"].includes(shot.incoming.type) && isComponent(from.type) && JSON.stringify(componentParts(from.type, before.color, before.parts, before)) !== JSON.stringify(componentParts(from.type, after.color, after.parts, after))) throw new Error("Continuous component parts must remain unchanged at the boundary.");
       const camera = { ...previous.camera };
       for (const action of previous.actions) if (action.targetIds.includes("camera")) Object.assign(camera, action.to);

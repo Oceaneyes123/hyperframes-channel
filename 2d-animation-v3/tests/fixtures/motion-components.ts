@@ -1,3 +1,4 @@
+import { kineticExample } from "../../workflow/examples/kinetic.ts";
 import { graphicReference, isGraphicAsset } from "../../workflow/graphic-assets.ts";
 import { componentParts, componentRegistry, type ComponentType } from "../../workflow/components.ts";
 import { motionBeatSchema } from "../../workflow/motion.ts";
@@ -5,6 +6,12 @@ import { hashMotionSource } from "../../server/motion-store.ts";
 import { presetScene } from "./motion-presets.ts";
 
 export function motionComponentFixture(type: ComponentType = "inbox-panel@1") {
+  if (type === "data-comparison@1" || type === "morph-shape@1") {
+    const fixture = kineticExample(type === "morph-shape@1" ? "morph" : "comparison");
+    if (fixture.board.output.kind !== "storyboard") throw new Error("Expected storyboard.");
+    fixture.plan.shots[0].sourceHash = hashMotionSource(fixture.board.output.shots[0]);
+    return fixture;
+  }
   const shape = { type, x: 15, y: 30, width: 70, height: isGraphicAsset(type) ? 52.5 : 40, ...(isGraphicAsset(type) ? { asset: graphicReference(type) } : {}), color: "#9BA7FF", label: type === "kinetic-phrase@1" ? "Repeated problems" : "", ...(type === "cost-chart@1" ? { values: [20, 40] as [number, number] } : {}) };
   const initial = componentParts(shape.type, shape.color);
   if (type === "kinetic-phrase@1") initial.keyword.reveal = 0;

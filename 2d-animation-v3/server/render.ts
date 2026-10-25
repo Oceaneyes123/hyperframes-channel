@@ -48,7 +48,7 @@ export async function renderProduction(projectId: string, binding: string, autho
   try {
     signal.throwIfAborted(); const job = store.beginRender(projectId, binding, authorize); jobId = job.id;
     const output = join(config.videosDirectory, projectId, "production", job.id); mkdirSync(output, { recursive: false });
-    const serveUrl = await bundle({ entryPoint: resolve("engine/register.tsx") }); signal.throwIfAborted();
+    const serveUrl = await bundle({ entryPoint: resolve("engine/register.tsx"), publicDir: resolve("public") }); signal.throwIfAborted();
     const inputProps = { plan: job.artifact.plan, board: job.board, narrationUrl: `data:audio/wav;base64,${job.voice.bytes.toString("base64")}` };
     const browserExecutable = process.env.V3_CHROME_PATH ?? "C:/Program Files/Google/Chrome/Application/chrome.exe";
     const composition = await selectComposition({ serveUrl, id: "Production", inputProps, browserExecutable });
