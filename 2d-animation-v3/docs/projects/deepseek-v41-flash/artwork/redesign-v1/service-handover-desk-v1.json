@@ -1,0 +1,1172 @@
+{
+  "schemaVersion": 1,
+  "id": "service-handover-desk@1",
+  "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+  "license": "CC0-1.0",
+  "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+  "width": 1000,
+  "height": 1000,
+  "purpose": "Tangible setup, test and handover service: demonstration laptop, documented binder, checked test cards and owner meeting.",
+  "tags": [
+    "deepseek",
+    "business",
+    "working-studio",
+    "layered"
+  ],
+  "compositions": [
+    "editorial-illustration"
+  ],
+  "layers": [
+    {
+      "id": "setting",
+      "role": "background",
+      "nodes": [
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 20,
+          "y": 80,
+          "width": 960,
+          "height": 850,
+          "radius": 44
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M20 615H980V931H20Z"
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.1,
+          "kind": "ellipse",
+          "cx": 514,
+          "cy": 812,
+          "rx": 394,
+          "ry": 71
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 70,
+          "y": 761,
+          "width": 864,
+          "height": 32,
+          "radius": 10
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 109,
+          "y": 791,
+          "width": 23,
+          "height": 168,
+          "radius": 5
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 870,
+          "y": 791,
+          "width": 23,
+          "height": 168,
+          "radius": 5
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 48,
+          "y": 212,
+          "scale": 0.85,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M45 118Q35 55 22 20M46 118Q62 55 85 10M46 118L48 30"
+            },
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 22,
+              "cy": 32,
+              "rx": 14,
+              "ry": 30
+            },
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 70,
+              "y": 30,
+              "scale": 1,
+              "rotation": 32,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "mint",
+                  "stroke": "ink",
+                  "strokeWidth": 2,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 0,
+                  "cy": 0,
+                  "rx": 14,
+                  "ry": 33
+                }
+              ]
+            },
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 48,
+              "cy": 48,
+              "rx": 12,
+              "ry": 25
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M14 108H77L67 170H25Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 20,
+              "y": 120,
+              "width": 50,
+              "height": 3,
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "fill": "accent",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M812 141Q826 108 848 141Q878 204 890 255H782Q792 198 812 141Z"
+        },
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 8,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M836 254V470H783"
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 766,
+          "y": 469,
+          "width": 104,
+          "height": 12,
+          "radius": 5
+        }
+      ]
+    },
+    {
+      "id": "demonstration",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 262,
+          "y": 414,
+          "scale": 1.35,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 8,
+              "y": 8,
+              "width": 344,
+              "height": 230,
+              "radius": 18
+            },
+            {
+              "fill": "surface",
+              "stroke": "muted",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 18,
+              "y": 18,
+              "width": 324,
+              "height": 199,
+              "radius": 10
+            },
+            {
+              "fill": "muted",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 180,
+              "cy": 12,
+              "rx": 2,
+              "ry": 2
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 32,
+              "y": 33,
+              "width": 296,
+              "height": 18,
+              "radius": 4
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 32,
+              "y": 66,
+              "width": 68,
+              "height": 133,
+              "radius": 4
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 79,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 102,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 125,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 148,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 171,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 114,
+              "y": 66,
+              "width": 201,
+              "height": 133,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 81,
+              "width": 171,
+              "height": 24,
+              "radius": 4
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 122,
+              "width": 148,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 146,
+              "width": 131,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 170,
+              "width": 114,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 5,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M8 224H352L389 257Q389 269 369 269H-9Q-30 267 -29 257Z"
+            },
+            {
+              "fill": "muted",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 131,
+              "y": 238,
+              "width": 101,
+              "height": 8,
+              "radius": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "documentation",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 669,
+          "y": 548,
+          "scale": 0.78,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.1,
+              "kind": "rect",
+              "x": 9,
+              "y": 12,
+              "width": 300,
+              "height": 352,
+              "radius": 13
+            },
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 300,
+              "height": 352,
+              "radius": 13
+            },
+            {
+              "fill": "surface",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 24,
+              "y": 10,
+              "width": 270,
+              "height": 331,
+              "radius": 9
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 26,
+              "height": 352,
+              "radius": 10
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 74,
+              "y": 39,
+              "width": 176,
+              "height": 25,
+              "radius": 6
+            },
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 64,
+              "y": 95,
+              "scale": 1,
+              "rotation": 0,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "mint",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 0,
+                  "cy": 0,
+                  "rx": 10,
+                  "ry": 10
+                },
+                {
+                  "fill": "none",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "group",
+                  "x": -7,
+                  "y": -7,
+                  "scale": 0.3,
+                  "rotation": 0,
+                  "blend": "normal",
+                  "children": [
+                    {
+                      "fill": "none",
+                      "stroke": "ink",
+                      "strokeWidth": 6,
+                      "opacity": 1,
+                      "kind": "path",
+                      "d": "M0 12L12 24 39 0"
+                    }
+                  ]
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": -5,
+                  "width": 156,
+                  "height": 5,
+                  "radius": 2.5
+                },
+                {
+                  "fill": "line",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": 9,
+                  "width": 122,
+                  "height": 4,
+                  "radius": 2
+                }
+              ]
+            },
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 64,
+              "y": 148,
+              "scale": 1,
+              "rotation": 0,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "mint",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 0,
+                  "cy": 0,
+                  "rx": 10,
+                  "ry": 10
+                },
+                {
+                  "fill": "none",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "group",
+                  "x": -7,
+                  "y": -7,
+                  "scale": 0.3,
+                  "rotation": 0,
+                  "blend": "normal",
+                  "children": [
+                    {
+                      "fill": "none",
+                      "stroke": "ink",
+                      "strokeWidth": 6,
+                      "opacity": 1,
+                      "kind": "path",
+                      "d": "M0 12L12 24 39 0"
+                    }
+                  ]
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": -5,
+                  "width": 156,
+                  "height": 5,
+                  "radius": 2.5
+                },
+                {
+                  "fill": "line",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": 9,
+                  "width": 122,
+                  "height": 4,
+                  "radius": 2
+                }
+              ]
+            },
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 64,
+              "y": 201,
+              "scale": 1,
+              "rotation": 0,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "mint",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 0,
+                  "cy": 0,
+                  "rx": 10,
+                  "ry": 10
+                },
+                {
+                  "fill": "none",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "group",
+                  "x": -7,
+                  "y": -7,
+                  "scale": 0.3,
+                  "rotation": 0,
+                  "blend": "normal",
+                  "children": [
+                    {
+                      "fill": "none",
+                      "stroke": "ink",
+                      "strokeWidth": 6,
+                      "opacity": 1,
+                      "kind": "path",
+                      "d": "M0 12L12 24 39 0"
+                    }
+                  ]
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": -5,
+                  "width": 156,
+                  "height": 5,
+                  "radius": 2.5
+                },
+                {
+                  "fill": "line",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": 9,
+                  "width": 122,
+                  "height": 4,
+                  "radius": 2
+                }
+              ]
+            },
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 64,
+              "y": 254,
+              "scale": 1,
+              "rotation": 0,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "mint",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 0,
+                  "cy": 0,
+                  "rx": 10,
+                  "ry": 10
+                },
+                {
+                  "fill": "none",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "group",
+                  "x": -7,
+                  "y": -7,
+                  "scale": 0.3,
+                  "rotation": 0,
+                  "blend": "normal",
+                  "children": [
+                    {
+                      "fill": "none",
+                      "stroke": "ink",
+                      "strokeWidth": 6,
+                      "opacity": 1,
+                      "kind": "path",
+                      "d": "M0 12L12 24 39 0"
+                    }
+                  ]
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": -5,
+                  "width": 156,
+                  "height": 5,
+                  "radius": 2.5
+                },
+                {
+                  "fill": "line",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 27,
+                  "y": 9,
+                  "width": 122,
+                  "height": 4,
+                  "radius": 2
+                }
+              ]
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 66,
+              "y": 309,
+              "width": 173,
+              "height": 10,
+              "radius": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "test-cards",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "surface",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 104,
+          "y": 562,
+          "width": 199,
+          "height": 133,
+          "radius": 12
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 124,
+          "y": 585,
+          "scale": 0.7,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 12L12 24 39 0"
+            }
+          ]
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 170,
+          "y": 588,
+          "width": 103,
+          "height": 6,
+          "radius": 3
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 124,
+          "y": 629,
+          "scale": 0.7,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 12L12 24 39 0"
+            }
+          ]
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 170,
+          "y": 632,
+          "width": 103,
+          "height": 6,
+          "radius": 3
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 116,
+          "y": 721,
+          "width": 180,
+          "height": 24,
+          "radius": 4
+        }
+      ]
+    },
+    {
+      "id": "meeting",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 453,
+          "y": 133,
+          "scale": 0.7,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 0.1,
+                  "kind": "ellipse",
+                  "cx": 112,
+                  "cy": 399,
+                  "rx": 112,
+                  "ry": 20
+                },
+                {
+                  "fill": "accent",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M46 231Q4 243 2 312L29 358H72L67 285H162L169 360H214L231 309Q223 247 176 232Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M72 203H153L164 240L118 278L64 236Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M76 151H153V219Q111 246 77 217Z"
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M54 71Q49 1 116 0Q185 -1 191 82L180 167L157 163L64 160Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 119,
+                  "cy": 105,
+                  "rx": 59,
+                  "ry": 76
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M61 86Q101 96 111 47Q131 85 176 76Q174 3 119 7Q59 4 61 86Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 58,
+                  "cy": 119,
+                  "rx": 10,
+                  "ry": 17
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 178,
+                  "cy": 119,
+                  "rx": 9,
+                  "ry": 17
+                },
+                {
+                  "fill": "none",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M81 103Q91 96 102 103M136 103Q146 96 155 103"
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 94,
+                  "cy": 115,
+                  "rx": 3,
+                  "ry": 5
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 146,
+                  "cy": 115,
+                  "rx": 3,
+                  "ry": 5
+                },
+                {
+                  "fill": "none",
+                  "stroke": "muted",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M121 113L116 136H125"
+                },
+                {
+                  "fill": "none",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M102 150Q119 168 138 150"
+                },
+                {
+                  "fill": "accent",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 0.25,
+                  "kind": "ellipse",
+                  "cx": 79,
+                  "cy": 138,
+                  "rx": 9,
+                  "ry": 5
+                },
+                {
+                  "fill": "accent",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 0.25,
+                  "kind": "ellipse",
+                  "cx": 158,
+                  "cy": 138,
+                  "rx": 9,
+                  "ry": 5
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M63 259L72 365H168L166 259L147 279H89Z"
+                },
+                {
+                  "fill": "mint",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 93,
+                  "y": 307,
+                  "width": 55,
+                  "height": 40,
+                  "radius": 5
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 101,
+                  "y": 318,
+                  "width": 37,
+                  "height": 3,
+                  "radius": 1.5
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M28 291Q43 340 77 327L130 311L145 332Q72 380 32 350L5 313Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M195 284L214 335L155 365L140 346L178 317L169 295Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 373,
+          "y": 329,
+          "width": 270,
+          "height": 19,
+          "radius": 5
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 709,
+          "y": 415,
+          "scale": 1.2,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 -16Q0 0 16 0Q0 0 0 16Q0 0 -16 0Q0 0 0 -16Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

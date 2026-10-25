@@ -1,0 +1,3309 @@
+{
+  "schemaVersion": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "interpreterVersion": "3",
+  "shots": [
+    {
+      "id": "shot-1",
+      "sourceIndex": 0,
+      "sourceHash": "936a43815e7ca1242a3325ea48c138ab41f9df7ba70ce1b7156e528de18c8a2c",
+      "lineNumbers": [
+        1
+      ],
+      "durationFrames": 240,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Your first",
+          "initial": {
+            "x": 7,
+            "y": 7,
+            "width": 86,
+            "height": 7.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "AI service.",
+          "initial": {
+            "x": 7,
+            "y": 15,
+            "width": 86,
+            "height": 7.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 29,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "salon-working-studio@1",
+            "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+          },
+          "initialParts": {
+            "architecture": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "salon-furniture": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "owner": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "reception": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "inquiries": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "phone": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "calm-owner": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 3,
+          "type": "centered-text",
+          "label": "Inquiry reply service",
+          "initial": {
+            "x": 8,
+            "y": 88,
+            "width": 84,
+            "height": 5.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-5",
+          "startIndex": 4,
+          "endIndex": 4,
+          "type": "centered-text",
+          "label": "DeepSeek V4.1 Flash",
+          "initial": {
+            "x": 8,
+            "y": 25,
+            "width": 84,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Read the service proposition in a recognizable salon",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 8,
+          "endFrame": 35,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Customer inquiries accumulate around the owner",
+          "type": "entry",
+          "targetIds": [
+            "object-3.inquiries"
+          ],
+          "startFrame": 44,
+          "endFrame": 64,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Emphasize the service rather than an app",
+          "type": "transformation",
+          "targetIds": [
+            "object-2"
+          ],
+          "startFrame": 78,
+          "endFrame": 96,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "scale": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Connect the service to the owner reception desk",
+          "type": "emphasis",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 112,
+          "endFrame": 138,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "punch-zoom@1",
+          "parameters": {
+            "focusId": "object-3",
+            "zoom": 1.045
+          }
+        },
+        {
+          "id": "beat-5",
+          "purpose": "Hold the complete service promise while narration explains the pitch",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 150,
+          "endFrame": 239,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "start",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-2",
+      "sourceIndex": 1,
+      "sourceHash": "1d2ff9cc4d29e70f440a130b16cb3c16e8dfe30f72a7945848aa7a26628cba4f",
+      "lineNumbers": [
+        2
+      ],
+      "durationFrames": 162,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Same questions.",
+          "initial": {
+            "x": 7,
+            "y": 72,
+            "width": 86,
+            "height": 6.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "Again. And again.",
+          "initial": {
+            "x": 7,
+            "y": 79.5,
+            "width": 86,
+            "height": 6.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 8,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "salon-working-studio@1",
+            "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+          },
+          "initialParts": {
+            "architecture": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "salon-furniture": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "owner": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "reception": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "inquiries": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "phone": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "calm-owner": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Prepare the hidden inquiry layer",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.inquiries"
+          ],
+          "startFrame": 0,
+          "endFrame": 6,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 0
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Bring the repeated questions into the salon",
+          "type": "entry",
+          "targetIds": [
+            "object-3.inquiries"
+          ],
+          "startFrame": 8,
+          "endFrame": 24,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Expose the accumulated inquiry pressure",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.inquiries"
+          ],
+          "startFrame": 26,
+          "endFrame": 48,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Recognize where replies get stuck",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 52,
+          "endFrame": 86,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        },
+        {
+          "id": "beat-5",
+          "purpose": "Underline repetition without an invented count",
+          "type": "transformation",
+          "targetIds": [
+            "object-2"
+          ],
+          "startFrame": 94,
+          "endFrame": 112,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "scale": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "Read the owner problem before moving to the FAQ",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 120,
+          "endFrame": 161,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-3",
+      "sourceIndex": 2,
+      "sourceHash": "a9fd2c008f8c5e5ca2e86828cb43e0b7f170d69dcc77729f6ce1243006ccf9c6",
+      "lineNumbers": [
+        3
+      ],
+      "durationFrames": 138,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Start with",
+          "initial": {
+            "x": 7,
+            "y": 6,
+            "width": 86,
+            "height": 7,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "their answers.",
+          "initial": {
+            "x": 7,
+            "y": 13.5,
+            "width": 86,
+            "height": 7,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 26,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "faq-research-desk@1",
+            "contentHash": "ef4f5218817b59b087aebd94e2c7f3cd5304458be5dd0dab9ed2f67d32aa49d8"
+          },
+          "initialParts": {
+            "desk": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "reference": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "question-one": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "question-two": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "tools": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "owner-mark": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 3,
+          "type": "heading",
+          "label": "Questions",
+          "initial": {
+            "x": 5,
+            "y": 39,
+            "width": 40,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-5",
+          "startIndex": 4,
+          "endIndex": 4,
+          "type": "heading",
+          "label": "FAQ",
+          "initial": {
+            "x": 56,
+            "y": 39,
+            "width": 33,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-6",
+          "startIndex": null,
+          "endIndex": 5,
+          "type": "centered-text",
+          "label": "Owner-approved",
+          "initial": {
+            "x": 8,
+            "y": 86,
+            "width": 84,
+            "height": 5.5,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Compare the first question with the reference",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.question-one"
+          ],
+          "startFrame": 8,
+          "endFrame": 24,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 3,
+              "y": 0
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Keep the sample beside its reference",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.question-one"
+          ],
+          "startFrame": 28,
+          "endFrame": 44,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Check another inquiry against the same approved answers",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.question-two"
+          ],
+          "startFrame": 48,
+          "endFrame": 64,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 3,
+              "y": -1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Retain both fabricated samples",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.question-two"
+          ],
+          "startFrame": 66,
+          "endFrame": 82,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-5",
+          "purpose": "The owner signs off on the FAQ",
+          "type": "entry",
+          "targetIds": [
+            "object-3.owner-mark"
+          ],
+          "startFrame": 86,
+          "endFrame": 104,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "Identify the owner-approved source",
+          "type": "entry",
+          "targetIds": [
+            "object-6"
+          ],
+          "startFrame": 100,
+          "endFrame": 118,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-7",
+          "purpose": "Read the reference boundary",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 120,
+          "endFrame": 137,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-4",
+      "sourceIndex": 3,
+      "sourceHash": "3cbac4d89aa5af7f3bac4320392a25032d67f544fda867768f3302ae10bdeff3",
+      "lineNumbers": [
+        4
+      ],
+      "durationFrames": 210,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Follow the inquiry.",
+          "initial": {
+            "x": 7,
+            "y": 6,
+            "width": 86,
+            "height": 7.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "Google Sheets",
+          "initial": {
+            "x": 7,
+            "y": 20,
+            "width": 86,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 27,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "inquiry-intake-console@3",
+            "contentHash": "7d4f94002507134b431cf05b75c1e475d06bcf60323b0cfc0c1b407201d1eb2f"
+          },
+          "initialParts": {
+            "sheets-shell": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "new-row": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "n8n-shell": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "trigger": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "request": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "validation": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "row-packet": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 5,
+          "type": "heading",
+          "label": "n8n",
+          "initial": {
+            "x": 72,
+            "y": 60.3,
+            "width": 25,
+            "height": 4.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-5",
+          "startIndex": 4,
+          "endIndex": 6,
+          "type": "centered-text",
+          "label": "Trigger",
+          "initial": {
+            "x": 15,
+            "y": 78.5,
+            "width": 25,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-6",
+          "startIndex": 5,
+          "endIndex": 7,
+          "type": "centered-text",
+          "label": "HTTP",
+          "initial": {
+            "x": 43,
+            "y": 75,
+            "width": 25,
+            "height": 3.2,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-7",
+          "startIndex": 6,
+          "endIndex": 8,
+          "type": "centered-text",
+          "label": "Sheets",
+          "initial": {
+            "x": 15,
+            "y": 75,
+            "width": 25,
+            "height": 3.2,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-8",
+          "startIndex": 7,
+          "endIndex": 9,
+          "type": "centered-text",
+          "label": "Request",
+          "initial": {
+            "x": 43,
+            "y": 78.5,
+            "width": 25,
+            "height": 3.2,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-9",
+          "startIndex": null,
+          "endIndex": 3,
+          "type": "rect",
+          "label": "",
+          "initial": {
+            "x": 10,
+            "y": 40,
+            "width": 45,
+            "height": 4.8,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#C6DED3"
+          }
+        },
+        {
+          "id": "object-10",
+          "startIndex": null,
+          "endIndex": 4,
+          "type": "centered-text",
+          "label": "New inquiry",
+          "initial": {
+            "x": 11,
+            "y": 40.3,
+            "width": 43,
+            "height": 4,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Prepare the hidden row-to-trigger connection",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.row-packet"
+          ],
+          "startFrame": 0,
+          "endFrame": 6,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 0
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Locate the Sheets and n8n surfaces",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 10,
+          "endFrame": 42,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        },
+        {
+          "id": "beat-3",
+          "purpose": "The submitted question becomes a new row",
+          "type": "entry",
+          "targetIds": [
+            "object-3.new-row"
+          ],
+          "startFrame": 54,
+          "endFrame": 72,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Label the newly stored inquiry",
+          "type": "entry",
+          "targetIds": [
+            "object-9",
+            "object-10"
+          ],
+          "startFrame": 54,
+          "endFrame": 76,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-5",
+          "purpose": "Start the row handoff",
+          "type": "entry",
+          "targetIds": [
+            "object-3.row-packet"
+          ],
+          "startFrame": 96,
+          "endFrame": 112,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 0,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "Trace the stored inquiry into the Sheets Trigger",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.row-packet"
+          ],
+          "startFrame": 114,
+          "endFrame": 138,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "beat-7",
+          "purpose": "The new row activates the trigger",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.trigger"
+          ],
+          "startFrame": 140,
+          "endFrame": 154,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "scale": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-8",
+          "purpose": "The HTTP operation receives the inquiry",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.request"
+          ],
+          "startFrame": 158,
+          "endFrame": 172,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "color": "#C6DED3"
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-9",
+          "purpose": "Keep the operation identity visible",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.request"
+          ],
+          "startFrame": 174,
+          "endFrame": 188,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-10",
+          "purpose": "Read the connected intake route",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 190,
+          "endFrame": 209,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-5",
+      "sourceIndex": 4,
+      "sourceHash": "72a5b27e83e128a19f860ca6c7b34ce15199337ae895799e77a2e1c97b5a0b48",
+      "lineNumbers": [
+        5
+      ],
+      "durationFrames": 330,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "From question",
+          "initial": {
+            "x": 7,
+            "y": 6,
+            "width": 86,
+            "height": 7,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#F7F3E9"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "to structured draft.",
+          "initial": {
+            "x": 7,
+            "y": 13.5,
+            "width": 86,
+            "height": 6.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#C6DED3"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 29,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "deepseek-processing-studio@1",
+            "contentHash": "8f34b68664566f48c3a4c6656d13f281b16da33ca41155420f9e6368dcc41a61"
+          },
+          "initialParts": {
+            "stage": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "input-one": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "input-two": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "rails": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "processor": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "draft": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "field-markers": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 3,
+          "type": "code",
+          "label": "deepseek-flash",
+          "initial": {
+            "x": 9,
+            "y": 23,
+            "width": 82,
+            "height": 5.3,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#C6DED3"
+          }
+        },
+        {
+          "id": "object-5",
+          "startIndex": 4,
+          "endIndex": 4,
+          "type": "rect",
+          "label": "",
+          "initial": {
+            "x": 5.5,
+            "y": 38.5,
+            "width": 34,
+            "height": 4.2,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#FFFDF8"
+          }
+        },
+        {
+          "id": "object-6",
+          "startIndex": 5,
+          "endIndex": 5,
+          "type": "centered-text",
+          "label": "Question",
+          "initial": {
+            "x": 6,
+            "y": 39,
+            "width": 33,
+            "height": 3.2,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-7",
+          "startIndex": 6,
+          "endIndex": 6,
+          "type": "rect",
+          "label": "",
+          "initial": {
+            "x": 60.5,
+            "y": 38.5,
+            "width": 34,
+            "height": 4.2,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#FFFDF8"
+          }
+        },
+        {
+          "id": "object-8",
+          "startIndex": 7,
+          "endIndex": 7,
+          "type": "centered-text",
+          "label": "FAQ",
+          "initial": {
+            "x": 61,
+            "y": 39,
+            "width": 33,
+            "height": 3.2,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-9",
+          "startIndex": 8,
+          "endIndex": 11,
+          "type": "centered-text",
+          "label": "JSON",
+          "initial": {
+            "x": 8,
+            "y": 88,
+            "width": 84,
+            "height": 5.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#C6DED3"
+          }
+        },
+        {
+          "id": "object-10",
+          "startIndex": null,
+          "endIndex": 8,
+          "type": "rect",
+          "label": "",
+          "initial": {
+            "x": 14,
+            "y": 70.8,
+            "width": 66,
+            "height": 9.2,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#FFFDF8"
+          }
+        },
+        {
+          "id": "object-11",
+          "startIndex": null,
+          "endIndex": 9,
+          "type": "code",
+          "label": "{\"category\":\"…\",",
+          "initial": {
+            "x": 15,
+            "y": 71.5,
+            "width": 65,
+            "height": 3.2,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-12",
+          "startIndex": null,
+          "endIndex": 10,
+          "type": "code",
+          "label": "\"reply_draft\":\"…\"}",
+          "initial": {
+            "x": 15,
+            "y": 76,
+            "width": 65,
+            "height": 3.2,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Prepare the hidden structured output",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.draft"
+          ],
+          "startFrame": 0,
+          "endFrame": 6,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 0
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Focus the first model input: the customer question",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.input-one"
+          ],
+          "startFrame": 24,
+          "endFrame": 40,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "opacity": 0.55
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Keep the question available as source context",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.input-one"
+          ],
+          "startFrame": 50,
+          "endFrame": 66,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Focus the second input: owner-approved FAQ",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.input-two"
+          ],
+          "startFrame": 80,
+          "endFrame": 96,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "opacity": 0.55
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-5",
+          "purpose": "Keep the approved source visible",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.input-two"
+          ],
+          "startFrame": 108,
+          "endFrame": 124,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "The supplied inputs are processed together",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.processor"
+          ],
+          "startFrame": 138,
+          "endFrame": 154,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "color": "#C6DED3"
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-7",
+          "purpose": "Settle the model processing state",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.processor"
+          ],
+          "startFrame": 164,
+          "endFrame": 180,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-8",
+          "purpose": "Read the exact model identifier before its output",
+          "type": "emphasis",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 182,
+          "endFrame": 204,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "punch-zoom@1",
+          "parameters": {
+            "focusId": "object-3",
+            "zoom": 1.045
+          }
+        },
+        {
+          "id": "beat-9",
+          "purpose": "A structured draft arrives",
+          "type": "entry",
+          "targetIds": [
+            "object-3.draft"
+          ],
+          "startFrame": 212,
+          "endFrame": 230,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 0,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-10",
+          "purpose": "Reveal the machine-readable output drawer",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.draft"
+          ],
+          "startFrame": 232,
+          "endFrame": 254,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "beat-11",
+          "purpose": "Expose both JSON fields and their placeholder values",
+          "type": "entry",
+          "targetIds": [
+            "object-10",
+            "object-11",
+            "object-12"
+          ],
+          "startFrame": 236,
+          "endFrame": 260,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-12",
+          "purpose": "Show the two fields as separate workflow values",
+          "type": "entry",
+          "targetIds": [
+            "object-3.field-markers"
+          ],
+          "startFrame": 268,
+          "endFrame": 286,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-13",
+          "purpose": "Inspect category and reply draft without implying factual verification",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 292,
+          "endFrame": 329,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-6",
+      "sourceIndex": 5,
+      "sourceHash": "4c6f2bf58191fce778535e369249c4672fa67fc7e14000239ad5368658271484",
+      "lineNumbers": [
+        6
+      ],
+      "durationFrames": 300,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Draft first.",
+          "initial": {
+            "x": 7,
+            "y": 74,
+            "width": 86,
+            "height": 7.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "Owner decides.",
+          "initial": {
+            "x": 7,
+            "y": 82,
+            "width": 86,
+            "height": 7.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 10,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "owner-review-console@1",
+            "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+          },
+          "initialParts": {
+            "workspace": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "monitor": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "draft": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "review-controls": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "unresolved": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "human-hand": {
+              "x": -14,
+              "y": 5,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 3,
+          "type": "rect",
+          "label": "",
+          "initial": {
+            "x": 30.4,
+            "y": 40.3,
+            "width": 24,
+            "height": 3.4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#C6DED3"
+          }
+        },
+        {
+          "id": "object-5",
+          "startIndex": 4,
+          "endIndex": 4,
+          "type": "centered-text",
+          "label": "Approve",
+          "initial": {
+            "x": 31,
+            "y": 40.5,
+            "width": 24,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-6",
+          "startIndex": 5,
+          "endIndex": 5,
+          "type": "centered-text",
+          "label": "Edit",
+          "initial": {
+            "x": 58,
+            "y": 40.5,
+            "width": 23,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-7",
+          "startIndex": null,
+          "endIndex": 6,
+          "type": "rect",
+          "label": "",
+          "initial": {
+            "x": 59,
+            "y": 51.5,
+            "width": 33,
+            "height": 7.4,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#F7F3E9"
+          }
+        },
+        {
+          "id": "object-8",
+          "startIndex": null,
+          "endIndex": 7,
+          "type": "centered-text",
+          "label": "Missing?",
+          "initial": {
+            "x": 58.5,
+            "y": 51.8,
+            "width": 34,
+            "height": 3.2,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-9",
+          "startIndex": null,
+          "endIndex": 8,
+          "type": "centered-text",
+          "label": "Ask owner",
+          "initial": {
+            "x": 60,
+            "y": 55.6,
+            "width": 31,
+            "height": 3.2,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Prepare the missing-information route",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.unresolved"
+          ],
+          "startFrame": 0,
+          "endFrame": 6,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 0
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Check the received draft and structured fields",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.draft"
+          ],
+          "startFrame": 24,
+          "endFrame": 40,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "color": "#C6DED3"
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Keep the editable draft visible",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.draft"
+          ],
+          "startFrame": 52,
+          "endFrame": 68,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Allow time for owner fact checking",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 72,
+          "endFrame": 94,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        },
+        {
+          "id": "beat-5",
+          "purpose": "A person takes control of the decision",
+          "type": "entry",
+          "targetIds": [
+            "object-3.human-hand"
+          ],
+          "startFrame": 102,
+          "endFrame": 122,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 4,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "Gesture toward the owner approval control",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.human-hand"
+          ],
+          "startFrame": 154,
+          "endFrame": 174,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": -8,
+              "y": 0
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-7",
+          "purpose": "Keep the approval label readable after the gesture",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.human-hand"
+          ],
+          "startFrame": 184,
+          "endFrame": 204,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": -14,
+              "y": 5,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-8",
+          "purpose": "An unanswered case returns to the owner",
+          "type": "entry",
+          "targetIds": [
+            "object-3.unresolved"
+          ],
+          "startFrame": 228,
+          "endFrame": 246,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 0,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-9",
+          "purpose": "Name the missing-information escalation",
+          "type": "entry",
+          "targetIds": [
+            "object-7",
+            "object-8",
+            "object-9"
+          ],
+          "startFrame": 230,
+          "endFrame": 254,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-10",
+          "purpose": "Expose the separate owner-escalation tray",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.unresolved"
+          ],
+          "startFrame": 256,
+          "endFrame": 276,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "beat-11",
+          "purpose": "Hold both owner decision paths",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 280,
+          "endFrame": 299,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-7",
+      "sourceIndex": 6,
+      "sourceHash": "cef5512bebe9aa89a00d5aa4a7f1fa5c0ab42ad2e4665bfb4abc531bc79f85ce",
+      "lineNumbers": [
+        7
+      ],
+      "durationFrames": 180,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Test both paths.",
+          "initial": {
+            "x": 7,
+            "y": 8,
+            "width": 86,
+            "height": 7.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 25,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "booking-test-bench@1",
+            "contentHash": "0327e25aa1b9106f54e63f686dad9558b245d6dc6f408641aad25b6f981b0c23"
+          },
+          "initialParts": {
+            "bench": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "booking": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "unknown": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "routes": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "centered-text",
+          "label": "Booking",
+          "initial": {
+            "x": 4,
+            "y": 37.5,
+            "width": 43,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 3,
+          "type": "centered-text",
+          "label": "Unknown",
+          "initial": {
+            "x": 53,
+            "y": 37.5,
+            "width": 43,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-5",
+          "startIndex": 4,
+          "endIndex": 4,
+          "type": "centered-text",
+          "label": "Draft",
+          "initial": {
+            "x": 6,
+            "y": 82,
+            "width": 40,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-6",
+          "startIndex": 5,
+          "endIndex": 5,
+          "type": "centered-text",
+          "label": "Ask owner",
+          "initial": {
+            "x": 54,
+            "y": 82,
+            "width": 40,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Prepare the unanswerable test",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.unknown"
+          ],
+          "startFrame": 0,
+          "endFrame": 6,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 0
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Test an FAQ-covered booking question",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.booking"
+          ],
+          "startFrame": 18,
+          "endFrame": 34,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "color": "#C6DED3"
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Retain the answerable test result",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.booking"
+          ],
+          "startFrame": 44,
+          "endFrame": 60,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Run a question outside the FAQ",
+          "type": "entry",
+          "targetIds": [
+            "object-2.unknown"
+          ],
+          "startFrame": 68,
+          "endFrame": 86,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 0,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-5",
+          "purpose": "Reveal that missing knowledge returns to the owner",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.unknown"
+          ],
+          "startFrame": 88,
+          "endFrame": 110,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "Compare the draft and owner-escalation outcomes",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 120,
+          "endFrame": 179,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-8",
+      "sourceIndex": 7,
+      "sourceHash": "eff2bcbbde63728db0c0869df6c43ec7d35d07af76b2b6020f66b58fcd322d1e",
+      "lineNumbers": [
+        8
+      ],
+      "durationFrames": 250,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Show the workflow.",
+          "initial": {
+            "x": 7,
+            "y": 75,
+            "width": 86,
+            "height": 7,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "Offer the setup.",
+          "initial": {
+            "x": 7,
+            "y": 83,
+            "width": 86,
+            "height": 7,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 12,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "service-handover-desk@1",
+            "contentHash": "dcd9f405541877352212fce365720bfa8928e48542cb10e0c7781afaeea1b50c"
+          },
+          "initialParts": {
+            "setting": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "demonstration": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "documentation": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "test-cards": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "meeting": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Prepare the handover deliverable",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.documentation"
+          ],
+          "startFrame": 0,
+          "endFrame": 6,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 0
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Present the working demonstration and ask whether it fits",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 10,
+          "endFrame": 92,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Offer testing as part of the setup service",
+          "type": "entry",
+          "targetIds": [
+            "object-3.test-cards"
+          ],
+          "startFrame": 100,
+          "endFrame": 120,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 2,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Bring the handover document to the owner",
+          "type": "entry",
+          "targetIds": [
+            "object-3.documentation"
+          ],
+          "startFrame": 158,
+          "endFrame": 178,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 0,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-5",
+          "purpose": "Reveal the documented handover",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.documentation"
+          ],
+          "startFrame": 180,
+          "endFrame": 202,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "Explain optional maintenance without implying a sale",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 208,
+          "endFrame": 249,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-9",
+      "sourceIndex": 8,
+      "sourceHash": "dbb791c4776135ad314c05b86128cb9b64e5241d9233c02526f9a3cf23d2ff3b",
+      "lineNumbers": [
+        9
+      ],
+      "durationFrames": 140,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "Agree the costs.",
+          "initial": {
+            "x": 7,
+            "y": 77,
+            "width": 86,
+            "height": 7.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 12,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "service-running-costs@1",
+            "contentHash": "6d03ae2291751ec0f93ae0cd4488470c4570dc0131738e96fde0c189d7bddf34"
+          },
+          "initialParts": {
+            "desk": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "usage-meter": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "hosting": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "agreement": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "centered-text",
+          "label": "API usage",
+          "initial": {
+            "x": 7,
+            "y": 49,
+            "width": 42,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 3,
+          "type": "centered-text",
+          "label": "Hosting",
+          "initial": {
+            "x": 54,
+            "y": 49,
+            "width": 39,
+            "height": 5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-5",
+          "startIndex": 4,
+          "endIndex": 4,
+          "type": "centered-text",
+          "label": "Who pays?",
+          "initial": {
+            "x": 8,
+            "y": 85,
+            "width": 84,
+            "height": 6,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Prepare the cost-responsibility agreement",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.agreement"
+          ],
+          "startFrame": 0,
+          "endFrame": 6,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 0
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Distinguish usage-based API billing",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.usage-meter"
+          ],
+          "startFrame": 10,
+          "endFrame": 26,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "color": "#C6DED3"
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Keep hosting as a separate running cost",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.usage-meter"
+          ],
+          "startFrame": 34,
+          "endFrame": 50,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "Put cost responsibility into the agreement",
+          "type": "entry",
+          "targetIds": [
+            "object-2.agreement"
+          ],
+          "startFrame": 62,
+          "endFrame": 82,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 0,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-5",
+          "purpose": "Reveal who is responsible for the bills",
+          "type": "transformation",
+          "targetIds": [
+            "object-2.agreement"
+          ],
+          "startFrame": 84,
+          "endFrame": 106,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "beat-6",
+          "purpose": "Read the responsibility decision without invented prices",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 110,
+          "endFrame": 139,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-10",
+      "sourceIndex": 9,
+      "sourceHash": "938b007a27d9785416439eb055ee96cea9f72e061b903d210e9a92bbe7ca14d6",
+      "lineNumbers": [
+        10
+      ],
+      "durationFrames": 150,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "A useful process.",
+          "initial": {
+            "x": 7,
+            "y": 7,
+            "width": 86,
+            "height": 7,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "An owner in control.",
+          "initial": {
+            "x": 7,
+            "y": 14.5,
+            "width": 86,
+            "height": 6.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          }
+        },
+        {
+          "id": "object-3",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 0,
+            "y": 29,
+            "width": 100,
+            "height": 56.25,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#AA472D"
+          },
+          "asset": {
+            "id": "salon-working-studio@1",
+            "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+          },
+          "initialParts": {
+            "architecture": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "salon-furniture": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "owner": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "reception": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "inquiries": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "phone": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "calm-owner": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "object-4",
+          "startIndex": 3,
+          "endIndex": 3,
+          "type": "centered-text",
+          "label": "Every reply. Owner-led.",
+          "initial": {
+            "x": 7,
+            "y": 87,
+            "width": 86,
+            "height": 5.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "beat-1",
+          "purpose": "Return an inquiry to the same owner workspace",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.phone"
+          ],
+          "startFrame": 12,
+          "endFrame": 28,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "color": "#C6DED3"
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-2",
+          "purpose": "Keep the reply process visible",
+          "type": "transformation",
+          "targetIds": [
+            "object-3.phone"
+          ],
+          "startFrame": 38,
+          "endFrame": 54,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 0,
+              "y": 0,
+              "opacity": 1,
+              "scale": 1,
+              "color": "#AA472D",
+              "reveal": 1
+            },
+            "anticipation": 0.95,
+            "overshoot": 1.025
+          }
+        },
+        {
+          "id": "beat-3",
+          "purpose": "Return attention to the calm owner in the same salon",
+          "type": "emphasis",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 64,
+          "endFrame": 88,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "punch-zoom@1",
+          "parameters": {
+            "focusId": "object-3",
+            "zoom": 1.045
+          }
+        },
+        {
+          "id": "beat-4",
+          "purpose": "End on owner control of every reply",
+          "type": "hold",
+          "targetIds": [
+            "camera"
+          ],
+          "startFrame": 96,
+          "endFrame": 149,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    }
+  ],
+  "energyProfile": "energetic"
+}

@@ -1,0 +1,18 @@
+{
+  "storyboardId": "3db395b4-b1a3-4817-8921-da14e0841f2c",
+  "shots": 10,
+  "statesRendered": 20,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "frames": 2100,
+  "orderedNarrationCoverage": true,
+  "originalFilesPreserved": 4,
+  "graphicWarnings": 0,
+  "graphicReviewAdvisories": 2,
+  "humanApproval": false,
+  "motionGenerated": false,
+  "productionExportGenerated": false,
+  "check": "97 tests, lint and TypeScript passed",
+  "build": "passed"
+}

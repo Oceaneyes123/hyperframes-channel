@@ -1,5 +1,10 @@
 # Clone a reference voice: quick guide
 
+These are preserved **audio version 1** instructions. The current narration default
+is version 2, Fish Audio via OpenRouter; see
+[channel/AUDIO_VERSIONS.md](channel/AUDIO_VERSIONS.md). Keep the existing clone and
+reference assets for an explicit switch back.
+
 Use the installed [Supertonic voice-cloning tool](https://github.com/Mimocro/supertonic-voice-cloning)
 and `scripts/clone_supertonic.sh`. Run commands from the repository root in
 PowerShell. The existing WSL environment and models are ready; reuse them.

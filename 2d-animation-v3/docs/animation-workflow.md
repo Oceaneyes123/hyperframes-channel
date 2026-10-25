@@ -76,6 +76,12 @@ are explicit instructions, not automatic decoration.
 
 ## Narration and production safeguards
 
+Channel narration now defaults to **audio version 2: Fish Audio via OpenRouter**.
+The [versioned narration reference](../../2d-animation/channel/AUDIO_VERSIONS.md)
+records the approved audition/settings and preserves version 1 Supertonic rollback.
+This is a production preference, not a built-in synthesis adapter. Existing project
+audio stays unchanged until a separate complete revision is generated and imported.
+
 Import a complete mono/stereo PCM16 WAV, at most 16 MB, plus measured line timing:
 
 ```json

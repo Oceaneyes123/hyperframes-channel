@@ -1,0 +1,2442 @@
+{
+  "schemaVersion": 2,
+  "id": "af04da4b-d182-45ff-bd66-9abed9ec4547",
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "createdAt": "2026-10-24T15:51:42.374Z",
+  "scriptId": "8fcf2dcc-7523-4e69-b02b-946f05ea0d5e",
+  "scriptHash": "8818a60c4069dcf8b2c1800398897d13a54176b8d559afbf01941002a38bdcab",
+  "selectionId": "2c741195-edeb-4285-bc73-f0672ba4cd6e",
+  "baseId": "c888ad37-9f1e-404d-99d1-36a0ef8d6478",
+  "instruction": "Working Studio redesign: original layered illustrations and reconstructed interfaces throughout. Preserve exact script and measured narration. Proposed storyboard only; no human approval inferred.",
+  "output": {
+    "shots": [
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "editorial-illustration",
+          "meaning": "You could start a DeepSeek V4.1 Flash business without building an app. Here's a service you can build, and how to pitch it to a business owner.",
+          "metaphor": "A real working salon is the customer, not a software icon.",
+          "focalPoint": "Expressive owner and reception desk.",
+          "layout": "Large two-line title over a full-width illustrated salon.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          1
+        ],
+        "seconds": 8,
+        "purpose": "A service worth building",
+        "framing": "Large two-line title over a full-width illustrated salon.",
+        "subject": "Expressive owner and reception desk.",
+        "action": "Open on the complete salon; inquiries enter from both sides, then the service title lands. Camera follows the owner, not a floating symbol.",
+        "transition": "start",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 7,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Your first"
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 15,
+              "width": 86,
+              "height": 7.5,
+              "color": "#AA472D",
+              "label": "AI service."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 29,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "salon-working-studio@1",
+                "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+              },
+              "parts": {
+                "architecture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "salon-furniture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reception": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "inquiries": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "phone": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "calm-owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 88,
+              "width": 84,
+              "height": 5.5,
+              "color": "#203B3A",
+              "label": "Inquiry reply service"
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 25,
+              "width": 84,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "DeepSeek V4.1 Flash"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 7,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Your first"
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 15,
+              "width": 86,
+              "height": 7.5,
+              "color": "#AA472D",
+              "label": "AI service."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 29,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "salon-working-studio@1",
+                "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+              },
+              "parts": {
+                "architecture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "salon-furniture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reception": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "inquiries": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "phone": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "calm-owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 88,
+              "width": 84,
+              "height": 5.5,
+              "color": "#203B3A",
+              "label": "Inquiry reply service"
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 25,
+              "width": 84,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "DeepSeek V4.1 Flash"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "editorial-illustration",
+          "meaning": "Start with a salon. Ask the owner which booking questions they keep answering, and where replies get stuck.",
+          "metaphor": "The reception counter becomes the pressure point for unanswered questions.",
+          "focalPoint": "Owner between two approaching inquiry tickets.",
+          "layout": "Environment-first salon fills the upper frame; the problem statement lands underneath.",
+          "density": "balanced",
+          "continuityReason": "The same workplace makes the problem/payoff connection explicit."
+        },
+        "lineNumbers": [
+          2
+        ],
+        "seconds": 5.4,
+        "purpose": "Find the reply bottleneck",
+        "framing": "Environment-first salon fills the upper frame; the problem statement lands underneath.",
+        "subject": "Owner between two approaching inquiry tickets.",
+        "action": "Match the opening room. Punch into the owner as inquiry tickets arrive; hold the visibly overwhelmed expression. No invented counts or lost revenue.",
+        "transition": "hard-cut",
+        "continuity": "Retain the same salon and owner to introduce the problem.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 72,
+              "width": 86,
+              "height": 6.5,
+              "color": "#203B3A",
+              "label": "Same questions."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 79.5,
+              "width": 86,
+              "height": 6.5,
+              "color": "#AA472D",
+              "label": "Again. And again."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 8,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "salon-working-studio@1",
+                "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+              },
+              "parts": {
+                "architecture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "salon-furniture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reception": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "inquiries": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "phone": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "calm-owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 72,
+              "width": 86,
+              "height": 6.5,
+              "color": "#203B3A",
+              "label": "Same questions."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 79.5,
+              "width": 86,
+              "height": 6.5,
+              "color": "#AA472D",
+              "label": "Again. And again."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 8,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "salon-working-studio@1",
+                "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+              },
+              "parts": {
+                "architecture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "salon-furniture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reception": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "inquiries": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "phone": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "calm-owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "editorial-illustration",
+          "meaning": "Build a demo around those questions, using made-up inquiries and the owner's approved FAQ.",
+          "metaphor": "An overhead research desk separates question samples from an owner-approved reference binder.",
+          "focalPoint": "Physical FAQ binder and owner sign-off.",
+          "layout": "Overhead diagonal stationery composition with large editable corner labels.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          3
+        ],
+        "seconds": 4.6,
+        "purpose": "Build from approved answers",
+        "framing": "Overhead diagonal stationery composition with large editable corner labels.",
+        "subject": "Physical FAQ binder and owner sign-off.",
+        "action": "Match-cut an inquiry ticket onto the research desk. Reveal reference pages, compare samples, then stamp owner approval. Fabricated question content stays reviewer metadata.",
+        "transition": "hard-cut",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 6,
+              "width": 86,
+              "height": 7,
+              "color": "#203B3A",
+              "label": "Start with"
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 13.5,
+              "width": 86,
+              "height": 7,
+              "color": "#AA472D",
+              "label": "their answers."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 26,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "faq-research-desk@1",
+                "contentHash": "ef4f5218817b59b087aebd94e2c7f3cd5304458be5dd0dab9ed2f67d32aa49d8"
+              },
+              "parts": {
+                "desk": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reference": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "question-one": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "question-two": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "tools": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner-mark": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "heading",
+              "x": 5,
+              "y": 39,
+              "width": 40,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Questions"
+            },
+            {
+              "type": "heading",
+              "x": 56,
+              "y": 39,
+              "width": 33,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "FAQ"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 6,
+              "width": 86,
+              "height": 7,
+              "color": "#203B3A",
+              "label": "Start with"
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 13.5,
+              "width": 86,
+              "height": 7,
+              "color": "#AA472D",
+              "label": "their answers."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 26,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "faq-research-desk@1",
+                "contentHash": "ef4f5218817b59b087aebd94e2c7f3cd5304458be5dd0dab9ed2f67d32aa49d8"
+              },
+              "parts": {
+                "desk": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reference": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "question-one": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "question-two": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "tools": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner-mark": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "heading",
+              "x": 5,
+              "y": 39,
+              "width": 40,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Questions"
+            },
+            {
+              "type": "heading",
+              "x": 56,
+              "y": 39,
+              "width": 33,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "FAQ"
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 86,
+              "width": 84,
+              "height": 5.5,
+              "color": "#203B3A",
+              "label": "Owner-approved"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "interface-demonstration",
+          "meaning": "A customer submits a form. Their question lands in Google Sheets, and n8n picks up the new row.",
+          "metaphor": "A submitted inquiry becomes a highlighted row, then a trigger activates the HTTP request.",
+          "focalPoint": "Highlighted Google Sheets row and n8n trigger.",
+          "layout": "Tall stacked software cutaway with actual operation names.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          4
+        ],
+        "seconds": 7,
+        "purpose": "Follow one real workflow",
+        "framing": "Tall stacked software cutaway with actual operation names.",
+        "subject": "Highlighted Google Sheets row and n8n trigger.",
+        "action": "Reveal the intake form, insert one row, carry its packet into Google Sheets Trigger and activate HTTP Request. Stage UI labels instead of shrinking them.",
+        "transition": "hard-cut",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 6,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Follow the inquiry."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 20,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Google Sheets"
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 27,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "inquiry-intake-console@2",
+                "contentHash": "524282b070e8e78fb13856e3441cb4bf64cec32eb0fc240125c7bd91951bc7fc"
+              },
+              "parts": {
+                "sheets-shell": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "new-row": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "n8n-shell": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "trigger": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "request": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "validation": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "row-packet": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "heading",
+              "x": 19,
+              "y": 60.3,
+              "width": 25,
+              "height": 4.5,
+              "color": "#203B3A",
+              "label": "n8n"
+            },
+            {
+              "type": "centered-text",
+              "x": 15,
+              "y": 78.5,
+              "width": 27,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Trigger"
+            },
+            {
+              "type": "centered-text",
+              "x": 40,
+              "y": 75,
+              "width": 27,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "HTTP"
+            },
+            {
+              "type": "centered-text",
+              "x": 15,
+              "y": 75,
+              "width": 27,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Sheets"
+            },
+            {
+              "type": "centered-text",
+              "x": 40,
+              "y": 78.5,
+              "width": 27,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Request"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 6,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Follow the inquiry."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 20,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Google Sheets"
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 27,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "inquiry-intake-console@2",
+                "contentHash": "524282b070e8e78fb13856e3441cb4bf64cec32eb0fc240125c7bd91951bc7fc"
+              },
+              "parts": {
+                "sheets-shell": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "new-row": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "n8n-shell": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "trigger": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "request": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "validation": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "row-packet": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "rect",
+              "x": 10,
+              "y": 40,
+              "width": 45,
+              "height": 4.8,
+              "color": "#C6DED3",
+              "label": ""
+            },
+            {
+              "type": "centered-text",
+              "x": 11,
+              "y": 40.3,
+              "width": 43,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "New inquiry"
+            },
+            {
+              "type": "heading",
+              "x": 19,
+              "y": 60.3,
+              "width": 25,
+              "height": 4.5,
+              "color": "#203B3A",
+              "label": "n8n"
+            },
+            {
+              "type": "centered-text",
+              "x": 15,
+              "y": 78.5,
+              "width": 27,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Trigger"
+            },
+            {
+              "type": "centered-text",
+              "x": 40,
+              "y": 75,
+              "width": 27,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "HTTP"
+            },
+            {
+              "type": "centered-text",
+              "x": 15,
+              "y": 75,
+              "width": 27,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Sheets"
+            },
+            {
+              "type": "centered-text",
+              "x": 40,
+              "y": 78.5,
+              "width": 27,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Request"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "technical-cutaway",
+          "meaning": "It sends the question and FAQ to DeepSeek. Use the model name deepseek-flash, and request a category and reply draft as JSON: structured fields your workflow can read.",
+          "metaphor": "A processor cutaway combines the inquiry and reference rather than a magical all-knowing chatbot.",
+          "focalPoint": "Isometric processor between two inputs and a structured draft.",
+          "layout": "Dark cinematic stage with input rails, raised processor and output drawer.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          5
+        ],
+        "seconds": 11,
+        "purpose": "Turn a question into fields",
+        "framing": "Dark cinematic stage with input rails, raised processor and output drawer.",
+        "subject": "Isometric processor between two inputs and a structured draft.",
+        "action": "Two input packets travel to the processor. Its top opens; category and reply_draft reveal in the output drawer. Punch on the field structure after both inputs arrive.",
+        "transition": "hard-cut",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#203B3A",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 6,
+              "width": 86,
+              "height": 7,
+              "color": "#F7F3E9",
+              "label": "From question"
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 13.5,
+              "width": 86,
+              "height": 6.5,
+              "color": "#C6DED3",
+              "label": "to structured draft."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 29,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "deepseek-processing-studio@1",
+                "contentHash": "8f34b68664566f48c3a4c6656d13f281b16da33ca41155420f9e6368dcc41a61"
+              },
+              "parts": {
+                "stage": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "input-one": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "input-two": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "rails": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "processor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "field-markers": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "code",
+              "x": 9,
+              "y": 23,
+              "width": 82,
+              "height": 5.3,
+              "color": "#C6DED3",
+              "label": "deepseek-flash"
+            },
+            {
+              "type": "rect",
+              "x": 5.5,
+              "y": 38.5,
+              "width": 34,
+              "height": 4.2,
+              "color": "#FFFDF8",
+              "label": ""
+            },
+            {
+              "type": "centered-text",
+              "x": 6,
+              "y": 39,
+              "width": 33,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Question"
+            },
+            {
+              "type": "rect",
+              "x": 60.5,
+              "y": 38.5,
+              "width": 34,
+              "height": 4.2,
+              "color": "#FFFDF8",
+              "label": ""
+            },
+            {
+              "type": "centered-text",
+              "x": 61,
+              "y": 39,
+              "width": 33,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "FAQ"
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 88,
+              "width": 84,
+              "height": 5.5,
+              "color": "#C6DED3",
+              "label": "JSON"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#203B3A",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 6,
+              "width": 86,
+              "height": 7,
+              "color": "#F7F3E9",
+              "label": "From question"
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 13.5,
+              "width": 86,
+              "height": 6.5,
+              "color": "#C6DED3",
+              "label": "to structured draft."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 29,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "deepseek-processing-studio@1",
+                "contentHash": "8f34b68664566f48c3a4c6656d13f281b16da33ca41155420f9e6368dcc41a61"
+              },
+              "parts": {
+                "stage": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "input-one": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "input-two": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "rails": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "processor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "field-markers": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "code",
+              "x": 9,
+              "y": 23,
+              "width": 82,
+              "height": 5.3,
+              "color": "#C6DED3",
+              "label": "deepseek-flash"
+            },
+            {
+              "type": "rect",
+              "x": 5.5,
+              "y": 38.5,
+              "width": 34,
+              "height": 4.2,
+              "color": "#FFFDF8",
+              "label": ""
+            },
+            {
+              "type": "centered-text",
+              "x": 6,
+              "y": 39,
+              "width": 33,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Question"
+            },
+            {
+              "type": "rect",
+              "x": 60.5,
+              "y": 38.5,
+              "width": 34,
+              "height": 4.2,
+              "color": "#FFFDF8",
+              "label": ""
+            },
+            {
+              "type": "centered-text",
+              "x": 61,
+              "y": 39,
+              "width": 33,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "FAQ"
+            },
+            {
+              "type": "rect",
+              "x": 14,
+              "y": 70.8,
+              "width": 66,
+              "height": 9.2,
+              "color": "#FFFDF8",
+              "label": ""
+            },
+            {
+              "type": "code",
+              "x": 15,
+              "y": 71.5,
+              "width": 65,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "{\"category\":\"…\","
+            },
+            {
+              "type": "code",
+              "x": 15,
+              "y": 76,
+              "width": 65,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "\"reply_draft\":\"…\"}"
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 88,
+              "width": 84,
+              "height": 5.5,
+              "color": "#C6DED3",
+              "label": "JSON"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "interface-demonstration",
+          "meaning": "Check those fields, update the sheet, and notify the owner. They check the facts, edit, and approve before sending. Missing information goes back to them, too.",
+          "metaphor": "A physical hand interrupts automation at the review desk.",
+          "focalPoint": "Human hand beside review controls and unresolved tray.",
+          "layout": "Close review monitor above; the human decision statement anchors the lower third.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          6
+        ],
+        "seconds": 10,
+        "purpose": "The owner makes the decision",
+        "framing": "Close review monitor above; the human decision statement anchors the lower third.",
+        "subject": "Human hand beside review controls and unresolved tray.",
+        "action": "Validate fields and update the row, notify the owner, highlight their edit, then require their approval. The unresolved tray is routed back to the owner. No automatic send.",
+        "transition": "hard-cut",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 74,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Draft first."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 82,
+              "width": 86,
+              "height": 7.5,
+              "color": "#AA472D",
+              "label": "Owner decides."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 10,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "owner-review-console@1",
+                "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+              },
+              "parts": {
+                "workspace": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "monitor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "review-controls": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "unresolved": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "human-hand": {
+                  "x": -14,
+                  "y": 5,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 31,
+              "y": 40.5,
+              "width": 24,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Approve"
+            },
+            {
+              "type": "centered-text",
+              "x": 58,
+              "y": 40.5,
+              "width": 23,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Edit"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 74,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Draft first."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 82,
+              "width": 86,
+              "height": 7.5,
+              "color": "#AA472D",
+              "label": "Owner decides."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 10,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "owner-review-console@1",
+                "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+              },
+              "parts": {
+                "workspace": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "monitor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "review-controls": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "unresolved": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "human-hand": {
+                  "x": -14,
+                  "y": 5,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 31,
+              "y": 40.5,
+              "width": 24,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Approve"
+            },
+            {
+              "type": "centered-text",
+              "x": 58,
+              "y": 40.5,
+              "width": 23,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Edit"
+            },
+            {
+              "type": "centered-text",
+              "x": 58.5,
+              "y": 53,
+              "width": 34,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Missing info"
+            },
+            {
+              "type": "centered-text",
+              "x": 61,
+              "y": 57,
+              "width": 29,
+              "height": 3.2,
+              "color": "#203B3A",
+              "label": "Ask owner"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "visual-comparison",
+          "meaning": "Test a booking question and one the FAQ cannot answer.",
+          "metaphor": "Two test benches make the success path and uncertainty path equally visible.",
+          "focalPoint": "Booking test on one side and owner escalation on the other.",
+          "layout": "Full-height paired test lanes; one check and one unresolved question.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          7
+        ],
+        "seconds": 6,
+        "purpose": "Test what it cannot answer",
+        "framing": "Full-height paired test lanes; one check and one unresolved question.",
+        "subject": "Booking test on one side and owner escalation on the other.",
+        "action": "Run the booking case first; its calendar resolves to a draft. Run the unknown case second; its information gap routes to the owner. Never show a fabricated pass rate.",
+        "transition": "hard-cut",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 8,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Test both paths."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 25,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "booking-test-bench@1",
+                "contentHash": "0327e25aa1b9106f54e63f686dad9558b245d6dc6f408641aad25b6f981b0c23"
+              },
+              "parts": {
+                "bench": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "booking": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "unknown": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "routes": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 4,
+              "y": 37.5,
+              "width": 43,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Booking"
+            },
+            {
+              "type": "centered-text",
+              "x": 53,
+              "y": 37.5,
+              "width": 43,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Unknown"
+            },
+            {
+              "type": "centered-text",
+              "x": 6,
+              "y": 82,
+              "width": 40,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Draft"
+            },
+            {
+              "type": "centered-text",
+              "x": 54,
+              "y": 82,
+              "width": 40,
+              "height": 5,
+              "color": "#AA472D",
+              "label": "Ask owner"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 8,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Test both paths."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 25,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "booking-test-bench@1",
+                "contentHash": "0327e25aa1b9106f54e63f686dad9558b245d6dc6f408641aad25b6f981b0c23"
+              },
+              "parts": {
+                "bench": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "booking": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "unknown": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "routes": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 4,
+              "y": 37.5,
+              "width": 43,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Booking"
+            },
+            {
+              "type": "centered-text",
+              "x": 53,
+              "y": 37.5,
+              "width": 43,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Unknown"
+            },
+            {
+              "type": "centered-text",
+              "x": 6,
+              "y": 82,
+              "width": 40,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Draft"
+            },
+            {
+              "type": "centered-text",
+              "x": 54,
+              "y": 82,
+              "width": 40,
+              "height": 5,
+              "color": "#AA472D",
+              "label": "Ask owner"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "editorial-illustration",
+          "meaning": "Then show the owner that workflow. Ask whether it fits their process, and offer setup, testing, and a handover, with optional maintenance.",
+          "metaphor": "A service leaves a working demonstration, test evidence and documented handover on a real desk.",
+          "focalPoint": "Open laptop, checked test cards and reference binder.",
+          "layout": "Illustrated meeting leads; an offer statement sits beneath the tangible delivery kit.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          8
+        ],
+        "seconds": 8.333333333333334,
+        "purpose": "Offer a complete handover",
+        "framing": "Illustrated meeting leads; an offer statement sits beneath the tangible delivery kit.",
+        "subject": "Open laptop, checked test cards and reference binder.",
+        "action": "Show the laptop demonstration to the owner; test cards and handover binder assemble around it. Maintenance remains an optional agreement, with no sale or customer result implied.",
+        "transition": "hard-cut",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 75,
+              "width": 86,
+              "height": 7,
+              "color": "#203B3A",
+              "label": "Show the workflow."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 83,
+              "width": 86,
+              "height": 7,
+              "color": "#AA472D",
+              "label": "Offer the setup."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 12,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "service-handover-desk@1",
+                "contentHash": "dcd9f405541877352212fce365720bfa8928e48542cb10e0c7781afaeea1b50c"
+              },
+              "parts": {
+                "setting": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "demonstration": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "documentation": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "test-cards": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "meeting": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 75,
+              "width": 86,
+              "height": 7,
+              "color": "#203B3A",
+              "label": "Show the workflow."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 83,
+              "width": 86,
+              "height": 7,
+              "color": "#AA472D",
+              "label": "Offer the setup."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 12,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "service-handover-desk@1",
+                "contentHash": "dcd9f405541877352212fce365720bfa8928e48542cb10e0c7781afaeea1b50c"
+              },
+              "parts": {
+                "setting": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "demonstration": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "documentation": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "test-cards": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "meeting": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "technical-cutaway",
+          "meaning": "Agree who pays the API and hosting bills. DeepSeek charges by usage.",
+          "metaphor": "Separate metered model usage from hosting, then put responsibility into the agreement.",
+          "focalPoint": "Usage meter, server stack and signed responsibility sheet.",
+          "layout": "Instruments and agreement lead the composition; cost responsibility concludes below.",
+          "density": "balanced",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          9
+        ],
+        "seconds": 4.666666666666667,
+        "purpose": "Agree the running costs",
+        "framing": "Instruments and agreement lead the composition; cost responsibility concludes below.",
+        "subject": "Usage meter, server stack and signed responsibility sheet.",
+        "action": "The API meter responds to usage while hosting stays a separate obligation. End on responsibility agreement. Do not invent rates, costs, savings or earnings.",
+        "transition": "hard-cut",
+        "continuity": "Carry the inquiry motif into a distinct explanatory composition.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 77,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Agree the costs."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 12,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "service-running-costs@1",
+                "contentHash": "6d03ae2291751ec0f93ae0cd4488470c4570dc0131738e96fde0c189d7bddf34"
+              },
+              "parts": {
+                "desk": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "usage-meter": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "hosting": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "agreement": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 7,
+              "y": 49,
+              "width": 42,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "API usage"
+            },
+            {
+              "type": "centered-text",
+              "x": 54,
+              "y": 49,
+              "width": 39,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Hosting"
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 85,
+              "width": 84,
+              "height": 6,
+              "color": "#AA472D",
+              "label": "Who pays?"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 77,
+              "width": 86,
+              "height": 7.5,
+              "color": "#203B3A",
+              "label": "Agree the costs."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 12,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "service-running-costs@1",
+                "contentHash": "6d03ae2291751ec0f93ae0cd4488470c4570dc0131738e96fde0c189d7bddf34"
+              },
+              "parts": {
+                "desk": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "usage-meter": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "hosting": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "agreement": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 7,
+              "y": 49,
+              "width": 42,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "API usage"
+            },
+            {
+              "type": "centered-text",
+              "x": 54,
+              "y": 49,
+              "width": 39,
+              "height": 5,
+              "color": "#203B3A",
+              "label": "Hosting"
+            },
+            {
+              "type": "centered-text",
+              "x": 8,
+              "y": 85,
+              "width": 84,
+              "height": 6,
+              "color": "#AA472D",
+              "label": "Who pays?"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "editorial-illustration",
+          "meaning": "You're selling a working inquiry process, with the owner in control of every reply.",
+          "metaphor": "Return to the same workplace with a calm owner and a visible review process.",
+          "focalPoint": "The same owner now working with their review console.",
+          "layout": "Opening environment returns, calmer silhouette and strong final statement.",
+          "density": "balanced",
+          "continuityReason": "The same workplace makes the problem/payoff connection explicit."
+        },
+        "lineNumbers": [
+          10
+        ],
+        "seconds": 5,
+        "purpose": "Bring control back to the salon",
+        "framing": "Opening environment returns, calmer silhouette and strong final statement.",
+        "subject": "The same owner now working with their review console.",
+        "action": "Match back into the original salon. Replace inquiry pressure with a calm owner examining a draft. End on the explicit owner decision boundary, not a fabricated business result.",
+        "transition": "hard-cut",
+        "continuity": "Return to the same salon to connect service and customer.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 7,
+              "width": 86,
+              "height": 7,
+              "color": "#203B3A",
+              "label": "A useful process."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 14.5,
+              "width": 86,
+              "height": 6.5,
+              "color": "#AA472D",
+              "label": "An owner in control."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 29,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "salon-working-studio@1",
+                "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+              },
+              "parts": {
+                "architecture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "salon-furniture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reception": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "inquiries": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "phone": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "calm-owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 7,
+              "y": 87,
+              "width": 86,
+              "height": 5.5,
+              "color": "#203B3A",
+              "label": "Every reply. Owner-led."
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 7,
+              "width": 86,
+              "height": 7,
+              "color": "#203B3A",
+              "label": "A useful process."
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 14.5,
+              "width": 86,
+              "height": 6.5,
+              "color": "#AA472D",
+              "label": "An owner in control."
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 0,
+              "y": 29,
+              "width": 100,
+              "height": 56.25,
+              "color": "#AA472D",
+              "label": "",
+              "asset": {
+                "id": "salon-working-studio@1",
+                "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8"
+              },
+              "parts": {
+                "architecture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "salon-furniture": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "reception": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "inquiries": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "phone": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                },
+                "calm-owner": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#AA472D",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "centered-text",
+              "x": 7,
+              "y": 87,
+              "width": 86,
+              "height": 5.5,
+              "color": "#203B3A",
+              "label": "Every reply. Owner-led."
+            }
+          ]
+        }
+      }
+    ],
+    "kind": "storyboard"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "version": "graphic-review@1",
+  "id": "33730c15-bab9-4cf6-a165-9cd97de5af37",
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "runId": "c888ad37-9f1e-404d-99d1-36a0ef8d6478",
+  "shotIndex": 0,
+  "sourceHash": "ede4736b783f91d557b2a741ef93cfe9c5c12842c200835fc49fbc1eb4487254",
+  "engineHash": "e19234be4294cdb2b41461b19e1920ada000943732d17a4a6de4cdc4ccc2fbca",
+  "frameHashes": [
+    "53c56f08f9e47b2ee07c60dd894c2bffafd10a07e8680bd33e985b767031e6c7",
+    "bbab7b7c52301d0a40b854c9d43a9683f00564077bd6e9216a597abbf385cac4"
+  ],
+  "model": "gpt-6.1-sol",
+  "createdAt": "2026-10-24T15:48:48.304Z",
+  "findings": [
+    {
+      "shotIndex": 0,
+      "dimension": "relevance",
+      "evidence": "Both frames show “Your first AI service.” and “DeepSeek V4.1 Flash” around a salon reception scene, but neither identifies the service being offered or the salon owner’s benefit.",
+      "suggestion": "Add a short subtitle naming the intended salon service and its concrete benefit, while retaining the owner and reception desk as the focal point."
+    },
+    {
+      "shotIndex": 0,
+      "dimension": "clarity",
+      "evidence": "The end frame adds three floating cards containing dots and pale horizontal lines. Their purpose is not identifiable, so their relationship to the owner’s work remains ambiguous.",
+      "suggestion": "Give the cards a consistent, recognizable cue tied to the intended service, such as a shared icon and a short readable label, rather than relying on generic text-like lines."
+    }
+  ],
+  "requiresHumanReview": true
+}

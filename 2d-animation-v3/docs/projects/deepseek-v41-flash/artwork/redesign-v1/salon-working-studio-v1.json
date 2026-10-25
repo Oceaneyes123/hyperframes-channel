@@ -1,0 +1,1952 @@
+{
+  "schemaVersion": 1,
+  "id": "salon-working-studio@1",
+  "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+  "license": "CC0-1.0",
+  "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+  "width": 1000,
+  "height": 1000,
+  "purpose": "Recognizable salon and expressive owner overwhelmed by inquiry pressure; calm variant uses the same room and hides inquiry layers.",
+  "tags": [
+    "deepseek",
+    "business",
+    "working-studio",
+    "layered"
+  ],
+  "compositions": [
+    "editorial-illustration",
+    "visual-metaphor"
+  ],
+  "layers": [
+    {
+      "id": "architecture",
+      "role": "background",
+      "nodes": [
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 20,
+          "y": 80,
+          "width": 960,
+          "height": 790,
+          "radius": 35
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M20 80H980V665H20Z"
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 40,
+          "y": 100,
+          "width": 920,
+          "height": 22,
+          "radius": 4
+        },
+        {
+          "fill": "surface",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 55,
+          "y": 136,
+          "width": 890,
+          "height": 8,
+          "radius": 3
+        },
+        {
+          "fill": "surface",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 55,
+          "y": 153,
+          "width": 890,
+          "height": 3,
+          "radius": 1
+        },
+        {
+          "fill": "surface",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 80,
+          "y": 180,
+          "width": 202,
+          "height": 288,
+          "radius": 100
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 99,
+          "y": 198,
+          "width": 164,
+          "height": 248,
+          "radius": 80
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 12,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M103 358L235 215M123 409L246 275"
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 35,
+          "y": 664,
+          "width": 930,
+          "height": 11,
+          "radius": 2
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M21 675H980L940 947H60Z"
+        },
+        {
+          "fill": "none",
+          "stroke": "line",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M140 675L35 947"
+        },
+        {
+          "fill": "none",
+          "stroke": "line",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M380 675L335 947"
+        },
+        {
+          "fill": "none",
+          "stroke": "line",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M620 675L635 947"
+        },
+        {
+          "fill": "none",
+          "stroke": "line",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M860 675L935 947"
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 40,
+          "y": 770,
+          "width": 920,
+          "height": 2,
+          "radius": 1
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 48,
+          "y": 859,
+          "width": 900,
+          "height": 2,
+          "radius": 1
+        }
+      ]
+    },
+    {
+      "id": "salon-furniture",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 735,
+          "y": 178,
+          "scale": 0.75,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 8,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 260V90A90 90 0 0 1 180 0V260Z"
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M12 247V92A78 78 0 0 1 168 0V247Z"
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 14,
+              "opacity": 0.7,
+              "kind": "path",
+              "d": "M30 192L113 45M68 225L149 78"
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": -12,
+              "y": 260,
+              "width": 205,
+              "height": 15,
+              "radius": 4
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 12,
+              "y": 288,
+              "width": 160,
+              "height": 13,
+              "radius": 3
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 20,
+              "y": 302,
+              "width": 8,
+              "height": 75,
+              "radius": 2
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 150,
+              "y": 302,
+              "width": 8,
+              "height": 75,
+              "radius": 2
+            }
+          ]
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 705,
+          "y": 466,
+          "scale": 0.85,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.12,
+              "kind": "ellipse",
+              "cx": 90,
+              "cy": 215,
+              "rx": 78,
+              "ry": 16
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 82,
+              "y": 139,
+              "width": 16,
+              "height": 68,
+              "radius": 4
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 30,
+              "y": 193,
+              "width": 121,
+              "height": 13,
+              "radius": 7
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 16,
+              "y": 62,
+              "width": 148,
+              "height": 95,
+              "radius": 26
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 7,
+              "y": 130,
+              "width": 166,
+              "height": 28,
+              "radius": 10
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 2,
+              "y": 103,
+              "width": 18,
+              "height": 44,
+              "radius": 8
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 158,
+              "y": 103,
+              "width": 18,
+              "height": 44,
+              "radius": 8
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 37,
+              "y": 87,
+              "width": 104,
+              "height": 3,
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 71,
+          "y": 508,
+          "width": 256,
+          "height": 13,
+          "radius": 3
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 85,
+          "y": 521,
+          "width": 16,
+          "height": 138,
+          "radius": 3
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 286,
+          "y": 521,
+          "width": 15,
+          "height": 138,
+          "radius": 3
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 90,
+          "y": 475,
+          "width": 14,
+          "height": 32,
+          "radius": 5
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 112,
+          "y": 464,
+          "width": 16,
+          "height": 44,
+          "radius": 4
+        },
+        {
+          "fill": "paper",
+          "stroke": "ink",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 136,
+          "y": 479,
+          "width": 19,
+          "height": 29,
+          "radius": 4
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 795,
+          "y": 621,
+          "scale": 0.9,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M45 118Q35 55 22 20M46 118Q62 55 85 10M46 118L48 30"
+            },
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 22,
+              "cy": 32,
+              "rx": 14,
+              "ry": 30
+            },
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 70,
+              "y": 30,
+              "scale": 1,
+              "rotation": 32,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "mint",
+                  "stroke": "ink",
+                  "strokeWidth": 2,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 0,
+                  "cy": 0,
+                  "rx": 14,
+                  "ry": 33
+                }
+              ]
+            },
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 48,
+              "cy": 48,
+              "rx": 12,
+              "ry": 25
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M14 108H77L67 170H25Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 20,
+              "y": 120,
+              "width": 50,
+              "height": 3,
+              "radius": 1.5
+            }
+          ]
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 385,
+          "y": 160,
+          "width": 226,
+          "height": 7,
+          "radius": 3
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 395,
+          "y": 133,
+          "width": 28,
+          "height": 27,
+          "radius": 4
+        },
+        {
+          "fill": "paper",
+          "stroke": "ink",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 434,
+          "y": 116,
+          "width": 22,
+          "height": 44,
+          "radius": 4
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 471,
+          "y": 126,
+          "width": 20,
+          "height": 34,
+          "radius": 4
+        },
+        {
+          "fill": "surface",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 510,
+          "y": 138,
+          "width": 70,
+          "height": 21,
+          "radius": 3
+        },
+        {
+          "fill": "surface",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 630,
+          "cy": 200,
+          "rx": 54,
+          "ry": 54
+        },
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M630 162V201L651 215"
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 630,
+          "cy": 200,
+          "rx": 4,
+          "ry": 4
+        }
+      ]
+    },
+    {
+      "id": "owner",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 305,
+          "y": 279,
+          "scale": 1.3,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.1,
+              "kind": "ellipse",
+              "cx": 112,
+              "cy": 399,
+              "rx": 112,
+              "ry": 20
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M46 231Q4 243 2 312L29 358H72L67 285H162L169 360H214L231 309Q223 247 176 232Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M72 203H153L164 240L118 278L64 236Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M76 151H153V219Q111 246 77 217Z"
+            },
+            {
+              "fill": "ink",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M54 71Q49 1 116 0Q185 -1 191 82L180 167L157 163L64 160Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 119,
+              "cy": 105,
+              "rx": 59,
+              "ry": 76
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M61 86Q101 96 111 47Q131 85 176 76Q174 3 119 7Q59 4 61 86Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 58,
+              "cy": 119,
+              "rx": 10,
+              "ry": 17
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 178,
+              "cy": 119,
+              "rx": 9,
+              "ry": 17
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M79 96L101 88M136 89L158 97"
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 94,
+              "cy": 115,
+              "rx": 3,
+              "ry": 5
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 146,
+              "cy": 115,
+              "rx": 3,
+              "ry": 5
+            },
+            {
+              "fill": "none",
+              "stroke": "muted",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M121 113L116 136H125"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M104 156Q119 143 136 153"
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.25,
+              "kind": "ellipse",
+              "cx": 79,
+              "cy": 138,
+              "rx": 9,
+              "ry": 5
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.25,
+              "kind": "ellipse",
+              "cx": 158,
+              "cy": 138,
+              "rx": 9,
+              "ry": 5
+            },
+            {
+              "fill": "ink",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M63 259L72 365H168L166 259L147 279H89Z"
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 93,
+              "y": 307,
+              "width": 55,
+              "height": 40,
+              "radius": 5
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 101,
+              "y": 318,
+              "width": 37,
+              "height": 3,
+              "radius": 1.5
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M16 285Q25 230 43 203L63 211Q47 261 59 307L83 331L63 351Q15 333 16 285Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M190 283L211 238L192 204L212 190Q244 225 237 251L217 321Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reception",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.1,
+          "kind": "ellipse",
+          "cx": 465,
+          "cy": 884,
+          "rx": 355,
+          "ry": 42
+        },
+        {
+          "fill": "ink",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M92 739H776L860 779H146Z"
+        },
+        {
+          "fill": "accent",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M146 779H860V930H146Z"
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 165,
+          "y": 800,
+          "width": 672,
+          "height": 8,
+          "radius": 2
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 179,
+          "y": 820,
+          "width": 6,
+          "height": 83,
+          "radius": 2
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 206,
+          "y": 820,
+          "width": 6,
+          "height": 83,
+          "radius": 2
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 233,
+          "y": 820,
+          "width": 6,
+          "height": 83,
+          "radius": 2
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 730,
+          "y": 820,
+          "width": 6,
+          "height": 83,
+          "radius": 2
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 757,
+          "y": 820,
+          "width": 6,
+          "height": 83,
+          "radius": 2
+        },
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 784,
+          "y": 820,
+          "width": 6,
+          "height": 83,
+          "radius": 2
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 372,
+          "y": 581,
+          "scale": 0.65,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 8,
+              "y": 8,
+              "width": 344,
+              "height": 230,
+              "radius": 18
+            },
+            {
+              "fill": "surface",
+              "stroke": "muted",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 18,
+              "y": 18,
+              "width": 324,
+              "height": 199,
+              "radius": 10
+            },
+            {
+              "fill": "muted",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 180,
+              "cy": 12,
+              "rx": 2,
+              "ry": 2
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 32,
+              "y": 33,
+              "width": 296,
+              "height": 18,
+              "radius": 4
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 32,
+              "y": 66,
+              "width": 68,
+              "height": 133,
+              "radius": 4
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 79,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 102,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 125,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 148,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 171,
+              "width": 45,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 114,
+              "y": 66,
+              "width": 201,
+              "height": 133,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 81,
+              "width": 171,
+              "height": 24,
+              "radius": 4
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 122,
+              "width": 148,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 146,
+              "width": 131,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 128,
+              "y": 170,
+              "width": 114,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 5,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M8 224H352L389 257Q389 269 369 269H-9Q-30 267 -29 257Z"
+            },
+            {
+              "fill": "muted",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 131,
+              "y": 238,
+              "width": 101,
+              "height": 8,
+              "radius": 3
+            }
+          ]
+        },
+        {
+          "fill": "paper",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 178,
+          "y": 701,
+          "width": 124,
+          "height": 34,
+          "radius": 7
+        },
+        {
+          "fill": "mint",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 197,
+          "y": 687,
+          "width": 117,
+          "height": 21,
+          "radius": 5
+        },
+        {
+          "fill": "surface",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 222,
+          "y": 670,
+          "width": 103,
+          "height": 18,
+          "radius": 4
+        }
+      ]
+    },
+    {
+      "id": "inquiries",
+      "role": "packet",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 31,
+          "y": 312,
+          "scale": 0.82,
+          "rotation": -9,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.08,
+              "kind": "rect",
+              "x": 7,
+              "y": 10,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 29,
+              "cy": 31,
+              "rx": 11,
+              "ry": 11
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 54,
+              "y": 25,
+              "width": 150,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 59,
+              "width": 210,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 80,
+              "width": 178,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 101,
+              "width": 116,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M46 139L35 166L91 139Z"
+            }
+          ]
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 659,
+          "y": 316,
+          "scale": 0.88,
+          "rotation": 8,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.08,
+              "kind": "rect",
+              "x": 7,
+              "y": 10,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 29,
+              "cy": 31,
+              "rx": 11,
+              "ry": 11
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 54,
+              "y": 25,
+              "width": 150,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 59,
+              "width": 210,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 80,
+              "width": 178,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 101,
+              "width": 116,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M46 139L35 166L91 139Z"
+            }
+          ]
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 69,
+          "y": 578,
+          "scale": 0.7,
+          "rotation": -6,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.08,
+              "kind": "rect",
+              "x": 7,
+              "y": 10,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 29,
+              "cy": 31,
+              "rx": 11,
+              "ry": 11
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 54,
+              "y": 25,
+              "width": 150,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 59,
+              "width": 210,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 80,
+              "width": 178,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 101,
+              "width": 116,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M46 139L35 166L91 139Z"
+            }
+          ]
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 871,
+          "y": 292,
+          "scale": 1.3,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 -16Q0 0 16 0Q0 0 0 16Q0 0 -16 0Q0 0 0 -16Z"
+            }
+          ]
+        },
+        {
+          "fill": "none",
+          "stroke": "accent",
+          "strokeWidth": 6,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M276 356Q301 339 311 344M277 382Q303 368 313 371M688 502L669 519M712 523L699 542"
+        }
+      ]
+    },
+    {
+      "id": "phone",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 793,
+          "y": 712,
+          "scale": 0.55,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 150,
+              "height": 267,
+              "radius": 25
+            },
+            {
+              "fill": "surface",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 8,
+              "y": 9,
+              "width": 134,
+              "height": 246,
+              "radius": 19
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 47,
+              "y": 10,
+              "width": 56,
+              "height": 12,
+              "radius": 6
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 45,
+              "width": 105,
+              "height": 50,
+              "radius": 10
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 33,
+              "y": 60,
+              "width": 77,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "muted",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 33,
+              "y": 75,
+              "width": 55,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 41,
+              "y": 109,
+              "width": 86,
+              "height": 62,
+              "radius": 10
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 53,
+              "y": 123,
+              "width": 60,
+              "height": 5,
+              "radius": 2.5
+            },
+            {
+              "fill": "paper",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 53,
+              "y": 139,
+              "width": 50,
+              "height": 4,
+              "radius": 2
+            },
+            {
+              "fill": "paper",
+              "stroke": "line",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 188,
+              "width": 107,
+              "height": 35,
+              "radius": 9
+            },
+            {
+              "fill": "muted",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 75,
+              "cy": 242,
+              "rx": 4,
+              "ry": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "calm-owner",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 305,
+          "y": 279,
+          "scale": 1.3,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.1,
+              "kind": "ellipse",
+              "cx": 112,
+              "cy": 399,
+              "rx": 112,
+              "ry": 20
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M46 231Q4 243 2 312L29 358H72L67 285H162L169 360H214L231 309Q223 247 176 232Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M72 203H153L164 240L118 278L64 236Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M76 151H153V219Q111 246 77 217Z"
+            },
+            {
+              "fill": "ink",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M54 71Q49 1 116 0Q185 -1 191 82L180 167L157 163L64 160Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 119,
+              "cy": 105,
+              "rx": 59,
+              "ry": 76
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M61 86Q101 96 111 47Q131 85 176 76Q174 3 119 7Q59 4 61 86Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 58,
+              "cy": 119,
+              "rx": 10,
+              "ry": 17
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 178,
+              "cy": 119,
+              "rx": 9,
+              "ry": 17
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M81 103Q91 96 102 103M136 103Q146 96 155 103"
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 94,
+              "cy": 115,
+              "rx": 3,
+              "ry": 5
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 146,
+              "cy": 115,
+              "rx": 3,
+              "ry": 5
+            },
+            {
+              "fill": "none",
+              "stroke": "muted",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M121 113L116 136H125"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M102 150Q119 168 138 150"
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.25,
+              "kind": "ellipse",
+              "cx": 79,
+              "cy": 138,
+              "rx": 9,
+              "ry": 5
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.25,
+              "kind": "ellipse",
+              "cx": 158,
+              "cy": 138,
+              "rx": 9,
+              "ry": 5
+            },
+            {
+              "fill": "ink",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M63 259L72 365H168L166 259L147 279H89Z"
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 93,
+              "y": 307,
+              "width": 55,
+              "height": 40,
+              "radius": 5
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 101,
+              "y": 318,
+              "width": 37,
+              "height": 3,
+              "radius": 1.5
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M28 291Q43 340 77 327L130 311L145 332Q72 380 32 350L5 313Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M195 284L214 335L155 365L140 346L178 317L169 295Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

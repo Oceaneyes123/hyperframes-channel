@@ -1,0 +1,23 @@
+{
+  "createdAt": "2026-10-24T23:42:11.664Z",
+  "sourceScriptId": "8fcf2dcc-7523-4e69-b02b-946f05ea0d5e",
+  "postProcessing": "none",
+  "results": [
+    {
+      "name": "fish-audio",
+      "model": "fish-audio/s2.1-pro-free:free",
+      "status": 200,
+      "contentType": "audio/mpeg",
+      "bytes": 392462,
+      "path": "D:\\Project\\Javascript\\hyperframes-channel\\outputs\\tts-audition-2026-10-25\\fish-audio.mp3",
+      "generationId": "gen-tts-1792885321-P4wgmo2riNCJDDHoeSIm"
+    },
+    {
+      "name": "deepgram-flux",
+      "model": "deepgram/flux-tts:free",
+      "status": 404,
+      "contentType": "application/json",
+      "error": "{\"error\":{\"message\":\"No endpoints found for deepgram/flux-tts:free.\",\"code\":404},\"user_id\":\"user_3DJI7AVdye9VuIEvIp2IHHPkHxW\"}"
+    }
+  ]
+}

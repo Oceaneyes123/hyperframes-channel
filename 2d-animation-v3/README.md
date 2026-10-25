@@ -143,3 +143,9 @@ The registry currently offers no patched braces version. ESLint 9.39.5 is deprec
 but remains compatible with Next's bundled plugins; ESLint 10 fails their peer
 requirements. Revisit this toolchain before enabling untrusted agent code or
 distributing the studio. Do not apply npm's suggested forced Next-config downgrade.
+
+## Text motion
+
+Browse the ten reusable presets at `/text-motion` (linked from Projects).
+See [Text motion library](docs/text-motion-library.md) for research, usage,
+recommended timing and verification commands. Existing projects are not rewritten.

@@ -1,0 +1,30 @@
+{
+  "version": "graphic-review@1",
+  "id": "d8f0f3a4-5b58-426e-b075-07d4dd940e55",
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "runId": "c888ad37-9f1e-404d-99d1-36a0ef8d6478",
+  "shotIndex": 5,
+  "sourceHash": "ede4736b783f91d557b2a741ef93cfe9c5c12842c200835fc49fbc1eb4487254",
+  "engineHash": "e19234be4294cdb2b41461b19e1920ada000943732d17a4a6de4cdc4ccc2fbca",
+  "frameHashes": [
+    "c473490c4c4f3bdd5c5147617fc6683a84fc23f1f2a2e0bb2867ff00eeeb6e34",
+    "5839ca7a8e3dd8f748c3de43a14f66b1aaa63727888ec3b5679d783572d4a664"
+  ],
+  "model": "gpt-6.1-sol",
+  "createdAt": "2026-10-24T15:49:37.047Z",
+  "findings": [
+    {
+      "shotIndex": 5,
+      "dimension": "readability",
+      "evidence": "In the end frame, the hand overlaps the “Approve” label, partially obscuring the decision control.",
+      "suggestion": "Move the hand slightly below or beside the button so its gesture remains associated with approval while the full label stays readable."
+    },
+    {
+      "shotIndex": 5,
+      "dimension": "clarity",
+      "evidence": "The end frame’s “Ask owner” card has an alert icon and placeholder lines, but no explicit indication that it represents missing information; no unresolved tray is visible.",
+      "suggestion": "Label the card “Missing information” above “Ask owner” to distinguish the unresolved-information route from the approval and editing controls."
+    }
+  ],
+  "requiresHumanReview": true
+}

@@ -1,0 +1,24 @@
+{
+  "version": "graphic-review@1",
+  "id": "d80547b5-298e-4180-9098-7180b7d40785",
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "runId": "c888ad37-9f1e-404d-99d1-36a0ef8d6478",
+  "shotIndex": 9,
+  "sourceHash": "ede4736b783f91d557b2a741ef93cfe9c5c12842c200835fc49fbc1eb4487254",
+  "engineHash": "e19234be4294cdb2b41461b19e1920ada000943732d17a4a6de4cdc4ccc2fbca",
+  "frameHashes": [
+    "7cad9131edc0c9660ccfb8c8f12573010853f6f358cbb842d810e835887d0067",
+    "7cad9131edc0c9660ccfb8c8f12573010853f6f358cbb842d810e835887d0067"
+  ],
+  "model": "gpt-6.1-sol",
+  "createdAt": "2026-10-24T15:49:51.581Z",
+  "findings": [
+    {
+      "shotIndex": 9,
+      "dimension": "relevance",
+      "evidence": "The owner holds paper-like rectangles behind the counter, while the small phone at the lower right shows only generic lines and an orange block. Neither frame makes an inquiry review process or the owner's control over replies visible, despite the statements “An owner in control.” and “Every reply. Owner-led.”",
+      "suggestion": "Replace the papers with an owner-facing review console large enough to show an inquiry, a draft reply, and a clearly labeled owner approval control. Keep the salon setting and closing statements unchanged."
+    }
+  ],
+  "requiresHumanReview": true
+}

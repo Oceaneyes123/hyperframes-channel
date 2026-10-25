@@ -1,0 +1,9 @@
+# Findings
+
+V3 has an existing secure vector JSON import path with bounded nodes, eight named layers, immutable version/hash identity and a shared planning/motion renderer. No new rendering architecture or dependencies are needed. Layer paint uses the existing editorial theme; actor accent is customizable. Detailed original environments and interface chrome can use this path, with editable text overlaid in storyboard shapes.
+
+The current 70-second narration has ten lines grouped into seven shots (8, 10, 7, 11, 10, 6, 18 seconds). All source references and audio must remain intact. Draft redesign can split the final grouped lines into separate shots while preserving ordered coverage; narration synchronization must use existing measured timing.
+
+First actual styleframe review: detailed salon/environment and tangible desk assets substantially improve recognition. Found UI label/skeleton collision and processor labels outside their input cards; corrected editable labels and local contrast plates. Contact sheet also exposed excessive repeated headline-above-art framing; changed problem, review, service and costs to environment/interface-first compositions with lower headlines. Two density advisories are caused by local contrast masks in the processor, not twelve competing semantic objects. Final visual inspection still required.
+
+2026-10-25: Installed default Motion Director run b4c3e123-fc96-44ac-a6d2-23446014f3e4 failed after streaming a partial proposal; store exposed only its generic failure, so no specific timeout/schema cause claimed. Direct same-interpreter correction 4b2f5826-2e7f-46fa-aea5-b056bde61345 validates10 shots,2100frames, maximum12 actors/38 expanded actions per shot, zero warning-level motion findings. One review advisory flags the final same-state salon return; this is an intentional conclusion, whose limited console detail was already disclosed. No engine or approved drawing changes.

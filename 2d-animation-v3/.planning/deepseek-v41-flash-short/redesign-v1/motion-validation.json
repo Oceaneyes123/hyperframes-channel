@@ -1,0 +1,82 @@
+{
+  "frames": 2100,
+  "seconds": 70,
+  "interpreter": "3",
+  "energy": "energetic",
+  "objects": [
+    5,
+    3,
+    6,
+    10,
+    12,
+    9,
+    6,
+    3,
+    5,
+    4
+  ],
+  "expandedActions": [
+    10,
+    10,
+    19,
+    25,
+    38,
+    31,
+    12,
+    10,
+    12,
+    9
+  ],
+  "expandedTargets": [
+    10,
+    10,
+    19,
+    25,
+    38,
+    31,
+    12,
+    10,
+    12,
+    9
+  ],
+  "quality": {
+    "version": 2,
+    "thresholds": {
+      "version": "motion-quality@1",
+      "stillFrames": 90,
+      "entranceFrames": 24,
+      "repeatedShots": 3,
+      "competingPrimary": 4,
+      "minimumFontPixels": 56,
+      "minimumSymbolPixels": 48,
+      "minimumContrast": 4.5,
+      "minimumSymbolContrast": 3
+    },
+    "durationFrames": 2100,
+    "findings": [
+      {
+        "id": "unclear-progression:shot-10:0",
+        "ruleId": "unclear-progression",
+        "shotId": "shot-10",
+        "targetId": null,
+        "startFrame": 1950,
+        "endFrame": 2099,
+        "severity": "review",
+        "message": "Shot 10: the settled state may not advance the explanation.",
+        "evidence": "The declared transformation returns every visible actor/part to its initial state.",
+        "suggestion": "Review whether the action reveals a relationship or only adds motion.",
+        "heuristic": true
+      }
+    ],
+    "presetUsage": {
+      "cascade@1": 17,
+      "snap-overshoot@1": 25,
+      "punch-zoom@1": 3,
+      "mask-reveal@1": 14
+    },
+    "warnings": [
+      "Shot 10: the settled state may not advance the explanation."
+    ],
+    "requiresHumanReview": true
+  }
+}

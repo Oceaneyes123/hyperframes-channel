@@ -1,0 +1,24 @@
+{
+  "version": "graphic-review@1",
+  "id": "24a28b99-a11b-4afd-8f1b-0ebc7f401f28",
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "runId": "c888ad37-9f1e-404d-99d1-36a0ef8d6478",
+  "shotIndex": 4,
+  "sourceHash": "ede4736b783f91d557b2a741ef93cfe9c5c12842c200835fc49fbc1eb4487254",
+  "engineHash": "e19234be4294cdb2b41461b19e1920ada000943732d17a4a6de4cdc4ccc2fbca",
+  "frameHashes": [
+    "4b3f16eafb406e958f40588d30cfa37527d67f4fbc2f2cc28be861456df68127",
+    "9bff9b603247cc3d2b65e430374cb29aec08805711614338dcc884a11b54351a"
+  ],
+  "model": "gpt-6.1-sol",
+  "createdAt": "2026-10-24T15:49:24.847Z",
+  "findings": [
+    {
+      "shotIndex": 4,
+      "dimension": "clarity",
+      "evidence": "In both frames, the output card lists only “category” and “reply_draft,” while “JSON” appears below it. Without braces, quoted keys, colons, or values, the card shows field names rather than the structured JSON response being taught.",
+      "suggestion": "Render the output as a compact JSON object with the same two keys and clearly marked placeholder string values. Keep the syntax large enough to read at this frame size."
+    }
+  ],
+  "requiresHumanReview": true
+}

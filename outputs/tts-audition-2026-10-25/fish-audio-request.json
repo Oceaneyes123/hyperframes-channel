@@ -1,0 +1,6 @@
+{
+  "model": "fish-audio/s2.1-pro-free:free",
+  "input": "You could start a DeepSeek V4.1 Flash business without building an app. Here's a service you can build, and how to pitch it to a business owner.\n\nA customer submits a form. Their question lands in Google Sheets, and n8n picks up the new row.\n\nIt sends the question and FAQ to DeepSeek. Use the model name deepseek-flash, and request a category and reply draft as JSON: structured fields your workflow can read.",
+  "response_format": "mp3",
+  "instructions": "Warm, confident technology teacher. Brisk conversational delivery, crisp consonants, complete word endings. Brief pauses around technical names. Energetic but easy to follow. No shouting."
+}

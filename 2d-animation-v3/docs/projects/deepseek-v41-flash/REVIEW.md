@@ -1,3 +1,13 @@
+## Audio version 2 reference — October 25, 2026
+
+The user preferred the Fish Audio audition over the existing Supertonic narration
+and selected it as the default for future audio. Exact settings, the approved
+excerpt and preserved version 1 rollback are recorded in the
+[channel narration reference](../../../../2d-animation/channel/AUDIO_VERSIONS.md).
+This is documentation-only: the version 2 excerpt is not a complete replacement
+track, has no measured project timing, and has not replaced the existing accepted
+audio or exports. Earlier production receipts below remain historical evidence.
+
 Completed: user approved narrated preview and explicitly requested render. Verified MP4 job96ac9df4-b590-48c5-9377-2d18768da8fc:70s,1080x1920,30fps,5,124,044bytes. Full decode;2100/2100 preview-frame comparisons minimumSSIM0.997531;8 exact fresh seeks; audio correlation0.9999650457,zero lag. Export videos/eec7f710-650b-43f5-a93d-9757ee3000c2/production/96ac9df4-b590-48c5-9377-2d18768da8fc/export.mp4. Not published; no commit/push. Earlier entries below are historical workflow notes.
 
 Latest audio status: user approved motion9344b2b9-0167-4fd3-bec5-036b6e2f7d2b. Local Supertonic channel voice narrationde9a1322-afd4-4911-93a0-03e942d264e3 attached: PCM16 mono48kHz,70s,10 measured line spans, no clipped samples. Pitch-preserving pacing1.10–1.4875 with raw takes retained. HTTP200/206 and UI measured-line display verified. Human listening/pronunciation/pacing/alignment review pending. Gate1/Gate2 and final render authorization remain unset; no publication.

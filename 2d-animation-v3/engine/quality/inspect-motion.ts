@@ -31,7 +31,9 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     for (const object of shot.objects) for (const [part, state] of Object.entries(object.initialParts ?? {})) states.set(`${object.id}.${part}`, { ...state });
     const camera = { ...shot.camera }; states.set("camera", camera);
     const intervals = holds.map((hold) => ({ start: hold.startFrame, end: hold.endFrame }));
-    const objectActivity: { start: number; end: number }[] = [];
+    const objectActivity: { start: number; end: number }[] = (shot.textMotions ?? []).map((motion) => ({ start: motion.startFrame, end: motion.endFrame }));
+    intervals.push(...objectActivity);
+    for (const motion of shot.textMotions ?? []) usage[motion.presetId] = (usage[motion.presetId] ?? 0) + 1;
     for (const action of shot.actions) {
       if (action.behavior === "hold") continue;
       for (const [order, id] of action.targetIds.entries()) {

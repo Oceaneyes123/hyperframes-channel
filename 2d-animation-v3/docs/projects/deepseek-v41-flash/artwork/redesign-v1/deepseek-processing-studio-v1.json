@@ -1,0 +1,726 @@
+{
+  "schemaVersion": 1,
+  "id": "deepseek-processing-studio@1",
+  "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+  "license": "CC0-1.0",
+  "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+  "width": 1000,
+  "height": 1000,
+  "purpose": "Cinematic cutaway: two input packets enter a model processor and emerge as an editable structured draft.",
+  "tags": [
+    "deepseek",
+    "business",
+    "working-studio",
+    "layered"
+  ],
+  "compositions": [
+    "technical-cutaway",
+    "visual-metaphor"
+  ],
+  "layers": [
+    {
+      "id": "stage",
+      "role": "background",
+      "nodes": [
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 15,
+          "y": 15,
+          "width": 970,
+          "height": 970,
+          "radius": 44
+        },
+        {
+          "fill": "none",
+          "stroke": "muted",
+          "strokeWidth": 1,
+          "opacity": 0.45,
+          "kind": "ellipse",
+          "cx": 504,
+          "cy": 465,
+          "rx": 349,
+          "ry": 349
+        },
+        {
+          "fill": "none",
+          "stroke": "muted",
+          "strokeWidth": 2,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 504,
+          "cy": 465,
+          "rx": 284,
+          "ry": 284
+        },
+        {
+          "fill": "none",
+          "stroke": "muted",
+          "strokeWidth": 2,
+          "opacity": 0.3,
+          "kind": "path",
+          "d": "M17 695L983 695M17 811L983 811M87 984L295 695M913 984L705 695"
+        },
+        {
+          "fill": "muted",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.2,
+          "kind": "ellipse",
+          "cx": 504,
+          "cy": 625,
+          "rx": 255,
+          "ry": 53
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 59,
+          "cy": 56,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 130,
+          "cy": 163,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 201,
+          "cy": 270,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 272,
+          "cy": 377,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 343,
+          "cy": 484,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 414,
+          "cy": 591,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 485,
+          "cy": 103,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 556,
+          "cy": 210,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 627,
+          "cy": 317,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 698,
+          "cy": 424,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 769,
+          "cy": 531,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 840,
+          "cy": 638,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 911,
+          "cy": 150,
+          "rx": 2,
+          "ry": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.5,
+          "kind": "ellipse",
+          "cx": 103,
+          "cy": 257,
+          "rx": 2,
+          "ry": 2
+        }
+      ]
+    },
+    {
+      "id": "input-one",
+      "role": "packet",
+      "nodes": [
+        {
+          "fill": "surface",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 54,
+          "y": 143,
+          "width": 332,
+          "height": 136,
+          "radius": 16
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 76,
+          "y": 162,
+          "width": 69,
+          "height": 8,
+          "radius": 3
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 76,
+          "y": 187,
+          "width": 271,
+          "height": 7,
+          "radius": 3.5
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 76,
+          "y": 212,
+          "width": 232,
+          "height": 7,
+          "radius": 3.5
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 76,
+          "y": 237,
+          "width": 166,
+          "height": 7,
+          "radius": 3.5
+        }
+      ]
+    },
+    {
+      "id": "input-two",
+      "role": "packet",
+      "nodes": [
+        {
+          "fill": "paper",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 613,
+          "y": 143,
+          "width": 332,
+          "height": 136,
+          "radius": 16
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 635,
+          "y": 162,
+          "width": 69,
+          "height": 8,
+          "radius": 3
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 635,
+          "y": 187,
+          "width": 271,
+          "height": 7,
+          "radius": 3.5
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 635,
+          "y": 212,
+          "width": 232,
+          "height": 7,
+          "radius": 3.5
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 635,
+          "y": 237,
+          "width": 166,
+          "height": 7,
+          "radius": 3.5
+        }
+      ]
+    },
+    {
+      "id": "rails",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "mint",
+          "strokeWidth": 7,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M218 280V319Q218 357 318 357H369M780 280V319Q780 357 680 357H629"
+        },
+        {
+          "fill": "none",
+          "stroke": "mint",
+          "strokeWidth": 7,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M499 617V694M489 678L499 694L509 678"
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 349,
+          "y": 416,
+          "width": 11,
+          "height": 11,
+          "radius": 3
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 448,
+          "y": 416,
+          "width": 11,
+          "height": 11,
+          "radius": 3
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 547,
+          "y": 416,
+          "width": 11,
+          "height": 11,
+          "radius": 3
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 646,
+          "y": 416,
+          "width": 11,
+          "height": 11,
+          "radius": 3
+        }
+      ]
+    },
+    {
+      "id": "processor",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "muted",
+          "stroke": "mint",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M322 390L504 327L687 390V552L504 625L322 552Z"
+        },
+        {
+          "fill": "surface",
+          "stroke": "mint",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M322 390L504 453L687 390L504 327Z"
+        },
+        {
+          "fill": "none",
+          "stroke": "mint",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M504 453V625"
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M364 391L504 345L644 391L504 438Z"
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 504,
+          "cy": 389,
+          "rx": 42,
+          "ry": 15
+        },
+        {
+          "fill": "none",
+          "stroke": "mint",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M371 473L457 505M371 493L457 525M552 507L638 475M552 527L638 495"
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 409,
+          "y": 312,
+          "width": 11,
+          "height": 20,
+          "radius": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 471,
+          "y": 312,
+          "width": 11,
+          "height": 20,
+          "radius": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 533,
+          "y": 312,
+          "width": 11,
+          "height": 20,
+          "radius": 2
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 595,
+          "y": 312,
+          "width": 11,
+          "height": 20,
+          "radius": 2
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 718,
+          "y": 456,
+          "scale": 1.5,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 -16Q0 0 16 0Q0 0 0 16Q0 0 -16 0Q0 0 0 -16Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "draft",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "surface",
+          "stroke": "mint",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 99,
+          "y": 719,
+          "width": 802,
+          "height": 214,
+          "radius": 20
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 117,
+          "y": 737,
+          "width": 11,
+          "height": 176,
+          "radius": 5
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 152,
+          "y": 748,
+          "width": 147,
+          "height": 6,
+          "radius": 3
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 152,
+          "y": 785,
+          "width": 642,
+          "height": 8,
+          "radius": 4
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 152,
+          "y": 823,
+          "width": 534,
+          "height": 8,
+          "radius": 4
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 152,
+          "y": 862,
+          "width": 572,
+          "height": 7,
+          "radius": 3.5
+        },
+        {
+          "fill": "line",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 152,
+          "y": 895,
+          "width": 433,
+          "height": 7,
+          "radius": 3.5
+        }
+      ]
+    },
+    {
+      "id": "field-markers",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 848,
+          "cy": 789,
+          "rx": 18,
+          "ry": 18
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 838,
+          "y": 782,
+          "scale": 0.5,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 12L12 24 39 0"
+            }
+          ]
+        },
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 848,
+          "cy": 836,
+          "rx": 18,
+          "ry": 18
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 838,
+          "y": 829,
+          "scale": 0.5,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 12L12 24 39 0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

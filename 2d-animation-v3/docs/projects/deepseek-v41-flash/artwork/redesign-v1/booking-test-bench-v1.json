@@ -1,0 +1,803 @@
+{
+  "schemaVersion": 1,
+  "id": "booking-test-bench@1",
+  "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+  "license": "CC0-1.0",
+  "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+  "width": 1000,
+  "height": 1000,
+  "purpose": "Contrasting test cases: FAQ-covered question yields a draft; unknown facts return to owner. No accuracy statistics.",
+  "tags": [
+    "deepseek",
+    "business",
+    "working-studio",
+    "layered"
+  ],
+  "compositions": [
+    "visual-comparison"
+  ],
+  "layers": [
+    {
+      "id": "bench",
+      "role": "background",
+      "nodes": [
+        {
+          "fill": "mint",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 18,
+          "y": 50,
+          "width": 469,
+          "height": 900,
+          "radius": 30
+        },
+        {
+          "fill": "paper",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 513,
+          "y": 50,
+          "width": 469,
+          "height": 900,
+          "radius": 30
+        },
+        {
+          "fill": "none",
+          "stroke": "line",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M500 87V913"
+        }
+      ]
+    },
+    {
+      "id": "booking",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 55,
+          "y": 153,
+          "scale": 1.45,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.08,
+              "kind": "rect",
+              "x": 7,
+              "y": 10,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 29,
+              "cy": 31,
+              "rx": 11,
+              "ry": 11
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 54,
+              "y": 25,
+              "width": 150,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 59,
+              "width": 210,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 80,
+              "width": 178,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 101,
+              "width": 116,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M46 139L35 166L91 139Z"
+            }
+          ]
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 103,
+          "y": 446,
+          "scale": 1,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 292,
+              "height": 244,
+              "radius": 16
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 292,
+              "height": 56,
+              "radius": 14
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 25,
+              "y": 84,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 25,
+              "y": 131,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 25,
+              "y": 178,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 90,
+              "y": 84,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 90,
+              "y": 131,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 90,
+              "y": 178,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 155,
+              "y": 84,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 155,
+              "y": 131,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 155,
+              "y": 178,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 220,
+              "y": 84,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 220,
+              "y": 131,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "mint",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 220,
+              "y": 178,
+              "width": 43,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 64,
+              "y": -13,
+              "width": 12,
+              "height": 31,
+              "radius": 5
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 216,
+              "y": -13,
+              "width": 12,
+              "height": 31,
+              "radius": 5
+            }
+          ]
+        },
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 248,
+          "cy": 811,
+          "rx": 64,
+          "ry": 64
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 221,
+          "y": 794,
+          "scale": 1.4,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "paper",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 12L12 24 39 0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unknown",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 547,
+          "y": 153,
+          "scale": 1.45,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.08,
+              "kind": "rect",
+              "x": 7,
+              "y": 10,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 0,
+              "y": 0,
+              "width": 260,
+              "height": 139,
+              "radius": 15
+            },
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 29,
+              "cy": 31,
+              "rx": 11,
+              "ry": 11
+            },
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 54,
+              "y": 25,
+              "width": 150,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 59,
+              "width": 210,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 80,
+              "width": 178,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "line",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 22,
+              "y": 101,
+              "width": 116,
+              "height": 7,
+              "radius": 3.5
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M46 139L35 166L91 139Z"
+            }
+          ]
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 618,
+          "y": 440,
+          "scale": 0.8,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "none",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "group",
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "rotation": 0,
+              "blend": "normal",
+              "children": [
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 0.1,
+                  "kind": "ellipse",
+                  "cx": 112,
+                  "cy": 399,
+                  "rx": 112,
+                  "ry": 20
+                },
+                {
+                  "fill": "accent",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M46 231Q4 243 2 312L29 358H72L67 285H162L169 360H214L231 309Q223 247 176 232Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M72 203H153L164 240L118 278L64 236Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M76 151H153V219Q111 246 77 217Z"
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M54 71Q49 1 116 0Q185 -1 191 82L180 167L157 163L64 160Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 119,
+                  "cy": 105,
+                  "rx": 59,
+                  "ry": 76
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M61 86Q101 96 111 47Q131 85 176 76Q174 3 119 7Q59 4 61 86Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 58,
+                  "cy": 119,
+                  "rx": 10,
+                  "ry": 17
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 178,
+                  "cy": 119,
+                  "rx": 9,
+                  "ry": 17
+                },
+                {
+                  "fill": "none",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M81 103Q91 96 102 103M136 103Q146 96 155 103"
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 94,
+                  "cy": 115,
+                  "rx": 3,
+                  "ry": 5
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "ellipse",
+                  "cx": 146,
+                  "cy": 115,
+                  "rx": 3,
+                  "ry": 5
+                },
+                {
+                  "fill": "none",
+                  "stroke": "muted",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M121 113L116 136H125"
+                },
+                {
+                  "fill": "none",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M102 150Q119 168 138 150"
+                },
+                {
+                  "fill": "accent",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 0.25,
+                  "kind": "ellipse",
+                  "cx": 79,
+                  "cy": 138,
+                  "rx": 9,
+                  "ry": 5
+                },
+                {
+                  "fill": "accent",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 0.25,
+                  "kind": "ellipse",
+                  "cx": 158,
+                  "cy": 138,
+                  "rx": 9,
+                  "ry": 5
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "ink",
+                  "strokeWidth": 3,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M63 259L72 365H168L166 259L147 279H89Z"
+                },
+                {
+                  "fill": "mint",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 93,
+                  "y": 307,
+                  "width": 55,
+                  "height": 40,
+                  "radius": 5
+                },
+                {
+                  "fill": "ink",
+                  "stroke": "none",
+                  "strokeWidth": 0,
+                  "opacity": 1,
+                  "kind": "rect",
+                  "x": 101,
+                  "y": 318,
+                  "width": 37,
+                  "height": 3,
+                  "radius": 1.5
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M28 291Q43 340 77 327L130 311L145 332Q72 380 32 350L5 313Z"
+                },
+                {
+                  "fill": "paper",
+                  "stroke": "ink",
+                  "strokeWidth": 4,
+                  "opacity": 1,
+                  "kind": "path",
+                  "d": "M195 284L214 335L155 365L140 346L178 317L169 295Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "fill": "accent",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 747,
+          "cy": 811,
+          "rx": 64,
+          "ry": 64
+        },
+        {
+          "fill": "none",
+          "stroke": "paper",
+          "strokeWidth": 7,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M726 802Q727 775 749 777Q775 780 767 801L749 816V826M749 842V845"
+        }
+      ]
+    },
+    {
+      "id": "routes",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 5,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M248 374V408M238 395L248 408L258 395M747 374V408M737 395L747 408L757 395"
+        },
+        {
+          "fill": "none",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "group",
+          "x": 433,
+          "y": 752,
+          "scale": 1.1,
+          "rotation": 0,
+          "blend": "normal",
+          "children": [
+            {
+              "fill": "accent",
+              "stroke": "none",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M0 -16Q0 0 16 0Q0 0 0 16Q0 0 -16 0Q0 0 0 -16Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

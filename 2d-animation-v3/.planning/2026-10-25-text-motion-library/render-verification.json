@@ -1,0 +1,221 @@
+{
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "673539812cf1f05582ad8f6ee3c8fcea7e907162e70b46216d460f1350682b04",
+  "sequentialFrames": 900,
+  "renderScale": 0.5,
+  "freshSeeks": [
+    {
+      "presetId": "mask-rise@1",
+      "frame": 70,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "mask-rise@1",
+      "frame": 36,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "mask-rise@1",
+      "frame": 18,
+      "hash": "2821e50addd42a22f177c92f338f7800ef1d0b7c424ae4191bb8d772c6961edf"
+    },
+    {
+      "presetId": "mask-rise@1",
+      "frame": 0,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "word-stagger@1",
+      "frame": 160,
+      "hash": "c5749ea2bc198bb5eb3136920bc6cf0e65c4d42423adfb0f798449965f0f969b"
+    },
+    {
+      "presetId": "word-stagger@1",
+      "frame": 126,
+      "hash": "c5749ea2bc198bb5eb3136920bc6cf0e65c4d42423adfb0f798449965f0f969b"
+    },
+    {
+      "presetId": "word-stagger@1",
+      "frame": 108,
+      "hash": "aa4e94145ddd2902d24f569d2ed45190d944143adea30fd924ac03b5f0149936"
+    },
+    {
+      "presetId": "word-stagger@1",
+      "frame": 90,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "character-rise@1",
+      "frame": 250,
+      "hash": "be45f4663238ef041e1598083f9050d2b2d2b24cf6eb9f04cbea71de530de0d1"
+    },
+    {
+      "presetId": "character-rise@1",
+      "frame": 216,
+      "hash": "be45f4663238ef041e1598083f9050d2b2d2b24cf6eb9f04cbea71de530de0d1"
+    },
+    {
+      "presetId": "character-rise@1",
+      "frame": 198,
+      "hash": "45767d02f10c402001c1e79fa90c51a5cab491cc0da41c3ca74f4526f1cf2ed2"
+    },
+    {
+      "presetId": "character-rise@1",
+      "frame": 180,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "typewriter@1",
+      "frame": 340,
+      "hash": "be45f4663238ef041e1598083f9050d2b2d2b24cf6eb9f04cbea71de530de0d1"
+    },
+    {
+      "presetId": "typewriter@1",
+      "frame": 306,
+      "hash": "be45f4663238ef041e1598083f9050d2b2d2b24cf6eb9f04cbea71de530de0d1"
+    },
+    {
+      "presetId": "typewriter@1",
+      "frame": 288,
+      "hash": "ad3fedf1f0e71ebe405fbe25f2b769baba8c82e9437aab25464496dbd28e7667"
+    },
+    {
+      "presetId": "typewriter@1",
+      "frame": 270,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "wipe-reveal@1",
+      "frame": 430,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "wipe-reveal@1",
+      "frame": 396,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "wipe-reveal@1",
+      "frame": 378,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "wipe-reveal@1",
+      "frame": 360,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "tracking-settle@1",
+      "frame": 520,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "tracking-settle@1",
+      "frame": 486,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "tracking-settle@1",
+      "frame": 468,
+      "hash": "11998844012f6d0be2924762c6b23e7cdb6d054ca71f6b88421f5f1df0f63c07"
+    },
+    {
+      "presetId": "tracking-settle@1",
+      "frame": 450,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "blur-resolve@1",
+      "frame": 610,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "blur-resolve@1",
+      "frame": 576,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "blur-resolve@1",
+      "frame": 558,
+      "hash": "c79a2de172bf51ad2022a0607c8e413cb859f68a3dc22e7e13e054d19515e1ce"
+    },
+    {
+      "presetId": "blur-resolve@1",
+      "frame": 540,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "pop-settle@1",
+      "frame": 700,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "pop-settle@1",
+      "frame": 666,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "pop-settle@1",
+      "frame": 648,
+      "hash": "0dd290f67c11f5795a6949c909e4983dcc19c0185eb81a1c8e21aff97ccb4ccd"
+    },
+    {
+      "presetId": "pop-settle@1",
+      "frame": 630,
+      "hash": "25849c7ad57ae73d2ecca0ff3189cb6298a6547ebfba9e4e2332780960ee9402"
+    },
+    {
+      "presetId": "highlight-sweep@1",
+      "frame": 790,
+      "hash": "6cdc14d31c6da86e98a9c69939dce869e5b7d6a69f37b0e1c1d950bc994df8ab"
+    },
+    {
+      "presetId": "highlight-sweep@1",
+      "frame": 756,
+      "hash": "6cdc14d31c6da86e98a9c69939dce869e5b7d6a69f37b0e1c1d950bc994df8ab"
+    },
+    {
+      "presetId": "highlight-sweep@1",
+      "frame": 738,
+      "hash": "6ad9af435171ed685e95e86438cf55090be546ae35c619df79d07ead6e1f07f1"
+    },
+    {
+      "presetId": "highlight-sweep@1",
+      "frame": 720,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    },
+    {
+      "presetId": "underline-draw@1",
+      "frame": 880,
+      "hash": "a51975d04e4974c39cfeb9865b609de33ca15751d080e887656172cc04a6c3e7"
+    },
+    {
+      "presetId": "underline-draw@1",
+      "frame": 846,
+      "hash": "a51975d04e4974c39cfeb9865b609de33ca15751d080e887656172cc04a6c3e7"
+    },
+    {
+      "presetId": "underline-draw@1",
+      "frame": 828,
+      "hash": "357967a4fa5417f87c625a40bce6af8e22d240cc45b5294c5c40d3648ff33c7d"
+    },
+    {
+      "presetId": "underline-draw@1",
+      "frame": 810,
+      "hash": "8fb4237151ebb25438b0e8c1a6b70ea4de223eecfc004f494d99f9ba2e55f374"
+    }
+  ],
+  "presets": [
+    "mask-rise@1",
+    "word-stagger@1",
+    "character-rise@1",
+    "typewriter@1",
+    "wipe-reveal@1",
+    "tracking-settle@1",
+    "blur-resolve@1",
+    "pop-settle@1",
+    "highlight-sweep@1",
+    "underline-draw@1"
+  ]
+}

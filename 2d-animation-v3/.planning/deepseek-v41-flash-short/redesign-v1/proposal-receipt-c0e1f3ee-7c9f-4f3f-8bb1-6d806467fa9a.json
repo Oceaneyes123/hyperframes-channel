@@ -1,0 +1,32 @@
+{
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "storyboardId": "c0e1f3ee-7c9f-4f3f-8bb1-6d806467fa9a",
+  "previousStoryboardId": "d33279c0-0171-4f6f-9414-9a1e54970c0d",
+  "scriptId": "8fcf2dcc-7523-4e69-b02b-946f05ea0d5e",
+  "shots": 10,
+  "frames": 2100,
+  "narrationReused": true,
+  "storyboardAccepted": false,
+  "motionCreated": false,
+  "productionGatesCreated": false,
+  "exportCreated": false,
+  "published": false,
+  "preserved": [
+    {
+      "path": "videos/eec7f710-650b-43f5-a93d-9757ee3000c2/scripts/8fcf2dcc-7523-4e69-b02b-946f05ea0d5e.json",
+      "sha256": "8818a60c4069dcf8b2c1800398897d13a54176b8d559afbf01941002a38bdcab"
+    },
+    {
+      "path": "videos/eec7f710-650b-43f5-a93d-9757ee3000c2/visuals/d33279c0-0171-4f6f-9414-9a1e54970c0d.json",
+      "sha256": "73f9e7b9746775c4a47cd6e4b46eeab0d42efbe05255e28993211bd544221e0f"
+    },
+    {
+      "path": ".data/deepseek-short-eec7f710/narration.wav",
+      "sha256": "cd0b014c4cb8728699f35abd0fc8fd7ef18119a9f804464f0e36af775ab8a550"
+    },
+    {
+      "path": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\videos\\eec7f710-650b-43f5-a93d-9757ee3000c2\\production\\96ac9df4-b590-48c5-9377-2d18768da8fc\\export.mp4",
+      "sha256": "16dd02a991f10d4234c844e060e1f3f912de202f6c36d330ee3d954664acb396"
+    }
+  ]
+}

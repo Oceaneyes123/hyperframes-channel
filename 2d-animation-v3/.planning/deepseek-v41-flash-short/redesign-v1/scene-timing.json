@@ -1,0 +1,69 @@
+{
+  "boundaries": [
+    0,
+    240,
+    402,
+    540,
+    750,
+    1080,
+    1380,
+    1560,
+    1810,
+    1950,
+    2100
+  ],
+  "lines": [
+    {
+      "number": 1,
+      "startFrame": 4,
+      "endFrame": 234
+    },
+    {
+      "number": 2,
+      "startFrame": 244,
+      "endFrame": 399
+    },
+    {
+      "number": 3,
+      "startFrame": 402,
+      "endFrame": 535
+    },
+    {
+      "number": 4,
+      "startFrame": 544,
+      "endFrame": 744
+    },
+    {
+      "number": 5,
+      "startFrame": 754,
+      "endFrame": 1074
+    },
+    {
+      "number": 6,
+      "startFrame": 1084,
+      "endFrame": 1374
+    },
+    {
+      "number": 7,
+      "startFrame": 1384,
+      "endFrame": 1499
+    },
+    {
+      "number": 8,
+      "startFrame": 1564,
+      "endFrame": 1807
+    },
+    {
+      "number": 9,
+      "startFrame": 1810,
+      "endFrame": 1949
+    },
+    {
+      "number": 10,
+      "startFrame": 1952,
+      "endFrame": 2095
+    }
+  ],
+  "scriptHash": "ebb8deca933aa8dd6b174cc5318692b7d807554e6321f27cfe62e287cdc9f39f",
+  "narrationHash": "cd0b014c4cb8728699f35abd0fc8fd7ef18119a9f804464f0e36af775ab8a550"
+}

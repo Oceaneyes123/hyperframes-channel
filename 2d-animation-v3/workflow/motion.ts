@@ -6,6 +6,8 @@ import { componentPartsSchema, componentParts, isComponent, partStateSchema, cha
 import { graphicReferenceSchema, validGraphicReference } from "./graphic-assets.ts";
 
 import { diagramSchema } from "./diagram.ts";
+import { textMotionSchema } from "./text-motion.ts";
+import { isTextType } from "../engine/text-metrics.ts";
 
 const key = z.string().regex(/^[a-z][a-z0-9-]{0,39}$/);
 const target = z.string().regex(/^[a-z][a-z0-9-]{0,39}(?:\.[a-z][a-z0-9-]{0,19})?$/);
@@ -76,6 +78,7 @@ export const motionShotSchema = z.strictObject({
   lineNumbers: z.array(z.number().int().positive()).min(1).max(200), durationFrames: z.number().int().min(2).max(1800),
   objects: z.array(motionObjectSchema).min(1).max(16), actions: z.array(motionActionSchema).max(64),
   beats: z.array(motionBeatSchema).min(1).max(32).optional(),
+  textMotions: z.array(textMotionSchema).max(16).optional(),
   camera: cameraSchema,
   incoming: z.strictObject({
     type: z.enum(["start", "hard-cut", "match-cut", "continuous", "camera", "reveal", "split-screen", "motion-match"]),
@@ -91,6 +94,17 @@ export const motionPlanSchema = z.strictObject({
   energyProfile: energyProfileSchema.optional(),
 }).superRefine((plan, context) => {
   for (const [index, shot] of plan.shots.entries()) {
+    const targets = new Set<string>();
+    for (const motion of shot.textMotions ?? []) {
+      const object = shot.objects.find((object) => object.id === motion.targetId);
+      const holds = [...shot.actions.filter((action) => action.behavior === "hold"), ...(shot.beats ?? []).filter((beat) => beat.type === "hold")];
+      if (!object || !isTextType(object.type) || !object.label.trim() || targets.has(motion.targetId) || motion.endFrame > shot.durationFrames - 13 ||
+        shot.incoming.type === "continuous" && shot.incoming.anchor?.objectId === motion.targetId ||
+        holds.some((hold) => hold.targetIds.includes(motion.targetId) && motion.startFrame < hold.endFrame && motion.endFrame > hold.startFrame)) {
+        context.addIssue({ code: "custom", path: ["shots", index, "textMotions"], message: "Text motion requires a unique nonempty text target, 12 settled frames, no reading-hold overlap and no continuous anchor restart." });
+      }
+      targets.add(motion.targetId);
+    }
     if (plan.interpreterVersion === "3" ? !shot.beats || shot.actions.length !== 0 : shot.beats !== undefined) {
       context.addIssue({ code: "custom", path: ["shots", index], message: "Interpreter 3 requires beats and empty actions; legacy interpreters require actions only." });
     }
@@ -108,14 +122,24 @@ export const generatedMotionShotSchema = motionShotSchema.omit({ id: true, sourc
   objects: z.array(z.strictObject({ id: motionObjectSchema.shape.id, startIndex: motionObjectSchema.shape.startIndex, endIndex: motionObjectSchema.shape.endIndex })).min(1).max(16),
 });
 export const generatedMotionSchema = z.strictObject({ shots: z.array(generatedMotionShotSchema).min(1).max(40) });
-export const scopedMotionSchema = motionShotSchema.pick({ actions: true, camera: true, durationFrames: true, incoming: true });
+export const scopedMotionSchema = motionShotSchema.pick({ actions: true, camera: true, durationFrames: true, incoming: true, textMotions: true });
 export const generatedBeatMotionSchema = z.strictObject({ shots: z.array(generatedMotionShotSchema.omit({ actions: true }).extend({ beats: z.array(motionBeatSchema).min(1).max(32) })).min(1).max(40) });
-export const scopedBeatMotionSchema = motionShotSchema.pick({ camera: true, durationFrames: true, incoming: true }).extend({ beats: z.array(motionBeatSchema).min(1).max(32) });
+export const scopedBeatMotionSchema = motionShotSchema.pick({ camera: true, durationFrames: true, incoming: true, textMotions: true }).extend({ beats: z.array(motionBeatSchema).min(1).max(32) });
 
 export function expandMotionShot(shot: MotionShot): MotionShot {
-  if (!shot.beats) return shot;
-  const actions = expandBeats(shot).map((action) => motionActionSchema.parse(action));
+  const actions = shot.beats ? expandBeats(shot).map((action) => motionActionSchema.parse(action)) : shot.actions;
   if (actions.length > 64) throw new Error("Expanded beats exceed the shot action budget.");
+  for (const motion of shot.textMotions ?? []) {
+    const object = shot.objects.find((object) => object.id === motion.targetId)!;
+    let opacity = object.initial.opacity;
+    for (const action of actions) for (const [index, id] of action.targetIds.entries()) {
+      if (id !== motion.targetId) continue;
+      const start = action.startFrame + index * action.staggerFrames, end = action.endFrame + index * action.staggerFrames;
+      if (end <= motion.startFrame && action.to.opacity !== undefined) opacity = action.to.opacity;
+      if (action.behavior !== "hold" && start < motion.endFrame && end > motion.startFrame) throw new Error("Text treatment cannot overlap root actor motion; settle its entrance first.");
+    }
+    if (opacity !== 1 || /[\r\n]/u.test(object.label)) throw new Error("Text treatment requires a visible single-line actor.");
+  }
   return { ...shot, actions };
 }
 

@@ -1,0 +1,46 @@
+{
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "storyboardId": "3db395b4-b1a3-4817-8921-da14e0841f2c",
+  "previousStoryboardId": "d33279c0-0171-4f6f-9414-9a1e54970c0d",
+  "scriptId": "8fcf2dcc-7523-4e69-b02b-946f05ea0d5e",
+  "shots": 10,
+  "frames": 2100,
+  "narrationReused": true,
+  "storyboardAccepted": true,
+  "motionCreated": true,
+  "productionGatesCreated": true,
+  "exportCreated": true,
+  "published": false,
+  "preserved": [
+    {
+      "path": "videos/eec7f710-650b-43f5-a93d-9757ee3000c2/scripts/8fcf2dcc-7523-4e69-b02b-946f05ea0d5e.json",
+      "sha256": "8818a60c4069dcf8b2c1800398897d13a54176b8d559afbf01941002a38bdcab"
+    },
+    {
+      "path": "videos/eec7f710-650b-43f5-a93d-9757ee3000c2/visuals/d33279c0-0171-4f6f-9414-9a1e54970c0d.json",
+      "sha256": "73f9e7b9746775c4a47cd6e4b46eeab0d42efbe05255e28993211bd544221e0f"
+    },
+    {
+      "path": ".data/deepseek-short-eec7f710/narration.wav",
+      "sha256": "cd0b014c4cb8728699f35abd0fc8fd7ef18119a9f804464f0e36af775ab8a550"
+    },
+    {
+      "path": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\videos\\eec7f710-650b-43f5-a93d-9757ee3000c2\\production\\96ac9df4-b590-48c5-9377-2d18768da8fc\\export.mp4",
+      "sha256": "16dd02a991f10d4234c844e060e1f3f912de202f6c36d330ee3d954664acb396"
+    }
+  ],
+  "storyboardApprovalEvidence": "2026-10-25 user: Please continue with it. In response to explicit request to approve the displayed storyboard and continue into Energetic animation.",
+  "motionId": "4b2f5826-2e7f-46fa-aea5-b056bde61345",
+  "motionAccepted": true,
+  "motionAuthorship": "Codex-authored declarative correction using installed interpreter and presets after Motion Director failed",
+  "reviewPath": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\.planning\\deepseek-v41-flash-short\\redesign-v1\\motion-review\\4b2f5826-2e7f-46fa-aea5-b056bde61345\\review.mp4",
+  "reviewUrl": "http://127.0.0.1:3035/",
+  "reviewVerified": true,
+  "productionExportPending": false,
+  "narrationId": "3726e5ad-1d0e-4d04-b5d9-81ec08564b74",
+  "productionBinding": "5d572947ae9ecbd629f7a078f54fbb04bbb13db5bd6c76c5b0c06dd3d774fe2e",
+  "renderApprovalEvidence": "This is better, now render the video",
+  "renderJobId": "32a4ec9c-9d34-4164-b74b-60ae6097e516",
+  "exportPath": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\videos\\eec7f710-650b-43f5-a93d-9757ee3000c2\\production\\32a4ec9c-9d34-4164-b74b-60ae6097e516\\export.mp4",
+  "exportVerified": true
+}

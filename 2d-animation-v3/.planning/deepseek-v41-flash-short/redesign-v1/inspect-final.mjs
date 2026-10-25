@@ -1,0 +1,14 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import assert from 'node:assert/strict';
+const root='.planning/deepseek-v41-flash-short/redesign-v1/';
+const receipt=JSON.parse(readFileSync(root+'proposal-receipt.json','utf8'));
+assert(receipt.exportCreated&&receipt.exportVerified);
+const frames=[239,401,539,749,1079,1379,1559,1809,1949,2099];
+const expression=frames.map(frame=>`eq(n,${frame})`).join('+');
+execFileSync('ffmpeg',['-v','error','-i',receipt.exportPath,'-vf',`select='${expression}',scale=216:384,tile=5x2`,'-frames:v','1',root+'final-encoded-contact.png'],{stdio:'pipe'});
+execFileSync('ffmpeg',['-v','error','-i',receipt.exportPath,'-vf','select=eq(n\\,1245)','-frames:v','1',root+'final-approval-frame.png'],{stdio:'pipe'});
+const png=readFileSync(root+'final-encoded-contact.png');
+assert.equal(png.readUInt32BE(16),1080);assert.equal(png.readUInt32BE(20),768);
+writeFileSync(root+'final-visual-samples.json',JSON.stringify({exportPath:receipt.exportPath,jobId:receipt.renderJobId,contactFrames:frames,approvalFrame:1245,source:'Encoded final MP4; not planning drawings'},null,2)+'\n');
+console.log(JSON.stringify({contact:root+'final-encoded-contact.png',approval:root+'final-approval-frame.png'}));

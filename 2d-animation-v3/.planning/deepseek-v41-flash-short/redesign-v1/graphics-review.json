@@ -1,0 +1,24 @@
+{
+  "version": "graphic-quality@1",
+  "findings": [
+    {
+      "id": "4-end-density-0",
+      "shotIndex": 4,
+      "state": "end",
+      "rule": "density",
+      "evidence": "12 root objects compete for a phone-sized frame.",
+      "suggestion": "Remove supporting detail or reveal information progressively.",
+      "severity": "review"
+    },
+    {
+      "id": "5-end-part-bounds-1",
+      "shotIndex": 5,
+      "state": "end",
+      "rule": "part-bounds",
+      "evidence": "Visible layer human-hand has offsets or scale; root bounds cannot prove layer containment.",
+      "suggestion": "Inspect the real rendered layer for clipping and overlap.",
+      "severity": "review"
+    }
+  ],
+  "requiresHumanReview": true
+}

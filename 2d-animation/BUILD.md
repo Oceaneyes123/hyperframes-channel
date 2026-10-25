@@ -5,6 +5,15 @@ The production phases and approval gates live in `channel/CHANNEL_RECIPE.md`.
 
 ## Narration and timing
 
+The current default is **audio version 2: Fish Audio via OpenRouter**. Follow
+[channel/AUDIO_VERSIONS.md](channel/AUDIO_VERSIONS.md) for the approved settings,
+audition, preservation rules and rollback. Runtime tooling is unchanged.
+
+### Version 1: Supertonic reference
+
+The following generation and cloned-voice instructions are preserved for an
+explicit switch back to version 1; they no longer select the default provider.
+
 ### Generate narration after Gate 1
 
 After Gate 1, dry-run normalization and review the spoken text:
@@ -16,7 +25,7 @@ py -3 scripts\supertonic_tts.py --project videos\<project>
 
 ### Shared voice and pronunciation
 
-All new HyperFrames narration uses the shared cloned voice at
+Version 1 narration uses the shared cloned voice at
 `.tools/supertonic3-model/voice_styles/channel-voice.json`, already generated
 from `reference/voice.wav`. Reuse it for new videos; normal narration needs
 neither WSL nor retraining. Follow `VOICE_CLONE.md` only when creating or

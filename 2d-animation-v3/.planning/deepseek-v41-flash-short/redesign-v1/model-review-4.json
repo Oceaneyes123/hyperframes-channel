@@ -1,0 +1,30 @@
+{
+  "version": "graphic-review@1",
+  "id": "9f9b08ae-a5c6-4528-9d76-83209bed5d83",
+  "projectId": "eec7f710-650b-43f5-a93d-9757ee3000c2",
+  "runId": "c888ad37-9f1e-404d-99d1-36a0ef8d6478",
+  "shotIndex": 3,
+  "sourceHash": "ede4736b783f91d557b2a741ef93cfe9c5c12842c200835fc49fbc1eb4487254",
+  "engineHash": "e19234be4294cdb2b41461b19e1920ada000943732d17a4a6de4cdc4ccc2fbca",
+  "frameHashes": [
+    "d92ef60ebd3ae6e3e8e8de9a2ef6eb66c83e672107542a2c7fbd9c7fbb240e54",
+    "5ffd8956ca1ce07de2e0fcb31f5bc07e66a8d43210511c1445742cc9900a18b2"
+  ],
+  "model": "gpt-6.1-sol",
+  "createdAt": "2026-10-24T15:49:08.256Z",
+  "findings": [
+    {
+      "shotIndex": 3,
+      "dimension": "clarity",
+      "evidence": "In the end frame, the arrow from the highlighted sheet row stops at the top edge of the n8n window rather than at the lightning-bolt node. That node is labeled only “Trigger,” leaving the new-row operation unspecified.",
+      "suggestion": "Route the connector to the trigger node and label it “Google Sheets Trigger,” with “New row” as a short secondary label, to make the row-to-trigger relationship explicit."
+    },
+    {
+      "shotIndex": 3,
+      "dimension": "readability",
+      "evidence": "In both frames, “Trigger” and “HTTP Request” sit close together on one baseline, and “HTTP Request” extends beneath the separate check-mark node, making its node association ambiguous.",
+      "suggestion": "Center each operation label beneath its corresponding node, wrap “HTTP Request” onto two lines, and leave clear spacing before the check-mark node."
+    }
+  ],
+  "requiresHumanReview": true
+}

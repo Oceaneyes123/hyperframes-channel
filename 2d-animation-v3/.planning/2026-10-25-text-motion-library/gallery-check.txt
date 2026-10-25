@@ -1,0 +1,21 @@
+async (page) => {
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  const presets = page.getByRole('list', {name: 'Text motion presets'}).getByRole('button');
+  const names = await presets.allTextContents();
+  await presets.last().click();
+  for (const name of names) {
+    await page.getByRole('button', {name, exact: true}).click();
+    await page.getByRole('button', {name: 'Play video', exact: true}).click();
+    await page.getByText('Reading hold', {exact: true}).waitFor({state: 'visible', timeout: 10000});
+    await page.getByRole('button', {name: 'Pause video', exact: true}).click();
+    if (await page.getByRole('img', {name: 'Make the idea clear', exact: true}).count() !== 1) throw new Error(name + ' lacks accessible text');
+  }
+  await page.getByRole('textbox', {name: 'Preview text'}).fill('Review before publish');
+  await page.getByRole('img', {name: 'Review before publish', exact: true}).waitFor();
+  await page.screenshot({path: '.planning/2026-10-25-text-motion-library/gallery-desktop.png', fullPage: true});
+  await page.setViewportSize({width:390,height:844});
+  await page.screenshot({path: '.planning/2026-10-25-text-motion-library/gallery-mobile.png',fullPage:true});
+  console.log(JSON.stringify({presets: names.length, playback: 'pass', customText:'pass', desktopAndMobile:'captured', errors}));
+  if (errors.length) throw new Error(errors.join('; '));
+}

@@ -11,6 +11,8 @@ import { VisualText } from "./visual-text.tsx";
 import { VisualComponent } from "./components/visual-component.tsx";
 import { isComponent } from "../workflow/components.ts";
 import { textFontSize } from "./text-metrics.ts";
+import { isTextType } from "./text-metrics.ts";
+import type { TextMotion } from "../workflow/text-motion.ts";
 import { useGsapTimeline } from "@remotion/gsap";
 import { compileMotion, type MotionGroup } from "./compile-motion.ts";
 import type { MotionPlan, MotionState, MotionShot } from "../workflow/motion.ts";
@@ -33,12 +35,16 @@ function shapeVars(type: string, state: Partial<MotionState>) {
     const height = state.height * 19.2;
     Object.assign(result, type === "ellipse" ? { ry: height / 2, cy: height / 2 } : type === "line" ? { y2: height } : { height });
   }
-  if (state.color !== undefined) result[isSymbol(type) || isComponent(type) ? "color" : type === "line" ? "stroke" : "fill"] = state.color;
+  if (state.color !== undefined) {
+    result[isSymbol(type) || isComponent(type) ? "color" : type === "line" ? "stroke" : "fill"] = state.color;
+    if (isTextType(type)) result.color = state.color;
+  }
   return result;
 }
 
-function Primitive({ object, actorId }: { object: MotionShot["objects"][number]; actorId: string }) {
+function Primitive({ object, actorId, textMotion, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; frame: number }) {
   const state = object.initial, width = state.width * 10.8, height = state.height * 19.2;
+  if (textMotion) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} motion={textMotion} frame={frame} />;
   if (isComponent(object.type)) return <VisualComponent type={object.type} width={width} height={height} color={state.color} parts={object.initialParts} asset={object.asset} diagram={object.diagram} values={object.values} label={object.label} actorId={actorId} />;
   if (isSymbol(object.type)) return <VisualSymbol type={object.type} width={width} height={height} color={state.color} />;
   if (["centered-text", "heading", "caption", "code"].includes(object.type)) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} />;
@@ -95,7 +101,11 @@ function GroupScene({ group }: { group: MotionGroup }) {
   return <svg ref={scope} data-motion-frame={frame} data-motion-group={group.id} viewBox="0 0 1080 1920" width="1080" height="1920" style={{ fontFamily: "Arial" }}>
     <rect width="1080" height="1920" fill={background} />
     {active.environment && <GraphicBackground environment={active.environment} width={1080} height={1920} progress={(frame - active.startFrame) / Math.max(1, active.shot.durationFrames - 1)} />}
-    <g data-camera>{group.actors.map((actor) => <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} /></g>)}</g>
+    <g data-camera>{group.actors.map((actor) => {
+      const owner = group.shots.find((item) => item.startFrame === actor.startFrame)!;
+      const textMotion = owner.shot.textMotions?.find((motion) => owner.targets[motion.targetId] === actor.id);
+      return <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} textMotion={textMotion} frame={frame - actor.startFrame} /></g>;
+    })}</g>
   </svg>;
 }
 
