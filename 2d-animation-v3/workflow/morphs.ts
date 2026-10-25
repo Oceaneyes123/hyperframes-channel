@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 // Matching authored vertices preserve correspondence; models never provide geometry.
-function outline(points: [number, number][]) {
+export function outline(points: [number, number][]) {
   return `M${points[0].join(" ")}` + points.map((from, index) => { const to = points[(index + 1) % points.length]; return `C${from.join(" ")} ${to.join(" ")} ${to.join(" ")}`; }).join("") + "Z";
 }
 export const messageRecordPair = {

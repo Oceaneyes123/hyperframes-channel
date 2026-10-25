@@ -5,7 +5,7 @@ import { vectorLibrary } from "../../workflow/graphic-library.ts";
 import type { VectorNode } from "../../workflow/vector-assets.ts";
 import { layoutDiagram } from "../../workflow/diagram.ts";
 
-function VectorNodes({ nodes, prefix, defsId = prefix, strokeScale = 1 }: { nodes: VectorNode[]; prefix: string; defsId?: string; strokeScale?: number }) {
+export function VectorNodes({ nodes, prefix, defsId = prefix, strokeScale = 1 }: { nodes: VectorNode[]; prefix: string; defsId?: string; strokeScale?: number }) {
   const paint = (role: string) => role === "none" ? "none" : role === "wash" || role === "grid" ? `url(#${defsId}-${role})` : role === "accent" ? "currentColor" : role === "surface" ? graphicTheme.light : graphicTheme[role as "ink" | "paper" | "mint" | "muted" | "line"];
   return nodes.map((node, index) => {
     const style = { fill: paint(node.fill), stroke: paint(node.stroke), strokeWidth: node.strokeWidth * strokeScale, opacity: node.opacity, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };

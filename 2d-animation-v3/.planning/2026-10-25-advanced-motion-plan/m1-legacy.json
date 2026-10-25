@@ -1,0 +1,28 @@
+{
+  "syntheticOnly": true,
+  "engineHash": "1d067b92e70490c18b8c0567a5aeefd2b119fb921c7af9845cf763badb242658",
+  "baseline": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\.data\\text-motion-proof-1792911740149",
+  "checked": [
+    18,
+    70,
+    108,
+    160,
+    198,
+    250,
+    288,
+    340,
+    378,
+    430,
+    468,
+    520,
+    558,
+    610,
+    648,
+    700,
+    738,
+    790,
+    828,
+    880
+  ],
+  "exactPngMatch": true
+}

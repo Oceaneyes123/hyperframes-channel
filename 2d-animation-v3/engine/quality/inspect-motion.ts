@@ -1,3 +1,4 @@
+import { perspectivePose, perspectiveScene, projectPoint, tokenPoint } from "../../workflow/perspective.ts";
 import { expandMotionShot, scheduleMotion, type MotionPlan, type MotionState } from "../../workflow/motion.ts";
 import type { VisualArtifact } from "../../workflow/visuals.ts";
 import { isTextType, textFontSize } from "../text-metrics.ts";
@@ -25,6 +26,16 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     const add = (ruleId: string, start: number, end: number, message: string, evidence: string, suggestion: string, targetId: string | null = null, heuristic = true, severity: MotionFinding["severity"] = "review") => {
       findings.push({ id: `${ruleId}:${shot.id}:${targetId ?? start}`, ruleId, shotId: shot.id, targetId, startFrame: offset + start, endFrame: offset + end, severity, message: `Shot ${index + 1}: ${message}`, evidence, suggestion, heuristic });
     };
+    for (const object of shot.objects.filter(object=>object.perspective)) {
+      const actions=shot.actions.filter(action=>action.targetIds.includes(`${object.id}.camera`)&&action.behavior!=="hold");
+      for(let frame=0;frame<shot.durationFrames;frame++) {
+        const pose=perspectivePose(object.initialParts!.camera,actions,frame),token=tokenPoint(pose.progress),p=projectPoint(token,pose.camera);
+        for(const plane of perspectiveScene.planes)projectPoint({x:0,y:0,z:plane.z},pose.camera);
+        if(p.x-35*p.scale<0||p.y-25*p.scale<0||p.x+35*p.scale>1000||p.y+25*p.scale>1000) {
+          add("perspective-projected-bounds",frame,frame,"projected inquiry leaves the scene viewport.",`Projected token center ${p.x.toFixed(2)},${p.y.toFixed(2)}; scale ${p.scale.toFixed(4)}.` ,"Use the reviewed camera route and keep the projected token inside its fixed viewport.",object.id,false,"warning");break;
+        }
+      }
+    }
     const holds = shot.actions.filter((action) => action.behavior === "hold");
     if (!holds.some((hold) => hold.endFrame - hold.startFrame >= 15)) add("reading-hold", 0, shot.durationFrames - 1, "no explicit half-second reading hold.", "No declared hold spans at least 15 frames.", "Add a reading hold after the meaningful result.");
     const states = new Map<string, Partial<MotionState>>(shot.objects.map((object) => [object.id, { ...object.initial }]));

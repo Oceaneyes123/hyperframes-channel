@@ -1,0 +1,25 @@
+{
+  "inputHash": "282afafbc00c22155bc99110b623fb550d237cfbb82a2f8a403ffc9b92ffd2bf",
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "51a57c212a1cb6cd3e1616164fb0390ab9c64f06030b03d6d62542e063ce668f",
+  "ids": [
+    "text-layout",
+    "word-to-ui",
+    "keyword-focus",
+    "type-match"
+  ],
+  "frames": 480,
+  "freshSeeks": 34,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "seconds": 16,
+  "fullDecode": true,
+  "audio": false,
+  "preview": {
+    "comparedFrames": 480,
+    "minimumSsim": 0.998647,
+    "threshold": 0.98
+  }
+}

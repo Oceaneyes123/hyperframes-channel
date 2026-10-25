@@ -15,12 +15,20 @@ import { isTextType } from "./text-metrics.ts";
 import type { TextMotion } from "../workflow/text-motion.ts";
 import { useGsapTimeline } from "@remotion/gsap";
 import { compileMotion, type MotionGroup } from "./compile-motion.ts";
-import type { MotionPlan, MotionState, MotionShot } from "../workflow/motion.ts";
+import type { MotionPlan, MotionState, MotionShot, MotionAction } from "../workflow/motion.ts";
 import type { VisualArtifact } from "../workflow/visuals.ts";
 import { gsap } from "gsap";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
+import { semanticPair } from "../workflow/semantic-morphs.ts";
+import { perspectivePose } from "../workflow/perspective.ts";
+import { PerspectiveScene } from "./components/perspective-scene.tsx";
+import { MorphChain } from "./components/morph-chain.tsx";
 import { morphPair } from "../workflow/morphs.ts";
+import { NumericDisplay } from "./components/numeric-display.tsx";
+import { UIWorkflow } from "./components/ui-workflow.tsx";
+import { CharacterRig } from "./components/character-rig.tsx";
+import { isCharacterPreset, type CharacterCue } from "../workflow/character-rig.ts";
 
 gsap.registerPlugin(MotionPathPlugin, MorphSVGPlugin);
 
@@ -48,10 +56,35 @@ function shapeVars(type: string, state: Partial<MotionState>) {
   return result;
 }
 
-function Primitive({ object, actorId, textMotion, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; frame: number }) {
+function Primitive({ object, actorId, textMotion, numericAction, uiActions, chainActions, depthActions, characterCues, handoffAction, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; numericAction?: MotionAction; uiActions?: MotionAction[]; chainActions?: MotionAction[]; depthActions?: MotionAction[]; characterCues?: CharacterCue[]; handoffAction?: MotionAction; frame: number }) {
   const state = object.initial, width = state.width * 10.8, height = state.height * 19.2;
+  if (object.perspective) {
+    const initial=object.initialParts!.camera,pose=perspectivePose(initial,depthActions??[],frame);
+    return <PerspectiveScene width={width} height={height} state={initial} actorId={actorId} camera={pose.camera} progress={pose.progress}/>;
+  }
+  if (object.morphChain) {
+    let stage = object.initialParts!.outline.morphStage!;
+    for (const action of chainActions ?? []) if (frame >= action.startFrame) stage = action.to.morphStage! - 1 + gsap.parseEase(action.ease)(Math.min(1, (frame - action.startFrame) / (action.endFrame - action.startFrame)));
+    return <MorphChain chain={object.morphChain} width={width} height={height} state={object.initialParts!.outline} actorId={actorId} stage={stage} />;
+  }
+  if (object.rig) {
+    const progress = handoffAction ? gsap.parseEase(handoffAction.ease)(Math.min(1, Math.max(0, (frame - handoffAction.startFrame) / (handoffAction.endFrame - handoffAction.startFrame)))) : object.initialParts!.document.handoffProgress ?? 0;
+    return <CharacterRig width={width} height={height} states={object.initialParts!} actorId={actorId} cues={characterCues} frame={frame} documentProgress={progress} />;
+  }
+  if (object.ui) {
+    let stage = object.initialParts!.surface.uiStage!;
+    for (const action of uiActions ?? []) {
+      const t = Math.min(1, Math.max(0, (frame - action.startFrame) / (action.endFrame - action.startFrame)));
+      if (frame >= action.startFrame) stage = action.to.uiStage! - 1 + gsap.parseEase(action.ease)(t);
+    }
+    return <UIWorkflow data={object.ui} width={width} height={height} states={object.initialParts!} actorId={actorId} stage={stage} />;
+  }
+  if (object.numeric) {
+    const t = numericAction ? Math.min(1, Math.max(0, (frame - numericAction.startFrame) / (numericAction.endFrame - numericAction.startFrame))) : object.initialParts!.digits.numericProgress ?? 0;
+    return <NumericDisplay reference={object.numeric} width={width} height={height} state={object.initialParts!.digits} actorId={actorId} progress={numericAction ? gsap.parseEase(numericAction.ease)(t) : t} />;
+  }
   if (textMotion || object.typography) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} motion={textMotion} frame={frame} typography={object.typography} />;
-  if (isComponent(object.type)) return <VisualComponent type={object.type} width={width} height={height} color={state.color} parts={object.initialParts} asset={object.asset} diagram={object.diagram} comparison={object.comparison} morph={object.morph} values={object.values} label={object.label} actorId={actorId} />;
+  if (isComponent(object.type)) return <VisualComponent type={object.type} width={width} height={height} color={state.color} parts={object.initialParts} asset={object.asset} diagram={object.diagram} perspective={object.perspective} collage={object.collage} morphChain={object.morphChain} rig={object.rig} ui={object.ui} numeric={object.numeric} comparison={object.comparison} morph={object.morph} values={object.values} label={object.label} actorId={actorId} />;
   if (isSymbol(object.type)) return <VisualSymbol type={object.type} width={width} height={height} color={state.color} />;
   if (["centered-text", "heading", "caption", "code"].includes(object.type)) return <VisualText type={object.type} label={object.label} color={state.color} width={width} height={height} />;
   if (object.type === "ellipse") return <ellipse data-shape cx={width / 2} cy={height / 2} rx={width / 2} ry={height / 2} fill={state.color} />;
@@ -72,12 +105,17 @@ function GroupScene({ group }: { group: MotionGroup }) {
       timeline.set(target, { opacity: actor.object.initial.opacity }, actor.startFrame / 30);
       timeline.set(target, { opacity: 0 }, actor.endFrame / 30);
       for (const [part, state] of Object.entries(actor.object.initialParts ?? {})) {
+        if (actor.object.morphChain && part === "outline") actor.object.morphChain.pairs.forEach((reference, index) => {
+          const pair = semanticPair(reference);
+          timeline.set(selector(`[data-chain-path="${actor.id}.${part}:${index}"]`), { attr: { d: (state.morphStage ?? 0) > index ? pair.to : pair.from } }, 0);
+        });
         if (actor.object.morph && part === "outline") {
           const pair = morphPair(actor.object.morph);
           timeline.set(selector(`[data-morph="${actor.id}.${part}"]`), { attr: { d: state.morphProgress === 1 ? pair.to : pair.from } }, 0);
         }
         timeline.set(selector(`[data-actor="${actor.id}.${part}"]`), { ...groupVars(state), svgOrigin: "0 0", attr: { color: state.color } }, 0);
-        timeline.set(selector(`[data-reveal="${actor.id}.${part}"]`), { attr: { width: actor.object.initial.width * 10.8 * (state.reveal ?? 1) } }, 0);
+        const mask = selector(`[data-reveal="${actor.id}.${part}"]`);
+        if (mask.length) timeline.set(mask, { attr: { width: actor.object.initial.width * 10.8 * (state.reveal ?? 1) } }, 0);
         const effects = selector(`[data-edge-signal="${actor.id}.${part}"], [data-arrival="${actor.id}.${part}"]`);
         if (effects.length) timeline.set(effects, { opacity: 0 }, 0);
       }
@@ -94,6 +132,12 @@ function GroupScene({ group }: { group: MotionGroup }) {
           if (Object.keys(vars).length) timeline.to(target, { ...vars, ...options }, start);
           if (id !== "camera") {
             if (id.includes(".")) {
+              if (action.to.morphStage !== undefined) {
+                const object = item.shot.objects.find((object) => object.id === id.split(".")[0])!, index = action.to.morphStage - 1;
+                const pair = semanticPair(object.morphChain!.pairs[index]), path = selector(`[data-chain-path="${item.targets[id]}:${index}"]`);
+                timeline.fromTo(path, { attr: { d: pair.from } }, { morphSVG: { shape: pair.to, shapeIndex: 0 }, ...options, immediateRender: false }, start);
+                timeline.set(path, { attr: { d: pair.to } }, start + options.duration);
+              }
               if (action.to.morphProgress !== undefined) {
                 const object = item.shot.objects.find((object) => object.id === id.split(".")[0])!;
                 const pair = morphPair(object.morph!), path = selector(`[data-morph="${item.targets[id]}"]`);
@@ -116,7 +160,9 @@ function GroupScene({ group }: { group: MotionGroup }) {
               if (action.to.color !== undefined) timeline.to(target, { attr: { color: action.to.color }, ...options }, start);
               if (action.to.reveal !== undefined) {
                 const object = item.shot.objects.find((object) => object.id === id.split(".")[0])!;
-                timeline.to(selector(`[data-reveal="${item.targets[id]}"]`), { attr: { width: object.initial.width * 10.8 * action.to.reveal }, ...options }, start);
+                const mask = selector(`[data-reveal="${item.targets[id]}"]`);
+                if (!mask.length) throw new Error("Reveal action requires a rendered mask.");
+                timeline.to(mask, { attr: { width: object.initial.width * 10.8 * action.to.reveal }, ...options }, start);
               }
             } else {
               const object = item.shot.objects.find((object) => object.id === id)!; const attrs = shapeVars(object.type, action.to);
@@ -135,7 +181,21 @@ function GroupScene({ group }: { group: MotionGroup }) {
     <g data-camera>{group.actors.map((actor) => {
       const owner = group.shots.find((item) => item.startFrame === actor.startFrame)!;
       const textMotion = owner.shot.textMotions?.find((motion) => owner.targets[motion.targetId] === actor.id);
-      return <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} textMotion={textMotion} frame={frame - actor.startFrame} /></g>;
+      const semanticActions = actor.object.numeric || actor.object.ui || actor.object.rig || actor.object.morphChain || actor.object.perspective ? group.shots.flatMap((item) => item.shot.actions
+        .filter((action) => action.targetIds.some((id) => item.targets[id]?.startsWith(`${actor.id}.`)))
+        .map((action) => ({ ...action, startFrame: item.startFrame - actor.startFrame + action.startFrame, endFrame: item.startFrame - actor.startFrame + action.endFrame }))) : [];
+      const numericAction = semanticActions.find((action) => action.to.numericProgress !== undefined);
+      const depthActions = semanticActions.filter((action) => ["cameraX","cameraY","cameraZ","depthProgress"].some(field=>action.to[field as keyof MotionState]!==undefined));
+      const chainActions = semanticActions.filter((action) => action.to.morphStage !== undefined);
+      const uiActions = semanticActions.filter((action) => action.to.uiStage !== undefined);
+      const handoffAction = semanticActions.find((action) => action.to.handoffProgress !== undefined);
+      const characterCues: CharacterCue[] = [];
+      if (actor.object.rig) for (const item of group.shots) for (const beat of item.shot.beats ?? []) {
+        if (isCharacterPreset(beat.presetId) && beat.targetIds.some((id) => item.targets[id] === `${actor.id}.body`)) {
+          characterCues.push({ presetId: beat.presetId, startFrame: item.startFrame - actor.startFrame + beat.startFrame, endFrame: item.startFrame - actor.startFrame + beat.endFrame, ...(beat.presetId === "character-look@1" ? { direction: beat.parameters.direction } : {}) });
+        }
+      }
+      return <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} textMotion={textMotion} numericAction={numericAction} uiActions={uiActions} chainActions={chainActions} depthActions={depthActions} characterCues={characterCues} handoffAction={handoffAction} frame={frame - actor.startFrame} /></g>;
     })}</g>
   </svg>;
 }

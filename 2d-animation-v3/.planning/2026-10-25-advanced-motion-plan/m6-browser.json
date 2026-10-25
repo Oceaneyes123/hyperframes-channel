@@ -1,0 +1,12 @@
+{
+  "layers": 5,
+  "uniqueIds": true,
+  "exactBackwardSvg": true,
+  "offlineCachedSeek": true,
+  "corruption": "fails closed",
+  "crop": {
+    "viewport": "80 80 920 1200",
+    "rasterWidth": "1086"
+  },
+  "externalRequests": 0
+}

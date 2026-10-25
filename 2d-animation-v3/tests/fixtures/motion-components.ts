@@ -6,10 +6,10 @@ import { hashMotionSource } from "../../server/motion-store.ts";
 import { presetScene } from "./motion-presets.ts";
 
 export function motionComponentFixture(type: ComponentType = "inbox-panel@1") {
-  if (type === "data-comparison@1" || type === "morph-shape@1") {
-    const fixture = kineticExample(type === "morph-shape@1" ? "morph" : "comparison");
+  if (type === "perspective-scene@1" || type === "editorial-collage@1" || type === "morph-chain@1" || type === "data-comparison@1" || type === "morph-shape@1" || type === "numeric-display@1" || type === "ui-workflow@1" || type === "character-rig@1") {
+    const fixture = kineticExample(type === "perspective-scene@1" ? "perspective" : type === "editorial-collage@1" ? "collage" : type === "morph-chain@1" ? "document-checklist" : type === "character-rig@1" ? "character-rig" : type === "ui-workflow@1" ? "ui-workflow" : type === "numeric-display@1" ? "rolling-value" : type === "morph-shape@1" ? "morph" : "comparison");
     if (fixture.board.output.kind !== "storyboard") throw new Error("Expected storyboard.");
-    fixture.plan.shots[0].sourceHash = hashMotionSource(fixture.board.output.shots[0]);
+    for (const shot of fixture.plan.shots) shot.sourceHash = hashMotionSource(fixture.board.output.shots[shot.sourceIndex]);
     return fixture;
   }
   const shape = { type, x: 15, y: 30, width: 70, height: isGraphicAsset(type) ? 52.5 : 40, ...(isGraphicAsset(type) ? { asset: graphicReference(type) } : {}), color: "#9BA7FF", label: type === "kinetic-phrase@1" ? "Repeated problems" : "", ...(type === "cost-chart@1" ? { values: [20, 40] as [number, number] } : {}) };

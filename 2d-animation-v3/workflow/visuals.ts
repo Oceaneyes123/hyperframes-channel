@@ -2,6 +2,12 @@ import { z } from "zod";
 import { typographySchema } from "./typography.ts";
 import { comparisonReferenceSchema } from "./comparison.ts";
 import { morphReferenceSchema } from "./morphs.ts";
+import { numericReferenceSchema } from "./numeric.ts";
+import { perspectiveReferenceSchema } from "./perspective.ts";
+import { collageReferenceSchema, editorialCollage } from "./raster.ts";
+import { morphChainSchema } from "./semantic-morphs.ts";
+import { rigReferenceSchema, characterRig } from "./character-rig.ts";
+import { uiWorkflowSchema } from "./ui-workflow.ts";
 import { componentPartsSchema, componentLayerIds, isComponent, chartValuesSchema } from "./components.ts";
 
 import { graphicReferenceSchema, validGraphicReference, isGraphicAsset, assetMetadata } from "./graphic-assets.ts";
@@ -12,7 +18,7 @@ import { artDirectionSchema, backgroundSchema } from "./art-direction.ts";
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 const position = z.number().min(0).max(100);
-export const primitiveSchema = z.enum(["morph-shape@1", "data-comparison@1", "rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1", "graphic-asset@2", "semantic-diagram@1"]);
+export const primitiveSchema = z.enum(["perspective-scene@1", "editorial-collage@1", "morph-chain@1", "character-rig@1", "ui-workflow@1", "numeric-display@1", "morph-shape@1", "data-comparison@1", "rect", "ellipse", "text", "centered-text", "heading", "caption", "code", "line", "document", "browser", "database", "server", "cloud", "person", "chip", "coin", "inbox-panel@1", "approval-flow@1", "api-flow@1", "cost-chart@1", "kinetic-phrase@1", "funnel@1", "complaint-workflow@1", "graphic-asset@2", "semantic-diagram@1"]);
 // Only declarative shapes cross the model boundary; markup, URLs and code never do.
 export const frameSchema = z.strictObject({
   background: color,
@@ -24,11 +30,34 @@ export const frameSchema = z.strictObject({
     typography: typographySchema.optional(),
     comparison: comparisonReferenceSchema.optional(),
     morph: morphReferenceSchema.optional(),
+    numeric: numericReferenceSchema.optional(),
+    ui: uiWorkflowSchema.optional(),
+    rig: rigReferenceSchema.optional(),
+    morphChain: morphChainSchema.optional(),
+    collage: collageReferenceSchema.optional(),
+    perspective: perspectiveReferenceSchema.optional(),
     asset: graphicReferenceSchema.optional(),
     diagram: diagramSchema.optional(),
     parts: componentPartsSchema.optional(),
     values: chartValuesSchema.optional(),
   }).superRefine((shape, context) => {
+    if ((shape.type === "perspective-scene@1") !== !!shape.perspective || shape.perspective && (shape.label !== "" || Math.abs(shape.width * 1080 / (shape.height * 1920) - 1) > .001 || !shape.parts?.camera || ["cameraX", "cameraY", "cameraZ", "depthProgress"].some((field) => shape.parts!.camera[field as keyof typeof shape.parts.camera] === undefined) || shape.parts.camera.opacity !== 1 || (shape.parts.camera.reveal ?? 1) !== 1 || shape.parts.camera.x !== 0 || shape.parts.camera.y !== 0 || shape.parts.camera.scale !== 1)) context.addIssue({code:"custom",message:"Perspective needs its registered square scene and visible fixed camera part with explicit depth pose."});
+    if (Object.entries(shape.parts ?? {}).some(([id,state]) => ["cameraX", "cameraY", "cameraZ", "depthProgress"].some((field) => state[field as keyof typeof state] !== undefined) && (shape.type !== "perspective-scene@1" || id !== "camera"))) context.addIssue({code:"custom",message:"Depth pose belongs to the perspective camera part."});
+    if ((shape.type === "editorial-collage@1") !== !!shape.collage || shape.collage && (shape.label !== editorialCollage.label || Math.abs(shape.height - shape.width * .75) > .001)) context.addIssue({ code: "custom", message: "Collage needs its reviewed identity, fixed heading and 3:4 aspect." });
+    if ((shape.type === "morph-chain@1") !== !!shape.morphChain) context.addIssue({ code: "custom", message: "Semantic morph requires its exact curated chain." });
+    if (shape.morphChain && (shape.parts?.outline?.morphStage === undefined || shape.parts.outline.morphStage > shape.morphChain.pairs.length || Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1) || Math.abs(shape.width * 1080 / (shape.height * 1920) - 1) > .001)) context.addIssue({ code: "custom", message: "Morph chain requires a valid explicit stage and fixed square geometry." });
+    if (Object.entries(shape.parts ?? {}).some(([id, state]) => state.morphStage !== undefined && (shape.type !== "morph-chain@1" || id !== "outline"))) context.addIssue({ code: "custom", message: "Morph stage requires the curated chain outline." });
+    if ((shape.type === "character-rig@1") !== !!shape.rig) context.addIssue({ code: "custom", message: "Character requires its exact reviewed rig." });
+    if (shape.rig && (["body", "document", "laptop"].some((id) => !shape.parts?.[id] || shape.parts[id].opacity !== 1 || (shape.parts[id].reveal ?? 1) !== 1 || shape.parts[id].x !== 0 || shape.parts[id].y !== 0 || shape.parts[id].scale !== 1) || shape.parts?.body.rigProgress !== 0 || shape.parts?.document.handoffProgress === undefined)) context.addIssue({ code: "custom", message: "Rig parts must be visible, unmasked and fixed, with neutral body and explicit document state." });
+    if (shape.rig && Math.abs(shape.width * 1080 / (shape.height * 1920) - characterRig.width / characterRig.height) > .001) context.addIssue({ code: "custom", message: "Character requires its registered aspect ratio." });
+    if (Object.entries(shape.parts ?? {}).some(([id, state]) => state.rigProgress !== undefined && (shape.type !== "character-rig@1" || id !== "body") || state.handoffProgress !== undefined && (shape.type !== "character-rig@1" || id !== "document"))) context.addIssue({ code: "custom", message: "Rig progress requires the reviewed body or document part." });
+    if ((shape.type === "ui-workflow@1") !== !!shape.ui) context.addIssue({ code: "custom", message: "UI workflow requires an exact field contract." });
+    if (shape.ui && (shape.parts?.surface?.uiStage === undefined || Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1))) context.addIssue({ code: "custom", message: "UI state is explicit and internal field geometry is fixed." });
+    if (shape.ui && shape.parts?.surface?.uiStage === 4 && ["category", "draft"].some((id) => shape.parts?.[id]?.opacity !== 1 || (shape.parts?.[id]?.reveal ?? 1) !== 1)) context.addIssue({ code: "custom", message: "Review state must preserve all supplied result fields." });
+    if (Object.entries(shape.parts ?? {}).some(([id, state]) => state.uiStage !== undefined && (shape.type !== "ui-workflow@1" || id !== "surface"))) context.addIssue({ code: "custom", message: "UI stage requires the workflow surface." });
+    if ((shape.type === "numeric-display@1") !== !!shape.numeric) context.addIssue({ code: "custom", message: "Numeric display requires an exact source reference." });
+    if (shape.numeric && Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1)) context.addIssue({ code: "custom", message: "Numeric cells have fixed geometry; transform the root." });
+    if (Object.entries(shape.parts ?? {}).some(([id, state]) => state.numericProgress !== undefined && (shape.type !== "numeric-display@1" || id !== "digits"))) context.addIssue({ code: "custom", message: "Numeric progress requires the numeric digits part." });
     if ((shape.type === "morph-shape@1") !== !!shape.morph) context.addIssue({ code: "custom", message: "Morph shape requires a curated pair reference." });
     if (shape.type === "morph-shape@1" && Object.values(shape.parts ?? {}).some((state) => state.x !== 0 || state.y !== 0 || state.scale !== 1)) context.addIssue({ code: "custom", message: "Morph outline geometry is fixed; transform its root." });
     if (Object.entries(shape.parts ?? {}).some(([id, state]) => state.morphProgress !== undefined && (shape.type !== "morph-shape@1" || id !== "outline"))) context.addIssue({ code: "custom", message: "Morph progress requires a curated outline." });

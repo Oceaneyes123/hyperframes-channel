@@ -1,0 +1,11 @@
+async(page)=>{
+ await page.goto('http://127.0.0.1:3003/motion-library');await page.setViewportSize({width:1280,height:1000});await page.getByRole('combobox',{name:'Capability'}).selectOption('perspective');
+ const svg=page.locator('svg[data-motion-frame]'),slider=page.getByRole('slider',{name:'Inspect frame'}),scene=svg.locator('[data-perspective]');
+ const seek=async f=>{await slider.press(f>209?'End':'Home');for(let i=0;i<Math.min(f,419-f);i++)await slider.press(f>209?'ArrowLeft':'ArrowRight');await page.waitForFunction(n=>document.querySelector('svg[data-motion-frame]')?.getAttribute('data-motion-frame')===String(n),f);};
+ const samples=[];for(const frame of [0,36,60,108,180,252,318,327,336,345,354,372,419]){
+  await seek(frame);if(await svg.locator('[data-depth-token]').count()!==1)throw Error('Inquiry duplicated/lost');
+  const p=await scene.evaluate(el=>({x:Number(el.getAttribute('data-camera-x')),y:Number(el.getAttribute('data-camera-y')),z:Number(el.getAttribute('data-camera-z')),depth:Number(el.querySelector('[data-depth-token]').getAttribute('data-token-depth')),scales:Array.from(el.querySelectorAll('[data-depth-plane]')).map(e=>Number(e.getAttribute('data-projected-scale')))}));if(!(p.scales[2]>p.scales[1]&&p.scales[1]>p.scales[0]))throw Error('No distinct depth rates');samples.push({frame,...p});
+ }
+ for(const frame of [108,327,345]){await seek(frame);const before=await svg.evaluate(e=>e.outerHTML);await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/perspective-'+frame+'-before.png'});await seek(419);await seek(0);await seek(frame);if(before!==await svg.evaluate(e=>e.outerHTML))throw Error('Backward depth SVG mismatch '+frame);await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/perspective-'+frame+'-after.png'});}
+ await seek(419);if(Number(await svg.locator('[data-depth-token]').getAttribute('data-token-depth'))!==295)throw Error('Token did not arrive');await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/perspective-desktop.png',fullPage:true});await page.setViewportSize({width:390,height:844});await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/perspective-mobile.png',fullPage:true});return{samples,exactBackwardSvg:true,singleToken:true,delivered:true,rootMotionComposes:true};
+}

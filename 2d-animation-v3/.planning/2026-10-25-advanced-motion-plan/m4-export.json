@@ -1,0 +1,22 @@
+{
+  "inputHash": "e056057c763f3ff0c806451f945e916998f0de05c35d520f7a19b97bdb59ecb8",
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "73a72a567a173eb3887f8379bba3005e026b359040f06fe79fe53efa2e575ac5",
+  "ids": [
+    "character-rig"
+  ],
+  "frames": 420,
+  "freshSeeks": 21,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "seconds": 14,
+  "fullDecode": true,
+  "audio": false,
+  "preview": {
+    "comparedFrames": 420,
+    "minimumSsim": 0.997211,
+    "threshold": 0.98
+  }
+}

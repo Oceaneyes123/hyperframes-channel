@@ -1,0 +1,19 @@
+async(page)=>{
+ await page.goto('http://127.0.0.1:3003/motion-library');await page.setViewportSize({width:1280,height:1000});
+ const svg=page.locator('svg[data-motion-frame]'),slider=page.getByRole('slider',{name:'Inspect frame'});
+ const seek=async f=>{await slider.press('Home');for(let i=0;i<f;i++)await slider.press('ArrowRight');await page.waitForFunction(n=>document.querySelector('svg[data-motion-frame]')?.getAttribute('data-motion-frame')===String(n),f);};
+ const checked=[];
+ for(const id of ['question-answer','document-checklist','complaints-problem','problem-product','blocks-chart','manual-automated','morph-chain']){
+  await page.getByRole('combobox',{name:'Capability'}).selectOption(id);await seek(39);
+  const before=await svg.evaluate(e=>e.outerHTML);await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/'+id+'-before.png'});
+  await seek(id==='morph-chain'?179:119);await seek(0);await seek(39);
+  if(before!==await svg.evaluate(e=>e.outerHTML))throw Error(id+' mounted backward mismatch');
+  await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/'+id+'-after.png'});checked.push(id);
+ }
+ await seek(66);const path=await svg.locator('[data-chain-path][visibility="visible"]').getAttribute('d');
+ await seek(83);if(path!==await svg.locator('[data-chain-path][visibility="visible"]').getAttribute('d'))throw Error('Intermediate shape drift');
+ await seek(111);const before=await svg.evaluate(e=>e.outerHTML);await seek(179);await seek(0);await seek(111);if(before!==await svg.evaluate(e=>e.outerHTML))throw Error('Second step backward mismatch');
+ await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/morph-chain-desktop.png',fullPage:true});
+ await page.setViewportSize({width:390,height:844});await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/morph-chain-mobile.png',fullPage:true});
+ return{checked,exactMountedSvg:true,secondStepBackward:true,intermediateShapeStable:true};
+}

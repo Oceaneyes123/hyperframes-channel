@@ -25,5 +25,75 @@
       ]
     },
     "contentHash": "129f818ba82a670fa0d081282488675a8cd51bb36b5b6d41615278f0ef769cc5"
+  },
+  {
+    "source": {
+      "id": "synthetic-volume@1",
+      "provenance": "synthetic",
+      "note": "Hypothetical counter samples for digit carry/borrow and seeking proof; not observed workload or results.",
+      "unit": {
+        "kind": "count",
+        "label": "Requests"
+      },
+      "minimum": -100,
+      "maximum": 10000,
+      "records": [
+        {
+          "id": "previous",
+          "label": "Earlier sample",
+          "value": 9999
+        },
+        {
+          "id": "current",
+          "label": "Next sample",
+          "value": 10000
+        },
+        {
+          "id": "negative",
+          "label": "Signed example",
+          "value": -19
+        },
+        {
+          "id": "zero",
+          "label": "Zero example",
+          "value": 0
+        }
+      ],
+      "relationships": [
+        {
+          "id": "next-sample",
+          "from": "previous",
+          "to": "current",
+          "meaning": "Consecutive hypothetical counter samples, supplied for this fixture only."
+        }
+      ]
+    },
+    "contentHash": "631b6d17ac8b40c6451fbe575a67e93a4a8b857cf0f348214bec934904f2fb93"
+  },
+  {
+    "source": {
+      "id": "synthetic-rate@1",
+      "provenance": "synthetic",
+      "note": "Hypothetical percentage formatting fixture; not model accuracy or business performance.",
+      "unit": {
+        "kind": "percent",
+        "representation": "basis-points"
+      },
+      "minimum": 0,
+      "maximum": 10000,
+      "records": [
+        {
+          "id": "part",
+          "label": "Example proportion",
+          "value": 3250
+        },
+        {
+          "id": "whole",
+          "label": "Example total",
+          "value": 10000
+        }
+      ]
+    },
+    "contentHash": "26e2dfd6319f4da0a4b6cd59c5531c6d7dab407a2e4e9441c68086c67a03eb2e"
   }
 ]

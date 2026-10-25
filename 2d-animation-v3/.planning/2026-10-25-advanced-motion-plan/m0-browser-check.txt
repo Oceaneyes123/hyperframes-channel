@@ -1,0 +1,37 @@
+async (page) => {
+  for(const extra of page.context().pages())if(extra!==page&&extra.url().endsWith('/motion-library'))await extra.close();
+  const errors=[]; page.on('pageerror', error=>errors.push(error.message));
+  const selector=page.getByRole('combobox',{name:'Capability'}), slider=page.getByRole('slider',{name:'Inspect frame'}), svg=page.locator('svg[data-motion-frame]');
+  const seek=async frame=>{await slider.press('Home');for(let i=0;i<frame;i++)await slider.press('ArrowRight');await page.waitForFunction(frame=>document.querySelector('svg[data-motion-frame]')?.getAttribute('data-motion-frame')===String(frame),frame);};
+  const results=[];
+  for(const id of ['typography','handoff','comparison','depth','morph']){
+    await selector.selectOption(id);
+    if(id==='typography'||id==='handoff')await svg.locator('[data-typography]').first().waitFor();
+    await seek(36);const before=await svg.evaluate(el=>el.outerHTML);
+    const values=await svg.locator('[data-value]').allTextContents();
+    await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/'+id+'-before.png'});
+    await seek(119);await seek(0);await seek(36);
+    if(before!==await svg.evaluate(el=>el.outerHTML))throw new Error(id+' mounted backward seek differs');
+    await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/'+id+'-after.png'});
+    await seek(90);
+    if(id==='comparison'&&JSON.stringify(values)!==JSON.stringify(await svg.locator('[data-value]').allTextContents()))throw new Error('Comparison labels changed during animation');
+    if(id==='morph'){
+      const path=svg.locator('[data-morph]');const end=await path.getAttribute('d');await seek(0);if(end===await path.getAttribute('d'))throw new Error('Morph did not change geometry');await seek(90);
+    }
+    await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/'+id+'-desktop.png',fullPage:true});
+    results.push({id,mountedBackwardSeek:'exact',values});
+  }
+  await page.setViewportSize({width:390,height:844});
+  await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/mobile.png',fullPage:true});
+  if(errors.length)throw new Error(errors.join('; '));
+  const bad=await page.context().newPage(), failures=[];
+  bad.on('console',message=>failures.push(message.text()));bad.on('pageerror',error=>failures.push(error.message));
+  await bad.route('**/fonts/inter-heading/InterVariable.woff2',route=>route.fulfill({status:200,body:'corrupt font',contentType:'font/woff2'}));
+  await bad.goto('http://127.0.0.1:3003/motion-library');
+  await bad.getByText('\u26a0\uFE0F',{exact:true}).waitFor({state:'visible',timeout:15000});
+  if(await bad.locator('svg[data-motion-frame]').count()!==0)throw new Error('Corrupt font rendered fallback content');
+  if(!failures.some(message=>message.includes('Approved heading font')))throw new Error('Font corruption did not fail closed');
+  await bad.close();
+  return {results,fontCorruption:'fails closed',errors};
+}
+

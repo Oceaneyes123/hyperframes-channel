@@ -1,0 +1,14 @@
+{
+  "engineHash": "51a57c212a1cb6cd3e1616164fb0390ab9c64f06030b03d6d62542e063ce668f",
+  "cases": [
+    "text-layout",
+    "word-to-ui",
+    "keyword-focus",
+    "type-match"
+  ],
+  "exactMountedSvg": true,
+  "exactMountedPng": true,
+  "exactMatchedWordPixels": true,
+  "pageErrors": 0,
+  "phoneLayoutInspected": true
+}

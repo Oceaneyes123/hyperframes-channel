@@ -1,0 +1,20 @@
+async(page)=>{
+ await page.goto('http://127.0.0.1:3003/motion-library');await page.setViewportSize({width:1280,height:1000});
+ await page.getByRole('combobox',{name:'Capability'}).selectOption('ui-workflow');
+ const svg=page.locator('svg[data-motion-frame]'),slider=page.getByRole('slider',{name:'Inspect frame'});
+ if(await slider.getAttribute('max')!=='239')throw Error('Gallery duration did not follow the plan');
+ const seek=async f=>{await slider.press('Home');for(let i=0;i<f;i++)await slider.press('ArrowRight');await page.waitForFunction(n=>document.querySelector('svg[data-motion-frame]')?.getAttribute('data-motion-frame')===String(n),f);};
+ const states=[];
+ for(const [frame,expected]of [[0,0],[48,1],[100,2],[119,2],[120,2],[152,3],[204,4],[239,4]]){
+  await seek(frame);const token=svg.locator('[data-field-id="question-1"]');if(await token.count()!==1||await token.getAttribute('data-field-value')!=='Is Friday available?')throw Error('Inquiry lost or duplicated at '+frame);
+  if(Number(await svg.locator('[data-ui-stage]').getAttribute('data-ui-stage'))!==expected)throw Error('Wrong semantic state at '+frame);
+  states.push({frame,stage:expected,inquiry:'preserved'});
+ }
+ if(!(await svg.locator('[data-ui-stage]').getAttribute('aria-label')).includes('Is Friday available?'))throw Error('Missing accessible inquiry description');
+ if(!await svg.getByText('Review pending',{exact:true}).isVisible())throw Error('Missing pending human review');
+ for(const id of ['category-1','draft-1'])if(await svg.locator('[data-field-id="'+id+'"]').getAttribute('data-from')!=='question-1')throw Error('Derived identity mismatch');
+ await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/ui-end-desktop.png',fullPage:true});
+ await seek(36);const before=await svg.evaluate(e=>e.outerHTML);await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/ui-before.png'});await seek(239);await seek(0);await seek(36);if(before!==await svg.evaluate(e=>e.outerHTML))throw Error('UI mounted backward SVG mismatch');await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/ui-after.png'});
+ await seek(119);const boundary=await svg.locator('[data-ui-stage]').screenshot();await seek(120);if(!boundary.equals(await svg.locator('[data-ui-stage]').screenshot()))throw Error('Inquiry boundary changed pixels');
+ await seek(239);await page.setViewportSize({width:390,height:844});await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/ui-end-mobile.png',fullPage:true});return{states,exactMountedSvg:true,exactBoundaryPixels:true};
+}

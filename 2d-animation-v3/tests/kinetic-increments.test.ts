@@ -8,7 +8,7 @@ test("each kinetic example validates exact approved start/end correspondence", (
   for (const entry of kineticExamples) {
     const { board, plan } = kineticExample(entry.id);
     if (board.output.kind !== "storyboard") throw new Error();
-    plan.shots[0].sourceHash = hashMotionSource(board.output.shots[0]);
+    for (const shot of plan.shots) shot.sourceHash = hashMotionSource(board.output.shots[shot.sourceIndex]);
     validateMotion(plan, board, hashMotionSource);
   }
 });

@@ -1,0 +1,11 @@
+{
+  "engineHash": "d8427018146d26ec115bc5c3ff2eb7fc52f70b4dfa17738be2bbf747519bd780",
+  "oneInquiryAcrossStates": true,
+  "exactInquiryValue": "Is Friday available?",
+  "exactMountedSvg": true,
+  "exactMountedPng": true,
+  "exactBoundaryPixels": true,
+  "accessibleFieldDescription": true,
+  "pendingReview": true,
+  "phoneLayoutInspected": true
+}

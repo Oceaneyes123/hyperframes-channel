@@ -6,12 +6,24 @@ import { componentParts, type ComponentType, type PartState } from "../../workfl
 import VisualSymbol from "../visual-symbol.tsx";
 import { textFontSize } from "../text-metrics.ts";
 import { DataComparison } from "./data-comparison.tsx";
+import { PerspectiveScene } from "./perspective-scene.tsx";
+import { EditorialCollage } from "./editorial-collage.tsx";
+import { MorphChain } from "./morph-chain.tsx";
 import { MorphShape } from "./morph-shape.tsx";
+import { NumericDisplay } from "./numeric-display.tsx";
+import { UIWorkflow } from "./ui-workflow.tsx";
+import { CharacterRig } from "./character-rig.tsx";
 
-export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1, asset, diagram, comparison, morph }: ComponentDetails & {
+export function VisualComponent({ type, width, height, color, parts, values, label = "", actorId, coordinateScale = 1, asset, diagram, comparison, morph, numeric, ui, rig, morphChain, collage, perspective }: ComponentDetails & {
   type: ComponentType; width: number; height: number; color: string; parts?: Record<string, PartState>; values?: [number, number]; label?: string; actorId?: string; coordinateScale?: number;
 }) {
   const clip = useId(); const states = componentParts(type, color, parts, { asset, diagram });
+  if (type === "perspective-scene@1" && perspective) return <PerspectiveScene width={width} height={height} state={states.camera} actorId={actorId} />;
+  if (type === "editorial-collage@1" && collage) return <EditorialCollage width={width} height={height} states={states} actorId={actorId} coordinateScale={coordinateScale} />;
+  if (type === "morph-chain@1" && morphChain) return <MorphChain chain={morphChain} width={width} height={height} state={states.outline} actorId={actorId} />;
+  if (type === "character-rig@1" && rig) return <CharacterRig width={width} height={height} states={states} actorId={actorId} />;
+  if (type === "ui-workflow@1" && ui) return <UIWorkflow data={ui} width={width} height={height} states={states} actorId={actorId} />;
+  if (type === "numeric-display@1" && numeric) return <NumericDisplay reference={numeric} width={width} height={height} state={states.digits} actorId={actorId} />;
   if (type === "morph-shape@1" && morph) return <MorphShape reference={morph} width={width} height={height} state={states.outline} actorId={actorId} />;
   if (type === "data-comparison@1" && comparison) return <DataComparison reference={comparison} width={width} height={height} states={states} actorId={actorId} />;
   if (type === "graphic-asset@2" || type === "semantic-diagram@1") return <LayeredGraphic type={type} width={width} height={height} color={color} parts={parts} asset={asset} diagram={diagram} actorId={actorId} coordinateScale={coordinateScale} />;

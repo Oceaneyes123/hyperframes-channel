@@ -1,0 +1,22 @@
+{
+  "inputHash": "c4edc83ba79161ca7e4003a980b722b69cc00869ec5acf086ed117ce2e99a815",
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "f627d07057b722cdad213477081eb75f5e026513db55089fe7d1ba156a20ed55",
+  "ids": [
+    "collage"
+  ],
+  "frames": 120,
+  "freshSeeks": 14,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "seconds": 4,
+  "fullDecode": true,
+  "audio": false,
+  "preview": {
+    "comparedFrames": 120,
+    "minimumSsim": 0.980027,
+    "threshold": 0.98
+  }
+}

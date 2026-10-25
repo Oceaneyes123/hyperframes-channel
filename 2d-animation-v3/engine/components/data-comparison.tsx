@@ -7,7 +7,7 @@ export function DataComparison({ reference, width, height, states, actorId }: { 
   const plotX = width * .08, plotWidth = width * .84, range = source.maximum - source.minimum;
   const x = (value: number) => plotX + (value - source.minimum) / range * plotWidth, zero = x(0);
   return <g data-shape>
-    <text x={plotX} y={height * .1} fontFamily="Arial" fontSize={width * .045} fill="#244E42">{source.unit.kind === "currency" ? source.unit.currency : source.unit.label}</text>
+    <text x={plotX} y={height * .1} fontFamily="Arial" fontSize={width * .045} fill="#244E42">{source.unit.kind === "currency" ? source.unit.currency : source.unit.kind === "percent" ? "Percent" : source.unit.label}</text>
     {records.map((record, index) => {
       const id = index ? "bar-two" : "bar-one", state = states[id], mask = `${uid}-${id}`, y = height * (.29 + index * .3), length = Math.abs(x(record.value) - zero);
       return <g key={id} data-actor={actorId ? `${actorId}.${id}` : undefined} data-part={id} opacity={state.opacity} color={state.color}>

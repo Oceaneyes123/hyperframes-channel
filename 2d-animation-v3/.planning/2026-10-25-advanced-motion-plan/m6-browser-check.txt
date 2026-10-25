@@ -1,0 +1,19 @@
+async(page)=>{
+ const external=[],errors=[];page.on('request',r=>{if(/^https?:/.test(r.url())&&!r.url().startsWith('http://127.0.0.1:3003/'))external.push(r.url());});page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:3003/motion-library');await page.setViewportSize({width:1280,height:1000});await page.getByRole('combobox',{name:'Capability'}).selectOption('collage');
+ await page.locator('[data-raster-ready=true]').waitFor();await page.locator('[data-typography]').waitFor();
+ const svg=page.locator('svg[data-motion-frame]'),slider=page.getByRole('slider',{name:'Inspect frame'});
+ const seek=async f=>{await slider.press('Home');for(let i=0;i<f;i++)await slider.press('ArrowRight');await page.waitForFunction(n=>document.querySelector('svg[data-motion-frame]')?.getAttribute('data-motion-frame')===String(n),f);};
+ const ids=await svg.locator('[id]').evaluateAll(es=>es.map(e=>e.id));if(new Set(ids).size!==ids.length)throw Error('Duplicate SVG ID');
+ if(await svg.locator('[data-part]').count()!==5)throw Error('Layers flattened');
+ await seek(119);const crop=await svg.locator('[data-raster]').evaluate(e=>({viewport:e.parentElement.getAttribute('viewBox'),rasterWidth:e.getAttribute('width')}));if(crop.viewport!=='80 80 920 1200'||crop.rasterWidth!=='1086')throw Error('Crop changed');
+ await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/collage-desktop.png',fullPage:true});
+ await seek(51);const before=await svg.evaluate(e=>e.outerHTML);await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/collage-before.png'});
+ await page.context().setOffline(true);await seek(119);await seek(0);await seek(51);if(before!==await svg.evaluate(e=>e.outerHTML))throw Error('Backward SVG differs offline');await svg.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/collage-after.png'});await page.context().setOffline(false);
+ await page.setViewportSize({width:390,height:844});await seek(119);await page.screenshot({path:'.planning/2026-10-25-advanced-motion-plan/collage-mobile.png',fullPage:true});
+ const bad=await page.context().newPage(),failures=[];bad.on('console',m=>failures.push(m.text()));bad.on('pageerror',e=>failures.push(e.message));
+ await bad.route('**/media/collage/fictional-desk-v1.png',async route=>{const response=await route.fetch(),body=await response.body();body[100]^=1;await route.fulfill({response,body});});
+ await bad.goto('http://127.0.0.1:3003/motion-library');await bad.getByRole('combobox',{name:'Capability'}).selectOption('collage');await bad.getByText('⚠️',{exact:true}).waitFor({state:'visible',timeout:15000});
+ if(await bad.locator('svg[data-motion-frame]').count()!==0||!failures.some(m=>m.includes('Raster is corrupt or has changed')))throw Error('Corrupt photo did not fail closed');await bad.close();
+ if(errors.length||external.length)throw Error(JSON.stringify({errors,external}));return{layers:5,uniqueIds:true,exactBackwardSvg:true,offlineCachedSeek:true,corruption:'fails closed',crop,externalRequests:external.length};
+}

@@ -1,0 +1,22 @@
+{
+  "inputHash": "ea46383681cb3ef027240a2441e0e46574c80e3ffc4c886374f8de36e00b1ce9",
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "d8427018146d26ec115bc5c3ff2eb7fc52f70b4dfa17738be2bbf747519bd780",
+  "ids": [
+    "ui-workflow"
+  ],
+  "frames": 240,
+  "freshSeeks": 19,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "seconds": 8,
+  "fullDecode": true,
+  "audio": false,
+  "preview": {
+    "comparedFrames": 240,
+    "minimumSsim": 0.996188,
+    "threshold": 0.98
+  }
+}

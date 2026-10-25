@@ -1,0 +1,23 @@
+{
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "1d067b92e70490c18b8c0567a5aeefd2b119fb921c7af9845cf763badb242658",
+  "ids": [
+    "rolling-value",
+    "value-transition",
+    "percent"
+  ],
+  "frames": 360,
+  "freshSeeks": 24,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "seconds": 12,
+  "fullDecode": true,
+  "audio": false,
+  "preview": {
+    "comparedFrames": 360,
+    "minimumSsim": 0.999094,
+    "threshold": 0.98
+  }
+}

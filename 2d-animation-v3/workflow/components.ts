@@ -4,8 +4,20 @@ import { type GraphicReference, assetMetadata, graphicAssetRegistry } from "./gr
 import { type Diagram } from "./diagram.ts";
 import type { ComparisonReference } from "./comparison.ts";
 import type { MorphReference } from "./morphs.ts";
+import type { NumericReference } from "./numeric.ts";
+import type { PerspectiveReference } from "./perspective.ts";
+import type { CollageReference } from "./raster.ts";
+import type { MorphChain } from "./semantic-morphs.ts";
+import type { RigReference } from "./character-rig.ts";
+import type { UIWorkflow } from "./ui-workflow.ts";
 
 export const componentRegistry = {
+  "perspective-scene@1": ["camera"],
+  "editorial-collage@1": ["photo", "paper", "texture", "vector", "type"],
+  "morph-chain@1": ["outline"],
+  "character-rig@1": ["body", "document", "laptop"],
+  "ui-workflow@1": ["surface", "inquiry", "category", "draft", "focus"],
+  "numeric-display@1": ["digits"],
   "morph-shape@1": ["outline"],
   "data-comparison@1": ["bar-one", "bar-two"],
   "complaint-workflow@1": graphicAssetRegistry["complaint-workflow@1"].layers,
@@ -24,12 +36,18 @@ export const partStateSchema = z.strictObject({
   reveal: z.number().min(0).max(1).optional(),
   strokeProgress: z.number().min(0).max(1).optional(),
   morphProgress: z.union([z.literal(0), z.literal(1)]).optional(),
+  numericProgress: z.union([z.literal(0), z.literal(1)]).optional(),
+  uiStage: z.number().int().min(0).max(4).optional(),
+  rigProgress: z.literal(0).optional(),
+  cameraX: z.number().min(-180).max(220).optional(), cameraY: z.number().min(-60).max(60).optional(), cameraZ: z.number().min(0).max(120).optional(), depthProgress: z.number().min(0).max(1).optional(),
+  morphStage: z.number().int().min(0).max(4).optional(),
+  handoffProgress: z.union([z.literal(0), z.literal(1)]).optional(),
 });
 export type PartState = z.infer<typeof partStateSchema>;
 export const componentPartsSchema = z.record(z.string().regex(/^[a-z][a-z0-9-]{0,19}$/), partStateSchema);
 // Supplied integer units only; the renderer never invents financial values or currency.
 export const chartValuesSchema = z.tuple([z.number().int().min(0).max(1_000_000_000), z.number().int().min(0).max(1_000_000_000)]);
-export type ComponentDetails = { asset?: GraphicReference; diagram?: Diagram; comparison?: ComparisonReference; morph?: MorphReference };
+export type ComponentDetails = { asset?: GraphicReference; diagram?: Diagram; comparison?: ComparisonReference; morph?: MorphReference; numeric?: NumericReference; ui?: UIWorkflow; rig?: RigReference; morphChain?: MorphChain; collage?: CollageReference; perspective?: PerspectiveReference };
 export function componentLayerIds(type: ComponentType, details?: ComponentDetails): readonly string[] {
   if (type === "graphic-asset@2") { const asset = details?.asset && assetMetadata(details.asset.id); return asset?.layers ?? []; }
   if (type === "semantic-diagram@1") { const graph = details?.diagram; return graph ? [...graph.nodes.map((node) => node.id), ...graph.edges.map((edge) => edge.id)] : []; }

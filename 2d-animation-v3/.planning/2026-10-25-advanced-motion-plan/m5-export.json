@@ -1,0 +1,28 @@
+{
+  "inputHash": "f83c12d536f0fb80778e61dddd6c79f5ed467e5d82d05c1212b706fae9a0fbe3",
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "c1116f6e1a8a9811813709a7b47834aa58ec656665195419ed8e69d319939f57",
+  "ids": [
+    "question-answer",
+    "document-checklist",
+    "complaints-problem",
+    "problem-product",
+    "blocks-chart",
+    "manual-automated",
+    "morph-chain"
+  ],
+  "frames": 900,
+  "freshSeeks": 59,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "seconds": 30,
+  "fullDecode": true,
+  "audio": false,
+  "preview": {
+    "comparedFrames": 900,
+    "minimumSsim": 0.999031,
+    "threshold": 0.98
+  }
+}

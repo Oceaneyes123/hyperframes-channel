@@ -1,0 +1,22 @@
+{
+  "inputHash": "c16f6fe4e121ef9a3f10965c2f5c796463ad60fac596d60716769281d62e2ee5",
+  "syntheticOnly": true,
+  "productionApproval": false,
+  "engineHash": "58af85c44a1ebb02395eac14ead69abd70d0c0beb96e6165549da44a8ef7e4dd",
+  "ids": [
+    "perspective"
+  ],
+  "frames": 420,
+  "freshSeeks": 23,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "seconds": 14,
+  "fullDecode": true,
+  "audio": false,
+  "preview": {
+    "comparedFrames": 420,
+    "minimumSsim": 0.998488,
+    "threshold": 0.98
+  }
+}
