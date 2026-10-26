@@ -9,6 +9,7 @@ import { openStudio, ConflictError } from "./studio.ts";
 import { scriptLines } from "../workflow/visuals.ts";
 import { inspectMotion, validateTiming, type LineTiming } from "../workflow/production.ts";
 import { inspectWav } from "./wav.ts";
+import { inspectGraphics } from "../engine/quality/inspect-graphics.ts";
 import { openTiming } from "./timing-store.ts";
 
 const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
@@ -83,6 +84,11 @@ export function openProduction(directory: string, videos: string) {
       const request = z.strictObject({ binding: z.string().regex(/^[a-f0-9]{64}$/), gate: z.enum(["gate1", "gate2"]), reviewed: z.literal(true), notes: z.string().trim().min(10).max(2000) }).parse(input);
       return transaction(() => {
         const current = snapshot(projectId); if (request.binding !== current.binding) throw new ConflictError("Production inputs changed. Review again.");
+        if (request.gate === "gate1") {
+          const graphics = inspectGraphics(current.board).findings.filter((finding) => ["numeric-container", "comparison-alignment", "copy-density"].includes(finding.rule));
+          const motionDefects = current.quality.findings.filter((finding) => ["long-hold", "passive-sequence", "repetitive-preset"].includes(finding.ruleId));
+          if (graphics.length || motionDefects.length) throw new ConflictError(`Fix ${graphics.length} graphic and ${motionDefects.length} motion quality findings before Gate 1.`);
+        }
         const prior = gates(projectId, current.binding); if (request.gate === "gate2" && !prior.gate1) throw new ConflictError("Gate 1 is required before independent moving/audio approval.");
         return append(projectId, request.gate, { binding: current.binding, gate1: request.gate === "gate2" ? prior.gate1 : null, notes: request.notes, reviewed: true });
       });

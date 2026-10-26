@@ -21,6 +21,19 @@ test("weak choreography produces stable, frame-linked evidence rather than a uni
   assert.ok(report.findings.every((finding) => finding.shotId && finding.startFrame >= 0 && finding.endFrame >= finding.startFrame && finding.evidence && finding.suggestion));
 });
 
+test("motion review catches long passive holds and three-shot reveal templates", () => {
+  const { plan } = motionBeatFixture();
+  plan.shots.forEach((shot) => {
+    shot.durationFrames = 180;
+    const entry = shot.beats![0]; if (entry.presetId !== "snap-overshoot@1") throw new Error();
+    shot.beats = [{ ...entry, type: "entry", startFrame: 10, endFrame: 30 },
+      { ...shot.beats!.find((beat) => beat.type === "hold")!, startFrame: 45, endFrame: 179 }];
+  });
+  const rules = new Set(inspectMotion(plan).findings.map((finding) => finding.ruleId));
+  assert.ok(rules.has("long-hold"));
+  assert.ok(rules.has("passive-sequence"));
+});
+
 test("renderer text metrics, contrast, clipping and crowding detect weak settled layouts", () => {
   const { plan, board } = motionBeatFixture(); const shot = plan.shots[0];
   const text = shot.objects.find((object) => object.type === "heading")!;

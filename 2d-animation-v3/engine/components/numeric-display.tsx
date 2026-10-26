@@ -18,7 +18,7 @@ export function NumericDisplay({ reference, width, height, state, actorId, progr
   const cell = Math.floor(width / columns.length), size = Math.floor(Math.min(height * .7, cell / glyphWidth)), row = Math.ceil(size * 1.3);
   const prefix = actorId ? `${actorId}.digits` : undefined;
   return <g data-shape role="img" aria-label={`Supplied target: ${data.final}`} color={state.color}>
-    <defs><clipPath id={uid}><rect data-reveal={prefix} width={width * (state.reveal ?? 1)} height={row} /></clipPath></defs>
+    <defs><clipPath id={uid}><rect data-reveal={prefix} width={width * (state.reveal ?? 1)} height={height} /></clipPath></defs>
     <g data-actor={prefix} data-part="digits" opacity={state.opacity} clipPath={`url(#${uid})`}>
       {columns.map((column, index) => {
         const position = progress * column.distance, current = Math.floor(position);

@@ -14,6 +14,22 @@ export function inspectGraphics(input: unknown) {
     const add = (rule: string, evidence: string, suggestion: string, severity: GraphicFinding["severity"] = "review") => findings.push({ id: `${item.index}-${state}-${rule}-${findings.length}`, shotIndex: item.index, state, rule, evidence, suggestion, severity });
     if (frame.shapes.length > 10) add("density", `${frame.shapes.length} root objects compete for a phone-sized frame.`, "Remove supporting detail or reveal information progressively.");
     const labels = frame.shapes.filter((shape) => ["text", "heading", "caption", "code", "centered-text"].includes(shape.type));
+    if (labels.length > 2) add("copy-density", `${labels.length} text actors share one frame.`, "Keep at most two essential short labels; move explanation into narration or staged objects.", "warning");
+    const numeric = frame.shapes.filter((shape) => shape.type === "numeric-display@1");
+    for (const bank of frame.shapes.filter((shape) => shape.type === "banking-balance@1")) for (const amount of numeric) {
+      const centerY = (amount.y + amount.height / 2 - bank.y) / bank.height * 1100;
+      if (centerY < 237 || centerY > 894) continue;
+      const x = (amount.x - bank.x) / bank.width * 800, right = (amount.x + amount.width - bank.x) / bank.width * 800;
+      const top = (amount.y - bank.y) / bank.height * 1100, bottom = (amount.y + amount.height - bank.y) / bank.height * 1100;
+      const slots = [[320, 430], [555, 665], [790, 880]];
+      if (x < 135 || right > 665 || !slots.some(([start, end]) => top >= start && bottom <= end)) add("numeric-container", "A bank amount leaves its card's padded value area or overlaps its built-in label.", "Place each sourced amount below its card label and inside the card's padded bounds.", "warning");
+    }
+    for (const operator of labels.filter((shape) => shape.type === "centered-text" && /^[<>≤≥=]$/.test(shape.label.trim()))) {
+      const left = numeric.find((shape) => shape.x + shape.width <= operator.x + .5);
+      const right = numeric.find((shape) => shape.x >= operator.x + operator.width - .5);
+      if (left && right && [left, right].some((shape) => Math.abs(shape.y + shape.height / 2 - (operator.y + operator.height / 2)) > .5))
+        add("comparison-alignment", `Comparison symbol '${operator.label}' and numeric values have different vertical centers.`, "Align the operator box center with both value box centers.", "warning");
+    }
     for (const label of labels) {
       const size = textFontSize(label.type, label.label, label.width * 10.8, label.height * 19.2);
       if (size < 56) add("text-size", `${label.label}: ${size.toFixed(1)}px at 1080px width.`, "Enlarge or shorten the label, then inspect at phone size.", "warning");

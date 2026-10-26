@@ -6,8 +6,7 @@ import { comparisonSources } from "../workflow/comparison.ts";
 import { frameSchema } from "../workflow/visuals.ts";
 import { validateMotion, expandMotionShot } from "../workflow/motion.ts";
 import { hashMotionSource } from "../server/motion-store.ts";
-import { financeFixture, financeFrame } from "../videos/card-declined/technical-fixture.ts";
-import { styleDirections } from "../videos/card-declined/style-directions.ts";
+import { financeFixture, financeFrame, styleDirections } from "./fixtures/finance.ts";
 
 test("finance records bind exact supplied cents and arithmetic without an invented approval", () => {
   const { source, contentHash } = comparisonSources.find(e => e.source.id === "card-declined-example@1")!;

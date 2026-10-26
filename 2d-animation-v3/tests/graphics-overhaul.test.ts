@@ -13,6 +13,7 @@ import { validateMotion } from "../workflow/motion.ts";
 import { hashMotionSource } from "../server/motion-store.ts";
 import { inspectGraphics, sceneDesignHistory } from "../engine/quality/inspect-graphics.ts";
 import { visualArtifactSchema, replaceShot } from "../workflow/visuals.ts";
+import { financeFixture } from "./fixtures/finance.ts";
 
 test("curated vectors have exact content hashes and reject executable/imported payloads and deep trees", () => {
   for (const { asset, contentHash } of Object.values(vectorLibrary)) assert.equal(createHash("sha256").update(JSON.stringify(asset)).digest("hex"), contentHash);
@@ -34,6 +35,15 @@ test("semantic layout preserves branching, groups and feedback edges determinist
   assert.throws(() => diagramSchema.parse({ ...graph, edges: [{ ...graph.edges[0], to: "missing" }] }));
   assert.throws(() => diagramSchema.parse({ ...graph, nodes: graph.nodes.map((node) => node.id === "worker" ? { ...node, parent: "cache" } : node) }));
   assert.throws(() => diagramSchema.parse({ ...graph, edges: [{ ...graph.edges[0], id: "input" }] }));
+});
+
+test("linear portrait route centers its complete icon and label footprint", () => {
+  const route = diagramSchema.parse({ direction: "down", nodes: ["Merchant", "Processor", "Network", "Issuer"].map((label) => ({ id: label.toLowerCase(), icon: "payment" as const, label })),
+    edges: [{ id: "one", from: "merchant", to: "processor", label: "" }, { id: "two", from: "processor", to: "network", label: "" }, { id: "three", from: "network", to: "issuer", label: "" }] });
+  const nodes = layoutDiagram(route).nodes;
+  assert.equal(new Set(nodes.map((node) => node.x)).size, 1);
+  const left = nodes[0].x - 80, right = nodes[0].x + 108 + 9 * 36;
+  assert.ok(Math.abs((left + right) / 2 - 500) < 1);
 });
 
 test("eight compositions hydrate exact assets, graph layers and backgrounds without mutating source", () => {
@@ -61,6 +71,28 @@ test("graphic quality reports mobile defects and intentional continuity exempts 
   const replacement = { ...shot, action: "Focused artwork revision." };
   const revised = replaceShot(board.output, 0, replacement, Array.from({ length: 8 }, (_, i) => `Line ${i + 1}`).join("\n"));
   assert.equal(JSON.stringify(revised.shots[1]), before);
+});
+
+test("graphic review catches card amount overflow, excess copy and a misaligned comparator", () => {
+  const { board } = financeFixture();
+  const bankFindings = inspectGraphics(board).findings;
+  assert.ok(bankFindings.some((finding) => finding.rule === "numeric-container"));
+  if (board.output.kind !== "storyboard") throw new Error();
+  for (const frame of [board.output.shots[1].startFrame, board.output.shots[1].endFrame]) {
+    frame.shapes.filter((shape) => shape.type === "numeric-display@1").forEach((shape, index) => {
+      Object.assign(shape, { x: 30, width: 40, y: [38, 51, 64][index], height: 5 });
+    });
+  }
+  assert.ok(!inspectGraphics(board).findings.some((finding) => finding.rule === "numeric-container"));
+  const frame = board.output.shots[0].endFrame;
+  const values = board.output.shots[1].endFrame.shapes.filter((shape) => shape.type === "numeric-display@1").slice(0, 2);
+  frame.shapes = [...values.map((shape, index) => ({ ...shape, x: index ? 56 : 10, y: 50, width: 34 })),
+    { type: "centered-text", x: 46, y: 45, width: 8, height: 10, color: "#FFFFFF", label: ">" },
+    { type: "heading", x: 10, y: 8, width: 80, height: 8, color: "#FFFFFF", label: "Comparison" },
+    { type: "text", x: 10, y: 30, width: 30, height: 6, color: "#FFFFFF", label: "Purchase" }];
+  const rules = new Set(inspectGraphics(board).findings.map((finding) => finding.rule));
+  assert.ok(rules.has("comparison-alignment"));
+  assert.ok(rules.has("copy-density"));
 });
 
 

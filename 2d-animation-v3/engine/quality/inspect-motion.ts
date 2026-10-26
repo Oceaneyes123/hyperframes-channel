@@ -20,7 +20,7 @@ const contrast = (a: string, b: string) => { const x = luminance(a), y = luminan
 
 export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact | null) {
   const schedule = scheduleMotion(plan), findings: MotionFinding[] = [], usage: Record<string, number> = {};
-  let previousPreset = "", repeated = 0;
+  let previousPreset = "", repeated = 0, passiveShots = 0;
   let previousStates: Map<string, Partial<MotionState>> | null = null, previousCamera: Camera | null = null;
   for (const [index, original] of plan.shots.entries()) {
     const shot = expandMotionShot(original), offset = schedule.shots[index].startFrame;
@@ -57,6 +57,8 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
         Object.assign(state, action.to);
       }
     }
+    for (const hold of holds) if (hold.endFrame - hold.startFrame > 120 && !objectActivity.some((interval) => interval.start < hold.endFrame && interval.end > hold.startFrame))
+      add("long-hold", hold.startFrame, hold.endFrame, "a static reading hold lasts over four seconds.", `${hold.endFrame - hold.startFrame} frames without object development.`, "Shorten the hold or add a source-faithful state change before the next reading hold.", null, false, "warning");
     const drift = shot.actions.find((action) => action.targetIds.includes("camera") && action.endFrame - action.startFrame >= qualityThresholds.stillFrames && !objectActivity.some((interval) => interval.start < action.endFrame && interval.end > action.startFrame) && !holds.some((hold) => hold.startFrame <= action.startFrame && hold.endFrame >= action.endFrame));
     if (drift) add("camera-only-drift", drift.startFrame, drift.endFrame, "long camera drift over otherwise static actors.", "No object state develops during this camera move.", "Replace the drift with a visible interaction or an intentional reading hold.");
     let cursor = 0;
@@ -70,6 +72,8 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
       if ((beat.type === "entry" || beat.presetId === "cascade@1") && entrance > qualityThresholds.entranceFrames) add("slow-entrance", beat.startFrame, beat.endFrame, "inspect a slow important entrance.", `${entrance} frames per entrance before settling.`, "Shorten the entrance while preserving a separate reading hold.", beat.id);
     }
     const primary = (shot.beats ?? []).filter((beat) => beat.type !== "hold" && beat.importance === "primary"), firstPreset = primary[0]?.presetId ?? "";
+    passiveShots = shot.beats && shot.durationFrames >= 150 && !shot.beats.some((beat) => ["transformation", "impact"].includes(beat.type)) ? passiveShots + 1 : 0;
+    if (passiveShots >= 3) add("passive-sequence", 0, shot.durationFrames - 1, "three or more explanatory shots use only entrances, emphasis and holds.", `${passiveShots} consecutive shots lack a transformation or causal interaction.`, "Use a source-faithful interaction from the motion library to show how the mechanism changes state.", null, true, "warning");
     repeated = firstPreset && firstPreset === previousPreset ? repeated + 1 : 1; previousPreset = firstPreset;
     if (firstPreset && repeated >= qualityThresholds.repeatedShots) add("repetitive-preset", 0, shot.durationFrames - 1, "the same primary preset repeats across consecutive shots.", `${firstPreset} leads ${repeated} consecutive shots.`, "Use a different meaningful interaction where the explanation changes.");
     const crowded = primary.find((beat) => primary.filter((other) => other.startFrame <= beat.startFrame && other.endFrame > beat.startFrame).length >= qualityThresholds.competingPrimary);

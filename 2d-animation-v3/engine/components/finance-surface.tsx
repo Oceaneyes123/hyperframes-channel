@@ -2,11 +2,12 @@ import { useId, type ReactNode } from "react";
 import type { PartState } from "../../workflow/components.ts";
 
 // Amounts are separate source-bound numeric actors; these surfaces never invent money.
-export function FinanceSurface({ type, width, height, states, actorId }: {
+export function FinanceSurface({ type, width, height, states, actorId, label }: {
   type: "payment-terminal@1" | "banking-balance@1";
-  width: number; height: number; states: Record<string, PartState>; actorId?: string;
+  width: number; height: number; states: Record<string, PartState>; actorId?: string; label?: string;
 }) {
   const instance = useId();
+  const brand = label?.trim() || (type === "payment-terminal@1" ? "ARC / PAYMENTS" : "ARC / BANK");
   const part = (id: string, children: ReactNode) => {
     const s = states[id], clip = `${instance}-${id}`;
     return <g key={id}><defs><clipPath id={clip}><rect data-reveal={actorId ? `${actorId}.${id}` : undefined} width={width * (s.reveal ?? 1)} height={height} transform={`scale(${800 / width} ${1100 / height})`} /></clipPath></defs>
@@ -26,7 +27,7 @@ export function FinanceSurface({ type, width, height, states, actorId }: {
       <path d="M100 245V150Q100 80 175 80H625" fill="none" stroke="#92A2B3" strokeWidth="3" opacity=".6" />
       <rect x="121" y="148" width="558" height="478" rx="28" fill="#070E17" stroke="#4A596A" strokeWidth="3" />
       <rect x="142" y="170" width="516" height="434" rx="16" fill={`url(#${instance}-glass)`} />
-      <text x="178" y="218" fill="#A8B7C8" fontSize="22" letterSpacing="5">ARC / PAYMENTS</text>
+      <text x="178" y="218" fill="#A8B7C8" fontSize="22" letterSpacing="5">{brand}</text>
       <circle cx="615" cy="210" r="7" fill="#73D8BC" />
       <path d="M180 250H620" stroke="#3D4C60" />
       {part("tap", <><circle cx="400" cy="385" r="66" fill="none" stroke="currentColor" strokeWidth="3" /><path d="M385 344Q433 385 385 426M406 323Q479 385 406 447" fill="none" stroke="currentColor" strokeWidth="8" strokeLinecap="round" /><text x="400" y="525" textAnchor="middle" fill="currentColor" fontSize="32">TAP CARD</text></>)}
@@ -39,7 +40,7 @@ export function FinanceSurface({ type, width, height, states, actorId }: {
       <rect x="63" y="15" width="674" height="1060" rx="88" fill="#090F18" stroke="#697786" strokeWidth="4" />
       <rect x="82" y="34" width="636" height="1022" rx="70" fill="#102131" />
       <rect x="295" y="50" width="210" height="38" rx="19" fill="#060B12" />
-      <text x="128" y="146" fill="#F0F4F7" fontSize="28" letterSpacing="5">ARC / BANK</text>
+      <text x="128" y="146" fill="#F0F4F7" fontSize="28" letterSpacing="5">{brand}</text>
       <text x="128" y="198" fill="#9CAFC1" fontSize="23">Everyday debit</text>
       {part("current", <><rect x="115" y="237" width="570" height="209" rx="30" fill="#1D3347" stroke="#40596D" /><text x="148" y="285" fill="currentColor" fontSize="40">Current balance</text></>)}
       {part("available", <><rect x="115" y="470" width="570" height="209" rx="30" fill="#173B39" stroke="#3B7368" /><text x="148" y="519" fill="currentColor" fontSize="40">Available to spend</text></>)}

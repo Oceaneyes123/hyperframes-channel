@@ -28,10 +28,13 @@ export function layoutDiagram(input: Diagram) {
   }
   for (const node of graph.nodes) if (!ranks.has(node.id)) ranks.set(node.id, 0);
   const maximum = Math.max(...ranks.values());
+  const linearDown = graph.direction === "down" && graph.nodes.every((node) => graph.nodes.filter((peer) => ranks.get(peer.id) === ranks.get(node.id)).length === 1);
+  const labelWidth = Math.min(430, Math.max(0, ...graph.nodes.map((node) => node.label.length * 36)));
   const nodes = graph.nodes.map((node) => {
     const rank = ranks.get(node.id)!, peers = graph.nodes.filter((item) => ranks.get(item.id) === rank), slot = peers.findIndex((item) => item.id === node.id);
     const primary = (rank + .5) / (maximum + 1) * 800 + 100, secondary = (slot + 1) / (peers.length + 1) * 800 + 100;
-    return { ...node, x: graph.direction === "down" ? secondary : primary, y: graph.direction === "down" ? primary : secondary };
+    const centeredRoute = linearDown && labelWidth ? 500 - (28 + labelWidth) / 2 : secondary;
+    return { ...node, x: graph.direction === "down" ? centeredRoute : primary, y: graph.direction === "down" ? primary : secondary };
   });
   const edges = graph.edges.map((edge, index) => {
     const from = nodes.find((node) => node.id === edge.from)!, to = nodes.find((node) => node.id === edge.to)!;

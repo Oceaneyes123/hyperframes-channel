@@ -5,6 +5,7 @@ import { z } from "zod";
 import { openDatabase } from "./database.ts";
 import { ConflictError, openStudio } from "./studio.ts";
 import { conceptsSchema, replaceShot, validateStoryboard, visualSchemaVersion, visualArtifactSchema, visualOutputSchema, visualRequestSchema, type VisualOutput } from "../workflow/visuals.ts";
+import { inspectGraphics } from "../engine/quality/inspect-graphics.ts";
 
 const digest = (bytes: string) => createHash("sha256").update(bytes).digest("hex");
 const selectionSchema = z.strictObject({ id: z.uuid(), projectId: z.uuid(), runId: z.uuid(), optionIndex: z.number().int().min(0).max(2) });
@@ -141,6 +142,8 @@ export function openVisuals(directory: string, videosDirectory: string) {
       transaction(() => {
         const artifact = read(projectId, runId);
         if (!artifact || artifact.output.kind !== "storyboard" || !current(projectId, runId)) throw new ConflictError("Storyboard is unavailable or stale.");
+        const defects = inspectGraphics(artifact).findings.filter((finding) => ["numeric-container", "comparison-alignment", "copy-density"].includes(finding.rule));
+        if (defects.length) throw new ConflictError(`Storyboard has ${defects.length} unresolved layout defects: ${[...new Set(defects.map((finding) => finding.rule))].join(", ")}. Revise before accepting.`);
         const row = rows(projectId).find((row) => row.id === runId)!;
         database.prepare(`INSERT INTO storyboard_acceptances VALUES (?, ?, ?, ?) ON CONFLICT(project_id) DO UPDATE SET run_id = excluded.run_id, sha256 = excluded.sha256, accepted_at = excluded.accepted_at`)
           .run(projectId, runId, row.sha256, new Date().toISOString());

@@ -1,7 +1,14 @@
-# Card Declined But I Have Money — review pointer
+# Card Declined But I Have Money
 
-**Script approval pending. Real video and production approval remain incomplete.**
+This folder contains the current fact sheet, unaccepted script, provisional storyboard, visual and motion proposal, reusable-component mapping, and review status. All project materials are proposals until explicitly accepted in Studio.
 
-Open the [project report](../../../videos/card-declined/REPORT.md), [proposed 75-second script](../../../videos/card-declined/SCRIPT-REVIEW.md), [research and citations](../../../videos/card-declined/research/fact-sheet.md), [provisional storyboard/motion](../../../videos/card-declined/PROVISIONAL-STORYBOARD.md), [style directions](../../../videos/card-declined/STYLE-DIRECTIONS.md), and [component reuse inventory](../../../videos/card-declined/COMPONENTS.md).
+- [Production status and open gates](./STATUS.md)
+- [Research and source boundaries](./RESEARCH.md)
+- [Proposed 76-second script](./SCRIPT.md)
+- [Storyboard and visual direction](./STORYBOARD.md)
+- [Motion proposal](./MOTION.md)
+- [Component reuse](./COMPONENTS.md)
+- [Technical evidence](./TECHNICAL-REVIEW.md)
+- [Creative review](./CREATIVE-REVIEW.md)
 
-Open the [visual review page](../../../videos/card-declined/review.html) and [technical/visual evidence](../../../videos/card-declined/TECHNICAL-REVIEW.md). Three distinct styleframes and the verified silent proof are included. The eight-second silent synthetic proof is software verification only; it grants no real script/storyboard/motion acceptance, narrated-preview approval, final render authorization or publishing authorization. No unseen original script is claimed to have been corrected.
+The three stills under `.data/card-declined-review-2026-10-26d/` and the eight-second MP4 are local synthetic review artifacts. They establish renderer behavior only; they do not accept the script, storyboard, or motion, approve narration, satisfy production review, authorize a final render, or authorize publication. Re-run `node scripts/verify-card-declined.mjs` after fixture changes.
