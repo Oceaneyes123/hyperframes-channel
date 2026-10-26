@@ -27,6 +27,7 @@ function Decision({ projectId, runId, optionIndex, selectionId, disabled, childr
   return <form action={action} className="mt-5">
     <input type="hidden" name="runId" value={runId} /><input type="hidden" name="decision" value={optionIndex === undefined ? "accept" : "choose"} />
     <input type="hidden" name="optionIndex" value={optionIndex ?? ""} /><input type="hidden" name="selectionId" value={selectionId ?? ""} />
+    {optionIndex === undefined && <label className="mb-3 flex gap-2 text-sm"><input type="checkbox" name="reviewedFindings" required />I reviewed the phone-size artwork and creative findings, including intentional exceptions.</label>}
     <button disabled={disabled || pending}>{pending ? "Saving…" : children}</button>
     {state.error && <p role="alert" className="mt-3 text-sm text-[var(--error)]">{state.error}</p>}
   </form>;

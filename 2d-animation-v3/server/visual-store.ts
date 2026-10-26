@@ -1,3 +1,4 @@
+import type { CreativeSnapshot } from "../workflow/creative-rules.ts";
 import { createHash, randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -93,7 +94,7 @@ export function openVisuals(directory: string, videosDirectory: string) {
         return id;
       });
     },
-    complete(projectId: string, id: string, input: unknown) {
+    complete(projectId: string, id: string, input: unknown, creativeRules?: CreativeSnapshot) {
       let ownedTemporary = false; let ownedFinal = false; const destination = pathFor(projectId, id); const temporary = destination + ".tmp";
       try {
         return transaction(() => {
@@ -110,7 +111,7 @@ export function openVisuals(directory: string, videosDirectory: string) {
             if (!base || base.output.kind !== "storyboard" || base.selectionId !== request.selectionId || base.scriptId !== request.scriptId) throw new ConflictError("Shot base changed.");
             output = { kind: "storyboard", ...replaceShot(base.output, request.shotIndex!, input, content) };
           } else output = { kind: "storyboard", ...validateStoryboard(input, content) };
-          const artifact = visualArtifactSchema.parse({ schemaVersion: visualSchemaVersion(output), id, projectId, createdAt: row.created_at, scriptId: request.scriptId, scriptHash: row.script_hash,
+          const artifact = visualArtifactSchema.parse({ creativeRules, schemaVersion: visualSchemaVersion(output), id, projectId, createdAt: row.created_at, scriptId: request.scriptId, scriptHash: row.script_hash,
             selectionId: request.selectionId, baseId: request.baseId, instruction: request.instruction, output: visualOutputSchema.parse(output) });
           const bytes = JSON.stringify(artifact, null, 2) + "\n";
           if (existsSync(destination)) throw new Error("Existing artifact preserved for recovery.");
@@ -138,11 +139,11 @@ export function openVisuals(directory: string, videosDirectory: string) {
         database.prepare("INSERT INTO concept_selections VALUES (?, ?, ?, ?, ?)").run(id, projectId, runId, optionIndex, new Date().toISOString()); return id;
       });
     },
-    accept(projectId: string, runId: string) {
+    accept(projectId: string, runId: string, reviewedFindings = false) {
       transaction(() => {
         const artifact = read(projectId, runId);
         if (!artifact || artifact.output.kind !== "storyboard" || !current(projectId, runId)) throw new ConflictError("Storyboard is unavailable or stale.");
-        const defects = inspectGraphics(artifact).findings.filter((finding) => ["numeric-container", "comparison-alignment", "copy-density"].includes(finding.rule));
+        const defects = inspectGraphics(artifact).findings.filter((finding) => ["numeric-container", "comparison-alignment"].includes(finding.rule) || finding.rule === "copy-density" && !reviewedFindings);
         if (defects.length) throw new ConflictError(`Storyboard has ${defects.length} unresolved layout defects: ${[...new Set(defects.map((finding) => finding.rule))].join(", ")}. Revise before accepting.`);
         const row = rows(projectId).find((row) => row.id === runId)!;
         database.prepare(`INSERT INTO storyboard_acceptances VALUES (?, ?, ?, ?) ON CONFLICT(project_id) DO UPDATE SET run_id = excluded.run_id, sha256 = excluded.sha256, accepted_at = excluded.accepted_at`)

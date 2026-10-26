@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { speechAlignmentEvidenceSchema } from "./narration-anchor.ts";
 import { lineTimingSchema } from "./production.ts";
 import { scheduleMotion, type MotionPlan } from "./motion.ts";
 
@@ -10,10 +11,12 @@ export const timingAnchorSchema = z.strictObject({
   provenance: z.enum(["manual", "verified-aligner"]),
 });
 export const planningTimingInputSchema = z.strictObject({
+  alignmentEvidence: speechAlignmentEvidenceSchema.optional(),
   scriptId: z.uuid(), baseId: z.uuid().nullable(), timing: lineTimingSchema,
   anchors: z.array(timingAnchorSchema).max(1000), provenance: z.enum(["manual", "verified-aligner"]),
 });
 export const planningTimingSchema = z.strictObject({
+  alignmentEvidence: speechAlignmentEvidenceSchema.optional(),
   schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), parentId: z.uuid().nullable(), scriptId: z.uuid(), scriptHash: hash,
   createdAt: z.iso.datetime(), audioHash: hash, timing: lineTimingSchema, anchors: z.array(timingAnchorSchema).max(1000),
   provenance: z.enum(["manual", "verified-aligner"]),

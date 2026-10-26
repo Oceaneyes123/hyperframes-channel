@@ -1,0 +1,3 @@
+
+# License bytes are pinned alongside bundled fonts.
+public/fonts/**/LICENSE.txt text eol=lf

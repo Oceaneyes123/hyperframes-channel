@@ -1,3 +1,5 @@
+import { creativeFeedback } from "./creative-feedback.ts";
+import { creativeRuleGuidance } from "../workflow/creative-rules.ts";
 import { readConfig } from "./config.ts";
 import { openStudio, ConflictError } from "./studio.ts";
 import { openWritingJobs } from "./writing-jobs.ts";
@@ -25,13 +27,14 @@ export async function reviseScript(projectId: string, input: unknown, signal: Ab
     jobId = jobs.start(projectId, request, config.gateway.model);
     progress("Checking gateway model availability…");
     let last = 0;
+    const rules = creativeFeedback(config.dataDirectory).snapshot("writing");
     const result = await requestReplacement({ baseUrl: config.gateway.baseUrl, apiKey: config.gateway.apiKey, model: config.gateway.model },
-      { script: base.content, start: request.start, end: request.end, instruction: request.instruction, history },
+      { script: base.content, start: request.start, end: request.end, instruction: request.instruction, history, creativeGuidance: creativeRuleGuidance(rules) },
       AbortSignal.any([signal, AbortSignal.timeout(90_000)]), (characters) => {
         if (characters - last >= 100) { progress(`Receiving proposal (${characters} characters)…`); last = characters; }
       });
     signal.throwIfAborted();
-    const proposal = studio.createProposal(projectId, request, result.replacement, result.notes, jobId);
+    const proposal = studio.createProposal(projectId, request, result.replacement, result.notes, jobId, rules);
     progress("Proposal saved for review. The script has not changed.");
     return proposal.id;
   } catch (error) {

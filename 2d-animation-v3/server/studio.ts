@@ -1,3 +1,4 @@
+import type { CreativeSnapshot } from "../workflow/creative-rules.ts";
 import { createHash, randomUUID } from "node:crypto";
 import { mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -197,9 +198,9 @@ export function openStudio(dataDirectory: string, videosDirectory: string) {
         database.exec("COMMIT");
       } catch (error) { database.exec("ROLLBACK"); throw error; }
     },
-    createProposal(projectId: string, requestInput: unknown, replacement: unknown, notes: string, jobId?: string) {
+    createProposal(projectId: string, requestInput: unknown, replacement: unknown, notes: string, jobId?: string, creativeRules?: CreativeSnapshot) {
       const request = revisionRequestSchema.parse(requestInput);
-      const proposal = proposalSchema.parse({ schemaVersion: 1, id: randomUUID(), projectId, createdAt: new Date().toISOString(), request, replacement, notes });
+      const proposal = proposalSchema.parse({ creativeRules, schemaVersion: 1, id: randomUUID(), projectId, createdAt: new Date().toISOString(), request, replacement, notes });
       database.exec("BEGIN IMMEDIATE");
       let temporary: string | undefined;
       let saved: string | undefined;

@@ -74,6 +74,23 @@ All symbols and fonts are local; the fixed source and lockfile are part of gate 
 Planning and moving views share these renderers. Camera motion and reading holds
 are explicit instructions, not automatic decoration.
 
+## Quality gates for new work
+
+Storyboard acceptance now stops when a bank amount falls outside the padded value
+area of its card, a comparison operator is off the values' vertical centers, or
+more than two non-code text actors share a frame. The graphic review lists the affected
+shot and start/end drawing. Revise those drawings before accepting the board.
+Sourced amounts remain separate actors; clipping a number in the renderer does
+not make an overflowing layout acceptable.
+
+Motion Quality now flags static holds over four seconds and runs of three or
+more explanatory shots made only of entrances, emphasis, and holds. These and
+repeated primary presets stop Gate 1 until motion is revised. Use the existing
+motion preset library to show a source-faithful change of state, then allow a
+short reading hold. A human still reviews the moving export with narration for
+Gate 2. Old accepted artifacts remain readable; new quality checks do not
+rewrite their saved frames or exports.
+
 ## Narration and production safeguards
 
 Channel narration now defaults to **audio version 2: Fish Audio via OpenRouter**.

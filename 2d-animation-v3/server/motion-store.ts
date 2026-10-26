@@ -1,3 +1,4 @@
+import type { CreativeSnapshot } from "../workflow/creative-rules.ts";
 import { createHash, randomUUID } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -80,7 +81,7 @@ export function openMotion(directory: string, videosDirectory: string) {
           .run(id, projectId, JSON.stringify(request), JSON.stringify(dependency), model, now, new Date(Date.now() + 180_000).toISOString()); return id;
       });
     },
-    complete(projectId: string, id: string, input: unknown) {
+    complete(projectId: string, id: string, input: unknown, creativeRules?: CreativeSnapshot) {
       const destination = pathFor(projectId, id), temporary = destination + ".tmp"; let temporaryOwned = false, finalOwned = false;
       try {
         return transaction(() => {
@@ -97,7 +98,7 @@ export function openMotion(directory: string, videosDirectory: string) {
             plan = { ...base.plan, interpreterVersion: base.plan.interpreterVersion === "3" ? "3" : "2", shots: base.plan.shots.map((item) => item.id === request.shotId ? shot : item) };
           } else plan = input;
           const board = visuals.read(projectId, request.storyboardId)!;
-          const artifact = artifactSchema.parse({ schemaVersion: 1, id, projectId, createdAt: row.created_at, parentId: request.baseId, source: dependency, plan: validateMotion(plan, board, hashMotionSource) });
+          const artifact = artifactSchema.parse({ creativeRules, schemaVersion: 1, id, projectId, createdAt: row.created_at, parentId: request.baseId, source: dependency, plan: validateMotion(plan, board, hashMotionSource) });
           const bytes = JSON.stringify(artifact, null, 2) + "\n";
           if (existsSync(destination)) throw new Error("Existing motion artifact preserved for recovery.");
           mkdirSync(join(videosDirectory, projectId, "motion"), { recursive: true });

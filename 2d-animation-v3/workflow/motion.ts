@@ -1,3 +1,4 @@
+import { creativeSnapshotSchema } from "./creative-rules.ts";
 import { z } from "zod";
 import { variableTypeReferenceSchema, variableExpression } from "./variable-type.ts";
 import { primitiveSchema, type VisualArtifact } from "./visuals.ts";
@@ -173,7 +174,7 @@ export type MotionState = z.infer<typeof motionStateSchema>;
 const hashSchema = z.string().regex(/^[a-f0-9]{64}$/);
 export const motionSourceSchema = z.strictObject({ storyboardId: z.uuid(), storyboardHash: hashSchema, scriptId: z.uuid(), scriptHash: hashSchema, selectionId: z.uuid(), timingId: z.uuid().optional(), timingHash: hashSchema.optional() }).refine((source) => (source.timingId === undefined) === (source.timingHash === undefined), "Timing identity and hash must be supplied together.");
 export const motionRequestSchema = z.strictObject({ storyboardId: z.uuid(), baseId: z.uuid().nullable(), shotId: key.nullable(), instruction: z.string().trim().max(2000), interpreterVersion: z.enum(["2", "3"]).optional(), energyProfile: energyProfileSchema.optional() });
-export const motionArtifactSchema = z.strictObject({ schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(), parentId: z.uuid().nullable(), source: motionSourceSchema, plan: motionPlanSchema });
+export const motionArtifactSchema = z.strictObject({ creativeRules: creativeSnapshotSchema.optional(), schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(), parentId: z.uuid().nullable(), source: motionSourceSchema, plan: motionPlanSchema });
 export type MotionArtifact = z.infer<typeof motionArtifactSchema>;
 export const generatedMotionShotSchema = motionShotSchema.omit({ id: true, sourceIndex: true, sourceHash: true, lineNumbers: true, objects: true, beats: true }).extend({
   objects: z.array(z.strictObject({ id: motionObjectSchema.shape.id, startIndex: motionObjectSchema.shape.startIndex, endIndex: motionObjectSchema.shape.endIndex })).min(1).max(16),

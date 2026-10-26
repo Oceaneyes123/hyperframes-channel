@@ -1,3 +1,6 @@
+import CreativeReview from "./creative-review";
+import { creativeQualityReport } from "../../../../server/creative-quality.ts";
+import { creativeFeedback } from "../../../../server/creative-feedback.ts";
 import { kineticExamples } from "../../../../workflow/examples/kinetic.ts";
 import WorkspaceHeader from "../../../workspace-header";
 import { notFound } from "next/navigation";
@@ -43,6 +46,7 @@ export default async function VisualPage({ params, searchParams }: {
     const motionTiming = motion?.source.timingId ? timings.read(id, motion.source.timingId)?.artifact : null;
     return <main className="mx-auto max-w-7xl px-6 py-10 sm:px-12">
       <WorkspaceHeader projectId={id} title={project.title} stage="visuals" />
+      <CreativeReview projectId={id} report={creativeQualityReport(board, motion, productionStatus.narration ? production.audio(id, productionStatus.narration.id) : undefined)} corrections={creativeFeedback(config.dataDirectory).list().filter((item) => item.projectId === id)} />
       <details className="workspace-stage"><summary>Narration timing</summary><TimingWorkspace projectId={id} scriptId={accepted && !accepted.stale ? accepted.revisionId : null} timing={timings.latest(id)} /></details>
       <VisualWorkspace initialCapability={kineticExamples.find(entry => entry.id === capability)?.id} initialShot={selectedShot && /^\d{1,2}$/.test(selectedShot) ? Math.min(39,Number(selectedShot)) : 0} projectId={id} script={script} eligible={!!accepted && !accepted.stale} concepts={concepts} board={board} originalBoard={board?.baseId ? store.read(id, board.baseId) : null}
         conceptsCurrent={!!concepts && store.current(id, concepts.id)} boardCurrent={!!board && store.current(id, board.id)}

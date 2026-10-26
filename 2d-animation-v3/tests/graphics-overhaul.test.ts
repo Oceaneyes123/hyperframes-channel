@@ -96,6 +96,7 @@ test("graphic review catches card amount overflow, excess copy and a misaligned 
 });
 
 
+
 test("asset import validates input and refuses an existing version without changing registry bytes", (t) => {
   const root = mkdtempSync(join(tmpdir(), "v3-vector-import-")); t.after(() => rmSync(root, { recursive: true, force: true }));
   const path = join(root, "asset.json"), script = resolve("scripts/import-graphic-asset.ts");

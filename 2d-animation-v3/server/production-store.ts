@@ -85,9 +85,8 @@ export function openProduction(directory: string, videos: string) {
       return transaction(() => {
         const current = snapshot(projectId); if (request.binding !== current.binding) throw new ConflictError("Production inputs changed. Review again.");
         if (request.gate === "gate1") {
-          const graphics = inspectGraphics(current.board).findings.filter((finding) => ["numeric-container", "comparison-alignment", "copy-density"].includes(finding.rule));
-          const motionDefects = current.quality.findings.filter((finding) => ["long-hold", "passive-sequence", "repetitive-preset"].includes(finding.ruleId));
-          if (graphics.length || motionDefects.length) throw new ConflictError(`Fix ${graphics.length} graphic and ${motionDefects.length} motion quality findings before Gate 1.`);
+          const graphics = inspectGraphics(current.board).findings.filter((finding) => ["numeric-container", "comparison-alignment"].includes(finding.rule));
+          if (graphics.length) throw new ConflictError(`Fix ${graphics.length} structural graphic defects before Gate 1.`);
         }
         const prior = gates(projectId, current.binding); if (request.gate === "gate2" && !prior.gate1) throw new ConflictError("Gate 1 is required before independent moving/audio approval.");
         return append(projectId, request.gate, { binding: current.binding, gate1: request.gate === "gate2" ? prior.gate1 : null, notes: request.notes, reviewed: true });

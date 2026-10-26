@@ -14,11 +14,13 @@ export function inspectGraphics(input: unknown) {
     const add = (rule: string, evidence: string, suggestion: string, severity: GraphicFinding["severity"] = "review") => findings.push({ id: `${item.index}-${state}-${rule}-${findings.length}`, shotIndex: item.index, state, rule, evidence, suggestion, severity });
     if (frame.shapes.length > 10) add("density", `${frame.shapes.length} root objects compete for a phone-sized frame.`, "Remove supporting detail or reveal information progressively.");
     const labels = frame.shapes.filter((shape) => ["text", "heading", "caption", "code", "centered-text"].includes(shape.type));
-    if (labels.length > 2) add("copy-density", `${labels.length} text actors share one frame.`, "Keep at most two essential short labels; move explanation into narration or staged objects.", "warning");
+    const overlays = labels.filter((shape) => shape.type !== "code");
+    if (overlays.length > 2) add("copy-density", `${overlays.length} text actors share one frame.`, "Keep at most two essential short labels; move explanation into narration or staged objects.", "warning");
     const numeric = frame.shapes.filter((shape) => shape.type === "numeric-display@1");
     for (const bank of frame.shapes.filter((shape) => shape.type === "banking-balance@1")) for (const amount of numeric) {
       const centerY = (amount.y + amount.height / 2 - bank.y) / bank.height * 1100;
-      if (centerY < 237 || centerY > 894) continue;
+      if (centerY < 237 || centerY > 894 || amount.x + amount.width / 2 < bank.x || amount.x + amount.width / 2 > bank.x + bank.width) continue;
+      // shortcut: banking-balance@1 has fixed 800x1100 card geometry; update these slots if its SVG geometry changes.
       const x = (amount.x - bank.x) / bank.width * 800, right = (amount.x + amount.width - bank.x) / bank.width * 800;
       const top = (amount.y - bank.y) / bank.height * 1100, bottom = (amount.y + amount.height - bank.y) / bank.height * 1100;
       const slots = [[320, 430], [555, 665], [790, 880]];
@@ -49,8 +51,13 @@ export function inspectGraphics(input: unknown) {
       for (const [part, value] of Object.entries(shape.parts ?? {})) if (value.opacity > .8 && (value.x !== 0 || value.y !== 0 || value.scale !== 1)) add("part-bounds", `Visible layer ${part} has offsets or scale; root bounds cannot prove layer containment.`, "Inspect the real rendered layer for clipping and overlap.");
     }
   }
+  if (artifact.output.kind === "storyboard") for (const [shotIndex, shot] of artifact.output.shots.entries()) {
+    if (!shot.design) findings.push({ id: `direction-${shotIndex}`, shotIndex, state: "end", rule: "missing-art-direction", severity: "review", evidence: "This scene has no explicit art direction.", suggestion: "Specify visual meaning, hierarchy, curated assets, palette, depth and continuity before phone-size review." });
+  }
+  const layoutSignature = (frame: Frame) => JSON.stringify(frame.shapes.map((shape) => [shape.type, ...[shape.x, shape.y, shape.width, shape.height].map((value) => Math.round(value / 5))]).sort((a, b) => JSON.stringify(a).localeCompare(JSON.stringify(b))));
   if (artifact.output.kind === "storyboard") for (let index = 2; index < artifact.output.shots.length; index++) {
     const shots = artifact.output.shots.slice(index - 2, index + 1), current = shots[2].design;
+    if (!current?.continuityReason && shots.every((shot) => layoutSignature(shot.endFrame) === layoutSignature(shots[0].endFrame))) findings.push({ id: `geometry-repeat-${index}`, shotIndex: index, state: "end", rule: "geometry-repetition", severity: "review", evidence: "Three neighboring endpoint drawings use the same approximate object layout, regardless of labels or design prose.", suggestion: "Review actual frames; vary the composition if teaching changes, or document intentional continuity." });
     if (current && !current.continuityReason && shots.every((shot) => shot.design?.family === current.family && shot.design?.layout === current.layout && shot.design?.metaphor === current.metaphor)) findings.push({ id: `repeat-${index}`, shotIndex: index, state: "end", rule: "layout-repetition", severity: "review", evidence: "Three neighboring shots repeat family, layout and metaphor without a continuity reason.", suggestion: "Vary the composition or explain intentional narrative continuity." });
   }
   return { version: "graphic-quality@1", findings, requiresHumanReview: true };

@@ -149,3 +149,5 @@ distributing the studio. Do not apply npm's suggested forced Next-config downgra
 Browse the ten reusable presets at `/text-motion` (linked from Projects).
 See [Text motion library](docs/text-motion-library.md) for research, usage,
 recommended timing and verification commands. Existing projects are not rewritten.
+
+Creative quality rules, Studio correction review, local TTS evaluation and release gates: [Creative Quality System v1](docs/creative-quality.md).

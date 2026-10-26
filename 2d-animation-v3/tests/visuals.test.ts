@@ -68,6 +68,19 @@ test("explicit accepted script and concept choice unlock boards; scoped revision
   assert.equal(f.studio.readRevision(project.id, script.id)?.content, script.content);
 });
 
+test("storyboard acceptance stops excessive canvas copy before motion planning", (t) => {
+  const f = fixture(t), { id, input } = f.board();
+  const revision = f.store.begin(f.project.id, { ...input, kind: "shot", baseId: id, shotIndex: 0 }, "fixture-model");
+  const shot = boardFixture().shots[0];
+  shot.endFrame.shapes.push({ type: "text", x: 8, y: 75, width: 35, height: 6, color: "#FFFFFF", label: "Extra text" },
+    { type: "text", x: 55, y: 75, width: 35, height: 6, color: "#FFFFFF", label: "Another label" });
+  f.store.complete(f.project.id, revision, shot);
+  assert.throws(() => f.store.accept(f.project.id, revision), /copy-density/);
+  assert.equal(f.store.acceptance(f.project.id), null);
+  f.store.accept(f.project.id, revision, true);
+  assert.equal(f.store.acceptance(f.project.id)!.runId, revision);
+});
+
 test("selection changes, ABA choices, new scripts and cross-project requests fail closed", (t) => {
   const f = fixture(t); const { id, input, conceptId, selectionId } = f.board();
   const active = f.store.begin(f.project.id, { ...input, baseId: id }, "fixture-model");

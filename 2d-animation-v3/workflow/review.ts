@@ -1,3 +1,4 @@
+import { creativeSnapshotSchema } from "./creative-rules.ts";
 import { z } from "zod";
 import { scriptContentSchema } from "./project.ts";
 
@@ -8,7 +9,7 @@ export const revisionRequestSchema = z.strictObject({
   instruction: z.string().trim().min(1).max(2_000),
 }).refine((value) => value.end > value.start, "Select script text to revise.");
 
-export const proposalSchema = z.strictObject({
+export const proposalSchema = z.strictObject({ creativeRules: creativeSnapshotSchema.optional(),
   schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(),
   request: revisionRequestSchema,
   replacement: scriptContentSchema,

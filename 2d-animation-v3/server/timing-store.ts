@@ -43,8 +43,10 @@ export function openTiming(directory: string, videos: string) {
         if (!accepted || accepted.stale || accepted.revisionId !== request.scriptId || (rows(projectId)[0]?.id ?? null) !== request.baseId) throw new ConflictError("Script or planning timing changed. Reload before importing.");
         if (request.baseId) read(projectId, request.baseId);
         const measured = inspectWav(audio), script = studio.readRevision(projectId, request.scriptId)!;
+        if (request.provenance === "verified-aligner" && !request.alignmentEvidence || request.anchors.some((anchor) => anchor.provenance === "verified-aligner") && !request.alignmentEvidence) throw new Error("Verified alignment requires human-reviewed aligner evidence.");
+        if (request.alignmentEvidence && (request.alignmentEvidence.audioHash !== hash(audio) || request.alignmentEvidence.transcriptHash !== accepted.sha256)) throw new Error("Alignment evidence does not match the imported audio and accepted script.");
         validatePlanningTiming(request, measured.durationFrames, scriptLines(script.content));
-        const artifact = planningTimingSchema.parse({ schemaVersion: 1, id, projectId, parentId: request.baseId, scriptId: request.scriptId, scriptHash: accepted.sha256, createdAt: new Date().toISOString(), audioHash: hash(audio), timing: request.timing, anchors: request.anchors, provenance: request.provenance, measured });
+        const artifact = planningTimingSchema.parse({ alignmentEvidence: request.alignmentEvidence, schemaVersion: 1, id, projectId, parentId: request.baseId, scriptId: request.scriptId, scriptHash: accepted.sha256, createdAt: new Date().toISOString(), audioHash: hash(audio), timing: request.timing, anchors: request.anchors, provenance: request.provenance, measured });
         const bytes = JSON.stringify(artifact, null, 2) + "\n";
         mkdirSync(join(videos, projectId, "timing"), { recursive: true });
         writeFileSync(wavPath, audio, { flag: "wx", flush: true }); wavOwned = true;

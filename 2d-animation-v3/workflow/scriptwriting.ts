@@ -1,3 +1,4 @@
+import { creativeSnapshotSchema } from "./creative-rules.ts";
 import { z } from "zod";
 import { scriptContentSchema } from "./project.ts";
 
@@ -53,7 +54,7 @@ export const writingOutputSchema = z.discriminatedUnion("kind", [
     review: editorialSchema, skills: z.array(skillSchema).min(1) }),
 ]);
 export type WritingOutput = z.infer<typeof writingOutputSchema>;
-export const writingArtifactSchema = z.strictObject({
+export const writingArtifactSchema = z.strictObject({ creativeRules: creativeSnapshotSchema.optional(),
   schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(),
   parentId: z.uuid().nullable(), parentHash: z.string().regex(/^[a-f0-9]{64}$/).nullable(),
   baseRevisionId: z.uuid().nullable(), output: writingOutputSchema,

@@ -5,6 +5,7 @@ import type { VisualArtifact } from "../../../../workflow/visuals.ts";
 import { creativeReviewSchema } from "../../../../workflow/art-direction.ts";
 import { frameAssets, inspectGraphics } from "../../../../engine/quality/inspect-graphics.ts";
 import PlanningFrame from "./frame";
+import { RuleProposal } from "./creative-review";
 
 export default function GraphicReview({ projectId, board, original, shotIndex, current, onInstruction }: {
   projectId: string; board: VisualArtifact; original: VisualArtifact | null; shotIndex: number; current: boolean; onInstruction: (instruction: string) => void;
@@ -70,6 +71,7 @@ export default function GraphicReview({ projectId, board, original, shotIndex, c
     {status && <p role="status" className="my-3 text-sm">{status}</p>}
     <ul className="space-y-3 text-sm">{findings.map((finding, index) => dismissed.includes(index) ? null : <li key={index}>
       <p>{finding.dimension}: {finding.evidence}</p><p>{finding.suggestion}</p>
+      <RuleProposal projectId={projectId} artifactId={board.id} shotIndex={shotIndex} stage="graphics" evidence={finding.evidence} correction={finding.suggestion} />
       <div className="mt-2 flex gap-2"><button type="button" className="secondary" disabled={!current} onClick={() => onInstruction(`${finding.suggestion} Address visible issue: ${finding.evidence}`)}>Use for shot revision</button><button type="button" className="secondary" onClick={() => setDismissed([...dismissed, index])}>Dismiss suggestion</button></div>
     </li>)}</ul>
     <details className="my-4"><summary className="text-sm">Scene contact sheet</summary><div className="mt-3 grid grid-cols-2 gap-3 md:grid-cols-4">{board.output.shots.map((item, index) => <figure key={index}>

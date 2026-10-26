@@ -1,0 +1,36 @@
+{
+  "outputDirectory": ".data/creative-quality-evaluation",
+  "request": {
+    "lines": [
+      {
+        "number": 1,
+        "text": "Why does a card payment sometimes fail even when the balance looks high enough?",
+        "delivery": "hook"
+      },
+      {
+        "number": 2,
+        "text": "The terminal sends a request through the payment network. The issuer checks whether it can authorize that request.",
+        "delivery": "explanation"
+      },
+      {
+        "number": 3,
+        "text": "An authorization is permission to continue. It is not the same as a completed payment.",
+        "delivery": "payoff"
+      }
+    ],
+    "pronunciation": [
+      {
+        "term": "API",
+        "spoken": "A P I"
+      }
+    ],
+    "seed": 42,
+    "rate": 0
+  },
+  "providers": [
+    {
+      "provider": "windows-speech",
+      "voice": "Microsoft Zira Desktop"
+    }
+  ]
+}

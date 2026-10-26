@@ -1,3 +1,4 @@
+import { creativeSnapshotSchema } from "./creative-rules.ts";
 import { z } from "zod";
 import { variableTypeReferenceSchema, variableExpression } from "./variable-type.ts";
 import { typographySchema } from "./typography.ts";
@@ -111,7 +112,7 @@ export const visualRequestSchema = z.strictObject({
     context.addIssue({ code: "custom", message: "Invalid visual request context." });
   }
 });
-export const visualArtifactSchema = z.strictObject({
+export const visualArtifactSchema = z.strictObject({ creativeRules: creativeSnapshotSchema.optional(),
   schemaVersion: z.union([z.literal(1), z.literal(2)]), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(),
   scriptId: z.uuid(), scriptHash: z.string().regex(/^[a-f0-9]{64}$/), selectionId: z.uuid().nullable(),
   baseId: z.uuid().nullable(), instruction: z.string().max(2000), output: visualOutputSchema,

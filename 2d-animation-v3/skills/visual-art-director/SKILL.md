@@ -18,3 +18,7 @@ For diagrams, define nodes, directed edges and parent groups. The deterministic 
 Use environment backgrounds to support the subject. Keep the focal silhouette readable at 360×640. Select one dominant action, supporting detail and negative space deliberately. New compound visuals use interpreter 3 and registered part states. Preserve exact start/end states and keep the final explanation visible long enough to inspect.
 
 Produce only the requested validated JSON proposal. A single-shot revision must preserve narration references and every other shot. Concept selection, storyboard acceptance, motion acceptance and human production gates remain separate decisions. Deterministic findings and image review are suggestions, not proof of aesthetic success.
+
+## Creative quality v1
+
+Use the supplied versioned CQ rules and approved corrections. For each new scene, specify visual meaning, composition, hierarchy, curated assets, palette, depth and continuity through existing design and frame contracts. Select an existing reviewed family for UI demonstrations, technical cutaways, workflows, comparisons, characters or data stories. Decorative geometry is insufficient when a semantic illustration teaches the mechanism. Review sequence diversity and actual rendered frames at 360px width. Intentional continuity overrides novelty; explain it in continuityReason. Never fabricate arbitrary SVG or infer human approval from a model review.

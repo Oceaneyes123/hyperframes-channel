@@ -1,3 +1,13 @@
+export function pcm16Data(bytes: Buffer) {
+  inspectWav(bytes);
+  for (let offset = 12; offset + 8 <= bytes.length;) {
+    const size = bytes.readUInt32LE(offset + 4);
+    if (bytes.toString("ascii", offset, offset + 4) === "data") return bytes.subarray(offset + 8, offset + 8 + size);
+    offset += 8 + size + size % 2;
+  }
+  throw new Error("Missing WAV audio data.");
+}
+
 export function inspectWav(bytes: Buffer) {
   if (bytes.length > 16_000_000 || bytes.length < 44 || bytes.toString("ascii", 0, 4) !== "RIFF" || bytes.toString("ascii", 8, 12) !== "WAVE" || bytes.readUInt32LE(4) + 8 !== bytes.length) throw new Error("Use a complete PCM16 WAV file, at most 16 MB.");
   let format: { channels: number; rate: number; align: number } | undefined, data: Buffer | undefined;

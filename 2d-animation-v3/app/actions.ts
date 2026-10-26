@@ -101,7 +101,7 @@ export async function decideVisual(projectId: string, _previous: CreateState, fo
     try {
       const id = z.uuid().parse(form.get("runId"));
       if (form.get("decision") === "choose") store.choose(projectId, id, z.coerce.number().int().min(0).max(2).parse(form.get("optionIndex")), z.uuid().nullable().parse(form.get("selectionId") || null));
-      else if (form.get("decision") === "accept") store.accept(projectId, id);
+      else if (form.get("decision") === "accept") store.accept(projectId, id, form.get("reviewedFindings") === "on");
       else throw new Error("Invalid decision.");
     } finally { store.close(); }
   } catch (error) { return { error: publicError(error) }; }
