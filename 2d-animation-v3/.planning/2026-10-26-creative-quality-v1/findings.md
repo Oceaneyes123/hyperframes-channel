@@ -9,3 +9,4 @@
 - Aesthetic concerns need explicit review, while numeric containment/alignment and source/audio contracts remain structural blockers.
 - Local GPU read with nvidia-smi: GTX 1650 class, 4096 MiB. Windows Python has soundfile but no Torch/chatterbox/qwen_tts.
 - Windows fallback succeeded outside sandbox; exact runtime metadata and raw/normalized signal diagnostics retained. Capabilities disclose unsupported expressive controls; no default changed.
+2026-10-27 discovery: regressionEvidence is currently free text; snapshots only carry approved rule prose, not executable checks. Existing schemas accept legacy shots without design. Neural runtimes are absent on inspected Windows Python. Official Qwen source states 0.6B CustomVoice ignores instruct; Turbo ignores exaggeration. Any expressive capability must match a real model mode and cannot be claimed for the current clone adapters.

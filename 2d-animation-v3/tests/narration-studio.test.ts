@@ -1,0 +1,37 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { openStudio } from "../server/studio.ts";
+import { openTiming } from "../server/timing-store.ts";
+import { openNarrationStudio } from "../server/narration/studio.ts";
+import type { NarrationProvider } from "../server/narration/generation.ts";
+import { wavFixture } from "./fixtures/wav.ts";
+
+test("Studio auditions bind accepted script, preserve prior takes and require review before measured timing import", async (t) => {
+  const root = mkdtempSync(join(tmpdir(), "v3-narration-studio-")), db = join(root, "db"), videos = join(root, "videos");
+  const studio = openStudio(db, videos), timing = openTiming(db, videos), takes = openNarrationStudio(db, videos);
+  t.after(() => { takes.close(); timing.close(); studio.close(); rmSync(root, { recursive: true, force: true }); });
+  const project = studio.createProject("Synthetic narration fixture"), script = studio.saveScript(project.id, "  First line.  \nSecond line.\nFinal line.", null);
+  const heard: string[] = [], provider: NarrationProvider = { identity: { id: "synthetic", voice: "fixture", model: "tone", version: "1", license: "fixture", licenseUrl: "https://example.test", supportsDelivery: true }, async generate(input) { heard.push(input.delivery); return wavFixture(1); } };
+  const input = { scriptId: script.id, pronunciation: [], rate: 0, seed: 3 };
+  await assert.rejects(takes.generate(project.id, provider, input, new AbortController().signal), /Accept/);
+  studio.acceptScript(project.id, script.id);
+  const full = await takes.generate(project.id, provider, input, new AbortController().signal);
+  assert.equal(heard.length, 3); assert.match(heard[0], /Upbeat/); assert.match(heard[2], /slower/);
+  assert.equal(takes.read(project.id, full).complete, true);
+  const partial = await takes.generate(project.id, provider, { ...input, lineNumber: 2 }, new AbortController().signal);
+  assert.equal(takes.read(project.id, partial).complete, false); assert.equal(takes.list(project.id).length, 2);
+  assert.throws(() => takes.import(project.id, full, null, false), /confirm/);
+  assert.throws(() => takes.import(project.id, partial, null, true), /complete take/);
+  const imported = takes.import(project.id, full, null, true);
+  assert.equal(timing.read(project.id, imported)!.artifact.measured.durationFrames, 90);
+  assert.equal(timing.read(project.id, imported)!.artifact.anchors.length, 0);
+  studio.saveScript(project.id, "Changed.\nSecond line.\nFinal line.", script.id);
+  assert.equal(takes.read(project.id, full).stale, true);
+  assert.throws(() => takes.import(project.id, full, imported, true), /complete take/);
+  const path = join(db, "studio-narration", project.id, "narration-takes", full, "take.json"), bytes = readFileSync(path);
+  writeFileSync(path, bytes.toString("utf8").replace("First line", "Other line"));
+  assert.throws(() => takes.read(project.id, full), /manifest integrity/);
+});

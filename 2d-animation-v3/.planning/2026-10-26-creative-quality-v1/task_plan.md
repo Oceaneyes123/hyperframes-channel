@@ -4,7 +4,7 @@
 Implement versioned creative rules, curated feedback, connected quality review, and local narration evaluation without rewriting approved artifacts.
 
 ## Next Step
-Await neural-model environment and human listening/comparison decisions; engineering checks and isolated Studio verification are complete.
+Finish local model downloads and benchmark, then obtain actual listening and release-comparison reviews. Preserve existing production gates.
 
 ## Phases
 - [x] Discovery: workspace instructions, existing edits, graphics/motion inspectors and architecture.
@@ -31,3 +31,13 @@ No commits/push, subagents, production approval inference, or rewriting existing
 - Actual local audition: .data/creative-quality-evaluation/narration-takes/aaa80053-6eb1-48ac-9c89-595e71f5e52f/narration.wav; 18.2735s, 2477ms; Windows engine 4.0.0.0 / Microsoft Zira Desktop, listening pending.
 - Python neural runtimes/weights unavailable in inspected environment; no model benchmarks or default preference fabricated.
 - Default npm run build still hits host Turbopack CSS-worker startup failure. npm run build -- --webpack passes. One pre-existing unused-variable lint warning remains in the unrelated DeepSeek planning script.
+
+## Continuation: remaining reference gaps (2026-10-27)
+- [x] Rule lifecycle: source-bound inspector regression review before activation; preserve historical decisions and snapshots; allow human withdrawal.
+- [x] Studio review: correct narration navigation, preserve meaningful issue references and existing view-only dismissal behavior.
+- [ ] Narration: evaluate installed models and actual expressive controls; integrate safe take audition/import where feasible.
+- [x] Graphics/motion: enforce complete direction for new proposals without invalidating legacy artifacts; inspect actual frame-change evidence across the export.
+- [ ] Release comparison: preserve baseline, create reviewable candidate only within authorized production gates, record human evaluation without inferring it.
+- [x] Run focused tests, project checks, build and update evidence.
+
+Human listening, comparison judgment and production approval cannot be inferred from automated checks.

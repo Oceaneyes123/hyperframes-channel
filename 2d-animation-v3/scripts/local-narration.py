@@ -10,22 +10,29 @@ def main():
     output = Path(sys.argv[2])
     if output.exists() or not 0 < len(request["text"]) <= 4000:
         raise ValueError("New output and bounded narration text required")
-    if not Path(request["referenceWav"]).is_file() or not Path(request["modelPath"]).is_dir():
-        raise ValueError("Local model and reference WAV are required")
+    if not Path(request["modelPath"]).is_dir():
+        raise ValueError("Local model is required")
+    if request["provider"] != "qwen3-custom" and not Path(request["referenceWav"]).is_file():
+        raise ValueError("Local reference WAV is required")
     import torch
     import soundfile as sf
     torch.manual_seed(request["seed"])
-    if request["provider"] == "qwen3-tts":
+    if request["provider"] in ("qwen3-tts", "qwen3-custom"):
         from qwen_tts import Qwen3TTSModel
         model = Qwen3TTSModel.from_pretrained(
             request["modelPath"], device_map=request["device"],
             dtype=torch.float32 if request["device"] == "cpu" else torch.float16,
             attn_implementation="eager", local_files_only=True,
         )
-        audio, rate = model.generate_voice_clone(
-            text=request["text"], language="English",
-            ref_audio=request["referenceWav"], ref_text=request["referenceText"],
-        )
+        if request["provider"] == "qwen3-custom":
+            if model.model.tts_model_type != "custom_voice" or model.model.tts_model_size != "1b7":
+                raise ValueError("Expressive delivery requires the Qwen3 1.7B CustomVoice model")
+            audio, rate = model.generate_custom_voice(text=request["text"], language="English", speaker=request["voice"], instruct=request["delivery"])
+        else:
+            audio, rate = model.generate_voice_clone(
+                text=request["text"], language="English",
+                ref_audio=request["referenceWav"], ref_text=request["referenceText"],
+            )
         samples = audio[0]
     elif request["provider"] == "chatterbox-turbo":
         from chatterbox.tts_turbo import ChatterboxTurboTTS
@@ -36,7 +43,7 @@ def main():
         raise ValueError("Unsupported local provider")
     sf.write(str(output), samples, rate, subtype="PCM_16")
     output.with_name("runtime.json").write_text(json.dumps({
-        "engineVersion": version("qwen-tts" if request["provider"] == "qwen3-tts" else "chatterbox-tts"),
+        "engineVersion": version("qwen-tts" if request["provider"] in ("qwen3-tts", "qwen3-custom") else "chatterbox-tts"),
         "torchVersion": torch.__version__, "voice": request["voice"],
         "device": request["device"], "modelRevisionSuppliedByOperator": request["version"],
     }), encoding="utf-8")

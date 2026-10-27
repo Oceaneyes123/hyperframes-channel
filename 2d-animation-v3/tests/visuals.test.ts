@@ -172,6 +172,12 @@ test("gateway path saves proposals without accepting, rejects invalid outputs an
   const shotId = await generateVisuals(f.project.id, { ...request, kind: "shot", baseId: boardId, shotIndex: 1 }, new AbortController().signal, () => {}, f.config);
   assert.equal(f.store.read(f.project.id, shotId)?.output.kind, "storyboard");
   assert.equal(guidanceRequests.length, 3); // Concepts, full board and scoped shot revisions.
+  const missingDirection = await fakeGateway("writing", 0, () => boardFixture()); t.after(() => missingDirection.close());
+  f.config.gateway.baseUrl = missingDirection.baseUrl;
+  await assert.rejects(generateVisuals(f.project.id, { ...request, baseId: shotId }, new AbortController().signal, () => {}, f.config));
+  assert.match(f.store.list(f.project.id)[0].error!, /shots\.0\.design/);
+  assert.equal(f.store.latest(f.project.id, "storyboard"), shotId);
+  f.config.gateway.baseUrl = gateway.baseUrl;
   assert.ok(f.store.list(f.project.id).every((run) => run.model === "fixture-model"));
   assert.equal(f.config.gateway.model, "other-workflow-model");
   const invalid = await fakeGateway("invalid"); t.after(() => invalid.close()); f.config.gateway.baseUrl = invalid.baseUrl;

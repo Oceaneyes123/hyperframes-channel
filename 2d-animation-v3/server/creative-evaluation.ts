@@ -2,6 +2,18 @@ import { creativeQualityReport } from "./creative-quality.ts";
 import { validateMotion, scheduleMotion, type MotionArtifact } from "../workflow/motion.ts";
 import type { VisualArtifact } from "../workflow/visuals.ts";
 import { hashMotionSource } from "./motion-store.ts";
+import { z } from "zod";
+
+export const creativeHumanReviewSchema = z.strictObject({
+  reviewedByHuman: z.literal(true), reviewer: z.string().trim().min(1).max(120),
+  desktop: z.enum(["pass", "fail"]), mobile: z.enum(["pass", "fail"]), listening: z.enum(["pass", "fail"]), comprehension: z.enum(["pass", "fail"]),
+  comparison: z.enum(["improved", "not-improved", "inconclusive"]), blinded: z.boolean(), criticalIssuesOpen: z.boolean(), notes: z.string().trim().min(10).max(4000),
+});
+export function evaluateHumanReview(input: unknown) {
+  const review = creativeHumanReviewSchema.parse(input);
+  const comparisonPassed = [review.desktop, review.mobile, review.listening, review.comprehension].every((outcome) => outcome === "pass") && review.comparison === "improved" && !review.criticalIssuesOpen;
+  return { review, comparisonPassed, releaseEligible: false as const, reason: "Existing production gates and explicit render authorization remain required." };
+}
 
 export type CreativeEvaluationInput = { board: VisualArtifact; storyboardHash: string; motion: MotionArtifact; narration: { id: string; bytes: Buffer } };
 export function evaluateCreativePair(baseline: CreativeEvaluationInput, candidate: CreativeEvaluationInput) {

@@ -5,6 +5,7 @@ import { visualArtifactSchema } from "../workflow/visuals.ts";
 import { motionArtifactSchema, scheduleMotion } from "../workflow/motion.ts";
 import { evaluateCreativePair } from "../server/creative-evaluation.ts";
 import { verifyExport, verifyAudioSync } from "../server/render.ts";
+import { inspectFrameActivity } from "../server/creative-frame-activity.ts";
 
 const paths = z.strictObject({ storyboard: z.string().min(1), motion: z.string().min(1), narration: z.string().min(1), narrationId: z.uuid(), video: z.string().min(1) });
 const config = z.strictObject({ baseline: paths, candidate: paths, output: z.string().min(1) }).parse(JSON.parse(readFileSync(process.argv[2], "utf8")));
@@ -15,7 +16,8 @@ function load(input: z.infer<typeof paths>) {
 const baseline = load(config.baseline), candidate = load(config.candidate), report = evaluateCreativePair(baseline, candidate);
 const verification = [];
 for (const [input, loaded] of [[config.baseline, baseline], [config.candidate, candidate]] as const) {
-  verification.push({ export: await verifyExport(input.video, scheduleMotion(loaded.motion.plan).durationFrames), audio: await verifyAudioSync(input.narration, input.video) });
+  verification.push({ export: await verifyExport(input.video, scheduleMotion(loaded.motion.plan).durationFrames), audio: await verifyAudioSync(input.narration, input.video), activity: await inspectFrameActivity(input.video) });
 }
-writeFileSync(config.output, JSON.stringify({ ...report, verification }, null, 2), { flag: "wx", flush: true });
+const inputHashes = [config.baseline, config.candidate].map((input) => Object.fromEntries(["storyboard", "motion", "narration", "video"].map((key) => [key, createHash("sha256").update(readFileSync(input[key as keyof typeof input])).digest("hex")])));
+writeFileSync(config.output, JSON.stringify({ ...report, sources: { baseline: config.baseline, candidate: config.candidate }, inputHashes, verification }, null, 2), { flag: "wx", flush: true });
 console.log(`Verified comparison saved to ${config.output}. Human review and release remain pending.`);

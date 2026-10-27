@@ -5,7 +5,6 @@ import { z } from "zod";
 import { inspectWav, pcm16Data } from "../wav.ts";
 import { inspectNarration } from "../../engine/quality/inspect-narration.ts";
 import { creativeFeedback } from "../creative-feedback.ts";
-import { creativeRuleGuidance } from "../../workflow/creative-rules.ts";
 
 export interface NarrationProvider {
   identity: { id: string; model: string; version: string; voice: string; license: string; licenseUrl: string; supportsDelivery: boolean; referenceHash?: string };
@@ -32,11 +31,11 @@ export function normalizePcm16(bytes: Buffer) {
   return result;
 }
 
-export async function generateNarrationTake(directory: string, provider: NarrationProvider, input: unknown, signal: AbortSignal) {
+export async function generateNarrationTake(directory: string, provider: NarrationProvider, input: unknown, signal: AbortSignal, options?: { rulesDirectory?: string; source?: { projectId: string; scriptId: string; scriptHash: string } }) {
   const request = narrationRequestSchema.parse(input);
   if (new Set(request.lines.map((line) => line.number)).size !== request.lines.length || request.lines.some((line, index) => index > 0 && line.number <= request.lines[index - 1].number)) throw new Error("Unique ordered narration line numbers required.");
   if (new Set(request.pronunciation.map((entry) => entry.term)).size !== request.pronunciation.length) throw new Error("Duplicate pronunciation terms are ambiguous.");
-  const rules = creativeFeedback(directory).snapshot("narration"), id = randomUUID(), root = join(directory, "narration-takes", id), started = performance.now();
+  const rules = creativeFeedback(options?.rulesDirectory ?? directory).snapshot("narration"), id = randomUUID(), root = join(directory, "narration-takes", id), started = performance.now();
   mkdirSync(root, { recursive: true });
   // Record the request before inference so failures remain diagnosable and retries never overwrite takes.
   writeFileSync(join(root, "request.json"), JSON.stringify({ request, provider: provider.identity, rules }), { flag: "wx", flush: true });
@@ -48,7 +47,8 @@ export async function generateNarrationTake(directory: string, provider: Narrati
     const spoken = escaped.length ? line.text.replace(new RegExp(`(?<![\\p{L}\\p{N}_])(?:${escaped.join("|")})(?![\\p{L}\\p{N}_])`, "gu"), (term) => replacements.get(term)!) : line.text;
     if (spoken.length > 4000) throw new Error("Pronunciation-expanded line exceeds the provider limit.");
     const segmentStarted = performance.now();
-    const raw = await provider.generate({ text: spoken, delivery: delivery[line.delivery] + "\n" + creativeRuleGuidance(rules), rate: request.rate, seed: request.seed }, work, signal);
+    const voiceGuidance = rules.rules.filter((rule) => rule.id === "CQ-VOICE" || rule.id.startsWith("CQ-USER-")).map((rule) => rule.correction).join(" ");
+    const raw = await provider.generate({ text: spoken, delivery: `${delivery[line.delivery]} ${voiceGuidance}`, rate: request.rate, seed: request.seed }, work, signal);
     signal.throwIfAborted(); const rawQuality = inspectNarration(raw), bytes = normalizePcm16(raw), measured = inspectWav(bytes);
     if (rate && (rate !== measured.sampleRate || channels !== measured.channels)) throw new Error("Provider changed audio format between segments.");
     rate = measured.sampleRate; channels = measured.channels; const data = pcm16Data(bytes), count = data.length / (channels * 2);
@@ -65,8 +65,10 @@ export async function generateNarrationTake(directory: string, provider: Narrati
   const header = Buffer.from(readFileSync(join(root, `line-${request.lines[0].number}`, "normalized.wav")).subarray(0, 44));
   const data = Buffer.concat(audio); header.writeUInt32LE(data.length + 36, 4); header.writeUInt32LE(data.length, 40);
   const bytes = Buffer.concat([header, data]), quality = inspectNarration(bytes);
-  const manifest = { version: "narration-take@1", id, createdAt: new Date().toISOString(), provider: provider.identity, request, scriptHash: hash(JSON.stringify(request.lines)), audioHash: hash(bytes), rules, segments,
+  const manifest = { version: "narration-take@1", id, createdAt: new Date().toISOString(), source: options?.source, provider: provider.identity, request, scriptHash: hash(JSON.stringify(request.lines)), audioHash: hash(bytes), rules, segments,
     latencyMs: Math.round(performance.now() - started), quality, alignment: "measured-segment-boundaries", wordAlignment: null, humanReview: "pending", defaultSelected: false };
-  writeFileSync(join(root, "narration.wav"), bytes, { flag: "wx", flush: true }); writeFileSync(join(root, "take.json"), JSON.stringify(manifest, null, 2), { flag: "wx", flush: true });
+  const manifestBytes = JSON.stringify(manifest, null, 2);
+  writeFileSync(join(root, "narration.wav"), bytes, { flag: "wx", flush: true }); writeFileSync(join(root, "take.json"), manifestBytes, { flag: "wx", flush: true });
+  writeFileSync(join(root, "take.sha256"), hash(manifestBytes), { flag: "wx", flush: true });
   return { manifest, root };
 }

@@ -1,13 +1,19 @@
 import { z } from "zod";
 
 export const creativeStageSchema = z.enum(["writing", "graphics", "motion", "narration"]);
+export const creativeDetectors = {
+  graphics: ["missing-art-direction", "layout-repetition", "geometry-repetition", "text-size", "contrast", "text-overlap", "copy-density", "numeric-container", "comparison-alignment"],
+  motion: ["stillness", "long-hold", "camera-only-drift", "slow-entrance", "repetitive-preset", "passive-sequence", "text-size", "clipping", "contrast"],
+  narration: ["clipping", "quiet"], writing: [],
+} as const;
 export const creativeRuleSchema = z.strictObject({
   id: z.string().regex(/^CQ-[A-Z0-9-]+$/), version: z.number().int().positive(),
   stages: z.array(creativeStageSchema).min(1).max(4),
   evidence: z.string().trim().min(1).max(1000), correction: z.string().trim().min(1).max(1000),
   severity: z.enum(["technical", "review"]), detection: z.string().trim().min(1).max(500),
   exceptions: z.string().trim().min(1).max(500),
-});
+  detectorId: z.string().min(1).max(80).optional(),
+}).refine((rule) => !rule.detectorId || rule.stages.every((stage) => (creativeDetectors[stage] as readonly string[]).includes(rule.detectorId!)), "Detector must belong to each affected stage.");
 export type CreativeRule = z.infer<typeof creativeRuleSchema>;
 export type CreativeStage = z.infer<typeof creativeStageSchema>;
 export const creativeRulesVersion = "creative-quality@1";

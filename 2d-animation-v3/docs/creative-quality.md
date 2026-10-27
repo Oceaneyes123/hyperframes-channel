@@ -29,12 +29,16 @@ suggestions and manually observed problems can also be saved as proposed rules.
 Corrections live under the configured data directory's `creative-feedback/`.
 Each immutable proposal records a UUID-derived rule ID, source artifact/hash,
 project, shot, evidence, correction and exception. It remains inactive until the
-user records regression evidence, checks the human confirmation box, and activates
-it. Activation applies across future projects. Rejection never activates a rule.
+user runs the existing stage inspector on its source and selected artifacts from
+the same project, records regression evidence, checks the human confirmation box,
+and activates it. The report records inspector findings, not proof that an arbitrary
+natural-language correction is automatically detected. Activation applies across
+future projects. Rejection never activates a rule.
 An exclusive hash-bound decision prevents double decisions and detects changed
 proposals. Pending or rejected model suggestions are never generation policy.
-This v1 has no rule editor or withdrawal UI: deliberate replacement/withdrawal
-needs a reviewed follow-up; do not edit decision JSON manually. Back up this
+An active rule can be withdrawn with explicit human confirmation and a reason;
+historical snapshots remain unchanged. A replacement can be proposed as a new
+rule. Do not edit decision JSON manually. Back up this
 directory with the database, videos and narration takes. Interrupted or corrupt
 records fail closed and require recovery from a known backup.
 
@@ -52,7 +56,8 @@ change bindings or accepted creative decisions.
 
 Reuse `shot.design`, frame environments, curated asset registries, semantic diagrams
 and the eight existing composition families. New scenes describe meaning,
-composition/hierarchy, assets, palette, depth and continuity. Generic geometry is
+composition/hierarchy, assets, palette, depth and continuity. New generated shots
+must include this specification; saved legacy shots remain readable. Generic geometry is
 appropriate when it teaches the mechanism, rather than filling space. Do not
 generate arbitrary executable SVG or fabricate assets.
 
@@ -68,6 +73,9 @@ camera-only drift, bounds and seams. Guidance specifies an energetic hook, clear
 development and concise payoff. Reading holds and accurate teaching override
 activity thresholds. No automatic speed multiplier or decorative-motion filler is
 introduced. Existing full-frame/seek/seam proof scripts remain the runtime checks.
+The comparison tool also samples the actual export at two frames per second and
+reports low-change intervals for review. Pixel change cannot distinguish meaningful
+action from camera motion and quiet intervals may be deliberate reading holds.
 
 ## Local narration evaluation
 
@@ -84,6 +92,7 @@ Adapters:
 | Windows Speech | Installed System.Speech voice, PCM16 24 kHz | Actual local smoke evaluation generated successfully |
 | Chatterbox Turbo | Operator-selected Python, cached model and reference WAV | Offline adapter implemented; model/runtime comparison pending |
 | Qwen3-TTS Base | Operator-selected Python, cached model and reference WAV/transcript | Offline adapter implemented; model/runtime comparison pending |
+| Qwen3-TTS 1.7B CustomVoice | Operator-selected Python, cached model and preset speaker | Delivery instructions supported; real listening comparison pending |
 
 Model APIs/license references were checked against the primary
 [Chatterbox source](https://github.com/resemble-ai/chatterbox),
@@ -101,13 +110,14 @@ node scripts/evaluate-narration.ts .planning/2026-10-26-creative-quality-v1/narr
 ```
 
 The JSON supplies `outputDirectory`, one shared `request` and `providers`. Python
-provider entries require `python`, `provider` (`chatterbox-turbo` or `qwen3-tts`),
+provider entries require `python`, `provider` (`chatterbox-turbo`, `qwen3-tts` or `qwen3-custom`),
 `modelPath`, `version`, `voice`, `referenceWav`, `referenceText` and `device`
-(`cpu` or `cuda`). Record the exact downloaded model revision in `version`.
+(`cpu` or `cuda`); `qwen3-custom` uses a preset speaker and needs no reference WAV
+or transcript. Record the exact downloaded model revision in `version`.
 Inference runs offline. A provider failure is recorded without substitution.
 The actual host exposes a Ryzen 7 3700X, about 48 GiB RAM and a GTX 1650-class
-GPU with 4096 MiB VRAM. The inspected Windows Python has no Torch, Chatterbox
-or Qwen package. These are availability findings, not neural-model benchmarks.
+GPU with 4096 MiB VRAM. A separate project-local Qwen environment was installed
+with CPU Torch; model download and actual neural benchmarks remain in progress.
 
 Takes record provider/model/voice/license, reference hash where applicable,
 actual runtime metadata when supplied, source/spoken text, pronunciation settings,
@@ -116,14 +126,18 @@ boundaries, frame boundaries and latency. Peak normalization targets 0.89 full
 scale; it is not loudness mastering. Signal checks reject malformed/silent WAV,
 report clipping and quiet audio, and leave pronunciation/expressiveness to listening.
 Current clone adapters do not support delivery instructions or a speech-rate
-control; Windows supports rate only. Capability flags and delivery intent are
+control; Windows supports rate only. The 1.7B CustomVoice adapter forwards delivery
+instructions, while the 0.6B model is rejected because it ignores them. Capability flags and delivery intent are
 recorded, rather than claiming those controls were applied. Seed reuse does not
 guarantee bit-identical neural synthesis across hardware or runtime versions.
 
 No default is selected before listening. Existing provider preferences, imported
-narration and gates are unchanged. Generated audio is audition material; verify
-it and import through **Narration timing** with the manifest's measured segment
-frames. Segment boundaries do not establish word alignment. New verified-aligner
+narration and gates are unchanged. Studio's **Narration timing** can generate,
+compare and explicitly import full auditions bound to the accepted script. Configure
+CustomVoice on the host with `V3_QWEN_PYTHON`, `V3_QWEN_MODEL_DIR`,
+`V3_QWEN_MODEL_VERSION`, `V3_QWEN_SPEAKER` and `V3_QWEN_DEVICE`. Single-line
+auditions cannot be imported as a complete take. Segment boundaries do not establish
+word alignment. New verified-aligner
 imports require tool/version, exact audio/script hashes and human review notes;
 legacy saved timing artifacts remain readable.
 
@@ -141,6 +155,12 @@ matching script facts/source identities, motion contracts, measured audio durati
 actual export metadata/full decode and source-audio synchronization. It writes
 both quality reports and comparable finding counts, with release still pending.
 Reports are written exclusively; previous comparisons cannot be overwritten.
+To record a completed human review, run `node scripts/review-creative-quality.ts
+<review.json>`. The JSON supplies `report`, `output`, and `review` with
+`reviewedByHuman`, `reviewer`, pass/fail values for `desktop`, `mobile`, `listening`
+and `comprehension`, `comparison` (`improved`, `not-improved`, or `inconclusive`),
+`blinded`, `criticalIssuesOpen` and `notes`. It rechecks source hashes and records
+the result without granting production approval.
 
 Watch both full videos on desktop and at phone size, sound-off and with narration.
 Compare visual meaning, composition, purposeful motion, pacing, voice consistency,
@@ -154,6 +174,8 @@ remain outstanding; this increment does not claim a quality improvement.
 
 ## Verification from this increment
 
-`npm run check`: 162 tests passed (one existing unused-variable lint warning in an unrelated planning script). `npm run build -- --webpack`: passed. The default Turbopack build still fails while starting its CSS worker on this host, including outside the sandbox. No permanent build configuration was changed.
+See the plan progress log for the current verification results. Prior verification
+passed with the webpack build; the default Turbopack build had a CSS worker failure
+on this host. No permanent build configuration was changed.
 
 The existing synthetic motion proof passed 350 sequential frames, 11 fresh seek comparisons, a continuous seam and full silent decode. The isolated Studio saved a proposed correction and retained disabled activation until human confirmation/evidence; desktop and 390px mobile layout were inspected. Two actual 18.2735-second Windows Speech takes of the identical request produced the same audio hash. These are software/signal results, not human quality approval. The frozen 71.933-second baseline is in `.planning/2026-10-26-creative-quality-v1/baseline.json`; no new release candidate or neural-provider listening comparison has been completed.

@@ -20,10 +20,19 @@ import { fakeGateway } from "./fixtures/gateway.ts";
 import { fixtureVisuals, boardFixture } from "./fixtures/visuals.ts";
 import { fixtureMotion, motionFixture } from "./fixtures/motion.ts";
 import { POST } from "../app/api/projects/[id]/creative-feedback/route.ts";
-import { evaluateCreativePair } from "../server/creative-evaluation.ts";
+import { evaluateCreativePair, evaluateHumanReview } from "../server/creative-evaluation.ts";
 import { motionArtifactSchema } from "../workflow/motion.ts";
 import { hashMotionSource } from "../server/motion-store.ts";
 import { wavFixture } from "./fixtures/wav.ts";
+import { frameActivity } from "../server/creative-frame-activity.ts";
+
+test("sampled full-video inactivity is review evidence, not an automatic rejection", () => {
+  const frames = Buffer.alloc(90 * 160 * 11);
+  frames.fill(80, 90 * 160 * 8);
+  assert.deepEqual(frameActivity(frames).quietIntervals, [{ startSeconds: 0, endSeconds: 3.5 }]);
+  assert.equal(frameActivity(frames).requiresHumanReview, true);
+  assert.throws(() => frameActivity(Buffer.alloc(5)));
+});
 
 test("canonical rule IDs, versions and generated documentation cannot diverge", () => {
   assert.equal(new Set(creativeRules.map((rule) => rule.id)).size, creativeRules.length);
@@ -34,14 +43,27 @@ test("canonical rule IDs, versions and generated documentation cannot diverge", 
 test("proposals stay inactive; confirmed regression review activates future snapshots only", (t) => {
   const root = mkdtempSync(join(tmpdir(), "v3-feedback-")); t.after(() => rmSync(root, { recursive: true, force: true }));
   const store = creativeFeedback(root), project = randomUUID(), before = store.snapshot("graphics"), original = JSON.stringify(before);
-  const proposal = store.propose(project, { artifactId: randomUUID(), shotIndex: 1, stage: "graphics", evidence: "Three repeated endpoint layouts in synthetic gallery.", correction: "Vary composition when the causal mechanism changes.", exceptions: "Persistent comparison." }, "a".repeat(64));
+  const proposal = store.propose(project, { artifactId: randomUUID(), shotIndex: 1, stage: "graphics", evidence: "Three repeated endpoint layouts in synthetic gallery.", correction: "Vary composition when the causal mechanism changes.", exceptions: "Persistent comparison.", detectorId: "geometry-repetition" }, "a".repeat(64));
   assert.deepEqual(store.snapshot("graphics"), before);
   assert.throws(() => store.decide(project, proposal.id, { decision: "activate", confirmedByHuman: false, regressionEvidence: "Reviewed synthetic gallery." }));
   assert.throws(() => store.decide(randomUUID(), proposal.id, { decision: "activate", confirmedByHuman: true, regressionEvidence: "Reviewed." }));
-  store.decide(project, proposal.id, { decision: "activate", confirmedByHuman: true, regressionEvidence: "Synthetic gallery repeated and intentional-continuity fixtures passed." });
+  assert.throws(() => store.decide(project, proposal.id, { decision: "activate", confirmedByHuman: true, regressionEvidence: "No report." }), /regression report/);
+  assert.throws(() => store.recordRegression(project, proposal.id, [{ artifactId: proposal.artifactId, sourceHash: proposal.sourceHash, findings: [] }]), /did not identify/);
+  const regression = store.recordRegression(project, proposal.id, [{ artifactId: proposal.artifactId, sourceHash: proposal.sourceHash, findings: ["geometry-repetition: repeated layout"] }]);
+  store.decide(project, proposal.id, { decision: "activate", confirmedByHuman: true, regressionId: regression.id, regressionEvidence: "Reviewed synthetic findings and continuity exception." });
   assert.notEqual(store.snapshot("graphics").sha256, before.sha256); assert.equal(JSON.stringify(before), original);
   assert.ok(!store.snapshot("motion").rules.some((rule) => rule.id === proposal.rule.id));
   assert.throws(() => store.decide(project, proposal.id, { decision: "reject", confirmedByHuman: true, regressionEvidence: "Changed mind." }));
+  assert.throws(() => store.withdraw(project, proposal.id, { confirmedByHuman: false, reason: "Too broad." }));
+  const active = store.snapshot("graphics");
+  const { board } = graphicsGallery(); if (board.output.kind !== "storyboard") throw new Error();
+  for (const index of [1, 2]) { board.output.shots[index].endFrame = structuredClone(board.output.shots[0].endFrame); board.output.shots[index].design!.continuityReason = ""; }
+  board.creativeRules = active;
+  assert.ok(creativeQualityReport(board, null).issues.some((issue) => issue.ruleIds.includes(proposal.rule.id)));
+  store.withdraw(project, proposal.id, { confirmedByHuman: true, reason: "Too broad for other projects." });
+  assert.ok(!store.snapshot("graphics").rules.some((rule) => rule.id === proposal.rule.id));
+  assert.ok(active.rules.some((rule) => rule.id === proposal.rule.id));
+  assert.throws(() => store.withdraw(project, proposal.id, { confirmedByHuman: true, reason: "Already withdrawn." }));
   const file = join(root, "creative-feedback", `${proposal.id}.json`); const changed = JSON.parse(readFileSync(file, "utf8")); changed.rule.correction = "Tampered"; writeFileSync(file, JSON.stringify(changed));
   assert.throws(() => store.snapshot("graphics"), /integrity/);
 });
@@ -78,8 +100,15 @@ test("generation supplies stage rules, freezes their snapshots and preserves acc
   assert.equal(before.creativeRules?.stage, "graphics"); assert.equal(motion.creativeRules?.stage, "motion");
   assert.ok(gateway.requests.every((request) => request.messages[0].content.includes("creative-quality@1")));
   assert.ok(!motion.creativeRules!.rules.some((rule) => rule.id === "CQ-VOICE"));
-  const feedback = creativeFeedback(config.dataDirectory), proposal = feedback.propose(project.id, { artifactId: boardId, shotIndex: 0, stage: "graphics", evidence: "Synthetic repeated layout.", correction: "Review the persistent container.", exceptions: "Intentional continuity." }, "a".repeat(64));
-  feedback.decide(project.id, proposal.id, { decision: "activate", confirmedByHuman: true, regressionEvidence: "Synthetic compatibility and continuity fixtures reviewed." });
+  const feedback = creativeFeedback(config.dataDirectory), sourceHash = createHash("sha256").update(JSON.stringify(before)).digest("hex");
+  const proposal = feedback.propose(project.id, { artifactId: boardId, shotIndex: 0, stage: "graphics", evidence: "Synthetic repeated layout.", correction: "Review the persistent container.", exceptions: "Intentional continuity." }, sourceHash);
+  const previousData = process.env.V3_DATA_DIR, previousVideos = process.env.V3_VIDEOS_DIR;
+  process.env.V3_DATA_DIR = config.dataDirectory; process.env.V3_VIDEOS_DIR = config.videosDirectory;
+  t.after(() => { if (previousData === undefined) delete process.env.V3_DATA_DIR; else process.env.V3_DATA_DIR = previousData; if (previousVideos === undefined) delete process.env.V3_VIDEOS_DIR; else process.env.V3_VIDEOS_DIR = previousVideos; });
+  const response = await POST(new Request(`http://127.0.0.1:3003/api/projects/${project.id}/creative-feedback`, { method: "POST", headers: { host: "127.0.0.1:3003", origin: "http://127.0.0.1:3003", "content-type": "application/json" }, body: JSON.stringify({ action: "regress", id: proposal.id, artifactIds: [boardId] }) }), { params: Promise.resolve({ id: project.id }) });
+  const event = JSON.parse((await response.text()).trim()), regression = JSON.parse(event.regression);
+  assert.equal(regression.examples[0].sourceHash, sourceHash); assert.equal(regression.examples[0].findings.length, inspectGraphics(before).findings.length);
+  feedback.decide(project.id, proposal.id, { decision: "activate", confirmedByHuman: true, regressionId: regression.id, regressionEvidence: "Synthetic compatibility and continuity fixtures reviewed." });
   assert.deepEqual(visuals.read(project.id, boardId), before); assert.equal(visuals.acceptance(project.id)!.stale, false);
   const report = creativeQualityReport(before, motion); assert.ok(report.durationFrames! > 0); assert.equal(report.ruleSnapshots.graphics?.sha256, before.creativeRules?.sha256);
 });
@@ -105,4 +134,12 @@ test("complete comparison enforces 50–75 seconds, identical script facts and m
   assert.throws(() => evaluateCreativePair(input, changed), /identical facts/);
   const short = { ...input, motion: structuredClone(motion) }; short.motion.plan.shots.forEach((shot) => { shot.durationFrames = 120; });
   assert.throws(() => evaluateCreativePair(short, short), /50–75/);
+});
+
+test("human comparison requires explicit results without granting production approval", () => {
+  const review = { reviewedByHuman: true, reviewer: "Synthetic reviewer", desktop: "pass", mobile: "pass", listening: "pass", comprehension: "pass", comparison: "improved", blinded: false, criticalIssuesOpen: false, notes: "Synthetic test record; not a real human review." };
+  assert.equal(evaluateHumanReview(review).comparisonPassed, true); assert.equal(evaluateHumanReview(review).releaseEligible, false);
+  assert.equal(evaluateHumanReview({ ...review, criticalIssuesOpen: true }).comparisonPassed, false);
+  assert.equal(evaluateHumanReview({ ...review, mobile: "fail" }).comparisonPassed, false);
+  assert.throws(() => evaluateHumanReview({ ...review, reviewedByHuman: false }));
 });

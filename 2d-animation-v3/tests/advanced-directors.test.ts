@@ -27,6 +27,7 @@ test("all eight Directors preserve source-bound full/scoped immutable proposals 
    guidanceRecords.push(guidance);
    if(mode.startsWith("visual")) {
     const shot=structuredClone(source.board.output.kind==="storyboard"?source.board.output.shots[1]:null)!;shot.action+=" Preserve the exact source identity.";
+    shot.design ??= { theme: "editorial-workflow@1", family: "visual-comparison", meaning: "Explain the synthetic example.", metaphor: "Follow the example.", focalPoint: "Primary subject", layout: "Centered", density: "balanced", continuityReason: "Carry the same example." };
     if(mode==="visual-invalid")shot.startFrame.shapes[0].parts={unknown:{x:0,y:0,scale:1,opacity:1,color:"#244E42"}};
     return shot;
    }

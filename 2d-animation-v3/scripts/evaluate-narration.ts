@@ -11,7 +11,8 @@ const configSchema = z.strictObject({
   providers: z.array(z.discriminatedUnion("provider", [
     z.strictObject({ provider: z.literal("windows-speech"), voice: z.string().min(1) }),
     z.strictObject({ provider: z.enum(["chatterbox-turbo", "qwen3-tts"]), python: z.string().min(1), modelPath: z.string().min(1), version: z.string().min(1), voice: z.string().min(1), referenceWav: z.string().min(1), referenceText: z.string().min(1), device: z.enum(["cpu", "cuda"]) }),
-  ])).min(1).max(3),
+    z.strictObject({ provider: z.literal("qwen3-custom"), python: z.string().min(1), modelPath: z.string().min(1), version: z.string().min(1), voice: z.string().min(1), device: z.enum(["cpu", "cuda"]) }),
+  ])).min(1).max(4),
 });
 const config = configSchema.parse(JSON.parse(readFileSync(process.argv[2], "utf8")));
 mkdirSync(config.outputDirectory, { recursive: true });

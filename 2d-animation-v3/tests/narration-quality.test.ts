@@ -7,6 +7,13 @@ import { inspectNarration } from "../engine/quality/inspect-narration.ts";
 import { generateNarrationTake, normalizePcm16, type NarrationProvider } from "../server/narration/generation.ts";
 import { inspectWav } from "../server/wav.ts";
 import { wavFixture } from "./fixtures/wav.ts";
+import { spawnSync } from "node:child_process";
+
+test("Qwen custom voice forwards delivery and rejects a model that ignores it", (t) => {
+  const result = spawnSync("python", ["tests/local-narration-check.py"], { encoding: "utf8" });
+  if (result.error && "code" in result.error && result.error.code === "ENOENT") { t.skip("Python is not installed."); return; }
+  assert.equal(result.status, 0, result.stderr || result.error?.message);
+});
 
 test("PCM16 quality rejects silence and malformed audio, reports clipping, normalizes measured samples", () => {
   const bytes = wavFixture(1), silence = Buffer.from(bytes); silence.fill(0, 44);

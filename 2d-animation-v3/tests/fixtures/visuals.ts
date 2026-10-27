@@ -21,10 +21,11 @@ export function boardFixture(lines = [1, 2, 3]) {
 }
 export function fixtureVisuals(body: { messages: { content: string }[] }) {
   const context = JSON.parse(body.messages.at(-1)!.content);
+  const design = { theme: "editorial-workflow@1", family: "visual-comparison", meaning: "Compare a synthetic amount.", metaphor: "A container changes.", focalPoint: "Container", layout: "Centered", density: "balanced", continuityReason: "Carry the same example." };
   if (context.board) {
     const index = Number(body.messages[0].content.match(/shotIndex (\d+)/)?.[1]);
-    return { ...context.board.shots[index], action: "Revised fixture action: hold the reference marker while the amount changes." };
+    return { ...context.board.shots[index], design, action: "Revised fixture action: hold the reference marker while the amount changes." };
   }
-  if (context.concept) return boardFixture(context.narration.map((line: { number: number }) => line.number));
+  if (context.concept) { const board = boardFixture(context.narration.map((line: { number: number }) => line.number)); return { shots: board.shots.map((shot) => ({ ...shot, design })) }; }
   return conceptFixture;
 }

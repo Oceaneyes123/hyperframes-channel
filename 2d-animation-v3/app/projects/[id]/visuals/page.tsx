@@ -1,6 +1,7 @@
 import CreativeReview from "./creative-review";
 import { creativeQualityReport } from "../../../../server/creative-quality.ts";
 import { creativeFeedback } from "../../../../server/creative-feedback.ts";
+import { openNarrationStudio } from "../../../../server/narration/studio.ts";
 import { kineticExamples } from "../../../../workflow/examples/kinetic.ts";
 import WorkspaceHeader from "../../../workspace-header";
 import { notFound } from "next/navigation";
@@ -30,6 +31,7 @@ export default async function VisualPage({ params, searchParams }: {
   const motions = openMotion(config.dataDirectory, config.videosDirectory);
   const production = openProduction(config.dataDirectory, config.videosDirectory);
   const timings = openTiming(config.dataDirectory, config.videosDirectory);
+  const narrationTakes = openNarrationStudio(config.dataDirectory, config.videosDirectory);
   try {
     const project = studio.getProject(id); if (!project) notFound();
     const accepted = studio.acceptance(id); const script = accepted ? studio.readRevision(id, accepted.revisionId) : null;
@@ -47,7 +49,7 @@ export default async function VisualPage({ params, searchParams }: {
     return <main className="mx-auto max-w-7xl px-6 py-10 sm:px-12">
       <WorkspaceHeader projectId={id} title={project.title} stage="visuals" />
       <CreativeReview projectId={id} report={creativeQualityReport(board, motion, productionStatus.narration ? production.audio(id, productionStatus.narration.id) : undefined)} corrections={creativeFeedback(config.dataDirectory).list().filter((item) => item.projectId === id)} />
-      <details className="workspace-stage"><summary>Narration timing</summary><TimingWorkspace projectId={id} scriptId={accepted && !accepted.stale ? accepted.revisionId : null} timing={timings.latest(id)} /></details>
+      <details id="narration-review" className="workspace-stage"><summary>Narration timing</summary><TimingWorkspace projectId={id} scriptId={accepted && !accepted.stale ? accepted.revisionId : null} timing={timings.latest(id)} takes={narrationTakes.list(id)} /></details>
       <VisualWorkspace initialCapability={kineticExamples.find(entry => entry.id === capability)?.id} initialShot={selectedShot && /^\d{1,2}$/.test(selectedShot) ? Math.min(39,Number(selectedShot)) : 0} projectId={id} script={script} eligible={!!accepted && !accepted.stale} concepts={concepts} board={board} originalBoard={board?.baseId ? store.read(id, board.baseId) : null}
         conceptsCurrent={!!concepts && store.current(id, concepts.id)} boardCurrent={!!board && store.current(id, board.id)}
         latestConceptId={latestConcept} latestBoardId={latestBoard} chosen={chosen} acceptance={store.acceptance(id)} history={store.list(id)} />
@@ -63,5 +65,5 @@ export default async function VisualPage({ params, searchParams }: {
       <ProductionWorkspace projectId={id} motionId={receipt && !receipt.stale ? receipt.runId : null} status={productionStatus} reviewingAccepted={!!motion && motion.id === receipt?.runId && !receipt.stale} />
       </details>
     </main>;
-  } finally { timings.close(); production.close(); motions.close(); store.close(); studio.close(); }
+  } finally { narrationTakes.close(); timings.close(); production.close(); motions.close(); store.close(); studio.close(); }
 }
