@@ -1,0 +1,2 @@
+# Git for Windows must keep hook shebangs executable by its POSIX shell.
+.githooks/* text eol=lf

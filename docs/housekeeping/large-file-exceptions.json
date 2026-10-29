@@ -1,0 +1,15 @@
+{
+  "limitBytes": 5242880,
+  "legacyBlobs": {
+    "a5fb20d9219ac39d31480ed74f802d6d40c833b0": {
+      "path": "2d-animation-v3/public/media/card-declined/payment-terminal-pexels-5101679-4k.mp4",
+      "bytes": 12228603,
+      "reason": "Required pre-existing source asset; exact original bytes only. New content requires review."
+    },
+    "6d3d371830e7ee8e546dc61972f2cd231a5867a0": {
+      "path": "2d-animation/reference/voice.wav",
+      "bytes": 5455950,
+      "reason": "Required pre-existing source asset; exact original bytes only. New content requires review."
+    }
+  }
+}

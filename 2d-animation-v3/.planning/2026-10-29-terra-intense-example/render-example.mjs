@@ -12,7 +12,7 @@ import {hashEngine} from '../../server/production-store.ts';
 import {verifyExport,verifyPreviewFrames,verifyAudioSync} from '../../server/render.ts';
 import {preflight} from '../../server/preflight.ts';
 
-const output=resolve('output/terra-intense-10s-example'),signal=new AbortController().signal;
+const output=resolve('output/terra-intense-10s-example-corrected'),signal=new AbortController().signal;
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 const sources=JSON.parse(readFileSync(join(output,'sources.json'),'utf8'));
 for(const source of sources.sources)assert.equal(hash(readFileSync(source.file)),source.sha256);

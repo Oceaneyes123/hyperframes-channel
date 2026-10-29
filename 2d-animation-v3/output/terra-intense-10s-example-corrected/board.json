@@ -1,0 +1,747 @@
+{
+  "schemaVersion": 2,
+  "id": "3703881d-e75e-4ffa-a73c-39bb2b5284aa",
+  "projectId": "9ab9bc1a-90f8-4efa-b015-54f67b06360d",
+  "createdAt": "2026-10-29T07:28:26.276Z",
+  "scriptId": "7493a984-3939-4fd3-ba7f-27188b7ca291",
+  "scriptHash": "ad74cb51a0cce836a332bee2bfb21f9e6ac3f7ede67d6fdac92941f7d4ed9684",
+  "selectionId": "f5543918-1362-4338-84a6-c70db594aab8",
+  "baseId": null,
+  "instruction": "Separate 10-second Intense review example only. Local shot references, not measured word alignment or production approval.",
+  "output": {
+    "shots": [
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "illustrated-workflow",
+          "meaning": "A draft appears in a workspace; sending needs a separate human decision.",
+          "metaphor": "Human review and connected computer work",
+          "focalPoint": "TRUST THIS AI?",
+          "layout": "Sparse heading above a large causal object sequence",
+          "density": "sparse",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          1
+        ],
+        "seconds": 1.4,
+        "purpose": "A draft appears in a workspace; sending needs a separate human decision.",
+        "framing": "Large mobile-first editorial composition",
+        "subject": "TRUST THIS AI?",
+        "action": "A draft appears in a workspace; sending needs a separate human decision.",
+        "transition": "start",
+        "continuity": "Continue the narrated opening with source-faithful illustrative objects.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "graphic-asset@2",
+              "x": 4,
+              "y": 29,
+              "width": 92,
+              "height": 51.75,
+              "color": "#D9633F",
+              "label": "",
+              "asset": {
+                "id": "owner-review-console@1",
+                "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+              },
+              "parts": {
+                "workspace": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "monitor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 0
+                },
+                "review-controls": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "unresolved": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "human-hand": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#203B3A",
+                  "reveal": 1
+                }
+              }
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 10,
+              "width": 86,
+              "height": 11,
+              "color": "#203B3A",
+              "label": "TRUST THIS AI?",
+              "typography": "inter-heading@1"
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 4,
+              "y": 29,
+              "width": 92,
+              "height": 51.75,
+              "color": "#D9633F",
+              "label": "",
+              "asset": {
+                "id": "owner-review-console@1",
+                "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+              },
+              "parts": {
+                "workspace": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "monitor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "review-controls": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "unresolved": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "human-hand": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#203B3A",
+                  "reveal": 1
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "illustrated-workflow",
+          "meaning": "The human hand reaches the review control; the control reacts without sending anything.",
+          "metaphor": "Human review and connected computer work",
+          "focalPoint": "SEND?",
+          "layout": "Sparse heading above a large causal object sequence",
+          "density": "sparse",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          2
+        ],
+        "seconds": 1.4,
+        "purpose": "The human hand reaches the review control; the control reacts without sending anything.",
+        "framing": "Large mobile-first editorial composition",
+        "subject": "SEND?",
+        "action": "The human hand reaches the review control; the control reacts without sending anything.",
+        "transition": "hard-cut",
+        "continuity": "Continue the narrated opening with source-faithful illustrative objects.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "graphic-asset@2",
+              "x": 4,
+              "y": 29,
+              "width": 92,
+              "height": 51.75,
+              "color": "#D9633F",
+              "label": "",
+              "asset": {
+                "id": "owner-review-console@1",
+                "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+              },
+              "parts": {
+                "workspace": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "monitor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "review-controls": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "unresolved": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "human-hand": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#203B3A",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Your decision",
+              "typography": "inter-heading@1"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 10,
+              "width": 86,
+              "height": 11,
+              "color": "#203B3A",
+              "label": "SEND?",
+              "typography": "inter-heading@1"
+            },
+            {
+              "type": "graphic-asset@2",
+              "x": 4,
+              "y": 29,
+              "width": 92,
+              "height": 51.75,
+              "color": "#D9633F",
+              "label": "",
+              "asset": {
+                "id": "owner-review-console@1",
+                "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+              },
+              "parts": {
+                "workspace": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "monitor": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "draft": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "review-controls": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "unresolved": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 0,
+                  "color": "#203B3A",
+                  "reveal": 1
+                },
+                "human-hand": {
+                  "x": 0,
+                  "y": 0,
+                  "scale": 1,
+                  "opacity": 1,
+                  "color": "#203B3A",
+                  "reveal": 1
+                }
+              }
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Your decision",
+              "typography": "inter-heading@1"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "illustrated-workflow",
+          "meaning": "Connected computer-work elements assemble into an illustrative model identity.",
+          "metaphor": "Human review and connected computer work",
+          "focalPoint": "GPT-6.1 TERRA",
+          "layout": "Sparse heading above a large causal object sequence",
+          "density": "sparse",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          3
+        ],
+        "seconds": 1.8,
+        "purpose": "Connected computer-work elements assemble into an illustrative model identity.",
+        "framing": "Large mobile-first editorial composition",
+        "subject": "GPT-6.1 TERRA",
+        "action": "Connected computer-work elements assemble into an illustrative model identity.",
+        "transition": "hard-cut",
+        "continuity": "Continue the narrated opening with source-faithful illustrative objects.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "browser",
+              "x": 12,
+              "y": 42,
+              "width": 22,
+              "height": 22,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "document",
+              "x": 66,
+              "y": 42,
+              "width": 22,
+              "height": 22,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 10,
+              "width": 86,
+              "height": 11,
+              "color": "#203B3A",
+              "label": "GPT-6.1 TERRA",
+              "typography": "inter-heading@1"
+            },
+            {
+              "type": "chip",
+              "x": 35,
+              "y": 39,
+              "width": 30,
+              "height": 26,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "illustrated-workflow",
+          "meaning": "A document moves into a computer workspace, which visibly reacts.",
+          "metaphor": "Human review and connected computer work",
+          "focalPoint": "COMPUTER WORK",
+          "layout": "Sparse heading above a large causal object sequence",
+          "density": "sparse",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          4
+        ],
+        "seconds": 1.8,
+        "purpose": "A document moves into a computer workspace, which visibly reacts.",
+        "framing": "Large mobile-first editorial composition",
+        "subject": "COMPUTER WORK",
+        "action": "A document moves into a computer workspace, which visibly reacts.",
+        "transition": "hard-cut",
+        "continuity": "Continue the narrated opening with source-faithful illustrative objects.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "document",
+              "x": 8,
+              "y": 44,
+              "width": 18,
+              "height": 19,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "browser",
+              "x": 39,
+              "y": 34,
+              "width": 48,
+              "height": 36,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 10,
+              "width": 86,
+              "height": 11,
+              "color": "#203B3A",
+              "label": "COMPUTER WORK",
+              "typography": "inter-heading@1"
+            },
+            {
+              "type": "browser",
+              "x": 39,
+              "y": 34,
+              "width": 48,
+              "height": 36,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "illustrated-workflow",
+          "meaning": "The model dispatches work into several documents; no benchmark or speed figure is asserted.",
+          "metaphor": "Human review and connected computer work",
+          "focalPoint": "FASTER",
+          "layout": "Sparse heading above a large causal object sequence",
+          "density": "sparse",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          5
+        ],
+        "seconds": 1.8,
+        "purpose": "The model dispatches work into several documents; no benchmark or speed figure is asserted.",
+        "framing": "Large mobile-first editorial composition",
+        "subject": "FASTER",
+        "action": "The model dispatches work into several documents; no benchmark or speed figure is asserted.",
+        "transition": "hard-cut",
+        "continuity": "Continue the narrated opening with source-faithful illustrative objects.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "chip",
+              "x": 40,
+              "y": 35,
+              "width": 20,
+              "height": 20,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 10,
+              "width": 86,
+              "height": 14,
+              "color": "#203B3A",
+              "label": "FASTER",
+              "typography": "inter-heading@1"
+            },
+            {
+              "type": "document",
+              "x": 12,
+              "y": 54,
+              "width": 20,
+              "height": 20,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "document",
+              "x": 40,
+              "y": 54,
+              "width": 20,
+              "height": 20,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "document",
+              "x": 68,
+              "y": 54,
+              "width": 20,
+              "height": 20,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        }
+      },
+      {
+        "design": {
+          "theme": "editorial-workflow@1",
+          "family": "illustrated-workflow",
+          "meaning": "A token moves into a pricing document; no invented price or savings ratio is shown.",
+          "metaphor": "Human review and connected computer work",
+          "focalPoint": "LOWER TOKEN PRICES",
+          "layout": "Sparse heading above a large causal object sequence",
+          "density": "sparse",
+          "continuityReason": ""
+        },
+        "lineNumbers": [
+          6
+        ],
+        "seconds": 1.8,
+        "purpose": "A token moves into a pricing document; no invented price or savings ratio is shown.",
+        "framing": "Large mobile-first editorial composition",
+        "subject": "LOWER TOKEN PRICES",
+        "action": "A token moves into a pricing document; no invented price or savings ratio is shown.",
+        "transition": "hard-cut",
+        "continuity": "Continue the narrated opening with source-faithful illustrative objects.",
+        "startFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "chip",
+              "x": 8,
+              "y": 48,
+              "width": 20,
+              "height": 20,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "document",
+              "x": 58,
+              "y": 41,
+              "width": 30,
+              "height": 29,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        },
+        "endFrame": {
+          "background": "#F7F3E9",
+          "shapes": [
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 10,
+              "width": 86,
+              "height": 10,
+              "color": "#203B3A",
+              "label": "LOWER TOKEN",
+              "typography": "inter-heading@1"
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 22,
+              "width": 86,
+              "height": 13,
+              "color": "#203B3A",
+              "label": "PRICES",
+              "typography": "inter-heading@1"
+            },
+            {
+              "type": "document",
+              "x": 58,
+              "y": 41,
+              "width": 30,
+              "height": 29,
+              "color": "#203B3A",
+              "label": ""
+            },
+            {
+              "type": "heading",
+              "x": 7,
+              "y": 86,
+              "width": 86,
+              "height": 4,
+              "color": "#203B3A",
+              "label": "Launch promise",
+              "typography": "inter-heading@1"
+            }
+          ]
+        }
+      }
+    ],
+    "kind": "storyboard"
+  }
+}

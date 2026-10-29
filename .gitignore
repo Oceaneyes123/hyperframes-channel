@@ -20,3 +20,54 @@ models/
 **/.tools/supertonic3-model/
 **/.tools/supertonic-voice-cloning/
 /2d-animation/tools/supertonic3-tts/
+
+# Local configuration and data (never credentials or mutable databases)
+.env
+.env.*
+!.env.example
+.data/
+*.sqlite
+*.sqlite-*
+*.db-wal
+*.db-shm
+
+# Generated media and portable evidence bundles
+*.wav
+*.mp3
+*.mp4
+*.log
+*.zip
+*.bundle
+**/frames/*.png
+**/seek-*.png
+/2d-animation-v2/examples/**/*.png
+/2d-animation-v2/examples/**/*.jpg
+/2d-animation-v3/output/**/*.png
+/2d-animation-v3/output/**/*.jpg
+/2d-animation-v3/output/**/register.tsx
+/2d-animation-v3/.planning/**/*.png
+/2d-animation-v3/.planning/**/*.jpg
+/.graphify_detect.json
+/outputs/**/*.png
+/outputs/**/*.jpg
+
+# Required source media and retained channel audition
+!/2d-animation/reference/*.wav
+!/2d-animation/reference/*.mp3
+!/2d-animation-v3/public/media/**/*.mp4
+!/outputs/tts-audition-2026-10-25/fish-audio.mp3
+
+# Representative images directly linked by retained Markdown
+!/2d-animation-v3/.planning/2026-10-24-v3-graphic-design-quality-overhaul/continuation/composition-contact.png
+!/2d-animation-v3/.planning/2026-10-24-v3-graphic-design-quality-overhaul/continuation/studio-review-full.png
+!/2d-animation-v3/output/playwright/payment-failed-motion-review/contact-sheet.png
+!/2d-animation-v3/output/playwright/payment-failed-storyboard/Shot1End.png
+!/2d-animation-v3/output/playwright/payment-failed-storyboard/Shot2End.png
+!/2d-animation-v3/output/playwright/payment-failed-storyboard/Shot3End.png
+!/2d-animation-v3/output/playwright/payment-failed-storyboard/Shot4End.png
+!/2d-animation-v3/output/playwright/payment-failed-storyboard/Shot5End.png
+!/2d-animation-v3/output/playwright/payment-failed-storyboard/contact-sheet.png
+!/2d-animation-v3/output/terra-61-investigation/concepts-ff25f257-3613-4548-8b7b-290f8c917575/contact-sheet.png
+!/2d-animation-v3/output/terra-61-investigation/storyboard-f85221d8-88c8-48ff-95b5-de06fe408079/end-contact-sheet.png
+!/2d-animation-v3/output/terra-61-investigation/storyboard-f85221d8-88c8-48ff-95b5-de06fe408079/start-contact-sheet.png
+!/2d-animation-v3/output/terra-61-investigation/thumbnail-v1.png

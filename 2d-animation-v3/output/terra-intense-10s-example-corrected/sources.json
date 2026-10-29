@@ -1,0 +1,31 @@
+{
+  "reviewOnly": true,
+  "humanApproval": false,
+  "energyProfile": "intense",
+  "frames": 300,
+  "fps": 30,
+  "narrationExcerptSeconds": [
+    0,
+    10
+  ],
+  "wordAlignment": null,
+  "localShotReferencesOnly": true,
+  "sources": [
+    {
+      "file": "videos/48fac465-c64f-4ad4-afdf-47d41cf6c0b9/visuals/f85221d8-88c8-48ff-95b5-de06fe408079.json",
+      "sha256": "f55397bfb5a6fc73e001d77a12c12345049eac4acdec32557004e68c1496a172"
+    },
+    {
+      "file": "videos/48fac465-c64f-4ad4-afdf-47d41cf6c0b9/motion/370b9586-071f-4c52-a1a2-298a59f671c1.json",
+      "sha256": "34ab793d023fedc8ba05011e8ecf6b683fdf03a735d239e1e45cd85958311adf"
+    },
+    {
+      "file": "output/terra-61-investigation/voice-review/qwen-ryan-complete.wav",
+      "sha256": "c734c343c695ea7ce308d654270f920e8971cc2c66cb6e3a00fc1bb6211764ab"
+    },
+    {
+      "file": "output/terra-61-investigation/terra-61-final.mp4",
+      "sha256": "406535eca6acd98fcafe119eb83c04976ff2655e19f30a6477a01422de05fe56"
+    }
+  ]
+}

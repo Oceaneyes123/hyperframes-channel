@@ -1,0 +1,1138 @@
+{
+  "schemaVersion": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "interpreterVersion": "3",
+  "shots": [
+    {
+      "id": "shot-1",
+      "sourceIndex": 0,
+      "sourceHash": "42d03925fe3696b1dfa43d7684c35049401279f170b20e1905ab7ebf9b7ce705",
+      "lineNumbers": [
+        1
+      ],
+      "durationFrames": 42,
+      "objects": [
+        {
+          "id": "title",
+          "startIndex": null,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "TRUST THIS AI?",
+          "initial": {
+            "x": 7,
+            "y": 10,
+            "width": 86,
+            "height": 11,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        },
+        {
+          "id": "console",
+          "startIndex": 0,
+          "endIndex": 1,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 4,
+            "y": 29,
+            "width": 92,
+            "height": 51.75,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "owner-review-console@1",
+            "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+          },
+          "initialParts": {
+            "workspace": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "monitor": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "draft": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 0
+            },
+            "review-controls": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "unresolved": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "human-hand": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#203B3A",
+              "reveal": 1
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "question-hits",
+          "purpose": "question hits",
+          "type": "entry",
+          "targetIds": [
+            "title"
+          ],
+          "startFrame": 0,
+          "endFrame": 10,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 5,
+            "overshoot": 1.1
+          }
+        },
+        {
+          "id": "workspace-hits",
+          "purpose": "workspace hits",
+          "type": "emphasis",
+          "targetIds": [
+            "console"
+          ],
+          "startFrame": 6,
+          "endFrame": 18,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {},
+            "anticipation": 0.85,
+            "overshoot": 1.12
+          }
+        },
+        {
+          "id": "draft-forms",
+          "purpose": "draft forms",
+          "type": "transformation",
+          "targetIds": [
+            "console.draft"
+          ],
+          "startFrame": 18,
+          "endFrame": 26,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "mask-reveal@1",
+          "parameters": {
+            "reveal": 1
+          }
+        },
+        {
+          "id": "controls-react",
+          "purpose": "controls react",
+          "type": "emphasis",
+          "targetIds": [
+            "console.review-controls"
+          ],
+          "startFrame": 18,
+          "endFrame": 26,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {},
+            "anticipation": 0.85,
+            "overshoot": 1.12
+          }
+        },
+        {
+          "id": "read-result",
+          "purpose": "read result",
+          "type": "hold",
+          "targetIds": [
+            "title",
+            "console"
+          ],
+          "startFrame": 26,
+          "endFrame": 41,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "start",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-2",
+      "sourceIndex": 1,
+      "sourceHash": "e9879e2632110f6038fe66a8101655dc96edf90bd7efd7fdbc7868356706b1fa",
+      "lineNumbers": [
+        2
+      ],
+      "durationFrames": 42,
+      "objects": [
+        {
+          "id": "title",
+          "startIndex": null,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "SEND?",
+          "initial": {
+            "x": 7,
+            "y": 10,
+            "width": 86,
+            "height": 11,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        },
+        {
+          "id": "console",
+          "startIndex": 0,
+          "endIndex": 1,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 4,
+            "y": 29,
+            "width": 92,
+            "height": 51.75,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "owner-review-console@1",
+            "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+          },
+          "initialParts": {
+            "workspace": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "monitor": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "draft": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "review-controls": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "unresolved": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#203B3A",
+              "reveal": 1
+            },
+            "human-hand": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 0,
+              "color": "#203B3A",
+              "reveal": 1
+            }
+          }
+        },
+        {
+          "id": "note",
+          "startIndex": 1,
+          "endIndex": 2,
+          "type": "heading",
+          "label": "Your decision",
+          "initial": {
+            "x": 7,
+            "y": 86,
+            "width": 86,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "send-question-hits",
+          "purpose": "send question hits",
+          "type": "entry",
+          "targetIds": [
+            "title"
+          ],
+          "startFrame": 0,
+          "endFrame": 10,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 5,
+            "overshoot": 1.1
+          }
+        },
+        {
+          "id": "hand-arrives",
+          "purpose": "hand arrives",
+          "type": "impact",
+          "targetIds": [
+            "console.human-hand"
+          ],
+          "startFrame": 6,
+          "endFrame": 16,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "opacity": 1
+            },
+            "anticipation": 0.85,
+            "overshoot": 1.12
+          }
+        },
+        {
+          "id": "control-receives-hand",
+          "purpose": "control receives hand",
+          "type": "emphasis",
+          "targetIds": [
+            "console.review-controls"
+          ],
+          "startFrame": 16,
+          "endFrame": 24,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {},
+            "anticipation": 0.85,
+            "overshoot": 1.12
+          }
+        },
+        {
+          "id": "read-result",
+          "purpose": "read result",
+          "type": "hold",
+          "targetIds": [
+            "title",
+            "console",
+            "note"
+          ],
+          "startFrame": 25,
+          "endFrame": 41,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-3",
+      "sourceIndex": 2,
+      "sourceHash": "bc9c5219e0340487ec2b7910d73551891ac3adf9f8e97e3cea6280f9740fe196",
+      "lineNumbers": [
+        3
+      ],
+      "durationFrames": 54,
+      "objects": [
+        {
+          "id": "title",
+          "startIndex": null,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "GPT-6.1 TERRA",
+          "initial": {
+            "x": 7,
+            "y": 10,
+            "width": 86,
+            "height": 11,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        },
+        {
+          "id": "left",
+          "startIndex": 0,
+          "endIndex": null,
+          "type": "browser",
+          "label": "",
+          "initial": {
+            "x": 12,
+            "y": 42,
+            "width": 22,
+            "height": 22,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "right",
+          "startIndex": 1,
+          "endIndex": null,
+          "type": "document",
+          "label": "",
+          "initial": {
+            "x": 66,
+            "y": 42,
+            "width": 22,
+            "height": 22,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "model",
+          "startIndex": null,
+          "endIndex": 1,
+          "type": "chip",
+          "label": "",
+          "initial": {
+            "x": 35,
+            "y": 39,
+            "width": 30,
+            "height": 26,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "note",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "heading",
+          "label": "Launch promise",
+          "initial": {
+            "x": 7,
+            "y": 86,
+            "width": 86,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "model-name-hits",
+          "purpose": "model name hits",
+          "type": "entry",
+          "targetIds": [
+            "title"
+          ],
+          "startFrame": 0,
+          "endFrame": 12,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 5,
+            "overshoot": 1.1
+          }
+        },
+        {
+          "id": "workspace-assembles-model",
+          "purpose": "workspace assembles model",
+          "type": "transformation",
+          "targetIds": [
+            "left",
+            "right"
+          ],
+          "startFrame": 4,
+          "endFrame": 24,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "converge-assemble@1",
+          "parameters": {
+            "resultId": "model",
+            "overshoot": 1.12
+          }
+        },
+        {
+          "id": "model-receives",
+          "purpose": "model receives",
+          "type": "emphasis",
+          "targetIds": [
+            "model"
+          ],
+          "startFrame": 26,
+          "endFrame": 36,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {},
+            "anticipation": 0.85,
+            "overshoot": 1.12
+          }
+        },
+        {
+          "id": "read-result",
+          "purpose": "read result",
+          "type": "hold",
+          "targetIds": [
+            "title",
+            "model",
+            "note"
+          ],
+          "startFrame": 37,
+          "endFrame": 53,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-4",
+      "sourceIndex": 3,
+      "sourceHash": "1c99246dd1b43d40f5cbdd991a5ca4a182d2c587762ec4e7e43f77680b47d882",
+      "lineNumbers": [
+        4
+      ],
+      "durationFrames": 54,
+      "objects": [
+        {
+          "id": "title",
+          "startIndex": null,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "COMPUTER WORK",
+          "initial": {
+            "x": 7,
+            "y": 10,
+            "width": 86,
+            "height": 11,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        },
+        {
+          "id": "packet",
+          "startIndex": 0,
+          "endIndex": null,
+          "type": "document",
+          "label": "",
+          "initial": {
+            "x": 8,
+            "y": 44,
+            "width": 18,
+            "height": 19,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "workspace",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "browser",
+          "label": "",
+          "initial": {
+            "x": 39,
+            "y": 34,
+            "width": 48,
+            "height": 36,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "note",
+          "startIndex": 2,
+          "endIndex": 2,
+          "type": "heading",
+          "label": "Launch promise",
+          "initial": {
+            "x": 7,
+            "y": 86,
+            "width": 86,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "work-label-hits",
+          "purpose": "work label hits",
+          "type": "entry",
+          "targetIds": [
+            "title"
+          ],
+          "startFrame": 0,
+          "endFrame": 12,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 5,
+            "overshoot": 1.1
+          }
+        },
+        {
+          "id": "document-handoff",
+          "purpose": "document handoff",
+          "type": "transformation",
+          "targetIds": [
+            "packet"
+          ],
+          "startFrame": 8,
+          "endFrame": 26,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "flow-handoff@1",
+          "parameters": {
+            "destinationId": "workspace",
+            "reactionScale": 1.15
+          }
+        },
+        {
+          "id": "read-result",
+          "purpose": "read result",
+          "type": "hold",
+          "targetIds": [
+            "title",
+            "workspace",
+            "note"
+          ],
+          "startFrame": 32,
+          "endFrame": 53,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-5",
+      "sourceIndex": 4,
+      "sourceHash": "97f4031bfc9079c7dff4afdfdb8113d78511c6d6d865cd9bd69e12a625094cd5",
+      "lineNumbers": [
+        5
+      ],
+      "durationFrames": 54,
+      "objects": [
+        {
+          "id": "title",
+          "startIndex": null,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "FASTER",
+          "initial": {
+            "x": 7,
+            "y": 10,
+            "width": 86,
+            "height": 14,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        },
+        {
+          "id": "model",
+          "startIndex": 0,
+          "endIndex": null,
+          "type": "chip",
+          "label": "",
+          "initial": {
+            "x": 40,
+            "y": 35,
+            "width": 20,
+            "height": 20,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "first",
+          "startIndex": null,
+          "endIndex": 1,
+          "type": "document",
+          "label": "",
+          "initial": {
+            "x": 12,
+            "y": 54,
+            "width": 20,
+            "height": 20,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "second",
+          "startIndex": null,
+          "endIndex": 2,
+          "type": "document",
+          "label": "",
+          "initial": {
+            "x": 40,
+            "y": 54,
+            "width": 20,
+            "height": 20,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "third",
+          "startIndex": null,
+          "endIndex": 3,
+          "type": "document",
+          "label": "",
+          "initial": {
+            "x": 68,
+            "y": 54,
+            "width": 20,
+            "height": 20,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "note",
+          "startIndex": 1,
+          "endIndex": 4,
+          "type": "heading",
+          "label": "Launch promise",
+          "initial": {
+            "x": 7,
+            "y": 86,
+            "width": 86,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "faster-hits",
+          "purpose": "faster hits",
+          "type": "entry",
+          "targetIds": [
+            "title"
+          ],
+          "startFrame": 0,
+          "endFrame": 12,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 5,
+            "overshoot": 1.1
+          }
+        },
+        {
+          "id": "model-dispatches-work",
+          "purpose": "model dispatches work",
+          "type": "transformation",
+          "targetIds": [
+            "model"
+          ],
+          "startFrame": 8,
+          "endFrame": 28,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "split-disperse@1",
+          "parameters": {
+            "childIds": [
+              "first",
+              "second",
+              "third"
+            ]
+          }
+        },
+        {
+          "id": "read-result",
+          "purpose": "read result",
+          "type": "hold",
+          "targetIds": [
+            "title",
+            "first",
+            "second",
+            "third",
+            "note"
+          ],
+          "startFrame": 36,
+          "endFrame": 53,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-6",
+      "sourceIndex": 5,
+      "sourceHash": "5f928f01694a0cce30cf1941904c50e9706b229a4bb333935b9e60cc2d3c1d03",
+      "lineNumbers": [
+        6
+      ],
+      "durationFrames": 54,
+      "objects": [
+        {
+          "id": "title",
+          "startIndex": null,
+          "endIndex": 0,
+          "type": "heading",
+          "label": "LOWER TOKEN",
+          "initial": {
+            "x": 7,
+            "y": 10,
+            "width": 86,
+            "height": 10,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        },
+        {
+          "id": "prices",
+          "startIndex": null,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "PRICES",
+          "initial": {
+            "x": 7,
+            "y": 22,
+            "width": 86,
+            "height": 13,
+            "opacity": 0,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        },
+        {
+          "id": "token",
+          "startIndex": 0,
+          "endIndex": null,
+          "type": "chip",
+          "label": "",
+          "initial": {
+            "x": 8,
+            "y": 48,
+            "width": 20,
+            "height": 20,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "pricing",
+          "startIndex": 1,
+          "endIndex": 2,
+          "type": "document",
+          "label": "",
+          "initial": {
+            "x": 58,
+            "y": 41,
+            "width": 30,
+            "height": 29,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          }
+        },
+        {
+          "id": "note",
+          "startIndex": 2,
+          "endIndex": 3,
+          "type": "heading",
+          "label": "Launch promise",
+          "initial": {
+            "x": 7,
+            "y": 86,
+            "width": 86,
+            "height": 4,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "lower-token-hits",
+          "purpose": "lower token hits",
+          "type": "entry",
+          "targetIds": [
+            "title"
+          ],
+          "startFrame": 0,
+          "endFrame": 12,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 5,
+            "overshoot": 1.1
+          }
+        },
+        {
+          "id": "prices-hit",
+          "purpose": "prices hit",
+          "type": "entry",
+          "targetIds": [
+            "prices"
+          ],
+          "startFrame": 10,
+          "endFrame": 22,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "cascade@1",
+          "parameters": {
+            "staggerFrames": 2,
+            "offsetY": 5,
+            "overshoot": 1.1
+          }
+        },
+        {
+          "id": "pricing-handoff",
+          "purpose": "pricing handoff",
+          "type": "transformation",
+          "targetIds": [
+            "token"
+          ],
+          "startFrame": 16,
+          "endFrame": 34,
+          "importance": "primary",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "flow-handoff@1",
+          "parameters": {
+            "destinationId": "pricing",
+            "reactionScale": 1.15
+          }
+        },
+        {
+          "id": "read-result",
+          "purpose": "read result",
+          "type": "hold",
+          "targetIds": [
+            "title",
+            "prices",
+            "pricing",
+            "note"
+          ],
+          "startFrame": 36,
+          "endFrame": 53,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    }
+  ],
+  "energyProfile": "intense"
+}

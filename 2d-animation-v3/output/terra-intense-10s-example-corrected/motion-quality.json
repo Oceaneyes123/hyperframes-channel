@@ -1,0 +1,254 @@
+{
+  "version": 3,
+  "thresholds": {
+    "version": "motion-quality@2",
+    "stillFrames": 90,
+    "entranceFrames": 24,
+    "repeatedShots": 3,
+    "competingPrimary": 4,
+    "minimumFontPixels": 56,
+    "minimumSymbolPixels": 48,
+    "minimumContrast": 4.5,
+    "minimumSymbolContrast": 3
+  },
+  "energyPacing": {
+    "entranceFrames": 12,
+    "actionFrames": 24,
+    "developmentGapFrames": 45
+  },
+  "rhythm": {
+    "requiresHumanReview": true,
+    "shots": [
+      {
+        "shotId": "shot-1",
+        "startFrame": 0,
+        "endFrame": 41,
+        "causalBeats": 1,
+        "developmentGaps": 0,
+        "missingReactions": 0
+      },
+      {
+        "shotId": "shot-2",
+        "startFrame": 42,
+        "endFrame": 83,
+        "causalBeats": 1,
+        "developmentGaps": 0,
+        "missingReactions": 0
+      },
+      {
+        "shotId": "shot-3",
+        "startFrame": 84,
+        "endFrame": 137,
+        "causalBeats": 1,
+        "developmentGaps": 0,
+        "missingReactions": 0
+      },
+      {
+        "shotId": "shot-4",
+        "startFrame": 138,
+        "endFrame": 191,
+        "causalBeats": 1,
+        "developmentGaps": 0,
+        "missingReactions": 0
+      },
+      {
+        "shotId": "shot-5",
+        "startFrame": 192,
+        "endFrame": 245,
+        "causalBeats": 1,
+        "developmentGaps": 0,
+        "missingReactions": 0
+      },
+      {
+        "shotId": "shot-6",
+        "startFrame": 246,
+        "endFrame": 299,
+        "causalBeats": 1,
+        "developmentGaps": 0,
+        "missingReactions": 0
+      }
+    ]
+  },
+  "durationFrames": 300,
+  "findings": [
+    {
+      "id": "measured-type-review:shot-1:title",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-1",
+      "targetId": "title",
+      "startFrame": 0,
+      "endFrame": 41,
+      "severity": "review",
+      "message": "Shot 1: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-2:note",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-2",
+      "targetId": "note",
+      "startFrame": 42,
+      "endFrame": 83,
+      "severity": "review",
+      "message": "Shot 2: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-2:title",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-2",
+      "targetId": "title",
+      "startFrame": 42,
+      "endFrame": 83,
+      "severity": "review",
+      "message": "Shot 2: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-3:note",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-3",
+      "targetId": "note",
+      "startFrame": 84,
+      "endFrame": 137,
+      "severity": "review",
+      "message": "Shot 3: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-3:title",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-3",
+      "targetId": "title",
+      "startFrame": 84,
+      "endFrame": 137,
+      "severity": "review",
+      "message": "Shot 3: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-4:note",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-4",
+      "targetId": "note",
+      "startFrame": 138,
+      "endFrame": 191,
+      "severity": "review",
+      "message": "Shot 4: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-4:title",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-4",
+      "targetId": "title",
+      "startFrame": 138,
+      "endFrame": 191,
+      "severity": "review",
+      "message": "Shot 4: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-5:note",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-5",
+      "targetId": "note",
+      "startFrame": 192,
+      "endFrame": 245,
+      "severity": "review",
+      "message": "Shot 5: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-5:title",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-5",
+      "targetId": "title",
+      "startFrame": 192,
+      "endFrame": 245,
+      "severity": "review",
+      "message": "Shot 5: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-6:note",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-6",
+      "targetId": "note",
+      "startFrame": 246,
+      "endFrame": 299,
+      "severity": "review",
+      "message": "Shot 6: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-6:prices",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-6",
+      "targetId": "prices",
+      "startFrame": 246,
+      "endFrame": 299,
+      "severity": "review",
+      "message": "Shot 6: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    },
+    {
+      "id": "measured-type-review:shot-6:title",
+      "ruleId": "measured-type-review",
+      "shotId": "shot-6",
+      "targetId": "title",
+      "startFrame": 246,
+      "endFrame": 299,
+      "severity": "review",
+      "message": "Shot 6: inspect the measured font layout at phone size.",
+      "evidence": "This opt-in font is loaded and measured by the render browser; legacy character-count sizing is not an exact glyph measurement.",
+      "suggestion": "Review glyph bounds, decoration length and the authored line breaks in the preview/export.",
+      "heuristic": true
+    }
+  ],
+  "presetUsage": {
+    "cascade@1": 7,
+    "snap-overshoot@1": 5,
+    "mask-reveal@1": 1,
+    "converge-assemble@1": 1,
+    "flow-handoff@1": 2,
+    "split-disperse@1": 1
+  },
+  "warnings": [
+    "Shot 1: inspect the measured font layout at phone size.",
+    "Shot 2: inspect the measured font layout at phone size.",
+    "Shot 2: inspect the measured font layout at phone size.",
+    "Shot 3: inspect the measured font layout at phone size.",
+    "Shot 3: inspect the measured font layout at phone size.",
+    "Shot 4: inspect the measured font layout at phone size.",
+    "Shot 4: inspect the measured font layout at phone size.",
+    "Shot 5: inspect the measured font layout at phone size.",
+    "Shot 5: inspect the measured font layout at phone size.",
+    "Shot 6: inspect the measured font layout at phone size.",
+    "Shot 6: inspect the measured font layout at phone size.",
+    "Shot 6: inspect the measured font layout at phone size."
+  ],
+  "requiresHumanReview": true
+}
