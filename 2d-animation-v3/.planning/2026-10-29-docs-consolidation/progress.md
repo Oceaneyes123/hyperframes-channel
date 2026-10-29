@@ -26,3 +26,7 @@
 - Group 4 moves the remaining 88 eligible historical Markdown files with git mv, retains all operational scripts/JSON/media and both script-written logs, and builds a categorized archive index with original/adapted plans distinguished.
 
 - Group 4 check passes lint/typecheck and all 182 current workspace tests; the six added tests belong to concurrent work, not this docs-only change. Default build repeats the known worker failure. 407 local links and all 109 protected Markdown byte checks pass; frozen 731/22 manifests unchanged.
+
+- Group 4 committed as 0d45a20; 117 approved original Markdown files archived in total. Deleted only empty COMMON_MISTAKE.md for final group.
+- Latest workspace check passes all 182 tests/lint/typecheck; default build repeats known failure. Working-tree links resolve, but fresh-clone audit distinguishes 11 targets in the existing evidence bundle from six unbundled local/installed-skill targets. Asked the user whether to add stable tracked availability notes or retain explicit local-only links.
+- Concurrent attention-rhythm commit 353d709 landed independently. Verified each of our four commits contains only Markdown and approved metadata; global baseline diff includes that separate task and is not attributed to this change.
