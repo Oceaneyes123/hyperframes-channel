@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';import {readFileSync,writeFileSync,mkdirSync,copyFileSync} from 'node:fs';import {join} from 'node:path';import {readConfig} from '../../server/config.ts';import {openVisuals} from '../../server/visual-store.ts';import {openNarrationStudio} from '../../server/narration/studio.ts';import {creativeFeedback} from '../../server/creative-feedback.ts';import {inspectGraphics} from '../../engine/quality/inspect-graphics.ts';
+const path=new URL('./receipt.json',import.meta.url),r=JSON.parse(readFileSync(path,'utf8')),c=readConfig(),v=openVisuals(c.dataDirectory,c.videosDirectory),n=openNarrationStudio(c.dataDirectory,c.videosDirectory);
+try {
+ const source=v.read(r.projectId,r.storyboardId),take=n.read(r.projectId,r.fullNarrationId);assert.equal(take.complete,true);assert.equal(take.stale,false);
+ const shots=source.output.shots.map(shot=>{const segments=shot.lineNumbers.map(number=>{const value=take.manifest.segments.find(x=>x.number===number);assert(value);return value;});return{...shot,seconds:(segments.at(-1).endFrame-segments[0].startFrame)/30};});
+ const frames=shots.map(x=>Math.round(x.seconds*30));assert.equal(frames.reduce((a,b)=>a+b,0),take.measured.durationFrames);
+ const id=v.begin(r.projectId,{kind:'storyboard',scriptId:r.scriptId,selectionId:r.selectionId,baseId:source.id,shotIndex:null,instruction:`Same reviewed drawings, durations bound to measured line-segment boundaries of full Qwen take ${r.fullNarrationId}. Total 74.8 seconds. Human full-take listening and storyboard decisions pending. This is not word alignment or production approval.`},'codex-session measured storyboard timing');
+ try{v.complete(r.projectId,id,{shots},creativeFeedback(c.dataDirectory).snapshot('graphics'));}catch(e){v.fail(r.projectId,id);throw e;}
+ const saved=v.read(r.projectId,id);assert.equal(v.acceptance(r.projectId),null);
+ const output=`output/terra-61-investigation/storyboard-${id}`,prior=`output/terra-61-investigation/storyboard-${source.id}`;mkdirSync(output,{recursive:true});
+ for(let i=0;i<shots.length;i++)for(const state of ['start','end']){assert.deepEqual(saved.output.shots[i][`${state}Frame`],source.output.shots[i][`${state}Frame`]);for(const suffix of ['.png','-phone.png']){const name=`shot-${String(i+1).padStart(2,'0')}-${state}${suffix}`;copyFileSync(join(prior,name),join(output,name));}}
+ for(const state of ['start','end'])copyFileSync(join(prior,`${state}-contact-sheet.png`),join(output,`${state}-contact-sheet.png`));
+ writeFileSync(join(output,'review.json'),JSON.stringify({artifactId:id,scriptId:r.scriptId,fullNarrationId:r.fullNarrationId,totalFrames:take.measured.durationFrames,shotFrames:frames,imageReuse:{sourceBoardId:source.id,exactFrameEquality:true},planningOnly:true,humanApproval:false,quality:inspectGraphics(saved)},null,2)+'\n');
+ const latest=JSON.parse(readFileSync(path,'utf8'));latest.priorStoryboardId=source.id;latest.storyboardId=id;latest.storyboardShotFrames=frames;writeFileSync(path,JSON.stringify(latest,null,2)+'\n');
+ console.log(JSON.stringify({id,totalFrames:take.measured.durationFrames,shotFrames:frames,seconds:frames.map(x=>x/30),imageReuseVerified:true}));
+}finally{v.close();n.close();}

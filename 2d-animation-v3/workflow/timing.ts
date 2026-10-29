@@ -25,6 +25,17 @@ export const planningTimingSchema = z.strictObject({
 });
 export type PlanningTiming = z.infer<typeof planningTimingSchema>;
 
+export function timeStoryboard<T extends { shots: { lineNumbers: number[]; seconds: number }[] }>(board: T, timing: PlanningTiming): T {
+  const numbers = board.shots.flatMap((shot) => shot.lineNumbers);
+  if (JSON.stringify(numbers) !== JSON.stringify(timing.timing.map((line) => line.number))) throw new Error("Storyboard must cover the measured narration lines exactly once and in order.");
+  const starts = board.shots.map((shot, index) => index === 0 ? 0 : timing.timing.find((line) => line.number === shot.lineNumbers[0])!.startFrame);
+  return { ...board, shots: board.shots.map((shot, index) => {
+    const end = starts[index + 1] ?? timing.measured.durationFrames, duration = end - starts[index];
+    if (duration < 15 || duration > 1800 || shot.lineNumbers.some((number) => timing.timing.find((line) => line.number === number)!.endFrame > end)) throw new Error("Measured shot duration must fit 0.5–60 seconds. Regroup storyboard lines without changing the voice rate.");
+    return { ...shot, seconds: duration / 30 };
+  }) };
+}
+
 export function validatePlanningTiming(input: z.infer<typeof planningTimingInputSchema>, durationFrames: number, lines: { number: number; text: string }[]) {
   if (input.timing.length !== lines.length) throw new Error("Provide measured timing for every script line.");
   for (const [index, span] of input.timing.entries()) {

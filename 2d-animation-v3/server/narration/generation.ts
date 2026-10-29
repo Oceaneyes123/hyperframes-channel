@@ -7,7 +7,8 @@ import { inspectNarration } from "../../engine/quality/inspect-narration.ts";
 import { creativeFeedback } from "../creative-feedback.ts";
 
 export interface NarrationProvider {
-  identity: { id: string; model: string; version: string; voice: string; license: string; licenseUrl: string; supportsDelivery: boolean; referenceHash?: string };
+  identity: { id: string; model: string; version: string; voice: string; license: string; licenseUrl: string; supportsDelivery: boolean; referenceHash?: string; runtimeHash?: string };
+  preflight?(signal: AbortSignal): Promise<void>;
   generate(input: { text: string; delivery: string; rate: number; seed: number }, workDirectory: string, signal: AbortSignal): Promise<Buffer>;
 }
 export const narrationRequestSchema = z.strictObject({
@@ -31,14 +32,24 @@ export function normalizePcm16(bytes: Buffer) {
   return result;
 }
 
-export async function generateNarrationTake(directory: string, provider: NarrationProvider, input: unknown, signal: AbortSignal, options?: { rulesDirectory?: string; source?: { projectId: string; scriptId: string; scriptHash: string } }) {
+export async function generateNarrationTake(directory: string, provider: NarrationProvider, input: unknown, signal: AbortSignal, options?: { rulesDirectory?: string; source?: { projectId: string; scriptId: string; scriptHash: string }; resumeTakeId?: string; progress?: (message: string) => void }) {
   const request = narrationRequestSchema.parse(input);
   if (new Set(request.lines.map((line) => line.number)).size !== request.lines.length || request.lines.some((line, index) => index > 0 && line.number <= request.lines[index - 1].number)) throw new Error("Unique ordered narration line numbers required.");
   if (new Set(request.pronunciation.map((entry) => entry.term)).size !== request.pronunciation.length) throw new Error("Duplicate pronunciation terms are ambiguous.");
   const rules = creativeFeedback(options?.rulesDirectory ?? directory).snapshot("narration"), id = randomUUID(), root = join(directory, "narration-takes", id), started = performance.now();
+  signal.throwIfAborted();
+  await provider.preflight?.(signal);
+  // Resume only an explicitly selected take with the exact full request and source policy.
+  const fingerprint = hash(JSON.stringify({ request, provider: provider.identity, rules, source: options?.source, guidance: delivery }));
+  let resumeRoot: string | undefined;
+  if (options?.resumeTakeId) {
+    resumeRoot = join(directory, "narration-takes", z.uuid().parse(options.resumeTakeId));
+    const prior = JSON.parse(readFileSync(join(resumeRoot, "request.json"), "utf8"));
+    if (prior.fingerprint !== fingerprint || hash(JSON.stringify({ request: prior.request, provider: prior.provider, rules: prior.rules, source: prior.source, guidance: prior.guidance })) !== fingerprint) throw new Error("Resume requires identical script, provider, pronunciation, delivery, seed, rate and rules.");
+  }
   mkdirSync(root, { recursive: true });
   // Record the request before inference so failures remain diagnosable and retries never overwrite takes.
-  writeFileSync(join(root, "request.json"), JSON.stringify({ request, provider: provider.identity, rules }), { flag: "wx", flush: true });
+  writeFileSync(join(root, "request.json"), JSON.stringify({ request, provider: provider.identity, rules, source: options?.source, guidance: delivery, fingerprint, resumeTakeId: options?.resumeTakeId }), { flag: "wx", flush: true });
   const segments = [], audio: Buffer[] = []; let samples = 0, rate = 0, channels = 0;
   for (const line of request.lines) {
     signal.throwIfAborted(); const work = join(root, `line-${line.number}`); mkdirSync(work);
@@ -48,19 +59,33 @@ export async function generateNarrationTake(directory: string, provider: Narrati
     if (spoken.length > 4000) throw new Error("Pronunciation-expanded line exceeds the provider limit.");
     const segmentStarted = performance.now();
     const voiceGuidance = rules.rules.filter((rule) => rule.id === "CQ-VOICE" || rule.id.startsWith("CQ-USER-")).map((rule) => rule.correction).join(" ");
-    const raw = await provider.generate({ text: spoken, delivery: `${delivery[line.delivery]} ${voiceGuidance}`, rate: request.rate, seed: request.seed }, work, signal);
-    signal.throwIfAborted(); const rawQuality = inspectNarration(raw), bytes = normalizePcm16(raw), measured = inspectWav(bytes);
+    const checkpointPath = resumeRoot && join(resumeRoot, `line-${line.number}`, "checkpoint.json");
+    const reused = checkpointPath && existsSync(checkpointPath) ? JSON.parse(readFileSync(checkpointPath, "utf8")) : null;
+    let bytes: Buffer, rawQuality: ReturnType<typeof inspectNarration>;
+    if (reused) {
+      bytes = readFileSync(join(resumeRoot!, `line-${line.number}`, "normalized.wav"));
+      if (reused.fingerprint !== fingerprint || reused.number !== line.number || reused.spokenText !== spoken || reused.audioHash !== hash(bytes)) throw new Error("Narration checkpoint integrity failed; previous take preserved.");
+      rawQuality = reused.rawQuality;
+      options?.progress?.(`Reusing completed line ${line.number} (${segments.length + 1}/${request.lines.length}).`);
+    } else {
+      options?.progress?.(`Generating line ${line.number} (${segments.length + 1}/${request.lines.length}).`);
+      const raw = await provider.generate({ text: spoken, delivery: `${delivery[line.delivery]} ${voiceGuidance}`, rate: request.rate, seed: request.seed }, work, signal);
+      signal.throwIfAborted(); rawQuality = inspectNarration(raw); bytes = normalizePcm16(raw);
+    }
+    signal.throwIfAborted(); const measured = inspectWav(bytes);
     if (rate && (rate !== measured.sampleRate || channels !== measured.channels)) throw new Error("Provider changed audio format between segments.");
     rate = measured.sampleRate; channels = measured.channels; const data = pcm16Data(bytes), count = data.length / (channels * 2);
     if (count / rate * 30 < 1 || (samples + count) / rate > 180 || (samples + count) * channels * 2 > 15_999_956) throw new Error("Narration segments must span a frame and the complete take must fit 180 seconds and 16 MB.");
     const runtimeFile = join(work, "runtime.json"); let runtime = null;
-    if (existsSync(runtimeFile)) {
+    if (reused) runtime = reused.runtime;
+    else if (existsSync(runtimeFile)) {
       const text = readFileSync(runtimeFile, "utf8").replace(/^\uFEFF/, ""); if (text.length > 16000) throw new Error("Provider runtime report exceeds its limit.");
       runtime = z.record(z.string(), z.string().max(1000)).parse(JSON.parse(text));
     }
-    segments.push({ number: line.number, sourceText: line.text, spokenText: spoken, delivery: line.delivery, runtime, audioHash: hash(bytes), startSample: samples, endSample: samples + count,
+    segments.push({ number: line.number, sourceText: line.text, spokenText: spoken, delivery: line.delivery, runtime, ...(reused ? { reusedFrom: options!.resumeTakeId } : {}), audioHash: hash(bytes), startSample: samples, endSample: samples + count,
       startFrame: Math.round(samples / rate * 30), endFrame: Math.round((samples + count) / rate * 30), latencyMs: Math.round(performance.now() - segmentStarted), rawQuality });
     samples += count; audio.push(data); writeFileSync(join(work, "normalized.wav"), bytes, { flag: "wx", flush: true });
+    writeFileSync(join(work, "checkpoint.json"), JSON.stringify({ fingerprint, ...segments.at(-1)! }), { flag: "wx", flush: true });
   }
   const header = Buffer.from(readFileSync(join(root, `line-${request.lines[0].number}`, "normalized.wav")).subarray(0, 44));
   const data = Buffer.concat(audio); header.writeUInt32LE(data.length + 36, 4); header.writeUInt32LE(data.length, 40);

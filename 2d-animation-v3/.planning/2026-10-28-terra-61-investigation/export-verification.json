@@ -1,0 +1,39 @@
+{
+  "id": "96b4e397-f4ed-4ee2-8a46-4780eecc2916",
+  "kind": "rendered",
+  "createdAt": "2026-10-29T03:11:57.237Z",
+  "payload": {
+    "jobId": "eb967724-39c8-48ee-b68f-a7bb9e61480a",
+    "binding": "88401d3d10ca89d6cd08febafc29a8016ddf5d2ce2bda6178721404e84786204",
+    "verification": {
+      "sha256": "406535eca6acd98fcafe119eb83c04976ff2655e19f30a6477a01422de05fe56",
+      "durationFrames": 2244,
+      "audio": true,
+      "fullDecode": true,
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "engineHash": "f0a0b21fb67f0e37f8c4e7f6a82cf04df6c16e16e49d295dda56833ffac60843",
+      "preview": {
+        "comparedFrames": 2244,
+        "minimumSsim": 0.995889,
+        "threshold": 0.98
+      },
+      "audioSync": {
+        "correlation": 0.9999745539890714,
+        "lagSeconds": 0,
+        "toleranceSeconds": 0.03333333333333333
+      },
+      "checkedSeekFrames": [
+        0,
+        60,
+        557,
+        925,
+        1181,
+        1324,
+        1706,
+        1938
+      ]
+    }
+  }
+}

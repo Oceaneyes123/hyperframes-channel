@@ -4,7 +4,7 @@ import { useActionState, useCallback, useEffect, useMemo, useRef, useState } fro
 import { useRouter } from "next/navigation";
 import type { PlayerRef } from "@remotion/player";
 import { decideMotion } from "../../../actions.ts";
-import { scheduleMotion, type MotionArtifact, type EnergyProfile } from "../../../../workflow/motion.ts";
+import { defaultEnergyProfile, scheduleMotion, type MotionArtifact, type EnergyProfile } from "../../../../workflow/motion.ts";
 import type { VisualArtifact } from "../../../../workflow/visuals.ts";
 import { inspectMotion, type ProductionView } from "../../../../workflow/production.ts";
 
@@ -22,8 +22,10 @@ function Decision({ projectId, id, disabled }: { projectId: string; id: string; 
   const [state, action, pending] = useActionState(decideMotion.bind(null, projectId), { error: "" });
   return <form action={action} className="mt-6 flex flex-wrap gap-3">
     <input type="hidden" name="runId" value={id} />
+    <label className="flex w-full gap-3"><input name="rhythmReviewed" type="checkbox" required />I watched the whole candidate at normal speed and reviewed its rhythm, reading holds and scene handoffs.</label>
+    <label className="flex w-full gap-3"><input name="causeReactionReviewed" type="checkbox" required />I checked the major actions and their visible reactions, including any intentional exceptions.</label>
     <button name="decision" value="accept" disabled={disabled || pending}>Accept motion</button>
-    <button name="decision" value="reject" disabled={pending}>Reject</button>
+    <button name="decision" value="reject" disabled={pending} formNoValidate>Reject</button>
     {state.error && <p role="alert" className="w-full text-[var(--error)]">{state.error}</p>}
   </form>;
 }
@@ -33,7 +35,7 @@ export default function MotionWorkspace(props: Props) {
   const [busy, setBusy] = useState(false), [instruction, setInstruction] = useState(""), [message, setMessage] = useState(""), [error, setError] = useState("");
   const [frameState, setFrame] = useState(0), [selectedId, setSelectedId] = useState(""), [loop, setLoop] = useState(false);
   const [readyId, setReadyId] = useState("");
-  const [energyProfile, setEnergyProfile] = useState<EnergyProfile>(props.motion?.plan.energyProfile ?? "energetic");
+  const [energyProfile, setEnergyProfile] = useState<EnergyProfile>(props.motion?.plan.energyProfile ?? defaultEnergyProfile);
   useEffect(() => () => controller.current?.abort(), []);
   const { motion, sourceBoard } = props;
   const quality = useMemo(() => motion ? inspectMotion(motion.plan, sourceBoard) : null, [motion, sourceBoard]);
@@ -85,7 +87,8 @@ export default function MotionWorkspace(props: Props) {
       <legend className="sr-only">Motion proposal controls</legend>
       <label htmlFor="motion-instruction" className="block text-sm font-semibold">Motion direction</label>
       <textarea id="motion-instruction" maxLength={2000} rows={2} value={instruction} onChange={(event) => setInstruction(event.target.value)} className="mt-2 w-full" />
-      <label className="mt-3 block text-sm">Energy for next proposal<select value={energyProfile} onChange={(event) => setEnergyProfile(event.target.value as typeof energyProfile)} className="ml-3"><option value="calm">Calm</option><option value="balanced">Balanced</option><option value="energetic">Energetic</option><option value="intense">Intense</option></select></label>
+      <label className="mt-3 block text-sm">Energy for next proposal<select value={energyProfile} onChange={(event) => setEnergyProfile(event.target.value as typeof energyProfile)} className="ml-3"><option value="calm">Calm</option><option value="balanced">Balanced</option><option value="energetic">Energetic</option><option value="intense">Intense — punchy (default for new plans)</option></select></label>
+      <p className="mt-2 text-sm text-[var(--muted)]">Review at normal speed for fast impacts, connected reactions and purposeful handoffs. Passing diagnostics alone does not establish energetic animation.</p>
       <p className="mt-2 text-sm text-[var(--muted)]">Energy shapes meaningful actions and emphasis. Reading time and measured narration take priority.</p>
 
       <div className="mt-4 flex flex-wrap gap-3">
@@ -114,6 +117,7 @@ export default function MotionWorkspace(props: Props) {
           <p className="mt-3 text-sm text-[var(--muted)]">Findings guide review. Inspect the moving preview and listen to narration before accepting changes.</p>
           {acceptedQuality && <p className="mt-2 text-sm">Accepted version: {acceptedQuality.findings.length} findings · proposed version: {quality.findings.length} findings</p>}
           <p className="mt-3 text-sm">Preset usage: {Object.entries(quality.presetUsage).map(([preset, count]) => `${preset.split("@")[0].replace(/-/g, " ")} × ${count}`).join(" · ") || "Direct actions"}</p>
+          <details className="mt-3 text-sm"><summary>Whole-video rhythm review</summary><p className="my-2">Compare the progression across every scene. Counts guide review; they do not score visual energy or prove causality.</p><ol className="space-y-2">{quality.rhythm.shots.map((shot, index) => <li key={shot.shotId}><button onClick={() => { setSelectedId(shot.shotId); seek(shot.startFrame); }}>Shot {index + 1} · {((shot.endFrame - shot.startFrame + 1) / 30).toFixed(1)}s · {shot.causalBeats} declared causal beats · {shot.developmentGaps} development gaps · {shot.missingReactions} reaction checks</button></li>)}</ol></details>
           {!!props.timingWarnings?.length && <ul className="mt-3 space-y-2 text-sm">{props.timingWarnings.map((warning) => <li key={warning}>{warning}</li>)}</ul>}
           <ul className="mt-4 max-h-96 space-y-4 overflow-auto">{quality.findings.map((finding) => <li key={finding.id} className="border-t border-[var(--line)] pt-3 text-sm">
             <p className="font-semibold">{finding.message}</p><p>{(finding.startFrame / 30).toFixed(1)}–{(finding.endFrame / 30).toFixed(1)}s · {finding.heuristic ? "Heuristic review" : "Measured check"}</p>

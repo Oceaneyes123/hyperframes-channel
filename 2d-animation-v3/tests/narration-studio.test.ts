@@ -28,7 +28,14 @@ test("Studio auditions bind accepted script, preserve prior takes and require re
   const imported = takes.import(project.id, full, null, true);
   assert.equal(timing.read(project.id, imported)!.artifact.measured.durationFrames, 90);
   assert.equal(timing.read(project.id, imported)!.artifact.anchors.length, 0);
+  let attempts = 0;
+  await assert.rejects(takes.generate(project.id, { ...provider, async generate() { if (++attempts === 2) throw new Error("Synthetic interruption"); return wavFixture(1); } }, input, new AbortController().signal), /interruption/);
+  const interrupted = takes.interrupted(project.id); assert.equal(interrupted.length, 1); assert.equal(interrupted[0].completedLines, 1);
+  assert.equal(interrupted[0].resumable, true); assert.equal(interrupted[0].request!.seed, 3);
+  const resumed = await takes.generate(project.id, provider, { ...input, resumeTakeId: interrupted[0].id }, new AbortController().signal);
+  assert.equal(takes.read(project.id, resumed).complete, true); assert.equal(takes.read(project.id, resumed).stale, false);
   studio.saveScript(project.id, "Changed.\nSecond line.\nFinal line.", script.id);
+  assert.equal(takes.interrupted(project.id)[0].resumable, false);
   assert.equal(takes.read(project.id, full).stale, true);
   assert.throws(() => takes.import(project.id, full, imported, true), /complete take/);
   const path = join(db, "studio-narration", project.id, "narration-takes", full, "take.json"), bytes = readFileSync(path);

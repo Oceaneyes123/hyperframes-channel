@@ -145,6 +145,17 @@ export const motionShotSchema = z.strictObject({
 });
 export const energyProfileSchema = z.enum(["calm", "balanced", "energetic", "intense"]);
 export type EnergyProfile = z.infer<typeof energyProfileSchema>;
+export const defaultEnergyProfile: EnergyProfile = "intense";
+export const highEnergyPacing = {
+  energetic: { entranceFrames: 18, actionFrames: 30, developmentGapFrames: 60 },
+  intense: { entranceFrames: 12, actionFrames: 24, developmentGapFrames: 45 },
+} as const;
+export function motionPacingGuidance(profile: EnergyProfile) {
+  const pacing = profile === "energetic" || profile === "intense" ? highEnergyPacing[profile] : null;
+  return pacing
+    ? `Profile ${profile}: punchy, dynamic choreography. Aim for entrances of 6–${pacing.entranceFrames} frames and focused actions of 8–${pacing.actionFrames} frames at 30fps, respecting each preset's minimum and stagger requirements. Develop the explanation with a meaningful object change about every ${pacing.developmentGapFrames} frames (${pacing.developmentGapFrames / 30}s). Sequence anticipation, impact, a visible reaction and a handoff: collide/assemble, split, transform, trace a cause and reveal its result using supported presets. Use sharp settles, bounded overshoot and brief focused punch-ins. Stage long shots as several causal beats, not one entrance followed by a long hold or one slow tween. Camera drift, continuous micro-motion and cosmetic fades do not establish energetic teaching. Keep one primary focal action at a time; vary choreography with the meaning. Necessary reading holds and accurate relationships override these review targets; keep holds concise or stage the information. Do not time-stretch narration, add unsupported effects, shake/flash the frame, invent actions or add filler just to meet a threshold. No-warning reports do not establish visual energy; require normal-speed human review.`
+    : `Profile ${profile}: ${profile === "calm" ? "generous comprehension holds and fewer emphases" : "moderate stagger and restrained emphasis"}. Show meaningful cause and effect. Preserve accurate narration timing and necessary reading time. These are planning targets, never blanket speed multipliers or forced cuts.`;
+}
 export const motionPlanSchema = z.strictObject({
   schemaVersion: z.literal(1), width: z.literal(1080), height: z.literal(1920), fps: z.literal(30),
   interpreterVersion: z.enum(["1", "2", "3"]), shots: z.array(motionShotSchema).min(1).max(40),
@@ -201,11 +212,11 @@ export function expandMotionShot(shot: MotionShot): MotionShot {
   return { ...shot, actions };
 }
 
-export function hydrateMotion(input: unknown, board: VisualArtifact, hashShot: (shot: unknown) => string, base?: MotionPlan, version: "2" | "3" = "2", energyProfile: z.infer<typeof energyProfileSchema> = "energetic") {
+export function hydrateMotion(input: unknown, board: VisualArtifact, hashShot: (shot: unknown) => string, base?: MotionPlan, version: "2" | "3" = "2", energyProfile: z.infer<typeof energyProfileSchema> = defaultEnergyProfile) {
   const proposal = version === "3" ? generatedBeatMotionSchema.parse(input) : generatedMotionSchema.parse(input);
   if (board.output.kind !== "storyboard" || proposal.shots.length !== board.output.shots.length) throw new Error("Motion proposal must cover the complete storyboard.");
   const source = board.output.shots;
-  return motionPlanSchema.parse({ schemaVersion: 1, width: 1080, height: 1920, fps: 30, interpreterVersion: version, ...(version === "3" ? { energyProfile } : {}), shots: proposal.shots.map((shot, index) => ({
+  return motionPlanSchema.parse({ schemaVersion: 1, width: 1080, height: 1920, fps: 30, interpreterVersion: version, energyProfile, shots: proposal.shots.map((shot, index) => ({
     ...shot, ...(version === "3" ? { actions: [] } : {}), id: base?.shots[index]?.sourceHash === hashShot(source[index]) ? base.shots[index].id : `shot-${index + 1}`,
     sourceIndex: index, sourceHash: hashShot(source[index]), lineNumbers: source[index].lineNumbers,
     objects: shot.objects.map((object) => {

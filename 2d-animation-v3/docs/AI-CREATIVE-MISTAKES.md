@@ -38,17 +38,17 @@ Detection: Existing graphics and motion inspectors; human review at 360px width.
 
 Exceptions: Source-required exact text may need a dedicated close-up.
 
-## CQ-ENERGY v1
+## CQ-ENERGY v2
 
-Stages: motion. Severity: review.
+Stages: graphics, motion. Severity: review.
 
-Evidence: Slow entrances, camera-only drift and repeated presets create passive sequences.
+Evidence: A plan can pass stillness checks yet feel passive: one entrance, slow reveals and declared holds do not establish punchy animation.
 
-Correction: Use an energetic hook, clear developing explanation and concise payoff. Tie meaningful actions to measured narration, vary choreography and preserve comprehension holds. Never add motion solely to satisfy activity thresholds.
+Correction: Default new motion plans to Intense. Plan connected cause, impact, visible reaction and handoff using supported transformations, assembly, splitting and semantic traces. At 30fps aim for 6–12-frame entrances, 8–24-frame actions and meaningful object development about every 30–45 frames, respecting preset minima. Stage long explanations as several causal beats, with sharp settles, bounded overshoot, varied choreography and brief focused punch-ins. Keep one primary focal action at a time and concise necessary reading holds. Camera drift, cosmetic fades and constant micro-motion do not prove energy. Review normal-speed motion; never speed narration or add filler to satisfy thresholds.
 
-Detection: inspectCreativeMotion: stillness, slow-entrance, camera-only-drift, repetitive-preset, passive-sequence.
+Detection: inspectCreativeMotion: development-gap, slow-development, missing-causal-beat, missing-reaction, slow-entrance, stillness, camera-only-drift, repetitive-preset, passive-sequence; normal-speed human review.
 
-Exceptions: Purposeful reading holds and coherent repeated causal actions.
+Exceptions: Explicit calmer profiles, source-faithful slower demonstrations and comprehension holds may override pacing targets. Never sacrifice readability or invent causal actions.
 
 ## CQ-VOICE v1
 

@@ -54,6 +54,31 @@ change bindings or accepted creative decisions.
 
 ## Graphics and motion
 
+New motion proposals default to **Intense** unless an explicit request or existing
+base plan specifies another profile. CQ-ENERGY v2 also reaches storyboard planning:
+plan cause, impact, visible reaction and handoff before selecting animation presets.
+Intense targets at 30fps are 6–12-frame entrances, 8–24-frame focused actions and
+object development about every 30–45 frames. Energetic uses more generous limits.
+These are review targets, with source-faithful slower demonstrations and necessary
+reading holds as exceptions. Do not speed narration or add decorative motion.
+
+The motion inspector flags development gaps even inside declared holds, drawn-out
+actions, missing declared causal beats and missing receiving-object reactions.
+The reaction check looks for a different actor/part changing during a major beat
+or within 12 frames afterward; it cannot prove semantic causality. A self-contained
+transformation may be intentional. The whole-video rhythm summary shows every shot's
+duration, declared causal beats, gaps and reaction checks. No warning count proves
+creative success. Studio acceptance requires explicit normal-speed rhythm and
+cause/reaction review; rejection remains available without those confirmations.
+
+The reusable review workflow requires an approved representative scene before a
+full moving render for Intense/new CQ-ENERGY-v2 candidates. See
+[review commands and confirmation format](workflow-efficiency.md#representative-scene-and-whole-video-review).
+Approvals bind the exact motion, engine, review manifest and media hash. Changed
+inputs require new review; a scene approval never accepts a whole video or a
+production gate. All existing videos, source artifacts and recorded decisions
+remain unchanged. New rules/snapshots apply to future generation.
+
 Reuse `shot.design`, frame environments, curated asset registries, semantic diagrams
 and the eight existing composition families. New scenes describe meaning,
 composition/hierarchy, assets, palette, depth and continuity. New generated shots

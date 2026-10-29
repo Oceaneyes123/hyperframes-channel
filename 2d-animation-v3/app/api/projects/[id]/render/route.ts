@@ -1,9 +1,24 @@
 import { z } from "zod";
 import { isLocalRequest } from "../../../../../server/local-request.ts";
 import { renderProduction } from "../../../../../server/render.ts";
+import { readConfig } from "../../../../../server/config.ts";
+import { openProduction } from "../../../../../server/production-store.ts";
+import { streamWriting } from "../../../../../server/writing-response.ts";
+const inputSchema = z.strictObject({ binding: z.string().regex(/^[a-f0-9]{64}$/), authorize: z.literal(true), review: z.strictObject({ planReviewed: z.literal(true), movingAudioReviewed: z.literal(true), notes: z.string().trim().min(10).max(2000) }).optional() });
 export const runtime = "nodejs";
 export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   if (!isLocalRequest(request.headers.get("host"), request.headers.get("origin"))) return Response.json({ error: "Local Studio origin required." }, { status: 403 });
+  if (request.headers.get("accept") === "application/x-ndjson") {
+    const { id } = await params;
+    return streamWriting(request, id, (input) => inputSchema.parse(input), async (input, signal, progress) => {
+      const config = readConfig();
+      if (input.review) {
+        const store = openProduction(config.dataDirectory, config.videosDirectory);
+        try { store.approveReview(id, { binding: input.binding, ...input.review }); } finally { store.close(); }
+      }
+      return { jobId: await renderProduction(id, input.binding, input.authorize, signal, config, progress) };
+    });
+  }
   try {
     const { id } = await params; z.uuid().parse(id);
     const reader = request.body?.getReader(); if (!reader || !request.headers.get("content-type")?.includes("application/json")) throw new Error("Invalid render request.");

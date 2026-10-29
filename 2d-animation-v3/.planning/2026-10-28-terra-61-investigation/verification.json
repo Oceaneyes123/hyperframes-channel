@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-28T15:02:50.090Z",
+  "projectId": "48fac465-c64f-4ad4-afdf-47d41cf6c0b9",
+  "artifactIntegrity": "passed through existing schema/hash/dependency readers",
+  "hookCount": 5,
+  "selectedHook": "hook-3",
+  "scriptAcceptance": null,
+  "draftStatus": "revise",
+  "counts": {
+    "script_acceptances": 0,
+    "visual_runs": 0,
+    "storyboard_acceptances": 0,
+    "motion_runs": 0,
+    "motion_acceptances": 0,
+    "production_records": 0,
+    "planning_timing": 0
+  }
+}

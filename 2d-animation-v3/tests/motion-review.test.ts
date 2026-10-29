@@ -1,0 +1,33 @@
+import assert from "node:assert/strict";
+import { test } from "node:test";
+import { createHash, randomUUID } from "node:crypto";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { join } from "node:path";
+import { tmpdir } from "node:os";
+import { motionReviewStore } from "../server/motion-review.ts";
+
+test("representative approval binds exact media, source and engine and never approves the full video", (t) => {
+  const root = mkdtempSync(join(tmpdir(), "v3-scene-review-")); t.after(() => rmSync(root, { recursive: true, force: true }));
+  const projectId = randomUUID(), artifactId = randomUUID(), reviewId = randomUUID(), path = join(root, "workflow-reviews", reviewId);
+  mkdirSync(path, { recursive: true });
+  const bytes = Buffer.from("Synthetic review fixture, not playable production media."), sha = createHash("sha256").update(bytes).digest("hex");
+  const sourceHash = "a".repeat(64), engineHash = "b".repeat(64), expected = { artifactId, sourceHash, engineHash };
+  writeFileSync(join(path, "review.mp4"), bytes);
+  const report = { projectId, artifactId, kind: "motion", sourceHash, engineHash, audioHash: null, scope: "selected-shot", files: [{ file: "review.mp4", sha256: sha }] };
+  writeFileSync(join(path, "review.json"), JSON.stringify(report));
+  const store = motionReviewStore(root), input = { reviewId, watchedNormalSpeed: true, causeReactionReviewed: true, rhythmReviewed: true, notes: "Synthetic validation only; no real human video approval." };
+  assert.equal(store.hasSceneApproval(projectId, artifactId, sourceHash, engineHash), false);
+  assert.throws(() => store.approve(projectId, { ...input, watchedNormalSpeed: false }, expected));
+  assert.throws(() => store.approve(randomUUID(), input, expected), /changed/);
+  assert.throws(() => store.approve(projectId, input, { ...expected, engineHash: "c".repeat(64) }), /changed/);
+  assert.equal(store.approve(projectId, input, expected).scope, "selected-shot");
+  assert.equal(store.hasSceneApproval(projectId, artifactId, sourceHash, engineHash), true);
+  assert.equal(store.hasSceneApproval(projectId, artifactId, sourceHash, "c".repeat(64)), false);
+  assert.throws(() => store.approve(projectId, input, expected), /EEXIST/);
+  writeFileSync(join(path, "review.mp4"), "Changed media");
+  assert.throws(() => store.hasSceneApproval(projectId, artifactId, sourceHash, engineHash), /media integrity/);
+  writeFileSync(join(path, "review.mp4"), bytes);
+  writeFileSync(join(path, "review.json"), JSON.stringify({ ...report, scope: "all-shots" }));
+  assert.throws(() => store.hasSceneApproval(projectId, artifactId, sourceHash, engineHash), /approval integrity/);
+  assert.throws(() => store.approve(projectId, input, expected), /narration/);
+});

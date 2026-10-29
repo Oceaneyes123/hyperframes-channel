@@ -16,6 +16,8 @@ import { fakeGateway } from "./fixtures/gateway.ts";
 import { requestJson } from "../server/gateway.ts";
 import { openScriptwriting } from "../server/scriptwriting-store.ts";
 import { researchFixture } from "./fixtures/research.ts";
+import { openTiming } from "../server/timing-store.ts";
+import { wavFixture } from "./fixtures/wav.ts";
 
 function fixture(t: TestContext) {
   const root = mkdtempSync(join(tmpdir(), "v3-visuals-"));
@@ -194,4 +196,27 @@ test("gateway path saves proposals without accepting, rejects invalid outputs an
   f.config.visualModel = undefined; f.config.gateway.model = "fixture-model";
   const fallbackId = await generateVisuals(f.project.id, { ...f.request, baseId: id }, new AbortController().signal, () => {}, f.config);
   assert.equal(f.store.list(f.project.id).find((run) => run.id === fallbackId)?.model, "fixture-model");
+});
+
+test("visual generation uses reviewed narration for full and scoped durations and rejects timing changed in flight", async (t) => {
+  const f = fixture(t), initial = f.board(), timings = openTiming(f.config.dataDirectory, f.config.videosDirectory);
+  try {
+  const input = { scriptId: f.script.id, baseId: null, timing: [{ number: 1, startFrame: 0, endFrame: 50 }, { number: 2, startFrame: 60, endFrame: 140 }, { number: 3, startFrame: 150, endFrame: 175 }], anchors: [], provenance: "manual" };
+  const timingId = timings.import(f.project.id, input, wavFixture(6)); let changeTiming = false;
+  const gateway = await fakeGateway("writing", 0, (body) => {
+    const context = JSON.parse(body.messages.at(-1)!.content); assert.equal(context.measuredTiming.durationFrames, 180);
+    if (changeTiming) timings.import(f.project.id, { ...input, baseId: timingId }, wavFixture(6));
+    return fixtureVisuals(body);
+  }); t.after(() => gateway.close());
+  f.config.gateway = { baseUrl: gateway.baseUrl, model: "fixture-model", apiKey: "fixture" };
+  const id = await generateVisuals(f.project.id, { ...initial.input, baseId: initial.id }, new AbortController().signal, () => {}, f.config);
+  const full = f.store.read(f.project.id, id)!; assert.equal(full.output.kind, "storyboard");
+  if (full.output.kind === "storyboard") assert.deepEqual(full.output.shots.map((shot) => shot.seconds), [2, 3, 1]);
+  const scoped = await generateVisuals(f.project.id, { ...initial.input, kind: "shot", baseId: id, shotIndex: 1 }, new AbortController().signal, () => {}, f.config);
+  const result = f.store.read(f.project.id, scoped)!;
+  if (result.output.kind === "storyboard") assert.equal(result.output.shots[1].seconds, 3);
+  changeTiming = true;
+  await assert.rejects(generateVisuals(f.project.id, { ...initial.input, baseId: scoped }, new AbortController().signal, () => {}, f.config));
+  assert.equal(f.store.latest(f.project.id, "storyboard"), scoped);
+  } finally { timings.close(); }
 });

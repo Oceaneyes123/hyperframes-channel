@@ -38,6 +38,9 @@ test("canonical rule IDs, versions and generated documentation cannot diverge", 
   assert.equal(new Set(creativeRules.map((rule) => rule.id)).size, creativeRules.length);
   creativeRules.forEach((rule) => creativeRuleSchema.parse(rule));
   assert.equal(readFileSync("docs/AI-CREATIVE-MISTAKES.md", "utf8").replaceAll("\r\n", "\n"), creativeRulesMarkdown());
+  const energy = creativeRules.find((rule) => rule.id === "CQ-ENERGY")!;
+  assert.equal(energy.version, 2); assert.deepEqual(energy.stages, ["graphics", "motion"]);
+  assert.match(energy.correction, /6–12-frame entrances/); assert.match(energy.evidence, /pass stillness checks/);
 });
 
 test("proposals stay inactive; confirmed regression review activates future snapshots only", (t) => {
@@ -97,7 +100,10 @@ test("generation supplies stage rules, freezes their snapshots and preserves acc
   visuals.accept(project.id, boardId); const before = visuals.read(project.id, boardId)!;
   const motionId = await generateMotion(project.id, { storyboardId: boardId, baseId: null, shotId: null, instruction: "Synthetic fixture." }, new AbortController().signal, () => {}, config);
   const motion = motions.read(project.id, motionId)!;
+  assert.equal(motion.plan.energyProfile, "intense");
   assert.equal(before.creativeRules?.stage, "graphics"); assert.equal(motion.creativeRules?.stage, "motion");
+  assert.ok(before.creativeRules!.rules.some((rule) => rule.id === "CQ-ENERGY" && rule.version === 2));
+  assert.ok(gateway.requests.some((request) => request.messages.some((message) => message.content.includes("Profile intense: punchy, dynamic choreography"))));
   assert.ok(gateway.requests.every((request) => request.messages[0].content.includes("creative-quality@1")));
   assert.ok(!motion.creativeRules!.rules.some((rule) => rule.id === "CQ-VOICE"));
   const feedback = creativeFeedback(config.dataDirectory), sourceHash = createHash("sha256").update(JSON.stringify(before)).digest("hex");

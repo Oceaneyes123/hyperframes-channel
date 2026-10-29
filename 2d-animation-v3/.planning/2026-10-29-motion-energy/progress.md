@@ -1,0 +1,14 @@
+# Progress
+
+- Read HyperFrames entry/Studio/animation skills and current motion contracts. Applying the existing Remotion V3 system; HTML-specific CLI routing does not apply to these shared TypeScript changes.
+- Preserved prior workflow-efficiency edits and all project media. Starting narrowly scoped shared pacing changes.
+- Set shared Intense default for new plans while preserving explicit/base profiles. Generation receives profile guidance once for every interpreter; hydration and Studio use the same default.
+- Added profile-sensitive development-gap, slow-development, missing-causal-beat and missing-reaction review diagnostics, plus a per-shot whole-video rhythm summary. Holds cannot hide sparse pacing; comprehension and source-faithful exceptions remain human decisions.
+- Updated CQ-ENERGY to v2 for graphics and motion and regenerated its common-mistake document. No-warning reports explicitly do not prove creative quality.
+- Added approve-review command and hash-bound immutable scene/full review confirmations. New Intense/CQ-ENERGY-v2 full moving review requires current representative-scene approval. Full rhythm approval requires narration. Studio acceptance asks for normal-speed full rhythm and cause/reaction confirmations; reject bypasses those checkboxes.
+- Added tests for exact source/engine/media review binding, changed inputs/corruption, no automatic full-video approval, gap/action pacing, explicit calmer profiles, unchanged saved plans and receiving-object reactions. All 16 focused tests passed. No rendered media or real approvals created.
+- Beginning final npm run check and established Webpack build. No need to repeat the previously confirmed failing Turbopack CSS-worker path.
+- Webpack build passed, including TypeScript, static generation and route tracing. git diff --check passed. Full check has passed lint/typecheck and is still running tests; investigating the remaining worker instead of reporting completion prematurely.
+- Remaining worker was an existing calm-profile gateway contract test: replacement guidance omitted the explicit blanket-speed-multiplier safeguard. Restored that wording; all nine motion integration tests pass. New generated interpreter-2 plans now also retain their chosen energy profile so the diagnostic policy applies consistently; historical plans are unchanged.
+- Final npm run check passed with exit 0: all 176 tests, lint and typecheck. Two pre-existing planning-script unused-variable warnings remain. Final Webpack build is running after the last guidance/profile correction; no further source changes planned.
+- Final Webpack build completed with exit 0. Final diff check passed. Opened the common-mistake catalog in Codex. All requested shared workflow changes are complete; existing/new video rendering and real project approvals were excluded throughout.

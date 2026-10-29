@@ -12,10 +12,14 @@ import { motionWorkflowFixture } from "../tests/fixtures/motion-workflow.ts";
 import { conceptFixture } from "../tests/fixtures/visuals.ts";
 import { wavFixture } from "../tests/fixtures/wav.ts";
 import { scheduleMotion } from "../workflow/motion.ts";
+import { openTiming } from "../server/timing-store.ts";
+import { renderWorkflowReview } from "../server/review-render.ts";
+import { execFileSync } from "node:child_process";
 
 const root = resolve(`.data/production-proof-${randomUUID()}`); mkdirSync(root, { recursive: false });
 const config = readConfig({ V3_DATA_DIR: join(root, "database"), V3_VIDEOS_DIR: join(root, "videos") });
 const studio = openStudio(config.dataDirectory, config.videosDirectory), visuals = openVisuals(config.dataDirectory, config.videosDirectory), motion = openMotion(config.dataDirectory, config.videosDirectory), production = openProduction(config.dataDirectory, config.videosDirectory);
+const timings = openTiming(config.dataDirectory, config.videosDirectory);
 let projectId;
 try {
   const fixture = motionWorkflowFixture(); const project = studio.createProject("SYNTHETIC ONLY — production worker verification"); projectId = project.id;
@@ -24,16 +28,28 @@ try {
   const concept = visuals.begin(project.id, request, "fixture-model"); visuals.complete(project.id, concept, conceptFixture); const selectionId = visuals.choose(project.id, concept, 0, null);
   const boardId = visuals.begin(project.id, { ...request, kind: "storyboard", selectionId }, "fixture-model"); visuals.complete(project.id, boardId, { shots: fixture.board.output.shots }); visuals.accept(project.id, boardId);
   fixture.plan.shots.forEach((shot, index) => { shot.sourceHash = hashMotionSource(fixture.board.output.shots[index]); });
-  const motionId = motion.begin(project.id, { storyboardId: boardId, baseId: null, shotId: null, instruction: "Synthetic diagnostics only" }); motion.complete(project.id, motionId, fixture.plan); motion.decide(project.id, motionId, "accept");
   const schedule = scheduleMotion(fixture.plan), voice = wavFixture(schedule.durationFrames / 30);
   const timing = schedule.shots.map((shot, i) => ({ number: i + 1, startFrame: shot.startFrame + 1, endFrame: schedule.shots[i + 1]?.startFrame ?? shot.endFrame - 1 }));
+  timings.import(project.id, { scriptId: script.id, baseId: null, timing, anchors: [], provenance: "manual" }, voice);
+  const motionId = motion.begin(project.id, { storyboardId: boardId, baseId: null, shotId: null, instruction: "Synthetic diagnostics only" }); motion.complete(project.id, motionId, fixture.plan); motion.decide(project.id, motionId, "accept");
+  const boardReview = await renderWorkflowReview(project.id, { kind: "board", artifactId: boardId, shotIndex: 0 }, new AbortController().signal, console.error, config);
+  assert.equal(boardReview.report.humanApproval, false); assert.equal(boardReview.report.files.length, 2);
+  const sceneReview = await renderWorkflowReview(project.id, { kind: "motion", artifactId: motionId, shotIndex: 1 }, new AbortController().signal, console.error, config);
+  assert.equal(sceneReview.report.scope, "selected-shot"); assert.ok(sceneReview.report.audioHash);
+  const sceneVideo = join(sceneReview.output, "review.mp4");
+  const streams = JSON.parse(execFileSync("ffprobe", ["-v", "error", "-show_streams", "-of", "json", sceneVideo], { encoding: "utf8" })).streams;
+  assert.ok(streams.some((stream) => stream.codec_type === "audio"));
+  const scene = streams.find((stream) => stream.codec_type === "video"); assert.equal(scene.width, 360); assert.equal(scene.height, 640); assert.equal(Number(scene.nb_frames), fixture.plan.shots[1].durationFrames);
+  execFileSync("ffmpeg", ["-v", "error", "-i", sceneVideo, "-f", "null", "-"], { stdio: "pipe" });
   production.importNarration(project.id, motionId, voice, timing); const status = production.status(project.id);
   const review = { binding: status.binding, reviewed: true, notes: "Automated synthetic gate fixture. This is not human approval of real media." };
-  production.approve(project.id, { ...review, gate: "gate1" }); production.approve(project.id, { ...review, gate: "gate2" });
-  const jobId = await renderProduction(project.id, status.binding, true, new AbortController().signal, config);
+  production.approveReview(project.id, { binding: status.binding, planReviewed: true, movingAudioReviewed: true, notes: review.notes });
+  const jobId = await renderProduction(project.id, status.binding, true, new AbortController().signal, config, console.error);
   const receipt = production.exportRecord(project.id, jobId); assert.ok(receipt);
+  assert.equal(receipt.payload.verification.renderPasses, 1); assert.equal(receipt.payload.verification.referenceFramesReusedForEncoding, schedule.durationFrames);
+  assert.ok(receipt.payload.verification.checkedSeekFrames.includes(schedule.durationFrames - 1));
   const frames = join(config.videosDirectory, project.id, "production", jobId, "frames");
   assert.ok(readFileSync(join(frames, "element-000.png")).equals(readFileSync(join(frames, "element-001.png"))), "Settled opening must be visible identically at frames 0 and 1");
   writeFileSync(join(root, "verification.json"), JSON.stringify({ syntheticOnly: true, realProductionApproval: false, projectId, jobId, root, receipt }, null, 2) + "\n");
   console.log(JSON.stringify({ root, projectId, jobId, verification: receipt.payload.verification }));
-} finally { production.close(); motion.close(); visuals.close(); studio.close(); }
+} finally { timings.close(); production.close(); motion.close(); visuals.close(); studio.close(); }

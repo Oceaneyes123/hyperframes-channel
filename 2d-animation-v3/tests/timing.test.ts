@@ -10,7 +10,7 @@ import { openStudio } from "../server/studio.ts";
 import { openDatabase, DATABASE_VERSION } from "../server/database.ts";
 import { wavFixture } from "./fixtures/wav.ts";
 import { motionBeatFixture } from "./fixtures/motion-beats.ts";
-import { planningTimingSchema, resolveBeatTiming } from "../workflow/timing.ts";
+import { planningTimingSchema, resolveBeatTiming, timeStoryboard } from "../workflow/timing.ts";
 import { inspectWav } from "../server/wav.ts";
 import { scheduleMotion, validateMotion } from "../workflow/motion.ts";
 import { hashMotionSource } from "../server/motion-store.ts";
@@ -80,4 +80,16 @@ test("timing upload rejects foreign origins and oversized bodies before opening 
   assert.equal(foreign.status, 403);
   const oversized = await POST(new Request("http://127.0.0.1:3003/api/projects/test/timing", { method: "POST", headers: { host: "127.0.0.1:3003", origin: "http://127.0.0.1:3003" }, body: new Uint8Array(17_000_001) }), context);
   assert.equal(oversized.status, 400); assert.match(await oversized.text(), /Prior inputs preserved/);
+});
+
+test("storyboard durations follow measured line spans and pauses without changing audio or the original board", () => {
+  const timing = planningTimingSchema.parse({ schemaVersion: 1, id: randomUUID(), projectId: randomUUID(), scriptId: randomUUID(), scriptHash: "a".repeat(64), parentId: null, createdAt: new Date().toISOString(), audioHash: "b".repeat(64), provenance: "manual", measured: inspectWav(wavFixture(6)), anchors: [],
+    timing: [{ number: 1, startFrame: 5, endFrame: 30 }, { number: 3, startFrame: 35, endFrame: 80 }, { number: 5, startFrame: 110, endFrame: 175 }] });
+  const board = { shots: [{ lineNumbers: [1, 3], seconds: 4 }, { lineNumbers: [5], seconds: 4 }] };
+  const result = timeStoryboard(board, timing);
+  assert.equal(result.shots[0].seconds, 110 / 30); assert.equal(result.shots[1].seconds, 70 / 30);
+  assert.equal(result.shots.reduce((sum, shot) => sum + shot.seconds * 30, 0), 180);
+  assert.equal(board.shots[0].seconds, 4);
+  assert.throws(() => timeStoryboard({ shots: [board.shots[1], board.shots[0]] }, timing), /exactly once/);
+  assert.throws(() => timeStoryboard(board, { ...timing, timing: timing.timing.map((span, i) => i === 2 ? { ...span, startFrame: 10 } : span) }), /duration/);
 });

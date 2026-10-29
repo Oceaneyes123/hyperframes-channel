@@ -1,0 +1,33 @@
+{
+  "projectId": "6f7f6053-5217-4b71-a5cc-79214a20206e",
+  "storyboardId": "4c81ff87-4c01-40d3-a360-79adbd19d0d9",
+  "motionId": "0e254c68-2dd0-4f08-ae2a-7f6c5bb394b9",
+  "durationFrames": 1773,
+  "fps": 30,
+  "silent": true,
+  "preview": "silent-review.mp4",
+  "previewSha256": "abfa010abe2c253b06a3142efdc71713a6be6d14f8d66f8967447a31881b373c",
+  "samples": [
+    0,
+    30,
+    60,
+    100,
+    119,
+    130,
+    250,
+    330,
+    450,
+    500,
+    600,
+    720,
+    870,
+    990,
+    1150,
+    1300,
+    1420,
+    1600,
+    1772
+  ],
+  "humanMotionReview": false,
+  "productionApproval": false
+}

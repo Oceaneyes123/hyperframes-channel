@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { mkdtempSync, readFileSync, rmSync } from "node:fs";
+import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { inspectNarration } from "../engine/quality/inspect-narration.ts";
@@ -37,4 +37,28 @@ test("local takes retain identity, pronunciations, measured segment boundaries a
   assert.equal(second.manifest.segments[0].number, 2);
   await assert.rejects(generateNarrationTake(root, provider, { ...request, lines: [request.lines[0], request.lines[0]] }, new AbortController().signal), /Unique/);
   await assert.rejects(generateNarrationTake(root, provider, request, AbortSignal.abort()));
+});
+
+test("interrupted narration resumes exact checkpoints, rejects changed inputs and corrupt audio, and preserves provenance", async (t) => {
+  const root = mkdtempSync(join(tmpdir(), "v3-resume-")); t.after(() => rmSync(root, { recursive: true, force: true }));
+  const calls: string[] = [], messages: string[] = []; let fail = true;
+  const provider: NarrationProvider = { identity: { id: "synthetic", model: "tone", version: "1", voice: "fixture", license: "test", licenseUrl: "https://example.test", supportsDelivery: true }, async generate(input) {
+    calls.push(input.text); if (fail && input.text === "Second.") throw new Error("Synthetic interruption."); return wavFixture(1);
+  } };
+  const request = { lines: [{ number: 1, text: "First.", delivery: "hook" }, { number: 3, text: "Second.", delivery: "payoff" }], pronunciation: [], rate: 0, seed: 4 };
+  await assert.rejects(generateNarrationTake(root, provider, request, new AbortController().signal), /interruption/);
+  const prior = readdirSync(join(root, "narration-takes"))[0], options = { resumeTakeId: prior, progress: (message: string) => messages.push(message) };
+  const original = readFileSync(join(root, "narration-takes", prior, "line-1", "normalized.wav"));
+  for (const changed of [{ ...request, seed: 5 }, { ...request, rate: 1 }, { ...request, pronunciation: [{ term: "First", spoken: "One" }] }, { ...request, lines: [...request.lines].reverse() }]) await assert.rejects(generateNarrationTake(root, provider, changed, new AbortController().signal, options));
+  await assert.rejects(generateNarrationTake(root, { ...provider, identity: { ...provider.identity, version: "2" } }, request, new AbortController().signal, options), /identical/);
+  fail = false; calls.length = 0;
+  const resumed = await generateNarrationTake(root, provider, request, new AbortController().signal, options);
+  assert.deepEqual(calls, ["Second."]); assert.equal(resumed.manifest.segments[0].reusedFrom, prior);
+  assert.equal(resumed.manifest.segments[1].startFrame, 30); assert.equal(resumed.manifest.segments[1].endFrame, 60);
+  assert.ok(messages.some((message) => message.startsWith("Reusing completed line 1")));
+  assert.deepEqual(readFileSync(join(root, "narration-takes", prior, "line-1", "normalized.wav")), original);
+  writeFileSync(join(root, "narration-takes", prior, "line-1", "normalized.wav"), wavFixture(2));
+  await assert.rejects(generateNarrationTake(root, provider, request, new AbortController().signal, options), /checkpoint integrity/);
+  const noInference: NarrationProvider = { ...provider, async preflight() { throw new Error("Synthetic preflight failure."); }, async generate() { assert.fail("Inference must not start"); } };
+  await assert.rejects(generateNarrationTake(root, noInference, request, new AbortController().signal), /preflight failure/);
 });

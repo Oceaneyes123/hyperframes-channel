@@ -1,0 +1,121 @@
+{
+  "artifactId": "cf3d5db0-0376-4c6e-875e-2a2c99a2e7f5",
+  "scriptId": "e60b250e-599b-4892-a6e9-f480f4382c96",
+  "phoneWidth": 360,
+  "planningOnly": true,
+  "humanApproval": false,
+  "quality": {
+    "version": "graphic-quality@1",
+    "findings": [
+      {
+        "id": "0-start-density-0",
+        "shotIndex": 0,
+        "state": "start",
+        "rule": "density",
+        "evidence": "14 root objects compete for a phone-sized frame.",
+        "suggestion": "Remove supporting detail or reveal information progressively.",
+        "severity": "review"
+      },
+      {
+        "id": "0-end-density-1",
+        "shotIndex": 0,
+        "state": "end",
+        "rule": "density",
+        "evidence": "14 root objects compete for a phone-sized frame.",
+        "suggestion": "Remove supporting detail or reveal information progressively.",
+        "severity": "review"
+      },
+      {
+        "id": "1-start-density-2",
+        "shotIndex": 1,
+        "state": "start",
+        "rule": "density",
+        "evidence": "14 root objects compete for a phone-sized frame.",
+        "suggestion": "Remove supporting detail or reveal information progressively.",
+        "severity": "review"
+      },
+      {
+        "id": "1-start-contrast-3",
+        "shotIndex": 1,
+        "state": "start",
+        "rule": "contrast",
+        "evidence": "Send: solid-color contrast 1.00.",
+        "suggestion": "Use a clearer foreground/surface pair; imagery and transparency need frame review.",
+        "severity": "warning"
+      },
+      {
+        "id": "1-end-density-4",
+        "shotIndex": 1,
+        "state": "end",
+        "rule": "density",
+        "evidence": "14 root objects compete for a phone-sized frame.",
+        "suggestion": "Remove supporting detail or reveal information progressively.",
+        "severity": "review"
+      },
+      {
+        "id": "1-end-contrast-5",
+        "shotIndex": 1,
+        "state": "end",
+        "rule": "contrast",
+        "evidence": "Send: solid-color contrast 1.00.",
+        "suggestion": "Use a clearer foreground/surface pair; imagery and transparency need frame review.",
+        "severity": "warning"
+      },
+      {
+        "id": "2-start-density-6",
+        "shotIndex": 2,
+        "state": "start",
+        "rule": "density",
+        "evidence": "15 root objects compete for a phone-sized frame.",
+        "suggestion": "Remove supporting detail or reveal information progressively.",
+        "severity": "review"
+      },
+      {
+        "id": "2-start-text-size-7",
+        "shotIndex": 2,
+        "state": "start",
+        "rule": "text-size",
+        "evidence": "Test conditions: 48.0px at 1080px width.",
+        "suggestion": "Enlarge or shorten the label, then inspect at phone size.",
+        "severity": "warning"
+      },
+      {
+        "id": "2-start-text-size-8",
+        "shotIndex": 2,
+        "state": "start",
+        "rule": "text-size",
+        "evidence": "Authorized task: 42.0px at 1080px width.",
+        "suggestion": "Enlarge or shorten the label, then inspect at phone size.",
+        "severity": "warning"
+      },
+      {
+        "id": "2-end-density-9",
+        "shotIndex": 2,
+        "state": "end",
+        "rule": "density",
+        "evidence": "15 root objects compete for a phone-sized frame.",
+        "suggestion": "Remove supporting detail or reveal information progressively.",
+        "severity": "review"
+      },
+      {
+        "id": "2-end-text-size-10",
+        "shotIndex": 2,
+        "state": "end",
+        "rule": "text-size",
+        "evidence": "Test conditions: 48.0px at 1080px width.",
+        "suggestion": "Enlarge or shorten the label, then inspect at phone size.",
+        "severity": "warning"
+      },
+      {
+        "id": "2-end-text-size-11",
+        "shotIndex": 2,
+        "state": "end",
+        "rule": "text-size",
+        "evidence": "Authorized task: 42.0px at 1080px width.",
+        "suggestion": "Enlarge or shorten the label, then inspect at phone size.",
+        "severity": "warning"
+      }
+    ],
+    "requiresHumanReview": true
+  }
+}

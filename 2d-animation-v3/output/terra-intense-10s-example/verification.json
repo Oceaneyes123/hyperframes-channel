@@ -1,0 +1,52 @@
+{
+  "reviewOnly": true,
+  "humanApproval": false,
+  "sourceProjectUpdated": false,
+  "energyProfile": "intense",
+  "engineHash": "8a80086cb49df25c724eb5309f212922807ecd154e87ed9b513a6415eb70aa82",
+  "sha256": "50891a07ed9ef320c94103d2c21b895f96173fc83e61ecde7e1a07ac90a469ad",
+  "durationFrames": 300,
+  "audio": true,
+  "fullDecode": true,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "preview": {
+    "comparedFrames": 300,
+    "minimumSsim": 0.999062,
+    "threshold": 0.98
+  },
+  "audioSync": {
+    "correlation": 0.999978641268301,
+    "lagSeconds": 0,
+    "toleranceSeconds": 0.03333333333333333
+  },
+  "checkedSeeks": [
+    0,
+    12,
+    41,
+    42,
+    55,
+    83,
+    84,
+    98,
+    137,
+    138,
+    156,
+    191,
+    192,
+    217,
+    245,
+    246,
+    279,
+    299
+  ],
+  "sourceHashesPreserved": true,
+  "narrationExcerptSeconds": [
+    0,
+    10
+  ],
+  "narrationSpeedChanged": false,
+  "wordAlignment": null,
+  "note": "Exact 10-second excerpt. The full second narration line continues beyond the example; source video remains unchanged."
+}

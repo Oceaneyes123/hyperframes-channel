@@ -1,0 +1,49 @@
+{
+  "artifactId": "ff25f257-3613-4548-8b7b-290f8c917575",
+  "scriptId": "e60b250e-599b-4892-a6e9-f480f4382c96",
+  "phoneWidth": 360,
+  "planningOnly": true,
+  "humanApproval": false,
+  "quality": {
+    "version": "graphic-quality@1",
+    "findings": [
+      {
+        "id": "1-start-diagram-labels-0",
+        "shotIndex": 1,
+        "state": "start",
+        "rule": "diagram-labels",
+        "evidence": "Diagram labels may be crowded or below 56px.",
+        "suggestion": "Enlarge the diagram or shorten node labels; keep exact relationships.",
+        "severity": "review"
+      },
+      {
+        "id": "1-end-diagram-labels-1",
+        "shotIndex": 1,
+        "state": "end",
+        "rule": "diagram-labels",
+        "evidence": "Diagram labels may be crowded or below 56px.",
+        "suggestion": "Enlarge the diagram or shorten node labels; keep exact relationships.",
+        "severity": "review"
+      },
+      {
+        "id": "2-start-text-size-2",
+        "shotIndex": 2,
+        "state": "start",
+        "rule": "text-size",
+        "evidence": "Simulated, max effort\nNo system controls: 35.4px at 1080px width.",
+        "suggestion": "Enlarge or shorten the label, then inspect at phone size.",
+        "severity": "warning"
+      },
+      {
+        "id": "2-end-text-size-3",
+        "shotIndex": 2,
+        "state": "end",
+        "rule": "text-size",
+        "evidence": "Simulated, max effort\nNo system controls: 35.4px at 1080px width.",
+        "suggestion": "Enlarge or shorten the label, then inspect at phone size.",
+        "severity": "warning"
+      }
+    ],
+    "requiresHumanReview": true
+  }
+}

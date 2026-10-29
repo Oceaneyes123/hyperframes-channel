@@ -1,0 +1,10 @@
+{
+  "model": "gpt-6-luna",
+  "reviewedAt": "2026-10-28T15:11:02.647Z",
+  "sourceDraftId": "5c431bda-5777-48b0-820d-1072674b8f9b",
+  "review": {
+    "verdict": "ready",
+    "summary": "The script presents the capability and authorization evidence with the key test caveats, and its length appears feasible for a 50–75 second Short.",
+    "findings": []
+  }
+}

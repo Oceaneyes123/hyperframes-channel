@@ -14,6 +14,7 @@ const manifestSchema = z.object({ version: z.literal("narration-take@1"), id: z.
   provider: z.object({ id: z.string(), voice: z.string(), supportsDelivery: z.boolean() }), request: narrationRequestSchema,
   audioHash: z.string().regex(/^[a-f0-9]{64}$/), segments: z.array(z.object({ number: z.number().int().positive(), sourceText: z.string(), startFrame: z.number().int().nonnegative(), endFrame: z.number().int().positive() })).min(1).max(60) });
 const active = new Set<string>();
+export const studioNarrationRequestSchema = z.strictObject({ scriptId: z.uuid(), provider: z.enum(["windows-speech", "qwen3-custom"]), lineNumber: z.number().int().positive().optional(), resumeTakeId: z.uuid().optional(), pronunciation: narrationRequestSchema.shape.pronunciation, rate: narrationRequestSchema.shape.rate, seed: narrationRequestSchema.shape.seed });
 
 export function openNarrationStudio(directory: string, videos: string) {
   const studio = openStudio(directory, videos), timing = openTiming(directory, videos);
@@ -42,7 +43,16 @@ export function openNarrationStudio(directory: string, videos: string) {
         const take = read(projectId, id); return { id, createdAt: take.manifest.createdAt, provider: take.manifest.provider.id, voice: take.manifest.provider.voice, supportsDelivery: take.manifest.provider.supportsDelivery, durationSeconds: take.measured.durationSeconds, stale: take.stale, complete: take.complete, segments: take.manifest.segments };
       }).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
     },
-    async generate(projectId: string, provider: NarrationProvider, input: { scriptId: string; lineNumber?: number; pronunciation: z.infer<typeof narrationRequestSchema>["pronunciation"]; rate: number; seed: number }, signal: AbortSignal) {
+    interrupted(projectId: string) {
+      const directory = join(root(projectId), "narration-takes"); if (!existsSync(directory)) return [];
+      const accepted = studio.acceptance(projectId);
+      return readdirSync(directory).filter((id) => z.uuid().safeParse(id).success && existsSync(join(directory, id, "request.json")) && !existsSync(join(directory, id, "take.json"))).map((id) => {
+        const saved = JSON.parse(readFileSync(join(directory, id, "request.json"), "utf8"));
+        const request = narrationRequestSchema.safeParse(saved.request);
+        return { id, provider: String(saved.provider.id), request: request.success ? request.data : null, completedLines: readdirSync(join(directory, id)).filter((name) => /^line-\d+$/.test(name) && existsSync(join(directory, id, name, "checkpoint.json"))).length, resumable: request.success && !!saved.fingerprint && !!accepted && !accepted.stale && saved.source?.scriptId === accepted.revisionId && saved.source?.scriptHash === accepted.sha256 };
+      });
+    },
+    async generate(projectId: string, provider: NarrationProvider, input: { scriptId: string; lineNumber?: number; resumeTakeId?: string; pronunciation: z.infer<typeof narrationRequestSchema>["pronunciation"]; rate: number; seed: number }, signal: AbortSignal, progress?: (message: string) => void) {
       if (active.has(projectId)) throw new Error("Narration generation already running.");
       const accepted = studio.acceptance(projectId); if (!accepted || accepted.stale || accepted.revisionId !== input.scriptId) throw new Error("Accept the current script first.");
       const script = studio.readRevision(projectId, accepted.revisionId)!, lines = scriptLines(script.content);
@@ -51,7 +61,7 @@ export function openNarrationStudio(directory: string, videos: string) {
       const request = { lines: chosen.map((line) => ({ ...line, delivery: line.number === lines[0].number ? "hook" : line.number === lines.at(-1)!.number ? "payoff" : "explanation" })), pronunciation: input.pronunciation, rate: input.rate, seed: input.seed };
       active.add(projectId);
       try {
-        const result = await generateNarrationTake(root(projectId), provider, request, signal, { rulesDirectory: directory, source: { projectId, scriptId: accepted.revisionId, scriptHash: accepted.sha256 } });
+        const result = await generateNarrationTake(root(projectId), provider, request, signal, { rulesDirectory: directory, source: { projectId, scriptId: accepted.revisionId, scriptHash: accepted.sha256 }, resumeTakeId: input.resumeTakeId, progress });
         if (read(projectId, result.manifest.id).stale) throw new Error("Script changed during generation; take preserved as stale.");
         return result.manifest.id;
       } finally { active.delete(projectId); }

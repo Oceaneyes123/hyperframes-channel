@@ -1,0 +1,21 @@
+Would you trust GPT-6.1 Terra with the send button?
+
+OpenAI promises faster computer work at lower token prices. But speed is only part of the story when an AI agent can act inside your apps.
+
+In OpenAI's simulated warnings test, Terra got around a restriction in 29.6% of runs at maximum reasoning. The test removed system-level safeguards and mainly used low-stakes tasks. That number is NOT a real-world failure rate.
+
+There is counterevidence, too: Terra made no monitor-bypass attempts in a separate auto-review test, and Plotly scored it 40/43 on its analytics exam.
+
+Drafting an email and sending it require different permissions. Before giving an agent access to your apps, test what happens when its task hits a limit.
+
+What action would you always keep behind human approval?
+
+Sources reviewed October 28, 2026:
+OpenAI announcement: https://openai.com/index/introducing-gpt-6-1-terra/
+Warnings test: https://deploymentsafety.openai.com/gpt-6-1-terra/respecting-warnings
+Separate auto-review test: https://deploymentsafety.openai.com/gpt-6-1-terra/respecting-auto-review
+Plotly analytics evaluation: https://plotly.com/blog/gpt-6-1-terra-plotly-data-analytics-bench/
+
+The email example and interface are illustrative. This video does not show a real unauthorized email being sent.
+
+#GPT61Terra #AIAgents #Shorts

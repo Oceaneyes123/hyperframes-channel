@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { isLocalRequest } from "./local-request.ts";
+import { PreflightError } from "./preflight.ts";
 
 export async function streamWriting<T>(request: Request, projectId: string, parse: (input: unknown) => T,
   execute: (input: T, signal: AbortSignal, progress: (message: string) => void) => Promise<Record<string, string>>) {
@@ -25,7 +26,7 @@ export async function streamWriting<T>(request: Request, projectId: string, pars
     async start(output) {
       const send = (event: object) => { if (!signal.aborted) output.enqueue(encoder.encode(`${JSON.stringify(event)}\n`)); };
       try { send(await execute(input, signal, (message) => send({ message }))); }
-      catch { send({ error: "Request failed. Earlier saved artifacts preserved. Check request history and gateway access before retrying." }); }
+      catch (error) { send({ error: error instanceof PreflightError ? error.message : "Request failed. Earlier saved artifacts preserved. Check request history and gateway access before retrying." }); }
       finally { if (!signal.aborted) output.close(); }
     },
     cancel() { controller.abort(); },

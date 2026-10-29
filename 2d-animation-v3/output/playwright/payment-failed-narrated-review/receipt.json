@@ -1,0 +1,15 @@
+{
+  "projectId": "6f7f6053-5217-4b71-a5cc-79214a20206e",
+  "storyboardId": "4c81ff87-4c01-40d3-a360-79adbd19d0d9",
+  "motionId": "c5ccaf74-dc9a-4561-99bf-91aa915bce6c",
+  "durationFrames": 2282,
+  "fps": 30,
+  "audio": "D:\\Project\\Javascript\\hyperframes-channel\\2d-animation-v3\\output\\playwright\\payment-failed-narration-review\\qwen-ryan-composite-trimmed.wav",
+  "audioSha256": "fd81350a280ad7fa4e1b35fe1f29033e5b3472b2033b37d52cc1948e0bc3c667",
+  "preview": "narrated-audition-review.mp4",
+  "previewSha256": "4d8b9e3ebd7b91ee6f69ddea7834e58d56144828282a9ac7334c33b50b6e375a",
+  "humanMotionReview": false,
+  "humanVoiceReview": false,
+  "productionApproval": false,
+  "note": "Review export only. Narration is an assembled local Qwen audition, not an approved provider-complete take."
+}

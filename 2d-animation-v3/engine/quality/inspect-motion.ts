@@ -1,10 +1,10 @@
 import { variableTypeLayout, variableFonts, variableExpression } from "../../workflow/variable-type.ts";
 import { perspectivePose, perspectiveScene, projectPoint, tokenPoint } from "../../workflow/perspective.ts";
-import { expandMotionShot, scheduleMotion, type MotionPlan, type MotionState } from "../../workflow/motion.ts";
+import { highEnergyPacing, expandMotionShot, scheduleMotion, type MotionPlan, type MotionState } from "../../workflow/motion.ts";
 import type { VisualArtifact } from "../../workflow/visuals.ts";
 import { isTextType, textFontSize } from "../text-metrics.ts";
 
-export const qualityThresholds = { version: "motion-quality@1", stillFrames: 90, entranceFrames: 24, repeatedShots: 3, competingPrimary: 4, minimumFontPixels: 56, minimumSymbolPixels: 48, minimumContrast: 4.5, minimumSymbolContrast: 3 } as const;
+export const qualityThresholds = { version: "motion-quality@2", stillFrames: 90, entranceFrames: 24, repeatedShots: 3, competingPrimary: 4, minimumFontPixels: 56, minimumSymbolPixels: 48, minimumContrast: 4.5, minimumSymbolContrast: 3 } as const;
 export type MotionFinding = { id: string; ruleId: string; shotId: string; targetId: string | null; startFrame: number; endFrame: number; severity: "review" | "warning"; message: string; evidence: string; suggestion: string; heuristic: boolean };
 type Camera = { x: number; y: number; scale: number; rotation: number };
 function bounds(state: MotionState, camera: Camera) {
@@ -20,6 +20,8 @@ const contrast = (a: string, b: string) => { const x = luminance(a), y = luminan
 
 export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact | null) {
   const schedule = scheduleMotion(plan), findings: MotionFinding[] = [], usage: Record<string, number> = {};
+  const rhythmShots: { shotId: string; startFrame: number; endFrame: number; causalBeats: number; developmentGaps: number; missingReactions: number }[] = [];
+  const pacing = plan.energyProfile === "intense" || plan.energyProfile === "energetic" ? highEnergyPacing[plan.energyProfile] : null;
   let previousPreset = "", repeated = 0, passiveShots = 0;
   let previousStates: Map<string, Partial<MotionState>> | null = null, previousCamera: Camera | null = null;
   for (const [index, original] of plan.shots.entries()) {
@@ -44,6 +46,7 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     const camera = { ...shot.camera }; states.set("camera", camera);
     const intervals = holds.map((hold) => ({ start: hold.startFrame, end: hold.endFrame }));
     const objectActivity: { start: number; end: number }[] = (shot.textMotions ?? []).map((motion) => ({ start: motion.startFrame, end: motion.endFrame }));
+    const changedActions: { start: number; end: number; targetId: string }[] = [];
     intervals.push(...objectActivity);
     for (const motion of shot.textMotions ?? []) usage[motion.presetId] = (usage[motion.presetId] ?? 0) + 1;
     for (const action of shot.actions) {
@@ -52,13 +55,31 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
         const state = states.get(id); if (!state) continue;
         if (Object.entries(action.to).some(([key, value]) => state[key as keyof MotionState] !== value)) {
           const interval = { start: action.startFrame + order * action.staggerFrames, end: action.endFrame + order * action.staggerFrames };
-          intervals.push(interval); if (id !== "camera") objectActivity.push(interval);
+          intervals.push(interval); if (id !== "camera") { objectActivity.push(interval); changedActions.push({ ...interval, targetId: id }); }
         }
         Object.assign(state, action.to);
       }
     }
     for (const hold of holds) if (hold.endFrame - hold.startFrame > 120 && !objectActivity.some((interval) => interval.start < hold.endFrame && interval.end > hold.startFrame))
       add("long-hold", hold.startFrame, hold.endFrame, "a static reading hold lasts over four seconds.", `${hold.endFrame - hold.startFrame} frames without object development.`, "Shorten the hold or add a source-faithful state change before the next reading hold.", null, false, "warning");
+    if (pacing) {
+      // Declared holds do not prove energy; necessary reading remains a human-reviewed exception.
+      let developedUntil = 0;
+      for (const interval of [...objectActivity].sort((a, b) => a.start - b.start).concat({ start: shot.durationFrames - 1, end: shot.durationFrames - 1 })) {
+        if (interval.start - developedUntil > pacing.developmentGapFrames) add("development-gap", developedUntil, interval.start, "high-energy scene leaves a long gap between object developments.", `${interval.start - developedUntil} frames; ${plan.energyProfile} review target ${pacing.developmentGapFrames}. Holds and camera motion do not count as object development.`, "Stage a source-faithful reaction, transformation or handoff. Preserve a longer hold when comprehension needs it; do not add filler motion.");
+        developedUntil = Math.max(developedUntil, interval.end);
+      }
+      const actions = shot.beats?.filter((beat) => beat.type !== "hold") ?? shot.actions.filter((action) => action.behavior !== "hold");
+      for (const action of actions) {
+        const stagger = "presetId" in action && action.presetId === "cascade@1" ? action.parameters.staggerFrames * (action.targetIds.length - 1) : 0;
+        if (action.endFrame - action.startFrame - stagger > pacing.actionFrames && action.targetIds.some((id) => id !== "camera")) add("slow-development", action.startFrame, action.endFrame, "high-energy action develops as a drawn-out tween.", `${action.endFrame - action.startFrame - stagger} frames per action; ${plan.energyProfile} review target ${pacing.actionFrames}.`, "Break the explanation into short cause, impact, reaction and handoff beats. Keep a slower action only when its teaching purpose requires it.", "id" in action ? action.id : null);
+      }
+      if (shot.beats && shot.durationFrames >= 90 && !shot.beats.some((beat) => ["transformation", "impact"].includes(beat.type) && beat.targetIds.some((id) => id !== "camera") && objectActivity.some((interval) => interval.start < beat.endFrame && interval.end > beat.startFrame))) add("missing-causal-beat", 0, shot.durationFrames - 1, "high-energy scene declares no visible object transformation or impact.", "Entrances, emphasis and holds alone do not demonstrate a causal beat.", "Show an actual source-faithful change and its reaction. Review the moving result; beat labels alone cannot establish causality.");
+      for (const beat of (shot.beats ?? []).filter((beat) => beat.importance === "primary" && ["transformation", "impact"].includes(beat.type) && beat.targetIds.some((id) => id !== "camera"))) {
+        const reactionEnd = Math.min(shot.durationFrames - 1, beat.endFrame + 12);
+        if (!changedActions.some((action) => !beat.targetIds.includes(action.targetId) && action.start >= beat.startFrame && action.start <= reactionEnd && action.end > beat.startFrame)) add("missing-reaction", beat.startFrame, reactionEnd, "a major action has no detected receiving-object reaction.", `No different actor/part changes during ${beat.id} or within 12 frames after it. This timing heuristic cannot prove causality.`, "Show the receiving state react, settle or hand off when the mechanism supports it. A self-contained transformation can be an intentional exception; never invent a reaction.", beat.id);
+      }
+    }
     const drift = shot.actions.find((action) => action.targetIds.includes("camera") && action.endFrame - action.startFrame >= qualityThresholds.stillFrames && !objectActivity.some((interval) => interval.start < action.endFrame && interval.end > action.startFrame) && !holds.some((hold) => hold.startFrame <= action.startFrame && hold.endFrame >= action.endFrame));
     if (drift) add("camera-only-drift", drift.startFrame, drift.endFrame, "long camera drift over otherwise static actors.", "No object state develops during this camera move.", "Replace the drift with a visible interaction or an intentional reading hold.");
     let cursor = 0;
@@ -69,7 +90,7 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     for (const beat of shot.beats ?? []) {
       if (beat.presetId !== "hold@1") usage[beat.presetId] = (usage[beat.presetId] ?? 0) + 1;
       const entrance = beat.endFrame - beat.startFrame - (beat.presetId === "cascade@1" ? beat.parameters.staggerFrames * (beat.targetIds.length - 1) : 0);
-      if ((beat.type === "entry" || beat.presetId === "cascade@1") && entrance > qualityThresholds.entranceFrames) add("slow-entrance", beat.startFrame, beat.endFrame, "inspect a slow important entrance.", `${entrance} frames per entrance before settling.`, "Shorten the entrance while preserving a separate reading hold.", beat.id);
+      if ((beat.type === "entry" || beat.presetId === "cascade@1") && entrance > (pacing?.entranceFrames ?? qualityThresholds.entranceFrames)) add("slow-entrance", beat.startFrame, beat.endFrame, "inspect a slow important entrance.", `${entrance} frames per entrance before settling; review target ${pacing?.entranceFrames ?? qualityThresholds.entranceFrames}.`, "Shorten the entrance while preserving a separate reading hold.", beat.id);
     }
     const primary = (shot.beats ?? []).filter((beat) => beat.type !== "hold" && beat.importance === "primary"), firstPreset = primary[0]?.presetId ?? "";
     passiveShots = shot.beats && shot.durationFrames >= 150 && !shot.beats.some((beat) => ["transformation", "impact"].includes(beat.type)) ? passiveShots + 1 : 0;
@@ -124,7 +145,9 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     const changed = shot.objects.some((object) => { const end = states.get(object.id)!; return Object.keys(object.initial).some((key) => object.initial[key as keyof MotionState] !== end[key as keyof MotionState]); }) || shot.objects.some((object) => Object.keys(object.initialParts ?? {}).some((part) => Object.entries(object.initialParts![part]).some(([key, value]) => states.get(`${object.id}.${part}`)?.[key as keyof MotionState] !== value)));
     if (!changed && (shot.beats?.some((beat) => beat.type === "transformation") || !shot.beats && shot.actions.some((action) => action.behavior === "transform" && !action.targetIds.includes("camera")))) add("unclear-progression", 0, shot.durationFrames - 1, "the settled state may not advance the explanation.", "The declared transformation returns every visible actor/part to its initial state.", "Review whether the action reveals a relationship or only adds motion.");
     previousStates = states; previousCamera = camera;
+    const shotFindings = findings.filter((finding) => finding.shotId === shot.id);
+    rhythmShots.push({ shotId: shot.id, startFrame: offset, endFrame: offset + shot.durationFrames - 1, causalBeats: (shot.beats ?? []).filter((beat) => ["transformation", "impact"].includes(beat.type)).length, developmentGaps: shotFindings.filter((finding) => finding.ruleId === "development-gap").length, missingReactions: shotFindings.filter((finding) => finding.ruleId === "missing-reaction").length });
   }
   findings.sort((a, b) => a.startFrame - b.startFrame || a.id.localeCompare(b.id));
-  return { version: 2, thresholds: qualityThresholds, durationFrames: schedule.durationFrames, findings, presetUsage: usage, warnings: findings.map((finding) => finding.message), requiresHumanReview: true as const };
+  return { version: 3, thresholds: qualityThresholds, energyPacing: pacing, rhythm: { requiresHumanReview: true as const, shots: rhythmShots }, durationFrames: schedule.durationFrames, findings, presetUsage: usage, warnings: findings.map((finding) => finding.message), requiresHumanReview: true as const };
 }

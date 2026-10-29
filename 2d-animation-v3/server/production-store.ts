@@ -58,6 +58,10 @@ export function openProduction(directory: string, videos: string) {
     const first = gate1?.payload.binding === binding ? gate1 : null;
     return { gate1: first?.id ?? null, gate2: first && gate2?.payload.binding === binding && gate2.payload.gate1 === first.id ? gate2.id : null };
   }
+  function checkGraphics(board: Parameters<typeof inspectGraphics>[0]) {
+    const defects = inspectGraphics(board).findings.filter((finding) => ["numeric-container", "comparison-alignment"].includes(finding.rule));
+    if (defects.length) throw new ConflictError(`Fix ${defects.length} structural graphic defects before Gate 1.`);
+  }
   return {
     close() { timings.close(); motion.close(); visuals.close(); studio.close(); database.close(); }, audio, snapshot,
     status(projectId: string) {
@@ -85,11 +89,21 @@ export function openProduction(directory: string, videos: string) {
       return transaction(() => {
         const current = snapshot(projectId); if (request.binding !== current.binding) throw new ConflictError("Production inputs changed. Review again.");
         if (request.gate === "gate1") {
-          const graphics = inspectGraphics(current.board).findings.filter((finding) => ["numeric-container", "comparison-alignment"].includes(finding.rule));
-          if (graphics.length) throw new ConflictError(`Fix ${graphics.length} structural graphic defects before Gate 1.`);
+          checkGraphics(current.board);
         }
         const prior = gates(projectId, current.binding); if (request.gate === "gate2" && !prior.gate1) throw new ConflictError("Gate 1 is required before independent moving/audio approval.");
         return append(projectId, request.gate, { binding: current.binding, gate1: request.gate === "gate2" ? prior.gate1 : null, notes: request.notes, reviewed: true });
+      });
+    },
+    approveReview(projectId: string, input: unknown) {
+      const request = z.strictObject({ binding: z.string().regex(/^[a-f0-9]{64}$/), planReviewed: z.literal(true), movingAudioReviewed: z.literal(true), notes: z.string().trim().min(10).max(2000) }).parse(input);
+      return transaction(() => {
+        const current = snapshot(projectId); if (current.binding !== request.binding) throw new ConflictError("Production inputs changed. Review again.");
+        checkGraphics(current.board);
+        const prior = gates(projectId, current.binding);
+        const gate1 = prior.gate1 ?? append(projectId, "gate1", { binding: current.binding, gate1: null, notes: request.notes, reviewed: true });
+        const gate2 = prior.gate2 ?? append(projectId, "gate2", { binding: current.binding, gate1, notes: request.notes, reviewed: true });
+        return { gate1, gate2 };
       });
     },
     beginRender(projectId: string, binding: string, authorize: boolean) {

@@ -3,13 +3,15 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import type { PlanningTiming } from "../../../../workflow/timing.ts";
 import type { openNarrationStudio } from "../../../../server/narration/studio.ts";
+import { readWorkflowResponse } from "../../../../workflow/stream-events.ts";
 
 type Take = ReturnType<ReturnType<typeof openNarrationStudio>["list"]>[number];
 
-export default function TimingWorkspace({ projectId, scriptId, timing, takes }: {
-  projectId: string; scriptId: string | null; timing: { artifact: PlanningTiming; stale: boolean } | null; takes: Take[];
+export default function TimingWorkspace({ projectId, scriptId, timing, takes, interrupted }: {
+  projectId: string; scriptId: string | null; timing: { artifact: PlanningTiming; stale: boolean } | null; takes: Take[]; interrupted: ReturnType<ReturnType<typeof openNarrationStudio>["interrupted"]>;
 }) {
   const router = useRouter(); const [busy, setBusy] = useState(false), [error, setError] = useState("");
+  const [message, setMessage] = useState("");
   async function upload(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault(); setBusy(true); setError(""); const data = new FormData(event.currentTarget);
     try {
@@ -21,11 +23,9 @@ export default function TimingWorkspace({ projectId, scriptId, timing, takes }: 
     setBusy(true); setError("");
     try {
       const response = await fetch(`/api/projects/${projectId}/narration-takes`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(input) });
-      const text = await response.text(); if (!response.ok || text.length > 12000) throw new Error("Narration request could not start.");
-      const events = text.trim().split("\n").map((line) => JSON.parse(line));
-      if (events.some((event) => event.error) || !events.some((event) => event.generated || event.saved)) throw new Error("Narration request failed. Existing takes remain available.");
-      router.refresh();
-    } catch (error) { setError(error instanceof Error ? error.message : "Narration request failed."); } finally { setBusy(false); }
+      const result = await readWorkflowResponse(response, setMessage);
+      if (!result.generated && !result.saved) throw new Error("Narration request failed. Existing takes remain available.");
+    } catch (error) { setError(error instanceof Error ? error.message : "Narration request failed."); } finally { setBusy(false); router.refresh(); }
   }
   return <section aria-labelledby="timing-heading" className="mt-4 space-y-4">
     <h2 id="timing-heading" className="text-xl font-semibold">Plan motion with measured narration</h2>
@@ -37,15 +37,23 @@ export default function TimingWorkspace({ projectId, scriptId, timing, takes }: 
         event.preventDefault(); const form = new FormData(event.currentTarget);
         try {
           const pronunciation = JSON.parse(String(form.get("pronunciation") || "[]"));
-          void takeAction({ action: "generate", scriptId, provider: form.get("provider"), ...(form.get("lineNumber") ? { lineNumber: Number(form.get("lineNumber")) } : {}), pronunciation, rate: Number(form.get("rate")), seed: Number(form.get("seed")) });
+          void takeAction({ action: "generate", scriptId, provider: form.get("provider"), ...(form.get("lineNumber") ? { lineNumber: Number(form.get("lineNumber")) } : {}), ...(form.get("resumeTakeId") ? { resumeTakeId: form.get("resumeTakeId") } : {}), pronunciation, rate: Number(form.get("rate")), seed: Number(form.get("seed")) });
         } catch { setError("Pronunciation dictionary must be valid JSON."); }
       }}>
         <label className="block">Audition provider<select name="provider" required defaultValue="" className="ml-3"><option value="" disabled>Choose a provider</option><option value="windows-speech">Windows Speech</option><option value="qwen3-custom">Qwen 1.7B CustomVoice (requires local configuration)</option></select></label>
         <label className="block">Optional script line number<input className="ml-3" name="lineNumber" type="number" min={1} /></label>
+        <label className="block">Resume an interrupted take<select name="resumeTakeId" defaultValue="" className="mt-2 w-full" onChange={(event) => {
+          const take = interrupted.find((take) => take.id === event.currentTarget.value), form = event.currentTarget.form;
+          if (!form || !take?.request) return;
+          const values = { provider: take.provider, seed: take.request.seed, rate: take.request.rate, pronunciation: JSON.stringify(take.request.pronunciation), lineNumber: take.request.lines.length === 1 ? take.request.lines[0].number : "" };
+          for (const [name, value] of Object.entries(values)) (form.elements.namedItem(name) as HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement).value = String(value);
+        }}><option value="">Start a new take</option>{interrupted.map((take) => <option key={take.id} value={take.id} disabled={!take.resumable}>{take.provider} · {take.completedLines} saved lines · {take.id}{take.resumable ? "" : " · unavailable"}</option>)}</select></label>
+        <p className="text-sm">To resume, use the original provider, line selection, pronunciation, rate and seed. Completed lines stay unchanged.</p>
         <label className="block">Pronunciation dictionary (JSON)<textarea name="pronunciation" rows={2} defaultValue="[]" maxLength={8000} className="mt-2 w-full" placeholder={'[{"term":"API","spoken":"A P I"}]'} /></label>
         <label className="block">Windows voice rate (-3 to 3)<input className="ml-3" name="rate" type="number" min={-3} max={3} defaultValue={0} required /></label>
         <label className="block">Seed<input className="ml-3" name="seed" type="number" min={0} max={2147483647} defaultValue={42} required /></label>
         <button disabled={!scriptId || busy}>{busy ? "Working…" : "Generate audition"}</button>
+        {message && <p role="status">{message}</p>}
       </form>
       <ul className="my-4 space-y-4">{takes.map((take) => <li key={take.id} className="border border-[var(--line)] p-3 text-sm">
         <p>{take.provider} · {take.voice} · {take.durationSeconds.toFixed(1)}s · {take.complete ? "complete" : "single-line audition"}{take.stale ? " · stale script" : ""}</p>

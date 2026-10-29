@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-28T15:24:36.953Z",
+  "scriptId": "e60b250e-599b-4892-a6e9-f480f4382c96",
+  "approvedTextUnchanged": true,
+  "editor": "ready",
+  "conceptsId": "ff25f257-3613-4548-8b7b-290f8c917575",
+  "conceptSelection": null,
+  "takes": [
+    {
+      "id": "b45d1a80-7d49-462e-965d-0642ab69846f",
+      "durationSeconds": 2.8
+    },
+    {
+      "id": "66853225-db94-4acc-9d18-8364b9a60c1b",
+      "durationSeconds": 9.28
+    },
+    {
+      "id": "61615ad7-3f2a-4f7b-8fd4-70fa64b18602",
+      "durationSeconds": 4.64
+    }
+  ],
+  "productionRecords": 0,
+  "visualReview": "Phone contact sheet and full-resolution A inspected; remaining inspector findings recorded in CONCEPTS.md"
+}

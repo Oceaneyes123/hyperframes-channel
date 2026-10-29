@@ -6,7 +6,7 @@ New full Studio motion proposals use interpreter 3 with versioned beats. Saved i
 
 1. Accept the script. Optionally import its PCM16 WAV and measured line timing under **Narration timing**. Phrase/word spans require manual verification or a verified aligner; no constant-speed word estimates are generated.
 2. Review and accept visual concepts/storyboards. Models choose installed components and parameters, never executable SVG, JavaScript, selectors or external assets.
-3. Generate motion with Calm, Balanced, Energetic (default) or Intense guidance. Energy shapes actions rather than multiplying all durations. Audio duration and reading holds remain authoritative.
+3. Generate motion with Intense guidance by default for new plans; Calm, Balanced and Energetic remain explicit alternatives. Energy shapes actions rather than multiplying all durations. Audio duration and reading holds remain authoritative.
 4. Inspect the Player, shot timeline and Motion Quality findings. **Review moment and use suggestion** selects, seeks and prefills an instruction; submitting a revision and accepting it remain explicit actions.
 5. Final narration must match the planning audio/timing when present. Exact current inputs still require Gate 1, independent Gate 2 and explicit render authorization.
 

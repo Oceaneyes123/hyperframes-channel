@@ -111,8 +111,10 @@ export async function decideVisual(projectId: string, _previous: CreateState, fo
 
 export async function decideMotion(projectId: string, _previous: CreateState, form: FormData): Promise<CreateState> {
   try {
-    await requireLocalRequest(); const config = readConfig(); const store = openMotion(config.dataDirectory, config.videosDirectory);
-    try { store.decide(projectId, z.uuid().parse(form.get("runId")), z.enum(["accept", "reject"]).parse(form.get("decision"))); } finally { store.close(); }
+    await requireLocalRequest(); const decision = z.enum(["accept", "reject"]).parse(form.get("decision"));
+    if (decision === "accept" && (form.get("rhythmReviewed") !== "on" || form.get("causeReactionReviewed") !== "on")) throw new ConflictError("Review whole-video rhythm and cause/reaction at normal speed before accepting motion.");
+    const config = readConfig(); const store = openMotion(config.dataDirectory, config.videosDirectory);
+    try { store.decide(projectId, z.uuid().parse(form.get("runId")), decision); } finally { store.close(); }
   } catch (error) { return { error: publicError(error) }; }
   revalidatePath(`/projects/${projectId}/visuals`); return { error: "" };
 }

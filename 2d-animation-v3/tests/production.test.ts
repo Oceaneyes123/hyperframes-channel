@@ -45,9 +45,15 @@ test("measured narration rejects malformed, silent, mismatched and unaligned inp
   production.importNarration(project.id, id, wav, timing); const status = production.status(project.id); assert.equal(status.ready, true);
   assert.throws(() => production.beginRender(project.id, status.binding!, true), /gates/);
   const review = { binding: status.binding!, reviewed: true, notes: "Synthetic fixture only; this is not human quality approval." };
+  const combined = { binding: status.binding!, planReviewed: true, movingAudioReviewed: true, notes: review.notes };
+  assert.throws(() => production.approveReview(project.id, { ...combined, movingAudioReviewed: false }));
+  assert.throws(() => production.approveReview(project.id, { ...combined, binding: "0".repeat(64) }), /changed/);
+  assert.equal(production.status(project.id).gate1, null);
   assert.throws(() => production.approve(project.id, { ...review, gate: "gate2" }), /Gate 1/);
   assert.throws(() => production.approve(project.id, { ...review, gate: "gate1", reviewed: false }));
   production.approve(project.id, { ...review, gate: "gate1" }); production.approve(project.id, { ...review, gate: "gate2" });
+  const existing = production.status(project.id);
+  assert.deepEqual(production.approveReview(project.id, combined), { gate1: existing.gate1, gate2: existing.gate2 });
   assert.throws(() => production.beginRender(project.id, status.binding!, false), /authorization/);
   const reopened = openProduction(directory, videos); try { assert.ok(reopened.status(project.id).gate2); } finally { reopened.close(); }
   const job = production.beginRender(project.id, status.binding!, true); assert.throws(() => production.beginRender(project.id, status.binding!, true), /already running/);
@@ -56,5 +62,7 @@ test("measured narration rejects malformed, silent, mismatched and unaligned inp
   production.importNarration(project.id, id, wav, timing); assert.equal(production.status(project.id).gate1, null); assert.equal(production.status(project.id).gate2, null);
   assert.throws(() => production.finishRender(project.id, interrupted.id, status.binding!, {}), /changed/); production.failRender(project.id, interrupted.id);
   assert.throws(() => production.approve(project.id, { ...review, gate: "gate1" }), /changed/);
+  const fresh = production.status(project.id); const approved = production.approveReview(project.id, { ...combined, binding: fresh.binding });
+  assert.equal(production.status(project.id).gate1, approved.gate1); assert.equal(production.status(project.id).gate2, approved.gate2);
   studio.saveScript(project.id, "Changed\nTwo\nThree", script.id); assert.equal(production.status(project.id).ready, false);
 });
