@@ -8,7 +8,7 @@ requests, immutable proposals, comparison, explicit accept/reject, exact script
 acceptance, stale-state detection and persisted sessions/jobs. See
 [script review evidence](script-review.md).
 
-The [evidence-grounded writing workflow](researched-writing.md) is now implemented:
+The [evidence-grounded writing workflow](../../researched-writing.md) is now implemented:
 source/payoff briefs, linked claims, distinct hook proposals, explicit hook choice,
 full writing, installed humanizer refinement, separate model editorial findings,
 and safe draft import. A real gpt-6-luna browser run passed. This is a technical
@@ -21,7 +21,7 @@ No editorial quality or general model-capability conclusion follows from that ch
 
 ## Next steps in order
 
-1. Review the [five revised proposals](writing-evaluation/2026-10-22/proposed-drafts.md).
+1. Review the [five revised proposals](../../writing-evaluation/2026-10-22/proposed-drafts.md).
    The user's text preferences and requested corrections are recorded and applied;
    exact revised-text acceptance and actual read-aloud observations remain pending.
    A separate fully blinded review is not established by this chat response.
@@ -36,7 +36,7 @@ No editorial quality or general model-capability conclusion follows from that ch
    implemented; see [visual planning](visual-planning.md). Images are static
    drawings, not screenshots from a renderer. Current script acceptance is
    required, edits invalidate dependencies, and storyboard acceptance is explicit.
-3. Use the connected [motion review workspace](animation-workflow.md): generate,
+3. Use the connected [motion review workspace](../../animation-workflow.md): generate,
    scrub, compare, revise one shot and explicitly accept motion. Interpreter 2 adds
    explicit camera/reveal/split-screen semantics and richer bundled visuals.
 4. Import measured narration and line timings, listen/watch the synchronized preview,

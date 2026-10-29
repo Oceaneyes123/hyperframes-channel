@@ -1,8 +1,8 @@
 # Graphic quality baseline — first slice
 
-Captured on 2026-10-24. These are static end-state planning frames rendered with the actual Studio `PlanningFrame`, not screenshots extracted from a finished video. The exact source artifacts and SHA-256 receipts are frozen under [first-slice evidence](../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/verification.json). Saved projects were read only.
+Captured on 2026-10-24. These are static end-state planning frames rendered with the actual Studio `PlanningFrame`, not screenshots extracted from a finished video. The exact source artifacts and SHA-256 receipts are frozen under [first-slice evidence](../../../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/verification.json). Saved projects were read only.
 
-![Four original reference frames](../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/baseline-contact.png)
+![Four original reference frames](../../../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/baseline-contact.png)
 
 From left to right:
 
@@ -17,7 +17,7 @@ The reference artifact IDs are `c269789a-060b-436b-8fe5-53d0704e2264` (AI clippi
 
 ## Controlled comparison
 
-![Synthetic before and after at phone size](../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/before-after-phone.png)
+![Synthetic before and after at phone size](../../../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/before-after-phone.png)
 
 Left is a newly authored primitive-only control. Right uses the new illustration for the same teaching objective: collect recurring work complaints, group the same pain, then form a candidate tool. Demand still needs validation. This comparison isolates available graphic vocabulary; it does not claim to be the old project's exact narration, production output or a blinded preference test.
 

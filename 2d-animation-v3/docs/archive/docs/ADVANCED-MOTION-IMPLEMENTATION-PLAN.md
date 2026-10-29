@@ -274,4 +274,4 @@ revise the candidate; do not redefine the evidence as a success.
 Configure an authorized project gateway and complete the live M9 Director audit.
 Restore the original project store/media and resolve the recorded candidate exact-seek
 revalidation before completing M10 human review and production gates. See
-[the current evidence record](../../advanced-motion-progress.md). Original exit criteria above remain unchanged.
+[the current evidence record](advanced-motion-progress.md). Original exit criteria above remain unchanged.

@@ -5,8 +5,8 @@ Actual human production approval and real export acceptance remain pending.
 Original planning baseline: `3b2c71d`; current implementation continues from `16b205f`.
 Primary integration reference:
 [GSAP-INTEGRATION.md](GSAP-INTEGRATION.md). Product requirements remain
-[PLAN.md](archive/docs/PLAN.md) and [PLAN2.md](archive/docs/PLAN2.md); persistence and approval authority
-remain in [architecture.md](architecture.md).
+[PLAN.md](PLAN.md) and [PLAN2.md](PLAN2.md); persistence and approval authority
+remain in [architecture.md](../../architecture.md).
 
 ## Outcome and scope
 
@@ -19,11 +19,11 @@ and future export use the same composition and immutable inputs.
 The original document authorized no execution. The user subsequently authorized
 implementation, including measured narration, production safeguards and synthetic
 export tests. Actual human gates and real production render authorization remain
-separate. See [current animation workflow](animation-workflow.md).
+separate. See [current animation workflow](../../animation-workflow.md).
 
 The user subsequently requested step-by-step implementation. Execution evidence
 is tracked in task_plan.md, findings.md and progress.md; the
-[G1 receipt](gsap/README.md) records the completed adapter proof. Later phases
+[G1 receipt](../../gsap/README.md) records the completed adapter proof. Later phases
 remain conditional on their stated exits and actual human production approval.
 
 ## Verified starting point

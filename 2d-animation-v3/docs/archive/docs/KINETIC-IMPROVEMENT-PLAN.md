@@ -71,22 +71,22 @@ No engagement, cost or revenue improvement is claimed by this plan.
 
 ### Source anchors
 
-- [Text registry](../workflow/text-motion.ts), [text renderer](../engine/text-motion.tsx),
-  [gallery](../app/text-motion/text-motion-gallery.tsx), [usage guide](text-motion-library.md).
-- [Diagram graph and layout](../workflow/diagram.ts),
-  [SVG diagram/layer rendering](../engine/graphics/layered-graphic.tsx).
-- [Components and part states](../workflow/components.ts),
-  [component renderer](../engine/components/visual-component.tsx),
-  [complaint artwork](../engine/graphics/complaint-workflow.tsx).
-- [Strict motion contracts](../workflow/motion.ts),
-  [preset expansion](../engine/motion-presets/index.ts),
-  [compiler](../engine/compile-motion.ts), [frame interpreter](../engine/motion-composition.tsx).
-- [Timing resolver](../workflow/timing.ts): measured anchors currently resolve
+- [Text registry](../../../workflow/text-motion.ts), [text renderer](../../../engine/text-motion.tsx),
+  [gallery](../../../app/text-motion/text-motion-gallery.tsx), [usage guide](text-motion-library.md).
+- [Diagram graph and layout](../../../workflow/diagram.ts),
+  [SVG diagram/layer rendering](../../../engine/graphics/layered-graphic.tsx).
+- [Components and part states](../../../workflow/components.ts),
+  [component renderer](../../../engine/components/visual-component.tsx),
+  [complaint artwork](../../../engine/graphics/complaint-workflow.tsx).
+- [Strict motion contracts](../../../workflow/motion.ts),
+  [preset expansion](../../../engine/motion-presets/index.ts),
+  [compiler](../../../engine/compile-motion.ts), [frame interpreter](../../../engine/motion-composition.tsx).
+- [Timing resolver](../../../workflow/timing.ts): measured anchors currently resolve
   beats; `textMotions` contains only shot-local frames.
-- [Art direction](../workflow/art-direction.ts),
-  [background renderer](../engine/graphics/background.tsx),
-  [visual guidance](../server/visual-guidance.ts), [font sizing](../engine/text-metrics.ts).
-- [Production binding and engine fingerprint](../server/production-store.ts).
+- [Art direction](../../../workflow/art-direction.ts),
+  [background renderer](../../../engine/graphics/background.tsx),
+  [visual guidance](../../../server/visual-guidance.ts), [font sizing](../../../engine/text-metrics.ts).
+- [Production binding and engine fingerprint](../../../server/production-store.ts).
 
 ## Ordered implementation increments
 
@@ -282,9 +282,9 @@ variety alone is not an acceptance condition.
 
 1. Author isolated synthetic start/end drawings and motion fixtures before adding
    new model output. Keep the accepted production projects untouched.
-2. Add focused tests following [text motion](../tests/text-motion.test.ts),
-   [components](../tests/components.test.ts), [timing](../tests/timing.test.ts) and
-   [motion quality](../tests/motion-quality.test.ts) conventions. Cover both full
+2. Add focused tests following [text motion](../../../tests/text-motion.test.ts),
+   [components](../../../tests/components.test.ts), [timing](../../../tests/timing.test.ts) and
+   [motion quality](../../../tests/motion-quality.test.ts) conventions. Cover both full
    and scoped proposals, source correspondence and rejection paths.
 3. Extend existing frame-proof tooling rather than create another render system.
    Check sequential frames against fresh seeks, and seek backward in one mounted

@@ -5,7 +5,7 @@ SSH confirmed an exited container; starting it left no active published ports.
 Validated both original Compose files and recreated only CLIProxyAPI with no image
 pull or configuration/auth change. Authenticated discovery then returned HTTP 200
 with 13 models, including configured gpt-6-luna. Actual Studio full/scoped motion
-requests passed; see [live motion receipt](gsap/live-motion-verification.json).
+requests passed; see [live motion receipt](../../gsap/live-motion-verification.json).
 Persistent boot ordering is still unchanged and this failure can recur on reboot.
 
 Verified 2026-10-21 from Windows and the existing `homeserver` SSH alias. No keys,

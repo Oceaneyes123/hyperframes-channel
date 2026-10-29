@@ -2,8 +2,8 @@
 
 ## Authority and scope
 
-The [GSAP implementation roadmap](GSAP-IMPLEMENTATION-PLAN.md), based on the
-supplied [GSAP reference](GSAP-INTEGRATION.md), is implemented through the connected
+The [GSAP implementation roadmap](archive/docs/GSAP-IMPLEMENTATION-PLAN.md), based on the
+supplied [GSAP reference](archive/docs/GSAP-INTEGRATION.md), is implemented through the connected
 motion workspace and production foundations. Remotion owns frame time and overlaps;
 the official GSAP adapter interprets validated declarative instructions. Models never
 provide executable animation code. Schema 7 adds motion and production records
@@ -112,7 +112,7 @@ fail closed. Manual acceptance also checks the exact latest revision and hash.
 
 An accepted script is eligible for visual planning only while its revision is
 still latest and its file/hash verifies. Later edits make it stale. This is the
-first dependency boundary. [Concept and storyboard planning](visual-planning.md)
+first dependency boundary. [Concept and storyboard planning](animation-workflow.md#visual-planning)
 now enforces it for generation, selection and artifact acceptance. Formal production
 gate foundations additionally bind the exact reviewed motion, voice and engine inputs.
 Synthetic test acceptance is never evidence of human production approval.
@@ -177,4 +177,4 @@ not apply to v3.
 
 ## Motion graphics and narration planning (schema 8)
 
-The motion graphics extension retains the existing renderer and immutable decisions. Interpreter 3 expands versioned beats through the official GSAP adapter; interpreters 1/2 retain their rendering behavior. Authored components expose only validated named parts, and production engine hashing includes the new render/quality dependencies. Schema 8 adds planning_timing and immutable script/audio-bound JSON/WAV inputs; existing production records remain intact. Planning timing is independent of motion acceptance, while final narration binds to accepted motion and its exact planned audio/timing when present. Corrections invalidate dependencies rather than rewriting approved artifacts. See [motion graphics workflow](motion-graphics/README.md) for review and rollback details. Independent creative evaluation remains a release gate.
+The motion graphics extension retains the existing renderer and immutable decisions. Interpreter 3 expands versioned beats through the official GSAP adapter; interpreters 1/2 retain their rendering behavior. Authored components expose only validated named parts, and production engine hashing includes the new render/quality dependencies. Schema 8 adds planning_timing and immutable script/audio-bound JSON/WAV inputs; existing production records remain intact. Planning timing is independent of motion acceptance, while final narration binds to accepted motion and its exact planned audio/timing when present. Corrections invalidate dependencies rather than rewriting approved artifacts. See [motion graphics workflow](animation-workflow.md#interpreter-3-choreography-and-components) for review and rollback details. Independent creative evaluation remains a release gate.

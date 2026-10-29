@@ -8,7 +8,7 @@ framing, subject, action, arrival transition, continuity and start/end drawings.
 Add revision notes and choose **Revise shot N only** for a scoped proposal.
 Accept the exact storyboard separately after reviewing it.
 
-Continue in the [connected motion and narration workflow](animation-workflow.md).
+Continue in the [connected motion and narration workflow](../../animation-workflow.md).
 Static planning drawings remain available alongside the Remotion/GSAP Player;
 accepting a storyboard alone never supplies production approval.
 
@@ -63,6 +63,6 @@ a shared SSE framing limit bug: the 300 KB raw cap rejected about 3 KB of JSON
 when split into small deltas. Separate bounded transport/content limits and a
 fragmentation regression resolved it. Three earlier failed requests are preserved;
 there was no automatic retry. Live storyboard quality and approval are unassessed.
-The [verification receipt](visual-planning/verification.json) identifies exact
-artifacts. [Screenshot](visual-planning/shot-review.png) shows shot 2's static
+The [verification receipt](../../visual-planning/verification.json) identifies exact
+artifacts. [Screenshot](../../visual-planning/shot-review.png) shows shot 2's static
 start/end planning states. Detailed observations are recorded in progress.md.

@@ -4,10 +4,10 @@ The first slice connects one curated, layered illustration to existing V3 visual
 
 ## Review the result
 
-- [Phone-size before/after](../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/before-after-phone.png)
-- [Six-second silent animation](../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/synthetic-workflow.mp4)
-- [Original project contact sheet](../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/baseline-contact.png)
-- [Machine-readable proof and hashes](../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/verification.json)
+- [Phone-size before/after](../../../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/before-after-phone.png)
+- [Six-second silent animation](../../../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/synthetic-workflow.mp4)
+- [Original project contact sheet](../../../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/baseline-contact.png)
+- [Machine-readable proof and hashes](../../../.planning/2026-10-24-v3-graphic-design-quality-overhaul/artifacts/verification.json)
 - [Baseline findings](graphics-quality-baseline.md) and [visual language](visual-design-system.md)
 
 The control comparison is synthetic. Frozen baseline frames come from two existing projects. Neither the synthetic scene nor any model output represents human storyboard or production approval.

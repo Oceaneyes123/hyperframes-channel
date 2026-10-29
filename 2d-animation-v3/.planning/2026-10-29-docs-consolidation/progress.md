@@ -14,3 +14,10 @@
 - Group 2 moves PLAN/PLAN2 and both advanced plans with the new AGENTS read order. Verbatim original and PLAN bytes retained. A conservative helper initially stopped on the adapted plan's source-code links; allowed link-only correction there while preserving every frozen source.
 
 - Group 2 check passes all 176 tests, lint/typecheck; 349 local paths/anchors and 731/22 hashes pass. Default build repeats the known Turbopack failure. PLAN, PLAN2 and supplied original remain byte-identical.
+
+- Group 2 committed as 50c4f64 after the transient index lock cleared without intervention.
+- Group 3 consolidates current graphics, typography, connected-process, interpreter-3 and M1-M8 contracts into animation-workflow; script-review contracts into researched-writing. Historical tests/results and stale future-work paragraphs stay in archived originals.
+- Archived 25 additional guides/plans/root logs atomically with one coupled frozen planning file; repaired references and current-guide links. Original setup/status README preserved in archive; new setup README points to STATUS.
+
+- Group 3 check passes 176 tests/lint/typecheck; 370 paths/anchors and frozen 731/22 hashes pass. Default build repeats the pre-existing worker error.
+- Separate attention-rhythm task files appeared staged in the shared index, plus untracked rhythm-report.ts. Preserve them; use path-scoped commits for our owned documents only. Counts report concurrent additions separately.
