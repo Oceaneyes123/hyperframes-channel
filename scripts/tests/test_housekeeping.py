@@ -51,11 +51,24 @@ class FileGuardTests(unittest.TestCase):
             refs = f"refs/heads/main new refs/heads/main old\nrefs/heads/other next refs/heads/other {zero}\nrefs/heads/deleted {zero} refs/heads/deleted old\n"
             with patch.object(guard, "ROOT", root), patch.object(guard.sys, "argv", ["check", "--pre-push"]), \
                     patch.object(guard.sys, "stdin", io.StringIO(refs)), \
+                    patch.object(guard, "known_commit", return_value=True), \
                     patch.object(guard, "history_objects", return_value={}) as scan, contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(guard.main(), 0)
             self.assertEqual(scan.call_args_list[0].args[0], ["old..new"])
             self.assertEqual(scan.call_args_list[1].args[0], ["next", "--not", "--remotes"])
             self.assertEqual(scan.call_count, 2)
+
+    def test_rewritten_remote_base_missing_locally_checks_full_outgoing_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "docs/housekeeping").mkdir(parents=True)
+            (root / "docs/housekeeping/large-file-exceptions.json").write_text(json.dumps({"legacyBlobs": {}}))
+            with patch.object(guard, "ROOT", root), patch.object(guard.sys, "argv", ["check", "--pre-push"]), \
+                    patch.object(guard.sys, "stdin", io.StringIO("refs/heads/main new refs/heads/main old\n")), \
+                    patch.object(guard, "known_commit", return_value=False), \
+                    patch.object(guard, "history_objects", return_value={}) as scan, contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(guard.main(), 0)
+            scan.assert_called_once_with(["new"])
 
 
 class EvidenceTests(unittest.TestCase):

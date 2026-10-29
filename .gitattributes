@@ -1,2 +1,8 @@
 # Git for Windows must keep hook shebangs executable by its POSIX shell.
 .githooks/* text eol=lf
+
+# Frozen SHA-256 manifests describe exact working bytes, including line endings.
+# Keep each source's original bytes on Windows and on other platforms.
+/2d-animation-v2/** -text
+/2d-animation-v3/benchmarks/** -text
+/motion-audits/hyperframes-channel-2d-animation-v2-2026-10-19.html -text

@@ -31,6 +31,10 @@ external storage before removing the original machine's local files. Release
 evidence bundles are the recommended sharing destination; publishing them is a
 separate action. No LFS dependency was added.
 
+Two temporary restoration-test clones also remain under this ignored artifact
+directory. Automatic approval review blocked their recursive deletion with
+"blocked by policy". They do not affect the tracked repository or future pushes.
+
 [The evidence manifest](evidence-2026-10-29.json) records every original path,
 working-file byte length and SHA-256, plus whether it was untracked. Restore missing
 removed files from the repository root:
@@ -58,9 +62,14 @@ verify after index removal:
 - `2d-animation-v3/docs/phase0/renderer-benchmark-sources.json`: 22 benchmark
   source/configuration files. These remain tracked.
 
-A fresh checkout deliberately lacks the removed historical media. The 731-file
-check fails on missing paths until restoration; keeping hashes unchanged makes
-that limitation visible. The 22-file source check does not need the media bundle.
+A fresh checkout deliberately lacks 606 files in the historical 731-file set.
+That check fails on missing paths until restoration; keeping hashes unchanged
+makes that limitation visible. The 22-file source check does not need the media bundle.
+The first fresh Windows clone also exposed line-ending conversion: 47 retained v2
+and 20 benchmark hashes changed under `core.autocrlf`. Root `.gitattributes` now
+preserves exact original bytes in v2, benchmark packages and the frozen external
+audit. Restaging those areas changes only Git's stored line endings, never source
+logic or the expected hash records. This makes the frozen bytes portable.
 The original verification command remains in
 [the frozen baseline instructions](../../2d-animation-v3/docs/phase0/v2-baseline.md).
 
@@ -123,6 +132,14 @@ a normal pull/merge of the old history into this checkout. Re-clone collaborator
 after any eventual remote rewrite. Historical SHA references inside frozen
 documents intentionally remain original provenance IDs, resolvable in the backup.
 
+`git filter-repo` cannot rewrite Codex refs pointing directly at trees. Their
+originals are in the bundle; 18 checkpoint trees were separately rebuilt with the
+same path exclusions while retaining their source snapshots. The stash was
+rewritten by the filter. Prior filter metadata was backed up before starting this
+independent rewrite. The origin URL was restored locally without a fetch or push.
+After garbage collection: 31.86 MiB packed Git objects, zero loose objects and
+zero garbage, compared with approximately 160.67 MiB before cleanup.
+
 ## Sensitive data and machine paths
 
 The tracked-text scan found no apparent real credentials; matches were synthetic
@@ -134,7 +151,7 @@ does not certify all historical binaries or Git objects as secret-free.
 
 ## Validation
 
-- New housekeeping tests: 7 passed.
+- New housekeeping tests: 8 passed, including a pruned remote-base push check.
 - V2 unittest discovery: 28 passed.
 - Publishing unittest discovery: 55 passed.
 - V3 `npm ci`: passed; reported 8 high-severity dependency findings. Versions unchanged.
@@ -147,3 +164,14 @@ does not certify all historical binaries or Git objects as secret-free.
   audio correlation 0.999979 and zero lag. Recursive labels, exact original
   sample-script bytes and unchanged shot durations pass. Contact sheet inspected.
 - Both source plans and original 731/22 expected hashes remain unchanged.
+- Fresh byte-preserving clone: 125 retained v2/audit files and all 22 benchmark
+  files match before restoration; 606 baseline files are deliberately absent.
+  After restoring all 3,681 externalized files, 731/731 and 22/22 hashes match.
+- Fresh-clone housekeeping tests and full-history file-size policy pass. Local
+  outgoing-history simulation against the original remote commit also passes;
+  no actual push was attempted.
+- The line-ending-only commit retains one pre-existing trailing space in the
+  frozen `examples/http-cache/VISUAL.md` drawing. It is intentionally not edited
+  to satisfy a whitespace checker because the original bytes are frozen.
+- Current tracked footprint: approximately 50.8 MB in 907 files, down from
+  317.9 MB in 4,567 files. Exact totals change slightly as this record is updated.

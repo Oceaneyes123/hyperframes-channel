@@ -34,6 +34,11 @@ def history_objects(revisions):
     return objects
 
 
+def known_commit(oid):
+    return subprocess.run(["git", "-C", str(ROOT), "cat-file", "-e", f"{oid}^{{commit}}"],
+                          stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL).returncode == 0
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     group = parser.add_mutually_exclusive_group()
@@ -50,7 +55,13 @@ def main():
             _, local, _, remote = row.split()
             if set(local) == {"0"}:
                 continue
-            revisions = [local, "--not", "--remotes"] if set(remote) == {"0"} else [f"{remote}..{local}"]
+            if set(remote) == {"0"}:
+                revisions = [local, "--not", "--remotes"]
+            elif known_commit(remote):
+                revisions = [f"{remote}..{local}"]
+            else:
+                # A rewritten remote base may have been pruned locally. Check all outgoing history.
+                revisions = [local]
             objects.update(history_objects(revisions))
     else:
         objects = {}
