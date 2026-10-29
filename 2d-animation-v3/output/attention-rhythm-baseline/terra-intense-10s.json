@@ -1,0 +1,728 @@
+{
+  "schemaVersion": 1,
+  "basis": "motion-plan diagnostics; not decoded video or retention evidence",
+  "fps": 30,
+  "durationFrames": 300,
+  "limitations": [
+    "Visibility uses positive root opacity/reveal with linear interpolation; no clipping, occlusion, transition masks or embedded illustration text analysis.",
+    "Text words are full authored labels, including during partial text reveals. Windows report union and simultaneous peaks separately.",
+    "Events are changed-action onsets merged across touching phases per target/category, plus actor lifetimes, text treatments and optional background changes. Invisible part actions may count.",
+    "Counter transitions are counted once, not individual decorative digit ticks. Compound illustration internals and environment treatments are not independently counted.",
+    "Without a storyboard background changes are unknown; without beats/textMotions preset identity is unknown."
+  ],
+  "backgroundMeasured": true,
+  "summary": {
+    "shots": 6,
+    "changeEvents": 77,
+    "zeroOnsetWindows": 0,
+    "presetHistogram": {
+      "cascade@1": 7,
+      "snap-overshoot@1": 5,
+      "mask-reveal@1": 1,
+      "converge-assemble@1": 1,
+      "flow-handoff@1": 2,
+      "split-disperse@1": 1
+    },
+    "primaryPresetHistogram": {
+      "mask-reveal@1": 1,
+      "snap-overshoot@1": 1,
+      "converge-assemble@1": 1,
+      "flow-handoff@1": 2,
+      "split-disperse@1": 1
+    },
+    "illustrationShots": {
+      "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904": [
+        "shot-1",
+        "shot-2"
+      ],
+      "browser": [
+        "shot-3",
+        "shot-4"
+      ],
+      "document": [
+        "shot-3",
+        "shot-4",
+        "shot-5",
+        "shot-6"
+      ],
+      "chip": [
+        "shot-3",
+        "shot-5",
+        "shot-6"
+      ]
+    }
+  },
+  "windows": [
+    {
+      "startSeconds": 0,
+      "endSeconds": 2,
+      "changeEvents": 17,
+      "eventKinds": {
+        "exit": 3,
+        "enter": 8,
+        "transformation": 6
+      },
+      "activeEvents": 17,
+      "textElements": 4,
+      "textWords": 9,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "cascade@1": 2,
+        "snap-overshoot@1": 4,
+        "mask-reveal@1": 1
+      }
+    },
+    {
+      "startSeconds": 2,
+      "endSeconds": 4,
+      "changeEvents": 15,
+      "eventKinds": {
+        "exit": 5,
+        "enter": 5,
+        "transformation": 5
+      },
+      "activeEvents": 16,
+      "textElements": 4,
+      "textWords": 11,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904",
+        "browser",
+        "document",
+        "chip"
+      ],
+      "presetHistogram": {
+        "cascade@1": 1,
+        "converge-assemble@1": 1,
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 4,
+      "endSeconds": 6,
+      "changeEvents": 13,
+      "eventKinds": {
+        "exit": 6,
+        "enter": 4,
+        "transformation": 3
+      },
+      "activeEvents": 14,
+      "textElements": 4,
+      "textWords": 12,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "chip",
+        "document",
+        "browser"
+      ],
+      "presetHistogram": {
+        "cascade@1": 1,
+        "flow-handoff@1": 1
+      }
+    },
+    {
+      "startSeconds": 6,
+      "endSeconds": 8,
+      "changeEvents": 16,
+      "eventKinds": {
+        "exit": 5,
+        "enter": 6,
+        "transformation": 5
+      },
+      "activeEvents": 16,
+      "textElements": 4,
+      "textWords": 11,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "browser",
+        "chip",
+        "document"
+      ],
+      "presetHistogram": {
+        "cascade@1": 1,
+        "split-disperse@1": 1
+      }
+    },
+    {
+      "startSeconds": 8,
+      "endSeconds": 10,
+      "changeEvents": 16,
+      "eventKinds": {
+        "exit": 7,
+        "enter": 5,
+        "transformation": 4
+      },
+      "activeEvents": 16,
+      "textElements": 5,
+      "textWords": 12,
+      "peakConcurrentTextElements": 3,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "document",
+        "chip"
+      ],
+      "presetHistogram": {
+        "cascade@1": 2,
+        "flow-handoff@1": 1
+      }
+    }
+  ],
+  "events": [
+    {
+      "shotId": "shot-1",
+      "target": "title",
+      "kind": "exit",
+      "startFrame": 42,
+      "endFrame": 42
+    },
+    {
+      "shotId": "shot-1",
+      "target": "console",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "console",
+      "kind": "exit",
+      "startFrame": 42,
+      "endFrame": 42
+    },
+    {
+      "shotId": "shot-1",
+      "target": "note",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "note",
+      "kind": "exit",
+      "startFrame": 42,
+      "endFrame": 42
+    },
+    {
+      "shotId": "shot-1",
+      "target": "title",
+      "kind": "transformation",
+      "startFrame": 0,
+      "endFrame": 10
+    },
+    {
+      "shotId": "shot-1",
+      "target": "title",
+      "kind": "enter",
+      "startFrame": 1,
+      "endFrame": 8
+    },
+    {
+      "shotId": "shot-1",
+      "target": "console",
+      "kind": "transformation",
+      "startFrame": 6,
+      "endFrame": 18
+    },
+    {
+      "shotId": "shot-1",
+      "target": "console.draft",
+      "kind": "enter",
+      "startFrame": 18,
+      "endFrame": 26
+    },
+    {
+      "shotId": "shot-1",
+      "target": "console.review-controls",
+      "kind": "transformation",
+      "startFrame": 18,
+      "endFrame": 26
+    },
+    {
+      "shotId": "shot-2",
+      "target": "title",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-2",
+      "target": "console",
+      "kind": "enter",
+      "startFrame": 42,
+      "endFrame": 42
+    },
+    {
+      "shotId": "shot-2",
+      "target": "console",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-2",
+      "target": "note",
+      "kind": "enter",
+      "startFrame": 42,
+      "endFrame": 42
+    },
+    {
+      "shotId": "shot-2",
+      "target": "note",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-2",
+      "target": "title",
+      "kind": "transformation",
+      "startFrame": 42,
+      "endFrame": 52
+    },
+    {
+      "shotId": "shot-2",
+      "target": "title",
+      "kind": "enter",
+      "startFrame": 43,
+      "endFrame": 50
+    },
+    {
+      "shotId": "shot-2",
+      "target": "console.human-hand",
+      "kind": "transformation",
+      "startFrame": 48,
+      "endFrame": 58
+    },
+    {
+      "shotId": "shot-2",
+      "target": "console.human-hand",
+      "kind": "enter",
+      "startFrame": 50,
+      "endFrame": 54
+    },
+    {
+      "shotId": "shot-2",
+      "target": "console.review-controls",
+      "kind": "transformation",
+      "startFrame": 58,
+      "endFrame": 66
+    },
+    {
+      "shotId": "shot-3",
+      "target": "title",
+      "kind": "exit",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-3",
+      "target": "left",
+      "kind": "enter",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-3",
+      "target": "left",
+      "kind": "exit",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-3",
+      "target": "right",
+      "kind": "enter",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-3",
+      "target": "right",
+      "kind": "exit",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-3",
+      "target": "model",
+      "kind": "exit",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-3",
+      "target": "note",
+      "kind": "enter",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-3",
+      "target": "note",
+      "kind": "exit",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-3",
+      "target": "title",
+      "kind": "transformation",
+      "startFrame": 84,
+      "endFrame": 96
+    },
+    {
+      "shotId": "shot-3",
+      "target": "title",
+      "kind": "enter",
+      "startFrame": 85,
+      "endFrame": 94
+    },
+    {
+      "shotId": "shot-3",
+      "target": "left",
+      "kind": "transformation",
+      "startFrame": 88,
+      "endFrame": 99
+    },
+    {
+      "shotId": "shot-3",
+      "target": "right",
+      "kind": "transformation",
+      "startFrame": 88,
+      "endFrame": 99
+    },
+    {
+      "shotId": "shot-3",
+      "target": "left",
+      "kind": "exit",
+      "startFrame": 99,
+      "endFrame": 106
+    },
+    {
+      "shotId": "shot-3",
+      "target": "right",
+      "kind": "exit",
+      "startFrame": 99,
+      "endFrame": 106
+    },
+    {
+      "shotId": "shot-3",
+      "target": "model",
+      "kind": "enter",
+      "startFrame": 99,
+      "endFrame": 106
+    },
+    {
+      "shotId": "shot-3",
+      "target": "model",
+      "kind": "transformation",
+      "startFrame": 99,
+      "endFrame": 108
+    },
+    {
+      "shotId": "shot-3",
+      "target": "model",
+      "kind": "transformation",
+      "startFrame": 110,
+      "endFrame": 120
+    },
+    {
+      "shotId": "shot-4",
+      "target": "title",
+      "kind": "exit",
+      "startFrame": 192,
+      "endFrame": 192
+    },
+    {
+      "shotId": "shot-4",
+      "target": "packet",
+      "kind": "enter",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-4",
+      "target": "packet",
+      "kind": "exit",
+      "startFrame": 192,
+      "endFrame": 192
+    },
+    {
+      "shotId": "shot-4",
+      "target": "workspace",
+      "kind": "enter",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-4",
+      "target": "workspace",
+      "kind": "exit",
+      "startFrame": 192,
+      "endFrame": 192
+    },
+    {
+      "shotId": "shot-4",
+      "target": "note",
+      "kind": "enter",
+      "startFrame": 138,
+      "endFrame": 138
+    },
+    {
+      "shotId": "shot-4",
+      "target": "note",
+      "kind": "exit",
+      "startFrame": 192,
+      "endFrame": 192
+    },
+    {
+      "shotId": "shot-4",
+      "target": "title",
+      "kind": "transformation",
+      "startFrame": 138,
+      "endFrame": 150
+    },
+    {
+      "shotId": "shot-4",
+      "target": "title",
+      "kind": "enter",
+      "startFrame": 139,
+      "endFrame": 148
+    },
+    {
+      "shotId": "shot-4",
+      "target": "packet",
+      "kind": "transformation",
+      "startFrame": 147,
+      "endFrame": 156
+    },
+    {
+      "shotId": "shot-4",
+      "target": "packet",
+      "kind": "exit",
+      "startFrame": 156,
+      "endFrame": 164
+    },
+    {
+      "shotId": "shot-4",
+      "target": "workspace",
+      "kind": "transformation",
+      "startFrame": 156,
+      "endFrame": 164
+    },
+    {
+      "shotId": "shot-5",
+      "target": "title",
+      "kind": "exit",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-5",
+      "target": "model",
+      "kind": "enter",
+      "startFrame": 192,
+      "endFrame": 192
+    },
+    {
+      "shotId": "shot-5",
+      "target": "model",
+      "kind": "exit",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-5",
+      "target": "first",
+      "kind": "exit",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-5",
+      "target": "second",
+      "kind": "exit",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-5",
+      "target": "third",
+      "kind": "exit",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-5",
+      "target": "note",
+      "kind": "enter",
+      "startFrame": 192,
+      "endFrame": 192
+    },
+    {
+      "shotId": "shot-5",
+      "target": "note",
+      "kind": "exit",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-5",
+      "target": "title",
+      "kind": "transformation",
+      "startFrame": 192,
+      "endFrame": 204
+    },
+    {
+      "shotId": "shot-5",
+      "target": "title",
+      "kind": "enter",
+      "startFrame": 193,
+      "endFrame": 202
+    },
+    {
+      "shotId": "shot-5",
+      "target": "model",
+      "kind": "exit",
+      "startFrame": 200,
+      "endFrame": 206
+    },
+    {
+      "shotId": "shot-5",
+      "target": "model",
+      "kind": "transformation",
+      "startFrame": 200,
+      "endFrame": 206
+    },
+    {
+      "shotId": "shot-5",
+      "target": "first",
+      "kind": "transformation",
+      "startFrame": 200,
+      "endFrame": 220
+    },
+    {
+      "shotId": "shot-5",
+      "target": "second",
+      "kind": "transformation",
+      "startFrame": 200,
+      "endFrame": 220
+    },
+    {
+      "shotId": "shot-5",
+      "target": "third",
+      "kind": "transformation",
+      "startFrame": 200,
+      "endFrame": 220
+    },
+    {
+      "shotId": "shot-5",
+      "target": "first",
+      "kind": "enter",
+      "startFrame": 206,
+      "endFrame": 218
+    },
+    {
+      "shotId": "shot-5",
+      "target": "second",
+      "kind": "enter",
+      "startFrame": 206,
+      "endFrame": 218
+    },
+    {
+      "shotId": "shot-5",
+      "target": "third",
+      "kind": "enter",
+      "startFrame": 206,
+      "endFrame": 218
+    },
+    {
+      "shotId": "shot-6",
+      "target": "token",
+      "kind": "enter",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-6",
+      "target": "pricing",
+      "kind": "enter",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-6",
+      "target": "note",
+      "kind": "enter",
+      "startFrame": 246,
+      "endFrame": 246
+    },
+    {
+      "shotId": "shot-6",
+      "target": "title",
+      "kind": "transformation",
+      "startFrame": 246,
+      "endFrame": 258
+    },
+    {
+      "shotId": "shot-6",
+      "target": "title",
+      "kind": "enter",
+      "startFrame": 247,
+      "endFrame": 256
+    },
+    {
+      "shotId": "shot-6",
+      "target": "prices",
+      "kind": "transformation",
+      "startFrame": 256,
+      "endFrame": 268
+    },
+    {
+      "shotId": "shot-6",
+      "target": "prices",
+      "kind": "enter",
+      "startFrame": 257,
+      "endFrame": 266
+    },
+    {
+      "shotId": "shot-6",
+      "target": "token",
+      "kind": "transformation",
+      "startFrame": 263,
+      "endFrame": 272
+    },
+    {
+      "shotId": "shot-6",
+      "target": "token",
+      "kind": "exit",
+      "startFrame": 272,
+      "endFrame": 280
+    },
+    {
+      "shotId": "shot-6",
+      "target": "pricing",
+      "kind": "transformation",
+      "startFrame": 272,
+      "endFrame": 280
+    }
+  ],
+  "sources": {
+    "motion": {
+      "file": "output/terra-intense-10s-example/motion.json",
+      "sha256": "36f3890b209c57e02ce01ab3a7f2e0e9b69b6cdbcc4298707ecd5da026cb8914"
+    },
+    "storyboard": {
+      "file": "output/terra-intense-10s-example/board.json",
+      "sha256": "04cea33c564afb5defe90db5ab2c4913f8a7004eb5952cc53553415527047696"
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# Progress
+2026-10-29: Read attached brief, skills, V3 AGENTS, STATUS and architecture. Created branch. Phase 0 only; later phases need approval. Selected plan: .planning/attention-rhythm-baseline (explicit PLAN_ID on resolver calls).
+- Implemented scripts/rhythm-report.ts and six focused tests. Baselines generated in isolated output/attention-rhythm-baseline. Full checks/build next.
+- Final npm run check passed lint/typecheck and all 182 tests (six new), with two existing lint warnings. npm run build failed with existing Turbopack CSS-worker error. Revalidated all four pre-existing source-manifest hashes (MP4, audio, motion, board). Wrote REPORT.md, two baseline JSON reports, preservation.json and check/build logs under V3 output/attention-rhythm-baseline. Stopped after Phase 0; no commits/pushes.

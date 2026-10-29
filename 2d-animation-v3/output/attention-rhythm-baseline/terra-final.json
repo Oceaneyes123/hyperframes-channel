@@ -1,0 +1,1484 @@
+{
+  "schemaVersion": 1,
+  "basis": "motion-plan diagnostics; not decoded video or retention evidence",
+  "fps": 30,
+  "durationFrames": 2244,
+  "limitations": [
+    "Visibility uses positive root opacity/reveal with linear interpolation; no clipping, occlusion, transition masks or embedded illustration text analysis.",
+    "Text words are full authored labels, including during partial text reveals. Windows report union and simultaneous peaks separately.",
+    "Events are changed-action onsets merged across touching phases per target/category, plus actor lifetimes, text treatments and optional background changes. Invisible part actions may count.",
+    "Counter transitions are counted once, not individual decorative digit ticks. Compound illustration internals and environment treatments are not independently counted.",
+    "Without a storyboard background changes are unknown; without beats/textMotions preset identity is unknown."
+  ],
+  "backgroundMeasured": true,
+  "summary": {
+    "shots": 8,
+    "changeEvents": 101,
+    "zeroOnsetWindows": 12,
+    "presetHistogram": {
+      "snap-overshoot@1": 14,
+      "mask-reveal@1": 7,
+      "cascade@1": 4,
+      "word-stagger@1": 1,
+      "edge-trace@1": 2,
+      "pop-settle@1": 1,
+      "mask-rise@1": 1,
+      "punch-zoom@1": 1,
+      "wipe-reveal@1": 1,
+      "underline-draw@1": 1,
+      "highlight-sweep@1": 1
+    },
+    "primaryPresetHistogram": {
+      "snap-overshoot@1": 3,
+      "mask-reveal@1": 3,
+      "edge-trace@1": 2,
+      "cascade@1": 1
+    },
+    "illustrationShots": {
+      "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904": [
+        "shot-1",
+        "shot-2",
+        "shot-7",
+        "shot-8"
+      ],
+      "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a": [
+        "shot-3",
+        "shot-4"
+      ],
+      "semantic-diagram@1:51e6f7526034c828a61ee9bca3ed708f4713a13663d9263b1151c8792035527c": [
+        "shot-5"
+      ],
+      "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455": [
+        "shot-6"
+      ]
+    }
+  },
+  "windows": [
+    {
+      "startSeconds": 0,
+      "endSeconds": 2,
+      "changeEvents": 5,
+      "eventKinds": {
+        "enter": 4,
+        "transformation": 1
+      },
+      "activeEvents": 5,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 2,
+      "endSeconds": 4,
+      "changeEvents": 8,
+      "eventKinds": {
+        "exit": 4,
+        "enter": 4
+      },
+      "activeEvents": 8,
+      "textElements": 4,
+      "textWords": 11,
+      "peakConcurrentTextElements": 4,
+      "peakConcurrentWords": 11,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "mask-reveal@1": 2
+      }
+    },
+    {
+      "startSeconds": 4,
+      "endSeconds": 6,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 6,
+      "endSeconds": 8,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 1,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 8,
+      "endSeconds": 10,
+      "changeEvents": 6,
+      "eventKinds": {
+        "transformation": 3,
+        "enter": 2,
+        "exit": 1
+      },
+      "activeEvents": 6,
+      "textElements": 3,
+      "textWords": 12,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 2,
+        "cascade@1": 1
+      }
+    },
+    {
+      "startSeconds": 10,
+      "endSeconds": 12,
+      "changeEvents": 1,
+      "eventKinds": {
+        "text-treatment": 1
+      },
+      "activeEvents": 4,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "word-stagger@1": 1
+      }
+    },
+    {
+      "startSeconds": 12,
+      "endSeconds": 14,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 14,
+      "endSeconds": 16,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 16,
+      "endSeconds": 18,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 18,
+      "endSeconds": 20,
+      "changeEvents": 10,
+      "eventKinds": {
+        "exit": 6,
+        "enter": 3,
+        "transformation": 1
+      },
+      "activeEvents": 10,
+      "textElements": 4,
+      "textWords": 13,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904",
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {
+        "mask-reveal@1": 2,
+        "edge-trace@1": 1
+      }
+    },
+    {
+      "startSeconds": 20,
+      "endSeconds": 22,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 6,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 22,
+      "endSeconds": 24,
+      "changeEvents": 5,
+      "eventKinds": {
+        "transformation": 2,
+        "exit": 1,
+        "enter": 1,
+        "text-treatment": 1
+      },
+      "activeEvents": 5,
+      "textElements": 2,
+      "textWords": 6,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 2,
+        "pop-settle@1": 1
+      }
+    },
+    {
+      "startSeconds": 24,
+      "endSeconds": 26,
+      "changeEvents": 1,
+      "eventKinds": {
+        "enter": 1
+      },
+      "activeEvents": 5,
+      "textElements": 2,
+      "textWords": 6,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {
+        "mask-reveal@1": 1
+      }
+    },
+    {
+      "startSeconds": 26,
+      "endSeconds": 28,
+      "changeEvents": 1,
+      "eventKinds": {
+        "enter": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 6,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {
+        "mask-reveal@1": 1
+      }
+    },
+    {
+      "startSeconds": 28,
+      "endSeconds": 30,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 6,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 6,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 30,
+      "endSeconds": 32,
+      "changeEvents": 8,
+      "eventKinds": {
+        "exit": 4,
+        "enter": 3,
+        "text-treatment": 1
+      },
+      "activeEvents": 8,
+      "textElements": 4,
+      "textWords": 11,
+      "peakConcurrentTextElements": 4,
+      "peakConcurrentWords": 11,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {
+        "mask-rise@1": 1
+      }
+    },
+    {
+      "startSeconds": 32,
+      "endSeconds": 34,
+      "changeEvents": 4,
+      "eventKinds": {
+        "transformation": 2,
+        "exit": 1,
+        "enter": 1
+      },
+      "activeEvents": 5,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1,
+        "cascade@1": 1
+      }
+    },
+    {
+      "startSeconds": 34,
+      "endSeconds": 36,
+      "changeEvents": 4,
+      "eventKinds": {
+        "transformation": 2,
+        "exit": 1,
+        "enter": 1
+      },
+      "activeEvents": 4,
+      "textElements": 3,
+      "textWords": 10,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1,
+        "cascade@1": 1
+      }
+    },
+    {
+      "startSeconds": 36,
+      "endSeconds": 38,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 38,
+      "endSeconds": 40,
+      "changeEvents": 9,
+      "eventKinds": {
+        "exit": 5,
+        "enter": 4
+      },
+      "activeEvents": 9,
+      "textElements": 4,
+      "textWords": 12,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "semantic-diagram@1:0ae087d863b22af3fac40be0f34636a5070f133ef6f7cea4625dfd836449ce4a",
+        "semantic-diagram@1:51e6f7526034c828a61ee9bca3ed708f4713a13663d9263b1151c8792035527c"
+      ],
+      "presetHistogram": {
+        "mask-reveal@1": 1
+      }
+    },
+    {
+      "startSeconds": 40,
+      "endSeconds": 42,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "semantic-diagram@1:51e6f7526034c828a61ee9bca3ed708f4713a13663d9263b1151c8792035527c"
+      ],
+      "presetHistogram": {
+        "edge-trace@1": 1
+      }
+    },
+    {
+      "startSeconds": 42,
+      "endSeconds": 44,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "semantic-diagram@1:51e6f7526034c828a61ee9bca3ed708f4713a13663d9263b1151c8792035527c"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 44,
+      "endSeconds": 46,
+      "changeEvents": 9,
+      "eventKinds": {
+        "exit": 3,
+        "enter": 3,
+        "transformation": 1,
+        "text-treatment": 1,
+        "background-change": 1
+      },
+      "activeEvents": 9,
+      "textElements": 4,
+      "textWords": 10,
+      "peakConcurrentTextElements": 4,
+      "peakConcurrentWords": 10,
+      "illustrations": [
+        "semantic-diagram@1:51e6f7526034c828a61ee9bca3ed708f4713a13663d9263b1151c8792035527c",
+        "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1,
+        "wipe-reveal@1": 1
+      }
+    },
+    {
+      "startSeconds": 46,
+      "endSeconds": 48,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 1,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 48,
+      "endSeconds": 50,
+      "changeEvents": 2,
+      "eventKinds": {
+        "transformation": 1,
+        "enter": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 50,
+      "endSeconds": 52,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 1,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 52,
+      "endSeconds": 54,
+      "changeEvents": 1,
+      "eventKinds": {
+        "camera-move": 1
+      },
+      "activeEvents": 1,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+      ],
+      "presetHistogram": {
+        "punch-zoom@1": 1
+      }
+    },
+    {
+      "startSeconds": 54,
+      "endSeconds": 56,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 1,
+      "textElements": 2,
+      "textWords": 5,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 56,
+      "endSeconds": 58,
+      "changeEvents": 8,
+      "eventKinds": {
+        "exit": 3,
+        "enter": 3,
+        "text-treatment": 1,
+        "background-change": 1
+      },
+      "activeEvents": 8,
+      "textElements": 4,
+      "textWords": 9,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 5,
+      "illustrations": [
+        "document-editorial@1:e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455",
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "underline-draw@1": 1
+      }
+    },
+    {
+      "startSeconds": 58,
+      "endSeconds": 60,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 60,
+      "endSeconds": 62,
+      "changeEvents": 2,
+      "eventKinds": {
+        "transformation": 1,
+        "enter": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 62,
+      "endSeconds": 64,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 64,
+      "endSeconds": 66,
+      "changeEvents": 6,
+      "eventKinds": {
+        "exit": 3,
+        "enter": 3
+      },
+      "activeEvents": 6,
+      "textElements": 4,
+      "textWords": 8,
+      "peakConcurrentTextElements": 4,
+      "peakConcurrentWords": 8,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 66,
+      "endSeconds": 68,
+      "changeEvents": 4,
+      "eventKinds": {
+        "transformation": 2,
+        "exit": 1,
+        "enter": 1
+      },
+      "activeEvents": 4,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1,
+        "cascade@1": 1
+      }
+    },
+    {
+      "startSeconds": 68,
+      "endSeconds": 70,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 70,
+      "endSeconds": 72,
+      "changeEvents": 1,
+      "eventKinds": {
+        "text-treatment": 1
+      },
+      "activeEvents": 1,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "highlight-sweep@1": 1
+      }
+    },
+    {
+      "startSeconds": 72,
+      "endSeconds": 74,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 74,
+      "endSeconds": 74.8,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    }
+  ],
+  "events": [
+    {
+      "shotId": "shot-1",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2.human-hand",
+      "kind": "transformation",
+      "startFrame": 3,
+      "endFrame": 28
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2.human-hand",
+      "kind": "enter",
+      "startFrame": 9,
+      "endFrame": 19
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 60,
+      "endFrame": 60
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 557,
+      "endFrame": 557
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 60,
+      "endFrame": 60
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 557,
+      "endFrame": 557
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 60,
+      "endFrame": 60
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 557,
+      "endFrame": 557
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-4",
+      "kind": "exit",
+      "startFrame": 557,
+      "endFrame": 557
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.draft",
+      "kind": "exit",
+      "startFrame": 85,
+      "endFrame": 100
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.draft",
+      "kind": "enter",
+      "startFrame": 101,
+      "endFrame": 165
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2",
+      "kind": "transformation",
+      "startFrame": 170,
+      "endFrame": 215
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.human-hand",
+      "kind": "transformation",
+      "startFrame": 240,
+      "endFrame": 270
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.human-hand",
+      "kind": "enter",
+      "startFrame": 247,
+      "endFrame": 259
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-3",
+      "kind": "transformation",
+      "startFrame": 280,
+      "endFrame": 300
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 285,
+      "endFrame": 293
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-4",
+      "kind": "transformation",
+      "startFrame": 295,
+      "endFrame": 317
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-4",
+      "kind": "enter",
+      "startFrame": 296,
+      "endFrame": 315
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2",
+      "kind": "transformation",
+      "startFrame": 365,
+      "endFrame": 415
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-4",
+      "kind": "text-treatment",
+      "startFrame": 324,
+      "endFrame": 366
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 557,
+      "endFrame": 557
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 943,
+      "endFrame": 943
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 557,
+      "endFrame": 557
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 943,
+      "endFrame": 943
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 557,
+      "endFrame": 557
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 943,
+      "endFrame": 943
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-4",
+      "kind": "exit",
+      "startFrame": 943,
+      "endFrame": 943
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-4.alternate",
+      "kind": "exit",
+      "startFrame": 557,
+      "endFrame": 563
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-4.completed",
+      "kind": "exit",
+      "startFrame": 563,
+      "endFrame": 569
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-2.direct",
+      "kind": "transformation",
+      "startFrame": 577,
+      "endFrame": 620
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-2.restriction",
+      "kind": "transformation",
+      "startFrame": 620,
+      "endFrame": 639
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-2",
+      "kind": "transformation",
+      "startFrame": 707,
+      "endFrame": 729
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-4",
+      "kind": "transformation",
+      "startFrame": 707,
+      "endFrame": 729
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 712,
+      "endFrame": 721
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-4",
+      "kind": "enter",
+      "startFrame": 712,
+      "endFrame": 721
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-4.alternate",
+      "kind": "enter",
+      "startFrame": 757,
+      "endFrame": 812
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-4.completed",
+      "kind": "enter",
+      "startFrame": 815,
+      "endFrame": 839
+    },
+    {
+      "shotId": "shot-3",
+      "target": "actor-1",
+      "kind": "text-treatment",
+      "startFrame": 665,
+      "endFrame": 695
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 925,
+      "endFrame": 925
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 925,
+      "endFrame": 925
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 925,
+      "endFrame": 925
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-4",
+      "kind": "exit",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-5",
+      "kind": "exit",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-2",
+      "kind": "transformation",
+      "startFrame": 960,
+      "endFrame": 982
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 965,
+      "endFrame": 974
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-4",
+      "kind": "transformation",
+      "startFrame": 967,
+      "endFrame": 989
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-4",
+      "kind": "enter",
+      "startFrame": 968,
+      "endFrame": 987
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-3",
+      "kind": "transformation",
+      "startFrame": 1035,
+      "endFrame": 1055
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 1040,
+      "endFrame": 1048
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-5",
+      "kind": "transformation",
+      "startFrame": 1055,
+      "endFrame": 1077
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-5",
+      "kind": "enter",
+      "startFrame": 1056,
+      "endFrame": 1075
+    },
+    {
+      "shotId": "shot-4",
+      "target": "actor-1",
+      "kind": "text-treatment",
+      "startFrame": 943,
+      "endFrame": 967
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 1342,
+      "endFrame": 1342
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 1342,
+      "endFrame": 1342
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 1181,
+      "endFrame": 1181
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 1342,
+      "endFrame": 1342
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-2.review-path",
+      "kind": "enter",
+      "startFrame": 1196,
+      "endFrame": 1246
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-2.review-path",
+      "kind": "transformation",
+      "startFrame": 1259,
+      "endFrame": 1296
+    },
+    {
+      "shotId": "shot-5",
+      "target": "actor-2.monitor",
+      "kind": "transformation",
+      "startFrame": 1296,
+      "endFrame": 1313
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 1324,
+      "endFrame": 1324
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 1706,
+      "endFrame": 1706
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 1324,
+      "endFrame": 1324
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 1706,
+      "endFrame": 1706
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 1324,
+      "endFrame": 1324
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 1706,
+      "endFrame": 1706
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-3",
+      "kind": "transformation",
+      "startFrame": 1344,
+      "endFrame": 1384
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-3.signal",
+      "kind": "transformation",
+      "startFrame": 1454,
+      "endFrame": 1482
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-3.signal",
+      "kind": "enter",
+      "startFrame": 1461,
+      "endFrame": 1472
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-3",
+      "kind": "transformation",
+      "startFrame": 1504,
+      "endFrame": 1544
+    },
+    {
+      "shotId": "shot-6",
+      "target": "camera",
+      "kind": "camera-move",
+      "startFrame": 1589,
+      "endFrame": 1659
+    },
+    {
+      "shotId": "shot-6",
+      "target": "actor-1",
+      "kind": "text-treatment",
+      "startFrame": 1342,
+      "endFrame": 1378
+    },
+    {
+      "shotId": "shot-6",
+      "target": "background",
+      "kind": "background-change",
+      "startFrame": 1324,
+      "endFrame": 1324
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 1706,
+      "endFrame": 1706
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 1956,
+      "endFrame": 1956
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 1706,
+      "endFrame": 1706
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 1956,
+      "endFrame": 1956
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 1706,
+      "endFrame": 1706
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 1956,
+      "endFrame": 1956
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-2.human-hand",
+      "kind": "transformation",
+      "startFrame": 1801,
+      "endFrame": 1846
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-2.human-hand",
+      "kind": "enter",
+      "startFrame": 1812,
+      "endFrame": 1830
+    },
+    {
+      "shotId": "shot-7",
+      "target": "actor-1",
+      "kind": "text-treatment",
+      "startFrame": 1706,
+      "endFrame": 1736
+    },
+    {
+      "shotId": "shot-7",
+      "target": "background",
+      "kind": "background-change",
+      "startFrame": 1706,
+      "endFrame": 1706
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 1938,
+      "endFrame": 1938
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 1938,
+      "endFrame": 1938
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 1938,
+      "endFrame": 1938
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-2",
+      "kind": "transformation",
+      "startFrame": 1986,
+      "endFrame": 2008
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 1991,
+      "endFrame": 2000
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-4",
+      "kind": "transformation",
+      "startFrame": 2000,
+      "endFrame": 2022
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-4",
+      "kind": "enter",
+      "startFrame": 2001,
+      "endFrame": 2020
+    },
+    {
+      "shotId": "shot-8",
+      "target": "actor-1",
+      "kind": "text-treatment",
+      "startFrame": 2105,
+      "endFrame": 2135
+    }
+  ],
+  "sources": {
+    "motion": {
+      "file": "videos/48fac465-c64f-4ad4-afdf-47d41cf6c0b9/motion/370b9586-071f-4c52-a1a2-298a59f671c1.json",
+      "sha256": "34ab793d023fedc8ba05011e8ecf6b683fdf03a735d239e1e45cd85958311adf"
+    },
+    "storyboard": {
+      "file": "videos/48fac465-c64f-4ad4-afdf-47d41cf6c0b9/visuals/f85221d8-88c8-48ff-95b5-de06fe408079.json",
+      "sha256": "f55397bfb5a6fc73e001d77a12c12345049eac4acdec32557004e68c1496a172"
+    }
+  }
+}
