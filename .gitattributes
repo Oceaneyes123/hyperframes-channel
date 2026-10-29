@@ -6,3 +6,8 @@
 /2d-animation-v2/** -text
 /2d-animation-v3/benchmarks/** -text
 /motion-audits/hyperframes-channel-2d-animation-v2-2026-10-19.html -text
+
+# Archive source text is evidence; retain original mixed line endings and bytes.
+/2d-animation-v3/docs/archive/**/*.md -text
+/2d-animation/archive/*.md -text
+/video-workflow/archive/*.md -text

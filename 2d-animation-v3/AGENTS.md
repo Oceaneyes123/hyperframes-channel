@@ -1,51 +1,55 @@
 # V3 development boundaries
 
-Current user authorization supersedes earlier setup-only limits below: implement
-connected G4 motion review, corrected transitions/richer safe visuals and G5 measured
-narration, explicit gates and guarded export foundations. Use isolated synthetic
-media for verification. Never create real production media, infer actual human
-approval, publish, use subagents, commit or push without explicit authorization.
-Current implementation and limits: docs/animation-workflow.md. Source plans are
-docs/PLAN.md and docs/PLAN2.md. Earlier scope entries below are historical.
+## Read first
 
-The next 2026-10-22 increment authorizes concept selection and shot storyboard
-software, including static declarative SVG planning images and model requests.
-Use only clearly synthetic accepted scripts for verification; real evaluation
-scripts remain unaccepted. Storyboard acceptance is an artifact decision, not
-Gate 1 or Gate 2. No production media generation is authorized by this increment.
+1. Read `docs/STATUS.md` for current verified work, pending decisions and limitations.
+2. Read `docs/architecture.md` for ownership, immutable storage and approval boundaries.
+3. Load only the guide for the current task: `docs/animation-workflow.md`,
+   `docs/workflow-efficiency.md`, `docs/researched-writing.md`,
+   `docs/creative-quality.md` or generated `docs/AI-CREATIVE-MISTAKES.md`.
 
-Read docs/PLAN.md first, then docs/PLAN2.md and docs/architecture.md. Use installed
-planning-with-files with task_plan.md, findings.md, and progress.md in this
-directory. Preserve the source plans and all sibling projects.
+Do not load `docs/archive/`, historical `.planning/`, `docs/phase0/`,
+`docs/writing-evaluation/`, or old `task_plan.md`, `findings.md` and `progress.md`
+by default. Read a specific historical artifact only when the user explicitly
+requests that evidence; do not recursively follow archive links.
 
-V3 currently supports foundation and project/script persistence. The user
-also approved isolated renderer experiments; see benchmarks/ and docs/phase0/.
-Do not integrate media generation, invoke voice tooling, run agents, or activate
-publishing as part of setup. Future feature work needs its own explicit scope.
+The source plans remain byte-preserved at `docs/archive/docs/PLAN.md` and
+`docs/archive/docs/PLAN2.md`. They are historical reference, not current instructions.
+This section replaces every earlier instruction to read those plans first or to
+resume the v3-root planning trio. For new authorized multi-step work, initialize or
+explicitly select a task-specific plan; never resume an unrelated historical plan.
 
-On 2026-10-21 the user authorized work on remaining tasks. The active increment
-is PLAN2's interactive script-review slice: selection, scoped gateway requests,
-immutable proposals, explicit acceptance/rejection, and persisted job/session
-state. This authorizes script model requests, but does not authorize production
-video creation, voice tooling, formal human gate approval, or publishing.
+## Work and preservation boundaries
 
-The next user-authorized increment implements source-note/payoff briefs, explicit
-hook choice, full writing, original installed skill refinement and role-isolated
-editorial review. Source notes are supplied, not automatically verified research.
-Never substitute model review for the five-brief blinded human evaluation.
+Follow the current user task. Work in the existing workspace; do not create a
+worktree. No subagents for this task. Never commit, push, publish or deploy unless
+requested. Historical task authorizations do not authorize a new production job.
 
-Work in the current workspace. No subagents for this task. Never commit
-or push unless requested. Run npm run check and npm run build for relevant changes;
-database changes require persistence and schema compatibility tests.
+Preserve sibling projects, original source plans and frozen/failed evaluation
+evidence. V2 Markdown and benchmark sources are hash-pinned; do not move/edit
+them or change expected hashes to hide drift. Keep generated
+`docs/AI-CREATIVE-MISTAKES.md` at its tested path; never hand-edit it.
 
-Use Node 24 and npm from this directory. Keep environment values and server/
-imports out of client components. Do not return credentials or raw configuration
-errors from routes. Never point runtime storage at sibling project data.
+No real media generation, voice tooling, actual human approval, production gates
+or publishing without explicit current authorization. Model review, synthetic
+fixtures, artifact acceptance and automated checks do not grant production gates.
+Preserve exact user approvals, source dependencies, original audio and measured
+timing. Changed inputs invalidate the affected decisions; never infer consent.
 
-Remotion 4.0.537 is selected from the completed isolated benchmark; production
-integration remains future work. V2's OneTake-only policy does not apply to v3.
-Keep source-of-truth and production approval rules in architecture docs; avoid
-duplicated editable Markdown, JSON and SQLite versions of the same content.
+## Runtime and verification
+
+Use Node 24 and npm from this directory. Run `npm run check` and `npm run build`
+for relevant changes; database changes also need persistence/schema compatibility
+tests. Report failures without relaxing fixtures, thresholds or expected hashes.
+
+Keep environment values and `server/` imports out of client components. Do not
+return credentials or raw configuration errors from routes. Keep local runtime
+storage inside v3, never in sibling production or publishing data.
+
+Remotion 4.0.537 and its official GSAP adapter own the frame-driven production
+engine. V2's OneTake-only rule does not apply to v3. SQLite owns mutable indexes
+and decisions; immutable JSON/media own hash-bound content. Markdown is guidance
+or a review/export view, not a second independently editable source of truth.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
@@ -56,9 +60,3 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
-
-The 2026-10-22 continuation prepares and verifies the five-brief writing comparison
-using isolated storage and actual model calls. Preserve frozen outputs and all
-failed/diagnostic rounds. Do not treat author/model diagnoses as blinded human
-preference or audible review; disclose prior chat/provenance exposure. No media,
-production gate, publishing action, subagent, commit or push is authorized here.

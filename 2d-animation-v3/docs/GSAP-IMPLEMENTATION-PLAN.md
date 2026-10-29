@@ -5,7 +5,7 @@ Actual human production approval and real export acceptance remain pending.
 Original planning baseline: `3b2c71d`; current implementation continues from `16b205f`.
 Primary integration reference:
 [GSAP-INTEGRATION.md](GSAP-INTEGRATION.md). Product requirements remain
-[PLAN.md](PLAN.md) and [PLAN2.md](PLAN2.md); persistence and approval authority
+[PLAN.md](archive/docs/PLAN.md) and [PLAN2.md](archive/docs/PLAN2.md); persistence and approval authority
 remain in [architecture.md](architecture.md).
 
 ## Outcome and scope

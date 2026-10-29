@@ -10,8 +10,10 @@ provide executable animation code. Schema 7 adds motion and production records
 without rewriting existing scripts, boards or benchmark artifacts. See
 [animation workflow](animation-workflow.md) for current limits and verification.
 
-PLAN.md is the primary roadmap. PLAN2.md extends it with interactive agent
-revisions. Foundation, project/script persistence and scoped script review are implemented.
+[STATUS](STATUS.md) is the current implementation and pending-work summary.
+The original overhaul and interactive-revision plans are preserved under
+`archive/docs/PLAN.md` and `archive/docs/PLAN2.md`; they are historical reference.
+Foundation, project/script persistence and scoped script review are implemented.
 The user approved architecture direction and a separately isolated renderer
 experiment on 2026-10-21. Its evidence selects Remotion 4.0.537 for the first
 studio implementation. Architecture approval is not human production approval.

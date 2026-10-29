@@ -1,6 +1,6 @@
 # Advanced motion implementation record
 
-This supplements [the implementation plan](ADVANCED-MOTION-IMPLEMENTATION-PLAN.md).
+This supplements [the implementation plan](archive/docs/ADVANCED-MOTION-IMPLEMENTATION-PLAN.md).
 All previews use isolated synthetic content. No production approval is implied.
 
 ## M0 baseline

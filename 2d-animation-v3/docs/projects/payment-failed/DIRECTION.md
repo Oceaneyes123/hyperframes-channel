@@ -1,6 +1,6 @@
 # Preliminary art direction and storyboard
 
-Status: the V3 concept is selected, and a Codex-authored five-shot storyboard is proposed in [STORYBOARD.md](./STORYBOARD.md). The storyboard is not accepted. All times are rough and depend on the accepted script and measured narration.
+Status: the V3 concept is selected, and a Codex-authored five-shot storyboard is proposed in [STORYBOARD.md](STORYBOARD.md). The storyboard is not accepted. All times are rough and depend on the accepted script and measured narration.
 
 Visual world: dark navy ink, warm white, restrained coral for failure, teal for verified release, amber for uncertainty. A tactile phone, bank account and merchant surface share one continuous illustrated world. Use registered assets and existing semantic components; do not invent asset availability. Favor layered surfaces and recognizable transaction records over interchangeable cards. At 360 px, use large numerals and no more than two short explanatory labels per view.
 

@@ -1,6 +1,6 @@
 # Provisional storyboard and visual direction
 
-**Not accepted.** This is a proposed board for the script in [SCRIPT.md](./SCRIPT.md). The three renderer stills are different composition directions, not evidence of a selected concept.
+**Not accepted.** This is a proposed board for the script in [SCRIPT.md](SCRIPT.md). The three renderer stills are different composition directions, not evidence of a selected concept.
 
 ## Three distinct visual directions
 
