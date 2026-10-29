@@ -11,7 +11,8 @@ import { numericMotionGuidance } from "../workflow/numeric.ts";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { sceneDesignHistory } from "../engine/quality/inspect-graphics.ts";
-import { readConfig } from "./config.ts";
+import { readConfig, modelFor } from "./config.ts";
+import { creativeDirection } from "./creative-direction.ts";
 import { z } from "zod";
 import { morphPairs } from "../workflow/morphs.ts";
 import { depthSceneRegistry } from "../workflow/graphic-assets.ts";
@@ -31,7 +32,7 @@ import { storyboardSchema, shotSchema } from "../workflow/visuals.ts";
 export async function generateVisuals(projectId: string, input: unknown, signal: AbortSignal, progress: (message: string) => void, config = readConfig()) {
   const rules = creativeFeedback(config.dataDirectory).snapshot("graphics");
   const request = visualRequestSchema.parse(input); const { gateway } = config;
-  const model = config.visualModel ?? gateway.model;
+  const model = modelFor(config, "director");
   if (!gateway.baseUrl || !model) throw new Error("Configure gateway URL and model first.");
   const store = openVisuals(config.dataDirectory, config.videosDirectory), timings = openTiming(config.dataDirectory, config.videosDirectory); let id: string | undefined;
   try {
@@ -60,6 +61,7 @@ export async function generateVisuals(projectId: string, input: unknown, signal:
 For every new or revised shot provide shot.design={theme:"editorial-workflow@1",family:"editorial-illustration"|"technical-cutaway"|"illustrated-workflow"|"interface-demonstration"|"visual-comparison"|"data-storytelling"|"visual-metaphor"|"typographic-composition",meaning,metaphor,focalPoint,layout,density:"sparse"|"balanced"|"dense",continuityReason}. Limits: meaning 500 characters; metaphor, focalPoint and layout 200 each; continuityReason 300 (use an empty string unless repetition is intentional). Keep all design prose brief. Frame.environment is optional: {family:"soft-gradient"|"geometric"|"technical-grid"|"atmospheric"|"editorial"|"environment",color:"#RRGGBB",accent:"#RRGGBB",depth:0..1}; keep the environment identical in a shot's start/end drawings.
 Use type:"graphic-asset@2" with asset:{id,contentHash} from the registry and actual named parts. Preserve the registered pixel aspect ratio: heightPercent = widthPercent *1080/1920 *assetHeight/assetWidth. Every layer defaults hidden; explicitly reveal the meaningful layers.
 Use type:"semantic-diagram@1" with diagram:{direction:"down"|"right",nodes:[{id,icon:"person"|"computer"|"document"|"message"|"processor"|"database"|"cloud"|"payment"|"product",label,parent?}],edges:[{id,from,to,label}]}. Supply 2..8 nodes and 1..12 directed edges, globally unique IDs up to20 lowercase letters/digits/hyphens, no self loops, and acyclic parent groups. Parts are exact node/edge IDs; label max24 (nodes) or20 (edges). Coordinates are calculated deterministically inside the shape; keep it large. Diagram part x/y must be0 and scale1; reveal or change opacity/color instead of moving individual nodes away from connectors. Reuse the approved graph exactly across a corresponding actor's drawings; use replacement actors for graph changes. Never attach asset to diagrams or diagram to other primitives.` },
+      ...creativeDirection(config).messages,
       { role: "user", content: JSON.stringify({ designHistory, narration: scriptLines(context.lines), measuredTiming: timing ? { timing: timing.timing, durationFrames: timing.measured.durationFrames } : null, concept: context.concept, board: context.board, instruction: request.instruction }) },
     ], AbortSignal.any([signal, AbortSignal.timeout(150_000)]), (count) => {
       if (count - last > 1000) { progress(`Receiving visual proposal (${count} characters)…`); last = count; }

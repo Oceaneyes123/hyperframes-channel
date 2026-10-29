@@ -1,6 +1,6 @@
 import { creativeFeedback } from "./creative-feedback.ts";
 import { creativeRuleGuidance } from "../workflow/creative-rules.ts";
-import { readConfig } from "./config.ts";
+import { readConfig, modelFor } from "./config.ts";
 import { openStudio, ConflictError } from "./studio.ts";
 import { openWritingJobs } from "./writing-jobs.ts";
 import { requestReplacement } from "./gateway.ts";
@@ -12,7 +12,8 @@ export async function reviseScript(projectId: string, input: unknown, signal: Ab
   config = readConfig()) {
   z.uuid().parse(projectId);
   const request = revisionRequestSchema.parse(input);
-  if (!config.gateway.baseUrl || !config.gateway.model) throw new Error("Configure a gateway URL and model on the server first.");
+  const model = modelFor(config, "writer");
+  if (!config.gateway.baseUrl || !model) throw new Error("Configure a gateway URL and writer model on the server first.");
   const studio = openStudio(config.dataDirectory, config.videosDirectory);
   const jobs = openWritingJobs(config.dataDirectory);
   let jobId: string | undefined;
@@ -24,11 +25,11 @@ export async function reviseScript(projectId: string, input: unknown, signal: Ab
       const proposal = job.proposalId ? studio.readProposal(projectId, job.proposalId) : null;
       return { instruction: job.request.instruction, status: studio.listProposals(projectId).find((item) => item.id === proposal?.id)?.status ?? job.status, notes: proposal?.notes ?? "" };
     });
-    jobId = jobs.start(projectId, request, config.gateway.model);
+    jobId = jobs.start(projectId, request, model);
     progress("Checking gateway model availability…");
     let last = 0;
     const rules = creativeFeedback(config.dataDirectory).snapshot("writing");
-    const result = await requestReplacement({ baseUrl: config.gateway.baseUrl, apiKey: config.gateway.apiKey, model: config.gateway.model },
+    const result = await requestReplacement({ baseUrl: config.gateway.baseUrl, apiKey: config.gateway.apiKey, model },
       { script: base.content, start: request.start, end: request.end, instruction: request.instruction, history, creativeGuidance: creativeRuleGuidance(rules) },
       AbortSignal.any([signal, AbortSignal.timeout(90_000)]), (characters) => {
         if (characters - last >= 100) { progress(`Receiving proposal (${characters} characters)…`); last = characters; }

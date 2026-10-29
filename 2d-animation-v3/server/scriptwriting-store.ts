@@ -124,7 +124,7 @@ export function openScriptwriting(directory: string, videosDirectory: string) {
         database.exec("COMMIT"); return id;
       } catch (error) { database.exec("ROLLBACK"); throw error; }
     },
-    complete(projectId: string, id: string, input: WritingOutput, creativeRules?: CreativeSnapshot) {
+    complete(projectId: string, id: string, input: WritingOutput, creativeRules?: CreativeSnapshot, modelCalls?: WritingArtifact["modelCalls"]) {
       const output = writingOutputSchema.parse(input);
       database.exec("BEGIN IMMEDIATE");
       let artifact: WritingArtifact;
@@ -134,7 +134,7 @@ export function openScriptwriting(directory: string, videosDirectory: string) {
         const parent = read(projectId, z.uuid().parse(row.parent_id));
         if (!parent) throw new Error("Missing writing dependency.");
         requireCurrentWritingBrief(database, videosDirectory, projectId, parent);
-        artifact = writingArtifactSchema.parse({ creativeRules, schemaVersion: 1, id, projectId, createdAt: row.created_at, parentId: row.parent_id,
+        artifact = writingArtifactSchema.parse({ creativeRules, modelCalls, schemaVersion: 1, id, projectId, createdAt: row.created_at, parentId: row.parent_id,
           parentHash: database.prepare("SELECT sha256 FROM scriptwriting_runs WHERE id = ?").get(parent.id)?.sha256, baseRevisionId: row.base_revision_id, output });
       } catch (error) { database.exec("ROLLBACK"); throw error; }
       write(artifact); return id;

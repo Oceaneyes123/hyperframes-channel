@@ -2,7 +2,7 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { existsSync, statfsSync } from "node:fs";
 import { dirname } from "node:path";
-import { readConfig } from "./config.ts";
+import { readConfig, modelFor } from "./config.ts";
 import { verifyModel } from "./gateway.ts";
 
 const execute = promisify(execFile);
@@ -10,10 +10,10 @@ export class PreflightError extends Error {}
 export async function preflight(stage: "gateway" | "render", signal: AbortSignal, config = readConfig()) {
   signal.throwIfAborted();
   if (stage === "gateway") {
-    const model = config.visualModel ?? config.gateway.model;
-    if (!config.gateway.baseUrl || !model) throw new PreflightError("Configure the gateway URL and model before generation.");
+    const models = [...new Set((["director", "writer", "motion", "critic"] as const).map((role) => modelFor(config, role)).filter((model): model is string => !!model))];
+    if (!config.gateway.baseUrl || !models.length) throw new PreflightError("Configure the gateway URL and model before generation.");
     try {
-      await verifyModel({ ...config.gateway, baseUrl: config.gateway.baseUrl, model }, AbortSignal.any([signal, AbortSignal.timeout(10000)]));
+      for (const model of models) await verifyModel({ ...config.gateway, baseUrl: config.gateway.baseUrl, model }, AbortSignal.any([signal, AbortSignal.timeout(10000)]));
     } catch { throw new PreflightError("Gateway preflight failed. Check that the gateway is running, authorized and advertising the selected model."); }
     return { stage, ready: true, limitation: "Model discovery does not verify account credit or browser playback permissions." };
   }

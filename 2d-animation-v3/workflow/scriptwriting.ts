@@ -56,6 +56,7 @@ export const writingOutputSchema = z.discriminatedUnion("kind", [
 ]);
 export type WritingOutput = z.infer<typeof writingOutputSchema>;
 export const writingArtifactSchema = z.strictObject({ creativeRules: creativeSnapshotSchema.optional(),
+  modelCalls: z.array(z.strictObject({ role: z.enum(["writer", "critic"]), stage: text(200), model: text(200) })).max(3).optional(),
   schemaVersion: z.literal(1), id: z.uuid(), projectId: z.uuid(), createdAt: z.iso.datetime(),
   parentId: z.uuid().nullable(), parentHash: z.string().regex(/^[a-f0-9]{64}$/).nullable(),
   baseRevisionId: z.uuid().nullable(), output: writingOutputSchema,

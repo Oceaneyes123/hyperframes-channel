@@ -1,5 +1,8 @@
 # Connected animation workflow
 
+For bounded selected-shot visual critique/revision, per-role model settings and
+accepted visual examples, see [visual iteration](visual-iteration.md).
+
 Open a project's **Visual concepts and storyboards** workspace. Accept the current
 script, select a concept and accept its exact storyboard. Motion requests then run
 through the configured server-only CLIProxyAPI gateway. Generated JSON is validated

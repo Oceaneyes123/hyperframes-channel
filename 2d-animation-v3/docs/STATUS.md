@@ -1,5 +1,18 @@
 # HyperFrames Studio status
 
+## Bounded visual iteration, October 29
+
+The motion workspace now offers selected-shot render/critique/revision with at
+most two pending revisions. Director, writer, motion and critic models have
+separate optional settings with backward-compatible fallbacks. Generation and
+image review load the style bible/rhythm profile and explicitly selected accepted
+scene examples. See [usage and limits](visual-iteration.md). Live model quality,
+capability and human preference remain unverified; no examples or overrides were
+selected automatically. Existing acceptance and production gates remain explicit.
+Verification: `npm run check` passed lint/typecheck and 206 tests, including real
+360 × 640 production-frame rendering. `npm run build -- --webpack` passed;
+default `npm run build` reproduces the existing Turbopack CSS-worker failure.
+
 ## Retention experiment, October 29
 
 The isolated [15-second review pair](../output/retention-experiment/project-v2/index.html)

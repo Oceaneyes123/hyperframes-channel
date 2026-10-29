@@ -3,7 +3,7 @@ import { once } from "node:events";
 import { fixtureVisuals } from "./visuals.ts";
 import { fixtureMotion } from "./motion.ts";
 
-type Body = { messages: { content: string }[] };
+type Body = { model?: string; messages: { content: string }[] };
 
 export function fixtureWriting(body: Body) {
   if (body.messages[0].content.includes("Motion proposal contract")) return fixtureMotion(body);
@@ -22,12 +22,12 @@ export function fixtureWriting(body: Body) {
     claimIds: [context.brief.claims[0].id] })) };
 }
 
-export async function fakeGateway(mode = "ok", port = 0, respond?: (body: Body, index: number) => unknown) {
-  const requests: { messages: { content: string }[] }[] = [];
+export async function fakeGateway(mode = "ok", port = 0, respond?: (body: Body, index: number) => unknown, models = ["fixture-model"]) {
+  const requests: Body[] = [];
   const server = createServer(async (request, response) => {
     if (request.url === "/v1/models") {
       response.setHeader("Content-Type", "application/json");
-      response.end(JSON.stringify({ data: [{ id: mode === "missing-model" ? "other" : "fixture-model" }] })); return;
+      response.end(JSON.stringify({ data: (mode === "missing-model" ? ["other"] : models).map((id) => ({ id })) })); return;
     }
     if (request.url !== "/v1/chat/completions") { response.writeHead(404).end(); return; }
     const parts = []; for await (const part of request) parts.push(part);

@@ -35,6 +35,7 @@ export default function MotionWorkspace(props: Props) {
   const [busy, setBusy] = useState(false), [instruction, setInstruction] = useState(""), [message, setMessage] = useState(""), [error, setError] = useState("");
   const [frameState, setFrame] = useState(0), [selectedId, setSelectedId] = useState(""), [loop, setLoop] = useState(false);
   const [readyId, setReadyId] = useState("");
+  const [visualFindings, setVisualFindings] = useState<{ frame: number; evidence: string; suggestion: string }[]>([]);
   const [energyProfile, setEnergyProfile] = useState<EnergyProfile>(props.motion?.plan.energyProfile ?? defaultEnergyProfile);
   useEffect(() => () => controller.current?.abort(), []);
   const { motion, sourceBoard } = props;
@@ -54,25 +55,27 @@ export default function MotionWorkspace(props: Props) {
   const historical = !!motion && motion.id !== props.latestId;
   const decision = props.history.find((item) => item.id === motion?.id)?.decision;
   function seek(value: number) { primary.current?.pause(); setLoop(false); setFrame(Math.max(0, Math.min(duration - 1, value))); }
-  async function generate(shotId: string | null) {
+  async function generate(shotId: string | null, iterate = false) {
+    setVisualFindings([]);
     if (!props.storyboardId) return; primary.current?.pause(); setLoop(false); setBusy(true); setError(""); setMessage("Starting motion request…");
     const abort = new AbortController(); controller.current = abort;
     try {
-      const response = await fetch(`/api/projects/${props.projectId}/motion`, { method: "POST", headers: { "Content-Type": "application/json" }, signal: abort.signal,
-        body: JSON.stringify({ storyboardId: props.storyboardId, baseId: props.latestId, shotId, instruction, interpreterVersion: shotId && motion?.plan.interpreterVersion !== "3" ? "2" : "3", energyProfile }) });
+      const response = await fetch(`/api/projects/${props.projectId}/motion${iterate ? "/iterate" : ""}`, { method: "POST", headers: { "Content-Type": "application/json" }, signal: abort.signal,
+        body: JSON.stringify(iterate ? { artifactId: motion?.id, shotIndex: motion?.plan.shots.findIndex((shot) => shot.id === shotId), maxRounds: 2, instruction } : { storyboardId: props.storyboardId, baseId: props.latestId, shotId, instruction, interpreterVersion: shotId && motion?.plan.interpreterVersion !== "3" ? "2" : "3", energyProfile }) });
       if (!response.ok || !response.body) throw new Error("Could not start motion request.");
-      const reader = response.body.getReader(); const decoder = new TextDecoder(); let buffer = ""; let id: string | null = null;
+      const reader = response.body.getReader(); const decoder = new TextDecoder(); let buffer = ""; let id: string | null = null; let stop = "";
       try {
         while (true) {
           const chunk = await reader.read(); if (chunk.done) break; buffer += decoder.decode(chunk.value, { stream: true }); let boundary: number;
           while ((boundary = buffer.indexOf("\n")) >= 0) {
             const event = JSON.parse(buffer.slice(0, boundary)); buffer = buffer.slice(boundary + 1);
             if (event.error) throw new Error(event.error); if (event.message) setMessage(event.message); if (event.runId) id = event.runId;
+            if (event.stop) stop = event.stop; if (event.findings) setVisualFindings(JSON.parse(event.findings));
           }
         }
       } finally { await reader.cancel(); reader.releaseLock(); }
       if (!id) throw new Error("Request ended without a saved motion proposal.");
-      router.push(`/projects/${props.projectId}/visuals?motion=${id}#motion-review`); router.refresh(); setMessage("Motion proposal saved for explicit review.");
+      router.push(`/projects/${props.projectId}/visuals?motion=${id}#motion-review`); router.refresh(); setMessage(iterate ? stop === "no-sampled-findings" ? "No actionable issues found in the sampled frames. Watch the full motion before accepting." : "Visual review stopped with findings below. The saved candidate needs your review." : "Motion proposal saved for explicit review.");
     } catch (failure) { setError(abort.signal.aborted ? "Request cancelled. Check saved history before retrying." : failure instanceof Error ? failure.message : "Motion request failed."); router.refresh(); }
     finally { controller.current = null; setBusy(false); }
   }
@@ -94,8 +97,12 @@ export default function MotionWorkspace(props: Props) {
       <div className="mt-4 flex flex-wrap gap-3">
         <button disabled={!props.eligible || historical || running} onClick={() => generate(null)}>{motion ? "New motion plan" : "Generate motion"}</button>
         {selected && <button disabled={!props.eligible || historical || !props.current || running} onClick={() => generate(selected.id)}>Revise shot</button>}
+        {selected && <button disabled={!props.eligible || historical || !props.current || running || instruction.length > 500} onClick={() => generate(selected.id, true)}>Review and improve shot</button>}
       </div>
+      <p className="mt-2 text-sm text-[var(--muted)]">Visual review samples the selected shot and neighboring boundaries, then makes at most two revisions. Watch the result at normal speed before accepting.</p>
+      {instruction.length > 500 && <p className="mt-2 text-sm">Shorten direction to 500 characters to use automatic visual review.</p>}
       {message && <p role="status" className="mt-4 text-sm">{message}</p>}
+      {!!visualFindings.length && <ul aria-label="Visual review findings" className="mt-3 space-y-2 text-sm">{visualFindings.map((finding, index) => <li key={index}><button onClick={() => seek(finding.frame)}>Review frame {finding.frame}</button><p>{finding.evidence}</p><p>{finding.suggestion}</p></li>)}</ul>}
       {error && <p role="alert" className="mt-4 text-[var(--error)]">{error}</p>}
       {running && !busy && <p className="mt-4 text-sm">A motion request is running. <a href={`/projects/${props.projectId}/visuals#motion-review`}>Refresh status</a>. Interrupted requests expire after three minutes.</p>}
       {motion && sourceBoard && schedule && <>

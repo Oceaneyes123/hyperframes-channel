@@ -15,6 +15,8 @@ import { generateMotion } from "../server/motion.ts";
 import { approveWorkflowReview, renderWorkflowReview } from "../server/review-render.ts";
 import { renderProduction } from "../server/render.ts";
 import { MotionReviewError } from "../server/motion-review.ts";
+import { iterateMotion } from "../server/motion-iteration.ts";
+import { registerCreativeExample } from "../server/creative-direction.ts";
 
 export const workflowHelp = `Usage: npm run workflow -- <command> <arguments>
 preflight <gateway|render|windows-speech|qwen3-custom>
@@ -23,6 +25,8 @@ narrate <project-id> <request.json>             # optional resumeTakeId
 import-take <project-id> <reviewed-import.json>
 visuals <project-id> <request.json>              # existing concepts/storyboard/shot schema
 motion <project-id> <request.json>
+improve-motion <project-id> <request.json>       # artifactId, shotIndex; maxRounds:0..2
+register-example <project-id> <request.json>     # accepted artifactId, shotIndex, reason
 review-board <project-id> <board-id> [shot-index]
 review-motion <project-id> <motion-id> [shot-index]
 approve-review <project-id> <review-confirmation.json>
@@ -38,7 +42,7 @@ export async function runWorkflow(args: string[], signal: AbortSignal, progress:
     if (projectId === "windows-speech" || projectId === "qwen3-custom") { await configuredNarrationProvider(projectId).preflight!(signal); return { stage: projectId, ready: true }; }
     return preflight(z.enum(["gateway", "render"]).parse(projectId), signal, config);
   }
-  const commands = ["status", "narrate", "import-take", "visuals", "motion", "review-board", "review-motion", "approve-review", "approve-production", "export"];
+  const commands = ["status", "narrate", "import-take", "visuals", "motion", "improve-motion", "register-example", "review-board", "review-motion", "approve-review", "approve-production", "export"];
   if (!commands.includes(command)) throw new Error("Unknown workflow command. Run npm run workflow -- --help.");
   z.uuid().parse(projectId);
   const data = config.dataDirectory, videos = config.videosDirectory;
@@ -51,6 +55,8 @@ export async function runWorkflow(args: string[], signal: AbortSignal, progress:
   if (!argument) throw new Error("A JSON request file is required.");
   const bytes = readFileSync(argument); if (bytes.length > 32000) throw new Error("Workflow request exceeds 32 KB.");
   const input = JSON.parse(bytes.toString("utf8"));
+  if (command === "improve-motion") return iterateMotion(projectId, input, signal, progress, config);
+  if (command === "register-example") return registerCreativeExample(projectId, input, signal, config);
   if (command === "approve-review") return approveWorkflowReview(projectId, input, config);
   if (command === "narrate" || command === "import-take") {
     const store = openNarrationStudio(data, videos);
