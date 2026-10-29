@@ -1,8 +1,9 @@
 # HyperFrames Studio V3
 
-Independent, local studio based on [PLAN.md](docs/PLAN.md), with the agent
-revision direction in [PLAN2.md](docs/PLAN2.md). Both original plans remain unchanged.
-V1, V2, and `video-workflow` remain independent.
+Start with [STATUS](docs/STATUS.md) for current verified capabilities and pending
+decisions, then [architecture](docs/architecture.md). This README owns setup;
+production, writing and review guides are linked from STATUS and loaded for the
+current task only. V1 is a shared dependency of V2; publishing remains separate.
 
 ## Development
 

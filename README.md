@@ -12,11 +12,24 @@ the task; this repository is not one installable application.
 | `motion-audits` | Historical independent review reports | Evidence, not a production entry point. Some reports reference ignored local projects. |
 | `outputs` | Retained channel narration audition and receipts | The v1 audio-version reference links here. Future generated media is ignored. |
 
-V3's [animation workflow](2d-animation-v3/docs/animation-workflow.md) describes
-current capabilities and limits. Older roadmap statements are historical. The
-original `docs/PLAN.md` and `docs/PLAN2.md` are preserved. Read each folder's
-`AGENTS.md` before working there. Production, publishing and account actions keep
-their existing explicit approval requirements.
+## Read first
+
+Choose the owning folder from the table above and read its `AGENTS.md`.
+For Studio work, start with [STATUS](2d-animation-v3/docs/STATUS.md), then
+[architecture](2d-animation-v3/docs/architecture.md). Load only the current task's
+[production](2d-animation-v3/docs/animation-workflow.md),
+[workflow CLI](2d-animation-v3/docs/workflow-efficiency.md),
+[writing](2d-animation-v3/docs/researched-writing.md) or
+[quality](2d-animation-v3/docs/creative-quality.md) guide.
+
+Original plans and completed logs are in the
+[archive](2d-animation-v3/docs/archive/README.md). Agents must not load archive,
+phase-0, writing-evaluation or historical planning packets by default. Read a
+specific historical artifact only on the user's explicit request.
+
+V2 remains the OneTake workflow; v1 remains its shared tooling/voice dependency.
+Their pinned and referenced documents stay in place. Tests and saved records never
+grant human production gates, account access or publishing authorization.
 
 ## Local data and historical evidence
 
