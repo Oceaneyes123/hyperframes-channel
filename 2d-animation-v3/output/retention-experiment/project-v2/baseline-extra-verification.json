@@ -1,0 +1,10 @@
+{
+  "comparedFrames": 450,
+  "minimumSsim": 0.997939,
+  "threshold": 0.98,
+  "audioSync": {
+    "correlation": 0.9992562495881255,
+    "lagSeconds": 0,
+    "toleranceSeconds": 0.03333333333333333
+  }
+}

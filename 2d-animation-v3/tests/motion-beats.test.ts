@@ -17,6 +17,11 @@ test("preset source participates in the exact production engine binding", (t) =>
   const before = hashEngine(root);
   appendFileSync(join(root, "engine/motion-presets/index.ts"), "\n// Synthetic isolated change.\n");
   assert.notEqual(hashEngine(root), before);
+  for (const path of ["workflow/beat-sheet.ts", "workflow/rhythm-profile.ts"]) {
+    const binding = hashEngine(root);
+    appendFileSync(join(root, path), "\n// Synthetic isolated rule change.\n");
+    assert.notEqual(hashEngine(root), binding);
+  }
 });
 
 test("legacy interpreter plans retain exact compiled output", () => {

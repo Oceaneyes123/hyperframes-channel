@@ -5,10 +5,12 @@ import { presetScene, presetShape } from "./fixtures/motion-presets.ts";
 import { motionBeatFixture } from "./fixtures/motion-beats.ts";
 import { defaultEnergyProfile, motionPacingGuidance } from "../workflow/motion.ts";
 
-test("intentional reading holds are excluded from stillness diagnostics", () => {
+test("intentional holds exclude legacy stillness but retain advisory inactivity evidence", () => {
   const { plan } = presetScene([presetShape(42)], [presetShape(42)], [[0, 0]], { presetId: "snap-overshoot@1", parameters: { to: {}, anticipation: .9, overshoot: 1.08 }, targetIds: ["object-1"] });
   plan.shots[0].beats = [{ ...plan.shots[0].beats![0], type: "hold", presetId: "hold@1", parameters: {}, startFrame: 0, endFrame: 118 }];
-  assert.deepEqual(inspectMotion(plan).findings, []);
+  const held = inspectMotion(plan).findings;
+  assert.ok(!held.some((finding) => finding.ruleId === "stillness"));
+  assert.ok(held.some((finding) => finding.ruleId === "rhythm-inactivity" && finding.severity === "review"));
   plan.shots[0].beats[0].endFrame = 15;
   assert.ok(inspectMotion(plan).findings.some((finding) => finding.ruleId === "stillness"));
 });

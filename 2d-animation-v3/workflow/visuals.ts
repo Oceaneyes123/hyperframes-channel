@@ -16,6 +16,7 @@ import { graphicReferenceSchema, validGraphicReference, isGraphicAsset, assetMet
 
 import { diagramSchema } from "./diagram.ts";
 import { artDirectionSchema, backgroundSchema } from "./art-direction.ts";
+import { beatSheetSchema } from "./beat-sheet.ts";
 
 const text = z.string().trim().min(1).max(1200);
 const color = z.string().regex(/^#[0-9a-fA-F]{6}$/);
@@ -91,12 +92,13 @@ export const conceptsSchema = z.strictObject({ concepts: z.array(z.strictObject(
   }
 });
 export const shotSchema = z.strictObject({
+  beatSheet: beatSheetSchema.optional(),
   design: artDirectionSchema.optional(),
   lineNumbers: z.array(z.number().int().positive()).min(1).max(200),
   seconds: z.number().min(0.5).max(60), purpose: text, framing: text, subject: text, action: text,
   transition: z.enum(["start", "hard-cut", "match-cut", "continuous", "camera", "reveal", "split-screen", "motion-match"]),
   continuity: text, startFrame: frameSchema, endFrame: frameSchema,
-});
+}).refine((shot) => !shot.beatSheet || JSON.stringify(shot.beatSheet.lines.map((line) => line.lineNumber)) === JSON.stringify(shot.lineNumbers), "Beat sheet must cover the shot's narration lines once in order.");
 export const storyboardSchema = z.strictObject({ shots: z.array(shotSchema).min(1).max(40) });
 export const visualOutputSchema = z.discriminatedUnion("kind", [
   conceptsSchema.safeExtend({ kind: z.literal("concepts") }),

@@ -1,0 +1,416 @@
+[
+  {
+    "id": "person-editorial@1",
+    "file": "person-editorial-1.svg",
+    "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "computer-editorial@1",
+    "file": "computer-editorial-1.svg",
+    "contentHash": "d5229a5eb05135173ebd656c73a8dea36eac8c4d0686776d21775ba6ecf11183",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "document-editorial@1",
+    "file": "document-editorial-1.svg",
+    "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "message-editorial@1",
+    "file": "message-editorial-1.svg",
+    "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "processor-editorial@1",
+    "file": "processor-editorial-1.svg",
+    "contentHash": "460ce9160362a2f55f151070f7f5bfdeb41a8bd387a2143100a88788c59a6177",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "database-editorial@1",
+    "file": "database-editorial-1.svg",
+    "contentHash": "b89eda89de756ce08b2bbad25dca92ce925661fe49e02bd0706badb5e27598ff",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "cloud-editorial@1",
+    "file": "cloud-editorial-1.svg",
+    "contentHash": "551b6270ca110a6c36ca6c40627cf902ce2761e88338e7777953103996c2e607",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "payment-editorial@1",
+    "file": "payment-editorial-1.svg",
+    "contentHash": "8f525615aeac91e416cd98b8eeab67fc58b4140bf70c47a020f9803cd3ab2758",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "product-editorial@1",
+    "file": "product-editorial-1.svg",
+    "contentHash": "028aef183172437d1171d5886986937ea5f468f861be114b507f9c8ddeaca0e5",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "research-interface@1",
+    "file": "research-interface-1.svg",
+    "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames editorial vector pack",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "salon-working-studio@1",
+    "file": "salon-working-studio-1.svg",
+    "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "faq-research-desk@1",
+    "file": "faq-research-desk-1.svg",
+    "contentHash": "ef4f5218817b59b087aebd94e2c7f3cd5304458be5dd0dab9ed2f67d32aa49d8",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "inquiry-intake-console@1",
+    "file": "inquiry-intake-console-1.svg",
+    "contentHash": "af5b25b4c4d715171932234a54f1c316830b2a6a2272e70516966485c4728203",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "deepseek-processing-studio@1",
+    "file": "deepseek-processing-studio-1.svg",
+    "contentHash": "8f34b68664566f48c3a4c6656d13f281b16da33ca41155420f9e6368dcc41a61",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "owner-review-console@1",
+    "file": "owner-review-console-1.svg",
+    "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "booking-test-bench@1",
+    "file": "booking-test-bench-1.svg",
+    "contentHash": "0327e25aa1b9106f54e63f686dad9558b245d6dc6f408641aad25b6f981b0c23",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "service-handover-desk@1",
+    "file": "service-handover-desk-1.svg",
+    "contentHash": "dcd9f405541877352212fce365720bfa8928e48542cb10e0c7781afaeea1b50c",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "service-running-costs@1",
+    "file": "service-running-costs-1.svg",
+    "contentHash": "6d03ae2291751ec0f93ae0cd4488470c4570dc0131738e96fde0c189d7bddf34",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "inquiry-intake-console@2",
+    "file": "inquiry-intake-console-2.svg",
+    "contentHash": "524282b070e8e78fb13856e3441cb4bf64cec32eb0fc240125c7bd91951bc7fc",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "inquiry-intake-console@3",
+    "file": "inquiry-intake-console-3.svg",
+    "contentHash": "7d4f94002507134b431cf05b75c1e475d06bcf60323b0cfc0c1b407201d1eb2f",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames Working Studio artwork, authored for the DeepSeek redesign, 2026-10-24.",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "send-button-motion@1",
+    "file": "send-button-motion-1.svg",
+    "contentHash": "a9d8d00fd31db3e5f58eaa1158986b024de94d565b38aaa263b291dd503c1607",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "cursor-motion@1",
+    "file": "cursor-motion-1.svg",
+    "contentHash": "3c454d4a580627828ad3cfc5b42465bdfea316b398ffe660c19458becb265763",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "shield-motion@1",
+    "file": "shield-motion-1.svg",
+    "contentHash": "897809a2b943d94eb1e1a09187c6ac588ed485746bba47527f5d4d03a6d9ecd1",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "lock-motion@1",
+    "file": "lock-motion-1.svg",
+    "contentHash": "a5324c00579710f230f85081d50d6b20818c3b4de15804aa02409fc78103af63",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "key-motion@1",
+    "file": "key-motion-1.svg",
+    "contentHash": "a82d9d4a6e8d708146a324ef756af7834577cf307eb2f089a03cbd249497f14c",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "clock-motion@1",
+    "file": "clock-motion-1.svg",
+    "contentHash": "1d1d52be1e227ac056f6ce91851bde69a27a229153f383d4c40c4ba864c3281d",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "checklist-motion@1",
+    "file": "checklist-motion-1.svg",
+    "contentHash": "bf8ec227dd3ed306f6ebe088ed2b03e7416903cfb0dc3dbbb69c1220ce458060",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "filter-motion@1",
+    "file": "filter-motion-1.svg",
+    "contentHash": "63c8d86768d6b09c979ddbf9253468115e2c81b009f6ab1d3c127e81b7723e82",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "search-motion@1",
+    "file": "search-motion-1.svg",
+    "contentHash": "cdd2b95ab6ef94fb86b3954a653130e9cd988777af4b6e0ce12f0864fe5c0603",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "spark-motion@1",
+    "file": "spark-motion-1.svg",
+    "contentHash": "5fbe5b83e113be08acd9abcd2efe3f426d7f65fb73374b5ac9c39d92b9afe612",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "folder-motion@1",
+    "file": "folder-motion-1.svg",
+    "contentHash": "115bd14227f685b8f79226e79773850f68b8e9e378898c8a080328579a1fc906",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "envelope-motion@1",
+    "file": "envelope-motion-1.svg",
+    "contentHash": "7a4ff2f065586e70e3b4c3150d0f98e17d6783fce85582a4e0e7a5051e18dd7e",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "terminal-motion@1",
+    "file": "terminal-motion-1.svg",
+    "contentHash": "cf9c9c7514ed2adf396bfd9bf6cb989946bacb3a60af03815d24d8815c94d048",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "link-motion@1",
+    "file": "link-motion-1.svg",
+    "contentHash": "79282284869cb8b9fe1b021208cf5cf8d256589f5564d125fb143f50267bda11",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "tray-motion@1",
+    "file": "tray-motion-1.svg",
+    "contentHash": "2e2d701970bc27f8e7ec5a2fc92f2b6f47b4ffe717a31b78fe83160b846f77d8",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "check-motion@1",
+    "file": "check-motion-1.svg",
+    "contentHash": "69f7423bfc57bfde98d339e4a0c10a1e5c345126d4b06cab22132bc017f16690",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "warning-motion@1",
+    "file": "warning-motion-1.svg",
+    "contentHash": "789f4f7a54bdcffca1e90eaeb79d9f8468036a4fbf23ce02993323e8a3e9515b",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "split-route-motion@1",
+    "file": "split-route-motion-1.svg",
+    "contentHash": "4a689c625d760e0a62e1be8e582b4961a406a6752ddb3418761192d1e2eaa400",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "price-tag-motion@1",
+    "file": "price-tag-motion-1.svg",
+    "contentHash": "202485f3c2ba327fe0c9249f3b3f2405ea6b0760a4946b2d4518c7a9b9694dd2",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "human-review-motion@1",
+    "file": "human-review-motion-1.svg",
+    "contentHash": "f0a842237f707f4698a42f4ecc579fb3ec10d24a009ae176868fbc9cd8473ad8",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static SVG export of original registered vector nodes"
+  },
+  {
+    "id": "message-transform@1",
+    "file": "message-transform-1.svg",
+    "contentHash": "99667ae3a77c04878ccd858f2395e225fbef5c5133e449d68ccb176cb9193f36",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static registry icon; animated scene is trusted authored source"
+  },
+  {
+    "id": "parallax-workspace@1",
+    "file": "parallax-workspace-1.svg",
+    "contentHash": "684aab1010b67532a6d93711da11b4f7909f1f1a1cb5024cf7e293c51ad123e8",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static registry icon; animated scene is trusted authored source"
+  },
+  {
+    "id": "counted-documents@1",
+    "file": "counted-documents-1.svg",
+    "contentHash": "67dac43f37d9f10f9813e2827c4ce307b4600e420f2b0fa603901757153f8161",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static registry icon; animated scene is trusted authored source"
+  },
+  {
+    "id": "signal-burst@1",
+    "file": "signal-burst-1.svg",
+    "contentHash": "98acfbcb60bca9ca5686a6891928ec4ea0ee56abe64843d591eb75200eb58c45",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static registry icon; animated scene is trusted authored source"
+  },
+  {
+    "id": "elastic-token@1",
+    "file": "elastic-token-1.svg",
+    "contentHash": "82c256db4d49aa87cfc277986d31d9becfce9777973460f718bb02a7c5ec5d9f",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static registry icon; animated scene is trusted authored source"
+  },
+  {
+    "id": "loop-handoff@1",
+    "file": "loop-handoff-1.svg",
+    "contentHash": "b25bf28beca9ca9493e3d9017065e63379579f3ed01421146fc7fed132b6c54d",
+    "license": "CC0-1.0",
+    "source": "Original HyperFrames motion-kit symbols and authored scene source",
+    "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+    "note": "Static registry icon; animated scene is trusted authored source"
+  }
+]

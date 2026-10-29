@@ -4,6 +4,25 @@ Use existing Studio decisions and stores. The commands below replace project-spe
 orchestration scripts; they never infer approval, change the channel voice default,
 or publish anything. Run from `2d-animation-v3` with Node 24.
 
+## Model assignments
+
+Use Sol 6.1 (`gpt-6.1-sol`) for every part of the workflow except rendering and
+export. Use Luna (`gpt-6-luna`) only for rendering and export operations.
+
+| Work | Assigned model |
+| --- | --- |
+| Research, scripts, hooks and editorial review | Sol 6.1 |
+| Narration coordination, alignment and audio planning | Sol 6.1 |
+| Concepts, storyboards, assets, motion authoring and revisions | Sol 6.1 |
+| Creative review, feedback and workflow development | Sol 6.1 |
+| Render preflight, preview/review renders, final rendering, encoding, technical output verification and export | Luna |
+
+Luna executes the prepared render/export workflow using the existing tools.
+Creative decisions and any resulting source changes remain with Sol 6.1; human
+acceptance and production authorization remain explicit user decisions. These
+assignments do not change gateway settings, narration providers or historical
+model records.
+
 ## 1. Check dependencies before starting
 
 ```powershell

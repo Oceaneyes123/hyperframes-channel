@@ -1,6 +1,7 @@
 import { creativeSnapshotSchema } from "./creative-rules.ts";
 import { z } from "zod";
 import { scriptContentSchema } from "./project.ts";
+import { beatSheetSchema } from "./beat-sheet.ts";
 
 const text = (max: number) => z.string().trim().min(1).max(max);
 const key = z.string().regex(/^[a-z][a-z0-9-]{0,39}$/);
@@ -39,7 +40,7 @@ export function parseGeneratedHooks(input: unknown): HookOptions {
   // IDs identify saved options; the model only owns their creative content.
   return hooksSchema.parse({ hooks: proposed.hooks.map((hook, index) => ({ ...hook, id: `hook-${index + 1}` })) });
 }
-export const scriptLinesSchema = z.strictObject({ lines: z.array(z.strictObject({ text: text(800).refine((line) => !/[\r\n]/.test(line), "Use one spoken line per entry."), claimIds: references })).min(3).max(60) });
+export const scriptLinesSchema = z.strictObject({ lines: z.array(z.strictObject({ text: text(800).refine((line) => !/[\r\n]/.test(line), "Use one spoken line per entry."), claimIds: references })).min(3).max(60), beatSheet: beatSheetSchema.optional() }).refine((script) => !script.beatSheet || script.beatSheet.lines.length === script.lines.length && script.beatSheet.lines.every((line, index) => line.lineNumber === index + 1), "Beat sheet must cover every script line once in order.");
 export type ScriptLines = z.infer<typeof scriptLinesSchema>;
 export const editorialSchema = z.strictObject({
   verdict: z.enum(["ready", "revise"]), summary: text(2_000),

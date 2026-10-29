@@ -1,4 +1,6 @@
 import { GraphicBackground } from "./graphics/background.tsx";
+import { TrustedScene } from "./components/trusted-scene.tsx";
+import { isTrustedScene } from "../workflow/trusted-scenes.ts";
 import { useMemo } from "react";
 import { useCurrentFrame, interpolateColors, Html5Audio } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
@@ -57,8 +59,9 @@ function shapeVars(type: string, state: Partial<MotionState>) {
   return result;
 }
 
-function Primitive({ object, actorId, textMotion, fontAction, numericAction, uiActions, chainActions, depthActions, characterCues, handoffAction, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; fontAction?: MotionAction; numericAction?: MotionAction; uiActions?: MotionAction[]; chainActions?: MotionAction[]; depthActions?: MotionAction[]; characterCues?: CharacterCue[]; handoffAction?: MotionAction; frame: number }) {
+function Primitive({ object, actorId, textMotion, fontAction, numericAction, sceneAction, uiActions, chainActions, depthActions, characterCues, handoffAction, frame }: { object: MotionShot["objects"][number]; actorId: string; textMotion?: TextMotion; fontAction?: MotionAction; numericAction?: MotionAction; sceneAction?: MotionAction; uiActions?: MotionAction[]; chainActions?: MotionAction[]; depthActions?: MotionAction[]; characterCues?: CharacterCue[]; handoffAction?: MotionAction; frame: number }) {
   const state = object.initial, width = state.width * 10.8, height = state.height * 19.2;
+  if (isTrustedScene(object.asset?.id)) { const p = sceneAction ? Math.min(1, Math.max(0, (frame - sceneAction.startFrame) / (sceneAction.endFrame - sceneAction.startFrame))) : object.initialParts?.motion.reveal ?? 0; return <TrustedScene id={object.asset.id} width={width} height={height} progress={p} actorId={actorId}/>; }
   if (object.variableType) {
     const t = fontAction ? Math.max(0, Math.min(1, (frame - fontAction.startFrame) / (fontAction.endFrame - fontAction.startFrame))) : object.initialParts!.glyphs.axisProgress ?? 0;
     return <VariableType reference={object.variableType} width={width} height={height} state={object.initialParts!.glyphs} actorId={actorId} progress={fontAction ? gsap.parseEase(fontAction.ease)(t) : t} />;
@@ -166,8 +169,10 @@ function GroupScene({ group }: { group: MotionGroup }) {
               if (action.to.reveal !== undefined) {
                 const object = item.shot.objects.find((object) => object.id === id.split(".")[0])!;
                 const mask = selector(`[data-reveal="${item.targets[id]}"]`);
-                if (!mask.length) throw new Error("Reveal action requires a rendered mask.");
-                timeline.to(mask, { attr: { width: object.initial.width * 10.8 * action.to.reveal }, ...options }, start);
+                if (!isTrustedScene(object.asset?.id)) {
+                  if (!mask.length) throw new Error("Reveal action requires a rendered mask.");
+                  timeline.to(mask, { attr: { width: object.initial.width * 10.8 * action.to.reveal }, ...options }, start);
+                }
               }
             } else {
               const object = item.shot.objects.find((object) => object.id === id)!; const attrs = shapeVars(object.type, action.to);
@@ -186,7 +191,7 @@ function GroupScene({ group }: { group: MotionGroup }) {
     <g data-camera>{group.actors.map((actor) => {
       const owner = group.shots.find((item) => item.startFrame === actor.startFrame)!;
       const textMotion = owner.shot.textMotions?.find((motion) => owner.targets[motion.targetId] === actor.id);
-      const semanticActions = actor.object.variableType || actor.object.numeric || actor.object.ui || actor.object.rig || actor.object.morphChain || actor.object.perspective ? group.shots.flatMap((item) => item.shot.actions
+      const semanticActions = isTrustedScene(actor.object.asset?.id) || actor.object.variableType || actor.object.numeric || actor.object.ui || actor.object.rig || actor.object.morphChain || actor.object.perspective ? group.shots.flatMap((item) => item.shot.actions
         .filter((action) => action.targetIds.some((id) => item.targets[id]?.startsWith(`${actor.id}.`)))
         .map((action) => ({ ...action, startFrame: item.startFrame - actor.startFrame + action.startFrame, endFrame: item.startFrame - actor.startFrame + action.endFrame }))) : [];
       const fontAction = semanticActions.find(action => action.to.axisProgress !== undefined);
@@ -201,7 +206,7 @@ function GroupScene({ group }: { group: MotionGroup }) {
           characterCues.push({ presetId: beat.presetId, startFrame: item.startFrame - actor.startFrame + beat.startFrame, endFrame: item.startFrame - actor.startFrame + beat.endFrame, ...(beat.presetId === "character-look@1" ? { direction: beat.parameters.direction } : {}) });
         }
       }
-      return <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} textMotion={textMotion} fontAction={fontAction} numericAction={numericAction} uiActions={uiActions} chainActions={chainActions} depthActions={depthActions} characterCues={characterCues} handoffAction={handoffAction} frame={frame - actor.startFrame} /></g>;
+      return <g key={actor.id} data-actor={actor.id} opacity="0"><Primitive object={actor.object} actorId={actor.id} textMotion={textMotion} fontAction={fontAction} numericAction={numericAction} sceneAction={semanticActions.find(action => action.targetIds.some(id => id.endsWith(".motion")) && action.to.reveal !== undefined)} uiActions={uiActions} chainActions={chainActions} depthActions={depthActions} characterCues={characterCues} handoffAction={handoffAction} frame={frame - actor.startFrame} /></g>;
     })}</g>
   </svg>;
 }

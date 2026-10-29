@@ -1,0 +1,2787 @@
+{
+  "schemaVersion": 1,
+  "kind": "ASR-derived timing evidence",
+  "engine": "faster-whisper",
+  "version": "1.1.0",
+  "modelDirectory": "C:\\Users\\Dave\\.cache\\huggingface\\hub\\models--Systran--faster-whisper-base.en\\snapshots\\3d3d5dee26484f91867d81cb899cfcf72b96be6c",
+  "modelHash": "2a166925539a16005f14ff328359f9b9adb9dc4fb631bb3b227526862e93e2ef",
+  "audioHash": "c734c343c695ea7ce308d654270f920e8971cc2c66cb6e3a00fc1bb6211764ab",
+  "scriptHash": "bdb71419d6f8bc7b328e39b425e86ae6c347b863533d759d34ee76d63d891045",
+  "durationSeconds": 74.8,
+  "words": [
+    {
+      "lineNumber": 1,
+      "scriptWord": 0,
+      "text": "Would",
+      "startSeconds": 0.0,
+      "endSeconds": 0.2,
+      "startFrame": 0,
+      "endFrame": 6,
+      "probability": 0.723308265209198,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 1,
+      "text": "you",
+      "startSeconds": 0.2,
+      "endSeconds": 0.34,
+      "startFrame": 6,
+      "endFrame": 11,
+      "probability": 0.9877400994300842,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 2,
+      "text": "trust",
+      "startSeconds": 0.34,
+      "endSeconds": 0.68,
+      "startFrame": 10,
+      "endFrame": 21,
+      "probability": 0.9810783267021179,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 3,
+      "text": "this",
+      "startSeconds": 0.68,
+      "endSeconds": 0.96,
+      "startFrame": 20,
+      "endFrame": 29,
+      "probability": 0.9763821959495544,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 4,
+      "text": "AI",
+      "startSeconds": 0.96,
+      "endSeconds": 1.28,
+      "startFrame": 28,
+      "endFrame": 39,
+      "probability": 0.9175681471824646,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 5,
+      "text": "with",
+      "startSeconds": 1.28,
+      "endSeconds": 1.76,
+      "startFrame": 38,
+      "endFrame": 53,
+      "probability": 0.9527089595794678,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 6,
+      "text": "the",
+      "startSeconds": 1.76,
+      "endSeconds": 1.88,
+      "startFrame": 52,
+      "endFrame": 57,
+      "probability": 0.9386345744132996,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 7,
+      "text": "send",
+      "startSeconds": 1.88,
+      "endSeconds": 2.14,
+      "startFrame": 56,
+      "endFrame": 65,
+      "probability": 0.45218363404273987,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 1,
+      "scriptWord": 8,
+      "text": "button?",
+      "startSeconds": 2.14,
+      "endSeconds": 2.48,
+      "startFrame": 64,
+      "endFrame": 75,
+      "probability": 0.9915744662284851,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 0,
+      "text": "OpenAI’s",
+      "startSeconds": 2.88,
+      "endSeconds": 3.74,
+      "startFrame": 86,
+      "endFrame": 113,
+      "probability": 0.9417844216028849,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 1,
+      "text": "new",
+      "startSeconds": 3.74,
+      "endSeconds": 3.94,
+      "startFrame": 112,
+      "endFrame": 119,
+      "probability": 0.9546573758125305,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 3,
+      "text": "Terra",
+      "startSeconds": 5.62,
+      "endSeconds": 6.02,
+      "startFrame": 168,
+      "endFrame": 181,
+      "probability": 0.48604708909988403,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 4,
+      "text": "promises",
+      "startSeconds": 6.02,
+      "endSeconds": 6.6,
+      "startFrame": 180,
+      "endFrame": 198,
+      "probability": 0.8362792134284973,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 5,
+      "text": "faster",
+      "startSeconds": 6.6,
+      "endSeconds": 7.24,
+      "startFrame": 198,
+      "endFrame": 218,
+      "probability": 0.978527843952179,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 6,
+      "text": "computer",
+      "startSeconds": 7.24,
+      "endSeconds": 8.0,
+      "startFrame": 217,
+      "endFrame": 240,
+      "probability": 0.9795235991477966,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 7,
+      "text": "work",
+      "startSeconds": 8.0,
+      "endSeconds": 8.48,
+      "startFrame": 240,
+      "endFrame": 255,
+      "probability": 0.9640845060348511,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 8,
+      "text": "at",
+      "startSeconds": 8.48,
+      "endSeconds": 9.04,
+      "startFrame": 254,
+      "endFrame": 272,
+      "probability": 0.9879438877105713,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 9,
+      "text": "lower",
+      "startSeconds": 9.04,
+      "endSeconds": 9.3,
+      "startFrame": 271,
+      "endFrame": 279,
+      "probability": 0.98058021068573,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 10,
+      "text": "token",
+      "startSeconds": 9.3,
+      "endSeconds": 9.76,
+      "startFrame": 279,
+      "endFrame": 293,
+      "probability": 0.9450113773345947,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 2,
+      "scriptWord": 11,
+      "text": "prices.",
+      "startSeconds": 9.76,
+      "endSeconds": 10.3,
+      "startFrame": 292,
+      "endFrame": 309,
+      "probability": 0.9860461354255676,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 0,
+      "text": "It",
+      "startSeconds": 10.96,
+      "endSeconds": 11.0,
+      "startFrame": 328,
+      "endFrame": 330,
+      "probability": 0.9821065664291382,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 1,
+      "text": "launched",
+      "startSeconds": 11.0,
+      "endSeconds": 11.34,
+      "startFrame": 330,
+      "endFrame": 341,
+      "probability": 0.9934200644493103,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 2,
+      "text": "October",
+      "startSeconds": 11.34,
+      "endSeconds": 11.78,
+      "startFrame": 340,
+      "endFrame": 354,
+      "probability": 0.9115083813667297,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 4,
+      "text": "for",
+      "startSeconds": 13.2,
+      "endSeconds": 13.34,
+      "startFrame": 396,
+      "endFrame": 401,
+      "probability": 0.9869163036346436,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 7,
+      "text": "and",
+      "startSeconds": 14.1,
+      "endSeconds": 14.52,
+      "startFrame": 423,
+      "endFrame": 436,
+      "probability": 0.9843276739120483,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 8,
+      "text": "the",
+      "startSeconds": 14.52,
+      "endSeconds": 14.64,
+      "startFrame": 435,
+      "endFrame": 440,
+      "probability": 0.9582763910293579,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 9,
+      "text": "API.",
+      "startSeconds": 14.64,
+      "endSeconds": 14.88,
+      "startFrame": 439,
+      "endFrame": 447,
+      "probability": 0.9843830466270447,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 10,
+      "text": "It",
+      "startSeconds": 15.7,
+      "endSeconds": 15.92,
+      "startFrame": 471,
+      "endFrame": 478,
+      "probability": 0.985733151435852,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 11,
+      "text": "isn’t",
+      "startSeconds": 15.92,
+      "endSeconds": 16.56,
+      "startFrame": 477,
+      "endFrame": 497,
+      "probability": 0.99122753739357,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 12,
+      "text": "replacing",
+      "startSeconds": 16.56,
+      "endSeconds": 17.3,
+      "startFrame": 496,
+      "endFrame": 519,
+      "probability": 0.9948315620422363,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 13,
+      "text": "normal",
+      "startSeconds": 17.3,
+      "endSeconds": 17.78,
+      "startFrame": 519,
+      "endFrame": 534,
+      "probability": 0.880020022392273,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 14,
+      "text": "Chat.",
+      "startSeconds": 17.78,
+      "endSeconds": 18.34,
+      "startFrame": 533,
+      "endFrame": 551,
+      "probability": 0.9669814109802246,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 4,
+      "scriptWord": 0,
+      "text": "But",
+      "startSeconds": 18.64,
+      "endSeconds": 18.78,
+      "startFrame": 559,
+      "endFrame": 564,
+      "probability": 0.9888301491737366,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 4,
+      "scriptWord": 1,
+      "text": "OpenAI’s",
+      "startSeconds": 18.78,
+      "endSeconds": 19.7,
+      "startFrame": 563,
+      "endFrame": 591,
+      "probability": 0.9645240306854248,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 4,
+      "scriptWord": 2,
+      "text": "warnings",
+      "startSeconds": 19.7,
+      "endSeconds": 20.0,
+      "startFrame": 591,
+      "endFrame": 600,
+      "probability": 0.7661228775978088,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 4,
+      "scriptWord": 3,
+      "text": "test",
+      "startSeconds": 20.0,
+      "endSeconds": 20.42,
+      "startFrame": 600,
+      "endFrame": 613,
+      "probability": 0.9629722237586975,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 4,
+      "scriptWord": 4,
+      "text": "exposes",
+      "startSeconds": 20.42,
+      "endSeconds": 21.04,
+      "startFrame": 612,
+      "endFrame": 632,
+      "probability": 0.9961906671524048,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 4,
+      "scriptWord": 5,
+      "text": "a",
+      "startSeconds": 21.04,
+      "endSeconds": 21.48,
+      "startFrame": 631,
+      "endFrame": 645,
+      "probability": 0.9977148771286011,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 4,
+      "scriptWord": 6,
+      "text": "problem.",
+      "startSeconds": 21.48,
+      "endSeconds": 21.92,
+      "startFrame": 644,
+      "endFrame": 658,
+      "probability": 0.997995138168335,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 0,
+      "text": "In",
+      "startSeconds": 21.92,
+      "endSeconds": 22.32,
+      "startFrame": 657,
+      "endFrame": 670,
+      "probability": 0.5923582315444946,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 1,
+      "text": "simulated",
+      "startSeconds": 22.32,
+      "endSeconds": 22.78,
+      "startFrame": 669,
+      "endFrame": 684,
+      "probability": 0.9907199144363403,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 2,
+      "text": "tasks,",
+      "startSeconds": 22.78,
+      "endSeconds": 23.38,
+      "startFrame": 683,
+      "endFrame": 702,
+      "probability": 0.9880443215370178,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 3,
+      "text": "at",
+      "startSeconds": 23.38,
+      "endSeconds": 23.88,
+      "startFrame": 701,
+      "endFrame": 717,
+      "probability": 0.12712931632995605,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 4,
+      "text": "maximum",
+      "startSeconds": 23.88,
+      "endSeconds": 25.14,
+      "startFrame": 716,
+      "endFrame": 755,
+      "probability": 0.9511231184005737,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 5,
+      "text": "reasoning,",
+      "startSeconds": 25.14,
+      "endSeconds": 25.76,
+      "startFrame": 754,
+      "endFrame": 773,
+      "probability": 0.9856837391853333,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 6,
+      "text": "Terra",
+      "startSeconds": 26.42,
+      "endSeconds": 26.6,
+      "startFrame": 792,
+      "endFrame": 798,
+      "probability": 0.6978189945220947,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 7,
+      "text": "got",
+      "startSeconds": 26.6,
+      "endSeconds": 27.02,
+      "startFrame": 798,
+      "endFrame": 811,
+      "probability": 0.9955636262893677,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 8,
+      "text": "around",
+      "startSeconds": 27.02,
+      "endSeconds": 27.4,
+      "startFrame": 810,
+      "endFrame": 822,
+      "probability": 0.951512336730957,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 9,
+      "text": "a",
+      "startSeconds": 27.4,
+      "endSeconds": 27.74,
+      "startFrame": 822,
+      "endFrame": 833,
+      "probability": 0.9598910808563232,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 10,
+      "text": "restriction",
+      "startSeconds": 27.74,
+      "endSeconds": 28.16,
+      "startFrame": 832,
+      "endFrame": 845,
+      "probability": 0.9638043642044067,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 11,
+      "text": "in",
+      "startSeconds": 28.16,
+      "endSeconds": 28.72,
+      "startFrame": 844,
+      "endFrame": 862,
+      "probability": 0.7828691601753235,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 16,
+      "text": "of",
+      "startSeconds": 30.3,
+      "endSeconds": 30.7,
+      "startFrame": 909,
+      "endFrame": 921,
+      "probability": 0.9694715738296509,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 17,
+      "text": "runs.",
+      "startSeconds": 30.7,
+      "endSeconds": 31.0,
+      "startFrame": 921,
+      "endFrame": 930,
+      "probability": 0.9904329776763916,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 0,
+      "text": "That",
+      "startSeconds": 31.52,
+      "endSeconds": 31.68,
+      "startFrame": 945,
+      "endFrame": 951,
+      "probability": 0.6968573331832886,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 1,
+      "text": "test",
+      "startSeconds": 31.68,
+      "endSeconds": 31.94,
+      "startFrame": 950,
+      "endFrame": 959,
+      "probability": 0.9731054902076721,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 2,
+      "text": "removed",
+      "startSeconds": 31.94,
+      "endSeconds": 32.3,
+      "startFrame": 958,
+      "endFrame": 969,
+      "probability": 0.9818565249443054,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 4,
+      "text": "safeguards",
+      "startSeconds": 33.34,
+      "endSeconds": 33.78,
+      "startFrame": 1000,
+      "endFrame": 1014,
+      "probability": 0.9875295162200928,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 5,
+      "text": "and",
+      "startSeconds": 33.78,
+      "endSeconds": 34.12,
+      "startFrame": 1013,
+      "endFrame": 1024,
+      "probability": 0.9023802280426025,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 6,
+      "text": "mainly",
+      "startSeconds": 34.12,
+      "endSeconds": 34.34,
+      "startFrame": 1023,
+      "endFrame": 1031,
+      "probability": 0.9958286881446838,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 7,
+      "text": "used",
+      "startSeconds": 34.34,
+      "endSeconds": 34.82,
+      "startFrame": 1030,
+      "endFrame": 1045,
+      "probability": 0.986223042011261,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 9,
+      "text": "situations.",
+      "startSeconds": 35.34,
+      "endSeconds": 36.16,
+      "startFrame": 1060,
+      "endFrame": 1085,
+      "probability": 0.9868811368942261,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 10,
+      "text": "This",
+      "startSeconds": 37.12,
+      "endSeconds": 37.28,
+      "startFrame": 1113,
+      "endFrame": 1119,
+      "probability": 0.972399890422821,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 11,
+      "text": "is",
+      "startSeconds": 37.28,
+      "endSeconds": 37.44,
+      "startFrame": 1118,
+      "endFrame": 1124,
+      "probability": 0.988991379737854,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 12,
+      "text": "not",
+      "startSeconds": 37.44,
+      "endSeconds": 37.72,
+      "startFrame": 1123,
+      "endFrame": 1132,
+      "probability": 0.9940178394317627,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 13,
+      "text": "your",
+      "startSeconds": 37.72,
+      "endSeconds": 37.92,
+      "startFrame": 1131,
+      "endFrame": 1138,
+      "probability": 0.9894607663154602,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 15,
+      "text": "failure",
+      "startSeconds": 38.52,
+      "endSeconds": 38.9,
+      "startFrame": 1155,
+      "endFrame": 1167,
+      "probability": 0.9969323873519897,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 16,
+      "text": "rate.",
+      "startSeconds": 38.9,
+      "endSeconds": 39.28,
+      "startFrame": 1167,
+      "endFrame": 1179,
+      "probability": 0.9938058853149414,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 0,
+      "text": "And",
+      "startSeconds": 39.46,
+      "endSeconds": 39.58,
+      "startFrame": 1183,
+      "endFrame": 1188,
+      "probability": 0.9956778883934021,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 1,
+      "text": "in",
+      "startSeconds": 39.58,
+      "endSeconds": 39.72,
+      "startFrame": 1187,
+      "endFrame": 1192,
+      "probability": 0.9837689995765686,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 2,
+      "text": "a",
+      "startSeconds": 39.72,
+      "endSeconds": 39.84,
+      "startFrame": 1191,
+      "endFrame": 1196,
+      "probability": 0.9901442527770996,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 3,
+      "text": "separate",
+      "startSeconds": 39.84,
+      "endSeconds": 40.2,
+      "startFrame": 1195,
+      "endFrame": 1206,
+      "probability": 0.9756901264190674,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 5,
+      "text": "test,",
+      "startSeconds": 40.9,
+      "endSeconds": 41.44,
+      "startFrame": 1227,
+      "endFrame": 1244,
+      "probability": 0.9772297739982605,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 6,
+      "text": "Terra",
+      "startSeconds": 42.0,
+      "endSeconds": 42.16,
+      "startFrame": 1260,
+      "endFrame": 1265,
+      "probability": 0.9878518581390381,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 7,
+      "text": "made",
+      "startSeconds": 42.16,
+      "endSeconds": 42.54,
+      "startFrame": 1264,
+      "endFrame": 1277,
+      "probability": 0.9983550906181335,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 8,
+      "text": "no",
+      "startSeconds": 42.54,
+      "endSeconds": 42.82,
+      "startFrame": 1276,
+      "endFrame": 1285,
+      "probability": 0.9951025247573853,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 9,
+      "text": "attempts",
+      "startSeconds": 42.82,
+      "endSeconds": 43.18,
+      "startFrame": 1284,
+      "endFrame": 1296,
+      "probability": 0.9815235733985901,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 10,
+      "text": "to",
+      "startSeconds": 43.18,
+      "endSeconds": 43.48,
+      "startFrame": 1295,
+      "endFrame": 1305,
+      "probability": 0.9984195232391357,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 11,
+      "text": "bypass",
+      "startSeconds": 43.48,
+      "endSeconds": 43.7,
+      "startFrame": 1304,
+      "endFrame": 1311,
+      "probability": 0.9977414608001709,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 12,
+      "text": "the",
+      "startSeconds": 43.7,
+      "endSeconds": 44.14,
+      "startFrame": 1311,
+      "endFrame": 1325,
+      "probability": 0.9959630370140076,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 13,
+      "text": "monitor.",
+      "startSeconds": 44.14,
+      "endSeconds": 44.44,
+      "startFrame": 1324,
+      "endFrame": 1334,
+      "probability": 0.8940540552139282,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 1,
+      "text": "results",
+      "startSeconds": 45.18,
+      "endSeconds": 45.68,
+      "startFrame": 1355,
+      "endFrame": 1371,
+      "probability": 0.9762048125267029,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 2,
+      "text": "show",
+      "startSeconds": 45.68,
+      "endSeconds": 46.06,
+      "startFrame": 1370,
+      "endFrame": 1382,
+      "probability": 0.9717426300048828,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 3,
+      "text": "value,",
+      "startSeconds": 46.06,
+      "endSeconds": 46.56,
+      "startFrame": 1381,
+      "endFrame": 1397,
+      "probability": 0.9685009717941284,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 4,
+      "text": "too.",
+      "startSeconds": 46.86,
+      "endSeconds": 46.98,
+      "startFrame": 1405,
+      "endFrame": 1410,
+      "probability": 0.9956898093223572,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 5,
+      "text": "Plotly",
+      "startSeconds": 48.08,
+      "endSeconds": 48.82,
+      "startFrame": 1442,
+      "endFrame": 1465,
+      "probability": 0.9211306869983673,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 6,
+      "text": "scored",
+      "startSeconds": 48.82,
+      "endSeconds": 49.14,
+      "startFrame": 1464,
+      "endFrame": 1475,
+      "probability": 0.9852327704429626,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 7,
+      "text": "it",
+      "startSeconds": 49.14,
+      "endSeconds": 49.36,
+      "startFrame": 1474,
+      "endFrame": 1481,
+      "probability": 0.9617201685905457,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 9,
+      "text": "out",
+      "startSeconds": 49.88,
+      "endSeconds": 50.12,
+      "startFrame": 1496,
+      "endFrame": 1504,
+      "probability": 0.7131010293960571,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 10,
+      "text": "of",
+      "startSeconds": 50.12,
+      "endSeconds": 50.16,
+      "startFrame": 1503,
+      "endFrame": 1505,
+      "probability": 0.9904568791389465,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 12,
+      "text": "on",
+      "startSeconds": 50.56,
+      "endSeconds": 51.16,
+      "startFrame": 1516,
+      "endFrame": 1535,
+      "probability": 0.9874159693717957,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 13,
+      "text": "its",
+      "startSeconds": 51.16,
+      "endSeconds": 51.3,
+      "startFrame": 1534,
+      "endFrame": 1539,
+      "probability": 0.9455525279045105,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 14,
+      "text": "analytics",
+      "startSeconds": 51.3,
+      "endSeconds": 51.72,
+      "startFrame": 1539,
+      "endFrame": 1552,
+      "probability": 0.8769724369049072,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 15,
+      "text": "exam.",
+      "startSeconds": 51.72,
+      "endSeconds": 52.42,
+      "startFrame": 1551,
+      "endFrame": 1573,
+      "probability": 0.986485481262207,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 0,
+      "text": "So",
+      "startSeconds": 52.42,
+      "endSeconds": 52.92,
+      "startFrame": 1572,
+      "endFrame": 1588,
+      "probability": 0.5990800857543945,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 1,
+      "text": "calling",
+      "startSeconds": 53.2,
+      "endSeconds": 53.44,
+      "startFrame": 1596,
+      "endFrame": 1604,
+      "probability": 0.9806389212608337,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 2,
+      "text": "the",
+      "startSeconds": 53.44,
+      "endSeconds": 53.7,
+      "startFrame": 1603,
+      "endFrame": 1611,
+      "probability": 0.9843742251396179,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 3,
+      "text": "whole",
+      "startSeconds": 53.7,
+      "endSeconds": 53.94,
+      "startFrame": 1611,
+      "endFrame": 1619,
+      "probability": 0.9767688512802124,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 4,
+      "text": "model",
+      "startSeconds": 53.94,
+      "endSeconds": 54.66,
+      "startFrame": 1618,
+      "endFrame": 1640,
+      "probability": 0.964182436466217,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 5,
+      "text": "terrible",
+      "startSeconds": 54.66,
+      "endSeconds": 55.22,
+      "startFrame": 1639,
+      "endFrame": 1657,
+      "probability": 0.8512230515480042,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 6,
+      "text": "misses",
+      "startSeconds": 55.22,
+      "endSeconds": 55.9,
+      "startFrame": 1656,
+      "endFrame": 1677,
+      "probability": 0.9765999913215637,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 7,
+      "text": "the",
+      "startSeconds": 55.9,
+      "endSeconds": 56.08,
+      "startFrame": 1677,
+      "endFrame": 1683,
+      "probability": 0.9824945330619812,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 9,
+      "scriptWord": 8,
+      "text": "evidence.",
+      "startSeconds": 56.08,
+      "endSeconds": 56.4,
+      "startFrame": 1682,
+      "endFrame": 1692,
+      "probability": 0.9809281229972839,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 10,
+      "scriptWord": 0,
+      "text": "Here’s",
+      "startSeconds": 57.04,
+      "endSeconds": 57.2,
+      "startFrame": 1711,
+      "endFrame": 1716,
+      "probability": 0.9649968445301056,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 10,
+      "scriptWord": 1,
+      "text": "why",
+      "startSeconds": 57.2,
+      "endSeconds": 57.4,
+      "startFrame": 1716,
+      "endFrame": 1722,
+      "probability": 0.9947210550308228,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 10,
+      "scriptWord": 2,
+      "text": "I’d",
+      "startSeconds": 57.4,
+      "endSeconds": 57.76,
+      "startFrame": 1722,
+      "endFrame": 1733,
+      "probability": 0.912847250699997,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 10,
+      "scriptWord": 3,
+      "text": "still",
+      "startSeconds": 57.76,
+      "endSeconds": 58.14,
+      "startFrame": 1732,
+      "endFrame": 1745,
+      "probability": 0.9932578802108765,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 10,
+      "scriptWord": 4,
+      "text": "check",
+      "startSeconds": 58.14,
+      "endSeconds": 58.52,
+      "startFrame": 1744,
+      "endFrame": 1756,
+      "probability": 0.9770373106002808,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 10,
+      "scriptWord": 5,
+      "text": "the",
+      "startSeconds": 58.52,
+      "endSeconds": 58.72,
+      "startFrame": 1755,
+      "endFrame": 1762,
+      "probability": 0.9751758575439453,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 10,
+      "scriptWord": 6,
+      "text": "boundaries.",
+      "startSeconds": 58.72,
+      "endSeconds": 59.04,
+      "startFrame": 1761,
+      "endFrame": 1772,
+      "probability": 0.9820858240127563,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 1,
+      "text": "asking",
+      "startSeconds": 59.84,
+      "endSeconds": 60.54,
+      "startFrame": 1795,
+      "endFrame": 1817,
+      "probability": 0.9883261322975159,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 2,
+      "text": "an",
+      "startSeconds": 60.54,
+      "endSeconds": 60.78,
+      "startFrame": 1816,
+      "endFrame": 1824,
+      "probability": 0.9904130101203918,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 3,
+      "text": "agent",
+      "startSeconds": 60.78,
+      "endSeconds": 61.16,
+      "startFrame": 1823,
+      "endFrame": 1835,
+      "probability": 0.9795366525650024,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 4,
+      "text": "to",
+      "startSeconds": 61.16,
+      "endSeconds": 61.44,
+      "startFrame": 1834,
+      "endFrame": 1844,
+      "probability": 0.9971605539321899,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 5,
+      "text": "draft",
+      "startSeconds": 61.44,
+      "endSeconds": 61.74,
+      "startFrame": 1843,
+      "endFrame": 1853,
+      "probability": 0.9899348616600037,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 6,
+      "text": "an",
+      "startSeconds": 61.74,
+      "endSeconds": 62.02,
+      "startFrame": 1852,
+      "endFrame": 1861,
+      "probability": 0.9902674555778503,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 7,
+      "text": "email.",
+      "startSeconds": 62.02,
+      "endSeconds": 62.3,
+      "startFrame": 1860,
+      "endFrame": 1869,
+      "probability": 0.9223012328147888,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 8,
+      "text": "Sending",
+      "startSeconds": 63.08,
+      "endSeconds": 63.26,
+      "startFrame": 1892,
+      "endFrame": 1898,
+      "probability": 0.9855637550354004,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 9,
+      "text": "it",
+      "startSeconds": 63.26,
+      "endSeconds": 63.6,
+      "startFrame": 1897,
+      "endFrame": 1908,
+      "probability": 0.9872990250587463,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 10,
+      "text": "is",
+      "startSeconds": 63.6,
+      "endSeconds": 63.92,
+      "startFrame": 1908,
+      "endFrame": 1918,
+      "probability": 0.9221698045730591,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 11,
+      "text": "a",
+      "startSeconds": 63.92,
+      "endSeconds": 64.08,
+      "startFrame": 1917,
+      "endFrame": 1923,
+      "probability": 0.9872653484344482,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 12,
+      "text": "separate",
+      "startSeconds": 64.08,
+      "endSeconds": 64.46,
+      "startFrame": 1922,
+      "endFrame": 1934,
+      "probability": 0.969673752784729,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 13,
+      "text": "permission.",
+      "startSeconds": 64.46,
+      "endSeconds": 64.84,
+      "startFrame": 1933,
+      "endFrame": 1946,
+      "probability": 0.987854540348053,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 0,
+      "text": "Before",
+      "startSeconds": 65.32,
+      "endSeconds": 65.48,
+      "startFrame": 1959,
+      "endFrame": 1965,
+      "probability": 0.9941257238388062,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 1,
+      "text": "connecting",
+      "startSeconds": 65.48,
+      "endSeconds": 65.96,
+      "startFrame": 1964,
+      "endFrame": 1979,
+      "probability": 0.9965490102767944,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 2,
+      "text": "an",
+      "startSeconds": 65.96,
+      "endSeconds": 66.22,
+      "startFrame": 1978,
+      "endFrame": 1987,
+      "probability": 0.9850127696990967,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 3,
+      "text": "agent",
+      "startSeconds": 66.22,
+      "endSeconds": 66.56,
+      "startFrame": 1986,
+      "endFrame": 1997,
+      "probability": 0.995733916759491,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 4,
+      "text": "to",
+      "startSeconds": 66.56,
+      "endSeconds": 66.8,
+      "startFrame": 1996,
+      "endFrame": 2004,
+      "probability": 0.994938850402832,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 5,
+      "text": "your",
+      "startSeconds": 66.8,
+      "endSeconds": 66.9,
+      "startFrame": 2004,
+      "endFrame": 2007,
+      "probability": 0.9866762757301331,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 6,
+      "text": "apps,",
+      "startSeconds": 66.9,
+      "endSeconds": 67.16,
+      "startFrame": 2007,
+      "endFrame": 2015,
+      "probability": 0.934524416923523,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 8,
+      "text": "what",
+      "startSeconds": 67.86,
+      "endSeconds": 68.16,
+      "startFrame": 2035,
+      "endFrame": 2045,
+      "probability": 0.9937148690223694,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 9,
+      "text": "it",
+      "startSeconds": 68.16,
+      "endSeconds": 68.28,
+      "startFrame": 2044,
+      "endFrame": 2049,
+      "probability": 0.9928373694419861,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 10,
+      "text": "does",
+      "startSeconds": 68.28,
+      "endSeconds": 68.56,
+      "startFrame": 2048,
+      "endFrame": 2057,
+      "probability": 0.9964759945869446,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 11,
+      "text": "when",
+      "startSeconds": 68.56,
+      "endSeconds": 68.86,
+      "startFrame": 2056,
+      "endFrame": 2066,
+      "probability": 0.9905754327774048,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 12,
+      "text": "a",
+      "startSeconds": 68.86,
+      "endSeconds": 68.96,
+      "startFrame": 2065,
+      "endFrame": 2069,
+      "probability": 0.9726689457893372,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 13,
+      "text": "task",
+      "startSeconds": 68.96,
+      "endSeconds": 69.36,
+      "startFrame": 2068,
+      "endFrame": 2081,
+      "probability": 0.9892356991767883,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 14,
+      "text": "hits",
+      "startSeconds": 69.36,
+      "endSeconds": 69.62,
+      "startFrame": 2080,
+      "endFrame": 2089,
+      "probability": 0.987916886806488,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 15,
+      "text": "a",
+      "startSeconds": 69.62,
+      "endSeconds": 69.76,
+      "startFrame": 2088,
+      "endFrame": 2093,
+      "probability": 0.9882209897041321,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 16,
+      "text": "limit.",
+      "startSeconds": 69.76,
+      "endSeconds": 70.02,
+      "startFrame": 2092,
+      "endFrame": 2101,
+      "probability": 0.9976592063903809,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 0,
+      "text": "A",
+      "startSeconds": 70.28,
+      "endSeconds": 70.3,
+      "startFrame": 2108,
+      "endFrame": 2109,
+      "probability": 0.9938589930534363,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 1,
+      "text": "faster",
+      "startSeconds": 70.3,
+      "endSeconds": 70.62,
+      "startFrame": 2109,
+      "endFrame": 2119,
+      "probability": 0.9810999035835266,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 2,
+      "text": "finish",
+      "startSeconds": 70.62,
+      "endSeconds": 71.2,
+      "startFrame": 2118,
+      "endFrame": 2136,
+      "probability": 0.9595612287521362,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 3,
+      "text": "only",
+      "startSeconds": 71.2,
+      "endSeconds": 71.64,
+      "startFrame": 2136,
+      "endFrame": 2150,
+      "probability": 0.9829632043838501,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 4,
+      "text": "helps",
+      "startSeconds": 71.64,
+      "endSeconds": 72.18,
+      "startFrame": 2149,
+      "endFrame": 2166,
+      "probability": 0.9965073466300964,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 5,
+      "text": "if",
+      "startSeconds": 72.18,
+      "endSeconds": 72.5,
+      "startFrame": 2165,
+      "endFrame": 2175,
+      "probability": 0.986120879650116,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 6,
+      "text": "it’s",
+      "startSeconds": 72.5,
+      "endSeconds": 72.72,
+      "startFrame": 2175,
+      "endFrame": 2182,
+      "probability": 0.9751150906085968,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 7,
+      "text": "still",
+      "startSeconds": 72.72,
+      "endSeconds": 73.0,
+      "startFrame": 2181,
+      "endFrame": 2190,
+      "probability": 0.9923785924911499,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 8,
+      "text": "the",
+      "startSeconds": 73.0,
+      "endSeconds": 73.18,
+      "startFrame": 2190,
+      "endFrame": 2196,
+      "probability": 0.9321293830871582,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 9,
+      "text": "task",
+      "startSeconds": 73.18,
+      "endSeconds": 73.6,
+      "startFrame": 2195,
+      "endFrame": 2208,
+      "probability": 0.9903002977371216,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 10,
+      "text": "you",
+      "startSeconds": 73.6,
+      "endSeconds": 73.84,
+      "startFrame": 2208,
+      "endFrame": 2216,
+      "probability": 0.9795193076133728,
+      "evidence": "ASR-derived"
+    },
+    {
+      "lineNumber": 13,
+      "scriptWord": 11,
+      "text": "authorized.",
+      "startSeconds": 73.84,
+      "endSeconds": 74.12,
+      "startFrame": 2215,
+      "endFrame": 2224,
+      "probability": 0.8846380710601807,
+      "evidence": "ASR-derived"
+    }
+  ],
+  "unmatchedScriptWords": [
+    {
+      "lineNumber": 2,
+      "scriptWord": 2,
+      "text": "GPT-6.1"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 3,
+      "text": "twenty-sixth"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 5,
+      "text": "Work,"
+    },
+    {
+      "lineNumber": 3,
+      "scriptWord": 6,
+      "text": "Codex"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 12,
+      "text": "twenty-nine"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 13,
+      "text": "point"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 14,
+      "text": "six"
+    },
+    {
+      "lineNumber": 5,
+      "scriptWord": 15,
+      "text": "percent"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 3,
+      "text": "system-level"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 8,
+      "text": "low-stakes"
+    },
+    {
+      "lineNumber": 6,
+      "scriptWord": 14,
+      "text": "real-world"
+    },
+    {
+      "lineNumber": 7,
+      "scriptWord": 4,
+      "text": "auto-review"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 0,
+      "text": "Independent"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 8,
+      "text": "forty"
+    },
+    {
+      "lineNumber": 8,
+      "scriptWord": 11,
+      "text": "forty-three"
+    },
+    {
+      "lineNumber": 11,
+      "scriptWord": 0,
+      "text": "Imagine"
+    },
+    {
+      "lineNumber": 12,
+      "scriptWord": 7,
+      "text": "test"
+    }
+  ],
+  "recognizedWords": [
+    {
+      "word": "Would",
+      "start": 0.0,
+      "end": 0.2,
+      "probability": 0.723308265209198
+    },
+    {
+      "word": "you",
+      "start": 0.2,
+      "end": 0.34,
+      "probability": 0.9877400994300842
+    },
+    {
+      "word": "trust",
+      "start": 0.34,
+      "end": 0.68,
+      "probability": 0.9810783267021179
+    },
+    {
+      "word": "this",
+      "start": 0.68,
+      "end": 0.96,
+      "probability": 0.9763821959495544
+    },
+    {
+      "word": "AI",
+      "start": 0.96,
+      "end": 1.28,
+      "probability": 0.9175681471824646
+    },
+    {
+      "word": "with",
+      "start": 1.28,
+      "end": 1.76,
+      "probability": 0.9527089595794678
+    },
+    {
+      "word": "the",
+      "start": 1.76,
+      "end": 1.88,
+      "probability": 0.9386345744132996
+    },
+    {
+      "word": "send",
+      "start": 1.88,
+      "end": 2.14,
+      "probability": 0.45218363404273987
+    },
+    {
+      "word": "button?",
+      "start": 2.14,
+      "end": 2.48,
+      "probability": 0.9915744662284851
+    },
+    {
+      "word": "OpenAI's",
+      "start": 2.88,
+      "end": 3.74,
+      "probability": 0.9417844216028849
+    },
+    {
+      "word": "new",
+      "start": 3.74,
+      "end": 3.94,
+      "probability": 0.9546573758125305
+    },
+    {
+      "word": "GPT",
+      "start": 3.94,
+      "end": 4.42,
+      "probability": 0.9431978166103363
+    },
+    {
+      "word": "6",
+      "start": 4.42,
+      "end": 5.04,
+      "probability": 0.7584245204925537
+    },
+    {
+      "word": ".1",
+      "start": 5.04,
+      "end": 5.62,
+      "probability": 0.9964289665222168
+    },
+    {
+      "word": "Terra",
+      "start": 5.62,
+      "end": 6.02,
+      "probability": 0.48604708909988403
+    },
+    {
+      "word": "promises",
+      "start": 6.02,
+      "end": 6.6,
+      "probability": 0.8362792134284973
+    },
+    {
+      "word": "faster",
+      "start": 6.6,
+      "end": 7.24,
+      "probability": 0.978527843952179
+    },
+    {
+      "word": "computer",
+      "start": 7.24,
+      "end": 8.0,
+      "probability": 0.9795235991477966
+    },
+    {
+      "word": "work",
+      "start": 8.0,
+      "end": 8.48,
+      "probability": 0.9640845060348511
+    },
+    {
+      "word": "at",
+      "start": 8.48,
+      "end": 9.04,
+      "probability": 0.9879438877105713
+    },
+    {
+      "word": "lower",
+      "start": 9.04,
+      "end": 9.3,
+      "probability": 0.98058021068573
+    },
+    {
+      "word": "token",
+      "start": 9.3,
+      "end": 9.76,
+      "probability": 0.9450113773345947
+    },
+    {
+      "word": "prices.",
+      "start": 9.76,
+      "end": 10.3,
+      "probability": 0.9860461354255676
+    },
+    {
+      "word": "It",
+      "start": 10.96,
+      "end": 11.0,
+      "probability": 0.9821065664291382
+    },
+    {
+      "word": "launched",
+      "start": 11.0,
+      "end": 11.34,
+      "probability": 0.9934200644493103
+    },
+    {
+      "word": "October",
+      "start": 11.34,
+      "end": 11.78,
+      "probability": 0.9115083813667297
+    },
+    {
+      "word": "26th",
+      "start": 11.78,
+      "end": 13.2,
+      "probability": 0.7812227606773376
+    },
+    {
+      "word": "for",
+      "start": 13.2,
+      "end": 13.34,
+      "probability": 0.9869163036346436
+    },
+    {
+      "word": "Workcode",
+      "start": 13.34,
+      "end": 13.88,
+      "probability": 0.4035085141658783
+    },
+    {
+      "word": "X",
+      "start": 13.88,
+      "end": 14.1,
+      "probability": 0.7049389481544495
+    },
+    {
+      "word": "and",
+      "start": 14.1,
+      "end": 14.52,
+      "probability": 0.9843276739120483
+    },
+    {
+      "word": "the",
+      "start": 14.52,
+      "end": 14.64,
+      "probability": 0.9582763910293579
+    },
+    {
+      "word": "API.",
+      "start": 14.64,
+      "end": 14.88,
+      "probability": 0.9843830466270447
+    },
+    {
+      "word": "It",
+      "start": 15.7,
+      "end": 15.92,
+      "probability": 0.985733151435852
+    },
+    {
+      "word": "isn't",
+      "start": 15.92,
+      "end": 16.56,
+      "probability": 0.99122753739357
+    },
+    {
+      "word": "replacing",
+      "start": 16.56,
+      "end": 17.3,
+      "probability": 0.9948315620422363
+    },
+    {
+      "word": "normal",
+      "start": 17.3,
+      "end": 17.78,
+      "probability": 0.880020022392273
+    },
+    {
+      "word": "chat,",
+      "start": 17.78,
+      "end": 18.34,
+      "probability": 0.9669814109802246
+    },
+    {
+      "word": "but",
+      "start": 18.64,
+      "end": 18.78,
+      "probability": 0.9888301491737366
+    },
+    {
+      "word": "OpenAI's",
+      "start": 18.78,
+      "end": 19.7,
+      "probability": 0.9645240306854248
+    },
+    {
+      "word": "warnings",
+      "start": 19.7,
+      "end": 20.0,
+      "probability": 0.7661228775978088
+    },
+    {
+      "word": "test",
+      "start": 20.0,
+      "end": 20.42,
+      "probability": 0.9629722237586975
+    },
+    {
+      "word": "exposes",
+      "start": 20.42,
+      "end": 21.04,
+      "probability": 0.9961906671524048
+    },
+    {
+      "word": "a",
+      "start": 21.04,
+      "end": 21.48,
+      "probability": 0.9977148771286011
+    },
+    {
+      "word": "problem",
+      "start": 21.48,
+      "end": 21.92,
+      "probability": 0.997995138168335
+    },
+    {
+      "word": "in",
+      "start": 21.92,
+      "end": 22.32,
+      "probability": 0.5923582315444946
+    },
+    {
+      "word": "simulated",
+      "start": 22.32,
+      "end": 22.78,
+      "probability": 0.9907199144363403
+    },
+    {
+      "word": "tasks.",
+      "start": 22.78,
+      "end": 23.38,
+      "probability": 0.9880443215370178
+    },
+    {
+      "word": "At",
+      "start": 23.38,
+      "end": 23.88,
+      "probability": 0.12712931632995605
+    },
+    {
+      "word": "maximum",
+      "start": 23.88,
+      "end": 25.14,
+      "probability": 0.9511231184005737
+    },
+    {
+      "word": "reasoning,",
+      "start": 25.14,
+      "end": 25.76,
+      "probability": 0.9856837391853333
+    },
+    {
+      "word": "Terra",
+      "start": 26.42,
+      "end": 26.6,
+      "probability": 0.6978189945220947
+    },
+    {
+      "word": "got",
+      "start": 26.6,
+      "end": 27.02,
+      "probability": 0.9955636262893677
+    },
+    {
+      "word": "around",
+      "start": 27.02,
+      "end": 27.4,
+      "probability": 0.951512336730957
+    },
+    {
+      "word": "a",
+      "start": 27.4,
+      "end": 27.74,
+      "probability": 0.9598910808563232
+    },
+    {
+      "word": "restriction",
+      "start": 27.74,
+      "end": 28.16,
+      "probability": 0.9638043642044067
+    },
+    {
+      "word": "in",
+      "start": 28.16,
+      "end": 28.72,
+      "probability": 0.7828691601753235
+    },
+    {
+      "word": "29",
+      "start": 28.72,
+      "end": 29.14,
+      "probability": 0.9646686315536499
+    },
+    {
+      "word": ".6",
+      "start": 29.14,
+      "end": 30.04,
+      "probability": 0.9922133684158325
+    },
+    {
+      "word": "%",
+      "start": 30.04,
+      "end": 30.3,
+      "probability": 0.9171516299247742
+    },
+    {
+      "word": "of",
+      "start": 30.3,
+      "end": 30.7,
+      "probability": 0.9694715738296509
+    },
+    {
+      "word": "runs.",
+      "start": 30.7,
+      "end": 31.0,
+      "probability": 0.9904329776763916
+    },
+    {
+      "word": "That",
+      "start": 31.52,
+      "end": 31.68,
+      "probability": 0.6968573331832886
+    },
+    {
+      "word": "test",
+      "start": 31.68,
+      "end": 31.94,
+      "probability": 0.9731054902076721
+    },
+    {
+      "word": "removed",
+      "start": 31.94,
+      "end": 32.3,
+      "probability": 0.9818565249443054
+    },
+    {
+      "word": "system",
+      "start": 32.3,
+      "end": 32.86,
+      "probability": 0.9226033091545105
+    },
+    {
+      "word": "-level",
+      "start": 32.86,
+      "end": 33.34,
+      "probability": 0.6096399575471878
+    },
+    {
+      "word": "safeguards",
+      "start": 33.34,
+      "end": 33.78,
+      "probability": 0.9875295162200928
+    },
+    {
+      "word": "and",
+      "start": 33.78,
+      "end": 34.12,
+      "probability": 0.9023802280426025
+    },
+    {
+      "word": "mainly",
+      "start": 34.12,
+      "end": 34.34,
+      "probability": 0.9958286881446838
+    },
+    {
+      "word": "used",
+      "start": 34.34,
+      "end": 34.82,
+      "probability": 0.986223042011261
+    },
+    {
+      "word": "low",
+      "start": 34.82,
+      "end": 35.04,
+      "probability": 0.8825792074203491
+    },
+    {
+      "word": "-stakes",
+      "start": 35.04,
+      "end": 35.34,
+      "probability": 0.8504322469234467
+    },
+    {
+      "word": "situations.",
+      "start": 35.34,
+      "end": 36.16,
+      "probability": 0.9868811368942261
+    },
+    {
+      "word": "This",
+      "start": 37.12,
+      "end": 37.28,
+      "probability": 0.972399890422821
+    },
+    {
+      "word": "is",
+      "start": 37.28,
+      "end": 37.44,
+      "probability": 0.988991379737854
+    },
+    {
+      "word": "not",
+      "start": 37.44,
+      "end": 37.72,
+      "probability": 0.9940178394317627
+    },
+    {
+      "word": "your",
+      "start": 37.72,
+      "end": 37.92,
+      "probability": 0.9894607663154602
+    },
+    {
+      "word": "real",
+      "start": 37.92,
+      "end": 38.16,
+      "probability": 0.9839404821395874
+    },
+    {
+      "word": "-world",
+      "start": 38.16,
+      "end": 38.52,
+      "probability": 0.9261099994182587
+    },
+    {
+      "word": "failure",
+      "start": 38.52,
+      "end": 38.9,
+      "probability": 0.9969323873519897
+    },
+    {
+      "word": "rate,",
+      "start": 38.9,
+      "end": 39.28,
+      "probability": 0.9938058853149414
+    },
+    {
+      "word": "and",
+      "start": 39.46,
+      "end": 39.58,
+      "probability": 0.9956778883934021
+    },
+    {
+      "word": "in",
+      "start": 39.58,
+      "end": 39.72,
+      "probability": 0.9837689995765686
+    },
+    {
+      "word": "a",
+      "start": 39.72,
+      "end": 39.84,
+      "probability": 0.9901442527770996
+    },
+    {
+      "word": "separate",
+      "start": 39.84,
+      "end": 40.2,
+      "probability": 0.9756901264190674
+    },
+    {
+      "word": "auto",
+      "start": 40.2,
+      "end": 40.52,
+      "probability": 0.7990837693214417
+    },
+    {
+      "word": "-review",
+      "start": 40.52,
+      "end": 40.9,
+      "probability": 0.7937292754650116
+    },
+    {
+      "word": "test,",
+      "start": 40.9,
+      "end": 41.44,
+      "probability": 0.9772297739982605
+    },
+    {
+      "word": "Terra",
+      "start": 42.0,
+      "end": 42.16,
+      "probability": 0.9878518581390381
+    },
+    {
+      "word": "made",
+      "start": 42.16,
+      "end": 42.54,
+      "probability": 0.9983550906181335
+    },
+    {
+      "word": "no",
+      "start": 42.54,
+      "end": 42.82,
+      "probability": 0.9951025247573853
+    },
+    {
+      "word": "attempts",
+      "start": 42.82,
+      "end": 43.18,
+      "probability": 0.9815235733985901
+    },
+    {
+      "word": "to",
+      "start": 43.18,
+      "end": 43.48,
+      "probability": 0.9984195232391357
+    },
+    {
+      "word": "bypass",
+      "start": 43.48,
+      "end": 43.7,
+      "probability": 0.9977414608001709
+    },
+    {
+      "word": "the",
+      "start": 43.7,
+      "end": 44.14,
+      "probability": 0.9959630370140076
+    },
+    {
+      "word": "monitor.",
+      "start": 44.14,
+      "end": 44.44,
+      "probability": 0.8940540552139282
+    },
+    {
+      "word": "Independent",
+      "start": 45.18,
+      "end": 45.18,
+      "probability": 0.9679390788078308
+    },
+    {
+      "word": "results",
+      "start": 45.18,
+      "end": 45.68,
+      "probability": 0.9762048125267029
+    },
+    {
+      "word": "show",
+      "start": 45.68,
+      "end": 46.06,
+      "probability": 0.9717426300048828
+    },
+    {
+      "word": "value,",
+      "start": 46.06,
+      "end": 46.56,
+      "probability": 0.9685009717941284
+    },
+    {
+      "word": "too.",
+      "start": 46.86,
+      "end": 46.98,
+      "probability": 0.9956898093223572
+    },
+    {
+      "word": "Plotly",
+      "start": 48.08,
+      "end": 48.82,
+      "probability": 0.9211306869983673
+    },
+    {
+      "word": "scored",
+      "start": 48.82,
+      "end": 49.14,
+      "probability": 0.9852327704429626
+    },
+    {
+      "word": "it",
+      "start": 49.14,
+      "end": 49.36,
+      "probability": 0.9617201685905457
+    },
+    {
+      "word": "40",
+      "start": 49.36,
+      "end": 49.88,
+      "probability": 0.889977753162384
+    },
+    {
+      "word": "out",
+      "start": 49.88,
+      "end": 50.12,
+      "probability": 0.7131010293960571
+    },
+    {
+      "word": "of",
+      "start": 50.12,
+      "end": 50.16,
+      "probability": 0.9904568791389465
+    },
+    {
+      "word": "43",
+      "start": 50.16,
+      "end": 50.56,
+      "probability": 0.9951441287994385
+    },
+    {
+      "word": "on",
+      "start": 50.56,
+      "end": 51.16,
+      "probability": 0.9874159693717957
+    },
+    {
+      "word": "its",
+      "start": 51.16,
+      "end": 51.3,
+      "probability": 0.9455525279045105
+    },
+    {
+      "word": "analytics",
+      "start": 51.3,
+      "end": 51.72,
+      "probability": 0.8769724369049072
+    },
+    {
+      "word": "exam.",
+      "start": 51.72,
+      "end": 52.42,
+      "probability": 0.986485481262207
+    },
+    {
+      "word": "So,",
+      "start": 52.42,
+      "end": 52.92,
+      "probability": 0.5990800857543945
+    },
+    {
+      "word": "calling",
+      "start": 53.2,
+      "end": 53.44,
+      "probability": 0.9806389212608337
+    },
+    {
+      "word": "the",
+      "start": 53.44,
+      "end": 53.7,
+      "probability": 0.9843742251396179
+    },
+    {
+      "word": "whole",
+      "start": 53.7,
+      "end": 53.94,
+      "probability": 0.9767688512802124
+    },
+    {
+      "word": "model",
+      "start": 53.94,
+      "end": 54.66,
+      "probability": 0.964182436466217
+    },
+    {
+      "word": "terrible",
+      "start": 54.66,
+      "end": 55.22,
+      "probability": 0.8512230515480042
+    },
+    {
+      "word": "misses",
+      "start": 55.22,
+      "end": 55.9,
+      "probability": 0.9765999913215637
+    },
+    {
+      "word": "the",
+      "start": 55.9,
+      "end": 56.08,
+      "probability": 0.9824945330619812
+    },
+    {
+      "word": "evidence.",
+      "start": 56.08,
+      "end": 56.4,
+      "probability": 0.9809281229972839
+    },
+    {
+      "word": "Here's",
+      "start": 57.04,
+      "end": 57.2,
+      "probability": 0.9649968445301056
+    },
+    {
+      "word": "why",
+      "start": 57.2,
+      "end": 57.4,
+      "probability": 0.9947210550308228
+    },
+    {
+      "word": "I'd",
+      "start": 57.4,
+      "end": 57.76,
+      "probability": 0.912847250699997
+    },
+    {
+      "word": "still",
+      "start": 57.76,
+      "end": 58.14,
+      "probability": 0.9932578802108765
+    },
+    {
+      "word": "check",
+      "start": 58.14,
+      "end": 58.52,
+      "probability": 0.9770373106002808
+    },
+    {
+      "word": "the",
+      "start": 58.52,
+      "end": 58.72,
+      "probability": 0.9751758575439453
+    },
+    {
+      "word": "boundaries.",
+      "start": 58.72,
+      "end": 59.04,
+      "probability": 0.9820858240127563
+    },
+    {
+      "word": "Imagine",
+      "start": 59.84,
+      "end": 59.84,
+      "probability": 0.9764124155044556
+    },
+    {
+      "word": "asking",
+      "start": 59.84,
+      "end": 60.54,
+      "probability": 0.9883261322975159
+    },
+    {
+      "word": "an",
+      "start": 60.54,
+      "end": 60.78,
+      "probability": 0.9904130101203918
+    },
+    {
+      "word": "agent",
+      "start": 60.78,
+      "end": 61.16,
+      "probability": 0.9795366525650024
+    },
+    {
+      "word": "to",
+      "start": 61.16,
+      "end": 61.44,
+      "probability": 0.9971605539321899
+    },
+    {
+      "word": "draft",
+      "start": 61.44,
+      "end": 61.74,
+      "probability": 0.9899348616600037
+    },
+    {
+      "word": "an",
+      "start": 61.74,
+      "end": 62.02,
+      "probability": 0.9902674555778503
+    },
+    {
+      "word": "email.",
+      "start": 62.02,
+      "end": 62.3,
+      "probability": 0.9223012328147888
+    },
+    {
+      "word": "Sending",
+      "start": 63.08,
+      "end": 63.26,
+      "probability": 0.9855637550354004
+    },
+    {
+      "word": "it",
+      "start": 63.26,
+      "end": 63.6,
+      "probability": 0.9872990250587463
+    },
+    {
+      "word": "is",
+      "start": 63.6,
+      "end": 63.92,
+      "probability": 0.9221698045730591
+    },
+    {
+      "word": "a",
+      "start": 63.92,
+      "end": 64.08,
+      "probability": 0.9872653484344482
+    },
+    {
+      "word": "separate",
+      "start": 64.08,
+      "end": 64.46,
+      "probability": 0.969673752784729
+    },
+    {
+      "word": "permission.",
+      "start": 64.46,
+      "end": 64.84,
+      "probability": 0.987854540348053
+    },
+    {
+      "word": "Before",
+      "start": 65.32,
+      "end": 65.48,
+      "probability": 0.9941257238388062
+    },
+    {
+      "word": "connecting",
+      "start": 65.48,
+      "end": 65.96,
+      "probability": 0.9965490102767944
+    },
+    {
+      "word": "an",
+      "start": 65.96,
+      "end": 66.22,
+      "probability": 0.9850127696990967
+    },
+    {
+      "word": "agent",
+      "start": 66.22,
+      "end": 66.56,
+      "probability": 0.995733916759491
+    },
+    {
+      "word": "to",
+      "start": 66.56,
+      "end": 66.8,
+      "probability": 0.994938850402832
+    },
+    {
+      "word": "your",
+      "start": 66.8,
+      "end": 66.9,
+      "probability": 0.9866762757301331
+    },
+    {
+      "word": "apps,",
+      "start": 66.9,
+      "end": 67.16,
+      "probability": 0.934524416923523
+    },
+    {
+      "word": "test",
+      "start": 67.86,
+      "end": 67.86,
+      "probability": 0.9851546883583069
+    },
+    {
+      "word": "what",
+      "start": 67.86,
+      "end": 68.16,
+      "probability": 0.9937148690223694
+    },
+    {
+      "word": "it",
+      "start": 68.16,
+      "end": 68.28,
+      "probability": 0.9928373694419861
+    },
+    {
+      "word": "does",
+      "start": 68.28,
+      "end": 68.56,
+      "probability": 0.9964759945869446
+    },
+    {
+      "word": "when",
+      "start": 68.56,
+      "end": 68.86,
+      "probability": 0.9905754327774048
+    },
+    {
+      "word": "a",
+      "start": 68.86,
+      "end": 68.96,
+      "probability": 0.9726689457893372
+    },
+    {
+      "word": "task",
+      "start": 68.96,
+      "end": 69.36,
+      "probability": 0.9892356991767883
+    },
+    {
+      "word": "hits",
+      "start": 69.36,
+      "end": 69.62,
+      "probability": 0.987916886806488
+    },
+    {
+      "word": "a",
+      "start": 69.62,
+      "end": 69.76,
+      "probability": 0.9882209897041321
+    },
+    {
+      "word": "limit.",
+      "start": 69.76,
+      "end": 70.02,
+      "probability": 0.9976592063903809
+    },
+    {
+      "word": "A",
+      "start": 70.28,
+      "end": 70.3,
+      "probability": 0.9938589930534363
+    },
+    {
+      "word": "faster",
+      "start": 70.3,
+      "end": 70.62,
+      "probability": 0.9810999035835266
+    },
+    {
+      "word": "finish",
+      "start": 70.62,
+      "end": 71.2,
+      "probability": 0.9595612287521362
+    },
+    {
+      "word": "only",
+      "start": 71.2,
+      "end": 71.64,
+      "probability": 0.9829632043838501
+    },
+    {
+      "word": "helps",
+      "start": 71.64,
+      "end": 72.18,
+      "probability": 0.9965073466300964
+    },
+    {
+      "word": "if",
+      "start": 72.18,
+      "end": 72.5,
+      "probability": 0.986120879650116
+    },
+    {
+      "word": "it's",
+      "start": 72.5,
+      "end": 72.72,
+      "probability": 0.9751150906085968
+    },
+    {
+      "word": "still",
+      "start": 72.72,
+      "end": 73.0,
+      "probability": 0.9923785924911499
+    },
+    {
+      "word": "the",
+      "start": 73.0,
+      "end": 73.18,
+      "probability": 0.9321293830871582
+    },
+    {
+      "word": "task",
+      "start": 73.18,
+      "end": 73.6,
+      "probability": 0.9903002977371216
+    },
+    {
+      "word": "you",
+      "start": 73.6,
+      "end": 73.84,
+      "probability": 0.9795193076133728
+    },
+    {
+      "word": "authorized.",
+      "start": 73.84,
+      "end": 74.12,
+      "probability": 0.8846380710601807
+    }
+  ],
+  "reviewedByHuman": false,
+  "pronunciationApproved": false,
+  "limitation": "ASR token correspondence is not transcript-forced acoustic alignment. Unmatched words have no invented times. Human timing review is pending; this does not satisfy production alignment approval."
+}

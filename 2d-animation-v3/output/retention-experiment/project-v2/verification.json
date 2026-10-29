@@ -1,0 +1,47 @@
+{
+  "reviewOnly": true,
+  "humanApproval": false,
+  "productionGates": false,
+  "engineHash": "09da46cffb1ac70eff4a2bbd7ca7be4080285ef7046555f5c03e4fe94b977bb5",
+  "candidate": {
+    "sha256": "a898811c036bdbc315aca376fb2016970cecbba7037de12461599b20a72bc701",
+    "durationFrames": 450,
+    "audio": true,
+    "fullDecode": true,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "baseline": {
+    "sha256": "82c23bca52499935f584521d80acede7e44aa2bacd1b2b3eddf307850d99479b",
+    "durationFrames": 450,
+    "audio": true,
+    "fullDecode": true,
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "preview": {
+    "comparedFrames": 450,
+    "minimumSsim": 0.999186,
+    "threshold": 0.98
+  },
+  "audioSync": {
+    "correlation": 0.9999806628244118,
+    "lagSeconds": 0,
+    "toleranceSeconds": 0.03333333333333333
+  },
+  "freshSeekFrames": [
+    0,
+    30,
+    70,
+    120,
+    180,
+    220,
+    260,
+    300,
+    350,
+    420,
+    449
+  ]
+}

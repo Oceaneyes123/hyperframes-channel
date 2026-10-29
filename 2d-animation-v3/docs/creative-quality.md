@@ -1,5 +1,29 @@
 # Creative Quality System v1
 
+## Skill-derived rhythm experiment
+
+[Motion principles](motion-principles.md) records the two user-supplied repositories,
+compatible techniques, conflicts and implementation ownership. The
+[profile](motion-principles-profile.json) contains experimental review settings;
+reference-video measurements remain unknown. Catalog `creative-quality@2` adds
+five advisory detectors and beat-sheet guidance. Existing artifact snapshots stay
+unchanged; no human feedback activation or production approval is inferred.
+
+The motion inspector reviews object-inactive spans, primary-preset concentration,
+neighboring illustration reuse, potentially visible root text budgets and
+standalone audience-facing provenance labels. All five emit `review` findings.
+Holds, continuity and necessary source text can justify exceptions. The profile's
+settings are supplied to the comparison command; Studio uses the default values.
+These checks do not measure attention, embedded artwork text or semantic quality.
+
+[Beat sheets](beat-sheet.md) are optional, validated planning metadata on writing
+drafts and storyboard shots. Older artifacts remain readable. Generation asks for
+the metadata, and motion receives the storyboard sheet as planning intent, using
+existing schemas and measured narration anchors. No audio or executable cues are
+generated. Imported speech remains exactly the draft's spoken lines. Beat-sheet
+and rhythm-rule dependencies participate in the current engine hash; old gates
+cannot authorize future exports against changed engine inputs.
+
 The system extends the existing Studio, curated artwork, GSAP/Remotion interpreter,
 graphics/motion inspectors, measured narration import and exact production gates.
 Technical validity does not establish visual or audible quality. Release evaluation

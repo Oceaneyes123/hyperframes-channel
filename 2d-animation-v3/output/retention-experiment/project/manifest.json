@@ -1,0 +1,81 @@
+{
+  "reviewOnly": true,
+  "productionGates": false,
+  "humanApproval": false,
+  "frames": 450,
+  "fps": 30,
+  "sourceAudioHash": "c734c343c695ea7ce308d654270f920e8971cc2c66cb6e3a00fc1bb6211764ab",
+  "excerptAudioHash": "22a12a78c541f4a411e7bddf177337de02bbc1e5fa6a3f53add67d13278b0e72",
+  "mixedAudioHash": "787b74b45c3052f334611c92ef915ef5492d89129b964704ba7a4007188be46b",
+  "sourceVideo": "output/terra-61-investigation/terra-61-final.mp4",
+  "sourceVideoHash": "406535eca6acd98fcafe119eb83c04976ff2655e19f30a6477a01422de05fe56",
+  "sourceScriptHash": "bdb71419d6f8bc7b328e39b425e86ae6c347b863533d759d34ee76d63d891045",
+  "ranges": [
+    0,
+    39,
+    84,
+    169,
+    197,
+    240,
+    271,
+    324,
+    395,
+    450
+  ],
+  "audio": {
+    "enabled": true,
+    "sourceAudioHash": "22a12a78c541f4a411e7bddf177337de02bbc1e5fa6a3f53add67d13278b0e72",
+    "audioHash": "787b74b45c3052f334611c92ef915ef5492d89129b964704ba7a4007188be46b",
+    "durationFrames": 450,
+    "settings": {
+      "enabled": true,
+      "music": true,
+      "seed": 17,
+      "targetLufs": -16,
+      "cues": [
+        {
+          "frame": 1,
+          "sound": "whoosh"
+        },
+        {
+          "frame": 39,
+          "sound": "pop"
+        },
+        {
+          "frame": 84,
+          "sound": "whoosh"
+        },
+        {
+          "frame": 169,
+          "sound": "pop"
+        },
+        {
+          "frame": 197,
+          "sound": "whoosh"
+        },
+        {
+          "frame": 240,
+          "sound": "pop"
+        },
+        {
+          "frame": 271,
+          "sound": "click"
+        },
+        {
+          "frame": 324,
+          "sound": "chime"
+        },
+        {
+          "frame": 395,
+          "sound": "whoosh"
+        }
+      ]
+    },
+    "integratedLufs": -16.46,
+    "truePeakDbtp": -1.5,
+    "license": "CC0-1.0",
+    "provenance": "Original locally synthesized tones/noise; no external media",
+    "pronunciationApproved": false
+  },
+  "alignment": "../forced-alignment.json"
+}

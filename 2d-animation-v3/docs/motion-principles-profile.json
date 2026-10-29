@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "basis": "skill-derived experiment; no reference clips measured",
+  "sources": [
+    "https://github.com/whaleyxbt/claude-motion/blob/main/.claude/skills/motion-design/SKILL.md",
+    "https://github.com/whaleyxbt/claude-motion/blob/main/.claude/skills/review-loop/SKILL.md",
+    "https://github.com/howseen-ai/claude-motion-design/blob/main/skill/motion-design/SKILL.md"
+  ],
+  "measuredReference": {
+    "changeEventsPer5Seconds": null,
+    "textPerShot": null,
+    "shotLengthDistribution": null,
+    "cameraMovesPerMinute": null,
+    "loudnessRangeLUFS": null
+  },
+  "reviewTargets": {
+    "maxInactiveFrames": 45,
+    "maxPrimaryPresetShare": 0.4,
+    "minimumPrimaryBeats": 3,
+    "maxTextElementsPerShot": 2
+  }
+}

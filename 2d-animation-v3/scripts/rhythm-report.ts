@@ -12,7 +12,7 @@ const histogram = (items: string[]) => items.reduce<Record<string, number>>((cou
 const words = (label: string) => label.trim().match(/\S+/gu)?.length ?? 0;
 
 /** Declarative diagnostics only: no video decoding, OCR or perceptual quality score. */
-export function rhythmReport(input: unknown, source?: unknown) {
+export function rhythmReport(input: unknown, source?: unknown, endFrame?: number) {
   const plan = motionPlanSchema.parse(input && typeof input === "object" && "plan" in input ? input.plan : input);
   const board = source === undefined ? undefined : visualArtifactSchema.parse(source);
   if (board && (board.output.kind !== "storyboard" || board.output.shots.length !== plan.shots.length)) throw new Error("Storyboard must cover the complete motion plan.");
@@ -20,12 +20,15 @@ export function rhythmReport(input: unknown, source?: unknown) {
     if (shot.sourceIndex !== index || shot.sourceHash !== createHash("sha256").update(JSON.stringify(board.output.shots[index])).digest("hex")) throw new Error("Storyboard shot hash does not match the motion plan.");
   }
   const schedule = scheduleMotion(plan), events: Event[] = [];
+  const durationFrames = endFrame ?? schedule.durationFrames;
+  if (!Number.isInteger(durationFrames) || durationFrames < 1 || durationFrames > schedule.durationFrames) throw new Error("Report range must end inside the source timeline.");
   const frames = Array.from({ length: schedule.durationFrames }, () => ({ text: new Map<string, string>(), illustrations: new Set<string>() }));
   const presets: { frame: number; id: string; primary: boolean }[] = [];
   const illustrationShots: Record<string, string[]> = {};
   let previousBackground: string | undefined;
   for (const [index, original] of plan.shots.entries()) {
     const shot = expandMotionShot(original), span = schedule.shots[index];
+    if (span.startFrame >= durationFrames) break;
     const add = (target: string, kind: string, start: number, end = start) => {
       events.push({ shotId: shot.id, target, kind, startFrame: span.startFrame + start, endFrame: span.startFrame + end });
     };
@@ -75,7 +78,7 @@ export function rhythmReport(input: unknown, source?: unknown) {
       if (drawing.startFrame.background !== drawing.endFrame.background) add("background", "background-change", 0, shot.durationFrames - 1);
       previousBackground = drawing.endFrame.background;
     }
-    for (let frame = 0; frame < shot.durationFrames; frame++) {
+    for (let frame = 0; frame < shot.durationFrames && span.startFrame + frame < durationFrames; frame++) {
       const bucket = frames[span.startFrame + frame];
       for (const object of shot.objects) {
         let opacity = object.initial.opacity, reveal = object.initial.reveal ?? 1;
@@ -97,10 +100,10 @@ export function rhythmReport(input: unknown, source?: unknown) {
     }
   }
   // Timeline endpoint has no rendered frame; exclude exit events there.
-  const distinct = events.filter((event, index) => event.startFrame < schedule.durationFrames && events.findIndex((other) => other.shotId === event.shotId && other.target === event.target && other.kind === event.kind && other.startFrame === event.startFrame) === index);
+  const distinct = events.filter((event, index) => event.startFrame < durationFrames && events.findIndex((other) => other.shotId === event.shotId && other.target === event.target && other.kind === event.kind && other.startFrame === event.startFrame) === index);
   const windows = [];
-  for (let start = 0; start < schedule.durationFrames; start += plan.fps * 2) {
-    const end = Math.min(start + plan.fps * 2, schedule.durationFrames), slice = frames.slice(start, end);
+  for (let start = 0; start < durationFrames; start += plan.fps * 2) {
+    const end = Math.min(start + plan.fps * 2, durationFrames), slice = frames.slice(start, end);
     const starts = distinct.filter((event) => event.startFrame >= start && event.startFrame < end);
     const text = new Map(slice.flatMap((frame) => [...frame.text])), illustrations = [...new Set(slice.flatMap((frame) => [...frame.illustrations]))];
     windows.push({ startSeconds: start / plan.fps, endSeconds: end / plan.fps, changeEvents: starts.length, eventKinds: histogram(starts.map((event) => event.kind)),
@@ -109,10 +112,10 @@ export function rhythmReport(input: unknown, source?: unknown) {
       peakConcurrentTextElements: Math.max(...slice.map((frame) => frame.text.size)), peakConcurrentWords: Math.max(...slice.map((frame) => [...frame.text.values()].reduce((sum, text) => sum + words(text), 0))),
       illustrations, presetHistogram: histogram(presets.filter((preset) => preset.frame >= start && preset.frame < end).map((preset) => preset.id)) });
   }
-  return { schemaVersion: 1, basis: "motion-plan diagnostics; not decoded video or retention evidence", fps: plan.fps, durationFrames: schedule.durationFrames,
+  return { schemaVersion: 1, basis: "motion-plan diagnostics; not decoded video or retention evidence", fps: plan.fps, durationFrames,
     limitations: ["Visibility uses positive root opacity/reveal with linear interpolation; no clipping, occlusion, transition masks or embedded illustration text analysis.", "Text words are full authored labels, including during partial text reveals. Windows report union and simultaneous peaks separately.", "Events are changed-action onsets merged across touching phases per target/category, plus actor lifetimes, text treatments and optional background changes. Invisible part actions may count.", "Counter transitions are counted once, not individual decorative digit ticks. Compound illustration internals and environment treatments are not independently counted.", "Without a storyboard background changes are unknown; without beats/textMotions preset identity is unknown."],
-    backgroundMeasured: !!board, summary: { shots: plan.shots.length, changeEvents: distinct.length, zeroOnsetWindows: windows.filter((window) => !window.changeEvents).length,
-      presetHistogram: histogram(presets.map((preset) => preset.id)), primaryPresetHistogram: histogram(presets.filter((preset) => preset.primary).map((preset) => preset.id)),
+    backgroundMeasured: !!board, summary: { shots: schedule.shots.filter(shot => shot.startFrame < durationFrames).length, changeEvents: distinct.length, zeroOnsetWindows: windows.filter((window) => !window.changeEvents).length,
+      presetHistogram: histogram(presets.filter(preset => preset.frame < durationFrames).map((preset) => preset.id)), primaryPresetHistogram: histogram(presets.filter((preset) => preset.primary && preset.frame < durationFrames).map((preset) => preset.id)),
       illustrationShots }, windows, events: distinct };
 }
 

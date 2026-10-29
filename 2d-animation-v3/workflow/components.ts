@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { isTrustedScene } from "./trusted-scenes.ts";
 import type { VariableTypeReference } from "./variable-type.ts";
 import { type GraphicReference, assetMetadata, graphicAssetRegistry } from "./graphic-assets.ts";
 
@@ -61,6 +62,7 @@ export function componentLayerIds(type: ComponentType, details?: ComponentDetail
 export function componentParts(type: ComponentType, color: string, overrides?: Record<string, PartState>, details?: ComponentDetails) {
   const parts: Record<string, PartState> = Object.fromEntries(componentLayerIds(type, details).map((part) => [part, { x: 0, y: 0, scale: 1, opacity: 0, color, reveal: 1 }]));
   for (const [part, state] of Object.entries(overrides ?? {})) {
+    if (isTrustedScene(details?.asset?.id) && (state.x !== 0 || state.y !== 0 || state.scale !== 1)) throw new Error("Trusted scene layer geometry is fixed; transform its root.");
     if (["payment-terminal@1", "banking-balance@1", "data-comparison@1", "morph-shape@1"].includes(type) && (state.x !== 0 || state.y !== 0 || state.scale !== 1)) throw new Error("This component has fixed part geometry; transform its root.");
     if (!Object.hasOwn(parts, part)) throw new Error("Unknown component part.");
     if (state.strokeProgress !== undefined && (type !== "semantic-diagram@1" || !details?.diagram?.edges.some((edge) => edge.id === part))) throw new Error("Stroke progress requires a diagram edge.");

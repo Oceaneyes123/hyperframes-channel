@@ -2,6 +2,7 @@ import { createHash, randomUUID } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync, rmSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { z } from "zod";
+import { audioLayerSchema } from "../workflow/audio-layer.ts";
 import { openDatabase } from "./database.ts";
 import { openMotion } from "./motion-store.ts";
 import { openVisuals } from "./visual-store.ts";
@@ -13,8 +14,8 @@ import { inspectGraphics } from "../engine/quality/inspect-graphics.ts";
 import { openTiming } from "./timing-store.ts";
 
 const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
-const engineFiles = ["engine/components/finance-surface.tsx", "workflow/variable-type.ts", "workflow/variable-type-atlas.json", "engine/components/variable-type.tsx", "public/fonts/roboto-flex/RobotoFlex.ttf", "public/fonts/roboto-flex/LICENSE.txt", "workflow/perspective.ts", "engine/components/perspective-scene.tsx", "workflow/raster.ts", "workflow/raster-assets.json", "engine/components/editorial-collage.tsx", "public/media/collage/fictional-desk-v1.png", "public/media/collage/paper-grain-v1.png", "workflow/semantic-morphs.ts", "engine/components/morph-chain.tsx", "workflow/character-rig.ts", "engine/components/character-rig.tsx", "workflow/ui-workflow.ts", "engine/components/ui-workflow.tsx", "workflow/numeric-glyphs.json", "workflow/numeric.ts", "engine/components/numeric-display.tsx", "workflow/morphs.ts", "engine/components/morph-shape.tsx", "workflow/comparison.ts", "workflow/comparison-sources.json", "engine/components/data-comparison.tsx", "workflow/narration-anchor.ts", "workflow/typography.ts", "engine/heading-text.tsx", "public/fonts/inter-heading/InterVariable.woff2", "public/fonts/inter-heading/LICENSE.txt", "workflow/text-motion.ts", "engine/text-motion.tsx", "engine/register-planning.tsx", "app/projects/[id]/visuals/frame.tsx", "engine/quality/inspect-graphics.ts", "workflow/vector-assets.ts", "workflow/graphic-library.ts", "workflow/graphic-pack.json", "workflow/diagram.ts", "workflow/art-direction.ts", "engine/graphics/layered-graphic.tsx", "engine/graphics/background.tsx", "workflow/graphic-assets.ts", "engine/graphics/complaint-workflow.tsx", "engine/text-metrics.ts", "engine/quality/inspect-motion.ts", "workflow/timing.ts", "engine/components/visual-component.tsx", "workflow/components.ts", "engine/motion-presets/index.ts", "engine/register.tsx", "engine/motion-composition.tsx", "engine/compile-motion.ts", "engine/visual-symbol.tsx", "engine/visual-text.tsx", "engine/split-screen.tsx", "workflow/motion.ts", "workflow/visuals.ts", "workflow/production.ts", "server/render.ts", "server/wav.ts", "next.config.ts", "package-lock.json"];
-const narrationSchema = z.object({ motionId: z.uuid(), motionHash: z.string(), audioHash: z.string(), timing: z.array(z.object({ number: z.number(), startFrame: z.number(), endFrame: z.number() })), measured: z.object({ durationSeconds: z.number(), durationFrames: z.number(), sampleRate: z.number(), channels: z.number(), waveform: z.array(z.number()) }) });
+const engineFiles = ["workflow/audio-layer.ts", "server/audio-layer.ts", "workflow/trusted-scenes.ts", "workflow/motion-kit.json", "engine/components/trusted-scene.tsx", "workflow/beat-sheet.ts", "workflow/rhythm-profile.ts", "engine/components/finance-surface.tsx", "workflow/variable-type.ts", "workflow/variable-type-atlas.json", "engine/components/variable-type.tsx", "public/fonts/roboto-flex/RobotoFlex.ttf", "public/fonts/roboto-flex/LICENSE.txt", "workflow/perspective.ts", "engine/components/perspective-scene.tsx", "workflow/raster.ts", "workflow/raster-assets.json", "engine/components/editorial-collage.tsx", "public/media/collage/fictional-desk-v1.png", "public/media/collage/paper-grain-v1.png", "workflow/semantic-morphs.ts", "engine/components/morph-chain.tsx", "workflow/character-rig.ts", "engine/components/character-rig.tsx", "workflow/ui-workflow.ts", "engine/components/ui-workflow.tsx", "workflow/numeric-glyphs.json", "workflow/numeric.ts", "engine/components/numeric-display.tsx", "workflow/morphs.ts", "engine/components/morph-shape.tsx", "workflow/comparison.ts", "workflow/comparison-sources.json", "engine/components/data-comparison.tsx", "workflow/narration-anchor.ts", "workflow/typography.ts", "engine/heading-text.tsx", "public/fonts/inter-heading/InterVariable.woff2", "public/fonts/inter-heading/LICENSE.txt", "workflow/text-motion.ts", "engine/text-motion.tsx", "engine/register-planning.tsx", "app/projects/[id]/visuals/frame.tsx", "engine/quality/inspect-graphics.ts", "workflow/vector-assets.ts", "workflow/graphic-library.ts", "workflow/graphic-pack.json", "workflow/diagram.ts", "workflow/art-direction.ts", "engine/graphics/layered-graphic.tsx", "engine/graphics/background.tsx", "workflow/graphic-assets.ts", "engine/graphics/complaint-workflow.tsx", "engine/text-metrics.ts", "engine/quality/inspect-motion.ts", "workflow/timing.ts", "engine/components/visual-component.tsx", "workflow/components.ts", "engine/motion-presets/index.ts", "engine/register.tsx", "engine/motion-composition.tsx", "engine/compile-motion.ts", "engine/visual-symbol.tsx", "engine/visual-text.tsx", "engine/split-screen.tsx", "workflow/motion.ts", "workflow/visuals.ts", "workflow/production.ts", "server/render.ts", "server/wav.ts", "next.config.ts", "package-lock.json"];
+const narrationSchema = z.object({ soundtrack: z.object({ audioHash: z.string().regex(/^[a-f0-9]{64}$/), sourceAudioHash: z.string().regex(/^[a-f0-9]{64}$/), settings: audioLayerSchema.refine(settings => settings.enabled), integratedLufs: z.number().finite(), truePeakDbtp: z.number().max(-1) }).optional(), motionId: z.uuid(), motionHash: z.string(), audioHash: z.string(), timing: z.array(z.object({ number: z.number(), startFrame: z.number(), endFrame: z.number() })), measured: z.object({ durationSeconds: z.number(), durationFrames: z.number(), sampleRate: z.number(), channels: z.number(), waveform: z.array(z.number()) }) });
 export function hashEngine(root = process.cwd()) {
   return hash(engineFiles.map((file) => hash(readFileSync(/* turbopackIgnore: true */ resolve(/* turbopackIgnore: true */ root, file)))).join(""));
 }
@@ -39,7 +40,10 @@ export function openProduction(directory: string, videos: string) {
     const row = rows(projectId).find((row) => row.id === z.uuid().parse(id) && row.kind === "narration");
     if (!row) throw new Error("Narration unavailable."); const value = narrationSchema.parse(row.payload);
     const bytes = readFileSync(join(videos, projectId, "production", `${id}.wav`));
-    if (hash(bytes) !== value.audioHash) throw new Error("Narration audio integrity failed."); return { id, ...value, bytes };
+    if (hash(bytes) !== value.audioHash) throw new Error("Narration audio integrity failed.");
+    const mixedBytes = value.soundtrack ? readFileSync(join(videos, projectId, "production", `${id}.mix.wav`)) : undefined;
+    if (mixedBytes && hash(mixedBytes) !== value.soundtrack!.audioHash) throw new Error("Soundtrack integrity failed.");
+    return { id, ...value, bytes, mixedBytes };
   }
   function snapshot(projectId: string) {
     const receipt = motion.acceptance(projectId); if (!receipt || receipt.stale) throw new ConflictError("Accept current motion before production review.");
@@ -50,7 +54,7 @@ export function openProduction(directory: string, videos: string) {
     validateTiming(voice.timing, artifact.plan, scriptLines(studio.readRevision(projectId, artifact.source.scriptId)!.content));
     // Local export requires the source checkout; never trace generated media into the Next build.
     const quality = inspectMotion(artifact.plan, board), engineHash = hashEngine();
-    const binding = hash(JSON.stringify({ motion: receipt.sha256, source: artifact.source, voice: voice.id, audio: voice.audioHash, timing: voice.timing, engineHash, quality, width: 1080, height: 1920, fps: 30 }));
+    const binding = hash(JSON.stringify({ motion: receipt.sha256, source: artifact.source, voice: voice.id, audio: voice.audioHash, ...(voice.soundtrack ? { soundtrack: voice.soundtrack.audioHash, soundtrackSettings: voice.soundtrack.settings } : {}), timing: voice.timing, engineHash, quality, width: 1080, height: 1920, fps: 30 }));
     return { binding, artifact, board, voice, quality, engineHash };
   }
   function gates(projectId: string, binding: string) {
@@ -83,6 +87,19 @@ export function openProduction(directory: string, videos: string) {
         mkdirSync(join(videos, projectId, "production"), { recursive: true }); writeFileSync(path, bytes, { flag: "wx", flush: true }); owned = true;
         append(projectId, "narration", { motionId, motionHash: receipt.sha256, audioHash: hash(bytes), timing: aligned, measured }, id); return id;
       }); } catch (error) { if (owned) rmSync(path); throw error; }
+    },
+    importSoundtrack(projectId: string, narrationId: string, mixedBytes: Buffer, input: unknown) {
+      const source = audio(projectId, narrationId), soundtrack = narrationSchema.shape.soundtrack.unwrap().parse(input);
+      const measured = inspectWav(mixedBytes);
+      if (soundtrack.sourceAudioHash !== source.audioHash || soundtrack.audioHash !== hash(mixedBytes) || measured.durationFrames !== source.measured.durationFrames) throw new Error("Soundtrack must bind the exact narration and preserve its duration.");
+      const id = randomUUID(), base = join(videos, z.uuid().parse(projectId), "production", id), owned: string[] = [];
+      try { return transaction(() => {
+        const current = snapshot(projectId);
+        if (current.voice.id !== narrationId) throw new ConflictError("Soundtrack source narration is stale.");
+        for (const [path, bytes] of [[`${base}.wav`, source.bytes], [`${base}.mix.wav`, mixedBytes]] as const) { writeFileSync(path, bytes, { flag: "wx", flush: true }); owned.push(path); }
+        append(projectId, "narration", { motionId: source.motionId, motionHash: source.motionHash, audioHash: source.audioHash, timing: source.timing, measured: source.measured, soundtrack }, id);
+        return id;
+      }); } catch (error) { for (const path of owned) rmSync(path); throw error; }
     },
     approve(projectId: string, input: unknown) {
       const request = z.strictObject({ binding: z.string().regex(/^[a-f0-9]{64}$/), gate: z.enum(["gate1", "gate2"]), reviewed: z.literal(true), notes: z.string().trim().min(10).max(2000) }).parse(input);

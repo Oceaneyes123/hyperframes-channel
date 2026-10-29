@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "basis": "motion-plan diagnostics; not decoded video or retention evidence",
+  "fps": 30,
+  "durationFrames": 450,
+  "limitations": [
+    "Visibility uses positive root opacity/reveal with linear interpolation; no clipping, occlusion, transition masks or embedded illustration text analysis.",
+    "Text words are full authored labels, including during partial text reveals. Windows report union and simultaneous peaks separately.",
+    "Events are changed-action onsets merged across touching phases per target/category, plus actor lifetimes, text treatments and optional background changes. Invisible part actions may count.",
+    "Counter transitions are counted once, not individual decorative digit ticks. Compound illustration internals and environment treatments are not independently counted.",
+    "Without a storyboard background changes are unknown; without beats/textMotions preset identity is unknown."
+  ],
+  "backgroundMeasured": true,
+  "summary": {
+    "shots": 2,
+    "changeEvents": 22,
+    "zeroOnsetWindows": 2,
+    "presetHistogram": {
+      "snap-overshoot@1": 5,
+      "mask-reveal@1": 2,
+      "cascade@1": 1,
+      "word-stagger@1": 1
+    },
+    "primaryPresetHistogram": {
+      "snap-overshoot@1": 1,
+      "mask-reveal@1": 1
+    },
+    "illustrationShots": {
+      "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904": [
+        "shot-1",
+        "shot-2"
+      ]
+    }
+  },
+  "windows": [
+    {
+      "startSeconds": 0,
+      "endSeconds": 2,
+      "changeEvents": 5,
+      "eventKinds": {
+        "enter": 4,
+        "transformation": 1
+      },
+      "activeEvents": 5,
+      "textElements": 2,
+      "textWords": 4,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 4,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 2,
+      "endSeconds": 4,
+      "changeEvents": 8,
+      "eventKinds": {
+        "exit": 4,
+        "enter": 4
+      },
+      "activeEvents": 8,
+      "textElements": 4,
+      "textWords": 11,
+      "peakConcurrentTextElements": 4,
+      "peakConcurrentWords": 11,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "mask-reveal@1": 2
+      }
+    },
+    {
+      "startSeconds": 4,
+      "endSeconds": 6,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 6,
+      "endSeconds": 8,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 1,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    },
+    {
+      "startSeconds": 8,
+      "endSeconds": 10,
+      "changeEvents": 6,
+      "eventKinds": {
+        "transformation": 3,
+        "enter": 2,
+        "exit": 1
+      },
+      "activeEvents": 6,
+      "textElements": 3,
+      "textWords": 12,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 2,
+        "cascade@1": 1
+      }
+    },
+    {
+      "startSeconds": 10,
+      "endSeconds": 12,
+      "changeEvents": 1,
+      "eventKinds": {
+        "text-treatment": 1
+      },
+      "activeEvents": 4,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "word-stagger@1": 1
+      }
+    },
+    {
+      "startSeconds": 12,
+      "endSeconds": 14,
+      "changeEvents": 1,
+      "eventKinds": {
+        "transformation": 1
+      },
+      "activeEvents": 2,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {
+        "snap-overshoot@1": 1
+      }
+    },
+    {
+      "startSeconds": 14,
+      "endSeconds": 15,
+      "changeEvents": 0,
+      "eventKinds": {},
+      "activeEvents": 0,
+      "textElements": 2,
+      "textWords": 7,
+      "peakConcurrentTextElements": 2,
+      "peakConcurrentWords": 7,
+      "illustrations": [
+        "owner-review-console@1:88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904"
+      ],
+      "presetHistogram": {}
+    }
+  ],
+  "events": [
+    {
+      "shotId": "shot-1",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-1",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 0,
+      "endFrame": 0
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 84,
+      "endFrame": 84
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2.human-hand",
+      "kind": "transformation",
+      "startFrame": 3,
+      "endFrame": 28
+    },
+    {
+      "shotId": "shot-1",
+      "target": "actor-2.human-hand",
+      "kind": "enter",
+      "startFrame": 9,
+      "endFrame": 19
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-1",
+      "kind": "enter",
+      "startFrame": 60,
+      "endFrame": 60
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2",
+      "kind": "enter",
+      "startFrame": 60,
+      "endFrame": 60
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-3",
+      "kind": "enter",
+      "startFrame": 60,
+      "endFrame": 60
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.draft",
+      "kind": "exit",
+      "startFrame": 85,
+      "endFrame": 100
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.draft",
+      "kind": "enter",
+      "startFrame": 101,
+      "endFrame": 165
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2",
+      "kind": "transformation",
+      "startFrame": 170,
+      "endFrame": 215
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.human-hand",
+      "kind": "transformation",
+      "startFrame": 240,
+      "endFrame": 270
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2.human-hand",
+      "kind": "enter",
+      "startFrame": 247,
+      "endFrame": 259
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-3",
+      "kind": "transformation",
+      "startFrame": 280,
+      "endFrame": 300
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-3",
+      "kind": "exit",
+      "startFrame": 285,
+      "endFrame": 293
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-4",
+      "kind": "transformation",
+      "startFrame": 295,
+      "endFrame": 317
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-4",
+      "kind": "enter",
+      "startFrame": 296,
+      "endFrame": 315
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-2",
+      "kind": "transformation",
+      "startFrame": 365,
+      "endFrame": 415
+    },
+    {
+      "shotId": "shot-2",
+      "target": "actor-4",
+      "kind": "text-treatment",
+      "startFrame": 324,
+      "endFrame": 366
+    }
+  ]
+}

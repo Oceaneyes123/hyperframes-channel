@@ -7,9 +7,17 @@ against the source drawings, object correspondence and supported interpreter.
 
 Concepts, storyboards and storyboard-shot revisions use
 `CLIPROXYAPI_VISUAL_MODEL` when set, falling back to `CLIPROXYAPI_MODEL`.
-This workspace selects `gpt-6.1-sol` for visual planning and keeps the default
-`gpt-6-luna` for writing, editorial work and motion. Each visual job records the
-model actually requested. Existing proposals retain their original model history.
+Use Sol 6.1 (`gpt-6.1-sol`) for all workflow work except rendering and export:
+research, writing, editorial review, narration coordination, visual planning,
+storyboards, motion authoring and creative review. Use Luna (`gpt-6-luna`) only
+to operate the rendering and export workflow, including render preflight,
+preview/review renders, encoding and technical output verification. Remotion,
+GSAP and FFmpeg remain the rendering tools; Luna coordinates their execution.
+See [workflow model assignments](workflow-efficiency.md#model-assignments).
+
+These are workflow agent assignments, not a runtime configuration change. Each
+visual job records the model actually requested. Existing proposals retain their
+original model history.
 
 ## General visual direction
 

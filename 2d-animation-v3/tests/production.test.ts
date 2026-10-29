@@ -12,6 +12,7 @@ import { boardFixture, conceptFixture } from "./fixtures/visuals.ts";
 import { motionFixture } from "./fixtures/motion.ts";
 import { wavFixture } from "./fixtures/wav.ts";
 import { mediaResponse } from "../server/media-response.ts";
+import { createHash } from "node:crypto";
 
 test("media responses support precise range seeking, suffix ranges and HEAD", async () => {
   const bytes = new Uint8Array([1, 2, 3, 4]);
@@ -64,5 +65,18 @@ test("measured narration rejects malformed, silent, mismatched and unaligned inp
   assert.throws(() => production.approve(project.id, { ...review, gate: "gate1" }), /changed/);
   const fresh = production.status(project.id); const approved = production.approveReview(project.id, { ...combined, binding: fresh.binding });
   assert.equal(production.status(project.id).gate1, approved.gate1); assert.equal(production.status(project.id).gate2, approved.gate2);
+  const source = production.snapshot(project.id).voice;
+  assert.equal(source.mixedBytes, undefined);
+  const digest = createHash("sha256").update(wav).digest("hex");
+  const soundtrack = { audioHash: digest, sourceAudioHash: digest, settings: { enabled: true, music: true, cues: [] }, integratedLufs: -16, truePeakDbtp: -1.5 };
+  assert.throws(() => production.importSoundtrack(project.id, source.id, wav, { ...soundtrack, sourceAudioHash: "0".repeat(64) }), /exact narration/);
+  const mixedId = production.importSoundtrack(project.id, source.id, wav, soundtrack);
+  assert.deepEqual(production.audio(project.id, mixedId).bytes, wav);
+  assert.deepEqual(production.audio(project.id, mixedId).mixedBytes, wav);
+  assert.equal(production.status(project.id).gate1, null);
+  assert.equal(production.status(project.id).gate2, null);
+  assert.throws(() => production.beginRender(project.id, fresh.binding!, true), /gates/);
+  const mixedStore = openProduction(directory, videos);
+  try { assert.deepEqual(mixedStore.audio(project.id, mixedId).mixedBytes, wav); assert.equal(mixedStore.status(project.id).gate2, null); } finally { mixedStore.close(); }
   studio.saveScript(project.id, "Changed\nTwo\nThree", script.id); assert.equal(production.status(project.id).ready, false);
 });

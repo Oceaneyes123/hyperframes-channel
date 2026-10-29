@@ -1,8 +1,9 @@
 import pack from "./graphic-pack.json" with { type: "json" };
+import motionKit from "./motion-kit.json" with { type: "json" };
 import { parseVectorAsset, type VectorAsset } from "./vector-assets.ts";
 
 export const vectorLibrary: Record<string, { contentHash: string; asset: VectorAsset }> = {};
-for (const entry of pack) {
+for (const entry of [...pack, ...motionKit]) {
   const asset = parseVectorAsset(entry.asset);
   if (vectorLibrary[asset.id] || !/^[a-f0-9]{64}$/.test(entry.contentHash)) throw new Error("Invalid curated asset registry.");
   vectorLibrary[asset.id] = { asset, contentHash: entry.contentHash };

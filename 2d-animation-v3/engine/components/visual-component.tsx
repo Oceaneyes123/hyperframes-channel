@@ -1,4 +1,6 @@
 import { FinanceSurface } from "./finance-surface.tsx";
+import { TrustedScene } from "./trusted-scene.tsx";
+import { isTrustedScene } from "../../workflow/trusted-scenes.ts";
 import { LayeredGraphic } from "../graphics/layered-graphic.tsx";
 import type { ComponentDetails } from "../../workflow/components.ts";
 import { VariableType } from "./variable-type.tsx";
@@ -20,6 +22,7 @@ export function VisualComponent({ type, width, height, color, parts, values, lab
   type: ComponentType; width: number; height: number; color: string; parts?: Record<string, PartState>; values?: [number, number]; label?: string; actorId?: string; coordinateScale?: number;
 }) {
   const clip = useId(); const states = componentParts(type, color, parts, { asset, diagram });
+  if (type === "graphic-asset@2" && isTrustedScene(asset?.id)) return <TrustedScene id={asset.id} width={width} height={height} progress={states.motion.reveal ?? 0}/>;
   if (type === "payment-terminal@1" || type === "banking-balance@1") return <FinanceSurface type={type} width={width} height={height} states={states} actorId={actorId} label={label} />;
   if (type === "variable-type@1" && variableType) return <VariableType reference={variableType} width={width} height={height} state={states.glyphs} actorId={actorId} coordinateScale={coordinateScale} />;
   if (type === "perspective-scene@1" && perspective) return <PerspectiveScene width={width} height={height} state={states.camera} actorId={actorId} />;

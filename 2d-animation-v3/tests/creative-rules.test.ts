@@ -4,7 +4,7 @@ import { randomUUID, createHash } from "node:crypto";
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { creativeRules, creativeRuleSchema, creativeRulesMarkdown } from "../workflow/creative-rules.ts";
+import { creativeRules, creativeRuleSchema, creativeRulesMarkdown, creativeRulesVersion } from "../workflow/creative-rules.ts";
 import { creativeFeedback } from "../server/creative-feedback.ts";
 import { graphicsGallery } from "./fixtures/graphics-gallery.ts";
 import { inspectGraphics } from "../engine/quality/inspect-graphics.ts";
@@ -104,7 +104,8 @@ test("generation supplies stage rules, freezes their snapshots and preserves acc
   assert.equal(before.creativeRules?.stage, "graphics"); assert.equal(motion.creativeRules?.stage, "motion");
   assert.ok(before.creativeRules!.rules.some((rule) => rule.id === "CQ-ENERGY" && rule.version === 2));
   assert.ok(gateway.requests.some((request) => request.messages.some((message) => message.content.includes("Profile intense: punchy, dynamic choreography"))));
-  assert.ok(gateway.requests.every((request) => request.messages[0].content.includes("creative-quality@1")));
+  assert.ok(gateway.requests.every((request) => request.messages[0].content.includes(creativeRulesVersion)));
+  assert.ok(gateway.requests.some((request) => request.messages.some((message) => message.content.includes("beatSheet"))));
   assert.ok(!motion.creativeRules!.rules.some((rule) => rule.id === "CQ-VOICE"));
   const feedback = creativeFeedback(config.dataDirectory), sourceHash = createHash("sha256").update(JSON.stringify(before)).digest("hex");
   const proposal = feedback.propose(project.id, { artifactId: boardId, shotIndex: 0, stage: "graphics", evidence: "Synthetic repeated layout.", correction: "Review the persistent container.", exceptions: "Intentional continuity." }, sourceHash);

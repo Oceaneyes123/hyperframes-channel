@@ -1,0 +1,12 @@
+{
+  "baseline": {
+    "integratedLufs": -18.9,
+    "truePeakDbtp": -0.6,
+    "loudnessRange": 3.5
+  },
+  "candidate": {
+    "integratedLufs": -16.48,
+    "truePeakDbtp": -4.47,
+    "loudnessRange": 2.2
+  }
+}

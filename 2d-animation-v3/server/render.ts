@@ -51,7 +51,7 @@ export async function renderProduction(projectId: string, binding: string, autho
     progress("Checking render dependencies and output storage…"); await preflight("render", signal, config);
     const output = join(config.videosDirectory, projectId, "production", job.id); mkdirSync(output, { recursive: false });
     const serveUrl = await bundle({ entryPoint: resolve("engine/register.tsx"), publicDir: resolve("public") }); signal.throwIfAborted();
-    const inputProps = { plan: job.artifact.plan, board: job.board, narrationUrl: `data:audio/wav;base64,${job.voice.bytes.toString("base64")}` };
+    const inputProps = { plan: job.artifact.plan, board: job.board, narrationUrl: `data:audio/wav;base64,${(job.voice.mixedBytes ?? job.voice.bytes).toString("base64")}` };
     const browserExecutable = process.env.V3_CHROME_PATH ?? "C:/Program Files/Google/Chrome/Application/chrome.exe";
     const composition = await selectComposition({ serveUrl, id: "Production", inputProps, browserExecutable });
     const { cancelSignal, cancel } = makeCancelSignal(); signal.addEventListener("abort", cancel, { once: true });
@@ -76,7 +76,7 @@ export async function renderProduction(projectId: string, binding: string, autho
     } finally { signal.removeEventListener("abort", cancel); }
     signal.throwIfAborted(); progress("Verifying full decode, every encoded frame and narration synchronization…"); const verification = await verifyExport(join(output, "export.mp4"), composition.durationInFrames);
     const preview = await verifyPreviewFrames(output, composition.durationInFrames);
-    const audio = await verifyAudioSync(join(config.videosDirectory, projectId, "production", `${job.voice.id}.wav`), join(output, "export.mp4"));
+    const audio = await verifyAudioSync(join(config.videosDirectory, projectId, "production", `${job.voice.id}${job.voice.soundtrack ? ".mix" : ""}.wav`), join(output, "export.mp4"));
     signal.throwIfAborted();
     store.finishRender(projectId, job.id, binding, { ...verification, engineHash: job.engineHash, preview, audioSync: audio, renderPasses: 1, referenceFramesReusedForEncoding: composition.durationInFrames, checkedSeekFrames: [...new Set([0, composition.durationInFrames - 1, ...boundariesFor(job.artifact.plan)])] }); return job.id;
   } catch (error) { if (jobId) store.failRender(projectId, jobId); if (error instanceof PreflightError) throw error; throw new Error("Render failed or inputs changed. Prior artifacts preserved; inspect job history."); }

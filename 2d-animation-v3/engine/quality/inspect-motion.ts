@@ -3,8 +3,9 @@ import { perspectivePose, perspectiveScene, projectPoint, tokenPoint } from "../
 import { highEnergyPacing, expandMotionShot, scheduleMotion, type MotionPlan, type MotionState } from "../../workflow/motion.ts";
 import type { VisualArtifact } from "../../workflow/visuals.ts";
 import { isTextType, textFontSize } from "../text-metrics.ts";
+import { rhythmReviewOptionsSchema, type RhythmReviewOptions } from "../../workflow/rhythm-profile.ts";
 
-export const qualityThresholds = { version: "motion-quality@2", stillFrames: 90, entranceFrames: 24, repeatedShots: 3, competingPrimary: 4, minimumFontPixels: 56, minimumSymbolPixels: 48, minimumContrast: 4.5, minimumSymbolContrast: 3 } as const;
+export const qualityThresholds = { version: "motion-quality@3", stillFrames: 90, entranceFrames: 24, repeatedShots: 3, competingPrimary: 4, minimumFontPixels: 56, minimumSymbolPixels: 48, minimumContrast: 4.5, minimumSymbolContrast: 3 } as const;
 export type MotionFinding = { id: string; ruleId: string; shotId: string; targetId: string | null; startFrame: number; endFrame: number; severity: "review" | "warning"; message: string; evidence: string; suggestion: string; heuristic: boolean };
 type Camera = { x: number; y: number; scale: number; rotation: number };
 function bounds(state: MotionState, camera: Camera) {
@@ -18,12 +19,14 @@ function bounds(state: MotionState, camera: Camera) {
 const luminance = (color: string) => color.slice(1).match(/../g)!.map((part) => { const c = parseInt(part, 16) / 255; return c <= .04045 ? c / 12.92 : ((c + .055) / 1.055) ** 2.4; }).reduce((sum, channel, index) => sum + channel * [.2126, .7152, .0722][index], 0);
 const contrast = (a: string, b: string) => { const x = luminance(a), y = luminance(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
 
-export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact | null) {
+export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact | null, options: RhythmReviewOptions = {}) {
+  const reviewTargets = rhythmReviewOptionsSchema.parse(options);
   const schedule = scheduleMotion(plan), findings: MotionFinding[] = [], usage: Record<string, number> = {};
   const rhythmShots: { shotId: string; startFrame: number; endFrame: number; causalBeats: number; developmentGaps: number; missingReactions: number }[] = [];
   const pacing = plan.energyProfile === "intense" || plan.energyProfile === "energetic" ? highEnergyPacing[plan.energyProfile] : null;
   let previousPreset = "", repeated = 0, passiveShots = 0;
   let previousStates: Map<string, Partial<MotionState>> | null = null, previousCamera: Camera | null = null;
+  let previousIllustrations = new Set<string>();
   for (const [index, original] of plan.shots.entries()) {
     const shot = expandMotionShot(original), offset = schedule.shots[index].startFrame;
     const add = (ruleId: string, start: number, end: number, message: string, evidence: string, suggestion: string, targetId: string | null = null, heuristic = true, severity: MotionFinding["severity"] = "review") => {
@@ -59,6 +62,23 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
         }
         Object.assign(state, action.to);
       }
+    }
+    // Holds remain valid exceptions for human review; they do not erase inactivity evidence.
+    let activeUntil = 0;
+    for (const interval of [...objectActivity].sort((a, b) => a.start - b.start).concat({ start: shot.durationFrames, end: shot.durationFrames })) {
+      if (interval.start - activeUntil > reviewTargets.maxInactiveFrames) add("rhythm-inactivity", activeUntil, Math.min(interval.start, shot.durationFrames - 1), "review an interval without object development.", `${interval.start - activeUntil} frames exceed the experimental ${reviewTargets.maxInactiveFrames}-frame limit. Camera-only motion and declared holds do not remove this diagnostic.`, "Keep a justified comprehension hold or stage a meaningful state change; never add cosmetic motion to clear a finding.");
+      activeUntil = Math.max(activeUntil, interval.end);
+    }
+    const exposed = shot.objects.filter((object) => object.initial.opacity > 0 || shot.actions.some((action) => action.targetIds.includes(object.id) && (action.to.opacity ?? 0) > 0));
+    const rootText = exposed.filter((object) => isTextType(object.type) || ["variable-type@1", "kinetic-phrase@1", "numeric-display@1"].includes(object.type));
+    if (rootText.length > reviewTargets.maxTextElementsPerShot) add("text-element-budget", 0, shot.durationFrames - 1, "review the shot's text budget.", `${rootText.length} potentially visible root text elements; experimental limit ${reviewTargets.maxTextElementsPerShot}. Sequential labels also count; embedded illustration text is not counted.`, "Prefer objects over text; retain essential source text and inspect simultaneous readability at phone size.");
+    const illustrations = new Set(exposed.filter((object) => !rootText.includes(object) && !["rect", "ellipse", "line"].includes(object.type)).map((object) => JSON.stringify({ type: object.type, asset: object.asset, diagram: object.diagram, comparison: object.comparison, morph: object.morph, numeric: object.numeric, ui: object.ui, rig: object.rig, morphChain: object.morphChain, collage: object.collage, perspective: object.perspective })));
+    const reused = [...illustrations].filter((identity) => previousIllustrations.has(identity));
+    if (reused.length) add("neighbor-illustration-reuse", 0, shot.durationFrames - 1, "review an illustration repeated in neighboring shots.", `${reused.length} shared illustration identities. Intentional continuity: ${board?.output.kind === "storyboard" ? board.output.shots[index]?.design?.continuityReason || "not recorded" : "unknown without storyboard"}.`, "Retain a persistent object when its state advances the explanation; otherwise vary staging or the meaningful illustration.");
+    previousIllustrations = illustrations;
+    for (const object of exposed) {
+      const labels = [object.label, ...(object.diagram?.nodes.map((node) => node.label) ?? []), ...(object.diagram?.edges.map((edge) => edge.label) ?? [])];
+      if (labels.some((label) => /^(?:illustrative(?: example)?|demo|test illustration)$/iu.test(label.trim().replace(/[.!:]+$/u, "")))) add("audience-disclaimer-label", 0, shot.durationFrames - 1, "remove an audience-facing provenance label.", `A potentially visible label on ${object.id} is Illustrative, Demo or Test illustration.`, "Frame invented examples naturally in narration and keep provenance in reviewer notes; never present invented events as real evidence.", object.id);
     }
     for (const hold of holds) if (hold.endFrame - hold.startFrame > 120 && !objectActivity.some((interval) => interval.start < hold.endFrame && interval.end > hold.startFrame))
       add("long-hold", hold.startFrame, hold.endFrame, "a static reading hold lasts over four seconds.", `${hold.endFrame - hold.startFrame} frames without object development.`, "Shorten the hold or add a source-faithful state change before the next reading hold.", null, false, "warning");
@@ -148,6 +168,15 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     const shotFindings = findings.filter((finding) => finding.shotId === shot.id);
     rhythmShots.push({ shotId: shot.id, startFrame: offset, endFrame: offset + shot.durationFrames - 1, causalBeats: (shot.beats ?? []).filter((beat) => ["transformation", "impact"].includes(beat.type)).length, developmentGaps: shotFindings.filter((finding) => finding.ruleId === "development-gap").length, missingReactions: shotFindings.filter((finding) => finding.ruleId === "missing-reaction").length });
   }
+  const primary = plan.shots.flatMap((shot, index) => (shot.beats ?? []).filter((beat) => beat.type !== "hold" && beat.importance === "primary").map((beat) => ({ beat, shot, index })));
+  const primaryUsage: Record<string, number> = {};
+  for (const { beat } of primary) primaryUsage[beat.presetId] = (primaryUsage[beat.presetId] ?? 0) + 1;
+  if (primary.length >= reviewTargets.minimumPrimaryBeats) for (const [preset, count] of Object.entries(primaryUsage)) {
+    if (count / primary.length <= reviewTargets.maxPrimaryPresetShare) continue;
+    const { shot, index, beat } = primary.find((entry) => entry.beat.presetId === preset)!;
+    findings.push({ id: `primary-preset-share:${preset}`, ruleId: "primary-preset-share", shotId: shot.id, targetId: beat.id, startFrame: schedule.shots[index].startFrame + beat.startFrame, endFrame: schedule.shots[index].startFrame + beat.endFrame, severity: "review", heuristic: true,
+      message: "Review a dominant primary preset across the plan.", evidence: `${preset}: ${count}/${primary.length} primary non-hold beats (${(count / primary.length * 100).toFixed(1)}%); experimental limit ${(reviewTargets.maxPrimaryPresetShare * 100).toFixed(1)}%. Supporting beats and text treatments are excluded.`, suggestion: "Vary the causal motion when meaning changes; coherent repeated actions may justify the concentration." });
+  }
   findings.sort((a, b) => a.startFrame - b.startFrame || a.id.localeCompare(b.id));
-  return { version: 3, thresholds: qualityThresholds, energyPacing: pacing, rhythm: { requiresHumanReview: true as const, shots: rhythmShots }, durationFrames: schedule.durationFrames, findings, presetUsage: usage, warnings: findings.map((finding) => finding.message), requiresHumanReview: true as const };
+  return { version: 4, thresholds: qualityThresholds, reviewTargets, energyPacing: pacing, rhythm: { requiresHumanReview: true as const, shots: rhythmShots }, durationFrames: schedule.durationFrames, findings, presetUsage: usage, primaryPresetUsage: primaryUsage, warnings: findings.map((finding) => finding.message), requiresHumanReview: true as const };
 }

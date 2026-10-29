@@ -1,5 +1,17 @@
 # HyperFrames Studio status
 
+## Retention experiment, October 29
+
+The isolated [15-second review pair](../output/retention-experiment/project-v2/index.html)
+and [report](../output/retention-experiment/REPORT.md) are ready for human viewing.
+New capabilities include the original 46-entry asset registry, six trusted authored
+scenes, offline word-alignment tooling and opt-in synthesized soundtracks with
+exact gate invalidation. See [style bible](motion-style-bible.md) and
+[alignment/audio contracts](local-alignment-and-audio.md). Final checks passed
+196 tests; default build still fails with the known Turbopack CSS-worker error.
+These are software/media results, not human quality acceptance or retention proof.
+Accepted Terra inputs and existing production records were not modified.
+
 As of 2026-10-29. Technical evidence and human acceptance are different records.
 This status supersedes historical startup logs; it does not grant production approval.
 

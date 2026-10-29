@@ -1,0 +1,55 @@
+{
+  "enabled": true,
+  "sourceAudioHash": "22a12a78c541f4a411e7bddf177337de02bbc1e5fa6a3f53add67d13278b0e72",
+  "audioHash": "787b74b45c3052f334611c92ef915ef5492d89129b964704ba7a4007188be46b",
+  "durationFrames": 450,
+  "settings": {
+    "enabled": true,
+    "music": true,
+    "seed": 17,
+    "targetLufs": -16,
+    "cues": [
+      {
+        "frame": 1,
+        "sound": "whoosh"
+      },
+      {
+        "frame": 39,
+        "sound": "pop"
+      },
+      {
+        "frame": 84,
+        "sound": "whoosh"
+      },
+      {
+        "frame": 169,
+        "sound": "pop"
+      },
+      {
+        "frame": 197,
+        "sound": "whoosh"
+      },
+      {
+        "frame": 240,
+        "sound": "pop"
+      },
+      {
+        "frame": 271,
+        "sound": "click"
+      },
+      {
+        "frame": 324,
+        "sound": "chime"
+      },
+      {
+        "frame": 395,
+        "sound": "whoosh"
+      }
+    ]
+  },
+  "integratedLufs": -16.46,
+  "truePeakDbtp": -1.5,
+  "license": "CC0-1.0",
+  "provenance": "Original locally synthesized tones/noise; no external media",
+  "pronunciationApproved": false
+}

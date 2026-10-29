@@ -1,6 +1,78 @@
 # AI creative mistakes
 
-Canonical source: workflow/creative-rules.ts. Catalog: creative-quality@1. Regenerate with node scripts/creative-rules-doc.ts; tests enforce exact parity. Evidence describes known failure patterns, not measured improvement. User corrections remain proposed until explicitly confirmed after regression review.
+Canonical source: workflow/creative-rules.ts. Catalog: creative-quality@2. Regenerate with node scripts/creative-rules-doc.ts; tests enforce exact parity. Evidence describes known failure patterns, not measured improvement. User corrections remain proposed until explicitly confirmed after regression review.
+
+## CQ-RHYTHM v1
+
+Stages: motion. Severity: review.
+
+Evidence: A declared hold can hide long gaps from legacy stillness checks.
+
+Correction: Review object-inactive spans against the configurable 45-frame experiment. Retain justified reading holds; camera drift or decorative micro-motion is not teaching. Thresholds are hypotheses, not retention measurements.
+
+Detection: inspectCreativeMotion: rhythm-inactivity across every energy profile, including declared holds.
+
+Exceptions: Comprehension, source-faithful slower demonstrations and intentional pauses may need longer holds.
+
+## CQ-PRESET-SHARE v1
+
+Stages: motion. Severity: review.
+
+Evidence: A plan can repeat the same leading motion without consecutive identical shots.
+
+Correction: Review primary non-hold preset concentration; default experiment is over 40% with at least three primary beats. Vary motion verbs when meaning changes, rather than adding novelty for its own sake.
+
+Detection: inspectCreativeMotion: primary-preset-share; excludes supporting beats and text treatments.
+
+Exceptions: Repeated causal actions or coherent visual grammar can justify concentration. Legacy action-only plans have no primary preset identity.
+
+## CQ-ILLUSTRATION-REUSE v1
+
+Stages: motion. Severity: review.
+
+Evidence: Neighboring shots can reuse an illustration while the explanation stops developing.
+
+Correction: Carry persistent objects when their state advances; otherwise vary the meaningful illustration or staging. Record why intentional continuity helps the viewer.
+
+Detection: inspectCreativeMotion: neighboring potentially visible illustration signatures.
+
+Exceptions: A comparison, recurring character or continuous mechanism can intentionally reuse artwork.
+
+## CQ-TEXT-BUDGET v1
+
+Stages: motion. Severity: review.
+
+Evidence: Heading, picture label and caption can compete in a repeated portrait template.
+
+Correction: Default to object-led teaching with no overlay. Review more than two potentially visible root text actors per shot; the controlled candidate targets one. Keep required commands, values and conditions readable.
+
+Detection: inspectCreativeMotion: text-element-budget; counts sequential root text too, excludes embedded artwork text.
+
+Exceptions: Necessary comparisons, source quotations and sequential teaching labels require phone-size human review.
+
+## CQ-PROVENANCE-LABEL v1
+
+Stages: motion. Severity: review.
+
+Evidence: Audience-facing provenance labels interrupt narration-led examples.
+
+Correction: Do not place Illustrative, Demo or Test illustration labels on the canvas. Introduce examples naturally in narration and preserve provenance in reviewer notes. Never imply fabricated events or outcomes are real evidence.
+
+Detection: inspectCreativeMotion: audience-disclaimer-label on potentially visible root or diagram labels, matched as standalone labels.
+
+Exceptions: A real command or product name containing demo is not a standalone provenance label. Embedded raster/SVG text still requires visual review.
+
+## CQ-BEAT-SHEET v1
+
+Stages: writing, graphics, motion. Severity: review.
+
+Evidence: Disconnected script, visual and audio planning leaves long lines with one entrance and no payoff.
+
+Correction: Plan each narration line as estimated 1–2-second beats naming an event, motion verb, sound cue or none, and on-screen text or none. Carry one focal object through cause, reaction and payoff. Let measured narration override estimates. Use registered components and preserve readable holds; optional sound cues remain plans, not generated audio.
+
+Detection: Validated beat-sheet metadata plus actual normal-speed, muted and phone-size review. No score establishes quality.
+
+Exceptions: Historical artifacts may omit beat sheets. Exact word anchors require measured alignment; never invent them.
 
 ## CQ-SEMANTIC v1
 

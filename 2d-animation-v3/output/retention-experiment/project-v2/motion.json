@@ -1,0 +1,976 @@
+{
+  "schemaVersion": 1,
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "interpreterVersion": "3",
+  "shots": [
+    {
+      "id": "shot-1",
+      "sourceIndex": 0,
+      "sourceHash": "1904325116c605a078bc991e9b6238979ff205bde90f70a5dd295ef5d904ce81",
+      "lineNumbers": [
+        1
+      ],
+      "durationFrames": 39,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 12,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "elastic-token@1",
+            "contentHash": "82c256db4d49aa87cfc277986d31d9becfce9777973460f718bb02a7c5ec5d9f"
+          },
+          "initialParts": {
+            "motion": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 0
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "Would you trust this AI",
+          "type": "transformation",
+          "targetIds": [
+            "object-1.motion"
+          ],
+          "startFrame": 0,
+          "endFrame": 26,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 1,
+            "kind": "word",
+            "anchorId": "word-1"
+          },
+          "continuity": null,
+          "presetId": "scene-play@1",
+          "parameters": {}
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 27,
+          "endFrame": 38,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "start",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-2",
+      "sourceIndex": 1,
+      "sourceHash": "82f7e42c83ab9c7dd85d8c4e677f008a9be9be7a9d32d3d5f572192a1b837e56",
+      "lineNumbers": [
+        2
+      ],
+      "durationFrames": 45,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 20,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "message-transform@1",
+            "contentHash": "99667ae3a77c04878ccd858f2395e225fbef5c5133e449d68ccb176cb9193f36"
+          },
+          "initialParts": {
+            "motion": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 0
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "with the send button?",
+          "type": "transformation",
+          "targetIds": [
+            "object-1.motion"
+          ],
+          "startFrame": 0,
+          "endFrame": 32,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 2,
+            "kind": "word",
+            "anchorId": "word-2"
+          },
+          "continuity": null,
+          "presetId": "scene-play@1",
+          "parameters": {}
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 33,
+          "endFrame": 44,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-3",
+      "sourceIndex": 2,
+      "sourceHash": "ec30a1cfdbfd26a8950df699b99c987ed8f520a637b27018fd4aa84fce4bfde4",
+      "lineNumbers": [
+        3
+      ],
+      "durationFrames": 85,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "rect",
+          "label": "",
+          "initial": {
+            "x": 8,
+            "y": 20,
+            "width": 84,
+            "height": 54,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#F7F3E9"
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 20,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "processor-editorial@1",
+            "contentHash": "460ce9160362a2f55f151070f7f5bfdeb41a8bd387a2143100a88788c59a6177"
+          },
+          "initialParts": {
+            "body": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 1
+            },
+            "signal": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 1
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "OpenAI’s new GPT-6.1",
+          "type": "transformation",
+          "targetIds": [
+            "object-2"
+          ],
+          "startFrame": 0,
+          "endFrame": 42,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 3,
+            "kind": "word",
+            "anchorId": "word-3"
+          },
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 10
+            },
+            "anticipation": 0.94,
+            "overshoot": 1.04
+          }
+        },
+        {
+          "id": "receiving-focus",
+          "purpose": "Follow the same information into its result.",
+          "type": "emphasis",
+          "targetIds": [
+            "object-2"
+          ],
+          "startFrame": 46,
+          "endFrame": 72,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 10
+            },
+            "anticipation": 0.94,
+            "overshoot": 1.04
+          }
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-2"
+          ],
+          "startFrame": 73,
+          "endFrame": 84,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-4",
+      "sourceIndex": 3,
+      "sourceHash": "b44b0b7375824c8ae0d53424c7987c17bfa81d1f09bcba955188cbd294e40f45",
+      "lineNumbers": [
+        4
+      ],
+      "durationFrames": 28,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 32,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "message-transform@1",
+            "contentHash": "99667ae3a77c04878ccd858f2395e225fbef5c5133e449d68ccb176cb9193f36"
+          },
+          "initialParts": {
+            "motion": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 0
+            }
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "Terra",
+          "initial": {
+            "x": 8,
+            "y": 24,
+            "width": 84,
+            "height": 9,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "Terra promises",
+          "type": "transformation",
+          "targetIds": [
+            "object-1.motion"
+          ],
+          "startFrame": 0,
+          "endFrame": 15,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 4,
+            "kind": "word",
+            "anchorId": "word-4"
+          },
+          "continuity": null,
+          "presetId": "scene-play@1",
+          "parameters": {}
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 16,
+          "endFrame": 27,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-5",
+      "sourceIndex": 4,
+      "sourceHash": "1744a58bf976246e2f732938c8aa08abc21107d373eb5ebbc6e04e280196cf30",
+      "lineNumbers": [
+        5
+      ],
+      "durationFrames": 43,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 20,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "parallax-workspace@1",
+            "contentHash": "684aab1010b67532a6d93711da11b4f7909f1f1a1cb5024cf7e293c51ad123e8"
+          },
+          "initialParts": {
+            "motion": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 0
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "faster computer",
+          "type": "transformation",
+          "targetIds": [
+            "object-1.motion"
+          ],
+          "startFrame": 0,
+          "endFrame": 30,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 5,
+            "kind": "word",
+            "anchorId": "word-5"
+          },
+          "continuity": null,
+          "presetId": "scene-play@1",
+          "parameters": {}
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 31,
+          "endFrame": 42,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-6",
+      "sourceIndex": 5,
+      "sourceHash": "9c5555b55f0b0cc27a0db066f212405c8647bec5b882b4c70a2e838e05a3ceb0",
+      "lineNumbers": [
+        6
+      ],
+      "durationFrames": 31,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 20,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "computer-editorial@1",
+            "contentHash": "d5229a5eb05135173ebd656c73a8dea36eac8c4d0686776d21775ba6ecf11183"
+          },
+          "initialParts": {
+            "body": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 1
+            },
+            "signal": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 1
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "work at",
+          "type": "transformation",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 0,
+          "endFrame": 18,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 6,
+            "kind": "word",
+            "anchorId": "word-6"
+          },
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 10
+            },
+            "anticipation": 0.94,
+            "overshoot": 1.04
+          }
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 19,
+          "endFrame": 30,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-7",
+      "sourceIndex": 6,
+      "sourceHash": "a839949c03051ccc038f512e0439c286ecb4374d675ac9a949a77706de8f20ea",
+      "lineNumbers": [
+        7
+      ],
+      "durationFrames": 53,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 14,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "price-tag-motion@1",
+            "contentHash": "202485f3c2ba327fe0c9249f3b3f2405ea6b0760a4946b2d4518c7a9b9694dd2"
+          },
+          "initialParts": {
+            "subject": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 1
+            }
+          }
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "lower token prices.",
+          "type": "transformation",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 0,
+          "endFrame": 40,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 7,
+            "kind": "word",
+            "anchorId": "word-7"
+          },
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 10
+            },
+            "anticipation": 0.94,
+            "overshoot": 1.04
+          }
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 41,
+          "endFrame": 52,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-8",
+      "sourceIndex": 7,
+      "sourceHash": "22a93bb098853ca028f2ed355152b927c07e76a0462ac84821f56afee3355741",
+      "lineNumbers": [
+        8
+      ],
+      "durationFrames": 71,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 20,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "signal-burst@1",
+            "contentHash": "98acfbcb60bca9ca5686a6891928ec4ea0ee56abe64843d591eb75200eb58c45"
+          },
+          "initialParts": {
+            "motion": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 0
+            }
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "26 OCT",
+          "initial": {
+            "x": 8,
+            "y": 70,
+            "width": 84,
+            "height": 9,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "It launched October twenty-sixth",
+          "type": "transformation",
+          "targetIds": [
+            "object-1.motion"
+          ],
+          "startFrame": 0,
+          "endFrame": 42,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 8,
+            "kind": "word",
+            "anchorId": "word-8"
+          },
+          "continuity": null,
+          "presetId": "scene-play@1",
+          "parameters": {}
+        },
+        {
+          "id": "receiving-focus",
+          "purpose": "Follow the same information into its result.",
+          "type": "emphasis",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 46,
+          "endFrame": 58,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "snap-overshoot@1",
+          "parameters": {
+            "to": {
+              "x": 10
+            },
+            "anticipation": 0.94,
+            "overshoot": 1.04
+          }
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 59,
+          "endFrame": 70,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    },
+    {
+      "id": "shot-9",
+      "sourceIndex": 8,
+      "sourceHash": "e0cbb4eaa57c01887429d3d3397d0b2038a144b9cb3c97623044351f2ec56d46",
+      "lineNumbers": [
+        9
+      ],
+      "durationFrames": 55,
+      "objects": [
+        {
+          "id": "object-1",
+          "startIndex": 0,
+          "endIndex": 0,
+          "type": "graphic-asset@2",
+          "label": "",
+          "initial": {
+            "x": 6,
+            "y": 20,
+            "width": 88,
+            "height": 49.5,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#D9633F"
+          },
+          "asset": {
+            "id": "loop-handoff@1",
+            "contentHash": "b25bf28beca9ca9493e3d9017065e63379579f3ed01421146fc7fed132b6c54d"
+          },
+          "initialParts": {
+            "motion": {
+              "x": 0,
+              "y": 0,
+              "scale": 1,
+              "opacity": 1,
+              "color": "#D9633F",
+              "reveal": 0
+            }
+          }
+        },
+        {
+          "id": "object-2",
+          "startIndex": 1,
+          "endIndex": 1,
+          "type": "heading",
+          "label": "Work · Codex · API",
+          "initial": {
+            "x": 8,
+            "y": 12,
+            "width": 84,
+            "height": 9,
+            "opacity": 1,
+            "rotation": 0,
+            "scale": 1,
+            "color": "#203B3A"
+          },
+          "typography": "inter-heading@1"
+        }
+      ],
+      "actions": [],
+      "beats": [
+        {
+          "id": "develop",
+          "purpose": "for Work, Codex and the API.",
+          "type": "transformation",
+          "targetIds": [
+            "object-1.motion"
+          ],
+          "startFrame": 0,
+          "endFrame": 42,
+          "importance": "primary",
+          "narrationAnchor": {
+            "lineNumber": 9,
+            "kind": "word",
+            "anchorId": "word-9"
+          },
+          "continuity": null,
+          "presetId": "scene-play@1",
+          "parameters": {}
+        },
+        {
+          "id": "read",
+          "purpose": "Read the settled state.",
+          "type": "hold",
+          "targetIds": [
+            "object-1"
+          ],
+          "startFrame": 43,
+          "endFrame": 54,
+          "importance": "supporting",
+          "narrationAnchor": null,
+          "continuity": null,
+          "presetId": "hold@1",
+          "parameters": {}
+        }
+      ],
+      "camera": {
+        "x": 0,
+        "y": 0,
+        "rotation": 0,
+        "scale": 1
+      },
+      "incoming": {
+        "type": "hard-cut",
+        "overlapFrames": 0,
+        "presentation": "cut",
+        "anchor": null
+      }
+    }
+  ],
+  "energyProfile": "intense"
+}

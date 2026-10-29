@@ -6,6 +6,7 @@ import { semanticPair } from "../../workflow/semantic-morphs.ts";
 import { morphPair } from "../../workflow/morphs.ts";
 import { numericData } from "../../workflow/numeric.ts";
 import { uiTriggers } from "../../workflow/ui-workflow.ts";
+import { isTrustedScene } from "../../workflow/trusted-scenes.ts";
 
 // Preset IDs are immutable: changes to motion semantics require a new version.
 export function expandBeats(shot: MotionShot): MotionAction[] {
@@ -37,6 +38,12 @@ export function expandBeats(shot: MotionShot): MotionAction[] {
     if (beat.type === "hold") throw new Error("A reading hold requires the hold preset.");
     const duration = beat.endFrame - beat.startFrame;
     if (duration < 6) throw new Error("Choreography needs at least six frames for its phases.");
+    if (beat.presetId === "scene-play@1") {
+      const id = beat.targetIds[0], [root, part] = id.split("."), object = shot.objects.find(object => object.id === root), state = states.get(id);
+      if (beat.targetIds.length !== 1 || part !== "motion" || !isTrustedScene(object?.asset?.id) || state?.reveal !== 0 || state.opacity !== 1 || states.get(root)?.opacity !== 1 || duration < 12) throw new Error("Scene play requires one visible registered motion layer, progress 0 and at least 12 frames.");
+      tween(id, beat.startFrame, beat.endFrame, { reveal: 1 }, "linear");
+      state.reveal = 1; continue;
+    }
     if (beat.presetId === "font-expression@1") {
       const id = beat.targetIds[0], [root, part] = id.split("."), object = shot.objects.find(object => object.id === root), state = states.get(id);
       if (beat.targetIds.length !== 1 || !object?.variableType || part !== "glyphs" || state?.axisProgress !== 0 || states.get(root)?.opacity !== 1 || state.opacity !== 1 || (state.reveal ?? 1) !== 1 || duration < 18 || duration > 90) throw new Error("Font expression needs one visible measured glyph run and 18..90 frames.");

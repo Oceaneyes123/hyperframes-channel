@@ -81,6 +81,7 @@ const beatFields = {
   continuity: z.strictObject({ targetId: key, nextShotId: key }).nullable(),
 };
 export const motionBeatSchema = z.discriminatedUnion("presetId", [
+  z.strictObject({ ...beatFields, presetId: z.literal("scene-play@1"), parameters: z.strictObject({}) }),
   z.strictObject({ ...beatFields, presetId: z.literal("font-expression@1"), parameters: z.strictObject({}) }),
   z.strictObject({ ...beatFields, presetId: z.literal("text-layout-morph@1"), parameters: z.strictObject({
     route: z.enum(["vertical-first", "horizontal-first"]),
