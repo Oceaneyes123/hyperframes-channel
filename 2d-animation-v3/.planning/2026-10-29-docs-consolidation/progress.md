@@ -21,3 +21,8 @@
 
 - Group 3 check passes 176 tests/lint/typecheck; 370 paths/anchors and frozen 731/22 hashes pass. Default build repeats the pre-existing worker error.
 - Separate attention-rhythm task files appeared staged in the shared index, plus untracked rhythm-report.ts. Preserve them; use path-scoped commits for our owned documents only. Counts report concurrent additions separately.
+
+- Group 3 committed as 8415c30 with path-scoped commit; unrelated staged files preserved. Rehashed owned archived paths after Git index metadata retained former line-ending-normalized blobs; HEAD/working bytes remain exact.
+- Group 4 moves the remaining 88 eligible historical Markdown files with git mv, retains all operational scripts/JSON/media and both script-written logs, and builds a categorized archive index with original/adapted plans distinguished.
+
+- Group 4 check passes lint/typecheck and all 182 current workspace tests; the six added tests belong to concurrent work, not this docs-only change. Default build repeats the known worker failure. 407 local links and all 109 protected Markdown byte checks pass; frozen 731/22 manifests unchanged.

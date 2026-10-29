@@ -266,7 +266,7 @@ evidence, remote drift, past schedules, metric compatibility, missing data, CSV
 imports, change history and evidence-linked lessons. They perform no live upload,
 account query, publication or video render.
 
-See [PLAN.md](PLAN.md) for the original delivery sequence and
+See [PLAN.md](archive/PLAN.md) for the original delivery sequence and
 [VALIDATION.md](VALIDATION.md) for actual implementation evidence and remaining
 live validation. The original plan's live end-to-end acceptance remains pending
 until the channel/OAuth details and concrete release authorization are supplied.
