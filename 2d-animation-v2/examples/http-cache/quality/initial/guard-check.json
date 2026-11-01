@@ -1,5 +1,0 @@
-{
-  "finding": "nonfinite_metadata_duration",
-  "result": "accepted_NaN",
-  "expected": "reject"
-}

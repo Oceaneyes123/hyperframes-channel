@@ -1,8 +1,0 @@
-{
-  "width": 1080,
-  "height": 1920,
-  "shots": 10,
-  "states": 20,
-  "renderer": "Existing V3 PlanningFrame and Remotion",
-  "humanApproval": false
-}
