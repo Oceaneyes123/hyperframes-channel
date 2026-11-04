@@ -9,6 +9,7 @@ import { conceptsSchema, replaceShot, validateStoryboard, visualSchemaVersion, v
 import { inspectGraphics } from "../engine/quality/inspect-graphics.ts";
 
 const digest = (bytes: string) => createHash("sha256").update(bytes).digest("hex");
+export const visualRequestTimeoutMs = 300_000;
 const selectionSchema = z.strictObject({ id: z.uuid(), projectId: z.uuid(), runId: z.uuid(), optionIndex: z.number().int().min(0).max(2) });
 const rowSchema = z.object({ id: z.uuid(), project_id: z.uuid(), request_json: z.string(), script_hash: z.string(),
   model: z.string(), created_at: z.iso.datetime(), deadline: z.iso.datetime(), status: z.enum(["running", "complete", "failed"]), sha256: z.string().nullable(), error: z.string().nullable() });
@@ -90,7 +91,7 @@ export function openVisuals(directory: string, videosDirectory: string) {
         if (rows(projectId).some((row) => row.status === "running")) throw new ConflictError("A visual request is already running.");
         const id = randomUUID(); const now = new Date().toISOString();
         database.prepare("INSERT INTO visual_runs (id, project_id, request_json, script_hash, model, created_at, deadline, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'running')")
-          .run(id, projectId, JSON.stringify(request), accepted.sha256, model, now, new Date(Date.now() + 180_000).toISOString());
+          .run(id, projectId, JSON.stringify(request), accepted.sha256, model, now, new Date(Date.now() + visualRequestTimeoutMs + 30_000).toISOString());
         return id;
       });
     },

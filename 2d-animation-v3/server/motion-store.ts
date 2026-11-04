@@ -13,6 +13,7 @@ import { validateTiming } from "../workflow/production.ts";
 import { resolveBeatTiming } from "../workflow/timing.ts";
 
 const sha = (bytes: string) => createHash("sha256").update(bytes).digest("hex");
+export const motionRequestTimeoutMs = 480_000;
 export const hashMotionSource = (value: unknown) => sha(JSON.stringify(value));
 const hashSchema = z.string().regex(/^[a-f0-9]{64}$/);
 const rowSchema = z.object({ id: z.uuid(), project_id: z.uuid(), request_json: z.string(), source_json: z.string(), model: z.string(),
@@ -78,7 +79,7 @@ export function openMotion(directory: string, videosDirectory: string) {
         if (rows(projectId).some((row) => row.status === "running")) throw new ConflictError("A motion request is already running.");
         const id = randomUUID(); const now = new Date().toISOString();
         database.prepare("INSERT INTO motion_runs (id, project_id, request_json, source_json, model, created_at, deadline, status) VALUES (?, ?, ?, ?, ?, ?, ?, 'running')")
-          .run(id, projectId, JSON.stringify(request), JSON.stringify(dependency), model, now, new Date(Date.now() + 180_000).toISOString()); return id;
+          .run(id, projectId, JSON.stringify(request), JSON.stringify(dependency), model, now, new Date(Date.now() + motionRequestTimeoutMs + 30_000).toISOString()); return id;
       });
     },
     complete(projectId: string, id: string, input: unknown, creativeRules?: CreativeSnapshot) {

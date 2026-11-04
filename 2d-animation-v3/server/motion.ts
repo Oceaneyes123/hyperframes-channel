@@ -15,7 +15,7 @@ import { creativeDirection } from "./creative-direction.ts";
 import { requestJson } from "./gateway.ts";
 import { visualGuidance } from "./visual-guidance.ts";
 import { openStudio } from "./studio.ts";
-import { openMotion, hashMotionSource } from "./motion-store.ts";
+import { openMotion, hashMotionSource, motionRequestTimeoutMs } from "./motion-store.ts";
 import { generatedMotionSchema, generatedBeatMotionSchema, hydrateMotion, motionRequestSchema, scopedMotionSchema, scopedBeatMotionSchema, type MotionPlan } from "../workflow/motion.ts";
 import { scriptLines } from "../workflow/visuals.ts";
 import { resolveBeatTiming } from "../workflow/timing.ts";
@@ -53,7 +53,7 @@ export async function generateMotion(projectId: string, input: unknown, signal: 
       { role: "system", content: `Trusted authored scenes ${trustedSceneIds.join(", ")} use graphic-asset@2 with registered asset identity/hash and one motion part. Keep that part visible, unit-scale, zero-offset, reveal:0 in the start drawing and 1 in the end drawing. scene-play@1 {} targets exactly object-id.motion for 12+ frames. Its reveal is normalized authored scene time, not a mask. Use no arbitrary SVG, URLs, numeric claims or executable parameters. Counted-documents counts its three drawn documents; use sourced numeric-display for factual metrics.` },
       ...creativeDirection(config).messages,
       { role: "user", content: data },
-    ], AbortSignal.any([signal, AbortSignal.timeout(150_000)]), (count) => { if (count - last > 1000) { progress(`Receiving motion proposal (${count} characters)…`); last = count; } });
+    ], AbortSignal.any([signal, AbortSignal.timeout(motionRequestTimeoutMs)]), (count) => { if (count - last > 1000) { progress(`Receiving motion proposal (${count} characters)…`); last = count; } });
     signal.throwIfAborted();
     let output = selectedShot ? { ...selectedShot, ...(version === "3" ? scopedBeatMotionSchema.parse(result) : scopedMotionSchema.parse(result)) } : hydrateMotion(result, context.board, hashMotionSource, context.base?.source.storyboardId === context.board.id ? context.base.plan : undefined, version, energy);
     if (options.preserveScopedTiming && selectedShot && "durationFrames" in output && (output.durationFrames !== selectedShot.durationFrames || JSON.stringify(output.incoming) !== JSON.stringify(selectedShot.incoming))) throw new Error("Automatic revision must preserve shot duration and incoming transition.");

@@ -8,7 +8,7 @@ import { test, type TestContext } from "node:test";
 import { openDatabase, DATABASE_VERSION } from "../server/database.ts";
 import { openStudio } from "../server/studio.ts";
 import { openVisuals } from "../server/visual-store.ts";
-import { openMotion, hashMotionSource } from "../server/motion-store.ts";
+import { openMotion, hashMotionSource, motionRequestTimeoutMs } from "../server/motion-store.ts";
 import { scheduleMotion, validateMotion } from "../workflow/motion.ts";
 import { conceptFixture, boardFixture } from "./fixtures/visuals.ts";
 import { motionFixture } from "./fixtures/motion.ts";
@@ -35,6 +35,16 @@ function fixture(t: TestContext) {
   function save() { visuals.accept(project.id, boardId); const id = store.begin(project.id, input); store.complete(project.id, id, plan); return id; }
   return { root, directory, videos, studio, visuals, store, project, script, concepts, selectionId, boardId, board, plan, input, save };
 }
+
+test("motion job deadline leaves time beyond the gateway request timeout", (t) => {
+  const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
+  const id = f.store.begin(f.project.id, f.input);
+  const db = openDatabase(f.directory);
+  try {
+    const row = db.prepare("SELECT created_at, deadline FROM motion_runs WHERE id = ?").get(id)!;
+    assert.equal(Date.parse(String(row.deadline)) - Date.parse(String(row.created_at)), motionRequestTimeoutMs + 30_000);
+  } finally { db.close(); }
+});
 
 test("manual beat proposals persist immutably and scoped edits retain interpreter 3", (t) => {
   const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);

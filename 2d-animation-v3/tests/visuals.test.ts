@@ -8,7 +8,7 @@ import { test, type TestContext } from "node:test";
 import { openDatabase, DATABASE_VERSION } from "../server/database.ts";
 import { readConfig } from "../server/config.ts";
 import { openStudio } from "../server/studio.ts";
-import { openVisuals } from "../server/visual-store.ts";
+import { openVisuals, visualRequestTimeoutMs } from "../server/visual-store.ts";
 import { generateVisuals } from "../server/visuals.ts";
 import { frameSchema, conceptsSchema, validateStoryboard, replaceShot, visualRequestSchema } from "../workflow/visuals.ts";
 import { boardFixture, conceptFixture, planningFrame, fixtureVisuals } from "./fixtures/visuals.ts";
@@ -130,6 +130,16 @@ test("write failures, preexisting orphans, corruption and expired jobs preserve 
   const reopened = openVisuals(f.config.dataDirectory, f.config.videosDirectory);
   try { assert.equal(reopened.list(f.project.id).find((row) => row.id === pending)?.status, "failed"); } finally { reopened.close(); }
   writeFileSync(path(id), "corrupt"); assert.throws(() => f.store.read(f.project.id, id), /integrity/);
+});
+
+test("visual job deadline leaves time beyond the gateway request timeout", (t) => {
+  const f = fixture(t); f.studio.acceptScript(f.project.id, f.script.id);
+  const id = f.store.begin(f.project.id, f.request, "fixture-model");
+  const db = openDatabase(f.config.dataDirectory);
+  try {
+    const row = db.prepare("SELECT created_at, deadline FROM visual_runs WHERE id = ?").get(id)!;
+    assert.equal(Date.parse(String(row.deadline)) - Date.parse(String(row.created_at)), visualRequestTimeoutMs + 30_000);
+  } finally { db.close(); }
 });
 
 test("schema 4 migration preserves all prior tables and project files", (t) => {

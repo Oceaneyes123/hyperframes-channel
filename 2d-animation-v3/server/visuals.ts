@@ -19,7 +19,7 @@ import { depthSceneRegistry } from "../workflow/graphic-assets.ts";
 import { comparisonSources } from "../workflow/comparison.ts";
 import { requestJson } from "./gateway.ts";
 import { visualGuidance } from "./visual-guidance.ts";
-import { openVisuals } from "./visual-store.ts";
+import { openVisuals, visualRequestTimeoutMs } from "./visual-store.ts";
 import { scriptLines, visualRequestSchema } from "../workflow/visuals.ts";
 import { beatSheetGuidance } from "../workflow/beat-sheet.ts";
 import { graphicAssetRegistry } from "../workflow/graphic-assets.ts";
@@ -63,7 +63,7 @@ Use type:"graphic-asset@2" with asset:{id,contentHash} from the registry and act
 Use type:"semantic-diagram@1" with diagram:{direction:"down"|"right",nodes:[{id,icon:"person"|"computer"|"document"|"message"|"processor"|"database"|"cloud"|"payment"|"product",label,parent?}],edges:[{id,from,to,label}]}. Supply 2..8 nodes and 1..12 directed edges, globally unique IDs up to20 lowercase letters/digits/hyphens, no self loops, and acyclic parent groups. Parts are exact node/edge IDs; label max24 (nodes) or20 (edges). Coordinates are calculated deterministically inside the shape; keep it large. Diagram part x/y must be0 and scale1; reveal or change opacity/color instead of moving individual nodes away from connectors. Reuse the approved graph exactly across a corresponding actor's drawings; use replacement actors for graph changes. Never attach asset to diagrams or diagram to other primitives.` },
       ...creativeDirection(config).messages,
       { role: "user", content: JSON.stringify({ designHistory, narration: scriptLines(context.lines), measuredTiming: timing ? { timing: timing.timing, durationFrames: timing.measured.durationFrames } : null, concept: context.concept, board: context.board, instruction: request.instruction }) },
-    ], AbortSignal.any([signal, AbortSignal.timeout(150_000)]), (count) => {
+    ], AbortSignal.any([signal, AbortSignal.timeout(visualRequestTimeoutMs)]), (count) => {
       if (count - last > 1000) { progress(`Receiving visual proposal (${count} characters)…`); last = count; }
     });
     signal.throwIfAborted();
