@@ -78,8 +78,8 @@ change bindings or accepted creative decisions.
 
 ## Graphics and motion
 
-New motion proposals default to **Intense** unless an explicit request or existing
-base plan specifies another profile. CQ-ENERGY v2 also reaches storyboard planning:
+Motion proposals default to **Intense** unless an explicit request selects another
+profile. CQ-ENERGY v2 also reaches storyboard planning:
 plan cause, impact, visible reaction and handoff before selecting animation presets.
 Intense targets at 30fps are 6–12-frame entrances, 8–24-frame focused actions and
 object development about every 30–45 frames. Energetic uses more generous limits.

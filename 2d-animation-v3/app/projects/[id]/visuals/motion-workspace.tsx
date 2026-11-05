@@ -36,7 +36,7 @@ export default function MotionWorkspace(props: Props) {
   const [frameState, setFrame] = useState(0), [selectedId, setSelectedId] = useState(""), [loop, setLoop] = useState(false);
   const [readyId, setReadyId] = useState("");
   const [visualFindings, setVisualFindings] = useState<{ frame: number; evidence: string; suggestion: string }[]>([]);
-  const [energyProfile, setEnergyProfile] = useState<EnergyProfile>(props.motion?.plan.energyProfile ?? defaultEnergyProfile);
+  const [energyProfile, setEnergyProfile] = useState<EnergyProfile>(defaultEnergyProfile);
   useEffect(() => () => controller.current?.abort(), []);
   const { motion, sourceBoard } = props;
   const quality = useMemo(() => motion ? inspectMotion(motion.plan, sourceBoard) : null, [motion, sourceBoard]);
@@ -90,7 +90,7 @@ export default function MotionWorkspace(props: Props) {
       <legend className="sr-only">Motion proposal controls</legend>
       <label htmlFor="motion-instruction" className="block text-sm font-semibold">Motion direction</label>
       <textarea id="motion-instruction" maxLength={2000} rows={2} value={instruction} onChange={(event) => setInstruction(event.target.value)} className="mt-2 w-full" />
-      <label className="mt-3 block text-sm">Energy for next proposal<select value={energyProfile} onChange={(event) => setEnergyProfile(event.target.value as typeof energyProfile)} className="ml-3"><option value="calm">Calm</option><option value="balanced">Balanced</option><option value="energetic">Energetic</option><option value="intense">Intense — punchy (default for new plans)</option></select></label>
+      <label className="mt-3 block text-sm">Energy for next proposal<select value={energyProfile} onChange={(event) => setEnergyProfile(event.target.value as typeof energyProfile)} className="ml-3"><option value="calm">Calm</option><option value="balanced">Balanced</option><option value="energetic">Energetic</option><option value="intense">Intense — punchy (default)</option></select></label>
       <p className="mt-2 text-sm text-[var(--muted)]">Review at normal speed for fast impacts, connected reactions and purposeful handoffs. Passing diagnostics alone does not establish energetic animation.</p>
       <p className="mt-2 text-sm text-[var(--muted)]">Energy shapes meaningful actions and emphasis. Reading time and measured narration take priority.</p>
 

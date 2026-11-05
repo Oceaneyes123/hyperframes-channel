@@ -7,7 +7,7 @@ import { openDatabase } from "./database.ts";
 import { openVisuals } from "./visual-store.ts";
 import { ConflictError } from "./studio.ts";
 import { compileMotion } from "../engine/compile-motion.ts";
-import { motionShotSchema, motionSourceSchema as sourceSchema, motionRequestSchema, motionArtifactSchema as artifactSchema, validateMotion, scheduleMotion, type MotionArtifact } from "../workflow/motion.ts";
+import { defaultEnergyProfile, motionShotSchema, motionSourceSchema as sourceSchema, motionRequestSchema, motionArtifactSchema as artifactSchema, validateMotion, scheduleMotion, type MotionArtifact } from "../workflow/motion.ts";
 import { openTiming } from "./timing-store.ts";
 import { validateTiming } from "../workflow/production.ts";
 import { resolveBeatTiming } from "../workflow/timing.ts";
@@ -96,7 +96,7 @@ export function openMotion(directory: string, videosDirectory: string) {
             const original = base.plan.shots.find((item) => item.id === request.shotId);
             if (!original || shot.id !== original.id || shot.sourceHash !== original.sourceHash || shot.sourceIndex !== original.sourceIndex || JSON.stringify(shot.lineNumbers) !== JSON.stringify(original.lineNumbers)) throw new Error("Selected shot identity must remain unchanged.");
             if (JSON.stringify(shot.objects) !== JSON.stringify(original.objects)) throw new Error("Scoped motion edits must preserve object identity and source correspondence.");
-            plan = { ...base.plan, interpreterVersion: base.plan.interpreterVersion === "3" ? "3" : "2", shots: base.plan.shots.map((item) => item.id === request.shotId ? shot : item) };
+            plan = { ...base.plan, energyProfile: request.energyProfile ?? defaultEnergyProfile, interpreterVersion: base.plan.interpreterVersion === "3" ? "3" : "2", shots: base.plan.shots.map((item) => item.id === request.shotId ? shot : item) };
           } else plan = input;
           const board = visuals.read(projectId, request.storyboardId)!;
           const artifact = artifactSchema.parse({ creativeRules, schemaVersion: 1, id, projectId, createdAt: row.created_at, parentId: request.baseId, source: dependency, plan: validateMotion(plan, board, hashMotionSource) });

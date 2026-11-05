@@ -98,9 +98,10 @@ test("beat gateway uses measured timing and energy, preserves scoped shots and i
 
 test("motion gateway hydrates full proposals, scopes revisions and preserves acceptance on failure", async (t) => {
   const f = fixture(t); f.visuals.accept(f.project.id, f.boardId);
-  let guidanceRequests = 0;
+  let guidanceRequests = 0; const energyProfiles: string[] = [];
   const gateway = await fakeGateway("writing", 0, (body) => {
     const guidance = body.messages.slice(0, -1).map((message) => message.content).join("\n");
+    energyProfiles.push(JSON.parse(body.messages.at(-1)!.content).energyProfile);
     assert.match(guidance, /Default to no on-canvas text/);
     assert.match(guidance, /native, seek-safe action sequences/);
     guidanceRequests++;
@@ -109,20 +110,26 @@ test("motion gateway hydrates full proposals, scopes revisions and preserves acc
   const config = readConfig({ V3_DATA_DIR: f.directory, V3_VIDEOS_DIR: f.videos });
   config.gateway = { baseUrl: gateway.baseUrl, model: "fixture-model", apiKey: "fixture-only" };
   const id = await generateMotion(f.project.id, f.input, new AbortController().signal, () => {}, config);
+  assert.equal(f.store.read(f.project.id, id)!.plan.energyProfile, "intense");
   assert.equal(f.store.acceptance(f.project.id), null); f.store.decide(f.project.id, id, "accept");
   const original = f.store.read(f.project.id, id)!;
-  const request = { ...f.input, baseId: id, shotId: original.plan.shots[1].id, instruction: "Change only this easing." };
+  const olderProfile = structuredClone(original.plan); olderProfile.energyProfile = "energetic";
+  const olderId = f.store.begin(f.project.id, { ...f.input, baseId: id }); f.store.complete(f.project.id, olderId, olderProfile);
+  const request = { ...f.input, baseId: olderId, shotId: olderProfile.shots[1].id, instruction: "Change only this easing." };
   const revised = await generateMotion(f.project.id, request, new AbortController().signal, () => {}, config);
   const proposal = f.store.read(f.project.id, revised)!;
   assert.deepEqual(proposal.plan.shots[0], original.plan.shots[0]); assert.deepEqual(proposal.plan.shots[2], original.plan.shots[2]);
   assert.equal(proposal.plan.shots[1].actions[0].ease, "linear");
-  assert.equal(guidanceRequests, 2); // Full motion and scoped revisions share the default.
-  f.store.decide(f.project.id, revised, "reject"); assert.equal(f.store.acceptance(f.project.id)?.runId, id);
+  assert.equal(proposal.plan.energyProfile, "intense"); assert.deepEqual(energyProfiles, ["intense", "intense"]);
+  assert.equal(guidanceRequests, 2); // Full motion and scoped revisions use the default.
+  f.store.decide(f.project.id, revised, "reject"); f.store.decide(f.project.id, olderId, "reject");
+  assert.equal(f.store.acceptance(f.project.id)?.runId, id);
   const invalid = await fakeGateway("invalid"); t.after(() => invalid.close()); config.gateway.baseUrl = invalid.baseUrl;
-  await assert.rejects(generateMotion(f.project.id, request, new AbortController().signal, () => {}, config));
+  const invalidRequest = { ...f.input, baseId: id, shotId: original.plan.shots[1].id };
+  await assert.rejects(generateMotion(f.project.id, invalidRequest, new AbortController().signal, () => {}, config));
   assert.equal(f.store.list(f.project.id)[0].status, "failed"); assert.equal(f.store.acceptance(f.project.id)?.stale, false);
   config.gateway.baseUrl = gateway.baseUrl; const controller = new AbortController(); controller.abort();
-  await assert.rejects(generateMotion(f.project.id, request, controller.signal, () => {}, config));
+  await assert.rejects(generateMotion(f.project.id, invalidRequest, controller.signal, () => {}, config));
   assert.equal(f.store.latest(f.project.id), id);
 });
 

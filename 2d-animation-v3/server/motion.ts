@@ -36,7 +36,7 @@ export async function generateMotion(projectId: string, input: unknown, signal: 
     const selectedShot = request.shotId ? context.base?.plan.shots.find((shot) => shot.id === request.shotId) : null;
     if (request.shotId && !selectedShot) throw new Error("Motion shot missing.");
     const version = selectedShot ? context.base!.plan.interpreterVersion === "3" ? "3" : "2" : request.interpreterVersion ?? (context.board.output.kind === "storyboard" && context.board.output.shots.some((shot) => shot.startFrame.shapes.some((shape) => isComponent(shape.type)) || shot.endFrame.shapes.some((shape) => isComponent(shape.type))) ? "3" : "2");
-    const energy = request.energyProfile ?? context.base?.plan.energyProfile ?? defaultEnergyProfile;
+    const energy = request.energyProfile ?? defaultEnergyProfile;
     const data = JSON.stringify({ instruction: request.instruction, narration, storyboard: context.board,
       selectedShot, priorPlan: request.shotId ? null : context.base?.source.storyboardId === context.board.id ? context.base.plan : null,
       interpreterVersion: version, energyProfile: energy, timing: context.timing ? { id: context.timing.id, audioHash: context.timing.audioHash, timing: context.timing.timing, anchors: context.timing.anchors, provenance: context.timing.provenance, durationFrames: context.timing.measured.durationFrames } : null });
