@@ -2,54 +2,31 @@
 
 ## Read first
 
-1. Read `docs/STATUS.md` for current verified work, pending decisions and limitations.
-2. Read `docs/architecture.md` for ownership, immutable storage and approval boundaries.
-3. Load only the guide for the current task: `docs/animation-workflow.md`,
-   `docs/workflow-efficiency.md`, `docs/researched-writing.md`,
-   `docs/creative-quality.md` or generated `docs/AI-CREATIVE-MISTAKES.md`.
+1. `docs/STATUS.md`: implemented work, pending decisions, limitations.
+2. `docs/architecture.md`: ownership, immutable storage, approvals.
+3. `docs/reference-map.md`: load only current stage/selected capability sections, never every linked guide.
 
-Do not load `docs/archive/`, historical `.planning/`, `docs/phase0/`,
-`docs/writing-evaluation/`, or old `task_plan.md`, `findings.md` and `progress.md`
-by default. Read a specific historical artifact only when the user explicitly
-requests that evidence; do not recursively follow archive links.
+Do not preload `docs/archive/`, historical `.planning/`, `docs/phase0/`, `docs/writing-evaluation/`, or old `task_plan.md`/`findings.md`/`progress.md`. Read specific historical evidence only on explicit user request; never recursively follow archive links.
 
-The source plans remain byte-preserved at `docs/archive/docs/PLAN.md` and
-`docs/archive/docs/PLAN2.md`. They are historical reference, not current instructions.
-This section replaces every earlier instruction to read those plans first or to
-resume the v3-root planning trio. For new authorized multi-step work, initialize or
-explicitly select a task-specific plan; never resume an unrelated historical plan.
+Byte-preserved `docs/archive/docs/PLAN.md` and `PLAN2.md` are historical. This replaces earlier instructions to read them first/resume the V3-root planning trio. For authorized multi-step work, initialize/select a task-specific plan; never resume unrelated history.
 
 ## Work and preservation boundaries
 
-Follow the current user task. Work in the existing workspace; do not create a
-worktree. No subagents for this task. Never commit, push, publish or deploy unless
-requested. Historical task authorizations do not authorize a new production job.
+Apply `docs/quality-bar.md` before new/revised explainers: clear VoiceStudio narration, rough composed backgrounds, scene-specific decorated typography, decisive causal motion and approved representative scenes before full animation. New briefs use `PROMPT_TEMPLATE.md`. Valid contracts/clean diagnostics do not establish quality acceptance.
 
-Preserve sibling projects, original source plans and frozen/failed evaluation
-evidence. V2 Markdown and benchmark sources are hash-pinned; do not move/edit
-them or change expected hashes to hide drift. Keep generated
-`docs/AI-CREATIVE-MISTAKES.md` at its tested path; never hand-edit it.
+Work in this workspace, never a worktree. Audio creation alone requires a dedicated explicit `gpt-6-luna` subagent, scoped by `docs/workflow-efficiency.md#model-assignments`; other subagents need explicit user request. Never commit, push, publish or deploy unless requested. Historical authorization cannot start a new production job.
 
-No real media generation, voice tooling, actual human approval, production gates
-or publishing without explicit current authorization. Model review, synthetic
-fixtures, artifact acceptance and automated checks do not grant production gates.
-Preserve exact user approvals, source dependencies, original audio and measured
-timing. Changed inputs invalidate the affected decisions; never infer consent.
+Preserve sibling projects, original plans and frozen/failed evidence. V2 Markdown/benchmarks are hash-pinned: never move/edit them or change expected hashes to hide drift. Keep generated `docs/AI-CREATIVE-MISTAKES.md` at its tested path; never hand-edit it.
+
+Real media generation, voice tooling, human approval, production gates and publishing require explicit current authorization. Model review, synthetic fixtures, artifact acceptance and tests cannot grant gates. Preserve exact user approvals/dependencies, original audio and measured timing; changed inputs invalidate affected decisions. Never infer consent.
 
 ## Runtime and verification
 
-Use Node 24 and npm from this directory. Run `npm run check` and `npm run build`
-for relevant changes; database changes also need persistence/schema compatibility
-tests. Report failures without relaxing fixtures, thresholds or expected hashes.
+Use Node 24/npm from V3. Run `npm run check` and `npm run build` for relevant changes; DB changes also require persistence/schema-compatibility tests. Report failures without relaxing fixtures, thresholds or hashes.
 
-Keep environment values and `server/` imports out of client components. Do not
-return credentials or raw configuration errors from routes. Keep local runtime
-storage inside v3, never in sibling production or publishing data.
+Keep environment values/`server/` imports out of clients. Routes must not expose credentials/raw configuration errors. Runtime storage stays inside V3, never sibling production/publishing data.
 
-Remotion 4.0.537 and its official GSAP adapter own the frame-driven production
-engine. V2's OneTake-only rule does not apply to v3. SQLite owns mutable indexes
-and decisions; immutable JSON/media own hash-bound content. Markdown is guidance
-or a review/export view, not a second independently editable source of truth.
+Remotion 4.0.537/official GSAP own frame-driven production; V2's OneTake-only rule does not apply. SQLite owns mutable indexes/decisions; immutable JSON/media own hash-bound content. Markdown is guidance/review/export, never a second editable source of truth.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

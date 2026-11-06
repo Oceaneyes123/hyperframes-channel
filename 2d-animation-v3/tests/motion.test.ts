@@ -102,7 +102,9 @@ test("motion gateway hydrates full proposals, scopes revisions and preserves acc
   const gateway = await fakeGateway("writing", 0, (body) => {
     const guidance = body.messages.slice(0, -1).map((message) => message.content).join("\n");
     energyProfiles.push(JSON.parse(body.messages.at(-1)!.content).energyProfile);
-    assert.match(guidance, /Default to no on-canvas text/);
+    assert.match(guidance, /Keep on-canvas text sparse and essential/);
+    assert.match(guidance, /use all ten styles/);
+    assert.match(guidance, /texture:"paper-grain@1"/);
     assert.match(guidance, /native, seek-safe action sequences/);
     guidanceRequests++;
     return fixtureMotion(body);

@@ -5,9 +5,11 @@ The production phases and approval gates live in `channel/CHANNEL_RECIPE.md`.
 
 ## Narration and timing
 
-The current default is **audio version 2: Fish Audio via OpenRouter**. Follow
-[channel/AUDIO_VERSIONS.md](channel/AUDIO_VERSIONS.md) for the approved settings,
-audition, preservation rules and rollback. Runtime tooling is unchanged.
+The current default is **audio version 3: local VoiceStudio with an explicitly
+listening-approved engine and voice**. An installed Kitten preset is not acceptance. Follow
+[channel/AUDIO_VERSIONS.md](channel/AUDIO_VERSIONS.md) for settings, D-drive model
+storage, voice auditions, measured timing and preservation rules. Voice selection
+still requires listening approval; existing runtime tooling is unchanged.
 
 ### Version 1: Supertonic reference
 

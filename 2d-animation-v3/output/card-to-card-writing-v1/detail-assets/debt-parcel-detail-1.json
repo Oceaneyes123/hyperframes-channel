@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "id": "debt-parcel-detail@1",
+  "source": "Original vector artwork for the approved card-to-card explainer; authored through V3 vector import.",
+  "license": "CC0-1.0",
+  "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+  "width": 240,
+  "height": 220,
+  "purpose": "One intact coral borrowed-principal token with folded edge, coin relief and grip, carried unchanged between the two cards.",
+  "tags": [
+    "credit-card",
+    "finance",
+    "editorial"
+  ],
+  "compositions": [
+    "editorial-illustration",
+    "illustrated-workflow",
+    "visual-comparison"
+  ],
+  "layers": [
+    {
+      "id": "parcel",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.15,
+          "kind": "rect",
+          "x": 20,
+          "y": 47,
+          "width": 207,
+          "height": 159,
+          "radius": 18
+        },
+        {
+          "fill": "accent",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 8,
+          "y": 30,
+          "width": 207,
+          "height": 159,
+          "radius": 16
+        },
+        {
+          "fill": "paper",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M154 30L215 91H154Z"
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 3,
+          "opacity": 0.45,
+          "kind": "path",
+          "d": "M27 170H193"
+        }
+      ]
+    },
+    {
+      "id": "detail",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 6,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M62 30V21Q62 7 80 7H127Q145 7 145 21V30"
+        },
+        {
+          "fill": "paper",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 91,
+          "cy": 107,
+          "rx": 40,
+          "ry": 40
+        },
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M91 81V132M108 88H82Q67 88 67 101Q67 111 82 111H100Q116 111 116 122Q116 133 101 133H75"
+        }
+      ]
+    }
+  ]
+}

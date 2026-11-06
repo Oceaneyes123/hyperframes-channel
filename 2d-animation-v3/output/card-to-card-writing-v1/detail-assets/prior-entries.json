@@ -1,0 +1,102 @@
+[
+  {
+    "id": "person-editorial@1",
+    "contentHash": "10abd2b18f4b3e7012ea167b8c95446c8267b3148b2b179ea8cd4d9d2ae02aa4",
+    "entrySha256": "8462806de9483a51244b4215bfb421941f50814a8a5510cb39cec9af6d76137c"
+  },
+  {
+    "id": "computer-editorial@1",
+    "contentHash": "d5229a5eb05135173ebd656c73a8dea36eac8c4d0686776d21775ba6ecf11183",
+    "entrySha256": "451e6dec6fe22cdfa0feae69acd3823f11975ba62f8d193c1387ec9c152ce309"
+  },
+  {
+    "id": "document-editorial@1",
+    "contentHash": "e37a92c8c810bf11c6dd77b26ad0eafff364791aaf8f83dff90a3f9e5a0c8455",
+    "entrySha256": "bd696660d875d01acc9be09aeef1bb4423e461d56f5e0ffcb4a30265a22fffdf"
+  },
+  {
+    "id": "message-editorial@1",
+    "contentHash": "f5b9231bdf90db2dea2fd0c6f13ede30c76bd486f1a410f905aab526e8320dbd",
+    "entrySha256": "3a26bc5389a881cdc0bbc1e0cd6aa8232ec7d30c01137f1f5bcd85f14435a73a"
+  },
+  {
+    "id": "processor-editorial@1",
+    "contentHash": "460ce9160362a2f55f151070f7f5bfdeb41a8bd387a2143100a88788c59a6177",
+    "entrySha256": "b2dfd1dc3e878c8f2d6eb748af5046493372fb0f5d82fc6fd4f9b1ab985c92b5"
+  },
+  {
+    "id": "database-editorial@1",
+    "contentHash": "b89eda89de756ce08b2bbad25dca92ce925661fe49e02bd0706badb5e27598ff",
+    "entrySha256": "3710566847f92e09994cdab33128a51db903dc5258eec5b846578dcabfe7f08a"
+  },
+  {
+    "id": "cloud-editorial@1",
+    "contentHash": "551b6270ca110a6c36ca6c40627cf902ce2761e88338e7777953103996c2e607",
+    "entrySha256": "88d085db3a5a90db2a74617ea502ea0f0d0dd388b2190cf73adda430d4fb2de6"
+  },
+  {
+    "id": "payment-editorial@1",
+    "contentHash": "8f525615aeac91e416cd98b8eeab67fc58b4140bf70c47a020f9803cd3ab2758",
+    "entrySha256": "2090829ceebdf3ded5db9c7423d233e43c5e6101e5e94873c9562d43d01fa2ae"
+  },
+  {
+    "id": "product-editorial@1",
+    "contentHash": "028aef183172437d1171d5886986937ea5f468f861be114b507f9c8ddeaca0e5",
+    "entrySha256": "e3e73fed68bae6f5f6598474fb1ebf768680e7a186377f1dac897058830ba4eb"
+  },
+  {
+    "id": "research-interface@1",
+    "contentHash": "5c1be19c2d277c7c4f5c64fec6ccb95edf1bfe38b87958f55720cc61edc5317a",
+    "entrySha256": "0c5d5d748cf93339604e0c73fd13f2b9d243eb77f8d88ab8008c40cbcfc8f186"
+  },
+  {
+    "id": "salon-working-studio@1",
+    "contentHash": "e806fb1a0dfd133a0940e82336bd95af63b475f0aaef97817c694822c2690fe8",
+    "entrySha256": "bb3873c38d1903eff80f7e4d6f6bc2c2f774edf00ac4eb381727cdbb2b6d876a"
+  },
+  {
+    "id": "faq-research-desk@1",
+    "contentHash": "ef4f5218817b59b087aebd94e2c7f3cd5304458be5dd0dab9ed2f67d32aa49d8",
+    "entrySha256": "dcbd687e1b8ecdcaf27a326fffa65dd6a74d4812a15be0178208d13963ab9529"
+  },
+  {
+    "id": "inquiry-intake-console@1",
+    "contentHash": "af5b25b4c4d715171932234a54f1c316830b2a6a2272e70516966485c4728203",
+    "entrySha256": "344cdc818d72732395bf878ef783add75c5607414b5ba6d092f1ff11de8e3690"
+  },
+  {
+    "id": "deepseek-processing-studio@1",
+    "contentHash": "8f34b68664566f48c3a4c6656d13f281b16da33ca41155420f9e6368dcc41a61",
+    "entrySha256": "58cf8eefdaababf2d2628bf833f201bff048078f246f5c85336bfc1d9e0f8bda"
+  },
+  {
+    "id": "owner-review-console@1",
+    "contentHash": "88e5d80cb81023287084bb20e4000668d881571e98110449c5b089c27ba4a904",
+    "entrySha256": "2cd16a59916ad443a1091ed4079dd486cb3ae0ff120cecee4028d2785930b5b6"
+  },
+  {
+    "id": "booking-test-bench@1",
+    "contentHash": "0327e25aa1b9106f54e63f686dad9558b245d6dc6f408641aad25b6f981b0c23",
+    "entrySha256": "51aed6ffe7ea9360883208158afacc397424960e740f53037c1c940e99dacd50"
+  },
+  {
+    "id": "service-handover-desk@1",
+    "contentHash": "dcd9f405541877352212fce365720bfa8928e48542cb10e0c7781afaeea1b50c",
+    "entrySha256": "81365cf4029c88c371ef0af739a3d59f6106b23428a70f4464bd6fae09af4132"
+  },
+  {
+    "id": "service-running-costs@1",
+    "contentHash": "6d03ae2291751ec0f93ae0cd4488470c4570dc0131738e96fde0c189d7bddf34",
+    "entrySha256": "9ea677342e30245d396e1874a60dff2e20294130b9d7b2fc7f143c6f5aafc889"
+  },
+  {
+    "id": "inquiry-intake-console@2",
+    "contentHash": "524282b070e8e78fb13856e3441cb4bf64cec32eb0fc240125c7bd91951bc7fc",
+    "entrySha256": "17369ee73b213f265e8a89d201fa912732a9906d939bc0bc87f97a101b586ef8"
+  },
+  {
+    "id": "inquiry-intake-console@3",
+    "contentHash": "7d4f94002507134b431cf05b75c1e475d06bcf60323b0cfc0c1b407201d1eb2f",
+    "entrySha256": "1420f0e3b2467355ec82d169ec87eaca80451c511c202efab641265ee2bf8fa1"
+  }
+]

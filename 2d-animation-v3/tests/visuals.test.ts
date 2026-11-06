@@ -168,7 +168,8 @@ test("gateway path saves proposals without accepting, rejects invalid outputs an
   const f = fixture(t); const guidanceRequests: string[] = [];
   const gateway = await fakeGateway("writing", 0, (body) => {
     const guidance = body.messages.slice(0, -1).map((message) => message.content).join("\n");
-    assert.match(guidance, /Default to no on-canvas text/);
+    assert.match(guidance, /Keep on-canvas text sparse and essential/);
+    assert.match(guidance, /texture:"rough-paper@1"/);
     assert.match(guidance, /large animated diagrams/);
     assert.match(guidance, /GIF-like moments/);
     guidanceRequests.push(guidance);

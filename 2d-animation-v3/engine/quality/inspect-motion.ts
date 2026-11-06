@@ -4,6 +4,7 @@ import { highEnergyPacing, expandMotionShot, scheduleMotion, type MotionPlan, ty
 import type { VisualArtifact } from "../../workflow/visuals.ts";
 import { isTextType, textFontSize } from "../text-metrics.ts";
 import { rhythmReviewOptionsSchema, type RhythmReviewOptions } from "../../workflow/rhythm-profile.ts";
+import { textMotionLibrary } from "../../workflow/text-motion.ts";
 
 export const qualityThresholds = { version: "motion-quality@3", stillFrames: 90, entranceFrames: 24, repeatedShots: 3, competingPrimary: 4, minimumFontPixels: 56, minimumSymbolPixels: 48, minimumContrast: 4.5, minimumSymbolContrast: 3 } as const;
 export type MotionFinding = { id: string; ruleId: string; shotId: string; targetId: string | null; startFrame: number; endFrame: number; severity: "review" | "warning"; message: string; evidence: string; suggestion: string; heuristic: boolean };
@@ -71,6 +72,13 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
     }
     const exposed = shot.objects.filter((object) => object.initial.opacity > 0 || shot.actions.some((action) => action.targetIds.includes(object.id) && (action.to.opacity ?? 0) > 0));
     const rootText = exposed.filter((object) => isTextType(object.type) || ["variable-type@1", "kinetic-phrase@1", "numeric-display@1"].includes(object.type));
+    if (pacing) {
+      for (const object of rootText.filter((object) => isTextType(object.type) && object.label.trim() && !(shot.incoming.presentation === "shared" && shot.incoming.anchor?.objectId === object.id))) {
+        if (!shot.textMotions?.some((motion) => motion.targetId === object.id)) add("untreated-text", 0, shot.durationFrames - 1, "visible text has no library animation.", `${object.id} has no textMotions treatment. Root movement or a fade does not use the text animation library.`, "Choose a suitable library treatment, settle the root first, and preserve reading time. Review intentional stable interface text as an exception.", object.id);
+      }
+      const graphics = changedActions.filter((action) => !rootText.some((object) => action.targetId === object.id || action.targetId.startsWith(`${object.id}.`)));
+      if (shot.durationFrames >= 90 && !graphics.length) add("missing-motion-graphics", 0, shot.durationFrames - 1, "the scene has no detected graphic actor development.", "Only text treatments, camera motion or holds develop this scene.", "Stage a meaningful connector trace, handoff, assembly, split, morph or state reaction using approved actors. Review a deliberate typography-only scene as an exception.");
+    }
     if (rootText.length > reviewTargets.maxTextElementsPerShot) add("text-element-budget", 0, shot.durationFrames - 1, "review the shot's text budget.", `${rootText.length} potentially visible root text elements; experimental limit ${reviewTargets.maxTextElementsPerShot}. Sequential labels also count; embedded illustration text is not counted.`, "Prefer objects over text; retain essential source text and inspect simultaneous readability at phone size.");
     const illustrations = new Set(exposed.filter((object) => !rootText.includes(object) && !["rect", "ellipse", "line"].includes(object.type)).map((object) => JSON.stringify({ type: object.type, asset: object.asset, diagram: object.diagram, comparison: object.comparison, morph: object.morph, numeric: object.numeric, ui: object.ui, rig: object.rig, morphChain: object.morphChain, collage: object.collage, perspective: object.perspective })));
     const reused = [...illustrations].filter((identity) => previousIllustrations.has(identity));
@@ -170,6 +178,12 @@ export function inspectCreativeMotion(plan: MotionPlan, board?: VisualArtifact |
   }
   const primary = plan.shots.flatMap((shot, index) => (shot.beats ?? []).filter((beat) => beat.type !== "hold" && beat.importance === "primary").map((beat) => ({ beat, shot, index })));
   const primaryUsage: Record<string, number> = {};
+  const textSlots = plan.shots.flatMap((shot) => shot.objects.filter((object) => isTextType(object.type) && object.label.trim() && !(shot.incoming.presentation === "shared" && shot.incoming.anchor?.objectId === object.id)));
+  if (pacing && textSlots.length >= textMotionLibrary.length) {
+    const missing = textMotionLibrary.filter((preset) => !usage[preset.id]);
+    if (missing.length) findings.push({ id: "text-library-coverage", ruleId: "text-library-coverage", shotId: plan.shots[0].id, targetId: null, startFrame: 0, endFrame: schedule.durationFrames - 1, severity: "review", heuristic: true,
+      message: "Review unused text animation styles across the video.", evidence: `Unused styles: ${missing.map((preset) => preset.id).join(", ")}.`, suggestion: "Use all suitable styles across the sequence and reuse them when meaning recurs. Do not add labels or force incompatible styles to fill the catalog." });
+  }
   for (const { beat } of primary) primaryUsage[beat.presetId] = (primaryUsage[beat.presetId] ?? 0) + 1;
   if (primary.length >= reviewTargets.minimumPrimaryBeats) for (const [preset, count] of Object.entries(primaryUsage)) {
     if (count / primary.length <= reviewTargets.maxPrimaryPresetShare) continue;

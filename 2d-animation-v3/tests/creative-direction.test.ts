@@ -40,8 +40,15 @@ test("director and motion calls use role overrides and include style and rhythm 
   assert.equal(f.visuals.list(f.projectId).find((row) => row.id === visualId)?.model, "director");
   assert.deepEqual(gateway.requests.map((request) => request.model), ["motion", "director"]);
   for (const request of gateway.requests) {
-    assert.match(request.messages.map((message) => message.content).join("\n"), /Style bible:/);
-    assert.match(request.messages.map((message) => message.content).join("\n"), /no reference clips measured/);
+    const guidance = request.messages.map((message) => message.content).join("\n");
+    assert.match(guidance, /Style bible:/);
+    assert.match(guidance, /no reference clips measured/);
+    assert.match(guidance, /rough-paper@1/);
+    assert.match(guidance, /uniform header band/);
+    assert.match(guidance, /small nudges/);
+    assert.match(guidance, /receiving-object reaction/);
+    assert.match(guidance, /Root actors may travel/);
+    assert.match(guidance, /normal speed/);
   }
 });
 

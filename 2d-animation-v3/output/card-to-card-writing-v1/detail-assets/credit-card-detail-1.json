@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "id": "credit-card-detail@1",
+  "source": "Original vector artwork for the approved card-to-card explainer; authored through V3 vector import.",
+  "license": "CC0-1.0",
+  "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+  "width": 600,
+  "height": 380,
+  "purpose": "Recognizable credit card with recessed chip, contactless arcs, embossed nonnumeric marks and layered edge. Accent identifies the card; no real issuer or account data.",
+  "tags": [
+    "credit-card",
+    "finance",
+    "editorial"
+  ],
+  "compositions": [
+    "editorial-illustration",
+    "illustrated-workflow",
+    "visual-comparison"
+  ],
+  "layers": [
+    {
+      "id": "body",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.16,
+          "kind": "rect",
+          "x": 18,
+          "y": 28,
+          "width": 568,
+          "height": 338,
+          "radius": 34
+        },
+        {
+          "fill": "accent",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 8,
+          "y": 8,
+          "width": 570,
+          "height": 340,
+          "radius": 30
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 3,
+          "opacity": 0.55,
+          "kind": "path",
+          "d": "M30 78V46Q30 29 49 29H523"
+        },
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 0.35,
+          "kind": "path",
+          "d": "M34 321H552"
+        }
+      ]
+    },
+    {
+      "id": "chip",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "mint",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 58,
+          "y": 110,
+          "width": 102,
+          "height": 77,
+          "radius": 12
+        },
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M91 110V187M127 110V187M58 135H91M127 135H160M58 160H91M127 160H160M91 122H127V176H91Z"
+        }
+      ]
+    },
+    {
+      "id": "details",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 6,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M206 118Q235 148 206 178M222 104Q265 148 222 192M238 90Q298 148 238 206"
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 9,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M58 245H134M157 245H233M256 245H332M355 245H431"
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 4,
+          "opacity": 0.65,
+          "kind": "path",
+          "d": "M58 285H233M355 285H410"
+        },
+        {
+          "fill": "surface",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 495,
+          "cy": 267,
+          "rx": 27,
+          "ry": 27
+        },
+        {
+          "fill": "surface",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "ellipse",
+          "cx": 525,
+          "cy": 267,
+          "rx": 27,
+          "ry": 27
+        }
+      ]
+    }
+  ]
+}

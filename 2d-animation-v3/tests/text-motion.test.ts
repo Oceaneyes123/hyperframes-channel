@@ -25,6 +25,20 @@ test("all ten text treatments validate, compile, settle and appear in quality us
   }
 });
 
+test("high-energy review catches untreated text, missing graphics and unused library styles without changing plans", () => {
+  const { plan } = textMotionFixture(); plan.energyProfile = "intense";
+  const complete = inspectCreativeMotion(plan);
+  assert.ok(!complete.findings.some((finding) => ["untreated-text", "text-library-coverage"].includes(finding.ruleId)));
+  assert.ok(complete.findings.some((finding) => finding.ruleId === "missing-motion-graphics"));
+  plan.shots[0].textMotions = [];
+  const before = JSON.stringify(plan), report = inspectCreativeMotion(plan);
+  assert.ok(report.findings.some((finding) => finding.ruleId === "untreated-text" && finding.shotId === plan.shots[0].id));
+  assert.ok(report.findings.some((finding) => finding.ruleId === "text-library-coverage" && finding.evidence.includes("mask-rise@1")));
+  assert.equal(JSON.stringify(plan), before);
+  plan.energyProfile = "calm";
+  assert.ok(!inspectCreativeMotion(plan).findings.some((finding) => ["untreated-text", "missing-motion-graphics", "text-library-coverage"].includes(finding.ruleId)));
+});
+
 test("text splitting preserves whitespace and complete emoji/combining graphemes", () => {
   const label = "A  cafe\u0301 👩‍💻";
   for (const preset of textMotionLibrary) assert.equal(textMotionSegments(label, preset.id).join(""), label);

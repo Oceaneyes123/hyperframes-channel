@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "id": "card-bill-detail@1",
+  "source": "Original vector artwork for the approved card-to-card explainer; authored through V3 vector import.",
+  "license": "CC0-1.0",
+  "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+  "width": 600,
+  "height": 820,
+  "purpose": "Large folded credit-card bill with printed row cues and a conceptual shuttered payment slot. No invented amounts, lender branding or network-processing UI.",
+  "tags": [
+    "credit-card",
+    "finance",
+    "editorial"
+  ],
+  "compositions": [
+    "editorial-illustration",
+    "illustrated-workflow",
+    "visual-comparison"
+  ],
+  "layers": [
+    {
+      "id": "paper",
+      "role": "subject",
+      "nodes": [
+        {
+          "fill": "ink",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 0.14,
+          "kind": "path",
+          "d": "M38 30H482L582 130V800H38Z"
+        },
+        {
+          "fill": "surface",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M16 10H462L562 110V780H16Z"
+        },
+        {
+          "fill": "paper",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M462 10V110H562"
+        }
+      ]
+    },
+    {
+      "id": "statement",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "accent",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 60,
+          "y": 62,
+          "width": 98,
+          "height": 62,
+          "radius": 9
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 7,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M72 84H146"
+        },
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 8,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M187 76H400M187 102H340"
+        },
+        {
+          "fill": "none",
+          "stroke": "line",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M60 175H514M60 244H514M60 313H514M60 382H514"
+        },
+        {
+          "fill": "none",
+          "stroke": "muted",
+          "strokeWidth": 6,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M60 207H254M60 276H218M60 345H280M421 207H514M450 276H514M432 345H514"
+        },
+        {
+          "fill": "none",
+          "stroke": "ink",
+          "strokeWidth": 6,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M60 451H164M60 479H235"
+        },
+        {
+          "fill": "none",
+          "stroke": "muted",
+          "strokeWidth": 2,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M60 694H517M60 706H74M86 706H100M112 706H126M138 706H152M164 706H178M190 706H204M216 706H230M242 706H256M268 706H282M294 706H308M320 706H334M346 706H360M372 706H386M398 706H412M424 706H438M450 706H464M476 706H490M502 706H516"
+        }
+      ]
+    },
+    {
+      "id": "slot",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "ink",
+          "stroke": "ink",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 74,
+          "y": 524,
+          "width": 434,
+          "height": 112,
+          "radius": 17
+        },
+        {
+          "fill": "muted",
+          "stroke": "none",
+          "strokeWidth": 0,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 88,
+          "y": 538,
+          "width": 406,
+          "height": 84,
+          "radius": 10
+        },
+        {
+          "fill": "none",
+          "stroke": "line",
+          "strokeWidth": 4,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M94 647H487"
+        }
+      ]
+    },
+    {
+      "id": "shutter-left",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "accent",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 88,
+          "y": 538,
+          "width": 200,
+          "height": 84,
+          "radius": 8
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 5,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M263 553V607"
+        }
+      ]
+    },
+    {
+      "id": "shutter-right",
+      "role": "detail",
+      "nodes": [
+        {
+          "fill": "accent",
+          "stroke": "ink",
+          "strokeWidth": 3,
+          "opacity": 1,
+          "kind": "rect",
+          "x": 294,
+          "y": 538,
+          "width": 200,
+          "height": 84,
+          "radius": 8
+        },
+        {
+          "fill": "none",
+          "stroke": "surface",
+          "strokeWidth": 5,
+          "opacity": 1,
+          "kind": "path",
+          "d": "M318 553V607"
+        }
+      ]
+    }
+  ]
+}

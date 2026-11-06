@@ -1,11 +1,8 @@
 # Beat sheets
 
-Beat sheets plan a visual event beside each narration line. They do not contain
-spoken directions, approve a script, create audio, or establish word timing.
-Writing drafts and storyboard shots may carry optional `beatSheet` metadata.
-Historical artifacts can omit it. A newly generated sheet must cover every line
-in its scope exactly once, in order. Each line starts at local frame zero with
-contiguous 30–60-frame beats at 30 fps; these 1–2-second spans are estimates.
+Plan one visual event beside each narration line using the [quality bar](quality-bar.md): cause, changed state and receiver response, never filler shakes/pulses/camera drift. Stage compact actions and holds within each window; resolve final timing against measured narration.
+
+Optional `beatSheet` metadata belongs to writing drafts/storyboard shots, never speech, approval, audio or measured word timing. Legacy artifacts may omit it. New sheets cover every scoped line exactly once in order. Each line begins at local frame zero with contiguous 30–60-frame beats at 30fps: estimated 1–2-second windows, not tween lengths.
 
 ```json
 {
@@ -31,23 +28,17 @@ contiguous 30–60-frame beats at 30 fps; these 1–2-second spans are estimates
 }
 ```
 
-Events are `enter`, `exit`, `transform`, `counter`, `camera`, `background` or `hold`.
-Sound cues are `none`, `click`, `pop`, `whoosh`, `impact` or `chime`, describing
-future local synthesis rather than executable commands or asset URLs. A text
-value is one short label or `null`. One object should cause a visible result or
-carry information into the next state. Holds remain useful; never invent motion,
-numbers or evidence to fill a beat. Source qualifications stay accurate.
+| Field | Allowed meaning |
+| --- | --- |
+| `event` | `enter`, `exit`, `transform`, `counter`, `camera`, `background`, `hold` |
+| `soundCue` | `none`, `click`, `pop`, `whoosh`, `impact`, `chime`; future local synthesis, never commands/URLs |
+| `onScreenText` | One short label or `null` |
 
-Writing stores the sheet beside its structured spoken lines. Draft import joins
-only `line.text`; the sheet does not enter the accepted narration. Visual planning
-creates a sheet for the exact accepted lines in each shot. It does not silently
-reuse a writing sheet after script edits. Motion consumes the saved storyboard
-sheet as intent and maps it to existing supported presets/actions. The sheet is
-not an additional executable timeline: measured line/word anchors override these
-estimates, and sound remains unimplemented until the authorized audio phase.
+An object causes a visible result or carries information forward. Preserve useful holds/source qualifications; never invent motion, numbers or evidence to fill windows.
 
-For Markdown script exports, preserve this narration layout and keep the sheet in
-a companion file. Never append notes inside indented narration:
+Writing stores sheets beside structured lines; import joins only `line.text`. Visual planning creates a sheet for each shot's exact accepted lines, never silently reuses one after edits. Motion maps saved storyboard intent to supported presets/actions. Sheets are not a second executable timeline: measured line/word anchors override estimates. Sound remains unimplemented until authorized audio work.
+
+Markdown exports keep sheets in companion files, never notes inside indented narration:
 
 ```markdown
 ## Line 1
@@ -57,5 +48,4 @@ a companion file. Never append notes inside indented narration:
     Now the reviewer can inspect it.
 ```
 
-No TTS parser was changed. Test the actual moving sequence at normal speed and at
-phone size; a valid sheet does not establish comprehension or quality.
+No TTS parser changes. Validate actual normal-speed, phone-size playback; valid sheets cannot establish comprehension/quality.

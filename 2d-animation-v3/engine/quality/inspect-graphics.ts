@@ -12,6 +12,7 @@ export function inspectGraphics(input: unknown) {
   for (const item of frames) for (const state of ["start", "end"] as const) {
     const frame = item[state];
     const add = (rule: string, evidence: string, suggestion: string, severity: GraphicFinding["severity"] = "review") => findings.push({ id: `${item.index}-${state}-${rule}-${findings.length}`, shotIndex: item.index, state, rule, evidence, suggestion, severity });
+    if (!frame.environment?.texture || !frame.environment.depth) add("plain-background", "The frame has no textured environment with nonzero depth.", "Use rough-paper@1 with a structured layered background; preserve subject contrast and a quiet reading area.");
     if (frame.shapes.length > 10) add("density", `${frame.shapes.length} root objects compete for a phone-sized frame.`, "Remove supporting detail or reveal information progressively.");
     const labels = frame.shapes.filter((shape) => ["text", "heading", "caption", "code", "centered-text"].includes(shape.type));
     const overlays = labels.filter((shape) => shape.type !== "code");

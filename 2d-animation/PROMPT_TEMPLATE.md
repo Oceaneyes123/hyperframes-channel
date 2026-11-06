@@ -1,5 +1,10 @@
 # Repeatable visual explainer prompt
 
+This is the legacy workflow prompt. For the active V3 Studio, use the
+[V3 prompt](../2d-animation-v3/PROMPT_TEMPLATE.md) and
+[user-corrected quality bar](../2d-animation-v3/docs/quality-bar.md); do not carry
+legacy renderer, voice or layout defaults into V3 work.
+
 Replace `[TOPIC]`, then optionally fill the other bracketed inputs. Each optional
 placeholder includes a default; leaving it unchanged asks the agent to choose
 that default. Paste only the prompt block into a new task in this repository.

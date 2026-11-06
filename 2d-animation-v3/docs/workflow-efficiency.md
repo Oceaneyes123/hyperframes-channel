@@ -1,62 +1,65 @@
 # Faster V3 production workflow
 
-Use existing Studio decisions and stores. The commands below replace project-specific
-orchestration scripts; they never infer approval, change the channel voice default,
-or publish anything. Run from `2d-animation-v3` with Node 24.
+Run from V3 with Node 24, using existing Studio stores/decisions. Apply [quality bar](quality-bar.md); new briefs use [V3 prompt](../PROMPT_TEMPLATE.md). Audition, storyboard and representative-scene reviews catch failures before scaling; API success/stills/scores never replace them. Commands neither infer approval, select channel voices nor publish.
 
 ## Model assignments
 
-Use Sol 6.1 (`gpt-6.1-sol`) for every part of the workflow except rendering and
-export. Use Luna (`gpt-6-luna`) only for rendering and export operations.
-
-| Work | Assigned model |
+| Work | Model |
 | --- | --- |
-| Research, scripts, hooks and editorial review | Sol 6.1 |
-| Narration coordination, alignment and audio planning | Sol 6.1 |
-| Concepts, storyboards, assets, motion authoring and revisions | Sol 6.1 |
-| Creative review, feedback and workflow development | Sol 6.1 |
-| Render preflight, preview/review renders, final rendering, encoding, technical output verification and export | Luna |
+| Coordination, research, hooks/writing, editorial/creative review, workflow development | Sol 6.1 (`gpt-6.1-sol`) |
+| Narration coordination, word alignment, audio planning, concepts/storyboards/assets/motion/revisions | Sol 6.1 |
+| Auditions/full takes, checkpoint recovery, generated-audio validation | Dedicated `gpt-6-luna` subagent, audio creation only |
+| Preflight, preview/review/final video renders, encoding, technical verification/export | Luna, separate render/export assignment |
 
-Luna executes the prepared render/export workflow using the existing tools.
-Creative decisions and any resulting source changes remain with Sol 6.1; human
-acceptance and production authorization remain explicit user decisions. These
-assignments do not change gateway settings, narration providers or historical
-model records.
+Audio worker handoff: accepted script ID, selected voice/reference, exact settings, output paths, authorization and active job/checkpoint state. Execute prepared VoiceStudio/explicit-provider requests; preserve raw audio/receipts and measure duration/segments. Monitor matching jobs, never duplicate them.
+
+Audio worker exclusions: writing, provider/voice selection, editorial review, word alignment, visuals, video rendering/export, publishing and human approval. Sol owns creative decisions/source changes; user owns acceptance/authorization. If `gpt-6-luna` is unavailable, report it; never silently substitute/claim delegation. Assignments change no gateway/provider settings or historical records.
+
+## Cost controls for audio and rendering
+
+- Handoff only current-stage IDs/hashes/settings/paths/authorization/checkpoints; reference files rather than copying chat/research/history. Other subagents follow repository authorization rules.
+- Run one matching job. Prefer completion/blocker notifications, otherwise bounded waits reporting changed milestones/failures/input needs. No empty status turns, short polling or restarts for status.
+- Return job ID/outcome, paths/hashes, duration/frame count, verification/blockers; keep full logs on disk.
+- Reuse reviewed voice/settings within scope. Audition changed voice/reference/delivery or new pronunciation, not unchanged settings on resume. Generate full take after audition acceptance, then measure/review.
+- Recover supported matching checkpoints/segments; otherwise create a new take. Preserve originals and review complete audio/timing before import. Reuse grants neither changed-input approval nor commercial rights.
+- Revise at 360×640 before final 1080×1920. Single-pass PNG/encode retains independent seeks, every-frame comparison, full decode/duration/audio checks. Diagnose before retrying only supported failed steps with unchanged bindings; never reuse frames/approvals across bindings.
+- Measure coordinator/worker cached input, uncached input, output, elapsed time/retries separately. Cached tokens alone are not monetary savings; compare actual runs/billing before claims.
 
 ## 1. Check dependencies before starting
 
 ```powershell
 npm run workflow -- preflight gateway
-npm run workflow -- preflight qwen3-custom
 npm run workflow -- preflight render
 npm run workflow -- status PROJECT_ID
 ```
 
-Gateway preflight uses model discovery, not a generation request. It checks
-availability and authorization, not provider credit. Render preflight checks Chrome,
-FFmpeg, FFprobe and at least 512 MB of free output storage. That minimum is not a
-full frame-storage estimate; leave substantially more space for long videos.
-Local voice preflight checks the installed voice or Python package/model path and
-selected CUDA capability without downloading models or synthesizing speech.
-Browser automation/playback permissions still require a separate playback check.
-An unavailable author playback route does not establish creative approval.
+Default VoiceStudio: `GET /health` at `http://127.0.0.1:3900`; inspect running `/openapi.json`, `/engines`, `/models`. Verify selected engine/exact weights, audition voice/settings and effective `D:/VoiceStudio/models` from `GET /api/settings/storage/models-dir`. [Audio reference](../../2d-animation/channel/AUDIO_VERSIONS.md) owns exact settings/review status.
 
-Qwen uses existing server-owned `V3_QWEN_PYTHON`, `V3_QWEN_MODEL_DIR`,
-`V3_QWEN_MODEL_VERSION`, `V3_QWEN_SPEAKER` and `V3_QWEN_DEVICE` settings.
-Keep model versions accurate when changing local weights. No provider fallback or
-new default is selected automatically.
+Only when Qwen is explicitly selected:
+
+```powershell
+npm run workflow -- preflight qwen3-custom
+```
+
+| Preflight | Checks | Limits |
+| --- | --- | --- |
+| Gateway | Model discovery/availability/authorization, no generation | Does not establish credit/image capability |
+| Render | Installed Chrome/FFmpeg/ffprobe, ≥512 MB output space | Not a full frame-storage estimate; reserve more for long videos |
+| Local voice | Installed voice or Python/model path, selected CUDA capability | No downloads/synthesis |
+
+Check browser automation/playback separately; unavailable playback cannot establish approval. Qwen config: `V3_QWEN_PYTHON`, `V3_QWEN_MODEL_DIR`, `V3_QWEN_MODEL_VERSION`, `V3_QWEN_SPEAKER`, `V3_QWEN_DEVICE`. Record exact weight version; no provider/default fallback.
 
 ## 2. Audition once, then generate measured narration
 
-After accepting the script, audition representative hook, explanation and payoff
-lines in Studio. Approve the voice and delivery together when practical. Generate
-the complete take before locking storyboard durations.
+After script acceptance, audition hook/demanding explanation/payoff; approve voice/delivery for clear pronunciation/endings/natural connection with exact settings and `speed:1`. Jasper/Bella remain unaccepted Kitten candidates; private gift-card OmniVoice acceptance does not clear a channel default.
+
+Generate complete take before locking shot lengths. Full listening/every-boundary review precedes original-WAV/measured planning-timing import. VoiceStudio is not a `workflow narrate` adapter; `import-take` requires a validated Studio take, never arbitrary external WAV.
+
+Explicit Windows Speech/Qwen path:
 
 ```powershell
 npm run workflow -- narrate PROJECT_ID narration-request.json
 ```
-
-Example request:
 
 ```json
 {
@@ -68,73 +71,42 @@ Example request:
 }
 ```
 
-Use optional `lineNumber` for an audition. For an interrupted take, add
-`resumeTakeId` from `status` or select the take in Studio. Keep every other request
-field identical. Each completed line has a flushed WAV and checkpoint. Recovery
-verifies the request, source script, provider identity/runtime, pronunciation,
-delivery rules, rate, seed and WAV hash, then creates a new immutable take reusing
-only matching completed segments. A changed request requires a new take. Historical
-takes without checkpoints remain playable but cannot use this recovery path.
-Interrupted partial audio is never imported as a complete take.
+Optional `lineNumber` auditions one line. Recover with `resumeTakeId` from `status`/Studio, every other field unchanged. Completed lines have flushed WAVs/checkpoints. Verify request/script/provider identity/runtime, pronunciation/delivery, rate/seed and WAV hash; create a new immutable take reusing matching segments. Changed requests need new takes; checkpoint-free history stays playable but cannot recover this way. Never import partial audio as complete.
 
-After listening to the complete result and checking every boundary:
+After full listening/boundary review:
 
 ```powershell
 npm run workflow -- import-take PROJECT_ID reviewed-import.json
 ```
 
-The request is `{ "id": "TAKE_UUID", "baseId": null, "reviewed": true }`.
-For a timing correction, `baseId` must be the current planning-timing UUID.
-Generated segment boundaries are measured; they are not word alignment.
+Request: `{ "id": "TAKE_UUID", "baseId": null, "reviewed": true }`. Corrections require current planning-timing UUID as `baseId`. Segment boundaries are measured, not word alignment.
 
 ## 3. Review inexpensive visuals before full animation
 
 ```powershell
 npm run workflow -- visuals PROJECT_ID visual-request.json
 npm run workflow -- review-board PROJECT_ID BOARD_ID
-```
-
-`visuals` accepts the existing concepts/storyboard/shot request schema. Generate
-concepts, select a direction in Studio, then generate the storyboard. When current
-reviewed narration timing exists, storyboard generation receives those spans and
-derives shot durations from them, including pauses. It rejects changed timing or
-invalid line groups. Without timing, durations remain explicit estimates.
-Legacy boards remain readable; no accepted board is silently retimed.
-
-`review-board` renders 360×640 start/end PNGs, an HTML gallery and the existing
-graphic inspector report under a new `.data/workflow-reviews/` directory. Inspect
-readability, number containment, composition and visual teaching before accepting
-the board. Reports do not approve anything.
-
-```powershell
 npm run workflow -- motion PROJECT_ID motion-request.json
 npm run workflow -- review-motion PROJECT_ID MOTION_ID 0
 ```
 
-`motion` accepts the existing motion request schema. The optional final argument to
-either review command is a zero-based shot index. Review one representative scene
-first; fix its motion language before rendering the whole video. For scoped motion
-changes, reuse the existing `shotId`/`baseId` request. The selected scene uses the
-actual full composition and global frame range, preserving its incoming transition.
+Use existing concepts/storyboard/shot/motion request schemas. Select concept before storyboard. Reviewed narration spans/pauses govern generated durations; changed timing/invalid groups reject. Otherwise durations stay explicit estimates; never silently retime accepted legacy boards.
+
+`review-board` creates endpoint PNGs, HTML gallery and graphic findings in new `.data/workflow-reviews/`. Review phone-size readability, containment, composition/teaching before board acceptance. Reports approve nothing.
+
+Review commands accept optional zero-based shot index. Samples use actual full composition/global range, including incoming transition; scoped revisions use `shotId`/`baseId`.
 
 ```powershell
 npm run workflow -- review-motion PROJECT_ID MOTION_ID
 ```
 
-Omit the shot index for the complete 360×640 moving review. Reviews use the exact
-motion-bound planning audio when present and otherwise explicitly disclose silence.
-Listen and watch the complete moving candidate before accepting motion in Studio.
-A representative scene cannot establish full-video quality or synchronization.
-Review manifests record source, engine, audio and output hashes. They never bypass
-the production gates.
+Omit index for full 360×640 moving review. Use exact motion-bound planning audio or disclose silence. Watch/listen fully before motion acceptance. Manifests bind source/engine/audio/output hashes. Samples prove neither whole-video sync/quality nor production approval.
 
 ## 4. Record production review together
 
 ### Representative scene and whole-video review
 
-For Intense/new CQ-ENERGY-v2 candidates, approve one representative scene before
-rendering the complete moving review. Select a scene with the main teaching
-mechanism and demanding choreography, not simply the easiest title shot.
+Intense/new CQ-ENERGY-v2: approve the main teaching mechanism/demanding choreography before full moving review, not merely an easy title shot.
 
 ```powershell
 npm run workflow -- review-motion PROJECT_ID MOTION_ID SHOT_INDEX
@@ -143,8 +115,7 @@ npm run workflow -- review-motion PROJECT_ID MOTION_ID
 npm run workflow -- approve-review PROJECT_ID full-review-confirmation.json
 ```
 
-Each renderer returns a unique workflow-reviews directory. Its directory UUID is
-the `reviewId` in this confirmation format:
+Use rendered review-directory UUID as `reviewId`:
 
 ```json
 {
@@ -152,37 +123,24 @@ the `reviewId` in this confirmation format:
   "watchedNormalSpeed": true,
   "causeReactionReviewed": true,
   "rhythmReviewed": true,
-  "notes": "Actual human review findings and intentional reading holds."
+  "notes": "Actual human findings and intentional reading holds."
 }
 ```
 
-Only record these confirmations after the user actually provides them. Review
-cause, impact, receiving-object reaction and handoff in the sample. After the full
-render, watch the whole video with its motion-bound narration and check changing
-rhythm, readability, repetition and continuity across scenes. Full rhythm approval
-requires narration; a silent sample cannot establish synchronization. Record accepted
-exceptions rather than inventing extra movement. Inspector rhythm counts and
-reaction findings support this review but cannot prove causality or visual impact.
-Changed source, engine or review media invalidates sample approval. A scoped
-revision creates a new candidate and needs new representative approval. Historical
-reviews remain preserved. Review approval does not accept motion or production gates;
-continue with the existing explicit artifact and production decisions below.
+Record only actual user confirmations. Sample review checks cause/impact/receiving response/handoff; full narrated review checks rhythm/readability/repetition/continuity. Full rhythm approval requires narration; silence cannot prove sync. Record justified holds/exceptions, never invented activity. Counts cannot prove causal impact.
 
-Studio's final form groups the two required review confirmations and explicit local
-render authorization. It preserves already approved current gates, records missing
-gates atomically against the exact binding, and streams render progress. A failed
-render preserves recorded approvals; inputs changing makes them stale as before.
-The separate approval APIs remain available.
+Changed source/engine/media or scoped revision requires new sample approval. Preserve history; review confirmation accepts neither motion nor production gates.
 
-For CLI work, import final narration through the existing production workspace,
-then obtain the binding from `status` and save a review request:
+Studio groups two production confirmations/render authorization, preserves current gates, atomically records missing gates against exact binding and streams progress. Failed renders preserve approvals; changed inputs stale them. Separate APIs remain.
+
+CLI: import final narration via production workspace, take `binding` from `status`, save:
 
 ```json
 {
   "binding": "EXACT_CURRENT_BINDING_SHA256",
   "planReviewed": true,
   "movingAudioReviewed": true,
-  "notes": "Actual human review findings and accepted limitations."
+  "notes": "Actual human findings and accepted limitations."
 }
 ```
 
@@ -191,26 +149,12 @@ npm run workflow -- approve-production PROJECT_ID production-review.json
 npm run workflow -- export PROJECT_ID render-authorization.json
 ```
 
-Authorization is `{ "binding": "EXACT_CURRENT_BINDING_SHA256", "authorize": true }`.
-Never put review confirmations in a request until the human has actually provided
-them. Script, storyboard and motion acceptance are still separate artifact decisions.
-Publishing remains separately authorized.
+Authorization: `{ "binding": "EXACT_CURRENT_BINDING_SHA256", "authorize": true }`. Never fabricate confirmations. Script/board/motion decisions remain separate; publishing needs separate authorization.
 
 ## 5. Render once and retain independent verification
 
-Production renders a full-resolution PNG sequence once and encodes those exact
-frames with Remotion's discovered audio assets. It no longer renders the whole
-composition again to obtain reference images. It still checks fresh independent
-seeks, every encoded frame's SSIM, full decode, exact duration and narration
-correlation/lag. No frames or approvals are reused across production bindings.
-Studio and CLI report stages and frame milestones without process polling.
+Render full-resolution PNGs once; encode those exact frames with Remotion-discovered audio. Keep fresh independent seeks, every-frame SSIM, full decode, exact duration and narration correlation/lag; never rerender just for reference frames or reuse across bindings. [Production safeguards](animation-workflow.md#narration-and-production-safeguards) owns exact export limits/tolerances and prerequisites.
 
-Changes to engine-bound files invalidate old production bindings. Historical media
-and receipts remain untouched; review and authorize the new binding before a new
-export. Generated `output/`, `.data/` and `videos/` files are excluded from application
-typechecking; generated media is also excluded from lint. Rendering uses typed
-shared entry points instead of creating untyped per-project components.
+Studio/CLI report stages/frame milestones without polling. Changed engine bindings require new review/authorization; preserve history. Generated `output/`, `.data/`, `videos/` stay outside typechecking, generated media outside lint. Use typed shared renderer entry points, never untyped per-project components.
 
-No percentage or monetary saving is claimed. Compare real project elapsed time,
-provider usage and revision counts after adoption. Synthetic verification establishes
-the software path, not human creative quality.
+Synthetic software verification cannot establish quality/savings; compare real elapsed time, usage and revisions.

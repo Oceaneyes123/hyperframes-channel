@@ -1,230 +1,59 @@
 # Creative Quality System v1
 
+Apply the [quality bar](quality-bar.md) alongside this system. Its user corrections are human authoring/review guidance, not activated CQ entries or automatic detection of bland backgrounds, uniform headers, unclear speech or false causality. Never hand-edit generated mistakes documentation.
+
 ## Skill-derived rhythm experiment
 
-[Motion principles](motion-principles.md) records the two user-supplied repositories,
-compatible techniques, conflicts and implementation ownership. The
-[profile](motion-principles-profile.json) contains experimental review settings;
-reference-video measurements remain unknown. Catalog `creative-quality@2` adds
-five advisory detectors and beat-sheet guidance. Existing artifact snapshots stay
-unchanged; no human feedback activation or production approval is inferred.
+[Motion principles](motion-principles.md) records inspected sources, adaptations and conflicts. [Profile](motion-principles-profile.json) settings are experimental; reference-video measurements remain unknown. Catalog `creative-quality@2` adds beat-sheet guidance and five advisory `review` detectors: object inactivity, primary-preset concentration, neighboring illustration reuse, potentially visible root-text budget and standalone audience-facing provenance labels. Holds, continuity and necessary source text may justify exceptions. Comparison uses supplied profile settings; Studio uses defaults. Detectors cannot measure attention, embedded artwork text or semantic quality.
 
-The motion inspector reviews object-inactive spans, primary-preset concentration,
-neighboring illustration reuse, potentially visible root text budgets and
-standalone audience-facing provenance labels. All five emit `review` findings.
-Holds, continuity and necessary source text can justify exceptions. The profile's
-settings are supplied to the comparison command; Studio uses the default values.
-These checks do not measure attention, embedded artwork text or semantic quality.
+[Beat sheets](beat-sheet.md) are optional validated writing/storyboard metadata. Generation requests them; motion consumes the storyboard sheet as intent using supported schemas/measured anchors. Older artifacts remain readable. No audio/executable cue is generated; imported speech remains only draft spoken lines. Beat-sheet/rhythm-rule dependencies participate in engine hashing; changed inputs prevent old gates authorizing future exports.
 
-[Beat sheets](beat-sheet.md) are optional, validated planning metadata on writing
-drafts and storyboard shots. Older artifacts remain readable. Generation asks for
-the metadata, and motion receives the storyboard sheet as planning intent, using
-existing schemas and measured narration anchors. No audio or executable cues are
-generated. Imported speech remains exactly the draft's spoken lines. Beat-sheet
-and rhythm-rule dependencies participate in the current engine hash; old gates
-cannot authorize future exports against changed engine inputs.
-
-The system extends the existing Studio, curated artwork, GSAP/Remotion interpreter,
-graphics/motion inspectors, measured narration import and exact production gates.
-Technical validity does not establish visual or audible quality. Release evaluation
-remains pending until an actual candidate and independent human reviews exist.
+The system extends existing Studio, curated artwork, GSAP/Remotion, inspectors, measured timing and exact gates. Technical validity does not establish visual/audible quality; release evaluation needs actual candidates and independent human review.
 
 ## Rules and correction ownership
 
-`workflow/creative-rules.ts` owns the built-in IDs, versions, stages, evidence,
-corrections, detection methods, severity and exceptions. Generate
-`docs/AI-CREATIVE-MISTAKES.md` with `node scripts/creative-rules-doc.ts` after a
-reviewed rule change. Tests require exact documentation parity. Bump a rule's
-version when its meaning changes; bump the catalog version for a new catalog.
+`workflow/creative-rules.ts` owns built-in IDs/versions, stages, evidence, corrections, detection, severity and exceptions. After reviewed changes generate `docs/AI-CREATIVE-MISTAKES.md` with `node scripts/creative-rules-doc.ts`; tests require exact parity. Bump rule version when meaning changes and catalog version for a new catalog.
 
-Writing, selected-text revision, visual planning, motion planning and local
-narration capture the exact applicable rule definitions and SHA-256 snapshot.
-Writing/visual/motion proposals store this snapshot inside their existing immutable,
-hash-indexed artifacts. Historical artifacts have no snapshot and remain readable;
-they are not retroactively attributed to current rules. Editing or activating a
-rule affects future requests only. A request already running retains its snapshot.
+Writing, selected-text revision, visuals, motion and local narration capture applicable definitions plus SHA-256 snapshot. Proposals retain snapshots in immutable hash-indexed artifacts. Historical artifacts without snapshots remain readable, never retroactively attributed. Edits/activation affect future requests; running requests keep their captured snapshot.
 
-Studio's **Creative quality review** groups findings by graphics, motion and voice,
-links shots and motion time ranges, and shows full-video provenance. Existing
-Graphic design review owns before/after artwork and rendered phone-size review;
-Motion owns moving comparisons and synchronized playback. Model-rendered review
-suggestions and manually observed problems can also be saved as proposed rules.
+Studio **Creative quality review** groups graphics/motion/voice findings, linking shots/time ranges and full-video provenance. Graphic review owns before/after artwork and phone-size frames; Motion owns synchronized moving comparisons. Model suggestions/manual observations may become proposed corrections.
 
-Corrections live under the configured data directory's `creative-feedback/`.
-Each immutable proposal records a UUID-derived rule ID, source artifact/hash,
-project, shot, evidence, correction and exception. It remains inactive until the
-user runs the existing stage inspector on its source and selected artifacts from
-the same project, records regression evidence, checks the human confirmation box,
-and activates it. The report records inspector findings, not proof that an arbitrary
-natural-language correction is automatically detected. Activation applies across
-future projects. Rejection never activates a rule.
-An exclusive hash-bound decision prevents double decisions and detects changed
-proposals. Pending or rejected model suggestions are never generation policy.
-An active rule can be withdrawn with explicit human confirmation and a reason;
-historical snapshots remain unchanged. A replacement can be proposed as a new
-rule. Do not edit decision JSON manually. Back up this
-directory with the database, videos and narration takes. Interrupted or corrupt
-records fail closed and require recovery from a known backup.
+Corrections live in configured `creative-feedback/`. Each immutable proposal has UUID-derived rule ID, source artifact/hash, project/shot, evidence, correction and exception. Activation requires the user to run the stage inspector against source and selected same-project artifacts, record regression evidence, confirm human review and activate. Reports record inspector findings, not automatic understanding of arbitrary correction prose. Activation applies across future projects; rejection/pending suggestions never become policy.
 
-Asset references, geometry, source identities, audio and timing contracts retain
-their structural validators. Mobile readability, diversity and pacing are review
-findings. Canvas-copy concerns can be acknowledged in explicit storyboard review;
-numeric containment/alignment remain structural blockers. Production gates retain
-explicit exact-input review and render authorization; aesthetic motion heuristics
-do not automatically reject an otherwise valid human-reviewed plan. Code/engine
-updates can stale a production binding through the existing engine hash, while
-the historical approval records remain intact. Rule activation alone does not
-change bindings or accepted creative decisions.
+Exclusive hash-bound decisions reject duplicate/changed proposals. Withdraw active rules only with explicit human confirmation/reason; replacements are new proposals. Preserve snapshots; never edit decision JSON manually. Back up corrections with database, videos and takes. Interrupted/corrupt records fail closed; recover known backups.
+
+Structural validators retain asset/geometry/source/audio/timing constraints. Readability, diversity and pacing are review findings. Explicit storyboard review may acknowledge canvas-copy concerns; numeric containment/alignment remain blockers. Aesthetic heuristics do not automatically reject valid human-reviewed plans. Engine/code changes may stale bindings, preserving historical decisions. Rule activation alone changes neither bindings nor accepted decisions. Gates/render authorization remain explicit and exact-input.
 
 ## Graphics and motion
 
-Motion proposals default to **Intense** unless an explicit request selects another
-profile. CQ-ENERGY v2 also reaches storyboard planning:
-plan cause, impact, visible reaction and handoff before selecting animation presets.
-Intense targets at 30fps are 6–12-frame entrances, 8–24-frame focused actions and
-object development about every 30–45 frames. Energetic uses more generous limits.
-These are review targets, with source-faithful slower demonstrations and necessary
-reading holds as exceptions. Do not speed narration or add decorative motion.
+Default Intense; select other profiles explicitly. CQ-ENERGY v2 reaches storyboards: plan cause, impact, visible response and handoff before presets. At 30fps target 6–12-frame entrances, 8–18-frame actions and meaningful development about every 30 frames where teaching permits. Energetic allows more generous limits. The experimental 45-frame inactivity threshold is separate/advisory. Source-faithful slower demonstrations, reading holds and measured narration override cadence; never add jitter/filler or speed speech.
 
-The motion inspector flags development gaps even inside declared holds, drawn-out
-actions, missing declared causal beats and missing receiving-object reactions.
-The reaction check looks for a different actor/part changing during a major beat
-or within 12 frames afterward; it cannot prove semantic causality. A self-contained
-transformation may be intentional. The whole-video rhythm summary shows every shot's
-duration, declared causal beats, gaps and reaction checks. No warning count proves
-creative success. Studio acceptance requires explicit normal-speed rhythm and
-cause/reaction review; rejection remains available without those confirmations.
+The inspector flags development gaps (including declared holds), drawn-out actions, missing declared causal beats and receiving responses. A response means a different actor/part changes during a major beat or within 12 frames after it; this cannot prove semantic causality. Self-contained transformations may be intentional. Whole-video rhythm shows shot duration, declared beats, gaps and response findings. Counts cannot prove success. Motion acceptance requires explicit normal-speed rhythm/cause-response review; rejection remains available without confirmations.
 
-The reusable review workflow requires an approved representative scene before a
-full moving render for Intense/new CQ-ENERGY-v2 candidates. See
-[review commands and confirmation format](workflow-efficiency.md#representative-scene-and-whole-video-review).
-Approvals bind the exact motion, engine, review manifest and media hash. Changed
-inputs require new review; a scene approval never accepts a whole video or a
-production gate. All existing videos, source artifacts and recorded decisions
-remain unchanged. New rules/snapshots apply to future generation.
+Intense/new CQ-ENERGY-v2 workflows require approved representative-scene review before the full moving render. [Commands/confirmations](workflow-efficiency.md#representative-scene-and-whole-video-review) bind exact motion, engine, review manifest/media. Changed inputs require new review; scene approval covers neither whole video nor production gates. Existing videos/decisions remain unchanged; new rules/snapshots apply prospectively.
 
-Reuse `shot.design`, frame environments, curated asset registries, semantic diagrams
-and the eight existing composition families. New scenes describe meaning,
-composition/hierarchy, assets, palette, depth and continuity. New generated shots
-must include this specification; saved legacy shots remain readable. Generic geometry is
-appropriate when it teaches the mechanism, rather than filling space. Do not
-generate arbitrary executable SVG or fabricate assets.
+Reuse `shot.design`, environments, curated assets, diagrams and eight composition families. New shots specify meaning, hierarchy/composition, assets, palette, depth and continuity; legacy shots remain readable. Geometry is appropriate when it teaches, not as filler. Never generate executable SVG/fabricate assets.
 
-Graphics review now also detects missing art direction and three approximately
-identical neighboring endpoint layouts, even when their design prose differs.
-The geometry heuristic rounds object boxes to five percentage points and includes
-shape type. It cannot prove perceptual similarity. `continuityReason` exempts an
-intentional sequence. Always inspect actual frames at 360px width.
+Graphics review flags missing direction and three approximately identical neighboring endpoint layouts regardless of differing prose. Geometry rounds boxes to five percentage points and includes shape type; it cannot establish perceptual similarity. `continuityReason` exempts intentional sequences. Inspect actual 360px-wide frames.
 
-Existing motion inspectors cover the whole scheduled timeline: inactive windows,
-long holds, slow entrances, repeated presets, passive sequences, competing effects,
-camera-only drift, bounds and seams. Guidance specifies an energetic hook, clear
-development and concise payoff. Reading holds and accurate teaching override
-activity thresholds. No automatic speed multiplier or decorative-motion filler is
-introduced. Existing full-frame/seek/seam proof scripts remain the runtime checks.
-The comparison tool also samples the actual export at two frames per second and
-reports low-change intervals for review. Pixel change cannot distinguish meaningful
-action from camera motion and quiet intervals may be deliberate reading holds.
+Motion review covers whole-timeline inactivity, long holds, slow entrances, repeated presets/passive runs, competing effects, camera-only drift, bounds and seams. Guidance calls for energetic hook, development and concise payoff without automatic speed multipliers/filler. Keep full-frame/seek/seam proof scripts. Export comparison samples two frames/second for low-change intervals; pixels cannot distinguish purposeful action from camera movement, and quiet intervals may be reading holds.
 
 ## Local narration evaluation
 
-`server/narration/generation.ts` accepts a provider interface, ordered segments,
-voice settings, pronunciation replacements and a seed. Every attempt has a new
-directory under `narration-takes/`; failed requests and earlier takes are preserved.
-Regenerate a stable segment by submitting only that original line number. This
-creates a separate audition take; it never silently splices approved audio.
-
-Adapters:
-
-| Adapter | Runtime | State |
-| --- | --- | --- |
-| Windows Speech | Installed System.Speech voice, PCM16 24 kHz | Actual local smoke evaluation generated successfully |
-| Chatterbox Turbo | Operator-selected Python, cached model and reference WAV | Offline adapter implemented; model/runtime comparison pending |
-| Qwen3-TTS Base | Operator-selected Python, cached model and reference WAV/transcript | Offline adapter implemented; model/runtime comparison pending |
-| Qwen3-TTS 1.7B CustomVoice | Operator-selected Python, cached model and preset speaker | Delivery instructions supported; real listening comparison pending |
-
-Model APIs/license references were checked against the primary
-[Chatterbox source](https://github.com/resemble-ai/chatterbox),
-[Turbo loader](https://github.com/resemble-ai/chatterbox/blob/master/src/chatterbox/tts_turbo.py)
-and [Qwen3-TTS documentation](https://github.com/QwenLM/Qwen3-TTS).
-Chatterbox lists MIT; Qwen3-TTS lists Apache-2.0. Verify the license of the exact
-downloaded weights and reference voice before choosing a production model.
-Windows voice rights follow the installed Windows license. Adapters never install
-packages, fetch weights, switch providers or choose a default implicitly.
-
-Run from v3:
-
-```powershell
-node scripts/evaluate-narration.ts .planning/2026-10-26-creative-quality-v1/narration-evaluation.json
-```
-
-The JSON supplies `outputDirectory`, one shared `request` and `providers`. Python
-provider entries require `python`, `provider` (`chatterbox-turbo`, `qwen3-tts` or `qwen3-custom`),
-`modelPath`, `version`, `voice`, `referenceWav`, `referenceText` and `device`
-(`cpu` or `cuda`); `qwen3-custom` uses a preset speaker and needs no reference WAV
-or transcript. Record the exact downloaded model revision in `version`.
-Inference runs offline. A provider failure is recorded without substitution.
-The actual host exposes a Ryzen 7 3700X, about 48 GiB RAM and a GTX 1650-class
-GPU with 4096 MiB VRAM. A separate project-local Qwen environment was installed
-with CPU Torch; model download and actual neural benchmarks remain in progress.
-
-Takes record provider/model/voice/license, reference hash where applicable,
-actual runtime metadata when supplied, source/spoken text, pronunciation settings,
-seed, raw-signal diagnostics, normalized PCM16 audio, SHA-256, measured sample
-boundaries, frame boundaries and latency. Peak normalization targets 0.89 full
-scale; it is not loudness mastering. Signal checks reject malformed/silent WAV,
-report clipping and quiet audio, and leave pronunciation/expressiveness to listening.
-Current clone adapters do not support delivery instructions or a speech-rate
-control; Windows supports rate only. The 1.7B CustomVoice adapter forwards delivery
-instructions, while the 0.6B model is rejected because it ignores them. Capability flags and delivery intent are
-recorded, rather than claiming those controls were applied. Seed reuse does not
-guarantee bit-identical neural synthesis across hardware or runtime versions.
-
-No default is selected before listening. Existing provider preferences, imported
-narration and gates are unchanged. Studio's **Narration timing** can generate,
-compare and explicitly import full auditions bound to the accepted script. Configure
-CustomVoice on the host with `V3_QWEN_PYTHON`, `V3_QWEN_MODEL_DIR`,
-`V3_QWEN_MODEL_VERSION`, `V3_QWEN_SPEAKER` and `V3_QWEN_DEVICE`. Single-line
-auditions cannot be imported as a complete take. Segment boundaries do not establish
-word alignment. New verified-aligner
-imports require tool/version, exact audio/script hashes and human review notes;
-legacy saved timing artifacts remain readable.
+Use the [narration evaluation reference](narration-evaluation.md) for adapter capabilities, exact configuration, request fields, diagnostics, normalization and recorded host limitations. Evaluation never selects a default or replaces listening approval; current narration follows the [quality bar](quality-bar.md). Segment boundaries are not word alignment. Preserve takes, hashes and approval scope.
 
 ## Controlled release comparison
 
-Use an existing complete 50–75-second output, freezing the script/facts/core goals,
-board, motion, audio and export hashes. A 71.933-second project was identified:
-`videos/1c65e530-9583-4a92-ab5c-2c67d0b89063/production/95bbe282-0ce2-448b-8416-7229740e95ef/export.mp4`.
-Its selection is a baseline candidate, not approval of its content or quality.
+Freeze script/facts/goals, board, motion, audio and export hashes from a complete 50–75-second baseline. Identified candidate: 71.933-second `videos/1c65e530-9583-4a92-ab5c-2c67d0b89063/production/95bbe282-0ce2-448b-8416-7229740e95ef/export.mp4`; selection is not quality/content approval.
 
-`node scripts/evaluate-creative-quality.ts <comparison.json>` accepts `baseline`
-and `candidate`, each with `storyboard`, `motion`, `narration`, `narrationId` and
-`video` paths, plus a new `output` report path. It validates complete duration,
-matching script facts/source identities, motion contracts, measured audio duration,
-actual export metadata/full decode and source-audio synchronization. It writes
-both quality reports and comparable finding counts, with release still pending.
-Reports are written exclusively; previous comparisons cannot be overwritten.
-To record a completed human review, run `node scripts/review-creative-quality.ts
-<review.json>`. The JSON supplies `report`, `output`, and `review` with
-`reviewedByHuman`, `reviewer`, pass/fail values for `desktop`, `mobile`, `listening`
-and `comprehension`, `comparison` (`improved`, `not-improved`, or `inconclusive`),
-`blinded`, `criticalIssuesOpen` and `notes`. It rechecks source hashes and records
-the result without granting production approval.
+`node scripts/evaluate-creative-quality.ts <comparison.json>` takes `baseline`/`candidate`, each with `storyboard`, `motion`, `narration`, `narrationId`, `video`, plus new `output`. Validate complete duration, matching facts/source identities, motion contracts, measured audio, metadata/decode and source-audio sync. Write exclusive reports/finding counts; never overwrite comparisons or infer release.
 
-Watch both full videos on desktop and at phone size, sound-off and with narration.
-Compare visual meaning, composition, purposeful motion, pacing, voice consistency,
-pronunciation and comprehension. Blind the A/B labels where practical and keep
-the label key separately. Record reviewer identity, source hashes, observed issues,
-preference and reasons. Human corrections can become reproducible fixtures before
-activation. Fewer findings do not establish a better video. Do not release until
-critical regressions are fixed and actual human review plus existing production
-gates pass. The neural-provider listening comparison and new full-video candidate
-remain outstanding; this increment does not claim a quality improvement.
+After actual review, `node scripts/review-creative-quality.ts <review.json>` takes `report`, `output`, and `review`: `reviewedByHuman`, `reviewer`, pass/fail `desktop`/`mobile`/`listening`/`comprehension`, `comparison` (`improved`/`not-improved`/`inconclusive`), `blinded`, `criticalIssuesOpen`, `notes`. Recheck source hashes; record review without granting production gates.
+
+Watch both complete videos on desktop/phone, sound-off/with narration. Compare meaning, composition, purposeful motion, pacing, voice consistency, pronunciation and comprehension. Blind A/B labels when practical; keep key separate. Record reviewer, hashes, issues, preference/reasons. Human corrections may become reproducible fixtures before activation. Fewer findings do not establish improvement. Release requires fixed critical regressions, actual review and existing gates. Neural listening comparison/new full candidate remain outstanding.
 
 ## Verification from this increment
 
-See the plan progress log for the current verification results. Prior verification
-passed with the webpack build; the default Turbopack build had a CSS worker failure
-on this host. No permanent build configuration was changed.
+Dated software evidence, not current checkout/quality approval: webpack passed; default Turbopack had a CSS-worker failure, without permanent build-config changes. See the plan progress log for that increment's results.
 
-The existing synthetic motion proof passed 350 sequential frames, 11 fresh seek comparisons, a continuous seam and full silent decode. The isolated Studio saved a proposed correction and retained disabled activation until human confirmation/evidence; desktop and 390px mobile layout were inspected. Two actual 18.2735-second Windows Speech takes of the identical request produced the same audio hash. These are software/signal results, not human quality approval. The frozen 71.933-second baseline is in `.planning/2026-10-26-creative-quality-v1/baseline.json`; no new release candidate or neural-provider listening comparison has been completed.
+Synthetic motion proof: 350 sequential frames, 11 fresh seeks, continuous seam, full silent decode. Isolated Studio retained disabled correction activation until human confirmation/evidence; desktop/390px mobile inspected. Two identical 18.2735-second Windows Speech requests produced matching hashes. Frozen baseline: `.planning/2026-10-26-creative-quality-v1/baseline.json`. No new release candidate or neural listening comparison was completed.

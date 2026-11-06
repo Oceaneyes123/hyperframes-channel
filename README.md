@@ -22,6 +22,10 @@ For Studio work, start with [STATUS](2d-animation-v3/docs/STATUS.md), then
 [writing](2d-animation-v3/docs/researched-writing.md) or
 [quality](2d-animation-v3/docs/creative-quality.md) guide.
 
+For a new V3 explainer, use the [V3 prompt](2d-animation-v3/PROMPT_TEMPLATE.md)
+and [user-corrected quality bar](2d-animation-v3/docs/quality-bar.md). Legacy
+templates and historical experiments do not override this active V3 direction.
+
 Original plans and completed logs are in the
 [archive](2d-animation-v3/docs/archive/README.md). Agents must not load archive,
 phase-0, writing-evaluation or historical planning packets by default. Read a

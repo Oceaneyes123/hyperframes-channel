@@ -55,7 +55,7 @@ export async function renderWorkflowReview(projectId: string, input: unknown, si
       const scheduled = scheduleMotion(candidate.plan), selected = request.shotIndex === undefined ? null : scheduled.shots[request.shotIndex];
       const frameRange: [number, number] = selected ? [selected.startFrame, selected.endFrame - 1] : [0, scheduled.durationFrames - 1];
       progress(selected ? "Rendering the selected scene for early motion review…" : "Rendering the phone-size narrated review…");
-      await renderMedia({ serveUrl, composition, inputProps, browserExecutable, codec: "h264", outputLocation: join(output, "review.mp4"), scale: 1 / 3, frameRange, concurrency: 1, cancelSignal });
+      await renderMedia({ serveUrl, composition, inputProps, browserExecutable, codec: "h264", imageFormat: "png", crf: 16, outputLocation: join(output, "review.mp4"), scale: 1 / 3, frameRange, concurrency: 1, cancelSignal });
       files.push("review.mp4");
     } else {
       for (const [index, shot] of board.output.shots.entries()) {

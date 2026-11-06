@@ -3,7 +3,7 @@ import { test } from "node:test";
 import { inspectMotion } from "../workflow/production.ts";
 import { presetScene, presetShape } from "./fixtures/motion-presets.ts";
 import { motionBeatFixture } from "./fixtures/motion-beats.ts";
-import { defaultEnergyProfile, motionPacingGuidance } from "../workflow/motion.ts";
+import { defaultEnergyProfile, highEnergyPacing, motionPacingGuidance } from "../workflow/motion.ts";
 
 test("intentional holds exclude legacy stillness but retain advisory inactivity evidence", () => {
   const { plan } = presetScene([presetShape(42)], [presetShape(42)], [[0, 0]], { presetId: "snap-overshoot@1", parameters: { to: {}, anticipation: .9, overshoot: 1.08 }, targetIds: ["object-1"] });
@@ -48,6 +48,7 @@ test("renderer text metrics, contrast, clipping and crowding detect weak settled
 
 test("high-energy review catches declared holds and drawn-out motion without rewriting saved plans", () => {
   assert.equal(defaultEnergyProfile, "intense"); assert.match(motionPacingGuidance("intense"), /6–12 frames/);
+  assert.deepEqual(highEnergyPacing.intense, { entranceFrames: 12, actionFrames: 18, developmentGapFrames: 30 });
   const { plan } = motionBeatFixture(); plan.energyProfile = "intense";
   const shot = plan.shots[0]; shot.durationFrames = 120;
   const entry = shot.beats![0]; entry.type = "entry"; entry.startFrame = 0; entry.endFrame = 30;
@@ -62,7 +63,7 @@ test("high-energy review catches declared holds and drawn-out motion without rew
 
 test("short causal beats and comprehension holds can satisfy intense pacing without continuous motion", () => {
   const { plan } = motionBeatFixture(); plan.energyProfile = "intense";
-  plan.shots = [plan.shots[0]]; const shot = plan.shots[0]; shot.durationFrames = 58;
+  plan.shots = [plan.shots[0]]; const shot = plan.shots[0]; shot.durationFrames = 42;
   shot.beats![0].startFrame = 0; shot.beats![0].endFrame = 12;
   shot.beats![1].startFrame = 14; shot.beats![1].endFrame = 30;
   const report = inspectMotion(plan);

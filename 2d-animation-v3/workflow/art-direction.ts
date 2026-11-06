@@ -4,6 +4,7 @@ export const compositionFamilies = ["editorial-illustration", "technical-cutaway
 export const backgroundSchema = z.strictObject({
   family: z.enum(["soft-gradient", "geometric", "technical-grid", "atmospheric", "editorial", "environment"]),
   color: z.string().regex(/^#[a-fA-F0-9]{6}$/), accent: z.string().regex(/^#[a-fA-F0-9]{6}$/), depth: z.number().min(0).max(1),
+  texture: z.enum(["paper-grain@1", "rough-paper@1"]).optional(),
 });
 export type Background = z.infer<typeof backgroundSchema>;
 export const artDirectionSchema = z.strictObject({

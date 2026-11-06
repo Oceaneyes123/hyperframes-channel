@@ -1,5 +1,10 @@
 # Generic explainer worked example
 
+This is a legacy narrative example. For V3, the
+[quality bar](../../2d-animation-v3/docs/quality-bar.md) owns current visual,
+typography, narration and moving-review direction. Reuse the causal teaching idea,
+not the legacy renderer, voice, layout or approval defaults.
+
 This is an optional example, not an additional rule owner. `SCRIPT_GUIDE.md`
 owns storytelling; `DESIGN.md` owns visual identity; `MOTION.md` owns attention
 and motion; `channel/templates/STORYBOARD.md` records the plan; `BUILD.md` and

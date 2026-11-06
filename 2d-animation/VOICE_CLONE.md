@@ -1,7 +1,7 @@
 # Clone a reference voice: quick guide
 
 These are preserved **audio version 1** instructions. The current narration default
-is version 2, Fish Audio via OpenRouter; see
+is version 3, local VoiceStudio with a listening-approved engine/voice; see
 [channel/AUDIO_VERSIONS.md](channel/AUDIO_VERSIONS.md). Keep the existing clone and
 reference assets for an explicit switch back.
 

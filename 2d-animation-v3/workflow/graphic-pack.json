@@ -13251,5 +13251,469 @@
         }
       ]
     }
+  },
+  {
+    "contentHash": "9145c904296077a78e847efbf8f57a23969e247ae34674f22c67a8ef9e4a7f99",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "credit-card-detail@1",
+      "source": "Original vector artwork for the approved card-to-card explainer; authored through V3 vector import.",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 600,
+      "height": 380,
+      "purpose": "Recognizable credit card with recessed chip, contactless arcs, embossed nonnumeric marks and layered edge. Accent identifies the card; no real issuer or account data.",
+      "tags": [
+        "credit-card",
+        "finance",
+        "editorial"
+      ],
+      "compositions": [
+        "editorial-illustration",
+        "illustrated-workflow",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "body",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.16,
+              "kind": "rect",
+              "x": 18,
+              "y": 28,
+              "width": 568,
+              "height": 338,
+              "radius": 34
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 8,
+              "y": 8,
+              "width": 570,
+              "height": 340,
+              "radius": 30
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 3,
+              "opacity": 0.55,
+              "kind": "path",
+              "d": "M30 78V46Q30 29 49 29H523"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 0.35,
+              "kind": "path",
+              "d": "M34 321H552"
+            }
+          ]
+        },
+        {
+          "id": "chip",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "mint",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 58,
+              "y": 110,
+              "width": 102,
+              "height": 77,
+              "radius": 12
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M91 110V187M127 110V187M58 135H91M127 135H160M58 160H91M127 160H160M91 122H127V176H91Z"
+            }
+          ]
+        },
+        {
+          "id": "details",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M206 118Q235 148 206 178M222 104Q265 148 222 192M238 90Q298 148 238 206"
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 9,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M58 245H134M157 245H233M256 245H332M355 245H431"
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 4,
+              "opacity": 0.65,
+              "kind": "path",
+              "d": "M58 285H233M355 285H410"
+            },
+            {
+              "fill": "surface",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 495,
+              "cy": 267,
+              "rx": 27,
+              "ry": 27
+            },
+            {
+              "fill": "surface",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 525,
+              "cy": 267,
+              "rx": 27,
+              "ry": 27
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "88ab9b634cb321e169e23d9b5b35953adac783096b812530e0aa5b5841bd99f6",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "card-bill-detail@1",
+      "source": "Original vector artwork for the approved card-to-card explainer; authored through V3 vector import.",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 600,
+      "height": 820,
+      "purpose": "Large folded credit-card bill with printed row cues and a conceptual shuttered payment slot. No invented amounts, lender branding or network-processing UI.",
+      "tags": [
+        "credit-card",
+        "finance",
+        "editorial"
+      ],
+      "compositions": [
+        "editorial-illustration",
+        "illustrated-workflow",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "paper",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.14,
+              "kind": "path",
+              "d": "M38 30H482L582 130V800H38Z"
+            },
+            {
+              "fill": "surface",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M16 10H462L562 110V780H16Z"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M462 10V110H562"
+            }
+          ]
+        },
+        {
+          "id": "statement",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 60,
+              "y": 62,
+              "width": 98,
+              "height": 62,
+              "radius": 9
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 7,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M72 84H146"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 8,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M187 76H400M187 102H340"
+            },
+            {
+              "fill": "none",
+              "stroke": "line",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M60 175H514M60 244H514M60 313H514M60 382H514"
+            },
+            {
+              "fill": "none",
+              "stroke": "muted",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M60 207H254M60 276H218M60 345H280M421 207H514M450 276H514M432 345H514"
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M60 451H164M60 479H235"
+            },
+            {
+              "fill": "none",
+              "stroke": "muted",
+              "strokeWidth": 2,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M60 694H517M60 706H74M86 706H100M112 706H126M138 706H152M164 706H178M190 706H204M216 706H230M242 706H256M268 706H282M294 706H308M320 706H334M346 706H360M372 706H386M398 706H412M424 706H438M450 706H464M476 706H490M502 706H516"
+            }
+          ]
+        },
+        {
+          "id": "slot",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "ink",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 74,
+              "y": 524,
+              "width": 434,
+              "height": 112,
+              "radius": 17
+            },
+            {
+              "fill": "muted",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 88,
+              "y": 538,
+              "width": 406,
+              "height": 84,
+              "radius": 10
+            },
+            {
+              "fill": "none",
+              "stroke": "line",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M94 647H487"
+            }
+          ]
+        },
+        {
+          "id": "shutter-left",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 88,
+              "y": 538,
+              "width": 200,
+              "height": 84,
+              "radius": 8
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 5,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M263 553V607"
+            }
+          ]
+        },
+        {
+          "id": "shutter-right",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 294,
+              "y": 538,
+              "width": 200,
+              "height": 84,
+              "radius": 8
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 5,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M318 553V607"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "contentHash": "b9dd4be8b157c067a6a3967b17c212c7681ef3bcb7965c32834a973d93c82e2a",
+    "asset": {
+      "schemaVersion": 1,
+      "id": "debt-parcel-detail@1",
+      "source": "Original vector artwork for the approved card-to-card explainer; authored through V3 vector import.",
+      "license": "CC0-1.0",
+      "attribution": "Original artwork authored for HyperFrames V3; dedicated to CC0.",
+      "width": 240,
+      "height": 220,
+      "purpose": "One intact coral borrowed-principal token with folded edge, coin relief and grip, carried unchanged between the two cards.",
+      "tags": [
+        "credit-card",
+        "finance",
+        "editorial"
+      ],
+      "compositions": [
+        "editorial-illustration",
+        "illustrated-workflow",
+        "visual-comparison"
+      ],
+      "layers": [
+        {
+          "id": "parcel",
+          "role": "subject",
+          "nodes": [
+            {
+              "fill": "ink",
+              "stroke": "none",
+              "strokeWidth": 0,
+              "opacity": 0.15,
+              "kind": "rect",
+              "x": 20,
+              "y": 47,
+              "width": 207,
+              "height": 159,
+              "radius": 18
+            },
+            {
+              "fill": "accent",
+              "stroke": "ink",
+              "strokeWidth": 4,
+              "opacity": 1,
+              "kind": "rect",
+              "x": 8,
+              "y": 30,
+              "width": 207,
+              "height": 159,
+              "radius": 16
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M154 30L215 91H154Z"
+            },
+            {
+              "fill": "none",
+              "stroke": "surface",
+              "strokeWidth": 3,
+              "opacity": 0.45,
+              "kind": "path",
+              "d": "M27 170H193"
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "role": "detail",
+          "nodes": [
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 6,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M62 30V21Q62 7 80 7H127Q145 7 145 21V30"
+            },
+            {
+              "fill": "paper",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "ellipse",
+              "cx": 91,
+              "cy": 107,
+              "rx": 40,
+              "ry": 40
+            },
+            {
+              "fill": "none",
+              "stroke": "ink",
+              "strokeWidth": 3,
+              "opacity": 1,
+              "kind": "path",
+              "d": "M91 81V132M108 88H82Q67 88 67 101Q67 111 82 111H100Q116 111 116 122Q116 133 101 133H75"
+            }
+          ]
+        }
+      ]
+    }
   }
 ]

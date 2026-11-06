@@ -1,0 +1,15 @@
+{
+  "scope": "Exact revised narration script only",
+  "userStatement": "I approve",
+  "approvedArtifact": "script-v2.txt",
+  "artifactFileSha256": "9ae0f54061dacf2dfdd048e66c8d395cf19ce3043c6932c977801d7e8386b84d",
+  "projectId": "5a474ca9-fb23-4989-a680-9ca755d3fc0f",
+  "revisionId": "0f481f06-ba63-4d46-8767-6357e02f0137",
+  "revisionManifestSha256": "218c7f80f254ba0ecc97b7b0a9d7a83ac70129959efc369e6abb67e65559b2d7",
+  "recordedAt": "2026-11-05T14:52:09.757Z",
+  "conceptSelected": false,
+  "storyboardAccepted": false,
+  "narrationApproved": false,
+  "motionApproved": false,
+  "finalRenderAuthorized": false
+}

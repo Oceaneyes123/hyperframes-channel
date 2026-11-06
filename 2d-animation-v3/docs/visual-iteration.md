@@ -1,36 +1,20 @@
 # Visual iteration and creative direction
 
-The motion workspace's **Review and improve shot** action runs a bounded advisory
-loop on the selected current motion shot. It preserves the accepted storyboard,
-narration, actors, shot duration, incoming transition and every other shot. It
-does not accept motion, approve normal-speed review, grant production gates or
-export a video.
+Apply the [quality bar](quality-bar.md): tactile environments, scene-specific decorated text, decisive object-led change and receiving response. Color changes, repeated header bands or small nudges alone do not resolve quality feedback. Follow sampled frames with normal-speed moving review.
 
-The loop renders five exact global frames spanning the selected shot, plus the
-previous shot's final frame and the next shot's first frame when available.
-Frames use the production Remotion composition at 360 × 640. The critic receives
-ordered images, neighboring shot plans, narration, available measured timing,
-motion diagnostics, style guidance and selected examples. Sparse stills cannot
-establish smoothness or audible synchronization; normal-speed human review remains
-necessary. Rhythm targets are experimental, not measurements of reference clips.
+**Review and improve shot** runs a bounded advisory loop on the selected current motion shot. Preserve accepted storyboard, narration, actors, duration, incoming transition and every other shot. The loop cannot accept motion/review, grant gates or export.
 
-At most two scoped revisions and three critiques run in one session, with a
-ten-minute total abort signal, 90-second critique calls and existing 150-second
-generation limits. There are no automatic transport retries. A clean sampled
-review, repeated suggestions, unchanged motion, an exhausted budget or a finding
-requiring storyboard/neighbor changes stops the loop. Cancellation, invalid
-responses, changed dependencies or protected timing changes fail closed. Earlier
-saved candidates remain available; they are never silently accepted or deleted.
+## Loop scope and limits
 
-The latest candidate is offered for review; it is not asserted to be the best.
-Partial failures can leave pending candidates, so inspect history before retrying.
-The lock prevents duplicate loops within one server process. Separate CLI/server
-processes may both start critiques; existing proposal transactions and latest-ID
-checks prevent either from applying a revision against a changed base.
+- Render five exact global frames spanning the shot plus previous-final/next-first frames when available, using the production composition at 360×640.
+- Critic receives ordered images, neighboring plans, narration, available measured timing, diagnostics, style and selected examples. Stills cannot prove smoothness/audible sync. Rhythm targets are experimental, not measured reference clips.
+- At most two scoped revisions/three critiques; ten-minute total abort, 90-second critique calls, existing 150-second generation limit; no transport retries.
+- Stop on clean sampled review, repeated suggestions, unchanged motion, exhausted budget or findings requiring storyboard/neighbor changes. Cancellation, invalid output, changed dependencies or protected-timing changes fail closed. Preserve earlier candidates without silent acceptance/deletion.
+- Offer the latest candidate without claiming it is best. Inspect history after partial failures before retrying. Loop lock covers one server process; other CLI/server processes may critique concurrently, but proposal transactions/latest-ID checks prevent applying against changed bases.
 
 ## CLI
 
-Run commands from `2d-animation-v3`:
+Run from V3:
 
 ```powershell
 npm run workflow -- improve-motion <project-id> request.json
@@ -45,43 +29,26 @@ npm run workflow -- improve-motion <project-id> request.json
 }
 ```
 
-Shot indices are zero-based. `maxRounds: 0` performs critique only. Direction is
-limited to 500 characters for this action. Session configuration, per-round frame
-hashes and critiques, candidate links and the result/failure receipt are saved under
-`.data/motion-iterations/<session-id>/` (or the configured data directory).
-Each motion revision remains an immutable ordinary proposal in the existing store.
-Reports include the actual critic model, motion model, engine hash and guidance
-fingerprints. Studio displays remaining findings from a completed loop.
+Indices are zero-based; `maxRounds: 0` critiques only. Direction limit: 500 characters. Config, round frame hashes/critiques, candidate links and outcome/failure receipts live in configured `.data/motion-iterations/<session-id>/`. Revisions remain ordinary immutable proposals. Reports bind actual critic/motion models, engine hash and guidance fingerprints. Studio shows remaining findings after completion.
 
 ## Model settings
 
-Configure optional server environment variables and restart Studio:
+Set optional server variables and restart Studio:
 
 | Role | Variable | Fallback |
 | --- | --- | --- |
-| Concepts/storyboards | `CLIPROXYAPI_DIRECTOR_MODEL` | Visual model, then base model |
-| Writing/refinement/selected-text revision | `CLIPROXYAPI_WRITER_MODEL` | Base model |
-| Motion generation/revision | `CLIPROXYAPI_MOTION_MODEL` | Base model |
-| Editorial/graphic/motion critique | `CLIPROXYAPI_CRITIC_MODEL` | Visual model, then base model |
+| Concepts/storyboards | `CLIPROXYAPI_DIRECTOR_MODEL` | Visual, then base |
+| Writing/refinement/selected text | `CLIPROXYAPI_WRITER_MODEL` | Base |
+| Motion generation/revision | `CLIPROXYAPI_MOTION_MODEL` | Base |
+| Editorial/graphic/motion critique | `CLIPROXYAPI_CRITIC_MODEL` | Visual, then base |
 
-Visual and base variables remain `CLIPROXYAPI_VISUAL_MODEL` and
-`CLIPROXYAPI_MODEL`. No model capability or relative quality is inferred from its
-name. Image-based calls require an image-capable model supported by the gateway;
-model discovery alone cannot establish that capability. Gateway preflight checks
-every distinct resolved model. Existing artifact model histories remain unchanged.
-New writing artifacts record each writer/refiner/editor call's actual role/model;
-visual and motion jobs retain their existing model records.
+Visual/base remain `CLIPROXYAPI_VISUAL_MODEL`/`CLIPROXYAPI_MODEL`. Names imply neither capability nor quality. Image calls need gateway-supported image capability; discovery alone cannot prove it. Gateway preflight checks every distinct resolved model. Preserve historical model records; new writing records each writer/refiner/editor role/model, while visual/motion jobs retain existing model records.
 
 ## Style and accepted examples
 
-Concept/storyboard generation, motion generation and image critique now load
-`docs/motion-style-bible.md` and the validated
-`docs/motion-principles-profile.json`. Prompt fingerprints identify the exact
-guidance; review reports preserve those fingerprints. Missing or invalid guidance
-stops generation rather than silently dropping it.
+Concepts/storyboards, motion and image critique load `docs/motion-style-bible.md` plus validated `docs/motion-principles-profile.json`. Requests/reviews fingerprint exact guidance; missing/invalid files stop generation rather than dropping guidance.
 
-No existing scene is automatically designated a quality reference. Explicitly
-select an accepted current motion artifact and describe the craft choice to learn:
+No scene becomes a quality example automatically. Explicitly select accepted current motion and identify the craft choice:
 
 ```powershell
 npm run workflow -- register-example <project-id> example-request.json
@@ -95,22 +62,10 @@ npm run workflow -- register-example <project-id> example-request.json
 }
 ```
 
-Registration renders start/middle/end production frames and saves a manifest under
-`.data/creative-examples/<id>/`. Set `V3_CREATIVE_EXAMPLE_IDS` to up to three returned
-UUIDs, separated by commas. Selected images and reasons enter generation and critique
-requests. The loader verifies the original artifact and acceptance receipt plus
-frame hashes. Historical accepted source may remain a reference after project
-inputs change; replacing its acceptance receipt invalidates the selection. Example
-content is a craft reference, never evidence for a new video's factual claims.
-Registration does not grant any new acceptance or production approval.
+Registration renders production start/middle/end frames and a `.data/creative-examples/<id>/` manifest. Set `V3_CREATIVE_EXAMPLE_IDS` to at most three returned comma-separated UUIDs. Selected images/reasons enter generation/critique; loader checks original artifact, acceptance receipt and frame hashes.
 
-No examples or role overrides are enabled merely by installing this change.
+Historical accepted source may remain a reference after project inputs change; replacing its acceptance receipt invalidates selection. Examples teach craft, never substantiate another video's facts. Registration grants no acceptance/gates. Installation alone enables no examples/role overrides.
 
 ## Verification, October 29, 2026
 
-`npm run check` passed lint/typecheck and 206 tests, including real production-frame
-renders, role routing, preserved acceptance/scope, timing guards, cancellation,
-stale inputs, repeated findings and revision limits. Two existing planning-script
-lint warnings remain. `npm run build -- --webpack` passed. Default `npm run build`
-still fails at the documented Turbopack CSS-worker connection error. No live model
-calls or human quality comparisons were run for this implementation.
+Dated evidence: check passed lint/typecheck and 206 tests, including real production-frame renders, routing, acceptance/scope preservation, timing guards, cancellation, staleness, repeated findings and limits. Two planning-script lint warnings remained. Webpack build passed; default build failed with documented Turbopack CSS-worker connection error. No live model/human quality comparison ran.
